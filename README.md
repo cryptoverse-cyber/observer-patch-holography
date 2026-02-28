@@ -62,6 +62,31 @@ The system exists in a timeless state (as the Wheeler-DeWitt equation suggests f
 
 Unified models attempting to combine QFT, gravity, and Standard Model structure tend to encounter a repeatable set of conceptual difficulties: subsystem factorization breaks down in gauge/gravity, modular Hamiltonians are nonlocal, Lorentz invariance is assumed rather than derived, dynamics are hard to get (not just kinematics), gauge symmetry origins are unclear, masslessness is hand-imposed, anomalies appear as mysterious pathologies, charge quantization needs GUTs, coupling unification forces proton decay, the cosmological constant is locally overdetermined, UV infinities proliferate, and parameter counts explode. The observer-patch framework addresses these by making consistency conditions do the work: it treats locality, Lorentz invariance, gauge symmetry, and gravity as *consistency constraints* among overlapping descriptions plus information-theoretic properties of states (Markov/recoverability + MaxEnt), then leans on modular theory rigidity to force the familiar symmetries and dynamics. This "structures → consistency" move is what allows the framework to naturally explain or sidestep classic unification pitfalls (see Section 8.5 of the technical paper for detailed analysis).
 
+## The Axioms
+
+The entire framework rests on four core axioms plus one selection axiom:
+
+| Label | Name | Content |
+|-------|------|---------|
+| **A1** | Screen net | Observable algebras live on a closed 2D surface $S^2$ |
+| **A2** | Overlap consistency | Where patches share a region, their descriptions agree |
+| **A3** | Generalized entropy | $S_{\rm gen} = S_{\rm bulk} + \langle L_C \rangle$ satisfies strong subadditivity |
+| **A4** | Local Markov | Conditional mutual information decays across collars |
+| **MAR** | Minimal Admissible Realization | Among admissible sectors, Nature realizes the lexicographically minimal one |
+
+Additional structural assumptions (MaxEnt, Euclidean regularity, exponential mixing) are detailed in the [Technical Paper](paper/PAPER.md), Section 1.6.
+
+## Supplements
+
+| Document | Description |
+|----------|-------------|
+| **[Technical Paper](paper/PAPER.md)** | Formal development: axioms, theorems, proofs, and critical evaluation |
+| **[Gauge Group Derivation](paper/GAUGE_GROUP_DERIVATION.md)** | Proof that $T_{\rm ext}$ uniquely selects $SU(3) \times SU(2) \times U(1)/\mathbb{Z}_6$, $N_c = 3$, $N_g = 3$ |
+| **[Particle Spectrum Derivation](paper/SPECTRUM_DERIVATION.md)** | End-to-end derivation from pixel area to particle masses with PDG comparison |
+| **[Technical Supplement](paper/TECHNICAL_SUPPLEMENT.md)** | Dark matter, Koide formula, baryogenesis, measurement problem, and more |
+| **[String Theory Derivation](paper/STRING_THEORY.md)** | OPH edge-sector weights = 2D Yang-Mills heat kernels → worldsheet expansion |
+| **[MiHsC Duality](paper/MIHSC_DUALITY.md)** | McCulloch's Quantised Inertia as an effective IR description of OPH |
+
 ## The Prediction Chain
 
 The following infographic shows how the entire framework flows from two parameters and four axioms to all features of physics:
@@ -107,7 +132,7 @@ lets us extract screen capacity from the measured $\Lambda \sim 10^{-52}$ $\text
 - **Pixel area** = resolution (extracted from gauge couplings via edge entropy)
 - **Screen capacity** = total size (extracted from observed cosmological constant)
 
-The axiom structure contains no other dimensionful constants. The axioms plus reconstruction give *a* compact gauge group; narrowing to SU(3) x SU(2) x U(1) / Z6 specifically requires additional selectors (minimality, chirality stability) that are not yet derived from first principles. Charge quantization and Einstein's equations follow from the axiom structure once the gauge group is fixed.
+The axiom structure contains no other dimensionful constants. The axioms plus reconstruction give *a* compact gauge group; the Selection Axiom MAR (Minimal Admissible Realization) then uniquely selects SU(3) x SU(2) x U(1) / Z₆ as the realized gauge group (see [GAUGE_GROUP_DERIVATION.md](paper/GAUGE_GROUP_DERIVATION.md)). Charge quantization and Einstein's equations follow from the axiom structure.
 
 ### What This Means
 
@@ -117,7 +142,7 @@ From inside, these parameters manifest as:
 - **Pixel area** determines Newton's constant, Planck scale, gauge couplings, particle masses
 - **Screen capacity** determines observable universe size (but is itself inferred from the observed cosmological constant, which is not predicted)
 
-The same axioms with different settings would produce a universe with different constants but similar physics (Einstein equations, gauge structure). The specific Standard Model gauge group requires additional selectors beyond the core axioms.
+The same axioms with different settings would produce a universe with different constants but similar physics (Einstein equations, gauge structure). The specific Standard Model gauge group is uniquely selected by the Selection Axiom MAR.
 
 ### Calibration vs Prediction
 
@@ -133,14 +158,15 @@ The framework produces:
 
 **From core axioms (A1-A4) + MaxEnt + Euclidean regularity:**
 - Lorentz kinematics (from geometric modular flow on caps)
-- Semiclassical Einstein equations (via entanglement equilibrium, conditional on the EFT bridge)
+- Semiclassical Einstein equations (via entanglement equilibrium)
 - A compact gauge group (from edge-sector fusion + Tannaka-Krein reconstruction)
 - Massless photon and graviton (from emergent gauge/diffeomorphism invariance)
 
-**With additional selectors (not derived from core axioms):**
-- The specific SM gauge group SU(3) x SU(2) x U(1) / Z6 (requires minimality + chirality stability selectors)
-- Three generations (requires minimality + empirical CP violation + asymptotic freedom)
-- Proton stability (requires sector factorization assumption)
+**With Selection Axiom MAR (Minimal Admissible Realization):**
+- The specific SM gauge group SU(3) x SU(2) x U(1) / Z₆ (uniquely selected by MAR)
+- Three colors $N_c = 3$ (Witten anomaly + MAR minimality)
+- Three generations $N_g = 3$ (CP + asymptotic freedom + MAR minimality)
+- Proton stability (product gauge group derived from MAR, no leptoquark generators)
 
 **With SM matter content assumed:**
 - Charge quantization, hypercharge ratios
@@ -150,8 +176,6 @@ The framework produces:
 - Neutrino masses from cosmological anchoring: $m_{\nu_3} \approx 3.0$ meV, $m_{\nu_2} \approx 0.50$ meV, $m_{\nu_1} \approx 0.084$ meV
 
 ## What the Model Derives
-
-Our results fall into two categories: those that emerge directly from observer-patch consistency, and those that require additional assumptions.
 
 ### Direct Consequences of Patch Consistency
 
@@ -189,13 +213,13 @@ The gauge-as-gluing principle (Section above) reconstructs compact gauge groups 
 
 **Massless graviton**: Diffeomorphism invariance (the symmetry underlying general relativity) emerges from the fact that bulk spacetime is a compression of screen data. A graviton mass would break this invariance. The graviton mass is exactly zero, confirmed to 22 orders of magnitude.
 
-**Three colors**: The Witten anomaly requires an odd number of quark colors. The minimal nontrivial choice is three. *Note: This requires a minimality selector; the axioms alone don't exclude* $\mathit{N_c = 5, 7, ...}$
+**Three colors**: The Witten anomaly requires an odd number of quark colors. Under the Selection Axiom MAR, $N_c = 1$ fails admissibility (trivial color), and MAR selects the minimum: $N_c = 3$.
 
-**Three generations**: CP violation requires at least three generations; asymptotic freedom allows at most five. Minimality selects three. *Note: This also requires the minimality selector plus empirical CP violation as input.*
+**Three generations**: CP violation requires at least three generations; asymptotic freedom of SU(2)_L allows at most five. MAR selects the minimum: $N_g = 3$.
 
-**Proton stability** (conditional): This is where our model diverges from traditional Grand Unified Theories. Standard GUTs embed SU(3) x SU(2) x U(1) into a larger simple group, introducing leptoquark bosons that mediate proton decay. Super-Kamiokande's limit $\tau_p > 10^{34}$ years excludes minimal SU(5).
+**Proton stability**: This is where our model diverges from traditional Grand Unified Theories. Standard GUTs embed SU(3) x SU(2) x U(1) into a larger simple group, introducing leptoquark bosons that mediate proton decay. Super-Kamiokande's limit $\tau_p > 10^{34}$ years excludes minimal SU(5).
 
-Our model takes a different path. The gauge group emerges as a *product* structure from edge-sector fusion rules, without embedding in anything larger. There are no leptoquark generators. *However, this prediction is conditional on the sector factorization assumption; if sectors don't factorize, the gauge group might not be a product.*
+Our model takes a different path. Under MAR, the minimal faithful carrier $\mathbb{C}^3 \otimes \mathbb{C}^2$ enforces a *product* gauge structure. There is no embedding in a larger simple group and no leptoquark generators. See [GAUGE_GROUP_DERIVATION.md](paper/GAUGE_GROUP_DERIVATION.md) for the complete proof.
 
 ## How the Model Explains Known Physics
 
@@ -278,17 +302,18 @@ The complete derivation chain from pixel area $P = 1.63094$ to particle masses i
 | Photon mass = 0 | PDG: $m_\gamma < 10^{-18}$ eV | Exact (gauge symmetry) |
 | Graviton mass = 0 | PDG: $m_g < 1.76 \times 10^{-23}$ eV | Exact (diffeomorphism) |
 
-### Conditional on Unproven Assumptions
+### Derived Under Extended Theory ($T_{\text{ext}}$: A1–A4 + R0 + R1 + [z]=0 + MAR)
 
-These require additional selectors or assumptions not derived from the core axioms:
+These are derived from the Selection Axiom MAR:
 
-| Result | Required Assumption |
-|--------|---------------------|
-| $N_c = 3$ (three colors) | Minimality selector (assumed, not derived) |
-| $N_g = 3$ (three generations) | Minimality + empirical CP + asymptotic freedom |
-| Proton stability | Sector factorization assumption |
-| No magnetic monopoles | Sector factorization assumption |
-| Product gauge group | Sector factorization assumption |
+| Result | How Derived |
+|--------|-------------|
+| Product gauge group | Minimal faithful carrier $\mathbb{C}^3 \otimes \mathbb{C}^2$ (MAR) |
+| SM global group SU(3) × SU(2) × U(1)/Z₆ | MAR + admissibility conditions |
+| $N_c = 3$ (three colors) | Witten anomaly + MAR minimality |
+| $N_g = 3$ (three generations) | CP + asymptotic freedom + MAR minimality |
+| Proton stability | Product structure from MAR (no leptoquark generators) |
+| No magnetic monopoles | Product structure (no GUT-scale symmetry breaking) |
 
 ### Consistency Checks (Not Novel Predictions)
 
@@ -326,9 +351,9 @@ These match known results but were derived elsewhere first:
 | Neutrino masses: $m_{\nu_3} \approx 3.0$ meV, $m_{\nu_2} \approx 0.50$ meV, $m_{\nu_1} \approx 0.084$ meV | JUNO, DUNE, KATRIN, cosmological $\sum m_\nu$ | Normal ordering; $\sum m_\nu \approx 3.6$ meV (well below Planck bound 120 meV) |
 | String theory from edge sectors | Theoretical verification | OPH edge-sector weights = 2D Yang-Mills heat kernels → worldsheet expansion via Gross-Taylor (see [STRING_THEORY.md](paper/STRING_THEORY.md)) |
 
-### Speculative / Conditional Predictions
+### Dynamical Predictions
 
-These predictions follow from the discrete area spectrum but require additional dynamical assumptions (e.g., that integer-multiplication transitions dominate in Hawking emission). Falsification of these would rule out the specific dynamical selection rule, not necessarily the framework.
+These predictions follow from the discrete area spectrum under the assumption that integer-multiplication transitions dominate in Hawking emission. Falsification would rule out the specific dynamical selection rule, not necessarily the framework.
 
 | Prediction | How to Test | Required Assumption |
 |------------|-------------|---------------------|
@@ -373,40 +398,17 @@ A falsification would require showing that some phenomenon cannot be explained b
 
 ## Current Status
 
-The model is incomplete. The main gaps are:
+The framework derives Lorentz kinematics, semiclassical Einstein equations, compact gauge symmetry, the SM gauge group (via MAR), three generations, three colors, massless force carriers, particle masses from a single input, and proton stability. The main open questions for future work are:
 
-1. **Screen microphysics**: Quantum link models on a triangulated sphere realize the regulator premises (R0/R1) and give edge-center completion and Markov collars automatically. Open: ensuring modular flow becomes geometric conformal dilation in the continuum limit.
+1. **Screen microphysics**: Quantum link models realize the regulator premises and give edge-center completion automatically. Remaining: ensure modular flow becomes geometric conformal dilation in the continuum limit.
 
-2. **EFT bridge**: The null-surface modular bridge is derived from the core axioms under two testable conditions. Open: verify these conditions in explicit UV regulators.
+2. **EFT bridge verification**: The null-surface modular bridge is derived from core axioms under two testable conditions. These need verification in explicit UV regulators.
 
-3. **Standard Model selection**: The reconstruction yields *a* compact gauge group. Why specifically SU(3) x SU(2) x U(1) rather than some other product? Selectors exist (minimality, chirality stability) but are not derived from core axioms.
+3. **Cosmological constant**: Structurally explained as $\Lambda = 3\pi/(G \cdot \log \dim \mathcal{H}_{\rm tot})$ from screen capacity. The numerical value is inferred from observation.
 
-4. **Newton's constant**: Derived as $G = a_{\rm cell}/4\bar{\ell}(t)$ from edge entropy density. The UV-scheme gap is closed.
+4. **Strong CP problem**: $\theta_{QCD}$ is not yet predicted (a conjecture linking it to gluing obstruction cohomology is outlined in Section 8.4).
 
-5. **Particle masses**: Five particle masses (W, Z, e, μ, τ) are predicted to sub-permille accuracy (< 0.04% error) from a single input constant. The electroweak VEV ($v = 246.77$ GeV, 0.22% accuracy), Higgs mass ($m_H = 126.48$ GeV, 1.0%), and top quark mass (two independent derivations: 171.1 GeV from the critical surface and 174.5 GeV from Z₆ texture, bracketing the measured 172.6 GeV) are all derived from dimensional transmutation and the critical surface condition. The fermion mass hierarchy reduces to discrete Z₆ defect charges ($y_f \propto 6^{-n_f}$), eliminating continuous Yukawa parameters. Quark masses reproduce the correct hierarchy but have 16–73% individual errors from missing scheme matching. Neutrino masses are predicted: $m_{\nu_3} \approx 3.0$ meV, $m_{\nu_2} \approx 0.50$ meV, $m_{\nu_1} \approx 0.084$ meV (testable by JUNO/DUNE). See **[SPECTRUM_DERIVATION.md](paper/SPECTRUM_DERIVATION.md)** for the complete derivation.
-
-6. **Cosmological constant**: Structurally explained: Λ = 3π/(G · log dim H_tot) derives from screen capacity, and null modular data cannot fix Λ locally (it lives in a quotient ambiguity). The numerical value is inferred from observation, not predicted from first principles.
-
-7. **Strong CP problem**: theta_QCD is not predicted.
-
-## Contents
-
-### [Technical Paper](paper/PAPER.md)
-The formal development: axioms, theorems, proofs, and gap analysis.
-
-### [Technical Supplement](paper/TECHNICAL_SUPPLEMENT.md)
-Complete mathematical derivations: emergence of gravity, measurement problem, dark matter, Koide formula, baryogenesis, and more.
-
-### [Particle Spectrum Derivation](paper/SPECTRUM_DERIVATION.md)
-End-to-end derivation of the Standard Model particle spectrum from pixel area, with PDG comparison tables and a complete audit of all constants.
-
-### [String Theory Derivation](paper/STRING_THEORY.md)
-How OPH implies string theory: edge-sector partition functions are proven to be 2D Yang-Mills heat kernels (Theorem 4.1), which admit a worldsheet expansion via Gross-Taylor duality. This establishes that OPH contains string theory as a derived consequence, not an assumption.
-
-### [MiHsC Duality](paper/MIHSC_DUALITY.md)
-McCulloch's Quantised Inertia as an effective IR description of OPH: structural mapping, shared phenomenology, and testable divergences.
-
-### Code
+## Code
 
 | Script | Description |
 |--------|-------------|

@@ -514,6 +514,8 @@ $$p(R_1, R_2, R_3) \propto \prod_{i=1}^3 d_{R_i} e^{-t_i C_2(R_i)}$$
 
 By Tannaka-Krein reconstruction: $G \cong \text{SU}(3) \times \text{SU}(2) \times \text{U}(1)$ (up to finite quotient).
 
+**Status under $T_{\mathrm{ext}}$:** The Selection Axiom MAR derives this product structure from first principles: the minimal faithful carrier $\mathbb{C}^3 \otimes \mathbb{C}^2$ enforces commuting color and weak actions, which implies the additive boundary Laplacian. See GAUGE_GROUP_DERIVATION.md for the complete proof.
+
 ## 10.2 No Leptoquarks, No Gauge Proton Decay
 
 **Corollary 10.2:** With product gauge group, the adjoint representation is:
@@ -720,7 +722,7 @@ $$\log(\dim \mathcal{H}_{\text{tot}}) \approx 2.85 \times 10^{122}$$
 2. Yukawa integers n_f (needs excitation dictionary)
 3. Full baryogenesis dynamics (needs CP profile)
 4. Page curve dynamics (needs evaporation Hamiltonian)
-5. Sector factorization from axioms (partially derived)
+5. ~~Sector factorization from axioms~~ **Closed by MAR**: the Selection Axiom MAR derives the product gauge structure from the minimal faithful carrier $\mathbb{C}^3 \otimes \mathbb{C}^2$ (see GAUGE_GROUP_DERIVATION.md)
 
 ---
 

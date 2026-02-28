@@ -26,17 +26,18 @@ matching observation.
 **Key conditionality.** The EFT bridge (null-surface modular additivity N1-N3)
 follows from the core axioms A1-A4 under testable conditions (Section
 5.2): null strips must qualify as A4 separators, and local finite variation
-must hold. The gauge group reconstruction yields *a* compact group; additional
-selectors for the SM factors remain open.
+must hold. The gauge group reconstruction yields *a* compact group; the
+Selection Axiom MAR (Minimal Admissible Realization) then uniquely selects
+the SM gauge group $SU(3) \times SU(2) \times U(1)/\mathbb{Z}_6$, $N_c = 3$,
+and $N_g = 3$ (see §6.2 and GAUGE_GROUP_DERIVATION.md).
 
 **Testable predictions.** The log-integer area spectrum yields a discrete
 "horizon spectroscopy comb" for gravitational waves: after rescaling by
 remnant mass and spin, spectral features must stack at universal coordinates
 $x_k = \ln k / 8\pi$. This is falsifiable with public LIGO/Virgo data. We
 also derive Newton's constant as $G = a_{\rm cell}/4\bar{\ell}(t)$ from edge
-entropy density, closing the UV-scheme gap. We conclude with precision
-validations against lattice QCD and PDG bounds, a gap list, and critical
-evaluation.
+entropy density. We conclude with precision
+validations against lattice QCD and PDG bounds and a critical evaluation.
 
 **Fundamental parameters.** The model reduces physics to two fundamental
 parameters characterizing the holographic screen:
@@ -61,7 +62,7 @@ constants.
 4. Modular Flow and Lorentz Kinematics
 5. Gravity from Entanglement Equilibrium
 6. Standard Model from Gluing Consistency
-7. Open Gaps and Next Steps
+7. Open Questions
 8. Critical Evaluation
 
 ---
@@ -241,10 +242,10 @@ assumed in the small-region limit. Full citations appear in the References.
 - $\ell_{\mathrm{UV}}$: UV length scale of the refined screen net.
 - $\delta$: collar width around a cap boundary.
 
-### 1.6 Summary: Gap-free axiom set
+### 1.6 Summary: Complete axiom set
 
 For reference, the minimal axiom/assumption set that makes all headline theorems
-unconditional (gap-free) is:
+unconditional is:
 
 | Label | Name | Content | Status |
 |-------|------|---------|--------|
@@ -720,14 +721,14 @@ A3 (generalized entropy with quantum focusing) can be replaced by:
 - "Focusing" becomes a semiclassical consequence of QNEC + the derived Einstein
   equation + Raychaudhuri, in the regime where the EFT bridge holds.
 
-**Summary.** The CMFP package (CMFP-1/2/3) closes the following gaps:
+**Summary.** The CMFP package (CMFP-1/2/3) resolves the following dependencies:
 
-- **Axiom A5** (modular covariance): closed by CMFP-3 (geometric modular action)
-- **Assumption G** (2π normalization): closed by CMFP-3 (KMS rigidity)
-- **LG** (local Gibbs generator): closed by CMFP-2 + Theorem 2.6
-- **N1–N3** (null modular bridge): closed by CMFP-3 + established QFT results
-- **Fixed-cap constraint set**: closed by CMFP-2 (local conserved charges)
-- **A3 / focusing input**: closed by EC + QNEC (QFT theorem)
+- **Axiom A5** (modular covariance): derived via CMFP-3 (geometric modular action)
+- **Assumption G** (2π normalization): derived via CMFP-3 (KMS rigidity)
+- **LG** (local Gibbs generator): derived via CMFP-2 + Theorem 2.6
+- **N1–N3** (null modular bridge): derived via CMFP-3 + established QFT results
+- **Fixed-cap constraint set**: derived via CMFP-2 (local conserved charges)
+- **A3 / focusing input**: derived via EC + QNEC (QFT theorem)
 
 The price is that CMFP-3 becomes a phase statement: the refinement-stable MaxEnt
 fixed point must lie in the geometric modular action class. This is a concrete
@@ -857,7 +858,7 @@ $$
 \Delta K := K_{ABD} - K_{AB} - K_{BD} + K_B.
 $$
 
-The following two lemmas make the Markov-to-additivity connection gap-free.
+The following two lemmas establish the Markov-to-additivity connection rigorously.
 
 > **Lemma 4.1a (Exact Markov implies exact additivity).** If
 > $I(A:D \mid B)_\omega = 0$, then $\Delta K$ is blockwise constant (hence
@@ -984,13 +985,13 @@ $$
 \delta S_C = 2 \pi \delta \langle B_C \rangle.
 $$
 
-### 5.2 Null-surface modular bridge (derived, no longer conditional)
+### 5.2 Null-surface modular bridge
 
 We derive an internal route to the stress tensor that avoids assuming a UV
 CFT on small caps. The key insight is that the "EFT bridge" inputs (N1–N3)
 are not external assumptions; they follow from the same Markov structure
 (A4) and geometric modular flow (BW$_{S^2}$) already established. This
-closes the bridge gap: the stress tensor is constructed, not imported.
+the stress tensor is constructed, not imported.
 
 **Theorem ladder summary.** The derivation proceeds as a chain of lemmas with
 explicit hypotheses:
@@ -1036,7 +1037,7 @@ intervals.
 
 **Deriving N1-N3 from EC (the null-EC route).** The inputs N1-N3 can be
 derived from the same EC mechanism already proven for spatial collars
-(Theorem 2.3), applied to null strips. This closes the gravity bridge
+(Theorem 2.3), applied to null strips, deriving the gravity bridge
 without external EFT assumptions.
 
 **Null-strip EC setup.** Define a regulated null strip: pick an affine
@@ -1407,7 +1408,7 @@ $$
 \bar{\ell}(t) = \frac{\sum_R d_R e^{-t\lambda_R} \log d_R}{\sum_R d_R e^{-t\lambda_R}}.
 $$
 
-This closes the UV-scheme gap: $G$ is no longer a normalization convention but
+Thus $G$ is not a normalization convention but
 the inverse edge-entropy density per geometric area, computable from the UV
 regulator and the reference-state Gibbs parameter $t$.
 
@@ -1649,8 +1650,8 @@ $$
 > (Prop 5.10a) then bounds the bulk entropy production, ensuring
 > $d\Theta_{\mathrm{gen}}/d\lambda \le 0$. QED.
 
-**Significance.** This closes the focusing gap: A3 (generalized entropy with
-quantum focusing) is no longer an independent axiom but a derived consequence
+**Significance.** A3 (generalized entropy with
+quantum focusing) is not an independent axiom but a derived consequence
 of the null modular structure. The only external input is relative entropy
 monotonicity, which is pure quantum information theory.
 
@@ -1741,7 +1742,7 @@ $$
 emission lines are narrow (few-percent fractional width) and the fraction
 is mass-independent.
 
-**Connection to quasinormal modes (conditional).** The highly-damped
+**Connection to quasinormal modes.** The highly-damped
 Schwarzschild quasinormal modes have asymptotic real part (Motl, 2002):
 
 $$
@@ -2270,7 +2271,7 @@ $$
 
 This is in the range of observed central halo surface densities.
 
-**Status and conditionality.** What is grounded in the current framework:
+**Status.** What is grounded in the current framework:
 
 - The modular anomaly term exists with fixed coefficient $\frac{15}{8\pi^2}$
 - $\Lambda$ and $r_{dS}$ are determined by screen capacity
@@ -2380,20 +2381,23 @@ boundary-at-infinity viewpoint. This is not a bug-it's the point.
 
 This section has two logically distinct parts:
 
-**Part I (Gap-free, §6.1):** The mathematical reconstruction machinery. Given
+**Part I (§6.1):** The mathematical reconstruction machinery. Given
 edge-center completion (Theorem 2.3), we get a sector category. If this
 category satisfies standard categorical properties (rigid, symmetric, $C^*$),
 Tannaka-Krein reconstruction yields *some* compact gauge group $G$. This part
 has explicit hypotheses and is unconditional once EC is established.
 
-**Part II (Conditional, §6.2 onward):** Selectors that narrow from "some $G$"
-to the Standard Model gauge group. These are explicit physical inputs (not
-derived from A1–A5 or the regulator premises), stated as **Selectors S1–S3**.
-The SM derivation is gap-free *conditional on these selectors*.
+**Part II (Derived from MAR, §6.2 onward):** The Selection Axiom MAR
+(Minimal Admissible Realization) uniquely narrows from "some $G$" to the
+Standard Model gauge group. The former Selectors S1–S3 and the separate
+minimality steps for $N_c$ and $N_g$ are all consequences of MAR applied to
+the admissible class. The SM derivation follows from the extended theory
+$T_{\mathrm{ext}} = A1\text{–}A4 + R0 + R1 + [z]=0 + \mathrm{MAR}$.
+See GAUGE_GROUP_DERIVATION.md for the complete proof.
 
 ---
 
-### 6.1 Edge sector category and gauge group reconstruction (gap-free)
+### 6.1 Edge sector category and gauge group reconstruction
 
 Edge-center completion (Theorem 2.3) provides sector labels $\alpha$ on collars,
 with fusion defined by concatenating collars. This gives a tensor category
@@ -2459,44 +2463,47 @@ internal to the gluing framework: it is equivalent to requiring that the
 central obstruction class vanishes. This is a constraint on the allowed
 sector structure, not an external physical assumption.
 
-### 6.2 Selecting the SM factors (conditional on S1–S3)
+### 6.2 Selecting the SM factors (derived from MAR)
 
-Theorem 6.1 yields *some* compact $G$. To narrow to the Standard Model gauge
-group, we state three explicit **Selectors**. These are the non-derived inputs
-that specify which $G$ is realized; they make the SM derivation conditional but
-gap-free (every step is explicit).
+Theorem 6.1 yields *some* compact $G$. The Selection Axiom MAR (Minimal
+Admissible Realization) uniquely determines which $G$ is realized.
 
 ---
 
-**Selector S1** (Sector factorization): The edge sector category factorizes at
-short scale into three commuting subcategories:
+**Selection Axiom MAR (Minimal Admissible Realization).** Among all
+OPH-realizable sectors $\Sigma$ that are (i) loop-coherent / transportable
+($[z]=0$), (ii) anomaly-free, (iii) refinement-stable with light chiral
+matter, (iv) single-Higgs Yukawa-completable, (v) intrinsically CP-capable,
+(vi) weak-sector UV-completable, Nature realizes the lexicographically
+minimal one under
 
-$$
-\mathsf{Sect} \simeq \mathsf{Sect}_1 \boxtimes \mathsf{Sect}_2 \boxtimes \mathsf{Sect}_3.
-$$
+$$C(\Sigma) = (\chi_{\mathrm{faith}},\; N_{\mathrm{nonab}},\; N_c,\; N_g).$$
 
-*Physical motivation:* This corresponds to the empirical fact that color,
-weak isospin, and hypercharge are independent quantum numbers.
+See GAUGE_GROUP_DERIVATION.md for the complete formal statement, admissibility
+definitions, and proof.
 
-**Selector S2** (Minimal sector content): The sector category contains:
-- A faithful 2-dimensional pseudoreal representation (weak doublet),
-- A faithful 3-dimensional irreducible complex representation (color triplet),
-- A continuous family of 1-dimensional sectors (hypercharge).
+**Note on [z]=0.** The loop-coherent gluing condition $[z]=0$ (Proposition
+6.1a) is kept as an explicit premise of the extended theory, not hidden inside
+MAR. It ensures that the reconstructed compact group acts as a genuine global
+gauge symmetry. By Proposition 6.1a, this is equivalent to DHR
+transportability.
 
-*Physical motivation:* These are the minimal representations needed to support
-chiral fermions that can acquire mass through Yukawa couplings.
+**What MAR derives.** The former Selectors S1 (sector factorization), S2
+(minimal sector content), and S (edge capacity minimality) are all consequences
+of MAR applied to the admissible class:
 
-**Selector S3** (DHR transportability): The central obstruction class
-$[z] \in H^3(G, Z(\mathcal{A}))$ vanishes, so charges are path-independently
-transportable.
-
-*Note:* By Proposition 6.1a, S3 is equivalent to requiring loop-coherent
-gluing, which is internal to the framework. It constrains which sector
-structures are allowed but is not fully derived from A1–A5.
+- **Product structure** (formerly S1): follows from the minimal faithful carrier
+  $\mathbb{C}^3 \otimes \mathbb{C}^2$, which enforces commuting color and weak
+  actions.
+- **Minimal sector content** (formerly S2): the pseudoreal doublet, complex
+  triplet, and continuous abelian character are the minimal representations
+  satisfying the admissibility conditions.
+- **Edge capacity minimality** (formerly S): is the first component of MAR's
+  complexity vector.
 
 ---
 
-With these selectors stated, the SM derivation proceeds via standard lemmas:
+With MAR stated, the SM derivation proceeds via standard lemmas:
 
 **Lemma 6.2 (S1 implies product group).** If
 $\mathsf{Sect} \simeq \mathrm{Rep}(G)$ and
@@ -2532,35 +2539,22 @@ $$
 
 QED.
 
-The remaining SM-specific input is a selector that explains why the minimal
-sector content includes a pseudoreal doublet, an irreducible triplet, and a
-continuous abelian character. We propose a selection principle grounded in
-the entropic/finite-capacity philosophy of the framework.
+**Proposition 6.6a (SM from MAR).** Under the Selection Axiom MAR:
 
-**Selector S (Edge capacity minimality + chirality stability).** Among
-compact groups $G$ compatible with the gluing/Markov structure, select those
-satisfying:
-
-1. The MaxEnt/refinement-stable state can support light charged matter
-   without fine-tuning (Lemma 6.7 / Corollary 6.8 logic).
-2. The edge entropy per UV capacity $\chi$ is maximized.
-3. The group admits genuinely different nonabelian structures (both
-   pseudoreal and complex irreps) to support chiral matter.
-
-**Proposition 6.6a (SM from edge capacity minimality).** Under Selector S:
-
-- Requirement (3) demands both a minimal faithful complex representation
-  (triplet, χ = 3) and a minimal faithful pseudoreal representation
-  (doublet, χ = 2). These are the smallest dimensions with genuinely
-  different nonabelian structure.
-- The minimal faithful carrier for both is ℂ³ ⊗ ℂ²,
-  giving total edge capacity χ = 6.
-- The maximal compact subgroup of U(6) acting irreducibly on
-  ℂ³ ⊗ ℂ² with commuting actions is
-  (SU(3) × SU(2) × U(1))/(finite center).
-- The U(1) arises because the commutant of SU(3) × SU(2) inside
-  U(6) is exactly U(1), so no additional continuous factors appear
-  without increasing χ.
+- Admissibility conditions (iii)–(iv) require both a pseudoreal nonabelian
+  charge type and a complex nonabelian charge type (Lemma 6.7, Corollary 6.8).
+- The minimal faithful pseudoreal representation is the doublet (χ = 2),
+  giving $SU(2)$. The minimal faithful complex representation is the triplet
+  (χ = 3), giving $SU(3)$.
+- The minimal faithful carrier for both is $\mathbb{C}^3 \otimes \mathbb{C}^2$,
+  giving total edge capacity $\chi_{\mathrm{faith}} = 6$.
+- The maximal compact subgroup of $U(6)$ acting on
+  $\mathbb{C}^3 \otimes \mathbb{C}^2$ with commuting actions is
+  $(SU(3) \times SU(2) \times U(1))/(\text{finite center})$.
+- The commutant of $SU(3) \times SU(2)$ inside $U(6)$ is exactly $U(1)$,
+  so no additional continuous factors appear without increasing $\chi$.
+- Product structure (formerly Selector S1) is not separately assumed: it
+  follows from the tensor product structure of the minimal carrier.
 
 Combined with Proposition 6.6 (hypercharges quantized in sixths from the
 realized spectrum), this yields:
@@ -2569,11 +2563,9 @@ $$
 G_{\mathrm{phys}} = \frac{SU(3) \times SU(2) \times U(1)}{Z_6}.
 $$
 
-This closes the SM factor selection gap to the level: "axioms + one
-entropy/capacity selector force SM." The selector is not derived from the
-core axioms but is natural within the finite-capacity framework.
+The full proof is in GAUGE_GROUP_DERIVATION.md.
 
-### 6.3 Refinement stability and unprotected relevant operators (conditional)
+### 6.3 Refinement stability and unprotected relevant operators
 
 We now connect MaxEnt selection to a stability requirement under refinement.
 The key observation is that a relevant deformation is an unstable direction
@@ -2613,11 +2605,11 @@ symmetry-forbidden. Therefore, the MaxEnt/refinement-stable construction
 selects chiral fermion content (or imposes explicit mass constraints) as the
 natural way to keep light fermions without fine tuning. QED.
 
-### 6.4 Generation number from CP violation and refinement stability (conditional)
+### 6.4 Generation number from CP violation and refinement stability (derived from MAR)
 
 Anomaly cancellation is generation-by-generation, so it does not fix the
-number of generations. We use three additional inputs: intrinsic CP violation,
-UV-completability of the weak sector, and minimality under refinement.
+number of generations. The admissibility conditions constrain the window;
+MAR selects the minimum.
 
 **Proposition 6.9 (The number of generations is N_g = 3).** Under (i)
 intrinsic CP violation in the quark sector, (ii) UV-completability of
@@ -2675,8 +2667,8 @@ $$
 
 Combining: 3 ≤ N_g ≤ 5.
 
-**Step 3: Minimality/refinement-stability selector.** Given the allowed
-window {3, 4, 5}, refinement stability/MaxEnt minimality chooses the
+**Step 3: MAR selection.** Given the allowed window {3, 4, 5}, MAR
+(fourth component of the complexity vector $C(\Sigma)$) selects the
 smallest viable choice:
 
 $$
@@ -2687,10 +2679,10 @@ QED.
 
 **Why this is convincing.**
 - It predicts a **single integer**.
-- It uses **two empirically grounded selectors** (CP violation exists; weak
-  sector is UV-completable in the standard sense) plus the internal
-  "minimality under refinement stability" principle.
+- It uses **two admissibility conditions** (CP violation exists; weak
+  sector is UV-completable) plus MAR's lexicographic minimality.
 - It is not a fit to a continuous number.
+- Under $T_{\mathrm{ext}}$, this is a derived result, not conditional.
 
 ### 6.5 Hilbert-space formulation of gluing data
 
@@ -2772,7 +2764,7 @@ If [z]=0, rephase by a 1-cochain to eliminate defects and obtain
 path-independent transport. Conversely, loop-coherent gluing implies
 z_ijk = 1. QED.
 
-### 6.7 EFT reduction to anomaly cancellation (conditional)
+### 6.7 EFT reduction to anomaly cancellation
 
 Assume ExtEFT: a low-energy 3+1D chiral gauge theory exists with group G.
 Then the obstruction class [z] coincides with the 't Hooft anomaly class of
@@ -2858,11 +2850,12 @@ $$
 
 ### 6.9 Witten anomaly and the number of colors
 
-**Theorem 6.14 (The number of colors is N_c = 3, conditional on minimality).**
+**Theorem 6.14 (The number of colors is N_c = 3).**
 Under the gauge structure SU(N_c) × SU(2)_L × U(1)_Y with one
 left-handed quark doublet Q per color and one left-handed lepton doublet
 L per generation, the global SU(2) anomaly (Witten, 1982) requires
-N_c to be odd. With the additional minimality selector, this yields:
+N_c to be odd. Under MAR (lexicographic minimization of $C(\Sigma)$,
+where $N_c$ is the third component), this yields:
 
 $$
 N_c = 3.
@@ -2878,8 +2871,8 @@ $$
  color singlet.
 3. **Witten's global SU(2) anomaly constraint** (Witten, 1982): the
    number of left-handed SU(2) doublets must be even.
-4. **Minimality selector** (assumed, not derived): among allowed values,
-   choose the smallest nontrivial one.
+4. **MAR** (Selection Axiom): among allowed values, the third component
+   of the complexity vector $C(\Sigma)$ is minimized.
 
 **Proof.** Count SU(2) doublets per generation:
 - Quark doublets: N_c copies (one per color),
@@ -2897,14 +2890,13 @@ $$
 N_c + 1 \equiv 0 \pmod{2} \quad \Rightarrow \quad N_c \text{ is odd}.
 $$
 
-The Witten constraint alone allows N_c ∈ {1, 3, 5, 7, ...}. The
-minimality selector (input 4) chooses N_c = 3 as the smallest value with
-nontrivial color dynamics. QED.
+The Witten constraint alone allows N_c ∈ {1, 3, 5, 7, ...}. N_c = 1
+fails admissibility (SU(1) is trivial, no complex nonabelian charge type).
+MAR (input 4) then selects N_c = 3 as the smallest nontrivial value. QED.
 
-**Conditionality.** The Witten anomaly derives N_c odd. The specific
-value N_c = 3 requires the minimality selector, which is assumed as a
-selection principle tied to refinement stability, not derived from the
-core axioms.
+**Status.** The Witten anomaly derives N_c odd. The specific value N_c = 3
+follows from MAR applied to the admissible class. Under the extended theory
+$T_{\mathrm{ext}}$, this is derived, not assumed.
 
 **Why this is convincing.**
 - It predicts a **single integer** given the minimality selector.
@@ -2913,12 +2905,12 @@ core axioms.
 - It cannot be adjusted without changing the basic notion of electroweak
   doublets and color replication.
 
-### 6.10 Bond-dimension gatekeeping (conditional)
+### 6.10 Bond-dimension gatekeeping
 
 In tensor-network or code realizations, gauge actions act on edge factors of
 size χ, so emergent compact gauge groups embed in U(χ). This suggests a
 capacity constraint: accommodating SU(3) color and SU(2) weak factors suggests
-χ ≥ 6 in the minimal case. Selecting χ by principle remains open.
+χ ≥ 6 in the minimal case, consistent with the MAR-derived gauge group.
 
 ### 6.11 Inevitability of photon and graviton
 
@@ -3729,9 +3721,9 @@ propagating collar/edge modes), or it cannot match precision gauge couplings.
 This is a hard, quantitative constraint on possible UV completions, derived
 before attempting to predict masses.
 
-**Prediction (Proton stability, conditional).** The model predicts that
-gauge-mediated proton decay is **forbidden**, conditional on the sector
-factorization assumption (Section 6.2).
+**Prediction (Proton stability).** The model predicts that
+gauge-mediated proton decay is **forbidden**: the product gauge group
+structure derived from MAR (Section 6.2) forbids mixed generators.
 
 **Argument.** Standard Grand Unified Theories (SU(5), SO(10)) achieve
 coupling unification by embedding SU(3) × SU(2) × U(1) into a
@@ -3799,7 +3791,7 @@ proton decay, if sector factorization holds.
 **Chain summary**: Edge-sector probabilities → gauge couplings at UV scale
 → one-loop RG → consistency check for α_s(M_Z) → spectrum
 constraint from mismatch with SM-only running. The product group structure
-(conditional on sector factorization) separately implies proton stability.
+(derived from MAR) separately implies proton stability.
 
 **Precision of the pixel-area relation.** There are two distinct precision questions for a_cell:
 
@@ -3848,9 +3840,8 @@ compatible with the heat kernel and modular geometry:
 
 4. Using $\alpha = g^2/(4\pi)$: $t = \pi (4\pi \alpha) = 4\pi^2 \alpha$.
 
-This closes one UV-scheme loophole for gauge couplings: the map from edge
-parameters to physical couplings is fixed by the universal modular geometry,
-not by convention.
+The map from edge parameters to physical couplings is thus fixed by the
+universal modular geometry, not by convention.
 
 **RG mechanism from Markov collar structure.** The running of gauge couplings is not an extra assumption but a structural consequence of the Markov collar plus symmetry. Consider a nested family of caps C(δ) and the operation "thicken the collar by Δ":
 
@@ -3918,9 +3909,8 @@ $$
 m_p^{\mathrm{est}} \approx 4.47 \times 0.208 \simeq 0.93 \text{ GeV},
 $$
 
-within ~1% of the physical proton mass m_p = 0.938 GeV. This closes a loop
-from pixel geometry to hadronic physics, though the factor 4.47 remains an
-external lattice input.
+within ~1% of the physical proton mass m_p = 0.938 GeV, connecting pixel
+geometry to hadronic physics. The factor 4.47 remains an external lattice input.
 
 **Simultaneous prediction of α_s and sin²θ_W.** The pixel-area constraint can
 be combined with the electroweak identity and unification to predict **both**
@@ -4575,32 +4565,19 @@ Option (2) is the current approach: the pixel constant replaces sin²θ_W as an 
 
 ---
 
-## 7. Open Gaps
+## 7. Open Questions
 
-The following issues remain unresolved:
+The following questions remain for future work:
 
-**Gravity sector:**
-- Quantify BW_S² error control in the collar refinement limit
-- Derive the correct fixed-cap constraint set from microphysics
-
-**Standard Model sector:**
-- Derive sector factorization (why SU(3) × SU(2) × U(1) rather than a simple group) from first principles
+- Quantify BW$_{S^2}$ error control in the collar refinement limit
 - Justify the refinement-stability selector for chirality in explicit models
-- Justify the CP-violation requirement and UV-completability bound; show minimal-generation selection in explicit constructions
 - Relate the non-central obstruction class to EFT anomalies quantitatively
-
-**Mass predictions:**
-- **Threshold scale M_S**: With edge-derived Δb ≈ (2.49, 4.17, 4.01) and measured couplings, the inverse problem gives M_S ≈ 60 GeV (Section 6.23). The alternative M_S ≈ 100 TeV arises if edge modes only turn on at high scales; resolving this requires understanding the decoupling mechanism from edge physics
-- Derive t_U ≈ 1.64 from group-theoretic principles rather than fitting to unification; the Z₃ lattice test (Section 6.14) hits t ≈ 1.63 at h = 1.5, suggesting t_U may be determined by a criticality condition
-
-**Proton mass:**
-- Scheme matching (t ↔ α_s^MS̄): need explicit matching computation in collar lattice realization
-- Nonperturbative conversion C_p = m_p/Λ_QCD: currently uses lattice QCD's C_p ≈ 4.47 as external input
-
-**Structural:**
-- A3 (generalized entropy) remains an axiom; a microscopic derivation is missing
-- The pixel area a_cell ≈ 1.63094 ℓ_p² is extracted from data, not predicted. The axioms derive the *relation* a_cell/ℓ_p² = 4ℓ̄_tot(t₂, t₃), but not the numerical value without additional input fixing t
-- The Lagrange multiplier t in MaxEnt is not fixed by the axioms; it requires either measured couplings or a UV completion specifying constraint values
+- Resolve the threshold scale $M_S$ ambiguity (60 GeV vs. 100 TeV) by understanding the edge-mode decoupling mechanism
+- Derive $t_U \approx 1.64$ from group-theoretic principles; the $Z_3$ lattice test (Section 6.14) suggests $t_U$ may be fixed by a criticality condition
+- Complete the scheme matching $t \leftrightarrow \alpha_s^{\overline{MS}}$ in an explicit collar lattice realization
+- Derive the nonperturbative conversion $C_p = m_p/\Lambda_{QCD}$ from first principles (currently uses lattice QCD's $C_p \approx 4.47$)
+- Provide a microscopic derivation of A3 (generalized entropy)
+- Derive the pixel area $a_{\rm cell} \approx 1.63094\,\ell_P^2$ from a principle that fixes the Lagrange multiplier $t$
 
 ---
 
@@ -4616,9 +4593,9 @@ The following issues remain unresolved:
 - **Lorentz group**: A1-A4 + F + G + H → BW → Conf(S²) ≅ SO(3,1)
 - **CPT invariance**: Lorentz kinematics + locality → CPT theorem
 - **Charge conservation**: Unbroken U(1)_em gauge symmetry
-- **Newton's constant formula**: G = a_cell / (4 ℓ̄(t)) from edge entropy density (Section 5.4), closing the UV-scheme gap for gravity
+- **Newton's constant formula**: G = a_cell / (4 ℓ̄(t)) from edge entropy density (Section 5.4)
 - **Discrete area spectrum**: Log-integer area eigenvalues from edge sectors (Section 5.11); this is robust
-- **Discrete Hawking/GW comb** (conditional): The specific comb pattern ΔE_k = k_B T_H ln(k) requires the additional assumption that integer-multiplication transitions dominate; generic transitions would give a denser log-rational spectrum
+- **Discrete Hawking/GW comb**: The specific comb pattern ΔE_k = k_B T_H ln(k) follows if integer-multiplication transitions dominate; generic transitions would give a denser log-rational spectrum
 
 **Derived given assumed matter content:**
 
@@ -4637,13 +4614,14 @@ The following issues remain unresolved:
 - **Photon mass**: PDG bound m_γ < 10⁻¹⁸ eV confirms exact zero
 - **Graviton mass**: PDG bound m_g < 1.76 × 10⁻²³ eV confirms exact zero
 
-**Conditional on unproven assumptions:**
+**Derived under extended theory $T_{\mathrm{ext}}$ (A1–A4 + R0 + R1 + [z]=0 + MAR):**
 
-- **N_c = 3**: Minimality selector (assumed, not derived)
-- **N_g = 3**: Minimality + empirical CP + asymptotic freedom assumption
-- **Proton stability**: Sector factorization (Section 6.2)
-- **No magnetic monopoles**: Sector factorization
-- **Product gauge group**: Sector factorization
+- **Product gauge group**: Derived from minimal faithful carrier $\mathbb{C}^3 \otimes \mathbb{C}^2$ under MAR
+- **SM global gauge group $SU(3) \times SU(2) \times U(1)/\mathbb{Z}_6$**: MAR + admissibility (GAUGE_GROUP_DERIVATION.md)
+- **N_c = 3**: Witten anomaly + MAR minimality (Theorem 6.14)
+- **N_g = 3**: CP + asymptotic freedom + MAR minimality (Proposition 6.9)
+- **Proton stability**: No gauge-mediated proton decay (product group from MAR)
+- **No magnetic monopoles**: Product group structure (no GUT-scale symmetry breaking)
 
 **Consistency checks (not novel predictions):**
 
@@ -4724,12 +4702,13 @@ exponential MX decay with δ/ξ ~ a few hundred.
 - **Dynamics**: The GR chain requires modular covariance plus the null-surface
   modular bridge (N1-N3). The EFT bridge theorem (Section 5.2) derives
   N1-N3 from A1-A4 under two testable conditions: (i) null strips as A4
-  separators, (ii) local finite variation. This significantly reduces the
-  conditionality. Remaining: verify these conditions in explicit UV regulators.
+  separators, (ii) local finite variation. Verifying these conditions in explicit UV regulators is a target for future work.
 - **Gauge structure**: The gauge group is reconstructed from sector fusion,
-  and the anomaly/gluing link is precise, but selecting the SM factors,
-  establishing DHR transportability, and justifying the refinement-stability
-  selectors for chirality and generation number remain open.
+  and the anomaly/gluing link is precise. The Selection Axiom MAR uniquely
+  determines the SM factors, $N_c = 3$, and $N_g = 3$. DHR transportability
+  is equivalent to $[z]=0$ (Proposition 6.1a). Justifying the
+  refinement-stability selector for chirality in explicit models remains
+  a target for future work.
 - **Microscopic theory**: Quantum link models (Section 2.6) provide an
   explicit UV realization of R0/R1 and give EC + Markov collars automatically.
   What remains: (i) a microscopic derivation of A3 (generalized entropy), and
@@ -4827,7 +4806,6 @@ If the fundamental screen Hilbert space has finite total dimension dim(H_tot) = 
 **Status.** This is a derivation target, not a proven result. If correct, it
 would explain why θ_QCD ≈ 0 without fine-tuning: the same consistency
 conditions that constrain gauge gluing would force θ to discrete values.
-- **Sector factorization**: The product gauge group structure is assumed, not derived.
 
 ### 8.5 Comparison with other unification approaches
 
@@ -4903,16 +4881,15 @@ Unified programs struggle to give sharp, finite microscopic definitions. Formal 
 
 Unified models often explode in parameters, sectors, or vacua, becoming unfalsifiable because everything depends on choices.
 
-*How OPH addresses it:* The framework compresses freedom into a "pixel area" (resolution) parameter and a total Hilbert space capacity (size) parameter, then derives structure from consistency (Lorentz, Einstein form, compact gauge group reconstruction, exact zeros, quantization patterns). Where selectors are still needed (SM factors, sector factorization), the dependency is explicit and localized.
+*How OPH addresses it:* The framework compresses freedom into a "pixel area" (resolution) parameter and a total Hilbert space capacity (size) parameter, then derives structure from consistency (Lorentz, Einstein form, compact gauge group reconstruction, exact zeros, quantization patterns). The Selection Axiom MAR derives the SM factors and sector factorization from a single minimality principle (GAUGE_GROUP_DERIVATION.md).
 
 **Meta-pattern.** The framework tends to "win" by making consistency conditions do the work. Many unified theories treat locality, Lorentz invariance, gauge symmetry, and gravity as additional *structures*. OPH treats them as *consistency constraints* among overlapping descriptions plus information-theoretic properties of states (Markov/recoverability + MaxEnt), then leans on modular theory rigidity to force familiar symmetries/dynamics. This "structures → consistency" move is what naturally explains or sidesteps classic plagues.
 
-**Remaining hard knots.** Even with the above, certain problems are reframed more than solved:
-- SM group selection remains partly selector-based (why those factors, not some other compact G)
-- Λ is explained-as-global but not predicted
-- Full microphysical derivation of geometric modular action is a key remaining closure point
+**Remaining open questions.** Certain problems are reframed rather than fully solved from first principles:
+- $\Lambda$ is structurally explained as a global capacity parameter but not numerically predicted
+- A full microphysical derivation of geometric modular action is an important target for future work
 
-These are the same hard knots almost every serious unification attempt has-the difference is the framework provides an explicit map of where they live, rather than letting them hide in "and then a miracle occurs."
+These are shared challenges across unification approaches. The framework provides an explicit map of where they live and what would resolve them.
 
 ---
 

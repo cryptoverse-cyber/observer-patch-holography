@@ -66,9 +66,9 @@ The prediction code enforces a runtime mutation test: after computing all predic
 
 | Constant | Value | Code variable | Derivation | PAPER.md ref |
 |----------|-------|---------------|------------|-------------|
-| $N_c$ (colors) | 3 | `N_c_DEFAULT` | Witten's global SU(2) anomaly requires $N_c + 1$ SU(2) doublets per generation to be even, so $N_c$ must be odd. Among odd values $\{1, 3, 5, \ldots\}$, **minimality** (the MaxEnt/refinement-stability selector of §6.3) picks the smallest nontrivial value. $N_c = 1$ is excluded because SU(1) is trivial (no strong force). **Result**: $N_c = 3$. | Theorem 6.14 (§6.9) |
-| $N_g$ (generations) | 3 | `N_g_DEFAULT` | Three independent constraints narrow the window: (1) CP violation requires $N_g \geq 3$ (the CKM matrix has $(N_g-1)(N_g-2)/2$ CP-violating phases; $N_g < 3$ gives zero). (2) Asymptotic freedom of SU(2) requires $N_g(N_c+1) < 22$, giving $N_g \leq 5$. (3) Minimality (same selector as above) picks the smallest value in $\{3, 4, 5\}$. **Result**: $N_g = 3$. | Proposition 6.9 (§6.4) |
-| Gauge group | $\frac{SU(3) \times SU(2) \times U(1)}{\mathbb{Z}_6}$ | — | Tannaka-Krein / Doplicher-Roberts reconstruction from edge-sector fusion rules yields a compact gauge group $G$ (Theorem 6.1, §6.1). The specific factors are selected by the edge-capacity maximization principle (Selector S, §6.2): the minimal faithful carriers are $\mathbb{C}^3 \otimes \mathbb{C}^2$, giving SU(3) $\times$ SU(2) $\times$ U(1). The $\mathbb{Z}_6$ quotient follows from hypercharge quantization of the realized spectrum (Proposition 6.6). | §6.1–6.2 |
+| $N_c$ (colors) | 3 | `N_c_DEFAULT` | Witten's global SU(2) anomaly requires $N_c + 1$ SU(2) doublets per generation to be even, so $N_c$ must be odd. $N_c = 1$ is excluded (SU(1) trivial). The Selection Axiom MAR (third component of the complexity vector) picks the smallest nontrivial value. **Result**: $N_c = 3$. | Theorem 6.14 (§6.9); GAUGE_GROUP_DERIVATION.md §6 |
+| $N_g$ (generations) | 3 | `N_g_DEFAULT` | Three independent constraints narrow the window: (1) CP violation requires $N_g \geq 3$ (CKM phases $(N_g-1)(N_g-2)/2 > 0$). (2) Asymptotic freedom of SU(2) requires $N_g(N_c+1) < 22$, giving $N_g \leq 5$. (3) MAR (fourth component of the complexity vector) picks the smallest value in $\{3, 4, 5\}$. **Result**: $N_g = 3$. | Proposition 6.9 (§6.4); GAUGE_GROUP_DERIVATION.md §7 |
+| Gauge group | $\frac{SU(3) \times SU(2) \times U(1)}{\mathbb{Z}_6}$ | — | Tannaka-Krein / Doplicher-Roberts reconstruction from edge-sector fusion rules yields a compact gauge group $G$ (Theorem 6.1, §6.1). The Selection Axiom MAR uniquely selects the SM factors: the minimal faithful carrier $\mathbb{C}^3 \otimes \mathbb{C}^2$ enforces the product structure SU(3) $\times$ SU(2) $\times$ U(1), the commutant argument excludes extra factors, and the $\mathbb{Z}_6$ quotient follows from hypercharge quantization (Proposition 6.6). | §6.1–6.2; GAUGE_GROUP_DERIVATION.md |
 | $\beta_{\text{EW}}$ | 4 | `beta_ew(N_c)` | Number of SU(2) doublets per generation = $N_c$ quark doublets + 1 lepton doublet = $N_c + 1 = 4$. This is a counting consequence of the Witten anomaly analysis that already fixed $N_c = 3$. | §6.9, §6.19 |
 | $\varepsilon$ (Z₆ defect) | $1/6$ | `defect_epsilon_Z6()` | The SM gauge group has a $\mathbb{Z}_6$ center quotient. Each unit of $\mathbb{Z}_6$ defect insertion removes $\Delta S = \ln 6$ nats of entropy (MaxEnt weighting, Assumption B). The resulting Boltzmann suppression per defect is $e^{-\ln 6} = 1/6$. **This is topologically fixed** by the quotient structure, not chosen. | §6.18, §6.21 |
 | $\delta$ (Koide phase) | $2/9$ | computed inline | The holonomy phase on generation space: $\delta = \beta_{\text{EW}} \cdot Y_Q / N_g = (N_c+1)/(2 N_c N_g) = 4/18 = 2/9$. Here $Y_Q = 1/(2N_c)$ is the quark-doublet hypercharge (fixed by anomaly cancellation) and $N_g = 3$ is the number of generations. All ingredients are previously derived. Experimental extraction: $\delta_{\text{exp}} = 0.2222248 \pm 0.0000063$, matching $2/9 = 0.2222\ldots$ within $0.4\sigma$. | Proposition 13.3 (§13 of TECHNICAL_SUPPLEMENT.md) |
@@ -122,9 +122,10 @@ These affect computational precision but not the prediction logic. Changing them
 - $Q = 2/3$ (MaxEnt on $\mathbb{Z}_3$ generation space)
 - Heat-kernel form $p_R \propto d_R e^{-tC_2(R)}$ (MaxEnt + edge completion)
 
-**Derived under minimal selectors (minimality + anomaly cancellation + CP)**:
-- $N_c = 3$ (Witten anomaly + minimality)
-- $N_g = 3$ (CP violation + asymptotic freedom + minimality)
+**Derived under the Selection Axiom MAR (GAUGE_GROUP_DERIVATION.md)**:
+- SM gauge group $SU(3) \times SU(2) \times U(1)/\mathbb{Z}_6$ (MAR + admissibility)
+- $N_c = 3$ (Witten anomaly + MAR minimality)
+- $N_g = 3$ (CP violation + asymptotic freedom + MAR minimality)
 - $\delta = 2/9$ (algebraic consequence of $N_c = 3$, $N_g = 3$, $\beta_{\text{EW}} = 4$)
 - $\beta_{\text{EW}} = 4$ (doublet counting from $N_c = 3$)
 - Integer exponents $n_u$, $n_d$, $n_e$ (algorithmically from $N_c$, $N_g$, $\varepsilon$, $\delta$)

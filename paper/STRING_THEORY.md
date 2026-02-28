@@ -367,7 +367,7 @@ From OPH axioms as stated:
 
 1. ✓ Finite microscopic DoF on screen, type-I local algebras, boundary gauge invariance (R0-R1)
 2. ✓ EC decomposition and Markov structure on collars
-3. ✓ Sector category and reconstruction of compact gauge group
+3. ✓ Sector category and reconstruction of compact gauge group (under MAR: uniquely $SU(3) \times SU(2) \times U(1)/\mathbb{Z}_6$; see GAUGE_GROUP_DERIVATION.md)
 4. ✓ Heat-kernel edge-sector weights $p_R \propto d_R e^{-t C_2(R)}$
 5. ✓ Identification with standard 2D YM kernel/amplitude
 6. ✓ Modular Hamiltonians with $2\pi$ Euclidean regularity and Lorentz from Conf$(S^2)$
