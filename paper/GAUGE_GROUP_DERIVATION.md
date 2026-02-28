@@ -407,6 +407,6 @@ $$+ \;\text{MAR} \;\xrightarrow{\text{Thm (this doc)}}\; G_{\mathrm{phys}} = \fr
 
 $$\xrightarrow{\text{Thm 6.13}}\; \text{hypercharges fixed} \;\xrightarrow{\text{§6.11}}\; \text{photon \& graviton inevitable}$$
 
-$$\xrightarrow{\text{SPECTRUM\_DERIVATION}}\; \text{particle masses from pixel area}$$
+$$\xrightarrow{\text{SPECTRUM\\_DERIVATION}}\; \text{particle masses from pixel area}$$
 
 This is a complete, gap-free chain from the extended axiom set to the observed gauge structure of Nature. $\square$
