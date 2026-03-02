@@ -1,5 +1,17 @@
 # Holographie par Patchs d'Observateurs : une approche de la physique fondamentale centrée sur l'observateur
 
+> OPH est la théorie fondamentale qui décrit exactement comment notre univers fonctionne, pourquoi il est tel qu'il est, et pourquoi il existe.
+> Le Modèle Standard, la théorie quantique des champs, la relativité générale et la théorie des cordes sont des descriptions effectives de l'OPH sous-jacente.
+> À partir de deux constantes d'entrée et de cinq axiomes (A1-A4 + MAR), OPH détermine les propriétés de l'univers, résout les incompatibilités et explique les divergences de mesure, y compris la matière noire.
+
+## Idée centrale
+
+Il n'existe pas de réalité objective indépendante des observateurs. La réalité est un réseau de perspectives subjectives qui doivent s'accorder là où elles se recouvrent.
+
+Les lois de la physique sont les règles de cohérence qui rendent cet accord intersubjectif possible.
+
+À partir de ce point de départ (avec les contraintes d'entropie et de Markov), l'OPH fait émerger espace-temps, symétries de jauge et physique des particules comme conséquences de cohérence.
+
 ## Apprendre l'OPH (non-physiciens)
 
 Si vous débutez en physique, voici d'excellents points d'entrée :
@@ -9,10 +21,6 @@ Si vous débutez en physique, voici d'excellents points d'entrée :
 - **OPH Sage (Telegram) :** envoyez un DM à [@HoloObserverBot](https://t.me/HoloObserverBot) ou ajoutez-le à un groupe
 - **OPH Sage (Bluesky) :** mentionnez [@ophsage.bsky.social](https://bsky.app/profile/ophsage.bsky.social) dans vos questions
 - **NotebookLM :** [Regardez la vidéo d'introduction et commencez à poser vos questions](https://notebooklm.google.com/notebook/d5249760-6ce8-44a0-927b-ccf90402711a?artifactId=fb7c0ebd-4375-4997-9cae-6558ff8977b4)
-
-> OPH est la théorie fondamentale qui décrit exactement comment notre univers fonctionne, pourquoi il est tel qu'il est, et pourquoi il existe.
-> Le Modèle Standard, la théorie quantique des champs, la relativité générale et la théorie des cordes sont des descriptions effectives de l'OPH sous-jacente.
-> À partir de deux constantes d'entrée et de cinq axiomes (A1-A4 + MAR), OPH détermine les propriétés de l'univers, résout les incompatibilités et explique les divergences de mesure, y compris la matière noire.
 
 ## Article principal
 
@@ -34,7 +42,7 @@ Tous les autres documents du dépôt sont des dérivations, suppléments et ress
 
 La physique est de la rétro-ingénierie à l'échelle cosmique. Nous observons le comportement de la réalité et remontons vers les règles sous-jacentes. Ce projet présente une théorie du tout au sens littéral : pourquoi la réalité existe et pourquoi elle est telle qu'elle est, à partir de premiers principes.
 
-## L'idée centrale
+## L'idée centrale (détaillée)
 
 Il n'existe pas de réalité objective au sens fondamental. Il existe un réseau de perspectives subjectives qui doivent se mettre d'accord là où elles se recouvrent.
 

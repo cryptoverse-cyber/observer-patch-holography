@@ -1,5 +1,17 @@
 # Observer Patch Holography: An Observer-Centric Approach to Fundamental Physics
 
+> OPH is the fundamental theory that exactly describes how our universe works, why it has the structure it has, and why it exists.
+> The Standard Model, quantum field theory, general relativity, and string theory are effective descriptions of underlying OPH dynamics.
+> From two input constants and five axioms (A1-A4 + MAR), OPH determines universe-wide properties, resolves incompatibilities, and explains measurement divergences including dark matter.
+
+## Core Idea
+
+There is no objective reality independent of observers. Reality is a network of subjective perspectives that must agree where they overlap.
+
+The laws of physics are the consistency rules that make this intersubjective agreement possible.
+
+From this starting point (plus entropy and Markov constraints), OPH treats spacetime, gauge structure, and particle physics as emergent consequences of consistency.
+
 ## Learning OPH for Non-Physicists
 
 If you are new to physics, these are great starting points:
@@ -9,10 +21,6 @@ If you are new to physics, these are great starting points:
 - **OPH Sage (Telegram):** DM or add [@HoloObserverBot](https://t.me/HoloObserverBot) to a group
 - **OPH Sage (Bluesky):** Tag [@ophsage.bsky.social](https://bsky.app/profile/ophsage.bsky.social) in your questions
 - **NotebookLM notebook:** [Watch the introduction video and start asking questions](https://notebooklm.google.com/notebook/d5249760-6ce8-44a0-927b-ccf90402711a?artifactId=fb7c0ebd-4375-4997-9cae-6558ff8977b4)
-
-> OPH is the fundamental theory that exactly describes how our universe works, why it has the structure it has, and why it exists.
-> The Standard Model, quantum field theory, general relativity, and string theory are effective descriptions of underlying OPH dynamics.
-> From two input constants and five axioms (A1-A4 + MAR), OPH determines universe-wide properties, resolves incompatibilities, and explains measurement divergences including dark matter.
 
 ## Main Paper
 
@@ -32,7 +40,7 @@ All other documents in this repository are supporting derivations, supplements, 
 
 Physics is reverse engineering at cosmic scale. We observe reality's behavior and work backward to reconstruct the underlying rules. This project presents a theory of everything in the literal sense: it explains why reality exists and why it is the way it is, derived from first principles.
 
-## The Core Idea
+## The Core Idea (Detailed)
 
 There is no objective reality. There is only a network of subjective perspectives that must agree where they overlap.
 
