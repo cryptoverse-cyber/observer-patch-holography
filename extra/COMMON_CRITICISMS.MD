@@ -380,9 +380,9 @@ so the framework does **not** stop at a Newtonian approximation. This is the pub
 
 ---
 
-## 1. What the criticism gets right
+## 1. What this cricitism seems fair
 
-There is a legitimate general concern here.
+There is a legitimate general concern that. e.g. Sabine Hossenfelder likes to bring up regarding quantum lattice models.
 
 If one literally puts physics on a fixed microscopic lattice embedded in physical spacetime, then exact microscopic Lorentz invariance is generically broken. The lattice picks out a preferred frame. In that setting, "boosting the lattice" is a real question.
 
