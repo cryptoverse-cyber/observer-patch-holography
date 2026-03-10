@@ -4,6 +4,8 @@
 
 **French version:** [README_FR.md](README_FR.md) -- translated by Martin S.
 
+> **OPH Disproval Challenge:** A USD 10,000 challenge to disprove OPH is currently running at [challenge.floatingpragma.io](https://challenge.floatingpragma.io).
+
 ## Core Idea
 
 There is no objective reality independent of observers. Reality is a network of subjective perspectives that must agree where they overlap.
@@ -35,6 +37,7 @@ All other documents in this repository are supporting derivations, supplements, 
 
 Start with the official OPH website, the interactive OPH Lab, and the web edition of the OPH Book:
 
+- **USD 10,000 OPH disproval challenge:** [challenge.floatingpragma.io](https://challenge.floatingpragma.io)
 - **Official OPH website:** [Observer Patch Holography at floatingpragma.io/oph](https://floatingpragma.io/oph)
 - **Interactive OPH Lab:** [OPH Lab at oph-lab.floatingpragma.io](https://oph-lab.floatingpragma.io)
 - **OPH Book (web edition):** [Read the OPH Book online](https://oph-book.floatingpragma.io)
