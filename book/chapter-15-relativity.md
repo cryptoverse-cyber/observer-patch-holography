@@ -427,7 +427,7 @@ So patch consistency promotes the scalar relation to a tensor equation. But the 
 
 ### The Derivation Chain
 
-The full derivation of general relativity from OPH proceeds as:
+The derivation chain for the semiclassical Einstein equation in OPH proceeds as:
 
 ```
 MaxEnt (Assumption B)

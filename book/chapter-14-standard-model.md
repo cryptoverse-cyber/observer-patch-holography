@@ -393,7 +393,7 @@ The gauge group isn't put in by hand. It's reconstructed from how charges combin
 
 Why does the reconstructed group have the form SU(3) x SU(2) x U(1)?
 
-The Selection Axiom MAR (Minimal Admissible Realization) answers this uniquely. Among all compact gauge groups that satisfy consistency requirements — anomaly freedom, chiral matter, CP violation capability, UV completability — MAR selects the one with the smallest coupled edge capacity. The result:
+The Selection Axiom MAR (Minimal Admissible Realization) acts on admissible sector packages, not on arbitrary compact gauge groups. In the positive-dimensional connected Lie admissible class, and once one connected abelian charge factor is included, MAR selects the package with the smallest coupled edge capacity. The result:
 
 - The minimal coupled carrier is $\mathbb{C}^3 \otimes \mathbb{C}^2$, which forces a product gauge structure (not assumed — derived).
 - The factor acting on $\mathbb{C}^2$ as a pseudoreal doublet is uniquely SU(2).
@@ -401,7 +401,7 @@ The Selection Axiom MAR (Minimal Admissible Realization) answers this uniquely. 
 - The commutant of SU(3) × SU(2) inside U(6) is exactly U(1) — no additional factors can appear.
 - Hypercharge quantization in sixths gives the Z₆ quotient.
 
-The Standard Model gauge group $SU(3) \times SU(2) \times U(1)/\mathbb{Z}_6$ is the *unique* solution. See GAUGE_GROUP_DERIVATION.md for the complete proof.
+Within that admissible class, the connected gauge structure is fixed to $SU(3) \times SU(2) \times U(1)$, and the realized hypercharge lattice then fixes the $\mathbb{Z}_6$ quotient. The separate CP/UV admissibility window gives $3 \le N_g \le 5$, and MAR selects the minimal viable value $N_g = 3$. See `paper/tex_fragments/GAUGE_GROUP_DERIVATION.tex` for the complete proof.
 
 ## 14.10 Hypercharge from Gluing Consistency
 
@@ -457,7 +457,7 @@ The minimal nontrivial odd choice is:
 
 $$\boxed{N_c = 3}$$
 
-This is a striking prediction. It's a single integer, determined by anomaly cancellation, with no continuous parameters to adjust. It does not depend on RG running, masses, or Yukawa values. It cannot be "wiggled" without changing the basic notion of electroweak doublets and color replication.
+This is a striking structural output. Witten's anomaly forces $N_c$ to be odd, and the admissibility package rules out the trivial $N_c = 1$ case by requiring a genuinely complex nonabelian color sector. That leaves the minimal admissible value $N_c = 3$, with no continuous parameter to tune.
 
 ## 14.12 Why Three Generations?
 
@@ -490,15 +490,17 @@ $$4 N_g < 22 \implies N_g \le 5$$
 
 Combining: $3 \le N_g \le 5$.
 
-### Refinement Stability Selects Minimum
+### MAR Selects the Minimal Admissible Window
 
-In our model, MaxEnt selection with refinement stability disfavors extra unfixed parameters. Additional generations mean additional Yukawa couplings with no symmetry to fix them.
+In our model, CP violation and weak-sector UV completability define the admissible window:
 
-Given the allowed window {3, 4, 5}, refinement stability selects the smallest viable choice:
+$$3 \le N_g \le 5.$$
+
+The Selection Axiom MAR then selects the minimal admissible realization:
 
 $$\boxed{N_g = 3}$$
 
-This is another single-integer prediction. CP violation and UV completability are admissibility conditions in the Selection Axiom MAR; MAR then selects the minimum. It is not a fit to a continuous number.
+Refinement stability explains why extra unfixed Yukawa structure is disfavored, but the selector itself is MAR acting on the admissible class. This is a discrete structural output, not a fit to a continuous number.
 
 ## 14.13 Why Chirality?
 
@@ -530,7 +532,7 @@ In the conventional view, particles are fundamental objects-tiny balls of stuff 
 
 Think about what an observer actually accesses. Each observer has a patch on the holographic screen, and associated with that patch is an algebra of observables-the questions that observer can ask. The global quantum state assigns expectation values to these observables. When those expectation values exhibit a particular stable structure, when they show localized excitations that persist under modular time evolution, that transform in specific ways under the emergent symmetries, and that can be consistently tracked across overlapping patches-that is what we call a particle.
 
-The technical statement is that particles correspond to irreducible representations of the emergent symmetry group. Once Lorentz kinematics appears on the screen (which happens through the BW_{S²} theorem we discuss in Chapter 14), excitations organize into representations of the Poincaré group. Eugene Wigner showed in 1939 that these representations are classified by two labels: mass and spin. A "particle type" is nothing more than such a representation label. An electron is a representation with mass 0.511 MeV and spin 1/2. A photon is a representation with mass zero and spin 1. The particle is not a thing; it is a classification of how stable excitation patterns transform.
+The technical statement is that particles correspond to irreducible representations of the emergent symmetry group. Once Lorentz kinematics appears on the screen (which happens through the BW_{S²} theorem we discuss in Chapter 15), excitations organize into representations of the Poincaré group. Eugene Wigner showed in 1939 that these representations are classified by two labels: mass and spin. A "particle type" is nothing more than such a representation label. An electron is a representation with mass 0.511 MeV and spin 1/2. A photon is a representation with mass zero and spin 1. The particle is not a thing; it is a classification of how stable excitation patterns transform.
 
 This sounds abstract, but it has concrete consequences. The model does not postulate particles and then check whether they are consistent. It derives which particle types must exist from the structure of the algebra net itself. Some particles are forced to exist by the axioms. Others are permitted but not required. And some hypothetical particles are forbidden.
 
@@ -560,7 +562,7 @@ In Chapter 15 we derive that spacetime geometry emerges from modular flow on the
 
 The conformal group of the two-sphere is isomorphic to the Lorentz group: Conf⁺(S²) ≅ PSL(2,ℂ) ≅ SO⁺(3,1). This is a mathematical identity. Once modular flow becomes conformal, Lorentz kinematics is automatic.
 
-But geometry goes further. The entanglement structure of the screen encodes not just kinematics but dynamics. Through the entanglement equilibrium argument (developed in Chapter 15), the condition that generalized entropy is stationary under small deformations implies the Einstein equations. The metric tensor emerges as the compression of modular flow data, and its dynamics are fixed by the requirement that entanglement remains balanced.
+But geometry goes further. The entanglement structure of the screen encodes not just kinematics but dynamics. Through the entanglement equilibrium argument (developed in Chapter 15), the condition that generalized entropy is stationary under small deformations implies the semiclassical Einstein equation in the same scaling regime. The metric tensor emerges as the compression of modular flow data, and its dynamics are fixed by the requirement that entanglement remains balanced.
 
 Now consider what it means for the metric to be dynamical. If spacetime geometry fluctuates quantum mechanically, those fluctuations must be described by a quantum field. The quantum of a spin-2 field that couples universally to energy-momentum is, by definition, a graviton. This is a consequence of having dynamical geometry in a quantum theory.
 
@@ -616,7 +618,7 @@ Once we can reliably extract gauge couplings from entanglement, the rest follows
 
 One of the great puzzles of particle physics is why the three gauge couplings (for the strong, weak, and electromagnetic forces) have such different strengths at low energies, yet seem to converge when extrapolated to high energies.
 
-In the 1970s, physicists noticed something remarkable. If you run the couplings upward using the renormalization group equations, they almost meet at a single point around $10^{16}$ GeV. This shown that all three forces is unified at high energies, the dream of Grand Unified Theories.
+In the 1970s, physicists noticed something remarkable. If you run the couplings upward using the renormalization group equations, they almost meet at a single point around $10^{16}$ GeV. This suggested that all three forces might unify at high energies, the dream of Grand Unified Theories.
 
 But there was a problem. With just the Standard Model particle content, the three couplings don't quite meet. They miss each other. In the 1990s, physicists discovered that adding supersymmetric partners fixes this: with MSSM-like particle content, the couplings unify beautifully, predicting $\alpha_s(M_Z) \approx 0.117$, remarkably close to the measured value of $0.1177 \pm 0.0009$.
 
@@ -640,7 +642,7 @@ $$G = \mathrm{SU}(3) \times \mathrm{SU}(2) \times \mathrm{U}(1)$$
 
 There's no larger group. No X and Y bosons. No leptoquark generators. Unification happens geometrically (all three couplings share a common "diffusion time" on the edge) rather than algebraically through group embedding.
 
-The prediction is stark: **gauge-mediated proton decay is forbidden**. Protons are stable.
+The prediction is stark: **gauge-mediated proton decay is forbidden**. That is the theorem-level statement.
 
 This is a unique experimental signature. Standard SUSY GUTs predict *both* precision unification *and* proton decay. Our model predicts unification *without* proton decay. If Hyper-Kamiokande continues to see null results while precision measurements continue to favor unified couplings, that would be strong evidence for geometric rather than algebraic unification.
 
@@ -648,15 +650,15 @@ This is a unique experimental signature. Standard SUSY GUTs predict *both* preci
 
 Let's step back and see what the framework actually accounts for.
 
-**The integers.** Why three colors? Why three generations? Why those specific hypercharges? These are consequences of consistency requirements, not free parameters. Three colors comes from the Witten anomaly demanding an odd number. Three generations is the minimum for CP violation and the maximum consistent with asymptotic freedom. The hypercharges are fixed by anomaly cancellation once you assume Yukawa couplings exist.
+**The integers.** Why three colors? Why three generations? Why those specific hypercharges? These are consequences of consistency requirements, not free parameters. Three colors comes from the Witten anomaly together with the admissibility requirement of a genuinely complex color sector. Three generations is the MAR-minimal member of the admissible CP/UV window $3 \le N_g \le 5$. The hypercharges are fixed by anomaly cancellation plus Yukawa invariance once the Standard Model gauge structure is in place.
 
 **The zeros.** The photon and graviton masses are exactly zero, not approximately but *exactly*. This is a symmetry-protected prediction. The photon's masslessness follows from U(1) gauge invariance being a genuine overlap redundancy; any mass would break the consistency of how charged patches glue together. Similarly, the graviton's masslessness follows from diffeomorphism invariance being the redundancy structure of bulk spacetime. Experiments confirm these predictions to extraordinary precision: 27 orders of magnitude for the photon, 22 for the graviton.
 
 **Charge quantization.** All color-singlet particles have integer electric charge. No fractional charges like $\pm 1/3$ can exist outside hadrons. This follows from the global structure of the gauge group.
 
-**Proton stability.** Gauge-mediated proton decay is forbidden. The gauge group is a product, not embedded in a larger simple group, so no leptoquark generators exist. Current experimental limits ($\tau_p > 10^{34}$ years) are consistent with this prediction.
+**Gauge-mediated proton decay.** Gauge-mediated proton decay is forbidden. The gauge group is a product, not embedded in a larger simple group, so no leptoquark generators exist. Current experimental limits ($\tau_p > 10^{34}$ years) are consistent with this prediction.
 
-**Particle masses.** The framework derives particle masses from a single calibrated constant: the pixel area $P = 1.63094$. Gauge couplings and EW boson masses (W, Z) are calibration-sector consistency checks. Three charged lepton masses (electron, muon, tau) are genuine predictions at sub-permille accuracy from parameter-free Koide structure. The Higgs and top quark masses are genuine predictions at ~1% from the critical surface condition. The fermion mass hierarchy reduces to discrete Z₆ defect charges; quark masses reproduce the correct hierarchy but have larger individual errors from missing scheme matching. See SPECTRUM_DERIVATION.md for the complete derivation chain and epistemic classification.
+**Particle masses.** The framework derives particle masses from a single calibrated constant: the pixel area $P = 1.63094$. Gauge couplings and EW boson masses (W, Z) are calibration-sector consistency checks. Three charged lepton masses (electron, muon, tau) are genuine predictions at sub-permille accuracy from parameter-free Koide structure. The Higgs and top quark masses are genuine predictions at ~1% from the critical surface condition. The fermion mass hierarchy reduces to discrete Z₆ defect charges; quark masses reproduce the correct hierarchy but have larger individual errors from missing scheme matching. See `paper/tex_fragments/SPECTRUM_DERIVATION.tex` for the complete derivation chain and epistemic classification.
 
 ## 14.21 The Big Picture
 
@@ -664,9 +666,9 @@ The Standard Model looks like the answer to a very specific question: What is th
 
 The photon and graviton are particles the theory *forces* upon us. The photon exists because U(1) gauge redundancy emerges from how charged patches glue together. The graviton exists because diffeomorphism invariance emerges from the fact that bulk spacetime is a compression of screen data. Both masses are exactly zero because any mass would break the redundancy structures the model requires. This is comparable to string theory's famous claim of "predicting gravity," except here the prediction flows from observer consistency rather than from string dynamics.
 
-The quarks and leptons aren't arbitrary. Their charges are fixed by the requirement that reality be self-consistent. The generations aren't accidental: three is the minimum for CP violation and the maximum consistent with a stable UV completion. Chirality isn't a quirk; it's the only way to keep fermions light without fine tuning.
+The quarks and leptons aren't arbitrary. Their charges are fixed by the requirement that reality be self-consistent. The generations aren't accidental: the admissible window is $3 \le N_g \le 5$, and MAR selects the minimal viable value. Chirality isn't a quirk; it's the only way to keep fermions light without fine tuning.
 
-The Selection Axiom MAR provides the answer: the Standard Model is the unique solution. The constraints are not just "tight enough" — they are uniquely determining. From a single pixel area, through gauge group reconstruction, anomaly cancellation, and refinement stability, the framework derives the specific particles, forces, and masses we observe.
+The Selection Axiom MAR provides the selector inside the admissible class. Within the connected Lie sector package with one connected abelian charge factor, it picks the Standard Model gauge structure and leaves the realized hypercharge lattice, color count, and generation count as discrete structural outputs. From a single pixel area, through gauge reconstruction, anomaly analysis, and refinement stability, the framework derives the specific particles, forces, and masses we observe.
 
 We've now seen how particles emerge from the screen as stable patterns that transform under emergent symmetries. But how does spacetime itself emerge? How does Einstein's relativity fit into this picture?
 

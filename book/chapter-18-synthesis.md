@@ -204,13 +204,13 @@ Under these inputs, geometric modular flow on caps (BW_{S^2}) is *derived* rathe
 Under explicit assumptions (Markov locality, MaxEnt, modular covariance, Euclidean regularity, and an EFT bridge), the model yields:
 
 1. **Lorentz kinematics** from geometric modular flow on caps
-2. **Semiclassical Einstein equations** via entanglement equilibrium
+2. **Scaling-limit semiclassical Einstein dynamics** via entanglement equilibrium
 3. **Compact gauge symmetry** reconstructed from a refinement-stable transportable edge-sector category via Tannaka-Krein/DR
 4. **Masslessness of gauge bosons and the graviton** from emergent gauge/diffeomorphism invariance
 
 The photon and graviton are forced by the axiom chain, not postulated. Once gauge-as-gluing yields a gauge group and entanglement equilibrium yields dynamical geometry, gauge invariance forbids mass terms. These are symmetry-protected zeros.
 
-The EFT bridge (null-surface modular additivity) is derived from A1-A4 under two testable conditions. The gauge group reconstruction yields a compact group; the Selection Axiom MAR then uniquely determines the Standard Model gauge group $SU(3) \times SU(2) \times U(1)/\mathbb{Z}_6$ within the connected Lie admissible class once one connected abelian charge factor is included, with $N_c = 3$ colors and $N_g = 3$ generations.
+The EFT bridge (null-surface modular additivity) is derived from A1-A4 under two testable conditions. The gauge group reconstruction yields a compact group; within the connected Lie admissible class, and once one connected abelian charge factor is included, MAR fixes the Standard Model gauge quotient $SU(3) \times SU(2) \times U(1)/\mathbb{Z}_6$ and $N_c = 3$ colors. The same admissibility package plus the CP/UV window then fixes $N_g = 3$ generations.
 
 ### Two Fundamental Parameters: The Configuration of Reality
 
@@ -242,7 +242,7 @@ From the observed $\Lambda \sim 10^{-52}$ $\text{m}^{-2}$, we infer:
 - Screen capacity: $\log \dim \mathcal{H} \sim 10^{122}$
 - de Sitter horizon radius: $r_{dS} \approx 10^{26}$ m
 
-A universe with different configuration parameters would have different absolute scales but the **same structure**: same gauge groups, same charge ratios, same Einstein equations, same Standard Model. The configuration parameters are what make our universe *this* universe rather than another one running the same "operating system."
+A universe with different configuration parameters would have different absolute scales but the **same structure**: same gauge groups, same charge ratios, same scaling-limit semiclassical gravity sector, same Standard Model quotient. The configuration parameters are what make our universe *this* universe rather than another one running the same "operating system."
 
 These parameters are not derivable from within the system. They are boundary conditions, the fundamental "settings" of the computation that is our universe. Asking "why is $a_{\text{cell}} = 1.63 \, \ell_P^2$?" is like asking why a simulation was configured with particular settings. It's not a physics question answerable from inside.
 
@@ -280,7 +280,7 @@ The Hilbert space is finite-dimensional. The second fundamental parameter, **scr
 
 ## 18.8 The Remaining Frontier
 
-The framework derives the Standard Model gauge group, particle masses from a single input, scaling-limit semiclassical Einstein dynamics, and proton stability. The main engineering deliverables are well-scoped:
+The framework derives the Standard Model gauge group, particle masses from a single input, scaling-limit semiclassical Einstein dynamics, and the absence of gauge-mediated proton decay. The main engineering deliverables are well-scoped:
 geometric modular flow on caps (BW$_{S^2}$) is derived from Markov + symmetry + refinement assumptions, and the next steps are concrete. Non-central loop defects are classified by a 2-group cocycle; in the EFT limit this obstruction data is structurally analogous to anomaly cancellation, while hypercharges are fixed by the separate anomaly/Yukawa analysis once the SM gauge structure is in place. What remains is to compute those classes in concrete models and to derive the Lagrange multiplier $t$ from UV microphysics.
 
 **Progress on numerical predictions.** The extraction of gauge couplings from
@@ -372,7 +372,7 @@ These follow from our axioms plus stated additional assumptions:
 | Loop-coherent gluing <-> trivial 2-cocycle (anomaly-free) | Gauge-as-gluing + crossed-module data |
 | Hypercharge constraints from anomaly-free gluing | ExtEFT + minimal chiral content |
 | Chirality from refinement stability | MaxEnt + refinement stability + gauge symmetry |
-| $N_g=3$ selection | CP violation + SU(2)_L UV-completability + refinement minimality |
+| $N_g=3$ selection | CP violation + SU(2)_L UV-completability + MAR minimality |
 | Heat-kernel/Laplacian edge-sector weighting | EC + Markov collar + gauge-invariant 2D models (numerically validated) |
 | Gauge coupling extraction $g_{\mathrm{ent}}^2 = t/2\pi$ | Edge-sector probabilities + Laplacian eigenvalues $\lambda_q = 4\sin^2(\pi q/n)$ |
 | $\Delta b \approx (2.49, 4.38, 3.97)$ from Peter-Weyl | Heat-kernel at $t_U \approx 1.64$ + $N_{\text{eff}} = d \cdot p$ (entropy sees one index, loops see both) |
@@ -675,7 +675,7 @@ This addresses both fundamental questions:
 
 Reality produces observers who produce understanding who produce simulation who produce reality. The loop closes. Gödel's self-reference and Hofstadter's strange loops, applied at the deepest level.
 
-The reverse engineering has uncovered the source code: from four axioms and one selection principle, we derive general relativity, the Standard Model gauge group, and the particle spectrum. The strange loop derive explains why this source code runs at all.
+The reverse engineering has uncovered the source code: from four axioms and one selection principle, we derive scaling-limit semiclassical gravity, the Standard Model gauge structure, and the particle spectrum. The strange loop derive explains why this source code runs at all.
 
 ---
 
