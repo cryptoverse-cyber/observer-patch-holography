@@ -15,7 +15,7 @@ This document records the OPH derivation path by which the bosonic edge-sector b
 We establish the following internal chain of implications within the stated OPH branch:
 
 \begin{verbatim}
-OPH Axioms (A1-A4) + Regulator Premises (R0-R1)
+Canonical OPH package + regulator premises used in the edge-sector branch
     ↓
 Edge-Center Decomposition + Heat-Kernel Sector Weights
     ↓
@@ -44,21 +44,17 @@ This establishes that OPH contains string theory as an emergent description of i
 
 We use exactly the following OPH ingredients from the main paper and technical supplement:
 
-\subsection{2.1 Core Axioms}\label{21-core-axioms}
+\subsection{2.1 Canonical Axioms}\label{21-core-axioms}
 
-\textbf{Axiom A1 (Screen Net):} Physical reality is encoded on a horizon screen \(S^2\) carrying a net of von Neumann algebras \(P \mapsto \mathcal{A}(P)\) for patches \(P \subset S^2\).
+The canonical OPH axioms used here are: Screen Net, Overlap Consistency, Local MaxEnt and Refinement Stability, Recoverable Generalized Entropy, and Minimal Admissible Realization (MAR). The heat-kernel / 2D Yang-Mills route uses primarily the first four plus the technical premises below; MAR enters only when one specializes to the realized Standard Model gauge branch later in the manuscript.
 
-\textbf{Axiom A2 (Overlap Consistency):} For overlapping patches \(P_1 \cap P_2 \neq \emptyset\), the restrictions of local states must agree: \[\omega_1|_{\mathcal{A}(P_1 \cap P_2)} = \omega_2|_{\mathcal{A}(P_1 \cap P_2)}\]
-
-\textbf{Axiom A3 (Generalized Entropy):} A generalized entropy functional exists: \[S_{\text{gen}}(C) = \frac{A(\partial C)}{4G} + S_{\text{bulk}}(C)\] satisfying quantum focusing (monotonicity under inclusion along null generators).
-
-\textbf{Axiom A4 (Local Markov/Recoverability):} For tripartitions \(A\)-\(B\)-\(D\) across separators, the conditional mutual information is small: \[I(A:D|B) \leq \varepsilon\] and recovery maps exist with controlled error.
-
-\subsection{2.2 Regulator Premises}\label{22-regulator-premises}
+\subsection{2.2 Technical Premises}\label{22-regulator-premises}
 
 \textbf{Premise R0 (Type-I Local Algebras):} At the UV regulator scale, local patch algebras are type-I factors (finite-dimensional matrix algebras).
 
 \textbf{Premise R1 (Boundary Gauge Invariance):} For a region \(R \subset S^2\), the physical algebra is: \[\mathcal{A}(R) = \mathcal{B}(\tilde{\mathcal{H}}_R)^{G_{\partial R}}\] where \(G_{\partial R}\) is the boundary gauge group.
+
+Together with the local MaxEnt clause of the canonical package, these theorem-local premises give the edge-center decomposition and the heat-kernel sector weights quoted in Section 2.3.
 
 \subsection{2.3 Key Derived Results}\label{23-key-derived-results}
 
@@ -82,7 +78,7 @@ Consider an infinitesimal deformation moving the cut along the null generators: 
 
 \subsection{3.2 Generalized Entropy Variation}\label{32-generalized-entropy-variation}
 
-By A3, generalized entropy is: \[S_{\text{gen}}(\Sigma) = \frac{A(\Sigma)}{4G} + S_{\text{bulk}}(\Sigma)\]
+By Recoverable Generalized Entropy, generalized entropy is: \[S_{\text{gen}}(\Sigma) = \frac{A(\Sigma)}{4G} + S_{\text{bulk}}(\Sigma)\]
 
 Its first variation under the null deformation: \[\delta S_{\text{gen}} = \delta\left(\frac{A}{4G}\right) + \delta S_{\text{bulk}}\]
 
@@ -335,7 +331,7 @@ The derivation chain from OPH to string theory proceeds in two stages.
 
 \subsection{9.1 Established Results}\label{91-established-results}
 
-The following are derived from the OPH axioms (A1--A4, R0--R1, MAR):
+The following are derived from the canonical OPH package together with the stated regulator, heat-kernel, and large-\(N\) premises:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -456,7 +452,7 @@ This derivation uses:
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  OPH axiom set (A1-A4) and regulator premises (R0-R1) from Part I of this manuscript
+  Canonical OPH axiom package and theorem-local regulator premises from Part I of this manuscript
 \item
   Heat-kernel / edge-sector results from Part V of this manuscript
 \item

@@ -14,21 +14,29 @@ This document collects mathematical derivations and stated premises supporting t
 
 \section{1. Core Axioms and Definitions}\label{1-core-axioms-and-definitions}
 
-\subsection{1.1 The Axiom Set}\label{11-the-axiom-set}
+\subsection{1.1 Canonical Five-Axiom Package}\label{11-the-axiom-set}
 
-\textbf{Axiom A1 (Screen Net):} Physical reality is encoded on a horizon screen \(S^2\) carrying a net of von Neumann algebras \(P \mapsto \mathcal{A}(P)\) for patches \(P \subset S^2\).
+This supplement uses the same authoritative OPH premise ledger as the compact note and the main manuscript. The canonical axioms are:
 
-\textbf{Axiom A2 (Overlap Consistency):} For overlapping patches \(P_1 \cap P_2 \neq \emptyset\), the restrictions of local states must agree: \[\omega_1|_{\mathcal{A}(P_1 \cap P_2)} = \omega_2|_{\mathcal{A}(P_1 \cap P_2)}\]
+\textbf{Screen Net:} Physical reality is encoded on a horizon screen \(S^2\) carrying a net of von Neumann algebras \(P \mapsto \mathcal{A}(P)\) for patches \(P \subset S^2\).
 
-\textbf{Axiom A3 (Generalized Entropy):} A generalized entropy functional exists: \[S_{\text{gen}}(C) = \frac{A(\partial C)}{4G} + S_{\text{bulk}}(C)\] satisfying quantum focusing (monotonicity under inclusion along null generators).
+\textbf{Overlap Consistency:} For overlapping patches \(P_1 \cap P_2 \neq \emptyset\), the restrictions of local states must agree: \[\omega_1|_{\mathcal{A}(P_1 \cap P_2)} = \omega_2|_{\mathcal{A}(P_1 \cap P_2)}\]
 
-\textbf{Axiom A4 (Local Markov/Recoverability):} For tripartitions \(A\)-\(B\)-\(D\) across separators, the conditional mutual information is small: \[I(A:D|B) \leq \varepsilon\] and recovery maps exist with controlled error.
+\textbf{Local MaxEnt and Refinement Stability:} At the UV scale the realized state maximizes entropy subject to a finite family of gauge-invariant local constraints, and the resulting family is stable under coarse-graining.
 
-\subsection{1.2 Regulator Premises}\label{12-regulator-premises}
+\textbf{Recoverable Generalized Entropy:} A generalized entropy functional exists: \[S_{\text{gen}}(C) = \frac{A(\partial C)}{4G} + S_{\text{bulk}}(C)\] satisfying quantum focusing and the recoverability structure used in collar and null-strip arguments.
+
+\textbf{Minimal Admissible Realization (MAR):} On the admissible low-energy branch, the realized sector package is the lexicographically minimal one under the complexity vector \(C(\mathfrak S)\). MAR enters the gauge-selection branch; the Lorentz/null-modular and Einstein discussions below mainly use the first four axioms plus the technical premises stated where needed.
+
+\subsection{1.2 Technical Premises and Legacy Regulator Names}\label{12-regulator-premises}
+
+The supplement continues to use historical labels such as R0, R1, and N1--N3 because later derivations cite them directly. In the present version these are theorem-local technical premises or derived shorthands, not additional axioms.
 
 \textbf{Premise R0 (Type-I Local Algebras):} At the UV regulator scale, local patch algebras are type-I factors (finite-dimensional matrix algebras).
 
 \textbf{Premise R1 (Boundary Gauge Invariance):} For a region \(R \subset S^2\), the physical algebra is: \[\mathcal{A}(R) = \mathcal{B}(\tilde{\mathcal{H}}_R)^{G_{\partial R}}\] where \(G_{\partial R}\) is the boundary gauge group.
+
+\textbf{Read-along convention.} Older references to "A3" mean Recoverable Generalized Entropy; older references to "A4" mean the recoverability clause used together with the collar/null-strip control hypotheses stated explicitly below.
 
 \subsection{1.3 Edge-Center Completion (EC)}\label{13-edge-center-completion-ec}
 
@@ -111,7 +119,7 @@ implies the rest-frame first-variation relation
 \delta\!\left(G_{00} + \Lambda g_{00}\right) = 8\pi G \,\delta\langle T_{00} \rangle.
 \]
 
-If this first-variation relation holds for all local directions and reference states in the scaling regime, overlap consistency (A2) upgrades it to the full tensor equation
+If this first-variation relation holds for all local directions and reference states in the scaling regime, overlap consistency upgrades it to the full tensor equation
 \[
 G_{ab} + \Lambda g_{ab} = 8\pi G \langle T_{ab} \rangle
 \]
@@ -124,7 +132,7 @@ modulo the expected \(\Lambda g_{ab}\) ambiguity.
 \item
   Raychaudhuri equation relates area change to \(R_{kk}\): \[\frac{d\theta}{d\lambda} = -\frac{1}{2}\theta^2 - \sigma^2 - R_{kk}\]
 \item
-  Quantum focusing (A3) implies: \[\frac{d}{d\lambda}\left(\frac{A}{4G} + S_{\text{bulk}}\right) \leq 0\]
+  Recoverable Generalized Entropy implies: \[\frac{d}{d\lambda}\left(\frac{A}{4G} + S_{\text{bulk}}\right) \leq 0\]
 \item
   Stationarity at MaxEnt gives: \[R_{kk} = 8\pi G \langle T_{kk} \rangle\]
 \item
@@ -204,7 +212,7 @@ For any observer whose accessible observables lie in either side algebra:
 
 must have the form: \[\mu(P) = \text{Tr}(\rho P)\] for some density operator \(\rho\).
 
-\textbf{Corollary 3.5:} In OPH with type-I local algebras (R0), Born\textquotesingle s rule is the unique overlap-consistent probability assignment.
+\textbf{Corollary 3.5:} In OPH with the type-I regulator premise (R0), Born\textquotesingle s rule is the unique overlap-consistent probability assignment.
 
 \subsection{3.6 Collapse as Conditioning}\label{36-collapse-as-conditioning}
 
@@ -261,7 +269,7 @@ and by the second Bianchi identity, \(\nabla_m K = 0\), so \(K = \text{const}\).
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Semiclassical Einstein equation from A3/entanglement equilibrium
+  Semiclassical Einstein equation from recoverable generalized entropy / entanglement equilibrium
 \item
   Perfect-fluid stress tensor from SO(3)-invariant MaxEnt
 \item
@@ -398,7 +406,7 @@ The "glue" between inside and outside is the edge sector label \(\alpha\) in the
 
 \subsection{7.3 Recoverability of Interior}\label{73-recoverability-of-interior}
 
-By A4 (small CMI) + Theorem 3.2: \[\left\|\rho_{ABC} - (\text{id}_A \otimes \mathcal{R})(\rho_{AB})\right\|_1 \leq 2\sqrt{\ln 2 \cdot \varepsilon}\]
+By the recoverability clause of the canonical entropy axiom (small CMI) + Theorem 3.2: \[\left\|\rho_{ABC} - (\text{id}_A \otimes \mathcal{R})(\rho_{AB})\right\|_1 \leq 2\sqrt{\ln 2 \cdot \varepsilon}\]
 
 \textbf{Interpretation:} The "interior partner" is recoverable from outside + radiation. It\textquotesingle s encoded, not independent.
 
