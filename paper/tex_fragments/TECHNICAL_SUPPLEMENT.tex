@@ -771,58 +771,45 @@ Node & Output & Standard mathematics used & Extra premises / inputs beyond the f
 \endgroup
 
 The gauge/electroweak closure, Higgs/top transport branch, Koide/charged-lepton continuation, baryogenesis estimate, MOND-like acceleration scale, black-hole spectroscopy template, and the full spectrum discussion are not theorem-level results in this appendix. They belong in Appendix~A.2 or in explicitly marked phenomenological sections.
-\subsection{A.2 Quantitative Predictions}\label{a2-quantitative-predictions}
+\subsection{A.2 Secondary Quantitative and Continuation Benchmarks}\label{a2-quantitative-predictions}
+
+This appendix does not extend the theorem-level list. It records mixed-status numerical outputs and groups them by claim tier so they are not confused with the recovered core of Part~I.
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  MSSM-like beta shifts from edge sectors (within \textasciitilde5\%)
-\item
-  Proton spin fraction from Casimir ratio (within \textasciitilde8\%)
-\item
-  Baryon asymmetry scale from \(\varepsilon^{12}\) (within factor \textasciitilde1.3)
-\item
-  MOND acceleration scale from \(\Lambda\) (within \textasciitilde15\%)
-\item
-  Koide phase \(\delta = 2/9\) (within \(1\sigma\))
-\item
-  Full particle mass spectrum from pixel area (see Part III of this manuscript)
+\item supplement-backed implementation checks: the D10 gauge/electroweak closure and the associated MSSM-like beta-shift comparison from edge sectors;
+\item secondary quantitative branch: the D11 Higgs/top transport branch once the D10 trajectory and the critical-surface condition are imposed;
+\item deferred continuation benchmarks: proton-spin fractions from Casimir weighting, baryogenesis estimates from phenomenological suppression counting, MOND-like acceleration scales from the dark-sector response model, Koide/charged-lepton fits, and full particle-spectrum fits in later surfaces.
 \end{enumerate}
+
+Failure of an item in the third category retracts that continuation only. Failure of the D10 or D11 items challenges the current implementation layer, not the D1--D5 plus D7--D9 recovered core.
 
 \subsection{A.3 Future Directions}\label{a3-future-directions}
 
 \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  derive the screen-capacity input or replace it by a deeper first-principles selection principle
-\item
-  Yukawa integer exponents \(n_f\) from excitation dictionary
-\item
-  Full baryogenesis dynamics (CP profile from overlap holonomy)
-\item
-  Page curve dynamics (evaporation Hamiltonian from modular flow)
+\item construct or prove the scaling-limit regime required by the D1--D5 relativity chain, including the null-stress bridge and fixed-cap stationarity premises;
+\item extend the compact-gauge reconstruction from the bosonic internal-gauge branch to the fermionic/super-Tannakian chiral branch while preserving the D7--D9 Standard Model structural chain;
+\item derive or independently fix the external continuous inputs $P$ and $N_{\mathrm{scr}}$, and complete a fully auditable D10--D11 numerical pipeline with explicit running, threshold, and matching conventions;
+\item only after items 1--3 are secured, reopen the deferred post-Phase-I continuations: flavor/Yukawa structure, dark-sector response laws, baryogenesis, black-hole spectroscopy, and string/worldsheet reorganization.
 \end{enumerate}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\section{Appendix B: Key Numerical Values}\label{appendix-b-key-numerical-values}
+\section{Appendix B: Mixed-Status Numerical Benchmarks}\label{appendix-b-key-numerical-values}
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}>{\RaggedRight\arraybackslash}p{0.240\textwidth}>{\RaggedRight\arraybackslash}p{0.240\textwidth}>{\RaggedRight\arraybackslash}p{0.240\textwidth}>{\RaggedRight\arraybackslash}p{0.240\textwidth}@{}}
 \toprule\noalign{}
-Quantity & OPH Value & Observed & Agreement \\
+Quantity / branch & OPH Value & Observed & Status \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\(a_0\) & \(1.03 \times 10^{-10}\) m/s² & \(1.2 \times 10^{-10}\) m/s² & 15\% \\
-\(\Delta\Sigma\) & 0.308 & 0.29 ± 0.03 & 8\% \\
-\(\eta_B\) (scale) & \(4.6 \times 10^{-10}\) & \(6.1 \times 10^{-10}\) & 25\% \\
-Koide \(Q\) & 2/3 & 0.666664 & 10⁻⁵ \\
-Koide \(\delta\) & 2/9 & 0.222225 & 10⁻⁵ \\
-\(\Delta b_3/\Delta b_2\) & 0.91 & 0.96 (MSSM) & 5\% \\
+\(a_0\) (dark-sector continuation) & \(1.03 \times 10^{-10}\) m/s² & \(1.2 \times 10^{-10}\) m/s² & deferred continuation benchmark \\
+\(\Delta\Sigma\) (spin continuation) & 0.308 & 0.29 ± 0.03 & deferred continuation benchmark \\
+\(\eta_B\) (baryogenesis estimate) & \(4.6 \times 10^{-10}\) & \(6.1 \times 10^{-10}\) & deferred continuation benchmark \\
+Koide \(Q\) (flavor continuation) & 2/3 & 0.666664 & deferred continuation benchmark \\
+Koide \(\delta\) (flavor continuation) & 2/9 & 0.222225 & deferred continuation benchmark \\
+\(\Delta b_3/\Delta b_2\) (D10 calibration) & 0.91 & 0.96 (MSSM) & supplement-backed calibration \\
 \end{longtable}
 }
 
