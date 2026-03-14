@@ -180,9 +180,44 @@ This provides the kinematic structure of special relativity.
 
 \subsection{2.2 Geometric Modular Flow}\label{22-geometric-modular-flow}
 
-\textbf{Theorem 2.2 (Bisognano-Wichmann on \(S^2\) from tangent-half-space control):} In the controlled refinement/scaling-limit EFT regime, assume the collar exact-Markov modulus and transported modular remainder vanish along the chosen collar family, the local MaxEnt branch is \(\mathrm{SO}(2)\)-invariant around the entangling circle, and the rescaled collar modular flow converges to the modular flow of the corresponding tangent half-space fixed point with standard Bisognano--Wichmann normalization. Then cap modular flow acts as the unique cap-preserving conformal dilation with period \(2\pi\): \[\sigma_t^\omega(A) = \Delta^{it} A \Delta^{-it}\]
+The collar technology determines the controlled approach to an exact Markov normal form, but by itself it does not force a specific continuum modular geometry. The theorem-scope must therefore be stated as an OPH branch statement. In the attached source set, the sharp claim is: if the refinement-stable MaxEnt branch realized by OPH lies in the geometric modular class for caps, then the cap modular generator is fixed to the unique cap-preserving conformal dilation and its normalization is fixed to \(2\pi\). This replaces the earlier packaging that treated cap isotropy and a separate Euclidean-period postulate as independent premises.
 
-The modular Hamiltonian takes the geometric form: \[K_C = 2\pi \int_C \beta(x) T_{00}(x) \, d^3x\] where \(\beta(x)\) is the local inverse temperature (Tolman factor).
+For a shrinking collar family \((A_\delta,B_\delta,D_\delta)\) around \(\partial C\), write
+\[
+\varepsilon_\delta:=I(A_\delta:D_\delta\mid B_\delta)_\omega,
+\qquad
+r_{\mathrm{FR}}(\varepsilon_\delta):=
+2\sqrt{1-e^{-\varepsilon_\delta}}
+\le 2\sqrt{\varepsilon_\delta},
+\]
+and, when the relevant marginals are uniformly faithful with lower spectral bound \(\lambda_\ast>0\),
+\[
+\eta_\delta^{\mathrm M}
+:=
+4\lambda_\ast^{-1}\,
+\delta^{\mathrm M}_{A_\delta:B_\delta:D_\delta}(\varepsilon_\delta).
+\]
+All exact collar formulas in this subsection are therefore to be read either literally at exact Markovity or along a controlled collar family satisfying
+\[
+\delta^{\mathrm M}_{A_\delta:B_\delta:D_\delta}(\varepsilon_\delta)\to 0
+\qquad(\delta\downarrow 0),
+\]
+with \(r_{\mathrm{FR}}(\varepsilon_\delta)\) and \(\eta_\delta^{\mathrm M}\) carried explicitly.
+
+\textbf{Theorem 2.2 (Geometric modular flow on caps in the OPH geometric branch).} Assume the OPH axioms, the regulator premises R0--R1, local MaxEnt/refinement stability, the collar-control hypotheses used earlier in the supplement, and the branch condition that the refinement-stable cap net belongs to the geometric modular class for caps and their conformal images. Then the limiting modular flow of a cap \(C\subset S^2\) is the unique cap-preserving conformal dilation. If \(B_C\) denotes its generator, then
+\[
+K_C=2\pi B_C.
+\]
+
+More precisely, at collar scale \(\delta\),
+\[
+K_C^{(\delta)}=2\pi B_C+E_C^{(\delta)},
+\]
+where the carried remainder is controlled on bounded observables by \(r_{\mathrm{FR}}(\varepsilon_\delta)\) and on modular-Hamiltonian replacements by \(\eta_\delta^{\mathrm M}\). Hence \(E_C^{(\delta)}\to 0\) on every controlled collar family whose faithfulness bound survives the refinement limit.
+
+\textbf{Proof.} The recoverability/collar analysis localizes the modular defect to the shrinking collar and allows replacement of the physical state by an exact Markov reference with explicit carried error. On the chosen refinement branch, the limiting modular action on \(\mathcal A(C)\) is geometric, so it acts by conformal maps preserving \(C\) and fixing \(\partial C\). The stabilizer of a round cap in \(\mathrm{Conf}^+(S^2)\) has a unique connected noncompact one-parameter subgroup; denote its generator by \(B_C\). Therefore the limiting modular Hamiltonian is \(K_C=\kappa B_C\) for some \(\kappa>0\). The modular flow is KMS by definition, and the geometric Euclidean continuation fixes the angular period to \(2\pi\); hence \(\kappa=2\pi\). The displayed remainder \(E_C^{(\delta)}\) is exactly the carried collar-replacement error, so it vanishes in the controlled refinement limit. QED.
+
+\textbf{Scope note.} The supplement now states the phase boundary explicitly: the fixed-cutoff OPH collar technology does \emph{not} by itself prove that the theory must enter this geometric modular branch. What it does prove is that, once that branch is realized, both the cap generator and the \(2\pi\) normalization are fixed.
 
 \subsection{2.3 Null Modular Bridge (EFT Conditions N1-N3)}\label{23-null-modular-bridge-eft-conditions-n1-n3}
 
@@ -937,7 +972,7 @@ Node & Output & Standard mathematics used & Extra premises / inputs beyond the f
 \endlastfoot
 \textbf{D1} & schedule-independent normal form for overlap repair & Newman's lemma & finite patch net, termination, and local confluence & Phase I structural theorem \\
 \textbf{D2} & EC decomposition, Markov collar, and generalized-entropy split & HJPW; Petz; Fawzi--Renner & R0/R1 or explicit recoverability control; coarse-grained \(A/(4G)\) dictionary & Phase I structural lemma/proposition layer \\
-\textbf{D3} & geometric modular flow and Lorentz branch & Bisognano--Wichmann modular geometry; conformal-group classification & controlled refinement limit together with the tangent fixed-point / tangent-half-space comparison of Theorem 2.2 & Phase I conditional scaling-limit theorem \\
+\textbf{D3} & geometric modular flow and Lorentz branch & Bisognano--Wichmann modular geometry; conformal-group classification & controlled refinement limit together with the OPH geometric-branch hypothesis of Theorem 2.2 & Phase I conditional scaling-limit theorem \\
 \textbf{D4} & null modular bridge to \(T_{kk}\) & Borchers--Wiesbrock; distributional differentiation on half-lines & null-strip control, half-sided inclusion, and the relativistic null-stress identification premise; the endpoint/propagation controls are internal to the local finite-constraint MaxEnt branch & Phase I conditional bridge theorem \\
 \textbf{D5} & Jacobson-type rest-frame relation plus the conditional tensor upgrade & Jacobson small-ball mathematics; null-to-tensor reconstruction modulo a metric term & fixed-cap stationarity, the locally Lorentzian \(d=4\) scaling regime, and the all-directions/all-reference-states premise used in the tensor upgrade & Phase I conditional scaling-limit theorem/corollary \\
 \textbf{D6} & capacity/\(\Lambda\) corollary and the separate capacity-based neutrino estimate & de Sitter entropy relation and dimensional analysis & external input \(N_{\mathrm{scr}}\) and the screen-capacity identification & Phase II input-dependent corollary / estimate \\

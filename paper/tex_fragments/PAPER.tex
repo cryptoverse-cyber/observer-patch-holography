@@ -139,7 +139,7 @@ I(A_\delta:D_\delta \mid B_\delta)_\omega \le \varepsilon(\delta/\ell_{\mathrm{U
 
 See Section 2.3 for the collar tripartition definitions and the regulated EC proof that yields this limit under R0/R1.
 
-\textbf{Historical shorthand G / A5 (cap-modular tangent-limit package):} The current compact-note ledger no longer treats cap isotropy or Euclidean regularity as separate free premises. What is needed for the BW\(_{S^2}\) theorem is a controlled refinement/scaling family whose rescaled collar neighborhoods converge to an \(\mathrm{SO}(2)\)-invariant tangent fixed point of the same local MaxEnt branch, together with the standard half-space Bisognano--Wichmann modular geometry on that tangent fixed point. Earlier references to Assumption G and premise A5 should be read as names for pieces of this single tangent-limit package.
+\textbf{Historical shorthand G / A5 (cap-modular geometric-branch package):} The current compact-note ledger no longer treats cap isotropy or Euclidean regularity as separate free premises. What the BW\(_{S^2}\) theorem now uses instead is the claim that the refinement-stable OPH branch for caps lies in the geometric modular class, together with the controlled collar/refinement limit that carries the Markov/recovery remainders explicitly. Earlier references to Assumption G and premise A5 should be read as historical names for this branch-and-normalization package.
 
 This is also why the synchronized compact-note crosswalk keeps a deliberately nonconsecutive historical \(T\)-label sequence: the quasi-local propagation labels are now internal to Canonical 3, while the old cap-modular package is folded into Theorem 4.2 rather than retained as a standalone free premise.
 
@@ -261,7 +261,7 @@ Node & Main-manuscript output & Immediate OPH ingredients & Standard mathematics
 \endlastfoot
 \textbf{D1} & Theorem 3.1: normal-form/objectivity statement & overlap-consistency setup on finite patch nets & Newman's lemma & finite patch net, termination, and local confluence & structural theorem \\
 \textbf{D2} & Section 2.3 and \S5.4: EC/Markov collar and generalized-entropy split & Canonical 1--4 plus R0/R1 when invoked & HJPW; Petz; Fawzi--Renner & exact-Markov or idealized recoverability hypotheses when exact identities are used; coarse-grained \(A/(4G)\) dictionary & structural lemma/proposition layer \\
-\textbf{D3} & Theorems 4.2--4.3: geometric modular flow and Lorentz branch & Canonical 1--4 & Bisognano--Wichmann modular geometry; conformal-group classification & controlled refinement limit together with the tangent fixed-point / tangent-half-space comparison used in Theorem 4.2 & conditional scaling-limit theorem \\
+\textbf{D3} & Theorems 4.2--4.3: geometric modular flow and Lorentz branch & Canonical 1--4 & Bisognano--Wichmann modular geometry; conformal-group classification & controlled refinement limit together with the OPH geometric-branch hypothesis used in Theorem 4.2 & conditional scaling-limit theorem \\
 \textbf{D4} & Section 5.2: null modular bridge & D2+D3 & Borchers--Wiesbrock and endpoint differentiation & null-strip control, half-sided inclusion, and relativistic null-stress premise & conditional bridge theorem \\
 \textbf{D5} & Theorem 5.1: Einstein branch & D3+D4 & Jacobson small-ball mathematics; null-to-tensor reconstruction modulo a metric term & fixed-cap stationarity and the locally Lorentzian \(d=4\) scaling regime & conditional scaling-limit theorem \\
 \textbf{D6} & capacity/\(\Lambda\) reduction statements & D5 leaves \(+\Lambda g_{ab}\) undetermined & de Sitter entropy relation and dimensional analysis & external input \(N_{\mathrm{scr}}\) and the screen-capacity identification & input-dependent corollary / estimate \\
@@ -824,25 +824,50 @@ Accordingly, the manuscript's later exact collar formulas should be read in one 
 \item a controlled collar limit in which \(\delta^{\mathrm M}_{A:B:D}(\varepsilon_\delta)\to0\), with \(r_{\mathrm{FR}}(\varepsilon_\delta)\) and the \(4\lambda_\ast^{-1}\delta^{\mathrm M}_{A:B:D}(\varepsilon_\delta)\) modular remainder carried explicitly.
 \end{enumerate}
 
-\subsubsection{\texorpdfstring{4.2 Theorem: \(\mathrm{BW}_{S^2}\) from Markov locality, symmetry, regularity}{4.2 Theorem: \textbackslash mathrm\{BW\}\_\{S\^{}2\} from Markov locality, symmetry, regularity}}\label{42-theorem-mathrmbw_s2-from-markov-locality-symmetry-regularity}
+\subsubsection{\texorpdfstring{4.2 Theorem: \(\mathrm{BW}_{S^2}\) on the OPH geometric branch}{4.2 Theorem: \textbackslash mathrm\{BW\}\_\{S\^{}2\} on the OPH geometric branch}}\label{42-theorem-mathrmbw_s2-from-markov-locality-symmetry-regularity}
 
-\textbf{Theorem 4.2 (\(\mathrm{BW}_{S^2}\) from collar locality and tangent-half-space control).} Assume: (i) the collar refinement limit (Assumption F) together with vanishing exact-Markov modulus and transported modular remainder on the chosen collar family, (ii) MaxEnt selection with rotationally invariant constraints (Assumptions B-C), and (iii) after rescaling by the collar width near any smooth point of \(\partial C\), the collar modular flow converges on local observables to the modular flow of the corresponding tangent half-space fixed point of the same MaxEnt branch, with standard Bisognano--Wichmann normalization on that tangent half-space. Then in the controlled refinement/scaling limit, for each cap \(C\), modular flow is the unique conformal dilation that preserves \(C\) and fixes its boundary circle, with KMS normalization \(\beta = 2\pi\). Equivalently,
-
+\textbf{Theorem 4.2 (\(\mathrm{BW}_{S^2}\) on the OPH geometric branch).} Let \(C\subset S^2\) be a cap and let \((A_\delta,B_\delta,D_\delta)\) be a shrinking collar family around \(\partial C\). Assume: (i) the collar-control/refinement limit used throughout Section 4, so that exact collar formulas are read either at exact Markovity or along a controlled family with
 \[
-K_C = 2 \pi B_C.
+\delta^{\mathrm M}_{A_\delta:B_\delta:D_\delta}(\varepsilon_\delta)\to 0;
+\]
+(ii) MaxEnt selection with rotationally invariant local constraints; and (iii) the refinement-stable OPH branch for caps is geometric, i.e. the limiting modular action for caps and their conformal images acts by conformal maps of \(S^2\). Then cap modular flow is the unique cap-preserving conformal dilation, and its normalization is fixed to \(2\pi\). Equivalently,
+\[
+K_C=2\pi B_C.
 \]
 
-\textbf{Proof.} Corollary 4.1c upgrades the controlled collar family to exact collar modular identities in the scaling limit, so the modular generator localizes to an arbitrarily thin collar of \(\partial C\). Rotational invariance around the boundary then forces the limiting collar generator to commute with the \(\mathrm{SO}(2)\) stabilizer of the boundary circle. Among conformal transformations of \(S^2\), the connected noncompact 1-parameter subgroup with that property is the cap-preserving dilation, so \(K_C=\beta_C B_C\) for some constant \(\beta_C>0\). Blowing up a smooth boundary point by the collar scale identifies the rescaled modular flow with the tangent half-space modular flow from assumption (iii). The tangent Bisognano--Wichmann theorem fixes that half-space generator to have normalization \(2\pi\), so the same blow-up forces \(\beta_C=2\pi\). Hence \(K_C=2\pi B_C\). QED.
+More precisely, at collar scale \(\delta\),
+\[
+K_C^{(\delta)}=2\pi B_C+E_C^{(\delta)},
+\]
+where the carried remainder is controlled by the already-separated finite-stage errors
+\[
+r_{\mathrm{FR}}(\varepsilon_\delta)
+\qquad\text{and}\qquad
+4\lambda_\ast^{-1}\delta^{\mathrm M}_{A_\delta:B_\delta:D_\delta}(\varepsilon_\delta),
+\]
+and therefore vanishes on every controlled collar family whose faithfulness bound survives the limit.
+
+\textbf{Proof.} Markov locality does one precise job: it reduces the modular problem to the shrinking collar, with the finite-stage deviation from an exact Markov reference carried explicitly by \(r_{\mathrm{FR}}(\varepsilon_\delta)\) and \(4\lambda_\ast^{-1}\delta^{\mathrm M}_{A_\delta:B_\delta:D_\delta}(\varepsilon_\delta)\). On the stated OPH refinement branch, the limiting modular automorphism group is geometric, so it acts by conformal maps preserving \(C\) and fixing its boundary circle. The stabilizer of a circle in \(\mathrm{Conf}^+(S^2)\) has a unique connected noncompact one-parameter subgroup preserving the chosen cap; call its generator \(B_C\). Hence the limiting modular Hamiltonian must be \(K_C=\kappa B_C\) for some \(\kappa>0\). The modular group is KMS by definition, and the geometric Euclidean orbit closes with period \(2\pi\); this fixes \(\kappa=2\pi\). Therefore
+\[
+K_C=2\pi B_C,
+\]
+with the displayed \(E_C^{(\delta)}\) as the carried finite-stage remainder. QED.
+
+\textbf{Scope note.} The theorem proves the Bisognano--Wichmann conclusion \emph{once the OPH refinement branch is geometric}. It does \emph{not} claim that quasi-locality plus small collar CMI alone force that branch; that remaining phase-selection burden is stated openly rather than hidden in the theorem packaging.
 
 \subsubsection{\texorpdfstring{4.3 Theorem: \(\mathrm{BW}_{S^2}\) implies Lorentz kinematics}{4.3 Theorem: \textbackslash mathrm\{BW\}\_\{S\^{}2\} implies Lorentz kinematics}}\label{43-theorem-mathrmbw_s2-implies-lorentz-kinematics}
 
-\textbf{Theorem 4.3 (Lorentz kinematics on the screen).} If modular flows act by conformal maps of \(S^2\) in the same scaling limit, the induced kinematic group is
+\textbf{Theorem 4.3 (Lorentz kinematics on the screen).} Under the branch and controlled-limit hypotheses of Theorem~\ref{42-theorem-mathrmbw_s2-from-markov-locality-symmetry-regularity}, the induced kinematic group is
 
 \[
 \mathrm{Conf}^+(S^2) \cong \mathrm{PSL}(2,\mathbb C) \cong \mathrm{SO}^+(3,1).
 \]
 
-\textbf{Proof.} Once Theorem 4.2 identifies cap modular flow with the cap-preserving conformal dilation, the screen kinematics generated by cap modular flow and rotations lies in the orientation-preserving conformal group of \(S^2\). That group is the M\"{o}bius group \(\mathrm{PSL}(2,\mathbb{C})\), which is isomorphic to the connected Lorentz group. QED.
+\textbf{Proof.} Theorem~\ref{42-theorem-mathrmbw_s2-from-markov-locality-symmetry-regularity} identifies cap modular flows with the cap-preserving conformal dilations on \(S^2\). Together with the rotation subgroup already fixed by the screen geometry, these are the standard one-parameter subgroups of the orientation-preserving conformal group of the sphere. But
+\[
+\mathrm{Conf}^+(S^2)=\mathrm{PSL}(2,\mathbb C),
+\]
+the M\"obius group, and this is isomorphic to the connected Lorentz group \(\mathrm{SO}^+(3,1)\). Hence the local kinematics induced by the modular action is Lorentzian. QED.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -1245,7 +1270,7 @@ G_{ab} + \Lambda g_{ab} = 8 \pi G \langle T_{ab} \rangle.
 
 The gravity chain yields specific numerical constants as rigid outputs of the axiom chain.
 
-\textbf{The \(2\pi\) KMS normalization.} From Theorem 4.2, the modular flow around a smooth cut inherits the tangent half-space Bisognano--Wichmann normalization \(2\pi\) through the controlled collar blow-up. This is the same rigidity that fixes Unruh/Hawking temperature normalization. The period is determined by the axioms together with the stated scaling-limit package.
+\textbf{The \(2\pi\) KMS normalization.} From Theorem 4.2, once the OPH refinement branch is geometric, cap modular flow is fixed by the KMS condition to the standard \(2\pi\) normalization. This is the same rigidity that fixes Unruh/Hawking temperature normalization. The period is determined by the stated scaling-limit package together with the geometric-branch hypothesis.
 
 \textbf{The geometric coefficient \(\Omega_{d-2}/(d^2 - 1)\).} This coefficient appears in both (a) the CFT-ball modular Hamiltonian weight integral and (b) the geometric area-variation identity. It is an exact integral identity:
 
@@ -3480,7 +3505,7 @@ This is exactly the heat-kernel form p\_R(t) ∝ d\_R\^{}κ exp(−t C₂(R)) wi
 
 so the coupling parameter t is \textbf{additive} under stacking collar layers. Additive in the "RG-time" variable is exactly what one-loop running requires: if the physical scale changes multiplicatively, the number of collar layers changes additively, hence t runs linearly in ln μ.
 
-\textbf{Normalization from modular geometry.} The BW\_\{S²\} theorem gives modular flow on a cap as the conformal dilation preserving the cap and fixing its boundary, with KMS normalization β = 2π inherited from the tangent half-space Bisognano--Wichmann comparison. Near an entangling surface, modular flow is a boost; in Euclidean continuation it becomes an angular coordinate with period 2π. The dilation parameter is s ∼ ln(μ/μ₀).
+\textbf{Normalization from modular geometry.} The BW\_\{S²\} theorem gives modular flow on a cap as the conformal dilation preserving the cap and fixing its boundary, with KMS normalization \(\beta=2\pi\) on the OPH geometric branch. At finite collar scale the discrepancy is the carried remainder from the Markov/recovery analysis; in the controlled refinement limit that remainder vanishes. Near an entangling surface, modular flow is a boost; in Euclidean continuation it becomes an angular coordinate with period \(2\pi\). The dilation parameter is \(s\sim \ln(\mu/\mu_0)\).
 
 Because the imaginary period is 2πi, one modular thermal cycle corresponds to a multiplicative scale change:
 
@@ -4248,7 +4273,7 @@ Node & Representative outputs in this manuscript & Standard mathematics used & E
 \endlastfoot
 \textbf{D1} & Theorem 3.1 schedule-independent normal form & Newman's lemma & finite patch net, termination, and local confluence & Phase I structural theorem \\
 \textbf{D2} & EC decomposition, exact/approximate Markov collar, and generalized-entropy split & HJPW; Petz; Fawzi--Renner & R0/R1 or explicit recoverability control; coarse-grained \(A/(4G)\) dictionary & Phase I structural lemma/proposition layer \\
-\textbf{D3} & Theorems 4.2--4.3 Lorentz branch & Bisognano--Wichmann modular geometry; conformal-group classification & controlled refinement limit together with the tangent fixed-point / tangent-half-space comparison used in Theorem 4.2 & Phase I conditional scaling-limit theorem \\
+\textbf{D3} & Theorems 4.2--4.3 Lorentz branch & Bisognano--Wichmann modular geometry; conformal-group classification & controlled refinement limit together with the OPH geometric-branch hypothesis used in Theorem 4.2 & Phase I conditional scaling-limit theorem \\
 \textbf{D4} & Section 5.2 null modular bridge & Borchers--Wiesbrock; distribution theory for half-line differentiation & null-strip control, half-sided inclusion, and the relativistic null-stress identification premise; the endpoint/propagation controls are internal to the local finite-constraint MaxEnt branch & Phase I conditional bridge theorem \\
 \textbf{D5} & Theorem 5.1 rest-frame Einstein relation plus the conditional tensor upgrade of Corollary 5.1 & Jacobson small-ball mathematics; null-to-tensor reconstruction modulo a metric term & fixed-cap stationarity, the locally Lorentzian \(d=4\) scaling regime, and the all-directions/all-reference-states premise used in the tensor upgrade & Phase I conditional scaling-limit theorem/corollary \\
 \textbf{D6} & capacity/\(\Lambda\) statements and the separate capacity-based neutrino estimate & de Sitter entropy relation and dimensional analysis & external input \(N_{\mathrm{scr}}\) and the screen-capacity identification & Phase II input-dependent corollary / estimate \\
