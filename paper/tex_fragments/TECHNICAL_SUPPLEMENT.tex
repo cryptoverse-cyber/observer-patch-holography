@@ -30,13 +30,21 @@ This supplement uses the same authoritative OPH premise ledger as the compact no
 
 \subsection{1.2 Technical Premises and Legacy Regulator Names}\label{12-regulator-premises}
 
-The supplement continues to use historical labels such as R0, R1, and N1--N3 because later derivations cite them directly. In the present version these are theorem-local technical premises or derived shorthands, not additional axioms.
+The supplement continues to use historical labels such as R0, R1, and N1--N3 because later derivations cite them directly. In the present version, R0/R1 are not extra microphysical axioms. They are read-along names for the fixed-cutoff realization of the canonical screen-net and overlap-gluing data.
 
-\textbf{Premise R0 (Type-I Local Algebras):} At the UV regulator scale, local patch algebras are type-I factors (finite-dimensional matrix algebras).
+\textbf{R0 (finite type-I regulator presentation):} On a fixed UV cellulation, each cell carries finite local data and can be Hilbertized on a finite-dimensional space \(\tilde{\mathcal H}_i\). For any finite union \(R\) of cells, the extended algebra before quotienting by overlap redundancy is
+\[
+\widetilde{\mathcal A}(R)=\mathcal B(\tilde{\mathcal H}_R),
+\qquad
+\tilde{\mathcal H}_R=\bigotimes_{i\subset R}\tilde{\mathcal H}_i.
+\]
 
-\textbf{Premise R1 (Boundary Gauge Invariance):} For a region \(R \subset S^2\), the physical algebra is: \[\mathcal{A}(R) = \mathcal{B}(\tilde{\mathcal{H}}_R)^{G_{\partial R}}\] where \(G_{\partial R}\) is the boundary gauge group.
+\textbf{R1 (boundary fixed-point realization of overlap gluing):} The redundancy in overlap identifications acts only on cut data. On each finite-dimensional chart, its unitary image has compact closure, so for a region \(R \subset S^2\) one may represent it by a compact boundary group \(G_{\partial R}\) acting on \(\tilde{\mathcal H}_R\), with physical algebra
+\[
+\mathcal{A}(R) = \mathcal{B}(\tilde{\mathcal{H}}_R)^{G_{\partial R}}.
+\]
 
-\textbf{Read-along convention.} Older references to "A3" mean Recoverable Generalized Entropy; older references to "A4" mean the recoverability clause used together with the collar/null-strip control hypotheses stated explicitly below.
+\textbf{Read-along convention.} Older references to "A3" mean Recoverable Generalized Entropy; older references to "A4" mean the recoverability clause used together with the collar/null-strip control hypotheses stated explicitly below. The remaining nontrivial burden is the controlled refinement limit and the later geometric/null modular premises, not the matrix/fixed-point bookkeeping at one regulator scale.
 
 \subsection{1.3 Edge-Center Completion (EC)}\label{13-edge-center-completion-ec}
 

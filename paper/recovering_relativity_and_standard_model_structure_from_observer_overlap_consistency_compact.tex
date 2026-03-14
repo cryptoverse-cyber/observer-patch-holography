@@ -396,30 +396,86 @@ These three results already encode much of the eventual physical interpretation.
 
 \section{Collars, Edge Centers, and Generalized Entropy}
 
-The fixed-point picture explains the logic of overlap consistency. The continuum theory requires its algebraic lift. In OPH the relevant object is a collar neighborhood of an entangling cut, together with the center data carried by that collar.
+The historical regulator labels \(R0/R1\) are not a second axiom layer in the compact note. They are the fixed-cutoff realization of the finite patch-net and gauge-quotient data already introduced in Definition~\ref{def:patchnet}, Theorem~\ref{thm:holonomy}, and Proposition~\ref{prop:gauge}. This section makes that realization explicit, then states the collar decomposition and generalized-entropy consequences in that language.
 
-\begin{theorem}[Exact quantum Markov collar decomposition]\label{thm:markovcollar}
-Let $A$-$B$-$D$ be a collar tripartition with
+\begin{proposition}[Regulated realization of local OPH data]\label{prop:regulatedrealization}
+Fix a regulator-scale finite patch cover of a cap neighborhood and let \(R\) be any finite union of regulator cells. Then:
+\begin{enumerate}[leftmargin=2em]
+\item each regulator cell \(i\) with finite local state space \(S_i\) can be Hilbertized as \(\tilde{\mathcal H}_i\cong \mathbb C^{|S_i|}\), so the extended algebra before overlap quotienting is the finite type-I algebra
 \[
-I(A:D|B)_\rho=0.
+\widetilde{\mathcal A}(R)=\mathcal B(\tilde{\mathcal H}_R),
+\qquad
+\tilde{\mathcal H}_R:=\bigotimes_{i\subset R}\tilde{\mathcal H}_i;
 \]
-Then the Hilbert space of the collar factorizes as
+\item the overlap-identification redundancy that leaves shared interface data invariant is supported on the cut degrees of freedom and, on each finite-dimensional chart, is represented by a compact unitary boundary gluing group \(G_{\partial R}\subset U(\tilde{\mathcal H}_R)\);
+\item the physical region algebra is the fixed-point algebra
+\[
+\mathcal A(R)=\widetilde{\mathcal A}(R)^{G_{\partial R}}
+=\mathcal B(\tilde{\mathcal H}_R)^{G_{\partial R}}.
+\]
+\end{enumerate}
+Historical labels \(R0\) and \(R1\) are shorthand for items 1 and 3 in this realized regulator presentation.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+Definition~\ref{def:patchnet} already introduces a fixed-cutoff patch net with finitely many local states. Choosing an orthonormal basis for each finite set \(S_i\) Hilbertizes it to \(\tilde{\mathcal H}_i\cong \mathbb C^{|S_i|}\), and finite unions of cells therefore carry finite-dimensional extended algebras. Proposition~\ref{prop:gauge} identifies gauge as the redundancy that preserves interface data, while Theorem~\ref{thm:holonomy} shows that the nontrivial obstruction data live on loops and hence on boundary gluing. On a finite-dimensional extended Hilbert space, any unitary image of that boundary redundancy has compact closure. Physical observables are precisely the endomorphisms that descend through the quotient by that redundancy, so they form the fixed-point algebra of the resulting compact boundary action.
+\end{proof}
+
+\begin{theorem}[Edge-center collar decomposition and exact Markov normal form]\label{thm:markovcollar}
+Let \(A\)-\(B\)-\(D\) be a collar tripartition realized at fixed regulator scale as in Proposition~\ref{prop:regulatedrealization}. Write \(B=B_L\cup B_R\) with common interface \(\Sigma=\partial C\), let
+\[
+\mathcal H_B=(\tilde{\mathcal H}_{B_L}\otimes \tilde{\mathcal H}_{B_R})^{G_\Sigma},
+\]
+and decompose the left and right extended boundary data as
+\[
+\tilde{\mathcal H}_{B_L}\cong \bigoplus_\alpha V_\alpha\otimes \mathcal H_{b_L^\alpha},
+\qquad
+\tilde{\mathcal H}_{B_R}\cong \bigoplus_\beta V_\beta^*\otimes \mathcal H_{b_R^\beta},
+\]
+with \(V_\alpha\) irreducible \(G_\Sigma\)-modules. Then
 \[
 \mathcal H_B\cong\bigoplus_\alpha \mathcal H_{b_L^\alpha}\otimes \mathcal H_{b_R^\alpha},
+\qquad
+Z(\mathcal A(B))=\bigoplus_\alpha \mathbb C\,\mathbf 1_\alpha.
 \]
-and the state decomposes as
+If, in addition, the reference state on \(A\cup B\cup D\) is exact Markov,
+\[
+I(A:D|B)_\rho=0,
+\]
+or one passes to an explicitly stated idealized recoverability limit that reduces to it, then the state decomposes as
 \[
 \rho_{ABD}
 =
 \bigoplus_\alpha p_\alpha\,
 \rho^{(\alpha)}_{A b_L^\alpha}\otimes \rho^{(\alpha)}_{b_R^\alpha D}.
 \]
-The label $\alpha$ is classical center data carried by the cut.
+The label \(\alpha\) is the classical edge-center data carried by the cut.
 \end{theorem}
 
 \begin{proof}
-This is the standard structure theorem for exact quantum Markov states on tripartite systems \cite{HJPW}. In the present framework it is applied to collar neighborhoods produced by edge-center completion and recoverability.
+By Proposition~\ref{prop:regulatedrealization}, the collar algebra is the fixed-point algebra of the diagonal boundary gluing action on \(\tilde{\mathcal H}_{B_L}\otimes \tilde{\mathcal H}_{B_R}\). Therefore
+\[
+\tilde{\mathcal H}_{B_L}\otimes \tilde{\mathcal H}_{B_R}
+\cong
+\bigoplus_{\alpha,\beta}
+(V_\alpha\otimes V_\beta^*)\otimes
+(\mathcal H_{b_L^\alpha}\otimes \mathcal H_{b_R^\beta}).
+\]
+By Schur's lemma,
+\[
+(V_\alpha\otimes V_\beta^*)^{G_\Sigma}
+\cong
+\begin{cases}
+\mathbb C, & \alpha=\beta,\\
+0, & \alpha\neq \beta,
+\end{cases}
+\]
+so the invariant collar Hilbert space has the displayed block form and its center is generated by the block projectors. Within each block, observables from \(A\cup B\) act only on the left factor and observables from \(B\cup D\) act only on the right factor. If the state is exact Markov, the standard HJPW structure theorem gives the blockwise factorized normal form \cite{HJPW}. The same formula is used in the idealized recoverability limit when exact identities are taken literally.
 \end{proof}
+
+\begin{remark}[Status of the regulator package]
+In the compact note, Assumption~\ref{ass:technical}\textbf{T1} is read only as theorem-local shorthand for the fixed-cutoff realization above. The nontrivial open burden is the controlled refinement/scaling regime of Assumption~\ref{ass:technical}\textbf{T8} and the later modular/null-limit premises, not the matrix-algebra bookkeeping at one regulator scale.
+\end{remark}
 
 \begin{proposition}[Approximate collar recovery]\label{prop:approxrecover}
 Let $A$-$B$-$D$ be a collar tripartition satisfying
