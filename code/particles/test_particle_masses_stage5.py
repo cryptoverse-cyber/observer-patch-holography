@@ -43,7 +43,7 @@ def main():
     pred = pm5.build_spectrum()
 
     # Reference values are *comparison only* (see PDG dict in module).
-    PDG = pm5.PDG_REFERENCE
+    PDG = pm5.PDG
 
     # Gauge + EW
     check("alpha_em_inv", pred["alpha_em_inv_at_mZrun"], PDG["alpha_em_inv"], 5e-3)  # 0.5%
