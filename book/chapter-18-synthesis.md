@@ -351,7 +351,7 @@ These predictions have been tested experimentally or computationally:
 | CPT invariance | Kaon experiments | Confirmed (10^-18) |
 | Page curve for black holes | Island calculations (2019-2020) | Confirmed |
 | Electroweak VEV v ≈ 246.77 GeV | Measured: 246.22 GeV | Calibration-sector scale setting; not an independent confirmation |
-| Top pole mass m_t ≈ 171.1 GeV | Measured: 172.6 GeV | 0.9% low; supplement-backed independent quantitative branch |
+| Top pole mass m_t ≈ 171.1 GeV | Measured: 172.6 GeV | 0.9% low; supplement-backed D11 reconstruction with UV-synchronized transport and low-scale matching |
 | Strong coupling α_s(M_Z) ≈ 0.1183 | PDG: 0.1179 | Calibration-sector consistency check |
 | Weak mixing angle sin²θ_W ≈ 0.23119 | PDG: 0.23122 | Calibration-sector consistency check |
 | QCD scale Λ_MS ≈ 195 MeV | PDG: 213 ± 8 MeV | ~10% low (from Dynkin-index β) |

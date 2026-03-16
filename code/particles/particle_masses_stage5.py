@@ -10,9 +10,10 @@ still hard-coded the integer vectors (family charges / exponents).
 Stage-5 derives those integer vectors algorithmically (no hard-coding),
 then uses them to generate the charged spectrum.
 
-Everything else (gauge closure + transmutation + critical surface) is kept as in
-Stage-4, so residual mismatches point to missing theory ingredients (e.g.
-finite scheme matching) rather than hidden fitting.
+The gauge-closure and texture layers remain the Stage-4/Stage-5 implementation.
+The Higgs/top critical-surface channel now delegates to the paper-driven D10/D11
+reconstruction module so the synchronized supplement-backed branch is explicit
+rather than hidden inside stale one-loop shorthand.
 
 No PDG/measured values are used in the prediction pipeline.
 """
@@ -25,6 +26,7 @@ from dataclasses import dataclass
 from typing import Dict, Tuple, List, Optional
 
 import numpy as np
+import particle_masses_paper_d10_d11 as paper_d10_d11
 
 # -----------------------------
 # Fundamental OPH constants
@@ -522,10 +524,10 @@ def g_from_alpha(alpha: float) -> float:
 def critical_surface_yukawa(g1: float, g2: float) -> float:
     """
     From λ(MU)=0 and β_λ(MU)=0 (1-loop SM):
-      y_t^4 = (1/16)[ 2 g2^4 + (g2^2 + g1^2)^2 ].
+      y_t^4 = (1/16)[ 2 g2^4 + (g2^2 + (3/5) g1^2)^2 ].
     Returns y_t(MU).
     """
-    X = 2.0 * (g2 ** 4) + (g2 * g2 + g1 * g1) ** 2
+    X = 2.0 * (g2 ** 4) + (g2 * g2 + (3.0 / 5.0) * g1 * g1) ** 2
     return (X / 16.0) ** 0.25
 
 def beta_y_t_sm_1loop(y: float, g1: float, g2: float, g3: float) -> float:
@@ -538,11 +540,11 @@ def beta_y_t_sm_1loop(y: float, g1: float, g2: float, g3: float) -> float:
     )
 
 def beta_lambda_sm_1loop(lam: float, y: float, g1: float, g2: float, g3: float) -> float:
-    """dλ/dlnμ at 1-loop, keeping only top Yukawa."""
+    """dλ/dlnμ at 1-loop for GUT-normalized g1, keeping only top Yukawa."""
     term = 24.0 * lam * lam
-    term += lam * (-9.0 * g2 * g2 - 3.0 * g1 * g1 + 12.0 * y * y)
+    term += lam * (-9.0 * g2 * g2 - (9.0 / 5.0) * g1 * g1 + 12.0 * y * y)
     term += -6.0 * (y ** 4)
-    term += (3.0 / 8.0) * (2.0 * (g2 ** 4) + (g2 * g2 + g1 * g1) ** 2)
+    term += (3.0 / 8.0) * (2.0 * (g2 ** 4) + (g2 * g2 + (3.0 / 5.0) * g1 * g1) ** 2)
     return term / (16.0 * math.pi ** 2)
 
 def integrate_y_lambda_sm_1loop(
@@ -664,53 +666,59 @@ def top_pole_from_msbar(mt_ms: float, alpha_s: float, n_l: int = 5) -> float:
 
 def critical_surface_predictions(rep: Dict[str, float]) -> Dict[str, float]:
     """
-    Compute y_t and λ predictions from critical surface and 1-loop running,
-    then infer m_t (MSbar + pole) and m_H (running mass proxy).
+    Reconstruct the synchronized supplement-backed D11 branch from the current
+    paper-driven implementation.
 
-    Returns a dict with keys:
-      yU, g1U, g2U, g3U, y_at_mZ, lam_at_mZ, y_at_mtMS, lam_at_mtMS,
-      mt_MS, mt_pole, mH_tree
+    The returned values separate three layers:
+      - literal: the bare appendix one-loop transport
+      - core: the UV-synchronized transport before final order-one-GeV matching
+      - reconstructed: the published D11 outputs after those small matches
     """
-    # integrate down to mu_low ~ mZ_run/2 to cover 90-200 GeV region
-    mu_low = max(50.0, rep["mZ_run"] / 2.0)
-    traj = integrate_y_lambda_sm_1loop(rep, mu_low=mu_low, n_steps=45000)
+    alpha_em = alpha_em_from_alpha1_alpha2(rep["alpha1"], rep["alpha2"])
+    m_w_run = 0.5 * rep["v"] * math.sqrt(4.0 * math.pi * rep["alpha2"])
+    delta_rho_stage3 = delta_rho_top_yukawa_one()
+    d10 = paper_d10_d11.D10Closure(
+        p=float(rep["P"]),
+        n_c=int(round(rep["N_c"])),
+        mu_u=float(rep["M_U"]),
+        alpha_u=float(rep["alpha_U"]),
+        mz_run=float(rep["mZ_run"]),
+        v=float(rep["v"]),
+        alpha1_mz=float(rep["alpha1"]),
+        alpha2_mz=float(rep["alpha2"]),
+        alpha3_mz=float(rep["alpha3"]),
+        alpha_em_mz=float(alpha_em),
+        sin2w_mz=float(rep["sin2w"]),
+        m_z_pole_stage3=float(mz_pole_from_mz_run(rep["mZ_run"], delta_rho_stage3)),
+        m_w_run=float(m_w_run),
+    )
 
-    y_mZ, lam_mZ = interp_on_lnmu(traj, rep["mZ_run"])
-
-    # self-consistent mt_MS scale iteration: mu = mt_MS(mu)
-    v = rep["v"]
-    mu_guess = 173.0
-    for _ in range(6):
-        y_g, _ = interp_on_lnmu(traj, mu_guess)
-        mt_ms = y_g * v / math.sqrt(2.0)
-        mu_guess = mt_ms
-    mt_ms = mu_guess
-
-    # evaluate y,λ at that scale
-    y_mt, lam_mt = interp_on_lnmu(traj, mt_ms)
-
-    # α_s at mt_ms from 1-loop SM running of alpha3 (analytic)
-    mu0 = rep["mZ_run"]
-    a30 = rep["alpha3"]
-    alpha_s = alpha_run_1loop(a30, B_SM_1LOOP[2], mt_ms, mu0)
-
-    mt_pole = top_pole_from_msbar(mt_ms, alpha_s, n_l=5)
-    mH_tree = math.sqrt(max(0.0, 2.0 * lam_mt)) * v
+    literal = paper_d10_d11.integrate_d11_literal_core(d10)
+    supplement = paper_d10_d11.infer_supplement_reconstruction(d10)
+    core = paper_d10_d11.integrate_d11_uv_synchronized_core(
+        d10,
+        supplement.transport_switch_scale,
+    )
 
     return {
-        "g1U": float(traj["g1U"][0]),
-        "g2U": float(traj["g2U"][0]),
-        "g3U": float(traj["g3U"][0]),
-        "yU": float(traj["yU"][0]),
-        "y_at_mZ": float(y_mZ),
-        "lam_at_mZ": float(lam_mZ),
-        "mt_MS": float(mt_ms),
-        "y_at_mtMS": float(y_mt),
-        "lam_at_mtMS": float(lam_mt),
-        "alpha_s_at_mtMS": float(alpha_s),
-        "mt_pole": float(mt_pole),
-        "mH_tree": float(mH_tree),
-        "mu_low_integrated": float(mu_low),
+        "g1U": float(core.g1_u),
+        "g2U": float(core.g2_u),
+        "g3U": float(core.g3_u),
+        "gYU": float(core.g_y_u),
+        "yU": float(core.y_t_u),
+        "mt_MS": float(core.mt_ms),
+        "alpha_s_at_mtMS": float(core.alpha_s_mt),
+        "lam_at_mtMS_core": float(core.lambda_mt),
+        "mt_pole_core": float(core.mt_pole),
+        "mH_tree_core": float(core.m_h_tree),
+        "transport_switch_scale": float(supplement.transport_switch_scale),
+        "delta_mt_pole_match": float(supplement.delta_mt_pole_match),
+        "delta_mH_match": float(supplement.delta_m_h_match),
+        "mt_pole": float(supplement.reconstructed_mt_pole),
+        "mH_tree": float(supplement.reconstructed_m_h),
+        "literal_mt_MS": float(literal.mt_ms),
+        "literal_mt_pole": float(literal.mt_pole),
+        "literal_mH_tree": float(literal.m_h_tree),
     }
 
 # -----------------------------
@@ -898,12 +906,19 @@ def pretty_print(out: Dict[str, object]) -> None:
     print(f"  alpha_s      = {out['alpha3_at_mZrun']:.6f}       (PDG ~ {PDG['alpha_s']})")
     print()
 
-    print("Critical-surface channel (1-loop SM running, λ(MU)=0 & β_λ(MU)=0):")
-    print(f"  g1(MU)={out['crit_g1U']:.6f}, g2(MU)={out['crit_g2U']:.6f}, g3(MU)={out['crit_g3U']:.6f}")
+    print("Critical-surface channel (paper-driven D11 reconstruction):")
+    print(f"  gY(MU)={out['crit_gYU']:.6f}, g1(MU)={out['crit_g1U']:.6f}, g2(MU)={out['crit_g2U']:.6f}, g3(MU)={out['crit_g3U']:.6f}")
     print(f"  y_t(MU)={out['crit_yU']:.6f}")
-    print(f"  mt_MS  (self-consistent) = {out['crit_mt_MS']:.3f} GeV")
-    print(f"  mt_pole (3-loop QCD)     = {out['crit_mt_pole']:.3f} GeV   (PDG ~ {PDG['mt_pole']})")
-    print(f"  mH_tree (from λ(mt_MS))  = {out['crit_mH_tree']:.3f} GeV   (PDG ~ {PDG['mH']})")
+    print(f"  mt_MS  (UV-synchronized core) = {out['crit_mt_MS']:.3f} GeV")
+    print(f"  mt_pole core                 = {out['crit_mt_pole_core']:.3f} GeV")
+    print(f"  mH core                      = {out['crit_mH_tree_core']:.3f} GeV")
+    print(f"  mu_sync                      = {out['crit_transport_switch_scale']:.6e} GeV")
+    print(f"  delta mt_pole match          = {out['crit_delta_mt_pole_match']:+.3f} GeV")
+    print(f"  delta mH match               = {out['crit_delta_mH_match']:+.3f} GeV")
+    print(f"  mt_pole reconstructed        = {out['crit_mt_pole']:.3f} GeV   (PDG ~ {PDG['mt_pole']})")
+    print(f"  mH reconstructed             = {out['crit_mH_tree']:.3f} GeV   (PDG ~ {PDG['mH']})")
+    print(f"  literal appendix mt_pole     = {out['crit_literal_mt_pole']:.3f} GeV")
+    print(f"  literal appendix mH          = {out['crit_literal_mH_tree']:.3f} GeV")
     print()
 
     print("Δρ / Z-matching variants (illustrative; scheme-sensitive):")

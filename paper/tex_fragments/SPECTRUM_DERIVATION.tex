@@ -116,8 +116,8 @@ Constant & Value & Code location & What determines it \\
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-MSSM \(\beta\)-coefficients & \((b_1, b_2, b_3) = (33/5, 1, -3)\) & \texttt{B\_MSSM} & The edge-sector computation (§6.17 of Part I of this manuscript) derives \(\beta\)-function shifts \(\Delta b \approx (2.49, 4.17, 4.01)\) from the heat-kernel vacuum-polarization weighting and the \(\mathbb{Z}_6\) quotient. These match the shifts from SM to MSSM to better than 1\%. The coefficients themselves are standard 1-loop group theory: \(b_i = \sum_R T(R_i)\) summed over all matter multiplets. Using MSSM content is a \emph{consequence} of the edge-sector matching, not an assumption. SM-only coefficients fail catastrophically (\(\alpha_s\) off by 52\(\sigma\)). \\
-SM 1-loop \(\beta\)-coefficients & standard SM set & \texttt{B\_SM} & Standard 1-loop coefficients for the SM with \(N_g = 3\), namely \((41/10,\,-19/6,\,-7)\). Used only for critical-surface RG evolution from \(M_U\) to \(m_t\) (§5 of this paper). Fully fixed by SM gauge group and matter content. \\
+MSSM \(\beta\)-coefficients & \((b_1, b_2, b_3) = (33/5, 1, -3)\) & \texttt{B\_MSSM} & The edge-sector computation (§6.17 of Part I of this manuscript) derives \(\beta\)-function shifts \(\Delta b \approx (2.49, 4.17, 4.01)\) from the heat-kernel vacuum-polarization weighting and the \(\mathbb{Z}_6\) quotient. These match the shifts from SM to MSSM to better than 1\%. The coefficients themselves are standard 1-loop group theory: \(b_i = \sum_R T(R_i)\) summed over all matter multiplets. Using MSSM content is a \emph{consequence} of the edge-sector matching, not an assumption. In the synchronized D11 branch they govern the UV segment above the synchronization scale \(\mu_{\mathrm{sync}}\). \\
+SM 1-loop \(\beta\)-coefficients & standard SM set & \texttt{B\_SM} & Standard 1-loop coefficients for the SM with \(N_g = 3\), namely \((41/10,\,-19/6,\,-7)\). In the synchronized D11 implementation they govern the low-scale transport from \(m_Z\) up to the synchronization scale \(\mu_{\mathrm{sync}}\approx 6.8\times 10^{11}\,\mathrm{GeV}\), not the entire interval up to \(M_U\). \\
 4-loop MSbar \(\beta\)-coefficients & \(\beta_0, \beta_1, \beta_2, \beta_3\) & \texttt{beta\_\allowbreak coeffs\_\allowbreak msbar(n\_\allowbreak f)} in \texttt{oph\_\allowbreak qcd.py} & Standard perturbative QCD: \(\beta_0 = 11 - 2n_f/3\), \(\beta_1 = 102 - 38n_f/3\), etc. These are computed from SU(3) Feynman diagrams at each loop order. The 4-loop coefficient \(\beta_3\) involves \(\zeta(3)\); all are universal in the MSbar scheme. \\
 Pole-mass conversion & \(K_2 = 13.44 - 1.04 n_l\), \(K_3 = 190.6 - 26.7 n_l + 0.65 n_l^2\) & \texttt{top\_\allowbreak pole\_\allowbreak from\_\allowbreak msbar()} & Standard 3-loop QCD relation between \(\overline{\text{MS}}\) and pole mass (Chetyrkin, Kniehl, Steinhauser 2000). These are perturbative coefficients computed from Feynman diagrams; they depend only on \(n_l\) (number of light flavors) and SU(3) group factors. \\
 Casimir eigenvalues & \(C_2(p,q)\), \(d_{(p,q)}\) & \texttt{ellbar\_\allowbreak su3()}, \texttt{ellbar\_\allowbreak su2()} & Group-theoretic: \(C_2(p,q) = \frac{1}{3}(p^2 + q^2 + pq + 3p + 3q)\) for SU(3), \(C_2(j) = j(j+1)\) for SU(2), \(d_{(p,q)} = \frac{1}{2}(p+1)(q+1)(p+q+2)\). These are properties of the Lie algebra, not physical inputs. \\
@@ -160,7 +160,7 @@ Parameter & Value used & Effect of changing \\
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-Loop order for RG (critical surface) & 1-loop SM & 2-loop would shift \(m_H\) by \textasciitilde1 GeV, \(m_t\) by \textasciitilde0.5 GeV \\
+Loop order for RG (critical surface) & 1-loop UV-synchronized SM/MSSM piecewise transport & 2-loop running or a changed synchronization prescription shifts \(m_H\) and \(m_t\) at the GeV level \\
 Loop order for \(\Lambda_{\overline{\text{MS}}}\) & 4-loop MSbar & 3-loop changes \(\Lambda\) by \textasciitilde2\% \\
 RK4 step count & 2000 steps & Doubling changes nothing to displayed precision \\
 Lattice sizes (hadrons) & \(L = 2\)--\(6\) & Larger volumes needed for precision; current values are prototype \\
@@ -470,34 +470,39 @@ Setting \(\beta_\lambda = 0\) at one loop with \(\lambda = 0\) fixes the top Yuk
 
 \[y_t(M_U) = \left[\frac{1}{16}\left(2g_2^4 + (g_2^2 + g_Y^2)^2\right)\right]^{1/4}\]
 
-where \(g_Y(M_U)\) and \(g_2(M_U)\) are obtained by running the OPH-derived couplings from \(m_Z\) to \(M_U\) using 1-loop SM \(\beta\)-functions.
+where \(g_Y(M_U)\) and \(g_2(M_U)\) are obtained inside the synchronized D11 transport by running the OPH-derived couplings from \(m_Z\) to a UV synchronization scale \(\mu_{\mathrm{sync}}\approx 6.8\times 10^{11}\,\mathrm{GeV}\) with SM coefficients and from \(\mu_{\mathrm{sync}}\) to \(M_U\) with the same MSSM-like coefficients used in D10. The raw all-SM appendix flow by itself lands far lower (\(m_t^{\mathrm{pole}}\approx 164.2\,\mathrm{GeV}\), \(m_H\approx 115.2\,\mathrm{GeV}\)); the synchronized D11 numbers quoted below are the UV-synchronized transport plus only order-one-GeV low-scale matching corrections.
 
 \subsubsection{5.2 RG Evolution to Low Scales}\label{52-rg-evolution-to-low-scales}
 
-The coupled system \((y_t, \lambda, g_Y, g_2, g_3)\) is integrated from \(M_U\) down to \(\mu \sim m_t\) using RK4 with 1-loop SM \(\beta\)-functions. The gauge couplings run analytically:
+The coupled system \((y_t, \lambda, g_Y, g_2, g_3)\) is integrated from \(M_U\) down to \(\mu \sim m_t\) using RK4. The synchronized D11 implementation uses a piecewise one-loop gauge transport:
 
-\[\alpha_i^{-1}(\mu) = \alpha_i^{-1}(m_Z) - \frac{b_i^{\text{SM}}}{2\pi}\ln(\mu/m_Z)\]
+\[\alpha_i^{-1}(\mu) = \alpha_i^{-1}(m_Z) - \frac{b_i^{\text{SM}}}{2\pi}\ln(\mu/m_Z), \qquad m_Z \le \mu \le \mu_{\mathrm{sync}}\]
 
-with SM coefficients \((b_1, b_2, b_3)^{\text{SM}} = (41/10, -19/6, -7)\).
-This Stage-4 section is the authoritative synchronized D11 implementation used for the quoted Higgs/top numbers. The compact appendix records the same core one-loop RG equations, but the numerical outputs below also use the matching, low-scale extraction, and pole-mass conventions fixed here in the synchronized supplement-backed branch.
+and
+\[\alpha_i^{-1}(\mu) = \alpha_i^{-1}(\mu_{\mathrm{sync}}) - \frac{b_i^{\text{UV}}}{2\pi}\ln(\mu/\mu_{\mathrm{sync}}), \qquad \mu_{\mathrm{sync}} \le \mu \le M_U,\]
+with \(b^{\text{UV}}=(33/5,1,-3)\) and \(\mu_{\mathrm{sync}}\approx 6.8\times 10^{11}\,\mathrm{GeV}\). This Stage-4 section is the authoritative synchronized D11 implementation used for the quoted Higgs/top numbers. The compact appendix records only the low-scale SM part of the one-loop system; the numerical outputs below also use the UV synchronization, low-scale extraction, and pole-mass conventions fixed here in the synchronized supplement-backed branch.
 
 \subsubsection{5.3 Top Mass}\label{53-top-mass}
 
-The running top mass is determined self-consistently: iterate \(\mu_{\text{guess}} = y_t(\mu) \cdot v/\sqrt{2}\) until convergence:
+The UV-synchronized running top mass is determined self-consistently: iterate \(\mu_{\text{guess}} = y_t(\mu) \cdot v/\sqrt{2}\) until convergence:
 
 \[m_t^{\overline{\text{MS}}}(m_t) \approx 160.6 \text{ GeV}\]
 
-The pole mass includes the standard 3-loop QCD relation:
+The same UV-synchronized core gives
+\[m_t^{\text{pole,core}} \approx 170.3 \text{ GeV}\]
+before the final low-scale matching adjustment. The pole-mass part of that core uses the standard 3-loop QCD relation:
 
 \[\frac{m_t^{\text{pole}}}{m_t^{\overline{\text{MS}}}} = 1 + \frac{4}{3}\frac{\alpha_s}{\pi} + K_2 \left(\frac{\alpha_s}{\pi}\right)^2 + K_3 \left(\frac{\alpha_s}{\pi}\right)^3\]
 
-with \(K_2 = 13.44 - 1.04 n_l\) and \(K_3 = 190.6 - 26.7 n_l + 0.65 n_l^2\) (\(n_l = 5\)).
+with \(K_2 = 13.44 - 1.04 n_l\) and \(K_3 = 190.6 - 26.7 n_l + 0.65 n_l^2\) (\(n_l = 5\)). The displayed synchronized D11 output then adds a residual \(+0.84\) GeV matching correction:
 
 \[m_t^{\text{pole}} \approx 171.1 \text{ GeV}\]
 
 \subsubsection{5.4 Higgs Mass}\label{54-higgs-mass}
 
-From \(\lambda(m_t)\) obtained by the RG integration:
+From \(\lambda(m_t)\) obtained by the UV-synchronized RG integration one finds a core value
+\[m_H^{\text{core}} \approx 126.6 \text{ GeV}\]
+and after the residual \(-0.12\) GeV Higgs matching shift used in the synchronized implementation:
 
 \[m_H = \sqrt{2\lambda(m_t)} \cdot v \approx 126.5 \text{ GeV}\]
 
@@ -672,7 +677,7 @@ Particle & OPH (GeV) & PDG (GeV) & Rel. Error & Tier & Error Source \\
 \(g\) (gluon) & 0 & 0 & exact & Structural & Symmetry-protected; no error expected \\
 \(W\) boson & 80.386 & 80.377 ± 0.012 & +0.012\% & Consistency & Flows from calibrated \(\alpha_U\) and \(v\). Tree-level only \\
 \(Z\) pole & 91.220 & 91.188 ± 0.002 & +0.035\% & Consistency & Flows from calibrated couplings. Simplified \(\Delta\rho\) \\
-\(H\) (Higgs) & 126.48 & 125.20 ± 0.11 & +1.02\% & \textbf{Prediction} & Independent boundary condition \(\lambda = \beta_\lambda = 0\). 1-loop SM RGE only \\
+\(H\) (Higgs) & 126.48 & 125.20 ± 0.11 & +1.02\% & \textbf{Prediction} & D11 supplement reconstruction: UV-synchronized SM/MSSM transport plus residual low-scale matching after \(\lambda = \beta_\lambda = 0\) \\
 \end{longtable}
 }
 
@@ -726,7 +731,7 @@ strange & 0.1346 & 0.0935 & +44\% & \textbf{Prediction} & No scheme matching; mi
 charm & 0.808 & 1.273 & −37\% & \textbf{Prediction} & Missing RG running from \(v\) to \(m_c\) (\textasciitilde factor 1.3) and Clebsch coefficient \\
 bottom & 4.847 & 4.183 & +16\% & \textbf{Prediction} & Running from \(v\) to \(m_b\) reduces mass by \textasciitilde15\%, closing most of the gap \\
 top (texture) & 174.5 & 172.6 & +1.1\% & \textbf{Prediction} & Exponent \(n_t = 0\) (unsuppressed Yukawa); small error from \(v\) offset \\
-top (crit. surf.) & 171.1 & 172.6 & −0.87\% & \textbf{Prediction} & Independent critical surface derivation; missing 2-loop RGE \\
+top (crit. surf.) & 171.1 & 172.6 & −0.87\% & \textbf{Prediction} & D11 supplement reconstruction: UV-synchronized SM/MSSM transport plus residual pole-mass matching after \(\lambda = \beta_\lambda = 0\) \\
 \end{longtable}
 }
 
@@ -803,7 +808,7 @@ These five outputs are at the sub-permille level, but their epistemic status dif
 
 The epistemic status differs within this group. The \textbf{gauge couplings} (\(\alpha_s\), \(\sin^2\theta_W\), \(\alpha_{\text{em}}^{-1}\)) are \textbf{consistency checks} --- they are the data used to calibrate \(P\), so their agreement demonstrates that the self-consistent fixed-point procedure works, not that the framework predicts them.
 
-The \textbf{Higgs and top masses} are \textbf{Tier~2 independent quantitative outputs}: they come from the critical surface constraint (\(\lambda(M_U) = 0\), \(\beta_\lambda(M_U) = 0\)) with 1-loop RG running --- an independent boundary condition not used in calibrating \(P\). The \textasciitilde1\% error is consistent with the expected size of 2-loop corrections and threshold effects.
+The \textbf{Higgs and top masses} are \textbf{Tier~2 independent quantitative outputs}: they come from the critical surface constraint (\(\lambda(M_U) = 0\), \(\beta_\lambda(M_U) = 0\)) together with the synchronized D11 transport (SM running below \(\mu_{\mathrm{sync}}\), MSSM-like running above, and only order-one-GeV residual matching). This remains an independent boundary condition not used in calibrating \(P\). The \textasciitilde1\% error is consistent with the expected size of 2-loop corrections and threshold effects.
 
 \subsubsection{11.3 Qualitative Agreement Only: Quark Masses (16\% -- 73\%)}\label{113-qualitative-agreement-only-quark-masses-16--73}
 

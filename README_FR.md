@@ -264,7 +264,7 @@ critique, et continuations phénoménologiques ou numériques en aval plus faibl
 | Théorèmes structurels | Cinématique de Lorentz conditionnelle, branche d'Einstein conditionnelle dans la limite d'échelle, reconstruction de jauge compacte, chaîne de quotient du MS, hypercharges exactes, $N_c=3$, $N_g=3$ | Paquet central de théorèmes sous les prémisses de limite d'échelle et de catégorie explicitement énoncées | [Source principale](paper/tex_fragments/PAPER.tex), [Source de dérivation du groupe de jauge](paper/tex_fragments/GAUGE_GROUP_DERIVATION.tex) |
 | Conséquences structurelles exactes | Stabilité du proton ; $m_\gamma = 0$, $m_g = 0$, $m_{\text{graviton}} = 0$ | Conséquences structurelles sans paramètre une fois réalisée la structure de jauge / difféomorphisme / groupe produit correspondante | [Source principale](paper/tex_fragments/PAPER.tex), [Source de dérivation du groupe de jauge](paper/tex_fragments/GAUGE_GROUP_DERIVATION.tex), [Source de dérivation du spectre](paper/tex_fragments/SPECTRUM_DERIVATION.tex) |
 | Secteur calibré | $\alpha_s=0.1183$, $\sin^2\theta_W=0.2307$, $\alpha_{\rm em}^{-1}=128.31$, $v$, $W$, $Z$ | Contrôles de cohérence après calibration pixel/jauge ; pas présentés comme confirmation quantitative indépendante | [Source de dérivation du spectre](paper/tex_fragments/SPECTRUM_DERIVATION.tex) |
-| Branche quantitative indépendante | Higgs $=126.48$ GeV, top(pôle) $=171.1$ GeV | Principales sorties quantitatives indépendantes, actuellement contrôlées au niveau du pour-cent avec limites connues de boucle/schéma | [Source de dérivation du spectre](paper/tex_fragments/SPECTRUM_DERIVATION.tex) |
+| Branche quantitative indépendante | Higgs $=126.48$ GeV, top(pôle) $=171.1$ GeV | Principales sorties quantitatives indépendantes du module D11 synchronisé : pas de nouvel ajustement continu une fois la trajectoire de jauge fixée, mais les valeurs affichées utilisent le transport UV synchronisé et les conventions de raccordement basse énergie documentées | [Source de dérivation du spectre](paper/tex_fragments/SPECTRUM_DERIVATION.tex) |
 | Continuations phénoménologiques | Branche leptons chargés / Koide ; textures de quarks | Palier plus faible : les leptons chargés sont numériquement très précis mais utilisent une étape discrète supplémentaire ; les masses de quarks individuelles gardent une grande incertitude de schéma/seuils | [Source de dérivation du spectre](paper/tex_fragments/SPECTRUM_DERIVATION.tex) |
 | Branches de capacité / numériques en aval | $m_{\nu_3}\approx 3.0$ meV, $m_{\nu_2}\approx 0.50$ meV, $m_{\nu_1}\approx 0.084$ meV ; $P \rightarrow \alpha_s \rightarrow \Lambda_{\overline{\rm MS}}^{(3)} \rightarrow m_{\rm hadrons}$ | Les neutrinos ne sont pour l'instant qu'une estimation d'ordre de grandeur issue de la branche capacité ; la chaîne hadronique est complète mais la précision reste limitée par les systématiques lattice | [Source de dérivation du spectre](paper/tex_fragments/SPECTRUM_DERIVATION.tex) |
 | Branches d'extension / programmatiques | Poids de bord OPH = noyaux de chaleur YM 2D ; expansion de feuille d'univers à grand $N$ (Gross-Taylor) ; matière noire, baryogenèse, trous noirs | L'identification des poids de bord avec le YM 2D est établie dans sa branche ; la réorganisation de feuille d'univers à grand $N$ et les autres sujets restent au niveau continuation/programme | [Source de dérivation de la théorie des cordes](paper/tex_fragments/STRING_THEORY.tex), [Supplément technique source](paper/tex_fragments/TECHNICAL_SUPPLEMENT.tex) |
@@ -360,10 +360,12 @@ La chaîne complète depuis l'aire de pixel $P = 1.63094$ jusqu'aux masses est d
 
 **Branche quantitative indépendante** (principales sorties de masse hors calibration) :
 
+Les valeurs affichées pour le Higgs et le top sont les sorties synchronisées de D11. Le flot littéral tout-SM de l'appendice basse énergie tombe beaucoup plus bas, autour de $m_H \approx 115.18$ GeV et $m_t^{\rm pole} \approx 164.25$ GeV. La branche publiée $126.48 / 171.1$ utilise un transport UV synchronisé avec évolution SM sous $\mu_{\rm sync}\approx 6.8\times 10^{11}$ GeV, coefficients de type MSSM au-dessus, puis seulement des corrections résiduelles de raccordement de l'ordre du GeV.
+
 | Grandeur | OPH | PDG | Erreur rel. | Origine |
 |----------|----:|----:|-----------:|---------|
-| Masse du Higgs | 126.48 GeV | 125.20 ± 0.11 GeV | +1.02% | Surface critique ($\lambda = \beta_\lambda = 0$) |
-| Quark top (surface critique) | 171.1 GeV | 172.57 ± 0.29 GeV | −0.87% | Surface critique |
+| Masse du Higgs | 126.48 GeV | 125.20 ± 0.11 GeV | +1.02% | Reconstruction D11 du supplément après $\lambda = \beta_\lambda = 0$ |
+| Quark top (surface critique) | 171.1 GeV | 172.57 ± 0.29 GeV | −0.87% | Reconstruction D11 du supplément après $\lambda = \beta_\lambda = 0$ |
 
 **Continuations phénoménologiques** (conservées pour comparaison, mais plus faibles que le paquet de théorèmes et la branche Higgs/top) :
 
@@ -488,7 +490,8 @@ Comme résumé dans la matrice de statut plus haut, le cadre établit aujourd'hu
 | Script | Description |
 |--------|-------------|
 | [oph_predict_compare.py](code/particles/oph_predict_compare.py) | Prédiction complète du spectre + comparaison PDG (point d'entrée principal) |
-| [particle_masses_stage5.py](code/particles/particle_masses_stage5.py) | Spectre central : clôture de jauge, transmutation, surface critique, texture Z₆ |
+| [particle_masses_stage5.py](code/particles/particle_masses_stage5.py) | Point d'entrée principal du spectre : clôture de jauge, branche critique D10/D11 déléguée au module piloté par l'article, texture Z₆ |
+| [particle_masses_paper_d10_d11.py](code/particles/particle_masses_paper_d10_d11.py) | Reconstruction D10/D11 pilotée par l'article : flot littéral de l'appendice, transport UV synchronisé et couche de raccordement du supplément |
 | [oph_qcd.py](code/particles/oph_qcd.py) | Running QCD MSbar à 4 boucles et extraction de $\Lambda$ |
 | [oph_lattice_su3_quenched_v5.py](code/particles/oph_lattice_su3_quenched_v5.py) | Lattice SU(3) de Wilson trempé pour les ratios de masses hadroniques |
 | [oph_no_cheat_audit.py](code/particles/oph_no_cheat_audit.py) | Audit anti-fuite statique + exécution |
