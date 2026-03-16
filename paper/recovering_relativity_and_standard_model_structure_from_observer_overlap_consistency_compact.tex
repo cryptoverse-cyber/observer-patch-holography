@@ -2187,21 +2187,29 @@ At one loop, these conditions determine the top Yukawa boundary value
 y_t(M_U)=
 \left[\frac{1}{16}\left(2g_2^4+(g_2^2+g_Y^2)^2\right)\right]^{1/4}.
 \]
-The logic is simple: once $\lambda(M_U)=0$, the condition $\beta_\lambda(M_U)=0$ removes the final freedom in the top Yukawa boundary value. The low-energy Higgs and top masses then follow inside the synchronized supplement-backed D11 implementation rather than by direct fitting. In the compact note, the displayed one-loop equations record the core RG transport conventions only; the quoted D11 numbers also use the matching, extraction, and pole-mass conventions fixed in the supplement-backed implementation.
+The logic is simple: once $\lambda(M_U)=0$, the condition $\beta_\lambda(M_U)=0$ removes the final freedom in the top Yukawa boundary value. The low-energy Higgs and top masses then follow inside the synchronized supplement-backed D11 implementation rather than by direct fitting. In the compact note, the displayed one-loop equations record only the low-scale SM part of the transport. The synchronized D11 branch used for the quoted numbers is UV-synchronized: it uses SM running from $m_Z$ up to a synchronization scale $\mu_{\mathrm{sync}}\approx 6.8\times 10^{11}\,\mathrm{GeV}$, the same MSSM-like coefficients as D10 from $\mu_{\mathrm{sync}}$ to $M_U$, and only order-one-GeV low-scale matching corrections afterward. The literal all-SM appendix flow by itself lands much lower, at about $m_t^{\mathrm{pole}}\approx 164.2\,\mathrm{GeV}$ and $m_H\approx 115.2\,\mathrm{GeV}$, so those raw one-loop equations are not the full synchronized D11 implementation.
 
-Within that synchronized supplement-backed D11 implementation, running the coupled system $(y_t,\lambda,g_Y,g_2,g_3)$ down to $\mu\sim m_t$ yields
+Within that synchronized supplement-backed D11 implementation, the UV-synchronized transport of the coupled system $(y_t,\lambda,g_Y,g_2,g_3)$ down to $\mu\sim m_t$ yields
 \[
 m_t^{\overline{\mathrm{MS}}}(m_t)\approx 160.6\ \mathrm{GeV},
 \]
-and after the standard three-loop QCD pole-mass conversion used in the present implementation,
+with a core pole value
+\[
+m_t^{\mathrm{pole,core}}\approx 170.3\ \mathrm{GeV},
+\]
+and after the residual low-scale matching correction used in the present implementation,
 \[
 m_t^{\mathrm{pole}}\approx 171.1\ \mathrm{GeV}.
 \]
-The corresponding Higgs mass is
+The corresponding synchronized core Higgs value is
+\[
+m_H^{\mathrm{core}}\approx 126.6\ \mathrm{GeV},
+\]
+and after the residual Higgs matching shift the displayed value is
 \[
 m_H=\sqrt{2\lambda(m_t)}\,v\approx 126.5\ \mathrm{GeV}.
 \]
-The appendix is therefore not intended as a standalone reproduction recipe for the displayed $126.5$ and $171.1$ GeV outputs; it records the one-loop flow equations used inside the broader synchronized D11 implementation.
+The appendix is therefore not intended as a standalone reproduction recipe for the displayed $126.5$ and $171.1$ GeV outputs; it records only the low-scale SM part of the one-loop flow used inside the broader synchronized D11 implementation.
 
 The critical-surface boundary conditions are not an additional continuous fit once the gauge trajectory and scale-setting branch are fixed. Converting the resulting dimensionless ratios $m_H/v$ and $m_t/v$ to GeV still uses the previously calibrated $v$ and gauge-coupling trajectory, and the critical-surface branch can fail even when the electroweak calibration succeeds.
 
@@ -2501,7 +2509,7 @@ Accordingly, the framework functions as a candidate underlying theory from which
 
 \section{One-loop RG Equations Used in the Quantitative Branch}\label{app:rges}
 
-For convenience we record the core one-loop system used in the Higgs/top transport branch. This appendix is not by itself a full standalone reproduction recipe for the displayed D11 numbers: the synchronized supplement-backed implementation also fixes the matching scale, boundary synchronization, low-scale extraction conventions, and the pole-mass conversion choices used for the quoted outputs.
+For convenience we record the low-scale SM one-loop system used in the Higgs/top transport branch. This appendix is not by itself a full standalone reproduction recipe for the displayed D11 numbers: the synchronized supplement-backed implementation also fixes the matching scale, the UV synchronization scale, the transition to the MSSM-like UV coefficients inherited from D10, the low-scale extraction conventions, and the pole-mass conversion choices used for the quoted outputs.
 Throughout this appendix, $g_Y$ denotes the SM hypercharge coupling. The GUT-normalized coupling is $g_1$ with $g_1^2=\frac53 g_Y^2$, equivalently $\alpha_1=\frac53\alpha_Y$. Therefore the one-loop coefficient is $41/6$ in the $g_Y$ equation and $41/10$ in the $g_1$ equation.
 \begin{align}
 16\pi^2\frac{dg_Y}{d\ln\mu} &= \frac{41}{6}g_Y^3,\\
@@ -2513,7 +2521,7 @@ y_t\left(\frac92 y_t^2-\frac{17}{12}g_Y^2-\frac94 g_2^2-8g_3^2\right),\\
 24\lambda^2+\lambda\left(12y_t^2-9g_2^2-3g_Y^2\right)-6y_t^4
 +\frac38\left(2g_2^4+(g_2^2+g_Y^2)^2\right).
 \end{align}
-In the present supplement-backed numerical implementation this system supplies the core transport layer between the UV boundary data and the low-energy Higgs/top outputs. Numerically, the compact note uses one-loop $\overline{\mathrm{MS}}$ transport, the matching scale $\mu=m_Z=91.1876\,\mathrm{GeV}$, the unified scale $M_U\approx 2.474\times 10^{16}\,\mathrm{GeV}$ from the main text, the synchronized low-scale extraction convention for $\lambda(m_t)$, and the standard three-loop QCD pole-mass conversion for the displayed top-branch number. Higher-loop and threshold refinements are expected to shift the final numbers at the GeV level rather than alter the logic of the branch.
+In the present supplement-backed numerical implementation this system supplies the low-scale part of the transport layer between the UV boundary data and the low-energy Higgs/top outputs. Numerically, the compact note uses one-loop $\overline{\mathrm{MS}}$ transport, the matching scale $\mu=m_Z=91.1876\,\mathrm{GeV}$, a UV synchronization scale $\mu_{\mathrm{sync}}\approx 6.8\times 10^{11}\,\mathrm{GeV}$, the MSSM-like coefficients inherited from D10 for the interval $\mu_{\mathrm{sync}}\le\mu\le M_U$, the unified scale $M_U\approx 2.474\times 10^{16}\,\mathrm{GeV}$ from the main text, the synchronized low-scale extraction convention for $\lambda(m_t)$, and the standard three-loop QCD pole-mass conversion plus order-one-GeV matching corrections for the displayed top/Higgs branch. Higher-loop and threshold refinements are expected to shift the final numbers at the GeV level rather than alter the logic of the branch.
 
 \section{Quantitative Robustness Audit}\label{app:robustness}
 
@@ -2523,7 +2531,7 @@ In the present supplement-backed numerical implementation this system supplies t
 \toprule
 Source of variation & Baseline used here & Expected effect on outputs \\
 \midrule
-Critical-surface RG transport & one-loop SM running & moving to two loops is expected to shift $m_H$ by about $1$ GeV and $m_t$ by about $0.5$ GeV \\
+Critical-surface RG transport & one-loop UV-synchronized SM/MSSM piecewise running with $\mu_{\mathrm{sync}}\approx 6.8\times 10^{11}\,\mathrm{GeV}$ & moving to two loops or changing the synchronization prescription shifts the branch at the GeV level \\
 Pole-mass and threshold matching & standard three-loop top conversion plus leading electroweak corrections & order-one GeV effects in the top branch; sub-GeV to GeV effects in the Higgs branch \\
 Heat-kernel truncation in $\bar\ell_G$ & 200 representations & negligible at displayed precision, with changes below $10^{-12}$ in the entropy sums \\
 Bisection tolerance for the pixel closure & $10^{-10}$ & affects only the last shown digits of $\alpha_U$ and derived calibration outputs \\

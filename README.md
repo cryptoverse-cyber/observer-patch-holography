@@ -183,7 +183,7 @@ The following infographic summarizes the current OPH reconstruction program from
 
 *From axioms to effective physics: the current OPH reconstruction program.*
 
-> **Particle Spectrum Derivation**: The complete derivation from pixel area to particle masses — with comparison against PDG data and repository-backed audit checks — is documented in **[the spectrum derivation source](paper/tex_fragments/SPECTRUM_DERIVATION.tex)**. Outputs are classified by epistemic status: gauge couplings and EW boson masses are calibration-sector consistency checks; Higgs and top masses (~1% from the critical-surface condition) come from a supplement-backed branch that adds no further continuous fit once the gauge trajectory and scale-setting branch are fixed; charged-lepton masses (< 0.04% from Koide structure) remain a sharper but weaker phenomenological continuation because their final exponent assignment uses an additional discrete-selection step.
+> **Particle Spectrum Derivation**: The complete derivation from pixel area to particle masses — with comparison against PDG data and repository-backed audit checks — is documented in **[the spectrum derivation source](paper/tex_fragments/SPECTRUM_DERIVATION.tex)**. Outputs are classified by epistemic status: gauge couplings and EW boson masses are calibration-sector consistency checks; Higgs and top masses come from a supplement-backed D11 reconstruction that adds no further continuous fit once the gauge trajectory and scale-setting branch are fixed, but uses a UV-synchronized transport layer (SM below $\mu_{\rm sync}\approx 6.8\times 10^{11}$ GeV, MSSM-like above) plus small low-scale matching shifts; charged-lepton masses (< 0.04% from Koide structure) remain a sharper but weaker phenomenological continuation because their final exponent assignment uses an additional discrete-selection step.
 
 ## The Fundamental Parameters
 
@@ -251,7 +251,7 @@ branch, and weaker phenomenological or downstream numerical continuations.
 | Structural theorems | Conditional Lorentz kinematics, conditional scaling-limit Einstein branch, compact gauge reconstruction, SM quotient chain, hypercharge lattice on the realized matter package, $N_c=3$, $N_g=3$ on the realized MAR-admissible branch | Core theorem package under the stated scaling-limit and categorical premises | [Main paper source](paper/tex_fragments/PAPER.tex), [Gauge derivation source](paper/tex_fragments/GAUGE_GROUP_DERIVATION.tex) |
 | Exact structural consequences | Proton stability; $m_\gamma = 0$, $m_g = 0$, $m_{\text{graviton}} = 0$ | Parameter-free structural consequences once the corresponding gauge/diffeomorphism/product-group structure is realized | [Main paper source](paper/tex_fragments/PAPER.tex), [Gauge derivation source](paper/tex_fragments/GAUGE_GROUP_DERIVATION.tex), [Spectrum derivation source](paper/tex_fragments/SPECTRUM_DERIVATION.tex) |
 | Calibration sector | $\alpha_s=0.1183$, $\sin^2\theta_W=0.2307$, $\alpha_{\rm em}^{-1}=128.31$, $v$, $W$ | Consistency checks after pixel/gauge calibration; not claimed as independent confirmation | [Spectrum derivation source](paper/tex_fragments/SPECTRUM_DERIVATION.tex) |
-| Independent quantitative branch | Higgs $=126.48$ GeV, top(pole) $=171.1$ GeV | Main supplement-backed quantitative outputs; no extra continuous fit once the gauge trajectory and scale-setting branch are fixed, but still subject to known loop/scheme limitations | [Spectrum derivation source](paper/tex_fragments/SPECTRUM_DERIVATION.tex) |
+| Independent quantitative branch | Higgs $=126.48$ GeV, top(pole) $=171.1$ GeV | Main supplement-backed D11 outputs: no extra continuous fit once the gauge trajectory and scale-setting branch are fixed, but the displayed values use UV-synchronized transport and documented low-scale matching conventions | [Spectrum derivation source](paper/tex_fragments/SPECTRUM_DERIVATION.tex) |
 | Phenomenological continuations | Charged-lepton / Koide branch; quark textures | Weaker continuation tier: charged leptons are numerically sharp but use an extra discrete-selection step; individual quark masses still carry large scheme/threshold uncertainty | [Spectrum derivation source](paper/tex_fragments/SPECTRUM_DERIVATION.tex) |
 | Capacity / downstream numerical branches | $m_{\nu_3}\approx 3.0$ meV, $m_{\nu_2}\approx 0.50$ meV, $m_{\nu_1}\approx 0.084$ meV; $P \rightarrow \alpha_s \rightarrow \Lambda_{\overline{\rm MS}}^{(3)} \rightarrow m_{\rm hadrons}$ | Neutrinos are currently only an order-of-magnitude capacity-branch estimate; the hadron chain is complete but precision is limited by lattice/systematic effects | [Spectrum derivation source](paper/tex_fragments/SPECTRUM_DERIVATION.tex) |
 | Extension / program-level branches | OPH edge weights = 2D YM heat kernels; conditional large-$N$ worldsheet expansion (Gross-Taylor); dark-sector, baryogenesis, black-hole branches | The 2D YM edge-weight identification is established within its branch; the large-$N$ worldsheet reorganization and the remaining topics stay at continuation/program level | [String-theory derivation source](paper/tex_fragments/STRING_THEORY.tex), [Technical supplement source](paper/tex_fragments/TECHNICAL_SUPPLEMENT.tex) |
@@ -354,10 +354,12 @@ The complete derivation chain from pixel area $P = 1.63094$ to particle masses i
 
 **Independent quantitative branch** (main non-calibration mass outputs):
 
+The displayed Higgs/top values are the synchronized D11 outputs. The literal low-scale all-SM appendix flow lands much lower, at about $m_H \approx 115.18$ GeV and $m_t^{\rm pole} \approx 164.25$ GeV. The published $126.48 / 171.1$ branch uses UV-synchronized transport with SM running below $\mu_{\rm sync}\approx 6.8\times 10^{11}$ GeV, MSSM-like running above, and only order-one-GeV residual matching corrections.
+
 | Quantity | OPH | PDG | Rel. Error | Origin |
 |----------|----:|----:|-----------:|--------|
-| Higgs mass | 126.48 GeV | 125.20 ± 0.11 GeV | +1.02% | Critical surface ($\lambda = \beta_\lambda = 0$) |
-| Top quark (crit. surf.) | 171.1 GeV | 172.57 ± 0.29 GeV | −0.87% | Critical surface |
+| Higgs mass | 126.48 GeV | 125.20 ± 0.11 GeV | +1.02% | D11 supplement reconstruction after $\lambda = \beta_\lambda = 0$ |
+| Top quark (crit. surf.) | 171.1 GeV | 172.57 ± 0.29 GeV | −0.87% | D11 supplement reconstruction after $\lambda = \beta_\lambda = 0$ |
 
 **Phenomenological continuations** (reported for completeness, but weaker than the theorem package and the Higgs/top branch):
 
@@ -499,7 +501,8 @@ As summarized in the status matrix above, the framework derives Lorentz kinemati
 | Script | Description |
 |--------|-------------|
 | [oph_predict_compare.py](code/particles/oph_predict_compare.py) | Full particle spectrum prediction + PDG comparison (main entry point) |
-| [particle_masses_stage5.py](code/particles/particle_masses_stage5.py) | Core spectrum: gauge closure, transmutation, critical surface, Z₆ texture |
+| [particle_masses_stage5.py](code/particles/particle_masses_stage5.py) | Main spectrum entry point: gauge closure, delegated paper-driven D10/D11 critical-surface branch, Z₆ texture |
+| [particle_masses_paper_d10_d11.py](code/particles/particle_masses_paper_d10_d11.py) | Paper-driven D10/D11 reconstruction: literal appendix flow, UV-synchronized transport, and supplement matching layer |
 | [oph_qcd.py](code/particles/oph_qcd.py) | 4-loop MSbar QCD running and Λ extraction |
 | [oph_lattice_su3_quenched_v5.py](code/particles/oph_lattice_su3_quenched_v5.py) | Quenched Wilson SU(3) lattice for hadron mass ratios |
 | [oph_no_cheat_audit.py](code/particles/oph_no_cheat_audit.py) | Static + runtime anti-leak audit |

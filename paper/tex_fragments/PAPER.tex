@@ -269,7 +269,7 @@ Node & Main-manuscript output & Immediate OPH ingredients & Standard mathematics
 \textbf{D8} & Section 6.2: product gauge structure up to finite quotient & D7 + Canonical 5 (MAR) & compact Lie representation classification; Schur's lemma & connected admissible class, one connected abelian factor, and \([z]=0\) & realized-branch theorem \\
 \textbf{D9} & Theorem 6.13, Proposition 6.9, Theorem 6.14, Proposition 6.6: hypercharge lattice, \(N_c=3\), \(N_g=3\), and \(\mathbb Z_6\) quotient & D8 & anomaly algebra; Witten anomaly; CKM CP counting & realized one-generation/one-Higgs package and MAR admissibility premises & realized-branch theorem/corollary chain \\
 \textbf{D10} & current supplement-backed gauge/electroweak calibration closure & D9 + \(P\) & RG running and matching conventions recorded in the supplement & pixel closure and supplement-backed threshold conventions & calibration sector \\
-\textbf{D11} & Section 6.22 Higgs/top critical-surface branch & D10 & supplement-backed RG transport & critical-surface condition \(\lambda=\beta_\lambda=0\) at the matching scale & supplement-backed quantitative branch \\
+\textbf{D11} & Section 6.22 Higgs/top critical-surface branch & D10 & supplement-backed RG transport & critical-surface condition \(\lambda=\beta_\lambda=0\) at \(M_U\) together with the UV synchronization scale \(\mu_{\mathrm{sync}}\) used in the synchronized transport layer & supplement-backed quantitative branch \\
 \textbf{D12} & downstream flavor, dark-sector, baryogenesis, spectroscopy, and string branches & various subsets of D6, D9, D10, and D11 & branch-specific EFT and phenomenological manipulations & explicit additional ans\"atze & phenomenological continuation / program branch \\
 \end{longtable}
 }
@@ -4124,7 +4124,19 @@ at the same unified scale as the D10 calibration sector, namely
 \mu_* = M_U \approx 2.474 \times 10^{16}\ \mathrm{GeV}.
 \]
 
-Within the current supplement-backed implementation, one-loop \(\overline{\mathrm{MS}}\) transport of the coupled \((y_t,\lambda,g_Y,g_2,g_3)\) system from that boundary scale to \(\mu\sim m_t\) yields
+Within the current supplement-backed implementation, the compact appendix supplies only the low-scale SM piece of the one-loop \(\overline{\mathrm{MS}}\) transport for the coupled \((y_t,\lambda,g_Y,g_2,g_3)\) system. The synchronized D11 branch actually used for the displayed numbers runs with SM coefficients from \(m_Z\) up to a UV synchronization scale \(\mu_{\mathrm{sync}}\approx 6.8\times 10^{11}\,\mathrm{GeV}\), then with the same MSSM-like coefficients as D10 from \(\mu_{\mathrm{sync}}\) to \(M_U\), and only afterward applies order-one-GeV low-scale matching corrections. The literal all-SM appendix flow by itself lands much lower, near
+\[
+m_t^{\mathrm{pole}}\approx 164.2\ \mathrm{GeV},
+\qquad
+m_H\approx 115.2\ \mathrm{GeV}.
+\]
+The synchronized core before those final matching shifts instead yields
+\[
+m_t^{\mathrm{pole,core}}\approx 170.3\ \mathrm{GeV},
+\qquad
+m_H^{\mathrm{core}}\approx 126.6\ \mathrm{GeV},
+\]
+and after the residual matching conventions documented in the spectrum supplement the displayed D11 outputs are
 \[
 m_t^{\overline{\mathrm{MS}}}(m_t)\approx 160.6\ \mathrm{GeV},
 \qquad
@@ -4134,7 +4146,7 @@ together with
 \[
 m_H=\sqrt{2\lambda(m_t)}\,v\approx 126.5\ \mathrm{GeV}.
 \]
-Here ``supplement-backed implementation'' is literal: the compact appendix records the core one-loop RG system, but the synchronized D11 outputs above also use the shared matching, low-scale extraction, and pole-mass conventions documented in the spectrum supplement. The appendix equations alone are not meant as a standalone reproduction recipe for these displayed numbers.
+Here ``supplement-backed implementation'' is literal: the compact appendix records only the low-scale SM part of the flow, while the synchronized D11 outputs above also use the UV synchronization scale, the MSSM-like UV coefficients inherited from D10, and the shared matching, low-scale extraction, and pole-mass conventions documented in the spectrum supplement. The appendix equations alone are not meant as a standalone reproduction recipe for these displayed numbers.
 
 These numbers are the current synchronized D11 outputs shared with the compact note and the spectrum supplement. They add no new continuous fit once the D10 gauge trajectory and scale-setting branch are fixed, but they remain a secondary quantitative branch rather than part of the recovered-core theorem package.
 
@@ -4417,7 +4429,7 @@ Node & Representative outputs in this manuscript & Standard mathematics used & E
 \textbf{D8} & product gauge structure up to finite quotient under MAR & compact Lie representation classification; Schur's lemma & MAR, connected admissible class, one connected abelian factor, and \([z]=0\) & Phase I realized-branch theorem \\
 \textbf{D9} & realized \(\SU(3)\times\SU(2)\times\U(1)/\mathbb Z_6\), exact hypercharges, \(N_c=3\), \(N_g=3\), and no gauge-mediated proton decay as a product-group corollary & anomaly algebra; Witten anomaly; CKM CP counting & realized one-generation/one-Higgs package and MAR admissibility premises & Phase I realized-branch theorem/corollary chain \\
 \textbf{D10} & gauge/electroweak numerical closure of the current supplement-backed implementation & RG running and matching conventions & external input \(P\), pixel closure, and supplement-backed threshold conventions & Phase II calibration sector \\
-\textbf{D11} & Higgs/top critical-surface branch & supplement-backed RG transport and pole-mass conversion & critical-surface condition \(\lambda=\beta_\lambda=0\) at the matching scale; no new continuous fit once D10 is fixed & Phase II supplement-backed quantitative branch \\
+\textbf{D11} & Higgs/top critical-surface branch & supplement-backed RG transport and pole-mass conversion & critical-surface condition \(\lambda=\beta_\lambda=0\) at \(M_U\), plus the UV synchronization scale \(\mu_{\mathrm{sync}}\) used in the D11 transport; no new continuous fit once D10 is fixed & Phase II supplement-backed quantitative branch \\
 \textbf{D12} & Koide/charged leptons, textures, dark-sector, baryogenesis, spectroscopy, string/worldsheet, and other downstream continuations & branch-specific EFT and phenomenological manipulations & explicit additional ans\"atze beyond D6, D9, D10, or D11 & Phase III phenomenological continuation / program branch \\
 \end{longtable}
 }
