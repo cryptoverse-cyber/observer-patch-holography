@@ -47,7 +47,6 @@ def main() -> None:
     d10 = mod.build_paper_d10()
     d11 = mod.integrate_d11_literal_core(d10)
     supplement = mod.infer_supplement_reconstruction(d10)
-    report = mod.build_paper_reference_report()
 
     # D10 matches the synchronized paper tables.
     assert_close("alpha_u", d10.alpha_u, 0.04112498, 1e-6)
@@ -67,9 +66,9 @@ def main() -> None:
     # Guardrail: the literal appendix path is not the same as the published
     # D11 claim set. If these gaps disappear, the matching layer has changed
     # and the test should be revisited intentionally.
-    if report["gap_mt_pole"] >= -6.0:
+    if (d11.mt_pole - mod.PAPER_D11_TARGETS["mt_pole"]) >= -6.0:
         raise AssertionError("literal D11 mt_pole unexpectedly close to paper claim")
-    if report["gap_m_h"] >= -10.0:
+    if (d11.m_h_tree - mod.PAPER_D11_TARGETS["m_h"]) >= -10.0:
         raise AssertionError("literal D11 m_H unexpectedly close to paper claim")
 
     # Inferred supplement reconstruction:
