@@ -78,7 +78,7 @@ Some philosophers have called this "selector theory": non-existence isn't the na
 
 Others have spoken of "strange loops," reality creating itself through self-reference, like a hand drawing the hand that draws it. Our model gives this intuition mathematical teeth: the consistency constraints between observer patches *are* the self-referential loops that generate stable structure.
 
-But there's a deeper version of this idea. Reality doesn't just permit self-reference—it *requires* it.
+But there's a deeper version of this idea. Reality may not just permit self-reference; it may also invite a strange-loop interpretation.
 
 Consider the trajectory: reality is computational. Within this computation, physical evolution produces complex structures. Biological evolution produces minds. Memetic evolution produces ideas. Among these ideas, the understanding of reality's computational nature eventually emerges. Armed with this understanding, observers can simulate reality itself.
 

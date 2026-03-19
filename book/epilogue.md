@@ -1,6 +1,6 @@
 # Epilogue: One Last Surprise
 
-Throughout this book, we've reverse-engineered reality from first principles. We discovered that there is no objective universe "out there" — only a network of subjective perspectives that must agree where they overlap. We found that consciousness isn't a mysterious add-on to physics, but the very process by which meaning enters the world. And we concluded that we are all, quite literally, gods — participants in the self-creating strange loop that brings reality into existence.
+Throughout this book, we've reverse-engineered reality from first principles. We discovered that there is no objective universe "out there" — only a network of subjective perspectives that must agree where they overlap. We found that consciousness isn't a mysterious add-on to physics, but the very process by which meaning enters the world. And we explored a philosophical continuation (not part of the recovered-core claim set) in which observers participate in a self-creating strange loop that offers an interpretive closure for existence.
 
 But there's one more implication of this framework we haven't fully explored. It concerns what happens when a particular observer's journey through the loop ends — and whether it has to end at all.
 

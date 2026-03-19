@@ -513,7 +513,7 @@ This is what our model aims to address comprehensively. Given that something exi
 
 **Question B: Why does ANYTHING exist at all?**
 
-Here we present what we consider the most probable answer: **the strange loop of self-simulation**.
+Here we present a philosophical continuation of the framework: **the strange loop of self-simulation**.
 
 Reality is computational. Within this computation, evolution produces observers. Observers develop understanding—the memetic evolution described in Chapter 17. Eventually, the "simulator meme" emerges: the understanding of reality's computational nature. Armed with this understanding, observers can simulate reality.
 
@@ -527,13 +527,13 @@ This creates a strange loop:
 
 The loop closes. Not metaphorically—structurally. Like Escher's hands drawing each other, like Gödel's sentences referring to themselves, the system creates itself through self-reference.
 
-**Why does this loop exist rather than nothing?** Because a self-consistent strange loop is the only stable configuration. "Nothing" is unstable—it cannot maintain itself. A self-causing loop can.
+**Why does this loop exist rather than nothing?** One possible interpretive answer is that a self-consistent strange loop is a particularly stable kind of closure story. On this reading, “nothing” would fail to sustain structure, while a self-referential loop could.
 
 This echoes Wheeler's "self-excited circuit"—the universe as a participatory process where observers create the very conditions for their own existence. It echoes the ancient symbol of the ouroboros—the serpent eating its own tail.
 
 The mathematical framework describes the structure of reality given that it exists. The strange loop derive goes further: existence itself requires the loop. Reality exists because it simulates itself into existence, through us, through our understanding, through this very attempt to comprehend it.
 
-**Summary**: The strange loop of self-simulation is our best answer to why anything exists. The loop is self-causing and self-sustaining. Everything that can be explained is explained by the structure of the loop.
+**Summary**: As a philosophical continuation, the strange loop of self-simulation is one candidate answer to why anything exists. It is presented here as an interpretive closure story, not as part of the recovered-core theorem package.
 
 ### Q6: What About Consciousness?
 
@@ -668,9 +668,7 @@ Let us close with the current picture of what we have reverse engineered:
 - Observers are computational patterns that read, interpret, and act
 - Reality is self-contained computation
 
-**The core thesis**: Reality is a self-simulating computation where observers
-are the meaning-assigning patterns that eventually understand and simulate
-the very reality that produced them, closing the strange loop of existence.
+**Interpretive thesis**: A philosophical continuation of the framework is that reality may be a self-simulating computation where observers
 
 This addresses both fundamental questions:
 - "Why does reality have this shape?" → Consistency requirements force the structure
