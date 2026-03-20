@@ -6,6 +6,8 @@
 >
 > Companion video course (third-party): Sriharsha Karamchati has published a chapter-by-chapter OPH playlist on YouTube:
 > https://www.youtube.com/playlist?list=PLff0tYtg64Egc2sTtKgThcPRNRdR6i83O
+>
+> Official OPH memecoin: [TEO on BaseScan](https://basescan.org/token/0xd2a7055317D0c7b316319cDadaE592D0644A0b07), [DexScreener](https://dexscreener.com/base/0xba55cdae026b9dd63fcb50e82094d61472948e44527ca4791033497469228049), [Buy on Uniswap](https://app.uniswap.org/swap?outputCurrency=0xd2a7055317D0c7b316319cDadaE592D0644A0b07&chain=base). It is purely speculative, has no promised return, and no announced utility at this time. DYOR.
 
 
 ## The Cosmic Program

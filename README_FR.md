@@ -126,6 +126,14 @@ Le moyen le plus rapide d'explorer l'OPH est de poser vos questions directement 
 - [OPH Sage sur X](https://x.com/OphSage)
 - [OPH Sage sur Bluesky](https://bsky.app/profile/ophsage.bsky.social)
 
+## Token TEO
+
+TEO est le memecoin officiel de l'OPH sur Base. Il est purement speculatif, n'implique aucun rendement promis et n'a aucune utilite annoncee a ce stade. Si vous y touchez, partez du principe que vous pouvez tout perdre et faites vos propres recherches.
+
+- **BaseScan :** [Contrat TEO sur BaseScan](https://basescan.org/token/0xd2a7055317D0c7b316319cDadaE592D0644A0b07)
+- **DexScreener :** [Paire TEO sur DexScreener](https://dexscreener.com/base/0xba55cdae026b9dd63fcb50e82094d61472948e44527ca4791033497469228049)
+- **Uniswap :** [Acheter TEO sur Uniswap (Base)](https://app.uniswap.org/swap?outputCurrency=0xd2a7055317D0c7b316319cDadaE592D0644A0b07&chain=base)
+
 ## Objections courantes
 
 Cette section regroupe des réponses aux objections courantes adressées à l'OPH.

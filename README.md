@@ -119,6 +119,14 @@ The fastest way to explore OPH is to ask OPH Sage directly. OPH Sage can answer 
 - [OPH Sage on X](https://x.com/OphSage)
 - [OPH Sage on Bluesky](https://bsky.app/profile/ophsage.bsky.social)
 
+## TEO Token
+
+TEO is the official OPH memecoin on Base. It is purely speculative, carries no promised return, and has no announced utility at this time. If you interact with it, assume you can lose the full amount and do your own research.
+
+- **BaseScan:** [TEO contract on BaseScan](https://basescan.org/token/0xd2a7055317D0c7b316319cDadaE592D0644A0b07)
+- **DexScreener:** [TEO pair on DexScreener](https://dexscreener.com/base/0xba55cdae026b9dd63fcb50e82094d61472948e44527ca4791033497469228049)
+- **Uniswap:** [Buy TEO on Uniswap (Base)](https://app.uniswap.org/swap?outputCurrency=0xd2a7055317D0c7b316319cDadaE592D0644A0b07&chain=base)
+
 ## Common Objections
 
 These are rebuttals to common objections to OPH.
