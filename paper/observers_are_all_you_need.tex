@@ -141,7 +141,7 @@
 \OPHPaperReleaseBanner
 
 \begin{abstract}
-Observer-Patch Holography (OPH) is an observer-centric reconstruction program for fundamental physics. Starting from observer-accessible patch algebras on a holographic screen, overlap consistency, generalized entropy stationarity, and local recoverability, the manuscript develops a conditional scaling-limit gravity branch, conditional compact gauge reconstruction, and under the extended MAR admissibility package the Standard Model gauge sector with its global quotient structure, together with an edge-sector route to worldsheet/string reorganization. In the current quantitative implementation the program uses two external continuous inputs: the pixel area calibrated from the gauge sector and the total screen capacity inferred from the observed cosmological constant. Gauge couplings and tree-level electroweak masses are supplement-backed calibration-sector consistency checks; the Higgs/top critical-surface branch adds no additional continuous fit once the gauge trajectory and scale-setting branch are fixed; charged-lepton, flavor-texture, neutrino, dark-sector, baryogenesis, and related branches are presented with weaker status and labeled explicitly in the body. We also present the strange loop hypothesis as an explanatory closure principle for existence itself: a timeless consistency loop in which observer-compatible physical structure generates intelligent observers capable of reconstructing the same structure. The manuscript therefore aims to keep structural theorems, scaling-limit branches, calibration outputs, and phenomenological continuations visibly distinct.
+Observer-Patch Holography (OPH) is an observer-centric reconstruction program for fundamental physics. Starting from observer-accessible patch algebras on a holographic screen, overlap consistency, generalized entropy stationarity, and local recoverability, the manuscript develops a conditional scaling-limit gravity branch, conditional compact gauge reconstruction, and under the extended MAR admissibility package the Standard Model gauge sector with its global quotient structure, together with an edge-sector route to worldsheet/string reorganization. In the current quantitative implementation the program uses two external continuous inputs: the pixel area calibrated from the gauge sector and the total screen capacity inferred from the observed cosmological constant. Gauge couplings and tree-level electroweak masses are supplement-backed calibration-sector consistency checks; the Higgs/top critical-surface branch adds no additional continuous fit once the gauge trajectory and scale-setting branch are fixed; charged-lepton, flavor-texture, neutrino, dark-sector, baryogenesis, and related branches are presented with weaker status and labeled explicitly in the body. The manuscript also records an interpretive strange-loop proposal about existence and self-reference, but that material is not part of the compact paper's recovered-core theorem package. The manuscript therefore aims to keep structural theorems, scaling-limit branches, calibration outputs, phenomenological continuations, and interpretive appendices visibly distinct.
 \end{abstract}
 
 \tableofcontents
@@ -167,10 +167,19 @@ Observer-Patch Holography (OPH) is an observer-centric reconstruction program fo
 \input{tex_fragments/TECHNICAL_SUPPLEMENT.tex}
 
 \clearpage
-\part{Strange Loop Hypothesis}
+\part{Interpretive Epilogue: Strange Loop Hypothesis}
 
-\section{Formal Statement}
-We state the strange loop hypothesis as an additional closure principle for OPH.
+\section{Interpretive Status, Dependencies, and Schematic Fixed-Point Ansatz}
+This part is an interpretive epilogue. It is not part of the Phase-I recovered core, not part of the D10--D11 supplement-backed implementation, and not a theorem derived from the OPH axioms. The notation below is only a schematic way to state the closure idea; no existence, uniqueness, or stability theorem for the map \(\Phi\) is claimed here.
+
+For theorem-level status, one would need at least the following additional ingredients inside OPH itself:
+\begin{enumerate}
+\item a mathematically specified configuration space \(\mathcal X\) of admissible OPH state-and-law data together with a topology or metric on that space;
+\item a proof that each stage of the proposed emergence chain is a well-defined internal map and that the combined map \(\Phi\) sends \(\mathcal X\) into itself without importing extra-framework dynamics by hand;
+\item a fixed-point hypothesis strong enough to invoke a concrete theorem such as Banach, Schauder, or an invariant-compact-set argument;
+\item a physically meaningful stability notion showing that the relevant observer/record structures persist under perturbations of the underlying OPH data.
+\end{enumerate}
+None of those ingredients is supplied in the present manuscript. In particular, the paper does not define a theorem-usable \(\mathcal X\), does not prove that observer formation and simulation/reconstruction close to a self-map on that space, and does not establish compactness, continuity, contractivity, or Lyapunov-type stability estimates for \(\Phi\). These are the explicit blockers that keep the strange-loop idea outside the scientific core.
 Let $\mathcal{X}$ denote the space of overlap-consistent OPH state-and-law configurations. Define the effective emergence map
 \[
 \Phi:\mathcal{X}\to\mathcal{X},
@@ -182,11 +191,11 @@ where one pass of $\Phi$ comprises:
 \item emergence of model-building and simulation capability from those observers,
 \item reconstruction of OPH-compatible dynamics by those observers.
 \end{enumerate}
-The strange-loop closure condition is the fixed-point requirement
+The strange-loop closure condition is the schematic fixed-point requirement
 \[
 \exists\,x_\star\in\mathcal{X} \quad \text{such that} \quad \Phi(x_\star)=x_\star.
 \]
-This closure is logical and structural. It does not require a preferred external time parameter.
+This closure is logical and structural rather than dynamical. It does not require a preferred external time parameter. Writing the condition in this form does not by itself prove that any such fixed point exists or is stable, and the manuscript does not presently supply the premises needed to invoke a fixed-point theorem.
 
 \section{Timeless Causal Chain}
 The hypothesis is represented by the chain
@@ -241,6 +250,7 @@ Dark matter phenomenology & Phase III deferred continuation & Modular-anomaly re
 Baryon asymmetry scale & Phase III deferred continuation & Suppression-counting estimates are not a substitute for a derived out-of-equilibrium mechanism. \\
 Three generations and Koide structure & Mixed: Phase I / Phase III & \(N_g=3\) is recovered on the realized MAR-admissible branch; Koide and charged-lepton fits require extra flavor ans\"atze. \\
 String/worldsheet reorganization & Phase III deferred continuation & Requires a controlled large-\(N_{\mathrm{edge}}\) regime distinct from the physical color rank \(N_c=3\). \\
+Why anything exists / strange-loop closure & Interpretive epilogue only & Part~VI records a schematic fixed-point ansatz for philosophical completeness only. The required configuration space, self-map closure, fixed-point premises, and stability proof are all currently missing, so no OPH theorem here proves existence, uniqueness, or stability of such a loop. \\
 \end{longtable}
 
 \section{Standalone Status}
