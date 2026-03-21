@@ -32,7 +32,7 @@
 Observer-Overlap Consistency\\[0.4em]
 \large Observers Are All You Need (Compact)}
 \author{B.\ M\"uller}
-\date{March 13, 2026}
+\date{\OPHPaperReleaseDate}
 
 \begin{document}
 \maketitle
@@ -71,7 +71,7 @@ This paper presents a single framework that addresses this list as a conditional
 Two decisions shape the present version.
 
 \begin{enumerate}[leftmargin=2em]
-\item The compact note presents the main theorem statements in one place, but some quantitative conventions and implementation details live in repository supplements.\footnote{Questions about ultimate purpose are deferred until the corresponding physical question has been posed with enough precision to deserve an answer.}
+\item The compact note presents the main theorem statements in one place, but some quantitative conventions and implementation details live in repository supplements.\footnote{Broader interpretive questions are deferred here so the compact note can keep its claim-tier boundary explicit.} For length, several theorem-level arguments below are recorded only as proof sketches; the synchronized main paper is the full-proof surface for those derivations.
 \item The paper separates exact structural theorems, conditional scaling-limit branches, calibration-sector outputs, and phenomenological continuations. This keeps strong claims visible and weak claims identifiable.
 \end{enumerate}
 
@@ -2115,15 +2115,13 @@ The same product-group structure removes the usual grand-unification monopole se
 
 \subsection{Continuous-input count in the current quantitative implementation}
 
-The quantitative program uses the same axiom set together with the two external continuous inputs $P$ and $N_{\mathrm{scr}}$ in its current supplement-backed numerical implementation. In the current implementation, $P$ is calibrated from the gauge sector and $N_{\mathrm{scr}}$ is inferred from the observed cosmological constant. The discrete structure
+The quantitative program uses the same axiom set together with the two external continuous inputs $P$ and $N_{\mathrm{scr}}$ in its current supplement-backed numerical implementation. In the current implementation, $P$ is calibrated from the gauge sector and $N_{\mathrm{scr}}$ is inferred from the observed cosmological constant. The realized structural discrete data are
 \[
 (\SU(3)\times\SU(2)\times\U(1))/\mathbb Z_6,\quad
 N_g=3,\quad
-N_c=3,\quad
-\varepsilon=\frac16,\quad
-\delta=\frac29
+N_c=3
 \]
-is then fixed by structural arguments, MAR selection, or phenomenological continuation steps rather than by direct fits. On the structural, calibration, and Higgs/top branch alone, this replaces roughly nineteen particle-physics inputs, or twenty-six when neutrino parameters are included, by two external continuous inputs plus structural relations. Later flavor continuations use additional phenomenological branch choices and are not part of that count.
+and are fixed by structural arguments and MAR selection rather than by direct fits. If one later enters specific flavor continuations, additional discrete choices such as \(\varepsilon=1/6\) or \(\delta=2/9\) may be introduced, but those are not part of the recovered structural bundle. On the structural, calibration, and Higgs/top branch alone, this replaces roughly nineteen particle-physics inputs, or twenty-six when neutrino parameters are included, by two external continuous inputs plus structural relations. Later flavor continuations use additional phenomenological branch choices and are not part of that count.
 
 \subsection{Epistemic classification of outputs}
 
@@ -2246,7 +2244,7 @@ and
 m_{Z,\mathrm{run}}=\frac12v\sqrt{g_2^2+g_Y^2}\approx 91.76\ \mathrm{GeV}.
 \]
 
-These are calibration-sector outputs. Their role in the paper is scale setting, not independent confirmation. A fully reproducible numerical audit requires the beta-function shifts and matching conventions supplied in the repository supplements. The compact note therefore reports only the running-$Z$ relation internally and does not treat an illustrative pole-mass estimate as a benchmark output.
+These are calibration-sector outputs. Their role in the paper is scale setting, not independent confirmation. A fully reproducible numerical audit requires the beta-function shifts and matching conventions supplied in the repository supplements. The compact note therefore reports the running-$Z$ relation rather than a pole-$Z$ benchmark output.
 
 \begingroup
 \footnotesize
@@ -2587,7 +2585,7 @@ The weakest part is the light-quark and hadron branch. The hierarchy pattern is 
 
 The framework should therefore be evaluated in stages. It already contains several results that are normally postulated independently in other approaches: kinematics, dynamics, gauge structure, charge lattice, matter multiplicities, and part of the mass spectrum in supplement-backed quantitative form. Whether one regards this as evidence for fundamentality depends on whether these simultaneous derivations survive further scrutiny.
 
-Topics intentionally excluded from the present formulation include simulation narratives, observer-continuation mechanisms, and claims of final completeness for all low-energy observables.\footnote{Questions outside this theorem package are, for present purposes, mostly harmless.}
+Topics intentionally excluded from the present formulation include simulation narratives, observer-continuation mechanisms, and claims of final completeness for all low-energy observables.\footnote{Questions outside this theorem package do not alter the specific claim set established here.}
 
 \section{Conclusion}
 
