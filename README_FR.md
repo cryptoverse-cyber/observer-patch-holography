@@ -57,6 +57,11 @@ Dans l'ensemble synchronisé actuel des articles, le durcissement du pont modula
 - **PDF :** [Reality as a Consensus Protocol](paper/reality_as_consensus_protocol.pdf)
 - **Source LaTeX :** [reality_as_consensus_protocol.tex](paper/reality_as_consensus_protocol.tex)
 
+**Screen Microphysics and Observer Synchronization** est la note constructive de microphysique. Elle rend le programme de modele d'ecran de l'OPH exploitable cote simulateur en explicitant des espaces de Hilbert locaux finis, des observables de recouvrement, des couches d'enregistrement, des criteres d'observateur, des operations de synchronisation et des pistes d'implementation concretes sans sur-vendre le pont vers le continu ou la gravite.
+
+- **PDF :** [Screen Microphysics and Observer Synchronization](paper/screen_microphysics_and_observer_synchronization.pdf)
+- **Source LaTeX :** [screen_microphysics_and_observer_synchronization.tex](paper/screen_microphysics_and_observer_synchronization.tex)
+
 Chaque PDF comporte désormais une ligne de version visible. La source partagée de version est
 [`paper/release_info.tex`](paper/release_info.tex). Pour toute mise à jour substantielle des
 articles, incrémentez d'abord la version partagée avant de reconstruire les PDF :
@@ -75,8 +80,8 @@ python3 tools/generate_paper_release_manifest.py
 Le générateur de manifeste échoue désormais si les PDF changent sans nouvelle version, ou si les
 PDF locaux n'exposent pas encore la ligne de version visible attendue.
 
-La version est globale à l'ensemble courant des articles. Même si un seul article change,
-incrémentez une seule fois, reconstruisez les trois PDF, puis publiez les trois PDF du challenge
+La version est globale à l'ensemble courant des articles suivis par la release. Même si un seul article change,
+incrémentez une seule fois, reconstruisez tous les PDF suivis par la release, puis publiez les trois PDF du challenge
 avec cette même version.
 L'envoi vers le challenge est géré par un outillage opérationnel local à l'espace de travail, pas par ce dépôt public.
 

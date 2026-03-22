@@ -52,6 +52,11 @@ In the current synchronized paper set, the null-bridge hardening has removed any
 - **PDF:** [Reality as a Consensus Protocol](paper/reality_as_consensus_protocol.pdf)
 - **LaTeX source:** [reality_as_consensus_protocol.tex](paper/reality_as_consensus_protocol.tex)
 
+**Screen Microphysics and Observer Synchronization** is the constructive microphysics note. It makes the OPH screen-model program simulator-facing by specifying finite local Hilbert spaces, overlap observables, record layers, observer criteria, synchronization moves, and concrete implementation lanes without overstating the continuum/gravity bridge.
+
+- **PDF:** [Screen Microphysics and Observer Synchronization](paper/screen_microphysics_and_observer_synchronization.pdf)
+- **LaTeX source:** [screen_microphysics_and_observer_synchronization.tex](paper/screen_microphysics_and_observer_synchronization.tex)
+
 Each PDF carries a visible paper release line. The shared release source is
 [`paper/release_info.tex`](paper/release_info.tex). For every substantive paper update, bump the
 shared release before rebuilding the PDFs:
@@ -70,8 +75,8 @@ python3 tools/generate_paper_release_manifest.py
 The manifest generator now fails if the PDFs changed under the same release ID, or if the local
 PDFs do not yet expose the current visible release line.
 
-The release ID is global across the current paper set. Even if only one paper changes, bump once,
-rebuild all three PDFs, and publish all three challenge PDFs with that same release ID.
+The release ID is global across the current release-tracked paper set. Even if only one paper changes, bump once,
+rebuild all release-tracked PDFs, and publish all three challenge PDFs with that same release ID.
 Challenge uploads are handled by workspace-local operational tooling rather than this public repo.
 
 The canonical paper sources now live under [`paper/`](paper). The old draft tree has been removed from the repository.
