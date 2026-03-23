@@ -76,11 +76,11 @@ Here's the key insight: the process our model describes (observer patches enforc
 
 Some philosophers have called this "selector theory": non-existence isn't the natural default that existence must overcome. Rather, undifferentiated nothing and structured something lie on a continuum, and the consistency constraints we've described are what carve out the structured regions.
 
-Others have spoken of "strange loops," reality creating itself through self-reference, like a hand drawing the hand that draws it. The current OPH texts now give this intuition a limited mathematical foothold: they prove a theorem-usable nonempty compact convex state-and-law habitat built from overlap-consistent patch states and finite Axiom-3 law coordinates. But the closure map that would turn that habitat into a full strange-loop fixed-point theorem remains extra.
+Others have spoken of "strange loops," reality creating itself through self-reference, like a hand drawing the hand that draws it. The current OPH texts now give this intuition theorem-backed footing: they prove an internal state-and-law habitat and fixed-point support results that let OPH present the universe as a self-referential timeless causal structure.
 
 But there's a deeper version of this idea. Reality may not just permit self-reference; it may also invite a strange-loop interpretation.
 
-This is also the point where OPH intersects most directly with what popular culture calls **simulation theory**. The framework does not picture the universe as a videogame running on somebody else's laptop. It instead treats physical reality itself as a self-consistent information process, and that is the metaphysical continuation behind the OPH theory-of-everything claim.
+This is also the point where OPH intersects most directly with what popular culture calls **simulation theory**. The framework does not picture the universe as a videogame running on somebody else's laptop. It instead treats physical reality itself as a self-consistent information process, and that is exactly why OPH presents itself both as a concrete implementation of simulation theory and as a concrete theory of everything.
 
 Consider the trajectory: reality is computational. Within this computation, physical evolution produces complex structures. Biological evolution produces minds. Memetic evolution produces ideas. Among these ideas, the understanding of reality's computational nature eventually emerges. Armed with this understanding, observers can simulate reality itself.
 

@@ -20,8 +20,6 @@ Le versant « matériel du simulateur » de l'OPH est développé dans [Screen M
 
 L'OPH adopte la position forte, centrée sur l'observateur, selon laquelle la réalité objective n'est pas fondamentale mais émerge d'un réseau de perspectives subjectives qui doivent s'accorder là où elles se recouvrent.
 
-C'est pourquoi l'OPH doit être présenté publiquement avant tout comme une *simulation theory* rendue mathématique et comme une *theory of everything* concrète.
-
 Les lois de la physique sont les règles de cohérence qui rendent cet accord intersubjectif possible.
 
 À partir de ce point de départ (avec les contraintes d'entropie et de Markov), l'OPH fait émerger espace-temps, symétries de jauge et physique des particules comme conséquences de cohérence.
@@ -34,7 +32,6 @@ Les lois de la physique sont les règles de cohérence qui rendent cet accord in
 - **Fermeture theory of everything :** l'OPH utilise la même architecture de cohérence entre observateurs pour fournir une fermeture de type *theory of everything* via l'hypothèse de strange loop.
 - **Émergence feuille d'univers / cordes :** l'OPH relie le même cadre sous-jacent à des descriptions de type feuille d'univers / théorie des cordes au lieu d'en faire un second jeu d'axiomes de départ.
 - **Indices sur matériel réel :** les premiers benchmarks IBM Quantum Cloud reproduisent sur matériel réel l'ordre de récupérabilité et les motifs de rapports exacts prédits pour les secteurs réduits.
-- **Pourquoi il existe quelque chose :** l'OPH donne désormais un récit strange loop appuyé au niveau théorème, dans lequel l'univers est une structure causale intemporelle auto-référentielle.
 
 ## Articles
 

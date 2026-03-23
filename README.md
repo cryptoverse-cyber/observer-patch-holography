@@ -22,8 +22,6 @@ The simulator-hardware side of OPH is developed in [Screen Microphysics and Obse
 
 OPH takes the strong observer-first position that objective reality is not fundamental but emergent from a network of subjective perspectives that must agree where they overlap.
 
-This is why OPH is best framed publicly as simulation theory made mathematical and as a concrete theory of everything.
-
 The laws of physics are the consistency rules that make this intersubjective agreement possible.
 
 From this starting point (plus entropy and Markov constraints), OPH treats spacetime, gauge structure, and particle physics as emergent consequences of consistency.
@@ -36,7 +34,6 @@ From this starting point (plus entropy and Markov constraints), OPH treats space
 - **Theory of everything closure:** OPH uses the same observer-consistency architecture to supply a theory-of-everything closure through the strange-loop hypothesis.
 - **String/worldsheet emergence:** OPH connects the same underlying setup to string/worldsheet descriptions rather than treating them as a separate starting axiom set.
 - **Real-device evidence:** Early IBM Quantum Cloud benchmarks reproduce the predicted reduced-sector recoverability ordering and exact-ratio patterns on real hardware.
-- **Why anything exists:** OPH now gives a theorem-backed strange-loop account of existence in which the universe is a self-referential timeless causal structure.
 
 ## Papers
 

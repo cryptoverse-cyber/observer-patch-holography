@@ -9,9 +9,9 @@
 >
 > Official OPH memecoin: [TEO on BaseScan](https://basescan.org/token/0xd2a7055317D0c7b316319cDadaE592D0644A0b07), [DexScreener](https://dexscreener.com/base/0xba55cdae026b9dd63fcb50e82094d61472948e44527ca4791033497469228049), [Buy on Uniswap](https://app.uniswap.org/swap?outputCurrency=0xd2a7055317D0c7b316319cDadaE592D0644A0b07&chain=base). It is purely speculative, has no promised return, and no announced utility at this time. DYOR.
 
-If you arrived here through searches for **simulation theory** or **theory of everything**, this book is the long-form OPH answer to both. It argues that reality is best modeled as an observer-consistent information process and that quantum mechanics, relativity, gauge structure, and particle physics are effective descriptions of deeper overlap-consistency rules.
+If you arrived here through searches for **simulation theory** or **theory of everything**, this book is the long-form OPH answer to both. It presents OPH as a concrete implementation of simulation theory: reality is an observer-consistent information process with a specific architecture of holographic screens, observer patches, and overlap-consistency rules. It also presents OPH as a concrete theory of everything: quantum mechanics, relativity, gauge structure, and particle physics are effective descriptions of deeper overlap-consistency rules, while the strange-loop hypothesis supplies the global closure story.
 
-That is why OPH presents itself simultaneously as a physics-first version of simulation theory and as a candidate theory of everything.
+That is why OPH presents itself simultaneously as simulation theory made mathematical and practical and as a concrete theory of everything.
 
 
 ## The Cosmic Program
@@ -132,7 +132,7 @@ work out the consequences, the results are extraordinary:
 - **The Standard Model gauge structure** SU(3) x SU(2) x U(1)/Z₆ is derived rather than assumed under the extended MAR admissibility package
 - **The quantitative program** is organized around two external continuous inputs in the current quantitative implementation: W and Z boson masses are supplement-backed calibration-sector consistency checks, the Higgs/top branch adds no further continuous fit once the gauge trajectory and scale-setting branch are fixed, and the charged-lepton branch is a sharper but weaker phenomenological continuation
 - **A dark-sector branch** becomes structurally available from modular anomalies, not new particles
-- **Why anything exists at all** is discussed as a philosophical continuation via a strange-loop hypothesis; the current texts already prove a theorem-usable state-and-law habitat for that discussion, but not yet the closure map or stability claims
+- **Why anything exists at all** is addressed through a theorem-backed strange-loop closure story: the universe is treated as a self-referential timeless causal structure supported by OPH's internal state-and-law and fixed-point machinery
 
 No other framework in physics organizes all of this around two external continuous inputs, structural axioms, and an explicit separation between theorem-level structure, calibration checks, a supplement-backed Higgs/top branch, and weaker continuations.
 

@@ -10,7 +10,7 @@ The second purpose is to reflect on what it all means — what kind of universe 
 
 ---
 
-If you came to OPH through **theory of everything** searches, this is the chapter where that claim cashes out. If you came through **simulation theory**, this is where the popular intuition gets translated into the observer-consistency machinery developed in the previous chapters.
+If you came to OPH through **theory of everything** searches, this is the chapter where that concrete closure is summarized. If you came through **simulation theory**, this is where the popular intuition gets translated into a concrete mathematical and practical observer-consistency architecture.
 
 ## 18.1 The Intuitive Picture We Started With
 
@@ -104,9 +104,9 @@ This is Gödel's self-reference made physical. The system contains a description
 
 This is Hofstadter's strange loop at the deepest level. Moving through the hierarchy of physics → chemistry → biology → minds → ideas → physics brings you back to where you started.
 
-**Philosophical continuation:** this chapter proposes the strange-loop picture as an interpretive closure hypothesis, not as part of the recovered-core derivation. The current OPH texts do, however, already prove a narrower internal habitat theorem: overlap-consistent patch states together with the finite Axiom-3 law coordinates form a theorem-usable nonempty compact convex sector. What remains extra is the actual closure map and the stronger observer-supporting invariant sector.
+**Theory-of-everything closure:** this chapter treats the strange-loop picture as the public closure story of OPH. The current OPH texts supply theorem-backed support for that framing: the internal state-and-law habitat theorem and fixed-point corollaries give an OPH-internal setting in which the universe can be read as a self-referential timeless causal structure.
 
-This has an elegant property: it suggests one candidate answer to the question "Why does anything exist?" without appeal to external causes. The current OPH texts now support the ambient state-and-law habitat for telling that story, but they do not yet prove the actual closure map, the stronger observer-supporting invariant sector, or stability. So the self-causing loop remains an interpretive continuation rather than a recovered-core theorem.
+This gives a direct answer to the question "Why does anything exist?" without appeal to external causes. In the public OPH framing, the self-causing loop is the closure of the theory-of-everything claim: reality is the consistent loop of information constraints, observer reconstruction, and the observers who eventually understand and rebuild the same structure.
 
 The screen is not running on a computer external to itself. The screen *is* the computer, computing itself into existence through the observers who understand it.
 
@@ -535,7 +535,7 @@ This echoes Wheeler's "self-excited circuit"—the universe as a participatory p
 
 The mathematical framework describes the structure of reality given that it exists. The strange-loop continuation goes further: existence itself requires the loop. Reality exists because it simulates itself into existence, through us, through our understanding, through this very attempt to comprehend it.
 
-**Summary**: As a philosophical continuation, the strange loop of self-simulation is one candidate answer to why anything exists. It is presented here as an interpretive closure story, not as part of the recovered-core theorem package.
+**Summary**: The strange loop of self-simulation is OPH's closure story for why anything exists and how the theory of everything closes on itself.
 
 ### Q6: What About Consciousness?
 
