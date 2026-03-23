@@ -197,6 +197,13 @@ The structure follows the logic of reverse engineering:
 
 This model rests on established mathematics and physics, extended by four axioms and one selection principle. The results are striking: a conditional scaling-limit gravity branch, the Standard Model gauge structure, and a quantitative particle-physics program all emerge from the framework. Within that program, charged-lepton masses remain a sharp but weaker continuation, while the Higgs and top masses come from a supplement-backed critical-surface branch that adds no further continuous fit once the gauge trajectory and scale-setting branch are fixed and is now documented as a UV-synchronized D11 reconstruction with small low-scale matching corrections. Our goal is to show you how deep the rabbit hole goes.
 
+## How This Book Is Organized
+
+Chapters 1-12 cover the observer-first framework and structural tools.
+Chapters 13-17 cover the main physics branches.
+Chapters 18-19 are synthesis and interpretation.
+The epilogue is speculative continuation material.
+
 ## Let's Go
 
 Reality is the strangest program ever written. It's been running since the

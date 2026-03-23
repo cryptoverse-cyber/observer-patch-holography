@@ -174,6 +174,47 @@ The code in this repo follows the current paper set rather than a polished packa
 | [code/particles/oph_no_cheat_audit.py](code/particles/oph_no_cheat_audit.py) | Static and runtime audit tooling |
 
 ## Book
+ 
+Core explanatory chapters
+
+| Chapter | Title | Topic |
+|---------|-------|-------|
+| [Prologue](book/prologue.md) | Prologue | Setting the stage |
+| [1](book/chapter-01-consistency.md) | Consistency | Observer agreement as the fundamental principle |
+| [2](book/chapter-02-lineage.md) | Lineage | Historical roots of holographic ideas |
+| [3](book/chapter-03-screen.md) | The Screen | Holographic screens and information bounds |
+| [4](book/chapter-04-entropy.md) | Entropy | Thermodynamics and the arrow of time |
+| [5](book/chapter-05-algebra.md) | Algebra | The mathematical structure of observables |
+| [6](book/chapter-06-overlap.md) | Overlap | Consistency conditions and Bell's theorem |
+| [7](book/chapter-07-recovery.md) | Recovery | Information preservation and quantum error correction |
+| [8](book/chapter-08-holography.md) | Holography | AdS/CFT and bulk reconstruction |
+| [9](book/chapter-09-entanglement.md) | Entanglement | Geometry from quantum correlations |
+| [10](book/chapter-10-error-correction.md) | Error Correction | Reality as a quantum code |
+| [11](book/chapter-11-maxent.md) | MaxEnt | Entropy, time, and modular flow |
+| [12](book/chapter-12-symmetry.md) | Symmetry | Conservation laws from consistency |
+
+Physics branch chapters
+
+| Chapter | Title | Topic |
+|---------|-------|-------|
+| [13](book/chapter-13-desitter.md) | De Sitter | Our universe's holographic screen |
+| [14](book/chapter-14-standard-model.md) | Standard Model | Particles from gluing constraints |
+| [15](book/chapter-15-relativity.md) | Relativity | Spacetime from modular time |
+| [16](book/chapter-16-matter.md) | Matter | Classical physics as emergent stability |
+| [17](book/chapter-17-darwin.md) | Darwin's Laws | Laws as evolutionary survivors |
+
+Interpretive chapters
+
+| Chapter | Title | Topic |
+|---------|-------|-------|
+| [18](book/chapter-18-synthesis.md) | Synthesis | Putting it all together |
+| [19](book/chapter-19-metaphysics.md) | Metaphysics | Qualia and the hard problem |
+
+Speculative epilogue
+
+| Chapter | Title | Topic |
+|---------|-------|-------|
+| [Epilogue](book/epilogue.md) | Epilogue | One last surprise |
 
 The book source lives in [`book/`](book). It is the Markdown source for the public OPH Book and is organized as a 21-chapter sequence from the prologue and observer-consistency foundations through holography, symmetry, the Standard Model, relativity, synthesis, and metaphysics.
 
