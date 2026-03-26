@@ -13,7 +13,13 @@ Run:
 from __future__ import annotations
 
 import math
+import pathlib
+import sys
 import tempfile
+
+CORE_DIR = pathlib.Path(__file__).resolve().parents[1]
+if str(CORE_DIR) not in sys.path:
+    sys.path.insert(0, str(CORE_DIR))
 
 import oph_predict_compare as pc
 

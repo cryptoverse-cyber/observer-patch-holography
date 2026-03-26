@@ -17,9 +17,12 @@ import math
 import pathlib
 import sys
 
+CORE_DIR = pathlib.Path(__file__).resolve().parents[1]
+if str(CORE_DIR) not in sys.path:
+    sys.path.insert(0, str(CORE_DIR))
 
 MODULE_PATH = str(
-    (pathlib.Path(__file__).resolve().parent / "particle_masses_paper_d10_d11.py")
+    (CORE_DIR / "particle_masses_paper_d10_d11.py")
 )
 
 

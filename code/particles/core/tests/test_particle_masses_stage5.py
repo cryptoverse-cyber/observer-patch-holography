@@ -16,7 +16,10 @@ import importlib.util
 import sys
 
 import pathlib
-MODULE_PATH = str((pathlib.Path(__file__).resolve().parent / "particle_masses_stage5.py"))
+CORE_DIR = pathlib.Path(__file__).resolve().parents[1]
+if str(CORE_DIR) not in sys.path:
+    sys.path.insert(0, str(CORE_DIR))
+MODULE_PATH = str((CORE_DIR / "particle_masses_stage5.py"))
 
 def load_pm5():
     spec = importlib.util.spec_from_file_location("pm5", MODULE_PATH)

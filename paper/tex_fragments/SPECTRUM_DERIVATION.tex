@@ -853,32 +853,49 @@ The predicted neutrino masses (\(\sim 0.08\)--\(3\) meV) are below existing dire
 \subsection{Reproduction Instructions}\label{12-reproduction-instructions}
 
 All computations can be reproduced from the code in \href{../code/particles/}{\texttt{code/particles/}}.
+The repository now ships that surface as a compact public export: a
+\path{code/particles/core/} compatibility backbone for the current predictor,
+the active closure-lane directories, and frozen current artifacts under
+\path{code/particles/runs/}.
 
 \subsubsection{Prerequisites}\label{121-prerequisites}
 
 \begin{verbatim}
-pip install numpy
+pip install numpy PyYAML
 \end{verbatim}
 
-No other dependencies are needed. The \texttt{pdg} and \texttt{pandas} packages are only required for \path{tools/fetch_pdg_data.py} (the PDG data fetcher, used for comparison only).
+The compact export only needs \texttt{numpy} and \texttt{PyYAML}. The
+\path{code/particles/core/} predictor backbone only needs \texttt{numpy}; the
+lane surface and public status-ledger tooling also use \texttt{PyYAML}. The
+\texttt{pdg} and \texttt{pandas} packages are only required for
+\path{tools/fetch_pdg_data.py} (the PDG data fetcher, used for comparison
+only).
 
 \subsubsection{Code Files}\label{122-code-files}
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}>{\RaggedRight\arraybackslash}p{0.390\textwidth}>{\RaggedRight\arraybackslash}p{0.390\textwidth}>{\RaggedRight\arraybackslash}p{0.140\textwidth}@{}}
 \toprule\noalign{}
-File & Description & Stage \\
+Path & Description & Stage \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-\href{../code/particles/particle_masses_stage5.py}{\path{particle_masses_stage5.py}} & Core spectrum prediction: gauge closure, transmutation, critical surface, Z$_6$ texture & 1--5 \\
-\href{../code/particles/oph_qcd.py}{\path{oph_qcd.py}} & 4-loop MSbar $\beta$-coefficients and $\Lambda$ extraction & 6 \\
-\href{../code/particles/oph_lattice_su3_quenched_v5.py}{\path{oph_lattice_su3_quenched_v5.py}} & Quenched Wilson SU(3) lattice for hadron mass ratios & 6--7 \\
-\href{../code/particles/oph_predict_compare.py}{\path{oph_predict_compare.py}} & Full predictor plus PDG comparison (main entry point) & All \\
-\href{../code/particles/oph_no_cheat_audit.py}{\path{oph_no_cheat_audit.py}} & Static anti-leak audit of prediction code & Audit \\
-\href{../code/particles/test_oph_predict_compare.py}{\path{test_oph_predict_compare.py}} & Smoke tests plus runtime no-cheat mutation test & Tests \\
-\href{../code/particles/test_particle_masses_stage5.py}{\path{test_particle_masses_stage5.py}} & Regression tests for Stage 5 predictions & Tests \\
+\href{../code/particles/README.md}{\path{README.md}} & Map of the compact public particle mirror and its claim boundary & Meta \\
+\href{../code/particles/RESULTS_STATUS.md}{\path{RESULTS\_STATUS.md}} & Human-readable public status ledger for the current particle lanes & Status \\
+\href{../code/particles/results_status.json}{\path{results\_status.json}} & Machine-readable mirror of the same particle-status boundary & Status \\
+\href{../code/particles/core/particle_masses_stage5.py}{\path{core/particle_masses_stage5.py}} & Core spectrum prediction: gauge closure, transmutation, critical surface, Z$_6$ texture & 1--5 \\
+\href{../code/particles/core/oph_qcd.py}{\path{core/oph_qcd.py}} & 4-loop MSbar $\beta$-coefficients and $\Lambda$ extraction & 6 \\
+\href{../code/particles/core/oph_lattice_su3_quenched_v5.py}{\path{core/oph_lattice_su3_quenched_v5.py}} & Quenched Wilson SU(3) lattice for hadron mass ratios & 6--7 \\
+\href{../code/particles/core/oph_predict_compare.py}{\path{core/oph_predict_compare.py}} & Full predictor plus PDG comparison (main entry point) & All \\
+\href{../code/particles/core/oph_no_cheat_audit.py}{\path{core/oph_no_cheat_audit.py}} & Static anti-leak audit of prediction code & Audit \\
+\href{../code/particles/calibration/}{\path{calibration/}} & D10/D11 calibration and exactness-audit lane & D10--D11 \\
+\href{../code/particles/flavor/}{\path{flavor/}} & Shared charged-sector transport, projector, and quark continuation lane & D12 \\
+\href{../code/particles/leptons/}{\path{leptons/}} & Charged-lepton continuation lane & D12 \\
+\href{../code/particles/neutrino/}{\path{neutrino/}} & Neutrino continuation lane with forward artifacts and guards & D12 \\
+\href{../code/particles/hadron/}{\path{hadron/}} & Hadron debug/systematics lane and thin lattice wrapper & D12 / simulation \\
+\href{../code/particles/core/tests/test_oph_predict_compare.py}{\path{core/tests/test_oph_predict_compare.py}} & Smoke tests plus runtime no-cheat mutation test & Tests \\
+\href{../code/particles/core/tests/test_particle_masses_stage5.py}{\path{core/tests/test_particle_masses_stage5.py}} & Regression tests for Stage 5 predictions & Tests \\
 \end{longtable}
 }
 
@@ -886,7 +903,7 @@ File & Description & Stage \\
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\BuiltInTok{cd}\NormalTok{ code/particles/}
+\BuiltInTok{cd}\NormalTok{ code/particles/core/}
 
 \CommentTok{\# Full prediction with PDG comparison table}
 \ExtensionTok{python3}\NormalTok{ oph\_predict\_compare.py }\AttributeTok{{-}{-}compare}
@@ -903,13 +920,13 @@ File & Description & Stage \\
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\BuiltInTok{cd}\NormalTok{ code/particles/}
+\BuiltInTok{cd}\NormalTok{ code/particles/core/}
 
 \CommentTok{\# Static audit: checks that build\_spectrum() does not reference PDG values}
 \ExtensionTok{python3}\NormalTok{ oph\_no\_cheat\_audit.py}
 
 \CommentTok{\# Runtime mutation test: scrambles PDG table and verifies predictions unchanged}
-\ExtensionTok{python3}\NormalTok{ test\_oph\_predict\_compare.py}
+\ExtensionTok{python3}\NormalTok{ tests/test\_oph\_predict\_compare.py}
 \end{Highlighting}
 \end{Shaded}
 
@@ -917,7 +934,7 @@ File & Description & Stage \\
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\BuiltInTok{cd}\NormalTok{ code/particles/}
+\BuiltInTok{cd}\NormalTok{ code/particles/core/}
 
 \CommentTok{\# Stage 5 spectrum (core charged sector)}
 \ExtensionTok{python3}\NormalTok{ particle\_masses\_stage5.py}

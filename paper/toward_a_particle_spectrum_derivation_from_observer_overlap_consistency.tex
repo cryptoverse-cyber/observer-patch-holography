@@ -1,0 +1,206 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,longtable}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\input{release_info.tex}
+
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+\setlength{\emergencystretch}{3em}
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.08}
+
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{definition}[proposition]{Definition}
+\newtheorem{remark}[proposition]{Remark}
+
+\title{Toward a Particle-Spectrum Derivation from Observer-Overlap Consistency\\[0.4em]
+\large A Status and Dependency Note for the OPH Particle Program}
+\author{B.\ M\"uller}
+\date{\OPHPaperReleaseDate}
+
+\begin{document}
+\maketitle
+\OPHPaperReleaseBanner
+
+\begin{abstract}
+This note starts a dedicated public mathematical surface for the OPH particle
+program. Its role is deliberately narrower than the synchronized compact paper:
+it records the current dependency boundary, separates calibration outputs from
+theorem-level closure claims, and names the explicit missing objects in the
+charged-lepton, quark, neutrino, and hadron lanes. The present public state is
+as follows. The D10 electroweak branch is a calibration-sector consistency
+surface tied to the pixel-area input
+\[
+P \equiv a_{\mathrm{cell}}/\ell_P^2 = 1.63094,
+\]
+not yet an exact closure theorem. The D11 Higgs/top critical-surface branch is
+a secondary quantitative continuation once D10 is fixed. Charged leptons,
+quarks, and neutrinos now have explicit forward artifact boundaries and local
+guard tests in the repository, but they remain continuation lanes rather than
+promoted theorem-level outputs. The hadron lane remains simulation-dependent
+debug and systematics scaffolding only. The purpose of the note is therefore to
+state the public rule cleanly: OPH currently exposes a structured particle
+derivation program with sharpened constructive objects, not a completed
+first-principles closure of the full particle zoo. Accordingly, several public
+mass rows still disagree with experiment, in some sectors substantially, and
+those mismatches should be read as evidence of open constructive work rather
+than as hidden claims of completed closure.
+\end{abstract}
+
+\section{Scope}
+
+This note is a dependency and status surface for the OPH particle program. It
+does not replace the compact submission paper as the authoritative recovered-core
+statement, and it does not promote any sector merely because the code tree now
+contains a forward artifact for that sector.
+
+\begin{definition}[Particle-program claim tiers]
+The public particle program uses the following four-way split.
+\begin{enumerate}[leftmargin=2em]
+\item \textbf{Calibration sector:} an input-dependent quantitative branch used to
+fix or audit the shared electroweak family once the allowed external input
+\(P\) is declared.
+\item \textbf{Secondary quantitative branch:} a branch that adds no new
+continuous fit once the calibration sector is fixed, but still depends on
+additional transport or matching structure outside the recovered core.
+\item \textbf{Continuation lane:} a forward constructive lane with explicit
+objects, artifact schemas, and guards, but without theorem-level closure.
+\item \textbf{Simulation-dependent lane:} a lane whose outputs currently depend
+on debug, toy, or systematics-oriented numerical scaffolding and therefore
+cannot be promoted as a public OPH derivation claim.
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}[Current public particle boundary]
+On the current public repository snapshot, only the D10 electroweak surface is
+presented as a calibration sector and only the D11 Higgs/top surface is
+presented as a secondary quantitative branch. The charged-lepton, quark,
+neutrino, and hadron lanes remain below theorem-level closure.
+\end{proposition}
+
+\paragraph{Reason.}
+The compact paper and the public repository ledger now separate these lanes by
+construction: the mirrored code tree carries explicit artifact boundaries and
+guards for the open sectors, while the status ledger tags their rows as
+continuation or simulation-dependent rather than structural or recovered-core
+outputs.
+
+\section{Dependency Ledger}
+
+The current particle program is best read as a staged map from the OPH core and
+the declared external input \(P\) into increasingly ambitious quantitative
+lanes. The table below is the public boundary that README, book, and downstream
+publication surfaces should mirror.
+
+\begingroup
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.14\textwidth}>{\raggedright\arraybackslash}p{0.17\textwidth}>{\raggedright\arraybackslash}p{0.22\textwidth}>{\raggedright\arraybackslash}p{0.24\textwidth}>{\raggedright\arraybackslash}p{0.17\textwidth}@{}}
+\caption{Current public dependency ledger for the OPH particle program.}\\
+\toprule
+Lane & Current public object & Immediate inputs & Smallest stated missing object & Public tier \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+D10 electroweak & running-family electroweak closure artifact & compact recovered core plus declared \(P\) and the printed running/matching conventions & one coherent \(\mathrm{EWTransportKernel}_{D10}\) with scalar-provenance equality across the electroweak correction family & calibration sector \\
+D11 Higgs/top & synchronized critical-surface readout candidate & D10 plus the critical-surface synchronization branch & one common \(\mathrm{CriticalSurfaceReadoutKernel}_{D11}\) carrying the shared low-scale Higgs/top readout vector & secondary quantitative branch \\
+Charged leptons & \(C_e^{\wedge} \to g_e \to Y_e\) forward chain & shared charged flavor dictionary plus charged-budget transport artifact & a theorem-level shared charged absolute-scale closure collapsing the remaining norm/gluing gap & continuation lane \\
+Quarks/flavor & transport, projector, odd-response, and forward Yukawa artifacts & shared charged flavor lane plus branch-generator and overlap-edge transport objects & a theorem-level family excitation evaluator and closed odd quark response law that remove the remaining constructive ambiguity & continuation lane \\
+Neutrinos & capacity anchor, family response, Majorana lift, pullback metric, splittings, and PMNS gate & D6-style capacity anchor plus shared flavor basis artifacts & an OPH-only scalar evaluator and the downstream defect-weighted family needed to promote splittings and mixing honestly & continuation lane \\
+Hadrons & quenched wrapper and systematics bookkeeping & legacy lattice reference script plus explicit debug/systematics parameters & non-debug, non-quenched hadron closure with publishable systematics rather than smoke/demo artifacts & simulation-dependent lane \\
+\end{longtable}
+\endgroup
+
+\section{Public Code Surface}
+
+The repository now carries a compact public mirror of the active particle code
+under \texttt{code/particles/}. Its purpose is not to reproduce the full
+operational sandbox; it is to expose the current mathematical lanes together
+with frozen public artifacts and tests.
+
+The kept surfaces are:
+\begin{enumerate}[leftmargin=2em]
+\item the \texttt{core/} compatibility backbone used by the existing public
+D10/D11 predictor surface;
+\item the current lane directories
+\texttt{calibration/}, \texttt{flavor/}, \texttt{leptons/},
+\texttt{neutrino/}, and \texttt{hadron/};
+\item the frozen artifact snapshot under \texttt{code/particles/runs/};
+\item the public status ledger
+\texttt{code/particles/RESULTS\_STATUS.md},
+\texttt{code/particles/results\_status.json}, and
+\texttt{code/particles/ledger.yaml}.
+\end{enumerate}
+
+The intentionally omitted surfaces are Oracle batch archives, browser profiles,
+autonomous supervisor plumbing, large run history, and the rest of the
+non-public sandbox scaffolding. Active iteration continues in the sibling
+\texttt{/particles} repo; this mirror exists so the public papers and summary
+surfaces can link to a compact but current code snapshot.
+
+\section{Mathematical Closure Program}
+
+The particle program is now organized around explicit constructive objects
+rather than one broad undifferentiated ``predict the whole zoo'' claim.
+
+\subsection{D10 exactness}
+
+The electroweak calibration lane is no longer framed as ``perhaps more digits of
+\(P\) will fix everything.'' The public D10 artifact isolates the common-family
+running electroweak surface and checks whether different observables imply
+different effective values of \(P\). That audit reframes the remaining burden as
+one coherent transport/readout object rather than raw decimal precision.
+
+\subsection{Charged sector}
+
+The charged-lepton and quark lanes now meet on a shared charged-budget surface.
+This matters conceptually: it prevents the public code from smuggling in one
+absolute scale for leptons and another for quarks while still calling both
+first-principles OPH outputs. The current public charged-sector burden is
+therefore a common closure object, not two independent post-hoc fit layers.
+
+\subsection{Neutrinos}
+
+The neutrino lane now exposes the capacity anchor, the family-response tensor,
+the Majorana lift, the pullback metric, and the forward splitting artifacts as
+separate public objects. That is progress in mathematical hygiene even though it
+is not yet a theorem-level neutrino closure. The public point is that the
+remaining blocker is named sharply enough to fail.
+
+\subsection{Hadrons}
+
+The hadron branch remains the one lane where the repository is openly
+simulation-dependent. The public wrapper makes that dependence explicit and
+stores systematics/debug artifacts, but those artifacts are not promoted as
+evidence of hadron closure.
+
+\section{Status Surfaces and Release Discipline}
+
+The public repository now exposes three synchronized particle-status surfaces:
+\begin{enumerate}[leftmargin=2em]
+\item the compact public code mirror in \texttt{code/particles/};
+\item the frozen status ledger in
+\texttt{code/particles/RESULTS\_STATUS.md} and
+\texttt{code/particles/results\_status.json};
+\item the SVG overview used by the README and public summary pages.
+\end{enumerate}
+
+These surfaces are meant to stay synchronized with the compact paper and the
+main README. If a lane is still tagged \emph{continuation} or
+\emph{simulation-dependent} here, downstream book and web summaries should not
+silently promote it.
+
+\paragraph{Working rule.}
+The public OPH particle story is currently a sharpened constructive program, not
+a completed theorem-level derivation of the full particle spectrum. When a
+public mass row is still numerically wrong, the intended reading is that the
+named closure object for that lane is still open, not that the current number
+has already earned promotion and merely awaits cosmetic tuning.
+
+\end{document}

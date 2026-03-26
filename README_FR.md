@@ -63,8 +63,18 @@ opérations de synchronisation.
 - **PDF :** [Screen Microphysics and Observer Synchronization](paper/screen_microphysics_and_observer_synchronization.pdf)
 - **Source LaTeX :** [screen_microphysics_and_observer_synchronization.tex](paper/screen_microphysics_and_observer_synchronization.tex)
 
+**Toward a Particle-Spectrum Derivation from Observer-Overlap Consistency** est la note actuelle
+sur le programme particulaire. Elle fixe la frontière publique des dépendances pour la branche
+des particules, sépare D10/D11 des continuations ouvertes dans les secteurs chargé, neutrino
+et hadronique, et renvoie vers la surface compacte miroir sous `code/particles/`.
+
+- **PDF :** [Toward a Particle-Spectrum Derivation from Observer-Overlap Consistency](paper/toward_a_particle_spectrum_derivation_from_observer_overlap_consistency.pdf)
+- **Source LaTeX :** [toward_a_particle_spectrum_derivation_from_observer_overlap_consistency.tex](paper/toward_a_particle_spectrum_derivation_from_observer_overlap_consistency.tex)
+
 Les PDF suivis par la release partagent une ligne de version visible, issue de
-[`paper/release_info.tex`](paper/release_info.tex). Le workflow de release est résumé plus bas.
+[`paper/release_info.tex`](paper/release_info.tex). Les notes supplémentaires peuvent être
+construites avec le même helper TeX, mais le manifeste de release reste limité au bundle
+principal.
 
 ## Ressources
 
@@ -170,10 +180,10 @@ L'infographie suivante résume le programme actuel de reconstruction OPH, depuis
 
 Ce dépôt est organisé autour de l'ensemble actuel des articles OPH et de leur matériel d'appui.
 
-- **[`paper/`](paper) :** PDF suivis par la release, sources LaTeX et métadonnées de version. C'est le répertoire canonique de l'article principal, de l'article compact de soumission, de l'article compagnon orienté informatique et de la note de microphysique d'écran.
+- **[`paper/`](paper) :** PDF suivis par la release, notes supplémentaires, sources LaTeX et métadonnées de version. C'est le répertoire canonique de l'article principal, de l'article compact de soumission, de l'article compagnon orienté informatique, de la note de microphysique d'écran et de la note sur le programme particulaire.
 - **[`paper/tex_fragments/`](paper/tex_fragments) :** fragments de dérivation partagés utilisés par les articles longs, notamment pour la jauge, le spectre, le supplément technique et la branche cordes.
 - **[`book/`](book) :** sources Markdown du livre OPH en version web.
-- **[`code/particles/`](code/particles) :** scripts de spectre de particules, de running des couplages, de lattice et d'audit liés au programme quantitatif.
+- **[`code/particles/`](code/particles) :** miroir public compact du programme particulaire actif : fichiers historiques du prédicteur, répertoires de lanes actuels, artefacts figés et surfaces de statut.
 - **[`code/ibm_quantum_cloud/`](code/ibm_quantum_cloud) :** expériences IBM Quantum Cloud, données et utilitaires associés au matériel.
 - **[`extra/`](extra) :** notes complémentaires comme les objections courantes, la note IBM Quantum et des notes d'application.
 - **[`assets/`](assets) :** figures et diagrammes utilisés dans les articles, le README et les surfaces publiques.
@@ -184,12 +194,16 @@ Le code de ce dépôt suit l'organisation de l'ensemble courant des articles plu
 
 | Chemin | Rôle |
 |--------|------|
-| [code/particles/oph_predict_compare.py](code/particles/oph_predict_compare.py) | Point d'entrée principal pour la comparaison du spectre de particules avec les données de référence |
-| [code/particles/particle_masses_stage5.py](code/particles/particle_masses_stage5.py) | Pipeline courant du spectre utilisé par le programme de masses |
-| [code/particles/particle_masses_paper_d10_d11.py](code/particles/particle_masses_paper_d10_d11.py) | Reconstruction D10/D11 synchronisée avec les articles et couche de transport |
-| [code/particles/oph_qcd.py](code/particles/oph_qcd.py) | Running QCD et extraction de $\Lambda_{\overline{\rm MS}}$ |
-| [code/particles/oph_lattice_su3_quenched_v5.py](code/particles/oph_lattice_su3_quenched_v5.py) | Calculs lattice SU(3) trempés pour les contrôles hadroniques |
-| [code/particles/oph_no_cheat_audit.py](code/particles/oph_no_cheat_audit.py) | Outils d'audit statique et à l'exécution |
+| [code/particles/README.md](code/particles/README.md) | Carte du miroir public compact du programme particulaire |
+| [code/particles/RESULTS_STATUS.md](code/particles/RESULTS_STATUS.md) | Ledger public lisible du statut particulaire |
+| [code/particles/results_status.json](code/particles/results_status.json) | Version machine-readable du même ledger |
+| [code/particles/core/particle_masses_paper_d10_d11.py](code/particles/core/particle_masses_paper_d10_d11.py) | Reconstruction D10/D11 synchronisée avec les articles et couche de transport |
+| [code/particles/core/oph_predict_compare.py](code/particles/core/oph_predict_compare.py) | Colonne vertébrale du prédicteur et surface de comparaison du miroir compact |
+| [code/particles/calibration/](code/particles/calibration) | Lane d'audit et d'exactitude D10/D11 |
+| [code/particles/flavor/](code/particles/flavor) | Lane chargé partagé, transport, projecteurs et continuation quark |
+| [code/particles/leptons/](code/particles/leptons) | Lane de continuation des leptons chargés |
+| [code/particles/neutrino/](code/particles/neutrino) | Lane neutrino avec artefacts forward et garde-fous |
+| [code/particles/hadron/](code/particles/hadron) | Lane hadronique debug/systématiques et wrapper lattice fin |
 
 ## Livre
 
@@ -200,12 +214,40 @@ Les sources du livre vivent dans [`book/`](book). Elles correspondent à la vers
 Les releases d'articles sont pilotées depuis les fichiers partagés sous [`paper/`](paper) :
 
 1. incrémenter [`paper/release_info.tex`](paper/release_info.tex)
-2. reconstruire les PDF suivis par la release
+2. reconstruire les PDF suivis par la release avec `python3 tools/build_tex_papers.py --release-only`
 3. régénérer [`paper/paper_release_manifest.json`](paper/paper_release_manifest.json)
+
+Pour construire tous les articles TeX du dépôt, y compris les notes supplémentaires comme la
+note sur le programme particulaire, utilisez `python3 tools/build_tex_papers.py`.
 
 La ligne de version est partagée à l'ensemble courant des articles suivis par la release. L'outillage
 opérationnel local à l'espace de travail utilise ensuite ce manifeste pour publier le papier du livre
 et l'ensemble synchronisé des papiers du challenge.
+
+## Statut de la dérivation particulaire
+
+![Vue d'ensemble de la dérivation particulaire OPH](assets/particle_mass_derivation_graph.svg)
+
+La frontière publique actuelle du programme particulaire est résumée dans
+[la note dédiée](paper/toward_a_particle_spectrum_derivation_from_observer_overlap_consistency.pdf)
+et dans le miroir compact sous [code/particles/](code/particles).
+
+- `D10` reste une surface de calibration liée à l'entrée de surface de pixel `P`.
+- `D11` reste une branche quantitative secondaire pour Higgs/top, pas une fermeture recovered-core.
+- Les leptons chargés, les quarks et les neutrinos disposent maintenant d'artefacts forward et de garde-fous explicites, mais restent des lanes de continuation.
+- Les hadrons restent une lane debug/systématiques dépendante de la simulation.
+
+Certaines lignes de [code/particles/RESULTS_STATUS.md](code/particles/RESULTS_STATUS.md)
+restent encore en désaccord matériel avec les masses mesurées. Ce n'est pas
+présenté comme un simple problème de précision numérique caché. En `D10` et
+`D11`, l'écart restant provient d'une fermeture de transport/lecture encore
+incomplète, pas seulement d'un `P` avec davantage de décimales. En dehors de
+`D11`, les valeurs des leptons chargés, des quarks et des neutrinos restent sur
+des lanes de continuation avec des objets dérivatifs encore ouverts pour
+l'échelle partagée, les excitations de famille et les sélecteurs/évaluateurs.
+Les lignes hadroniques sont des sorties de debug d'une lane dépendante de la
+simulation. Le travail en cours vise précisément ces objets manquants, plutôt
+que de requalifier les valeurs actuelles en prédictions closes.
 
 ## Contribuer
 
