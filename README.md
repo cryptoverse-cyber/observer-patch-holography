@@ -35,6 +35,22 @@ From this starting point (plus entropy and Markov constraints), OPH treats space
 - **String/worldsheet continuation:** OPH connects the edge-sector heat-kernel branch to a continuation-level worldsheet reorganization rather than treating string structure as a separate starting axiom set.
 - **Reduced-sector hardware fingerprints:** Early IBM Quantum Cloud benchmarks reproduce the predicted reduced-sector recoverability ordering and exact-ratio patterns on real hardware.
 
+As a program target, OPH aims to recover the familiar low-energy effective-action form from a compact axiom set, explicit bridge premises, and minimal external inputs:
+
+$$
+\mathcal L_{\mathrm{eff}}^{\mathrm{OPH}}
+\approx
+\sqrt{-g}\left[
+\frac{1}{16\pi G}(R-2\Lambda)
++
+\mathcal L_{\mathrm{SM}}^{\mathrm{realized\ branch}}
+\right]
++
+\sum_i \frac{c_i}{M_*^{\Delta_i-4}}\mathcal O_i.
+$$
+
+This displayed action is the intended IR target of the program, not a separate theorem-level headline claim that every coupling of a final unified bulk action has already been derived. In the current claim ledger, the recovered core remains the conditional Einstein branch plus the realized Standard Model structural chain; the $\Lambda$ relation sits in the separate input-dependent D6 layer, and D10--D11 remain secondary quantitative branches.
+
 ## Papers
 
 **Observers are all you need** is the primary technical paper. It gives the broadest technical statement of the OPH program in this repo, its main derivation branches, and the IBM Quantum Cloud benchmark surface. Its interpretive epilogue discusses the strange-loop hypothesis and the theorem-usable state-and-law habitat that supports that lane, while keeping the stronger closure-map and stability questions explicit.
@@ -154,11 +170,11 @@ Additional theorem-local technical premises and scaling-limit branch assumptions
 
 ## The Prediction Chain
 
-The following infographic summarizes the current OPH reconstruction program from two parameters and five axioms toward effective physics:
+The following infographic summarizes the planned OPH derivation skeleton from the five axioms and supporting bridge premises toward the intended end-state, while marking which branches are recovered core, implementation-backed, or active completion lanes:
 
-![OPH Prediction Chain](assets/prediction-chain.svg)
+<a href="assets/prediction-chain.svg"><img src="assets/prediction-chain.svg" alt="OPH full derivation DAG poster" width="1200"></a>
 
-*From axioms to effective physics: the current OPH reconstruction program. The embedded infographic should be regenerated before release because it still uses older axiom shorthand.*
+*Click the poster to open the full SVG in the browser. The top band separates axioms, primary constants, and removable bridge assumptions; the lower bands trace the full planned OPH derivation DAG toward completed TOE synthesis and global closure.*
 
 > **Particle Spectrum Derivation**: The derivation from pixel area to the particle-mass program, together with comparisons against PDG data and audit checks, is documented in **[the spectrum derivation source](paper/tex_fragments/SPECTRUM_DERIVATION.tex)**.
 

@@ -168,11 +168,11 @@ Les hypothèses structurelles supplémentaires (MaxEnt, prémisses de limite d'�
 
 ## La chaîne de prédictions
 
-L'infographie suivante résume le programme actuel de reconstruction OPH, depuis deux paramètres et quatre axiomes vers une physique effective :
+L'infographie suivante résume le squelette dérivationnel visé par OPH, depuis le paquet d'axiomes, les constantes primaires et les hypothèses de pont explicites jusqu'à l'état final recherché :
 
-![Chaîne de prédictions OPH](assets/french/prediction-chain_fr.svg)
+<a href="assets/prediction-chain.svg"><img src="assets/prediction-chain.svg" alt="Poster DAG complet de dérivation OPH" width="1200"></a>
 
-*Des axiomes à une physique effective : le programme actuel de reconstruction OPH.*
+*Cliquez sur le poster pour ouvrir le SVG complet dans le navigateur. La bande supérieure sépare axiomes, constantes primaires et hypothèses de pont destinées à être supprimées ; les bandes inférieures tracent le DAG complet vers la synthèse TOE et la fermeture globale.*
 
 > **Prédictions du spectre de particules :** la dérivation, depuis l'aire de pixel jusqu'au programme de masses de particules, avec comparaison aux données PDG et contrôles d'audit, est présentée dans **[la source de dérivation du spectre](paper/tex_fragments/SPECTRUM_DERIVATION.tex)**.
 

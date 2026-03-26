@@ -216,6 +216,38 @@ The photon and graviton are forced by the axiom chain, not postulated. Once gaug
 
 The EFT bridge (null-surface modular additivity) remains conditional. The MaxEnt branch supplies the quasi-local propagation and endpoint control internally, and the fixed-cutoff bridge reaches the derived positive null-translation stage without separate propagation, endpoint-control, or half-sided-inclusion premises. The remaining extra gravity-side burdens are the downstream density-upgrade and null-stress identification steps for the intended EFT phase. The gauge group reconstruction yields a compact group; within the connected Lie admissible class, and once one connected abelian charge factor is included, MAR fixes the Standard Model gauge quotient $SU(3) \times SU(2) \times U(1)/\mathbb{Z}_6$. On that realized branch, the CP/UV window and MAR then fix $N_g = 3$ generations, and Witten's SU(2) anomaly parity with that realized generation count fixes $N_c = 3$ colors.
 
+### The Target Effective Lagrangian
+
+Physicists often summarize the low-energy rules of a theory by writing down a
+**Lagrangian**: a compact formula that says what fields exist, how they
+propagate, and how they interact. In that language, the long-range OPH target
+is to recover the familiar low-energy effective-action form
+
+$$
+\mathcal L_{\mathrm{eff}}^{\mathrm{OPH}}
+\approx
+\sqrt{-g}\left[
+\frac{1}{16\pi G}(R-2\Lambda)
++
+\mathcal L_{\mathrm{SM}}^{\mathrm{realized\ branch}}
+\right]
++
+\sum_i \frac{c_i}{M_*^{\Delta_i-4}}\mathcal O_i.
+$$
+
+Here $\mathcal L_{\mathrm{SM}}^{\mathrm{realized\ branch}}$ means the realized
+Standard Model branch: the quotient
+$SU(3)\times SU(2)\times U(1)/\mathbb Z_6$, the exact hypercharge lattice, and
+the realized counting chain $N_g = 3$ then $N_c = 3$.
+
+This equation should be read as the intended IR target of the program, not as a
+new headline theorem claim. The recovered core remains narrower: the
+conditional scaling-limit Einstein branch plus the realized Standard Model
+structural chain. The cosmological-constant relation sits in the separate
+input-dependent D6 layer, and the higher-dimension operators stand for the
+UV-sensitive corrections and downstream details that are not yet fixed by the
+recovered core itself.
+
 ### Two Fundamental Parameters: The Configuration of Reality
 
 In the current quantitative implementation our universe is characterized by exactly **two external continuous configuration inputs**:

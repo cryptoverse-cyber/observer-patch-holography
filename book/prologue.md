@@ -180,6 +180,18 @@ From this starting point, we derive constraints. We show how the mathematical
 structures of quantum mechanics and relativity emerge from consistency
 requirements. We trace the logic from axioms to consequences.
 
+Physicists often package the low-energy rules of a theory into a single formula
+called a **Lagrangian**. A Lagrangian says what fields exist, how they move,
+which symmetries they obey, and how they interact. Once you have it, the
+equations of motion follow from the principle of stationary action.
+
+A long-range OPH target is to recover that familiar low-energy Lagrangian from
+first principles: a compact axiom set, explicit bridge premises, and minimal
+external inputs, rather than postulating gravity plus the Standard Model by
+hand. The current recovered core is narrower: a conditional Einstein branch
+plus Standard Model structural data. The full coupling-level effective action
+remains a program target rather than the book's headline theorem claim.
+
 The apparent mysteries of physics dissolve once you make the conceptual shift from
 "objective reality exists" to "consistency across observers is fundamental."
 

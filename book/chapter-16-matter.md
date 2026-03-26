@@ -126,7 +126,9 @@ force observers to agree on what happened. The Markov structure enforces local
 relations between neighboring regions. These requirements leave very little
 freedom in the form of effective equations of motion.
 
-The specific Lagrangian and couplings emerge through the EFT bridge and the gauge-sector structure derived from MAR (see Chapter 14).
+The target low-energy Lagrangian and its couplings are organized by the EFT
+bridge and the gauge-sector structure derived from MAR (see Chapter 14), but
+full coupling-level recovery remains part of the broader program.
 
 ## 16.7 Why the Principle of Least Action Appears
 
