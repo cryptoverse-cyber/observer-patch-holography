@@ -9,10 +9,7 @@
 >
 > Official OPH memecoin: [TEO on BaseScan](https://basescan.org/token/0xd2a7055317D0c7b316319cDadaE592D0644A0b07), [DexScreener](https://dexscreener.com/base/0xba55cdae026b9dd63fcb50e82094d61472948e44527ca4791033497469228049), [Buy on Uniswap](https://app.uniswap.org/swap?outputCurrency=0xd2a7055317D0c7b316319cDadaE592D0644A0b07&chain=base). It is purely speculative, has no promised return, and no announced utility at this time. DYOR.
 
-If you arrived here through searches for **simulation theory** or **theory of everything**, this book is the long-form OPH answer to both. It presents OPH as a concrete implementation of simulation theory: reality is an observer-consistent information process with a specific architecture of holographic screens, observer patches, and overlap-consistency rules. It also presents OPH as a concrete theory of everything: quantum mechanics, relativity, gauge structure, and particle physics are effective descriptions of deeper overlap-consistency rules, while the strange-loop hypothesis supplies the global closure story.
-
-That is why OPH presents itself simultaneously as simulation theory made mathematical and practical and as a concrete theory of everything.
-
+If you arrived here through searches for **simulation theory** or **theory of everything**, this book is the long-form OPH answer to both. It presents OPH as a concrete route toward a simulation-theory reading: reality is modeled as an observer-consistent information process with a specific architecture of holographic screens, observer patches, and overlap-consistency rules. It also presents OPH as a theory-of-everything program: quantum mechanics, relativity, gauge structure, and particle physics are treated as effective descriptions of deeper overlap-consistency rules, while the strange-loop hypothesis remains an interpretive closure lane rather than part of the recovered core.
 
 ## The Cosmic Program
 
@@ -131,7 +128,7 @@ work out the consequences, the results are extraordinary:
 - **A conditional scaling-limit Einstein branch** emerges from entanglement equilibrium on the screen
 - **The Standard Model gauge structure** SU(3) x SU(2) x U(1)/Z₆ is derived rather than assumed under the MAR admissibility package
 - **A dark-sector branch** becomes structurally available from modular anomalies, not new particles
-- **Why anything exists at all** is addressed through a theorem-backed strange-loop closure story: the universe is treated as a self-referential timeless causal structure supported by OPH's internal state-and-law and fixed-point machinery
+- **Why anything exists at all** is addressed through an interpretive strange-loop lane: the universe is treated as a self-referential timeless causal structure supported by OPH's state-and-law habitat, while the stronger closure-map and stability questions remain open
 
 No other framework in physics organizes all of this around structural axioms, explicit claim tiers, and a public separation between theorem-level structure, input-dependent corollaries, and weaker continuations.
 
