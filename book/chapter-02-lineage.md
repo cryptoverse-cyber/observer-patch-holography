@@ -82,11 +82,11 @@ The paradoxes show that our intuitive picture of continuous spacetime is problem
 
 Modern physics has found two hints that spacetime is not continuous.
 
-First, the holographic bound shows that space has a fundamental graininess. The maximum information in a region is finite, proportional to area. If space were truly continuous, you could pack infinite information into any region. The bound implies a minimum length scale-the Planck length, about $10^{-35}$ meters.
+First, the holographic bound strongly suggests finite information capacity. That does not by itself prove a literal spacetime lattice, but it pushes against naive continuum intuition and motivates Planck-scale cutoff pictures.
 
 Second, quantum mechanics already quantizes other continuous quantities. Energy comes in discrete packets (photons). Angular momentum comes in units of $\hbar/2$. If space and time are also quantized, Zeno's paradoxes dissolve.
 
-You don't need to traverse infinitely many intervals because there aren't infinitely many. Below the Planck scale, the very concept of "interval" does not exist. Space has pixels.
+In finite-cutoff pictures of the OPH type, you do not need to traverse infinitely many intervals because the description is discretized below the cutoff.
 
 Zeno was not deriving Planck-scale discreteness, but his paradoxes still sharpen the pressure points in naive continuum intuition.
 
@@ -190,7 +190,7 @@ The holographic principle and emergent geometry resonate with this picture.
 
 The fundamental data lives on the 2D holographic screen. This data has no spatial interpretation-it's just quantum information on a sphere. Space is *reconstructed* from this data through the pattern of entanglement.
 
-The Ryu-Takayanagi formula makes this precise: spatial distance is *defined* by entanglement entropy. Regions that are highly entangled are close; regions that are weakly entangled are far.
+The Ryu-Takayanagi formula makes the geometry-entanglement link precise in holographic settings: entanglement structure helps determine bulk geometric relations.
 
 $$S_A = \frac{\text{Area}(\gamma_A)}{4G_N}$$
 
