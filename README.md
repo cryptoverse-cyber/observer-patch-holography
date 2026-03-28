@@ -35,6 +35,16 @@ From this starting point (plus entropy and Markov constraints), OPH treats space
 - **String/worldsheet continuation:** OPH connects the edge-sector heat-kernel branch to a continuation-level worldsheet reorganization rather than treating string structure as a separate starting axiom set.
 - **Reduced-sector hardware fingerprints:** Early IBM Quantum Cloud benchmarks reproduce the predicted reduced-sector recoverability ordering and exact-ratio patterns on real hardware.
 
+## Particle Status
+
+The particle derivation is hard and still a work in progress. The current particle paper should be
+read as a derivation document with real outputs in hand, not as a claim that the full observed
+particle spectrum is finished.
+
+- **Exact structural outputs already on the current surface:** photon, gluons, graviton.
+- **Current strongest quantitative rows:** \(W\) boson and \(Z\) boson on the electroweak calibration stage, plus the Higgs boson and top quark on the Higgs/top critical stage.
+- **Still unfinished:** the broader quark family remains continuation-level, and charged leptons, flavor-labeled neutrinos, and hadrons remain open closure fronts.
+
 As a program target, OPH aims to recover the familiar low-energy effective-action form from a compact axiom set, explicit bridge premises, and minimal external inputs:
 
 $$
@@ -71,6 +81,11 @@ At full completion, OPH aims to:
 - **PDF (compact submission paper):** [Recovering Relativity and Standard Model Structure from Observer-Overlap Consistency](paper/recovering_relativity_and_standard_model_structure_from_observer_overlap_consistency_compact.pdf)
 - **LaTeX source:** [recovering_relativity_and_standard_model_structure_from_observer_overlap_consistency_compact.tex](paper/recovering_relativity_and_standard_model_structure_from_observer_overlap_consistency_compact.tex)
 
+**Deriving the Particle Zoo from Observer Consistency** is the particle-spectrum paper. It collects the current OPH route from the shared structural theorem package and the pixel constant \(P\) into the reported bosonic and quark rows, while keeping charged leptons, flavor-labeled neutrinos, and hadrons explicitly marked as open closure fronts.
+
+- **PDF:** [Deriving the Particle Zoo from Observer Consistency](paper/deriving_the_particle_zoo_from_observer_consistency.pdf)
+- **LaTeX source:** [deriving_the_particle_zoo_from_observer_consistency.tex](paper/deriving_the_particle_zoo_from_observer_consistency.tex)
+
 **Reality as a Consensus Protocol** is the CS companion paper. It presents the distributed-computation view of OPH and reformulates objective law as the fixed point of reconciliation across observer patches.
 
 - **PDF:** [Reality as a Consensus Protocol](paper/reality_as_consensus_protocol.pdf)
@@ -83,7 +98,7 @@ At full completion, OPH aims to:
 
 Release-tracked PDFs share a visible paper release line sourced from
 [`paper/release_info.tex`](paper/release_info.tex). Supplemental notes can be built with the
-same TeX helper, but the release manifest continues to track the core release bundle only.
+same TeX helper, but the release manifest continues to track the current numbered paper bundle only.
 
 ## Resources
 
@@ -182,7 +197,7 @@ The following infographic summarizes the full planned OPH derivation chain, from
 
 This repository is organized around the OPH paper set in this repo and its supporting material.
 
-- **[`paper/`](paper):** release-tracked PDFs, supplemental notes, LaTeX sources, and shared paper metadata. This is the canonical home of the main paper, the compact submission paper, the CS companion paper, and the screen-microphysics note.
+- **[`paper/`](paper):** release-tracked PDFs, supplemental notes, LaTeX sources, and shared paper metadata. This is the canonical home of the main paper, the compact submission paper, the particle-spectrum paper, the CS companion paper, and the screen-microphysics note.
 - **[`paper/tex_fragments/`](paper/tex_fragments):** shared derivation fragments used by the longer papers, including the gauge, technical-supplement, and string-theory source files.
 - **[`book/`](book):** Markdown source for the OPH Book web edition.
 - **[`code/ibm_quantum_cloud/`](code/ibm_quantum_cloud):** IBM Quantum Cloud experiments, data, and hardware-facing utilities.

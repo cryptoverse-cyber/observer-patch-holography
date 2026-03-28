@@ -11,6 +11,9 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 PAPER_DIR = REPO_ROOT / "paper"
 
 PAPERS = {
+    "deriving_the_particle_zoo_from_observer_consistency": (
+        PAPER_DIR / "deriving_the_particle_zoo_from_observer_consistency.tex"
+    ),
     "observers_are_all_you_need": PAPER_DIR / "observers_are_all_you_need.tex",
     "reality_as_consensus_protocol": PAPER_DIR / "reality_as_consensus_protocol.tex",
     "recovering_relativity_and_standard_model_structure_from_observer_overlap_consistency_compact": (
@@ -20,6 +23,7 @@ PAPERS = {
 }
 
 RELEASE_TRACKED = {
+    "deriving_the_particle_zoo_from_observer_consistency",
     "observers_are_all_you_need",
     "reality_as_consensus_protocol",
     "recovering_relativity_and_standard_model_structure_from_observer_overlap_consistency_compact",

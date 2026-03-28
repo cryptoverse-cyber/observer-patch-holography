@@ -33,6 +33,16 @@ Les lois de la physique sont les règles de cohérence qui rendent cet accord in
 - **Émergence feuille d'univers / cordes :** l'OPH relie le même cadre sous-jacent à des descriptions de type feuille d'univers / théorie des cordes au lieu d'en faire un second jeu d'axiomes de départ.
 - **Indices sur matériel réel :** les premiers benchmarks IBM Quantum Cloud reproduisent sur matériel réel l'ordre de récupérabilité et les motifs de rapports exacts prédits pour les secteurs réduits.
 
+## Statut particules
+
+La dérivation du spectre de particules est difficile et reste un travail en cours. L'article
+actuel sur le spectre doit être lu comme un document de dérivation avec de vrais résultats déjà en
+main, et non comme une affirmation selon laquelle tout le spectre observé serait terminé.
+
+- **Sorties structurelles exactes déjà présentes sur la surface actuelle :** photon, gluons, graviton.
+- **Lignes quantitatives actuellement les plus fortes :** bosons \(W\) et \(Z\) sur l'étage de calibration électrofaible, plus boson de Higgs et quark top sur l'étage critique Higgs/top.
+- **Toujours inachevé :** la famille plus large des quarks reste au niveau continuation, et les leptons chargés, neutrinos à saveur étiquetée et hadrons restent des fronts de fermeture ouverts.
+
 ## Objectifs du programme
 
 À l'état final visé, l'OPH cherche à :
@@ -56,6 +66,15 @@ reconstruction de la jauge.
 - **PDF (article compact de soumission) :** [Recovering Relativity and Standard Model Structure from Observer-Overlap Consistency](paper/recovering_relativity_and_standard_model_structure_from_observer_overlap_consistency_compact.pdf)
 - **Source LaTeX :** [recovering_relativity_and_standard_model_structure_from_observer_overlap_consistency_compact.tex](paper/recovering_relativity_and_standard_model_structure_from_observer_overlap_consistency_compact.tex)
 
+**Deriving the Particle Zoo from Observer Consistency** est l'article sur le spectre de particules.
+Il rassemble la route OPH actuelle depuis le paquet théorématique structurel partagé et la
+constante de pixel \(P\) jusqu'aux lignes bosoniques et quarkiques déjà rapportées, tout en
+gardant les leptons chargés, les neutrinos à saveur étiquetée et les hadrons explicitement marqués
+comme fronts de fermeture encore ouverts.
+
+- **PDF :** [Deriving the Particle Zoo from Observer Consistency](paper/deriving_the_particle_zoo_from_observer_consistency.pdf)
+- **Source LaTeX :** [deriving_the_particle_zoo_from_observer_consistency.tex](paper/deriving_the_particle_zoo_from_observer_consistency.tex)
+
 **Reality as a Consensus Protocol** est l'article compagnon orienté informatique. Il présente la
 lecture distribuée/calculatoire de l'OPH et reformule la loi objective comme point fixe de la
 réconciliation entre patchs d'observateurs.
@@ -74,7 +93,7 @@ opérations de synchronisation.
 Les PDF suivis par la release partagent une ligne de version visible, issue de
 [`paper/release_info.tex`](paper/release_info.tex). Les notes supplémentaires peuvent être
 construites avec le même helper TeX, mais le manifeste de release reste limité au bundle
-principal.
+numéroté courant.
 
 ## Ressources
 
@@ -177,7 +196,7 @@ L'infographie suivante résume l'ensemble de la chaîne de dérivation visée pa
 
 Ce dépôt est organisé autour de l'ensemble des articles OPH présents dans ce dépôt et de leur matériel d'appui.
 
-- **[`paper/`](paper) :** PDF suivis par la release, notes supplémentaires, sources LaTeX et métadonnées de version. C'est le répertoire canonique de l'article principal, de l'article compact de soumission, de l'article compagnon orienté informatique et de la note de microphysique d'écran.
+- **[`paper/`](paper) :** PDF suivis par la release, notes supplémentaires, sources LaTeX et métadonnées de version. C'est le répertoire canonique de l'article principal, de l'article compact de soumission, de l'article sur le spectre de particules, de l'article compagnon orienté informatique et de la note de microphysique d'écran.
 - **[`paper/tex_fragments/`](paper/tex_fragments) :** fragments de dérivation partagés utilisés par les articles longs, notamment pour la jauge, le supplément technique et la branche cordes.
 - **[`book/`](book) :** sources Markdown du livre OPH en version web.
 - **[`code/ibm_quantum_cloud/`](code/ibm_quantum_cloud) :** expériences IBM Quantum Cloud, données et utilitaires associés au matériel.

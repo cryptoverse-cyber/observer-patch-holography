@@ -14,6 +14,9 @@ from pathlib import Path
 RELEASE_INFO_RELATIVE = Path("paper/release_info.tex")
 OUTPUT_RELATIVE = Path("paper/paper_release_manifest.json")
 RELEASE_TRACKED_PDFS = {
+    "deriving_the_particle_zoo_from_observer_consistency": Path(
+        "paper/deriving_the_particle_zoo_from_observer_consistency.pdf"
+    ),
     "observers_are_all_you_need": Path("paper/observers_are_all_you_need.pdf"),
     "reality_as_consensus_protocol": Path("paper/reality_as_consensus_protocol.pdf"),
     "recovering_relativity_and_standard_model_structure_from_observer_overlap_consistency_compact": Path(
