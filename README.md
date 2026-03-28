@@ -10,11 +10,11 @@
 
 > **OPH Disproval Challenge:** A USD 10,000 challenge to disprove OPH is currently running at [challenge.floatingpragma.io](https://challenge.floatingpragma.io).
 
-OPH should be read directly as a mathematical and practical implementation of simulation theory. It does not just claim that reality is "like" a simulation. It specifies a concrete simulation architecture: quantum information lives on a holographic screen, observer patches act as local computational viewpoints, overlap consistency acts as the synchronization rule, and the laws of physics emerge as the stable rules that let the whole system run coherently.
+OPH can be read as a route toward a mathematical and practical simulation-theory interpretation. It does not stop at saying that reality is "like" a simulation: it specifies a concrete information-processing architecture in which quantum data live on a holographic screen, observer patches act as local computational viewpoints, overlap consistency acts as the synchronization rule, and the laws of physics emerge as the stable rules that let the whole system run coherently.
 
-For the same reason, OPH should also be read as a broad reconstruction program that aims to connect spacetime, gauge structure, particle physics, and the interpretive closure question within one observer-consistency architecture.
+For the same reason, OPH should also be read as a broad reconstruction program that aims to connect spacetime, gauge structure, particle physics, and the closure question within one observer-consistency architecture, while keeping the stronger closure story separate from the recovered core.
 
-On that basis, OPH offers one route toward explaining both why physics has the form it does and how the existence question might be framed internally to the program. In the paper set collected here, that stronger closure story remains an interpretive strange-loop hypothesis and is not part of the recovered core.
+On that basis, OPH offers one route toward explaining both why physics has the form it does and how the existence question might be framed internally to the program. In the paper set collected here, the stronger global-closure story remains an interpretive strange-loop hypothesis and is not part of the recovered core.
 
 The simulator-hardware side of OPH is developed in [Screen Microphysics and Observer Synchronization](paper/screen_microphysics_and_observer_synchronization.pdf), which turns the simulation-theory picture into explicit local screen models, overlap observables, record layers, observer criteria, and synchronization moves.
 
