@@ -265,7 +265,7 @@ When two observers compare notes, they share information across patch boundaries
 
 ### The Information Budget
 
-The observable universe has about $10^{122}$ bits-set by the cosmological horizon. That's the maximum information content of our causal patch.
+The total information budget of our causal patch is often quoted at the $10^{122}$--$10^{123}$ scale, depending on which cosmological horizon convention is being used. The key point here is that the budget is enormous but finite.
 
 But most of that entropy is in black holes, inaccessible. The entropy we can actually manipulate is far less.
 
