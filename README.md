@@ -1,6 +1,6 @@
 # Observer Patch Holography: Simulation Theory, the Theory of Everything, and Observer-Centric Physics
 
-> OPH is a mathematical reconstruction program that starts from a simple requirement: overlapping local observer descriptions on a holographic screen must agree where they overlap. From that starting point, OPH develops routes toward general relativity, toward reconstruction of the Standard Model gauge structure, and toward string/worldsheet descriptions emerging from the same framework. Early IBM Quantum Cloud benchmarks also provide preliminary real-device evidence for the corresponding local reduced-sector signatures. OPH also develops an interpretive strange-loop lane supported by the theorem-usable state-and-law habitat discussed in the paper set, while the stronger closure-map and stability questions remain open.
+> OPH is a mathematical reconstruction program that starts from a simple requirement: overlapping local observer descriptions on a finite-capacity holographic screen must agree where they overlap. From that starting point, the current paper suite develops an explicit fixed-cutoff collar and higher-gauge package, a conditional route to Lorentzian geometry and Einstein dynamics, a conditional route to compact gauge reconstruction and the realized Standard Model quotient, a current particle-spectrum branch, and a fixed-cutoff measurement/observer package. The stronger strange-loop closure story remains interpretive rather than part of the recovered core.
 
 > **Status disclaimer:** OPH is an active research program and not yet fully proven. Several derivations remain incomplete, some proofs currently exist only as sketches, and certain auxiliary assumptions still need to be removed. The framework should therefore be regarded as under active development.
 
@@ -26,14 +26,17 @@ The laws of physics are the consistency rules that make this intersubjective agr
 
 From this starting point (plus entropy and Markov constraints), OPH treats spacetime, gauge structure, and particle physics as emergent consequences of consistency.
 
-## Current Successes
+## Current Achievements
 
-- **Recovered core / conditional relativity branch:** OPH derives schedule-independent overlap-consistency structure, a conditional Lorentz branch, and a conditional gravity route under the stated scaling-limit premises.
-- **Recovered core / gauge structure:** OPH reconstructs the Standard Model gauge structure on the stated branch and develops explicitly weaker downstream quantitative branches from that structure. The strongest current local descendant is a closed Higgs/top forward seed on the D10 gauge core, while exact \(W/Z\) closure remains a repair problem and charged-lepton, light-quark, neutrino, and hadron masses remain below recovered-core tier.
-- **Fixed-cutoff microphysics and observer interfaces:** OPH has an explicit constructive screen-microphysics note with local screen models, overlap observables, record layers, and observer-side fixed-cutoff theorem packages.
-- **Interpretive strange-loop lane:** OPH develops an interpretive closure lane supported by the theorem-usable state-and-law habitat, while the stronger closure-map and stability questions remain open.
-- **String/worldsheet continuation:** OPH connects the edge-sector heat-kernel branch to a continuation-level worldsheet reorganization rather than treating string structure as a separate starting axiom set.
-- **Reduced-sector hardware fingerprints:** Early IBM Quantum Cloud benchmarks reproduce the predicted reduced-sector recoverability ordering and exact-ratio patterns on real hardware.
+- **OPH now has a real synthesis paper.** *Observers Are All You Need* presents the current program on one common theorem and status surface, so readers can see in one place what OPH is, what is already sharp, and what is still conditional.
+- **The fixed-cutoff core is explicit.** The collar package is constructive and interacting at fixed cutoff, and the topological branch is closed on the ordinary, central-defect, and genuinely noncentral higher-gauge branches.
+- **There is a disciplined relativity/gravity route.** OPH derives schedule-independent overlap consistency and develops a conditional Lorentz/null-modular/Einstein branch under an explicit scaling-limit premise ledger.
+- **There is a disciplined gauge route.** OPH develops a conditional compact-gauge reconstruction route and, on the realized branch, recovers the Standard Model quotient \(\SU(3)\times\SU(2)\times\U(1)/\mathbb Z_6\) together with the realized hypercharge/counting chain.
+- **The particle branch has moved beyond pure structure.** Structural massless carriers are fixed; the electroweak and Higgs/top stages emit quantitative rows; the wider quark, lepton, neutrino, and hadron sectors remain openly status-split rather than silently promoted.
+- **Measurement and observers are part of the theorem surface.** OPH now has fixed-cutoff record, Born-Luders, checkpoint/restoration, and observer-interface packages rather than treating observers as pure interpretation.
+- **The microphysics side is concrete enough to simulate.** The screen-microphysics paper gives a finite reference architecture with explicit registers, overlap observables, records, repair moves, and synchronization tests.
+- **The worldsheet/string lane is integrated but not oversold.** OPH relates the edge-sector heat-kernel theorem to a continuation-level worldsheet reorganization while keeping that branch outside the recovered core.
+- **Some hardware-facing signatures exist already.** Early IBM Quantum Cloud benchmarks reproduce the expected reduced-sector recoverability ordering and exact-ratio patterns on real devices.
 
 ## Particle Status
 
@@ -72,27 +75,27 @@ At full completion, OPH aims to:
 
 ## Papers
 
-**Observers are all you need** is the primary technical paper. It gives the broadest technical statement of the OPH program in this repo, its main derivation branches, and the IBM Quantum Cloud benchmark surface. Its interpretive epilogue discusses the strange-loop hypothesis and the theorem-usable state-and-law habitat that supports that lane, while keeping the stronger closure-map and stability questions explicit.
+**Observers Are All You Need** is the best place to start if you want the big picture. It is the synthesis paper: what OPH is trying to do, what the current strongest achievements are, which parts are theorem-level, and where the real open problems still sit.
 
 - **PDF (main paper):** [Observers are all you need](paper/observers_are_all_you_need.pdf)
 - **LaTeX source:** [observers_are_all_you_need.tex](paper/observers_are_all_you_need.tex)
 
-**Recovering Relativity and Standard Model Structure from Observer-Overlap Consistency** is the compact submission paper. It is the authoritative recovered-core and claim-tier surface for the OPH paper set in this repo. It concentrates the falsifiable core: relativity from observer-overlap consistency, the conditional gravity branch, and the gauge reconstruction program.
+**Recovering Relativity and Standard Model Structure from Observer-Overlap Consistency** is the compact recovered-core paper. If you want the sharpest and most falsifiable OPH claim surface, start here: it isolates the relativity branch, the gravity branch, the gauge-reconstruction route, and the fixed-cutoff higher-gauge closure package.
 
 - **PDF (compact submission paper):** [Recovering Relativity and Standard Model Structure from Observer-Overlap Consistency](paper/recovering_relativity_and_standard_model_structure_from_observer_overlap_consistency_compact.pdf)
 - **LaTeX source:** [recovering_relativity_and_standard_model_structure_from_observer_overlap_consistency_compact.tex](paper/recovering_relativity_and_standard_model_structure_from_observer_overlap_consistency_compact.tex)
 
-**Deriving the Particle Zoo from Observer Consistency** is the particle-spectrum paper. It collects the current OPH route from the shared structural theorem package and the pixel constant \(P\) into the reported bosonic and quark rows, while keeping charged leptons, flavor-labeled neutrinos, and hadrons explicitly marked as open closure fronts.
+**Deriving the Particle Zoo from Observer Consistency** is the particle-spectrum status paper. It asks how far one shared calibration scale can be pushed through the observed spectrum, records the current bosonic/Higgs-top/quark outputs, and keeps the charged-lepton, neutrino, and hadron frontiers explicit.
 
 - **PDF:** [Deriving the Particle Zoo from Observer Consistency](paper/deriving_the_particle_zoo_from_observer_consistency.pdf)
 - **LaTeX source:** [deriving_the_particle_zoo_from_observer_consistency.tex](paper/deriving_the_particle_zoo_from_observer_consistency.tex)
 
-**Reality as a Consensus Protocol** is the CS companion paper. It presents the distributed-computation view of OPH and reformulates objective law as the fixed point of reconciliation across observer patches.
+**Reality as a Consensus Protocol** is the computational spine paper. It reformulates OPH as asynchronous local reconciliation on a patch network and makes objective law precise as a schedule-independent fixed point on the gauge quotient.
 
 - **PDF:** [Reality as a Consensus Protocol](paper/reality_as_consensus_protocol.pdf)
 - **LaTeX source:** [reality_as_consensus_protocol.tex](paper/reality_as_consensus_protocol.tex)
 
-**Screen Microphysics and Observer Synchronization** is the constructive microphysics note. It develops the simulator-hardware layer of OPH: finite local screen models, overlap observables, observer criteria, record layers, and synchronization moves.
+**Screen Microphysics and Observer Synchronization** is the engineering-side paper. It gives a concrete finite screen architecture with local registers, overlap observables, record layers, observer criteria, repair interfaces, and synchronization targets.
 
 - **PDF:** [Screen Microphysics and Observer Synchronization](paper/screen_microphysics_and_observer_synchronization.pdf)
 - **LaTeX source:** [screen_microphysics_and_observer_synchronization.tex](paper/screen_microphysics_and_observer_synchronization.tex)
@@ -184,7 +187,7 @@ The entire framework rests on five core axioms:
 | **A4** | Recoverable Generalized Entropy | $S_{\rm gen} = S_{\rm bulk} + \langle L_C \rangle$ with recoverability/collar control on the stated branch |
 | **A5** | Minimal Admissible Realization | Among admissible sectors, Nature realizes the lexicographically minimal one |
 
-Additional theorem-local technical premises and scaling-limit branch assumptions are detailed in the compact note and synchronized main paper.
+Additional theorem-local technical premises and scaling-limit branch assumptions are detailed in *Recovering Relativity and Standard Model Structure from Observer-Overlap Consistency* and synchronized into the main synthesis paper.
 
 ## The Prediction Chain
 

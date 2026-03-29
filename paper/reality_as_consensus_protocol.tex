@@ -25,40 +25,50 @@ The Fixed-Point Computation That Implements Physics}
 \OPHPaperReleaseBanner
 
 \begin{abstract}
-We show that a distributed consensus protocol running between observer patches admits a unique schedule-independent fixed point under termination and local confluence. The model is simple: a finite graph of local observers, each holding a local state, connected by overlap regions where they must agree. No global state is postulated. Instead, an asynchronous reconciliation process repairs local inconsistencies, and we prove that if this process terminates and is locally confluent, every initial configuration converges to a unique normal form regardless of execution order. In OPH, that terminal state is interpreted as physical reality.
+This paper isolates the computational spine of Observer-Patch Holography (OPH). Imagine a world
+described only patch by patch, with no master view available anywhere, and suppose neighboring
+descriptions must be repaired until they agree on what they share. The basic question is whether
+that process settles to one objective answer or whether different repair orders can lead to
+different worlds.
 
-We then prove that pairwise agreement between neighboring observers is not enough to guarantee a globally consistent reality. A cycle-holonomy obstruction shows that topology can permanently prevent global reconciliation. The minimal example is a triangle over $\mathbb{Z}_2$ where every edge looks fine but the whole system is frustrated. These irreducible frustrations are stable defects of the reconciliation process, and OPH interprets them as particle-like excitations.
+The main result is that, under termination and local confluence, the repair dynamics has a unique
+schedule-independent normal form. The paper then shows that local agreement is not enough for
+global agreement: loops can carry stable obstructions. On the abelian branch this is ordinary
+cycle holonomy; on the genuinely noncentral branch it becomes a crossed-module higher-gauge class.
+The paper also shows how gauge symmetry appears as implementation hiding, why physical uniqueness
+belongs on the gauge quotient, and why classical records form an eventually consistent layer.
 
-The framework yields four exact theorems: (1) asynchronous confluence, giving schedule-independent physical law; (2) a cycle-obstruction criterion showing when local consistency fails globally; (3) a gauge quotient theorem identifying gauge symmetry with implementation hiding and fixing the unique physical branch on the quotient; and (4) a record-layer convergence theorem giving CRDT-like semantics for classical observations. We also formalize a selection principle over the space of possible reconciliation laws, where schedule-robust, observer-supporting, and simple laws are favored by a monotonically increasing fitness functional.
-
-The formalism is the computational spine of Observer-Patch Holography (OPH), a framework in which a conditional scaling-limit Einstein branch, conditional compact gauge reconstruction, an extended-MAR Standard Model closure, and a worldsheet/string reorganization of the bosonic edge sector are developed as emergent sectors. The full OPH manuscript is available at \url{https://oph-book.floatingpragma.io/papers/observers_are_all_you_need.pdf}.
+The purpose of the paper is to make the OPH consensus picture mathematically sharp. It supplies
+the finite patch-net theorem package behind the broader OPH program, while leaving the separate
+Lorentz/null-modular/Einstein, gauge-reconstruction, and phenomenological branches to the other
+papers in the suite.
 \end{abstract}
 
 \section{Introduction}
 
-Here is the OPH proposal, stated as plainly as possible:
+This paper gives a finite patch-net formulation of the OPH consensus picture. A finite graph of
+observer patches carries local state spaces and overlap maps. Local repair maps act
+asynchronously, each modifying only one patch or a bounded neighborhood, and global consistency
+means agreement on every overlap. The central mathematical problem is whether this repair dynamics
+admits a unique normal form and how global obstructions to reconciliation are encoded.
 
-\begin{center}
-\fbox{\parbox{0.88\textwidth}{\centering
-In OPH, objective physical law is modeled by the gauge-invariant normal form\\
-of an asynchronous local reconciliation process.}}
-\end{center}
+The resulting theorem package has two layers. The first layer concerns convergence: under
+termination and local confluence, every initial configuration has a unique schedule-independent
+normal form. The second layer concerns obstructions: pairwise overlap agreement does not ensure a
+global solution, and the obstruction is holonomic. On the abelian branch it is the cycle sum of
+edge data; on the genuinely noncentral branch it is a crossed-module \v{C}ech class.
 
-That proposal becomes mathematically sharp once you define patches, overlaps, local repair maps, and gauge equivalence. By the end of this paper you will have the model theorems behind it.
-
-The idea goes like this. Suppose the universe has no global state. No God's-eye view, no master clock, no centralized ledger. All that exists are local observers, each holding a local description of their patch of reality, connected to neighbors through overlap regions where their descriptions must be compatible. When two neighbors disagree on their shared boundary, a local repair rule fires and updates one of them. This process runs asynchronously, with no preferred order of execution.
-
-The question is: does this process converge? And if it converges, does the answer depend on the order in which repairs happen?
-
-If the answer to both questions is yes, then the reconciliation process has a unique schedule-independent normal form. It does not matter who ran the updates first, or which observer got corrected before which other observer. The outcome is the same. In OPH, that normal form is interpreted as objective physical law; the schedule-independence theorem itself is mathematical.
-
-Anyone who has built distributed systems will recognize the structure immediately. This is a consistency protocol. The local repair maps are like conflict-resolution rules in a CRDT. The overlap projections are like shared keys in a distributed database. The convergence theorem is an eventual-consistency guarantee. And gauge symmetry is just the freedom to choose different internal representations on each node, as long as the interface data stays the same. In a distributed system, that is called encapsulation. In physics, it is called local gauge invariance. They are the same thing.
+Gauge symmetry enters as invariance under changes of hidden local representation that preserve
+overlap data. Under gauge-covariant repair dynamics, the normal-form map descends to the gauge
+quotient, so physical uniqueness is a quotient statement. Classical records are described by a
+finite closure system whose least common fixed point is independent of schedule. These results
+form the patch-net formulation used in the broader OPH literature.
 
 This paper proves four core results:
 
 \begin{enumerate}
 \item \textbf{Asynchronous confluence.} Under termination and local confluence, every initial state has a unique normal form, independent of update schedule (Theorem~\ref{thm:confluence}).
-\item \textbf{Cycle obstruction.} For affine overlap constraints over an abelian group, global consistency holds if and only if the holonomy vanishes on every cycle (Theorem~\ref{thm:holonomy}). The parity triangle gives the minimal frustrated example.
+\item \textbf{Cycle obstruction.} For affine overlap constraints over an abelian group, global consistency holds if and only if the holonomy vanishes on every cycle (Theorem~\ref{thm:holonomy}). The parity triangle gives the minimal frustrated example, and Theorem~\ref{thm:higherdefects} extends the same logic to the crossed-module higher-gauge defect hierarchy used later in OPH.
 \item \textbf{Gauge quotient.} Under gauge-covariant dynamics, the normal-form map descends to the quotient. Gauge-invariant observables are strictly unique on the quotient, even though microscopic representatives need not be unique (Theorem~\ref{thm:gauge}).
 \item \textbf{Record-layer convergence.} Commuting closure operators on a finite lattice converge to the least common fixed point under any asynchronous schedule that applies each operator at least once (Theorem~\ref{thm:crdt}).
 \end{enumerate}
@@ -138,7 +148,7 @@ Since $\Sigma$ is finite, this guarantees termination.
 The repair relation is locally confluent: if $s\to t$ and $s\to u$, then there exists $v\in\Sigma$ with $t\to^* v$ and $u\to^* v$.
 \end{assumption}
 
-This is the schedule-independence assumption written as a diamond property.
+This is the diamond condition for the repair relation.
 
 \begin{theorem}[Asynchronous confluence / fixed-point law]\label{thm:confluence}
 Under Assumptions~\ref{ass:complete}--\ref{ass:confluence}, every initial state $s\in\Sigma$ has a unique normal form
@@ -166,12 +176,7 @@ Let $M:\Sigma\to Y$ be any observable. Under the hypotheses of Theorem~\ref{thm:
 All schedules from the same initial $s$ terminate at $\operatorname{nf}_\lambda(s)$, so all yield the same $M$-value.
 \end{proof}
 
-This is the main theorem of the paper, and it deserves a box:
-\[
-\boxed{\text{termination + local confluence} \;\Longrightarrow\; \text{unique schedule-independent normal form}}
-\]
-
-The universe does not need a master clock or a preferred reference frame. As long as the reconciliation process terminates and is locally confluent, every observer, running repairs in whatever order they happen to run them, arrives at the same answer. Objectivity is a convergence guarantee.
+The theorem identifies objectivity with schedule-independent convergence of the repair dynamics.
 
 
 \section{Why Local Agreement Is Not Enough: Cycle Holonomy and Frustration}
@@ -213,7 +218,8 @@ If $P$ and $P'$ are two paths from $r$ to $v$, traversing $P$ followed by the re
 Take $A=\mathbb{Z}_2$ on the triangle $A$-$B$-$C$-$A$ with edge labels $b_{AB}=0$, $b_{BC}=0$, $b_{CA}=1$. Each individual edge equation is satisfiable. But the global system is not: the cycle sum is $0\oplus 0\oplus 1 = 1\neq 0$.
 \end{corollary}
 
-This is the simplest possible demonstration that local agreement does not imply global reality. Every pair of neighbors can find states that work for them, but there is no assignment that works for everyone simultaneously. The obstruction lives on the cycle.
+This example shows that pairwise consistency does not imply a global solution. The obstruction is
+carried by the cycle.
 
 \begin{corollary}[Stable defects as frustrated holonomy]\label{cor:defects}
 Define the defect energy
@@ -227,9 +233,28 @@ If the cycle-holonomy condition fails, then $\min_{x:V\to A}\Phi_b(x)>0$. Every 
 If $\min_x\Phi_b(x)=0$, some assignment satisfies all edge equations, contradicting Theorem~\ref{thm:holonomy}.
 \end{proof}
 
-And here is the physical punchline: these residual inconsistencies cannot be repaired. They are topologically protected. The reconciliation process pushes them around but can never eliminate them. They are stable, localized concentrations of frustrated holonomy.
+Residual inconsistencies of this type cannot be removed by local repair moves. In the OPH
+interpretation they are stable topological defects of the reconciliation dynamics.
 
-In this framework, that is what a particle is. A particle is a defect in the reconciliation process that cannot be smoothed away because the topology forbids it.
+\begin{theorem}[Higher-gauge defect hierarchy]\label{thm:higherdefects}
+Let a finite overlap nerve carry crossed-module defect data \((g_{ij},h_{ijk})\) for a compact crossed module
+\[
+H\xrightarrow{\partial} G.
+\]
+Under local rechartings by
+\[
+C^1(N,H)\rtimes C^0(N,G),
+\]
+the nonabelian \v{C}ech class
+\[
+q=[(g,h)]\in \check H^2(N,H\to G)
+\]
+is invariant. Strict global reconciliation exists if and only if \(q=0\), and nonzero \(q\) labels stable fixed-cutoff higher-gauge defects.
+\end{theorem}
+
+\begin{proof}
+The allowed rechartings are exactly the crossed-module coboundaries. So they preserve the class and strictify the weak gluing data precisely when the class vanishes. A nonzero class therefore gives a topologically protected residual obstruction, now in the full crossed-module defect hierarchy rather than only in the abelian truncation.
+\end{proof}
 
 
 \section{Gauge Symmetry as Implementation Hiding}
@@ -249,7 +274,7 @@ T_i^\lambda(\gamma\cdot s)=\gamma\cdot T_i^\lambda(s)
 \]
 \end{definition}
 
-In software terms: each node can refactor its internal state however it likes, as long as the API it exposes to its neighbors stays the same. That is encapsulation. That is also gauge invariance.
+Gauge transformations change hidden local representations while leaving overlap data fixed.
 
 \begin{theorem}[Gauge quotient theorem]\label{thm:gauge}
 Under the gauge action of Definition~\ref{def:gauge} and the hypotheses of Theorem~\ref{thm:confluence},
@@ -308,7 +333,8 @@ Because the ancillary factor is inert,
 Therefore \(M^\eta(\operatorname{nf}_\lambda^\eta(s,k))=M(\operatorname{nf}_\lambda(s))\), and Corollary~\ref{cor:gaugeinv} supplies gauge-orbit independence.
 \end{proof}
 
-Uniqueness is physically meaningful only up to gauge. The universe's internal representation is not unique, but every measurement you can actually perform gives a unique answer. This is exactly what physicists mean when they say gauge symmetry is ``not a real symmetry.'' In our language: it is the freedom to choose different internal data structures on each node without affecting the distributed computation's output. In the broader OPH UV discussion, this is the physically meaningful uniqueness theorem: the model fixes the normal form on the quotient by implementation hiding and inert ancillary refinement, not a unique microscopic representative of a given physical branch.
+Physical uniqueness therefore holds on the quotient by gauge or implementation hiding. The same
+statement remains unchanged under inert ancillary stabilization.
 
 
 \section{Classical Records as an Eventually Consistent Layer}
@@ -337,18 +363,19 @@ If $y\ge x_0$ satisfies $F_i(y)=y$ for all $i$, monotonicity gives $x^\star = F_
 Under any asynchronous schedule in which each operator is applied at least once, the total effect after the first full pass is $F_1\cdots F_n$ regardless of order and repetitions (by commutativity and idempotence). The state reaches $x^\star$ at that stage and stays there.
 \end{proof}
 
-This is the record layer of reality. Classical observations, the stuff you can write down and share with other observers, form a lattice of shareable records. The reconciliation operators are closure operators. The classical world is the order-independent closure of the shareable record layer.
-
-If you know distributed systems, this is a state-based CRDT with a join-semilattice. The theorem says the merge function is commutative, associative, and idempotent. Eventual consistency is guaranteed.
+The record layer is therefore a finite closure system: classical records are the order-independent
+least common fixed point generated from the initial record state.
 
 
 \section{Law-Space Selection and Observer Emergence}
 
-Which reconciliation laws get selected? Not all laws are equally good. Some produce schedule-dependent outcomes (they fail the confluence condition). Some are schedule-robust but produce universes with no structure. We want laws that are robust, that support observers, and that are not needlessly complicated.
+This section studies a simple meta-selection model on law space. The aim is to formalize one
+criterion for favoring schedule-robust, observer-supporting, and simple laws; the replicator
+dynamics below is part of the model, not a claim about literal cosmological dynamics.
 
-An important framing note: this section is a theorem about a \emph{meta-selection model}. We are not claiming that the actual universe literally ran replicator dynamics over law space. What we are doing is giving a clean mathematical statement of the selection idea and proving that it has the right monotonicity property. The interpretive step from here to cosmology is the paper's hypothesis, not its theorem.
-
-We start by defining what it means for a law to support observers. An observer, operationally, is a \textbf{persistent predictive module}: a subgraph that maintains stable records and uses them to predict its boundary's future behavior.
+We begin by defining what it means for a law to support observers. An observer is treated
+operationally as a \textbf{persistent predictive module}: a subgraph that maintains stable records
+and uses them to predict its boundary's future behavior.
 
 \begin{definition}[Schedule robustness]\label{def:robustness}
 Fix distributions $\mu$ over initial conditions and $\nu$ over asynchronous schedules, and a gauge-invariant observable $M$. For a law $\lambda$, define
@@ -427,7 +454,7 @@ Direct computation:
 Equality iff all $f_i$ on the support of $x$ are equal.
 \end{proof}
 
-This is a theorem about the meta-model: a clean mathematical statement about how laws compete. Schedule-robust laws beat fragile ones. Observer-supporting laws beat barren ones. Simple laws beat overcomplicated ones. The variance of fitness drives selection. When all surviving laws have equal fitness, the process stops. That is equilibrium.
+This theorem records the monotonicity property of the meta-selection model.
 
 
 \section{Connection to Observer-Patch Holography}
@@ -447,12 +474,12 @@ The bridge to physics works as follows. In the full OPH framework:
 
 The OPH manuscript develops a conditional gravity branch from entanglement equilibrium and modular geometry, the SM gauge-group closure from edge-sector admissibility plus MAR, and a worldsheet/string reorganization from large-$N$ heat-kernel asymptotics. Input-dependent cosmological statements and later phenomenological continuations are kept explicitly separate from that recovered-core claim set.
 
-The present paper provides the computational foundation. OPH says what the patches are, what the algebras are, and what the reconciliation dynamics looks like at the physical level. This paper proves that any system with the right abstract properties must converge to a unique, schedule-independent, gauge-invariant fixed point. That fixed point is what we call physical law.
+This paper provides the finite patch-net foundation for that OPH interpretation.
 
 
 \section{Discussion and Open Problems}
 
-This paper proves the fixed-point / consensus spine of the OPH program: schedule-independent normal forms, holonomy obstructions, gauge-quotient invariance, record-layer convergence, and a clean law-selection meta-model. In the broader OPH ledger, that spine should be read as foundational rather than as a replacement for the compact note's claim tiers. The recovered OPH core remains the conditional relativity chain together with the realized Standard Model structural chain; the capacity relation is separate and input-dependent; the current numerical implementation and all downstream phenomenology live at lower claim tiers.
+This paper proves the fixed-point / consensus spine of OPH: schedule-independent normal forms, holonomy obstructions, gauge-quotient invariance, record-layer convergence, and a clean law-selection meta-model. The conditional relativity chain together with the realized Standard Model structural chain remain the recovered core; the capacity relation is separate and input-dependent; and downstream phenomenology requires additional premises beyond the consensus results proved here.
 
 Six directions stand out as immediate next steps:
 
@@ -461,7 +488,7 @@ Six directions stand out as immediate next steps:
 
 \item \textbf{Coarse-graining.} When does reconciliation commute with renormalization? If you coarse-grain the patch net and then reconcile, do you get the same result as reconciling first and then coarse-graining? The conditions under which these operations commute would connect the discrete model to continuum field theory.
 
-\item \textbf{Defect classification and transportability.} Which holonomy classes correspond to stable quasi-particles, and when do they admit path-independent transport? In the abelian case, the classification is by $H^1(G,A)$; the non-abelian case is richer and should tie directly to the transportability / obstruction discussion in the broader OPH program.
+\item \textbf{Defect classification and refinement-limit transportability.} The fixed-cutoff hierarchy now extends from abelian frustrations to crossed-module classes \(q\in \check H^2(N,H\to G)\). The remaining task is to connect those higher-gauge defect sectors to the refinement-stable transportable sector category used in the broader compact-gauge reconstruction lane.
 
 \item \textbf{Observable-level confluence.} When the raw state is not unique because local confluence fails, can gauge-invariant macrostates still be unique? This weaker form of objectivity may hold under broader conditions than the strict normal-form theorem.
 
@@ -470,13 +497,16 @@ Six directions stand out as immediate next steps:
 \item \textbf{Scaling-limit bridge to full OPH.} Under what additional regularity conditions does the consensus protocol land in the geometric modular phase required by the compact note, so that the D3--D5 gravity chain and the D7--D9 gauge/matter chain become available? This is also the point at which the broader Phase-II and Phase-III branches must remain disciplined: dark-sector, baryogenesis, spectroscopy, and string/worldsheet topics require extra premises beyond what this paper itself proves.
 \end{enumerate}
 
-The last item is the status bridge. If it succeeds, this paper plugs cleanly into the recovered-core OPH program. If it fails, the fixed-point theorems proved here remain intact while the corresponding higher-tier gravity, gauge, or continuation branches would have to be revised individually.
+The last item is the bridge to the broader OPH branches. Failure of that bridge would leave the
+fixed-point theorems proved here unchanged while revising the downstream gravity, gauge, or
+continuation sectors.
 
 
 \appendix
 \section{Quantum/Algebraic Lift: Markov-Collar Splice Theorem}\label{app:splice}
 
-This appendix ties the discrete computational model back to the algebraic OPH formalism. It is not required for the main CS theorems, but it shows that the patch-net structure is not floating free of the deeper framework.
+This appendix records the algebraic splice statement used to relate the finite patch-net model to
+the OPH collar formalism.
 
 In OPH, an observer is written as
 \[
@@ -592,7 +622,7 @@ For the controlled statement, compactness of the fixed finite-dimensional state 
 \|X\|_\infty\,
 \delta^{\mathrm M}_{A:B:D}(\varepsilon).
 \]
-The final inequality is the standard Fawzi--Renner recovery bound.
+The final inequality is the standard Fawzi--Renner recovery bound~\cite{fawziRenner15}.
 \end{proof}
 
 This appendix therefore uses exact splice identities in only two regimes: literal exact Markovity, or a controlled collar family on one fixed finite-dimensional model for which \(\delta^{\mathrm M}_{A:B:D}(\varepsilon)\to0\). Small one-shot conditional mutual information is not silently upgraded to an exact normal form.
@@ -602,9 +632,15 @@ This appendix therefore uses exact splice identities in only two regimes: litera
 
 \bibitem{OPH}
 B.~M\"uller,
-\emph{Observers Are All You Need: Observer-Patch Holography as a Fundamental Theory},
+\emph{Observers Are All You Need},
 2026.
 Available at \url{https://oph-book.floatingpragma.io/papers/observers_are_all_you_need.pdf}.
+
+\bibitem{fawziRenner15}
+O.~Fawzi and R.~Renner,
+``Quantum conditional mutual information and approximate Markov chains,''
+\emph{Commun.\ Math.\ Phys.} \textbf{340} (2015), 575--611,
+arXiv:1410.0664.
 
 \end{thebibliography}
 

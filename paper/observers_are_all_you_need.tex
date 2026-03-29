@@ -141,282 +141,92 @@
 \OPHPaperReleaseBanner
 
 \begin{abstract}
-Observer-Patch Holography (OPH) is a mathematical reconstruction program that starts from a simple requirement: overlapping local observer descriptions on a holographic screen must agree where they overlap. From that starting point, we develop conditional routes toward general relativity, toward reconstruction of the Standard Model gauge structure, and toward string/worldsheet descriptions emerging from the same underlying framework. We also report early IBM Quantum Cloud benchmarks of OPH-motivated reduced sectors that match the predicted recoverability ordering and exact-ratio patterns on real hardware, providing preliminary real-device evidence for those local reduced-sector signatures. In the interpretive epilogue, we examine the strange-loop hypothesis that, under OPH, the universe can exist as a self-referential timeless causal structure in which observer reconstruction and information constraints close into a single consistency loop. Throughout, theorem-level results, conditional branches, experimental benchmarks, and interpretive material are kept explicitly distinct.
+Observer-Patch Holography (OPH) asks whether familiar physics can be rebuilt from a very small
+starting point: no observer sees the whole world at once, each observer has access only to local
+data, and neighboring descriptions must agree where they overlap. In that picture, spacetime,
+gauge structure, particles, and classical records are not put in by hand at the start. They are
+features of whatever survives global consistency among many partial viewpoints on a finite-capacity
+screen.
+
+This paper is the current synthesis of that program. It brings together the fixed-cutoff collar
+theorems, the consensus/fixed-point formulation of overlap repair, the current route to Lorentzian
+geometry and Einstein dynamics, the reconstruction route to compact gauge structure and the
+realized Standard Model quotient
+\(\SU(3)\times\SU(2)\times\U(1)/\mathbb Z_6\), the present particle-spectrum branch, and the
+fixed-cutoff measurement and observer package. Some parts of that story are already theorem-level,
+especially at fixed cutoff; others remain conditional on explicit scaling-limit or categorical
+premises. The aim of the synthesis paper is to show, in one place, what OPH is trying to do, what
+it currently achieves, and where the real open problems still are.
 \end{abstract}
 
 \tableofcontents
 \newpage
 
-\part{Core Framework and Axioms}
+\section{Introduction}
+
+This paper presents the current OPH program on a single theorem and status surface. The guiding
+question is whether overlap consistency for local observer descriptions on a finite-capacity
+screen is strong enough to recover the structural features of low-energy physics. In the present
+formulation the answer is tiered. Fixed-cutoff collar structure, higher-gauge defect transport,
+and the consensus/fixed-point formulation are theorem-bearing. The Lorentz/null-modular/Einstein
+chain and compact gauge reconstruction require explicit scaling-limit or categorical premises. The
+particle-spectrum and worldsheet branches contain additional calibration and continuation layers
+whose status is stated separately.
+
+The paper is organized accordingly. Section~2 records the synthesis-level outputs. The central
+trunk then presents the OPH axioms, information-theoretic tools, collar analysis, gravity branch,
+and gauge branch. The later synthesis sections add the consensus formulation, the
+particle-spectrum branch, the fixed-cutoff measurement and observer package, and the conditional
+worldsheet continuation. The appendices collect the candidate microphysics architecture together
+with theorem material that appears only in the synthesis paper.
+
+\section{Overview of Results}
+
+The OPH suite currently supports the following synthesis-level claim split.
+
+\begin{enumerate}[leftmargin=2em]
+\item \textbf{At fixed cutoff, neighboring descriptions can be stitched together in a precise and
+interacting way.} Technically, the collar theorem package is explicit, finite-range, and now
+includes the higher-gauge closure of the genuinely noncentral topological branch.
+\item \textbf{Relativity appears as a controlled continuum branch rather than an extra axiom.}
+Technically, the Lorentz/null-modular/Einstein chain is a refinement/scaling-limit branch with
+explicit canonical technical premises.
+\item \textbf{The Standard Model gauge skeleton appears as a constrained consistency output.}
+Technically, compact gauge reconstruction and the realized
+\(\SU(3)\times\SU(2)\times\U(1)/\mathbb Z_6\) branch follow under the stated transportability and
+categorical premises.
+\item \textbf{The particle story is no longer outside the synthesis paper.} Technically, the
+particle-spectrum branch is included here with an explicit split between structural rows,
+calibration rows, and open continuation rows.
+\item \textbf{Measurement and observer persistence have a fixed-cutoff theorem surface.}
+Technically, the Born-Luders record package and the observer checkpoint/restoration package are
+part of the main synthesis.
+\item \textbf{The string/worldsheet branch remains interesting but clearly conditional.}
+Technically, it is presented as a continuation of the OPH heat-kernel edge-sector theorem rather
+than as part of the recovered core.
+\end{enumerate}
+
+\subsection*{Companion Papers}
+
+The detailed depth surfaces used throughout this synthesis are:
+\begin{itemize}
+\tightlist
+\item
+\emph{A Conditional Reconstruction Program for Relativity and Standard Model Structure from Observer-Overlap Consistency: Observers Are All You Need (Compact)}~\cite{ophcompact}
+\item
+\emph{Reality as a Consensus Protocol: The Fixed-Point Computation That Implements Physics}~\cite{ophconsensus}
+\item
+\emph{Screen Microphysics, Patches, and Observer Synchronization in OPH}~\cite{ophmicrophysics}
+\item
+\emph{Deriving the Particle Zoo from Observer Consistency}~\cite{ophparticles}
+\end{itemize}
+
+\def\OPHSkipEmbeddedReferences{1}
 \input{tex_fragments/PAPER.tex}
+\input{tex_fragments/OBSERVERS_SYNTHESIS_SECTIONS.tex}
 
-\clearpage
-\part{Gauge Group Derivation}
-\input{tex_fragments/GAUGE_GROUP_DERIVATION.tex}
-
-\clearpage
-\part{String-Theory Derivation}
-\input{tex_fragments/STRING_THEORY.tex}
-
-\clearpage
-\part{Technical Supplement}
-\input{tex_fragments/TECHNICAL_SUPPLEMENT.tex}
-
-\clearpage
-\part{Interpretive Appendix: Strange-Loop Proposal}
-
-\section{Interpretive Status, the Habitat Theorem, and the Remaining Strange-Loop Gap}
-This part is an interpretive epilogue, outside the Phase-I recovered core and the separate input-dependent and continuation branches. OPH supplies the ambient state-and-law habitat needed for a fixed-point wrapper. This section leaves the actual closure map on the stronger observer-supporting sector open.
-
-The OPH inputs used here are all internal to this paper:
-\begin{enumerate}
-\item the patch net \(P\mapsto A(P)\) of von Neumann algebras together with isotony and overlap restriction maps;
-\item the global state on the inductive-limit algebra, whose restrictions witness a nonempty overlap-consistent local sector;
-\item the finite Axiom-3 MaxEnt/refinement branch, which supplies a common finite family of gauge-invariant local constraint observables across cutoffs;
-\item on the fixed-cutoff branch, the derived finite type-I presentations and compact boundary gluing groups used elsewhere in the OPH package.
-\end{enumerate}
-
-The law slot is encoded by the finite expectation-value coordinates of the retained Axiom-3 constraint family. That choice furnishes a compact convex state-and-law habitat within OPH.
-
-\paragraph{Theorem (OPH internal state-and-law habitat theorem).}
-Fix finitely many screen patches \(P_1,\dots,P_N\) in the standard OPH setup. For each \(i\), let
-\[
-M_i:=A(P_i),
-\qquad
-M_{ij}:=A(P_i\cap P_j),
-\]
-where \(M_i\) is the patch von Neumann algebra and \(M_{ij}\subset M_i,M_j\) is the overlap algebra. Let
-\[
-S_i:=S(M_i)\subset M_i^*
-\]
-be the full state space of \(M_i\), endowed with the weak* topology \(\sigma(M_i^*,M_i)\).
-
-Choose a finite family of self-adjoint gauge-invariant local constraint observables
-\[
-\mathcal O=\{O_1,\dots,O_m\}
-\]
-from the Axiom-3 MaxEnt branch, with each \(O_a\) supported in one of the chosen patches; write \(i(a)\) for an index such that \(O_a\in M_{i(a)}\).
-
-Define the overlap-consistent state sector
-\[
-X_{\mathrm{ov}}
-:=
-\left\{
-(\omega_1,\dots,\omega_N)\in \prod_{i=1}^N S_i:
-\omega_i|_{M_{ij}}=\omega_j|_{M_{ij}}\ \text{for all }i,j
-\right\}.
-\]
-Define the OPH law-coordinate map
-\[
-c:X_{\mathrm{ov}}\to \mathbb R^m,
-\qquad
-c(\omega_1,\dots,\omega_N)
-:=
-\bigl(\omega_{i(1)}(O_1),\dots,\omega_{i(m)}(O_m)\bigr).
-\]
-Let
-\[
-X_{\mathcal O}
-:=
-\left\{
-(\omega_1,\dots,\omega_N,\ell)\in
-\left(\prod_{i=1}^N S_i\right)\times \mathbb R^m:
-(\omega_1,\dots,\omega_N)\in X_{\mathrm{ov}},
-\ \ell=c(\omega_1,\dots,\omega_N)
-\right\}.
-\]
-Then:
-\begin{enumerate}
-\item the ambient product
-\[
-E:=
-\left(\prod_{i=1}^N M_i^*\right)\times \mathbb R^m
-\]
-is a Banach space for any product norm;
-\item \(X_{\mathcal O}\) is nonempty and convex;
-\item \(X_{\mathcal O}\) is norm-closed in \(E\);
-\item \(X_{\mathcal O}\) is compact in the product topology
-\[
-\tau
-:=
-\left(\prod_{i=1}^N \sigma(M_i^*,M_i)\right)\times
-\text{Euclidean topology on }\mathbb R^m;
-\]
-\item therefore every \(\tau\)-continuous self-map
-\[
-\Phi:X_{\mathcal O}\to X_{\mathcal O}
-\]
-has a fixed point.
-\end{enumerate}
-
-\begin{proof}
-Each \(M_i\) is a von Neumann algebra in the OPH patch net, hence a Banach space, so each dual \(M_i^*\) is Banach. A finite product of Banach spaces is Banach, hence so is \(E\).
-
-For each \(i\), the state space
-\[
-S_i=\{\omega\in M_i^*:\omega\ge 0,\ \omega(1)=1\}
-\]
-is convex and weak* compact by Banach--Alaoglu, because it is a weak* closed subset of the dual unit ball. For every pair \((i,j)\), restriction along \(M_{ij}\subset M_i\) and \(M_{ij}\subset M_j\) defines affine weak* continuous maps
-\[
-r_{ij}:S_i\to S(M_{ij}),
-\qquad
-r_{ji}:S_j\to S(M_{ij}).
-\]
-Hence \(X_{\mathrm{ov}}\) is an intersection of affine equalizer sets, so it is convex and \(\tau\)-closed inside \(\prod_i S_i\). Since \(\prod_i S_i\) is compact and convex in the product weak* topology, \(X_{\mathrm{ov}}\) is compact and convex as well.
-
-Nonemptiness comes from the OPH global state on the inductive-limit algebra: its restrictions
-\[
-\bigl(\omega|_{M_1},\dots,\omega|_{M_N}\bigr)
-\]
-belong to \(X_{\mathrm{ov}}\) because the restrictions agree on every overlap by construction.
-
-Each coordinate \(\omega_{i(a)}\mapsto \omega_{i(a)}(O_a)\) is affine and weak* continuous, since evaluation at a fixed algebra element is weak* continuous. Thus \(c\) is affine and \(\tau\)-continuous. The graph map
-\[
-G:X_{\mathrm{ov}}\to E,
-\qquad
-G(x):=(x,c(x)),
-\]
-is affine and continuous, so its image \(X_{\mathcal O}=G(X_{\mathrm{ov}})\) is convex and \(\tau\)-compact.
-
-To see norm-closedness in \(E\), let \((x_n,c(x_n))\to (x,\ell)\) in norm. Norm convergence implies weak* convergence on each coordinate, so \(x\in X_{\mathrm{ov}}\) because \(X_{\mathrm{ov}}\) is weak* closed. Since \(c\) is weak* continuous, \(c(x_n)\to c(x)\), while norm convergence in \(\mathbb R^m\) also gives \(c(x_n)\to \ell\). Hence \(\ell=c(x)\), so \((x,\ell)\in X_{\mathcal O}\).
-
-Finally, \(X_{\mathcal O}\) is a compact convex subset of the locally convex topological vector space \(E\) equipped with \(\tau\). Therefore every \(\tau\)-continuous self-map \(\Phi:X_{\mathcal O}\to X_{\mathcal O}\) has a fixed point by the Schauder--Tychonoff fixed-point theorem.
-\end{proof}
-
-\paragraph{Corollary (Fixed-cutoff OPH Brouwer corollary).}
-Assume the fixed-cutoff regulator realization \(R0/R1\): each chosen patch algebra \(M_i=A(P_i)\) is finite-dimensional. Then \(E\) is finite-dimensional, the weak* and norm topologies coincide on \(E\), and \(X_{\mathcal O}\) is a nonempty compact convex subset of a finite-dimensional real vector space. Hence every continuous self-map
-\[
-\Phi:X_{\mathcal O}\to X_{\mathcal O}
-\]
-has a fixed point by Brouwer. If, moreover, \(\Phi\) is a contraction for some metric on \(X_{\mathcal O}\), then the fixed point is unique and the iterates converge to it from every starting point by Banach's contraction theorem.
-
-\begin{proof}
-Under \(R0/R1\), the OPH fixed-cutoff branch identifies each chosen patch algebra with a finite-dimensional type-I presentation modulo compact boundary redundancy, so each \(M_i\) and \(M_i^*\) is finite-dimensional. Hence \(E\) is finite-dimensional and all relevant locally convex topologies coincide. The habitat theorem above shows that \(X_{\mathcal O}\) is nonempty, compact, and convex, so Brouwer gives a fixed point for every continuous self-map. The contraction statement is the usual Banach fixed-point theorem.
-\end{proof}
-
-Outside the scientific core lie:
-\begin{enumerate}
-\item an actual OPH closure map \(\Phi\) built from internal operations such as overlap repair, Axiom-3 MaxEnt reprojection, collar recoverability, and record-sector coarse-graining;
-\item a proof that the stronger ``observer-supporting'' or ``selected-world'' criteria carve out a nonempty compact convex \(\Phi\)-invariant subset of \(X_{\mathcal O}\);
-\item any uniqueness, contraction, or Lyapunov-type stability estimate for that closure map.
-\end{enumerate}
-
-The habitat theorem above supplies the ambient Banach/compact-convex setting. The strange-loop continuation requires the theorem-level closure map and the stronger invariant-sector and stability inputs.
-
-\section{Timeless Causal Chain}
-The hypothesis is represented by the chain
-\[
-\begin{aligned}
-\text{information constraints}
-&\to \text{effective physics}
-\to \text{complex chemistry and biology}\\
-&\to \text{observers with records}
-\to \text{formal OPH reconstruction}\\
-&\to \text{OPH-compatible simulation substrate}
-\to \text{information constraints}.
-\end{aligned}
-\]
-In this paper the chain is interpreted as a consistency loop. The discussion does not use it as a linear first-cause narrative. The Escher drawing-hands analogy is a geometrical metaphor for this closure structure.
-
-\section{Why Reality Exists and Why It Has This Form}
-Under this hypothesis, existence is identified with nontrivial fixed points of the OPH consistency map. The observed form of reality is selected by stability requirements:
-\begin{enumerate}
-\item overlap-consistent sharable records,
-\item recoverability under local information loss,
-\item long-lived structured sectors that support observer formation,
-\item internal reconstructibility of the governing rule set.
-\end{enumerate}
-The appearance of intelligent observers enters the closure mechanism itself. Observer-capable worlds are the sectors that complete the loop.
-
-\section{Additional Problem Closures}
-This wrapper does not establish a separate claim tier. Phase I is D1--D5 together with D7--D9; D6 is the separate input-dependent corollary; and D12 collects deferred continuations. The synchronized screen-microphysics paper now carries fixed-cutoff theorem packages for the measurement/Born-rule interface and for checkpoint/restoration/backup. This wrapper records those fixed-cutoff statuses rather than upgrading them by itself. Table~\\ref{tab:additional-closures} records the status of the broader ``problem closure'' claims that appear in the synthesis essays.
-
-\begin{longtable}{p{0.24\textwidth} p{0.19\textwidth} p{0.50\textwidth}}
-\caption{Problem-closure statements sorted by claim tier.}\label{tab:additional-closures}\\
-\toprule
-Problem domain & Current status & OPH mechanism / scope note \\
-\midrule
-\endfirsthead
-\toprule
-Problem domain & Current status & OPH mechanism / scope note \\
-\midrule
-\endhead
-\bottomrule
-\endfoot
-Quantum gravity consistency & Phase I recovered core (conditional scaling-limit) & Conditional Lorentz and Jacobson-type Einstein branches from modular geometry, the null bridge, and fixed-cap stationarity. \\
-UV completion / microscopic uniqueness & Mixed: fixed-cutoff theorem package / conditional scaling-limit continuation & The current suite already gives a finite-range interacting fixed-cutoff branch and a unique physical UV branch only modulo OPH-stable equivalence: gauge or implementation hiding together with inert ancillary stabilization. Ordinary or central-defect topological closure is fixed-cutoff complete up to the named noncentral 2-group obstruction; the genuinely noncentral case points to a higher-gauge crossed-module extension, while a unique microscopic representative and the continuum BW branch remain open behind the explicit T4/T8 boundary. \\
-Measurement problem & Mixed: fixed-cutoff theorem package / interpretive synthesis & The synchronized screen-microphysics paper proves a fixed-cutoff central-record / Born-L\"uders package for observer-accessible events. Broader philosophical closure claims remain interpretive in this wrapper. \\
-Cosmological principle and horizon homogeneity & Interpretive or organizational synthesis & MaxEnt state selection under symmetric constraints motivates isotropy and homogeneity stories. Those stories remain outside the independent Phase-I theorems. \\
-Problem of time & Interpretive or organizational synthesis & Modular flow from the BW$_{S^2}$ geometric branch provides a physical time parameter for each observer patch. It remains a useful organizational principle, not a separate recovered-core theorem in this wrapper. \\
-Black-hole information paradox & Program-level structural continuation & Edge-center sectorization and recoverability suggest an internal resolution. The full black-hole-information branch remains outside Phase I. \\
-Cosmological constant problem & Phase II input-dependent corollary & \(\Lambda\) is tied to global screen capacity once the screen-capacity identification is adopted. This sits outside the local recovered-core outputs. \\
-Magnetic monopole expectation from simple GUT groups & Phase I recovered core & The realized product-group branch \(\SU(3)\times\SU(2)\times\U(1)/\mathbb Z_6\) removes the standard simple-GUT symmetry-breaking monopole channel. \\
-Proton stability and proton spin fraction & Mixed: Phase I / Phase III & No gauge-mediated proton decay follows from the realized product-group branch, which removes the standard simple-GUT proton-decay channel. Proton spin requires nonperturbative QCD completion and is not part of Phase I. \\
-Dark matter phenomenology & Phase III deferred continuation & Modular-anomaly response laws remain conjectural beyond the recovered gravity chain. \\
-Baryon asymmetry scale & Phase III deferred continuation & Suppression-counting estimates are not a substitute for a derived out-of-equilibrium mechanism. \\
-Three generations and downstream flavor structure & Mixed: Phase I / Phase III & \(N_g=3\) is recovered on the realized MAR-admissible branch; later flavor constructions require extra ans\"atze. \\
-String/worldsheet reorganization & Phase III deferred continuation & Requires a controlled large-\(N_{\mathrm{edge}}\) regime distinct from the physical color rank \(N_c=3\). Any further lift to critical superstring structure remains a conjectural extension requiring extra worldsheet ingredients not derived in the OPH core. \\
-Why anything exists / strange-loop closure & Interpretive epilogue only & Part~VI gives an OPH-internal state-and-law habitat theorem: overlap-consistent patch states together with finite Axiom-3 law coordinates form a theorem-usable nonempty compact convex sector, and fixed-cutoff branches admit a Brouwer version. The further inputs are the actual OPH closure map on an invariant observer-supporting sector, together with uniqueness and stability. \\
-\end{longtable}
-
-\section{Standalone Status}
-This wrapper is standalone only in the documentary sense: every derivation cited here appears somewhere in the manuscript, so no external derivation document is required to follow the chain of references. It is \emph{not} a separate authority for claim tier.
-
-For claim-tier purposes, Part~I Section~8 remains the governing summary for this wrapper's own claims. The fixed-cutoff measurement/Born-rule and checkpoint/restoration statements discussed below inherit their theorem status from the synchronized screen-microphysics paper, and this wrapper records that status without becoming the primary proof surface.
-
-\clearpage
-\part{Speculative Appendix: Observer Continuation and Backup}
-
-This part remains a program-level continuation note at the level of this wrapper. The synchronized screen-microphysics paper now carries the fixed-cutoff checkpoint/restoration/error/identity theorem package, and the formulas below summarize its algebraic interface in observer language. What remains outside the proved package is the stronger strange-loop closure map, the invariant observer-supporting sector, and the associated uniqueness and stability questions.
-
-\section{Observer as Algebraic Pattern}
-In OPH, an observer is represented by
-\[
-O=(P,\mathcal{A}(P),\rho,R),
-\]
-where $P$ is a screen patch, $\mathcal{A}(P)$ is its local algebra, $\rho$ is the local state, and $R$ is the record algebra. Records are implemented by approximately commuting projectors in overlap centers, so they are shareable without violating no-cloning constraints for generic quantum states.
-
-On the synchronized screen-microphysics paper, the observer-facing measurement interface is now theorem-bearing at fixed cutoff: one has a finite central record algebra, Born probabilities for its event projectors, and L\"uders conditioning on that same commuting record algebra. The observer-paper role is therefore to import that fixed-cutoff measurement package into the surrounding observer vocabulary, not to reclassify it as mere interpretive rhetoric.
-
-\section{Markov Collar Factorization}
-For a collar tripartition $A$-$B$-$D$ with conditional mutual information $I(A:D|B)\le\varepsilon$, the exact Markov limit gives
-\[
-\rho_{ABD}
-=\bigoplus_{\alpha} p_{\alpha}\,
-\rho^{(\alpha)}_{A b_L^{\alpha}}
-\otimes
-\rho^{(\alpha)}_{b_R^{\alpha} D}.
-\]
-The sector label $\alpha$ is classical center data. This decomposition is the mathematical basis for extracting an interior observer state with a controlled boundary interface.
-
-\section{Checkpoint and Restoration Map}
-A checkpoint is the tuple
-\[
-\mathcal{C}=\bigl(R,\alpha,\rho_{\mathrm{int}}^{(\alpha)}\bigr),
-\]
-with $\rho_{\mathrm{int}}^{(\alpha)}$ the interior conditional state. Given a compatible target environment state $\sigma_{\mathrm{env}}^{(\alpha)}$, a restored state is
-\[
-\rho_{\mathrm{new}}^{(\alpha)}
-=
-\rho_{\mathrm{int}}^{(\alpha)}
-\otimes
-\sigma_{\mathrm{env}}^{(\alpha)}.
-\]
-For approximate Markov collars, recovery is controlled by the standard bound
-\[
-\left\|
-\rho_{ABD}
--
-(\mathrm{id}_A\otimes\mathcal{R}_{B\to BD})(\rho_{AB})
-\right\|_1
-\le
-2\sqrt{\ln 2\,\varepsilon}.
-\]
-This gives quantitative trace-distance control on the recovered state under finite conditional mutual information (finite collar error). Interpreting that control as observer continuation requires additional modeling assumptions beyond the bound itself.
-
-The fixed-cutoff microphysics claim is stronger than the bare recoverability estimate written above. On the synchronized screen-microphysics paper, exact checkpoint restoration preserves the full future law of observer-accessible events, while an \(\varepsilon\)-accurate restoration changes that future law by at most \(\varepsilon\) in total variation. So the present wrapper cites a theorem-bearing continuation package at fixed cutoff even though the stronger strange-loop closure story remains open.
-
-\section{Physical Meaning}
-The continuation mechanism discussed here is now partly theorem-bearing and partly program-level. At fixed cutoff, the synchronized screen-microphysics paper proves a checkpoint/restoration theorem and backup corollary for observer-accessible event algebras. This wrapper records the observer-facing meaning of that theorem and its algebraic prerequisites; it is not the primary proof surface. What still remains open is the stronger substrate-selection, strange-loop closure, uniqueness, and stability package.
+\appendix
+\input{tex_fragments/OBSERVERS_APPENDICES.tex}
+\input{tex_fragments/OBSERVERS_REFERENCES.tex}
 
 \end{document}

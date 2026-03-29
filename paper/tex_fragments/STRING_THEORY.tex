@@ -1,18 +1,18 @@
 \section{String Theory from Observer Patch Holography}\label{string-theory-from-observer-patch-holography}
 
 \begin{quote}
-OPH is an observer-centric reconstruction program for fundamental physics. The quantitative branches discussed in this paper use two external inputs (\(P\) for pixel area and \(N_{\mathrm{scr}}\) for screen capacity) together with structural axioms and stated regulator/scaling premises. This part records the internal OPH route from edge-sector heat-kernel structure to a worldsheet/string reorganization of the bosonic branch.
+This part studies a string/worldsheet reorganization of the OPH edge-sector branch. Its input is the fixed-cutoff collar package, the heat-kernel sector weights, the conditional gravity branch, and, where needed, the compact-gauge branch. The additional premises are the stated large-\(N_{\mathrm{edge}}\) and modular-sewing assumptions.
 \end{quote}
 
-\subsection{A Continuation-Level Route}\label{a-complete-derivation}
+\subsection{Scope and Input}\label{a-complete-derivation}
 
-This document records the OPH derivation path by which the bosonic edge-sector branch admits a string-theoretic description of its effective degrees of freedom. The route uses OPH axioms together with the stated heat-kernel, large-\(N\), and modular-sewing premises; no separate external string-theory starting postulate is introduced.
+The bosonic edge-sector branch admits a string-theoretic description of its effective degrees of freedom if the stated heat-kernel, large-\(N\), and modular-sewing premises are realized.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\section{Overview: The Claimed Route}\label{1-overview-what-we-derive}
+\section{Overview of the Route}\label{1-overview-what-we-derive}
 
-This part records the following continuation-level chain within the stated OPH branch:
+The chain studied in this section is:
 
 \begin{verbatim}
 Five OPH axioms + regulator premises used in the edge-sector branch
@@ -36,91 +36,23 @@ OPH also supplies:
   \textbf{Higher gauge structure}: The natural slot for B-field/gerbe data
 \end{itemize}
 
-This records a conditional route by which the OPH edge/boundary sector can admit a string-theoretic reorganization if the stated large-\(N\) and modular-sewing premises are realized.
+This gives a conditional route by which the OPH edge/boundary sector admits a string-theoretic reorganization if the stated large-\(N\) and modular-sewing premises are realized.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\section{OPH Inputs Used}\label{2-oph-inputs-used}
+\section{OPH Input}\label{2-oph-inputs-used}
 
-This part uses the following OPH ingredients from the main paper and technical supplement:
-
-\subsection{OPH Axioms}\label{21-core-axioms}
-
-The OPH axioms used here are: Screen Net, Overlap Consistency, Local MaxEnt and Refinement Stability, Recoverable Generalized Entropy, and Minimal Admissible Realization (MAR). The heat-kernel / 2D Yang-Mills route uses primarily the first four plus the technical premises below; MAR enters only when one specializes to the realized Standard Model gauge branch later in the manuscript.
-
-\subsection{Technical Premises}\label{22-regulator-premises}
-
-\textbf{Regulator premise R0 (Type-I local algebras):} At the UV regulator scale, local patch algebras are type-I factors (finite-dimensional matrix algebras).
-
-\textbf{Regulator premise R1 (boundary gauge invariance):} For a region \(R \subset S^2\), the physical algebra is: \[\mathcal{A}(R) = \mathcal{B}(\tilde{\mathcal{H}}_R)^{G_{\partial R}}\] where \(G_{\partial R}\) is the boundary gauge group.
-
-Together with the local MaxEnt clause of the OPH axioms, these theorem-local premises give the edge-center decomposition and the heat-kernel sector weights quoted in Section 2.3.
-
-\subsection{Key Derived Results}\label{23-key-derived-results}
-
-\textbf{Edge-Center Decomposition (Theorem 1.1):} Under R0 and R1, the collar Hilbert space decomposes as: \[\mathcal{H}_{B_\delta} = \bigoplus_{\alpha} \left(\mathcal{H}_{b_L^\alpha} \otimes \mathcal{H}_{b_R^\alpha}\right)\]
-
-\textbf{Heat-Kernel Sector Weights (Theorem 5.1):} Under MaxEnt with bi-invariant constraints: \[p_R(t) \propto d_R \, e^{-t \, C_2(R)}\] where \(d_R = \dim R\) and \(C_2(R)\) is the quadratic Casimir.
-
-\textbf{Geometric Modular Flow (Theorem 2.2):} On the BW geometric branch, cap modular flow acts as the standard cap-preserving conformal dilation with period \(2\pi\).
+The analysis uses four ingredients from the main OPH trunk: the fixed-cutoff edge-center package, the heat-kernel edge-sector weights, the conditional geometric-modular gravity branch, and the realized compact-gauge branch whenever gauge content is mentioned. The additional inputs specific to this section are the stated large-\(N_{\mathrm{edge}}\) and modular-sewing premises.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\section{Einstein Equation from Entanglement Equilibrium}\label{3-einstein-equation-from-entanglement-equilibrium}
+\section{Target-Space Dynamics}\label{3-einstein-equation-from-entanglement-equilibrium}
 
-Before turning to string theory, this part first recalls the conditional OPH gravity branch, the "target-space dynamics" that any string theory must reproduce. The branch uses the same geometric-modular, fixed-cap-stationarity, and null-stress premises stated in Part~I.
-
-\subsection{Setup: Null Deformation Problem}\label{31-setup-null-deformation-problem}
-
-Pick a local causal diamond/cap region \(C\) in the emergent bulk. Focus on one null sheet of \(\partial C\), generated by a future-directed null vector field \(k^a\) with affine parameter \(\lambda\).
-
-Consider an infinitesimal deformation moving the cut along the null generators: \[\Sigma \to \Sigma(\lambda)\]
-
-\subsection{Generalized Entropy Variation}\label{32-generalized-entropy-variation}
-
-By Recoverable Generalized Entropy, generalized entropy is: \[S_{\text{gen}}(\Sigma) = \frac{A(\Sigma)}{4G} + S_{\text{bulk}}(\Sigma)\]
-
-Its first variation under the null deformation: \[\delta S_{\text{gen}} = \delta\left(\frac{A}{4G}\right) + \delta S_{\text{bulk}}\]
-
-\textbf{Entanglement equilibrium premise:} At the MaxEnt reference state, \(\delta S_{\text{gen}} = 0\) for allowed local variations.
-
-\subsection{Area Variation via Raychaudhuri}\label{33-area-variation-via-raychaudhuri}
-
-Let \(\theta(\lambda)\) be the expansion of the null congruence. The Raychaudhuri equation: \[\frac{d\theta}{d\lambda} = -\frac{1}{2}\theta^2 - \sigma_{ab}\sigma^{ab} - R_{ab}k^a k^b\]
-
-At equilibrium (\(\theta(0) = 0\), \(\sigma(0) = 0\)): \[\left.\frac{d\theta}{d\lambda}\right|_{\lambda=0} = -R_{kk}\]
-
-Therefore: \[\delta\left(\frac{A}{4G}\right) = -\frac{1}{4G}\int d^2x \sqrt{h_0} \int d\lambda \, \lambda \, R_{kk} + \cdots\]
-
-\subsection{Bulk Entropy Variation via Modular Theory}\label{34-bulk-entropy-variation-via-modular-theory}
-
-\textbf{Entanglement First Law:} For small perturbations around reference state \(\omega\): \[\delta S_{\text{bulk}} = \delta\langle K \rangle\] where \(K = -\log \rho_C\) is the modular Hamiltonian.
-
-\textbf{Geometric Modular Hamiltonian (N1-N3):} For null-deformed regions: \[K = 2\pi \int d^2x \int d\lambda \, \lambda \, T_{kk}(\lambda, x) + K_\partial + O(\varepsilon)\]
-
-Therefore: \[\delta S_{\text{bulk}} = 2\pi \int d^2x \int d\lambda \, \lambda \, \delta\langle T_{kk} \rangle + \cdots\]
-
-\subsection{Entanglement Equilibrium Implies Einstein}\label{35-entanglement-equilibrium-implies-einstein}
-
-Setting \(\delta S_{\text{gen}} = 0\): \[0 = -\frac{1}{4G}\int d^2x \int d\lambda \, \lambda \, R_{kk} + 2\pi \int d^2x \int d\lambda \, \lambda \, \langle T_{kk} \rangle\]
-
-Since this holds for arbitrary localized deformations: \[R_{kk} = 8\pi G \langle T_{kk} \rangle \quad \text{for all null } k^a\]
-
-\subsection{Upgrade to Full Einstein Equation}\label{36-upgrade-to-full-einstein-equation}
-
-Define \(E_{ab} := R_{ab} - 8\pi G \langle T_{ab} \rangle\).
-
-The result \(R_{kk} = 8\pi G T_{kk}\) for all null \(k\) means: \[E_{ab} k^a k^b = 0 \quad \forall \text{ null } k\]
-
-\textbf{Lemma (Null Data Ambiguity):} If \(X_{ab} k^a k^b = 0\) for all null \(k\), then \(X_{ab} = \phi \, g_{ab}\).
-
-Therefore \(E_{ab} = \phi \, g_{ab}\), giving: \[R_{ab} = 8\pi G \langle T_{ab} \rangle + \phi \, g_{ab}\]
-
-In Einstein tensor form, on that same conditional branch: \[\boxed{G_{ab} + \Lambda g_{ab} = 8\pi G \langle T_{ab} \rangle}\]
-
-where \(\Lambda := \frac{1}{2}R - \phi\) is constant by the Bianchi identity.
-
-\textbf{Key point:} \(\Lambda\) is not fixed by local null modular data,it requires global input (screen capacity).
+On the \(T1/T3/T4\) branch, together with the stated downstream null-stress identification, OPH yields the target-space equation
+\[
+\boxed{G_{ab} + \Lambda g_{ab} = 8\pi G \langle T_{ab} \rangle}.
+\]
+This equation supplies the target-space dynamics used in the worldsheet analysis. The additional question is whether the edge-sector and large-\(N_{\mathrm{edge}}\) data admit a controlled string reorganization compatible with that target-space branch.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -174,7 +106,7 @@ For \(\Sigma_0 = S^2\) (genus 0): \[Z_{\text{2D YM}}(S^2) = \sum_R d_R^2 \exp\le
 
 \subsection{The Gross-Taylor Expansion}\label{51-the-gross-taylor-expansion}
 
-In the large-\(N\) limit for \(G = SU(N)\), 2D Yang-Mills admits an exact reorganization as a sum over worldsheets (Gross-Taylor, 1993).
+In the large-\(N\) limit for \(G = SU(N)\), 2D Yang-Mills admits an exact reorganization as a sum over worldsheets~\cite{grossTaylor93}.
 
 The partition function expands as: \[\log Z = \sum_{h \geq 0} N^{2-2h} F_h(\lambda), \quad \lambda := g_{\text{YM}}^2 N\]
 
@@ -341,7 +273,7 @@ The following are derived from the five OPH axioms together with the stated regu
 \item
   EC decomposition and Markov structure on collars
 \item
-  Sector category and reconstruction of the compact gauge group, with \(SU(3) \times SU(2) \times U(1)/\mathbb{Z}_6\) selected under the MAR admissibility package (see Part II of this manuscript)
+  Sector category and reconstruction of the compact gauge group, with \(SU(3) \times SU(2) \times U(1)/\mathbb{Z}_6\) selected under the MAR admissibility package on the realized gauge branch
 \item
   Heat-kernel edge-sector weights \(p_R \propto d_R e^{-t C_2(R)}\)
 \item
@@ -354,7 +286,7 @@ The following are derived from the five OPH axioms together with the stated regu
   Nonabelian gluing (crossed module/2-group) providing higher gauge data
 \end{enumerate}
 
-The genus expansion \(\log Z = \sum_{h \geq 0} N^{2-2h} F_h(\lambda)\) follows from the Gross-Taylor rewriting of 2D Yang-Mills in the large-\(N\) regime, with \(N\) identified as the effective edge Hilbert space parameter.
+The genus expansion \(\log Z = \sum_{h \geq 0} N^{2-2h} F_h(\lambda)\) follows from the Gross-Taylor rewriting~\cite{grossTaylor93} of 2D Yang-Mills in the large-\(N\) regime, with \(N\) identified as the effective edge Hilbert space parameter.
 
 \subsection{Extensions to Critical Superstrings}\label{92-extensions-to-critical-superstrings}
 
@@ -376,7 +308,9 @@ The graviton is contained implicitly via the Einstein equation derived from enta
 
 \section{Summary}\label{10-summary}
 
-This part should be read with the same three-phase boundary as Part~I. The recovered-core claim set of OPH is Phase I, namely D1--D5 together with D7--D9. The string/worldsheet material here belongs to Phase III unless and until the additional large-\(N_{\mathrm{edge}}\), modular-sewing, and worldsheet-CFT premises are proved.
+The string/worldsheet material belongs to Phase III. The recovered-core claim set of OPH is Phase
+I, namely D1--D5 together with D7--D9, while the present section requires the additional
+large-\(N_{\mathrm{edge}}\), modular-sewing, and worldsheet-CFT premises recorded below.
 
 The status split is therefore:
 
@@ -385,12 +319,16 @@ The status split is therefore:
 \item
   \textbf{Secured upstream input.} The theorem-level statement actually available before any string reorganization is that the edge-sector weights have the 2D Yang-Mills heat-kernel form. That identity is the robust bridge from OPH edge data to a worldsheet-like reorganization.
 \item
-  \textbf{Conditional continuation.} If a controlled large-\(N_{\mathrm{edge}}\) regime exists, with \(N_{\mathrm{edge}}\) distinct from the physical color rank \(N_c=3\), then the Gross-Taylor rewriting turns the edge partition function into a genus expansion. This is the precise status of the worldsheet/string reorganization claim.
+  \textbf{Conditional continuation.} If a controlled large-\(N_{\mathrm{edge}}\) regime exists, with \(N_{\mathrm{edge}}\) distinct from the physical color rank \(N_c=3\), then the Gross-Taylor rewriting~\cite{grossTaylor93} turns the edge partition function into a genus expansion. This is the precise status of the worldsheet/string reorganization claim.
 \item
   \textbf{Not yet claimed.} Critical superstring worldsheet CFT, full massless spectrum, anomaly cancellation, and complete internal-sector matching all require further premises beyond the recovered OPH core.
 \end{enumerate}
 
-The broader OPH framework does supply suggestive ingredients for such a continuation --- modular geometry, a conditional Einstein branch, and higher-gauge/crossed-module data --- but those ingredients do not by themselves upgrade this part beyond Phase III. Success of the branch would strengthen the program; failure of the branch would retract a continuation only and would not by itself falsify relativity-plus-Standard-Model recovery.
+The broader OPH framework supplies suggestive ingredients for such a continuation, including
+modular geometry, a conditional Einstein branch, and higher-gauge/crossed-module data. Those
+ingredients do not by themselves upgrade this part beyond Phase III. Failure of the branch would
+retract only this continuation and would not alter the relativity-plus-Standard-Model recovery
+package.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -449,13 +387,13 @@ This derivation uses:
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Canonical OPH axiom package and theorem-local regulator premises from Part I of this manuscript
+  Canonical OPH axiom package and theorem-local regulator premises from the main OPH trunk
 \item
-  Heat-kernel / edge-sector results from Part V of this manuscript
+  Heat-kernel / edge-sector results from the fixed-cutoff collar and gauge branch
 \item
-  Gross-Taylor 2D YM / string duality (Gross \& Taylor, 1993)
+  Gross-Taylor 2D YM / string duality~\cite{grossTaylor93}
 \item
-  Jacobson entanglement equilibrium (Jacobson, 1995, 2016)
+  Jacobson entanglement equilibrium~\cite{jacobson95,jacobson16}
 \item
   Standard results: Tomita-Takesaki modular theory, Peter-Weyl theorem, Raychaudhuri equation
 \end{enumerate}

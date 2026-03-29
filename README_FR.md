@@ -1,6 +1,6 @@
 # Holographie par Patchs d'Observateurs : une approche de la physique fondamentale centrée sur l'observateur
 
-> L'OPH est un programme de reconstruction mathématique qui part d'une exigence simple : des descriptions locales d'observateurs qui se recouvrent sur un écran holographique doivent s'accorder là où elles se chevauchent. À partir de ce point de départ, l'OPH développe des voies vers la relativité générale, vers la reconstruction de la structure de jauge du Modèle Standard, et vers l'émergence de descriptions de type feuille d'univers / théorie des cordes à partir du même cadre. Les premiers benchmarks IBM Quantum Cloud fournissent aussi une première indication sur matériel réel en faveur des signatures locales correspondantes dans des secteurs réduits. L'OPH développe aussi une voie interprétative de strange loop appuyée par l'habitat état-et-loi exploitable au niveau théorématique, tandis que les questions plus fortes de carte de fermeture et de stabilité restent ouvertes.
+> L'OPH est un programme de reconstruction mathématique qui part d'une exigence simple : des descriptions locales d'observateurs sur un écran holographique de capacité finie doivent s'accorder là où elles se chevauchent. À partir de ce point de départ, l'ensemble actuel d'articles développe un paquet explicite à cutoff fixe pour les collerettes et la jauge supérieure, une voie conditionnelle vers la géométrie lorentzienne et la dynamique d'Einstein, une voie conditionnelle vers la reconstruction de la jauge compacte et du quotient réalisé du Modèle Standard, une branche actuelle pour le spectre de particules, ainsi qu'un paquet fixe-cutoff pour la mesure et les observateurs. L'histoire plus forte de fermeture en strange loop reste interprétative et ne fait pas partie du coeur reconstruit.
 
 > **Avertissement de statut :** l'OPH est un programme de recherche actif et n'est pas encore entièrement démontré. Plusieurs dérivations restent incomplètes, certaines preuves n'existent actuellement qu'à l'état d'esquisse, et certaines hypothèses auxiliaires doivent encore être éliminées. Le cadre doit donc être considéré comme étant en développement actif.
 
@@ -26,12 +26,15 @@ Les lois de la physique sont les règles de cohérence qui rendent cet accord in
 
 ## Succès actuels
 
-- **Relativité et gravité :** l'OPH dérive une structure relativiste de cohérence entre observateurs à partir des contraintes de recouvrement et développe une voie conditionnelle vers la relativité générale.
-- **Jauge et physique des particules :** l'OPH reconstruit la structure de jauge du Modèle Standard et développe des branches quantitatives explicitement plus faibles à partir du même cadre de patchs d'observateurs. Le descendant local le plus fort à ce jour est une graine forward fermée pour Higgs/top sur le coeur de jauge D10, tandis que la fermeture exacte de \(W/Z\) reste un problème de réparation et que les masses des leptons chargés, des quarks légers, des neutrinos et des hadrons restent sous le niveau du coeur reconstruit.
-- **Voie vers une lecture simulation theory :** l'OPH transforme la *simulation theory* en une architecture mathématique et pratique explicite avec patchs d'observateurs, règles de synchronisation, formation des enregistrements et couche concrète de « matériel du simulateur ».
-- **Voie interprétative de strange loop :** l'OPH développe une voie de fermeture interprétative appuyée par l'habitat état-et-loi, tandis que la carte de fermeture plus forte et les questions de stabilité restent ouvertes.
-- **Émergence feuille d'univers / cordes :** l'OPH relie le même cadre sous-jacent à des descriptions de type feuille d'univers / théorie des cordes au lieu d'en faire un second jeu d'axiomes de départ.
-- **Indices sur matériel réel :** les premiers benchmarks IBM Quantum Cloud reproduisent sur matériel réel l'ordre de récupérabilité et les motifs de rapports exacts prédits pour les secteurs réduits.
+- **L'OPH dispose maintenant d'un véritable papier de synthèse.** *Observers Are All You Need* rassemble sur une même surface théorématique et de statut ce qu'est l'OPH, ce qui fonctionne déjà, et ce qui reste réellement ouvert.
+- **Le coeur à cutoff fixe est explicite.** Le paquet de collerette est constructif et interactif à cutoff fixe, et la branche topologique est fermée sur les cas ordinaire, à défaut central, et vraiment non central de type jauge supérieure.
+- **Il existe une voie disciplinée vers relativité et gravité.** L'OPH dérive une structure de cohérence indépendante de l'ordre des mises à jour et développe une branche conditionnelle Lorentz/null-modulaire/Einstein sous un paquet explicite de prémisses de limite d'échelle.
+- **Il existe une voie disciplinée vers la jauge.** L'OPH développe une reconstruction conditionnelle de la jauge compacte et retrouve, sur la branche réalisée, le quotient du Modèle Standard \(\SU(3)\times\SU(2)\times\U(1)/\mathbb Z_6\) avec la chaîne actuelle de quantification des charges et de comptage.
+- **La branche particules dépasse désormais la pure structure.** Les porteurs structurels sans masse sont fixés ; les étages électrofaible et Higgs/top produisent déjà des lignes quantitatives ; les secteurs quarks élargis, leptons, neutrinos et hadrons restent explicitement ouverts et hiérarchisés par statut.
+- **La mesure et les observateurs appartiennent maintenant à la surface théorématique.** L'OPH dispose de paquets fixes-cutoff pour les enregistrements, Born-L\"uders, checkpoint/restauration et l'interface observateur.
+- **Le versant microphysique est suffisamment concret pour être simulé.** L'article de microphysique d'écran fournit une architecture de référence finie avec registres explicites, observables de recouvrement, couches d'enregistrement, mouvements de réparation et tests de synchronisation.
+- **La voie feuille d'univers / cordes est intégrée sans être sur-vendue.** L'OPH relie le théorème de noyau de chaleur des secteurs de bord à une réorganisation de type feuille d'univers, tout en gardant cette branche hors du coeur reconstruit.
+- **Il existe déjà quelques signatures matérielles.** Les premiers benchmarks IBM Quantum Cloud reproduisent sur matériel réel l'ordre attendu de récupérabilité et les motifs de rapports exacts dans les secteurs réduits.
 
 ## Statut particules
 
@@ -54,39 +57,41 @@ main, et non comme une affirmation selon laquelle tout le spectre observé serai
 
 ## Articles
 
-**Observers are all you need** est l'article technique principal. Il donne l'énoncé le plus large du programme OPH, de ses branches de dérivation actuelles et de la surface actuelle de benchmarks IBM Quantum Cloud. Son épilogue interprétatif discute aussi l'hypothèse de strange loop et l'habitat état-et-loi exploitable au niveau théorématique qui soutient cette voie, tout en gardant explicites les questions plus fortes de carte de fermeture et de stabilité.
+**Observers Are All You Need** est le meilleur point d'entrée si vous voulez la vue d'ensemble. C'est le papier de synthèse : il explique ce que l'OPH cherche à faire, quels sont ses succès actuels les plus forts, quelles parties sont déjà au niveau théorématique et où se trouvent encore les vrais problèmes ouverts.
 
 - **PDF (article principal) :** [Observers are all you need](paper/observers_are_all_you_need.pdf)
 - **Source LaTeX :** [observers_are_all_you_need.tex](paper/observers_are_all_you_need.tex)
 
 **Recovering Relativity and Standard Model Structure from Observer-Overlap Consistency** est
-l'article compact de soumission. Il concentre le coeur falsifiable actuel : relativité issue de la
-cohérence de recouvrement, branche gravitationnelle conditionnelle et programme de
-reconstruction de la jauge.
+l'article compact du coeur reconstruit. Si vous voulez la surface de revendications la plus nette
+et la plus falsifiable de l'OPH, c'est ici qu'il faut commencer : branche relativiste,
+branche gravitationnelle, reconstruction de la jauge et fermeture fixe-cutoff du paquet de jauge
+supérieure.
 
 - **PDF (article compact de soumission) :** [Recovering Relativity and Standard Model Structure from Observer-Overlap Consistency](paper/recovering_relativity_and_standard_model_structure_from_observer_overlap_consistency_compact.pdf)
 - **Source LaTeX :** [recovering_relativity_and_standard_model_structure_from_observer_overlap_consistency_compact.tex](paper/recovering_relativity_and_standard_model_structure_from_observer_overlap_consistency_compact.tex)
 
-**Deriving the Particle Zoo from Observer Consistency** est l'article sur le spectre de particules.
-Il rassemble la route OPH actuelle depuis le paquet théorématique structurel partagé et la
-constante de pixel \(P\) jusqu'aux lignes bosoniques et quarkiques déjà rapportées, tout en
-gardant les leptons chargés, les neutrinos à saveur étiquetée et les hadrons explicitement marqués
-comme fronts de fermeture encore ouverts.
+**Deriving the Particle Zoo from Observer Consistency** est l'article de statut sur le spectre de
+particules. Il demande jusqu'où une échelle de calibration commune peut être poussée dans le
+spectre observé, enregistre les sorties actuelles pour les bosons, Higgs/top et plusieurs quarks,
+et garde explicites les frontières encore ouvertes pour les leptons chargés, les neutrinos et les
+hadrons.
 
 - **PDF :** [Deriving the Particle Zoo from Observer Consistency](paper/deriving_the_particle_zoo_from_observer_consistency.pdf)
 - **Source LaTeX :** [deriving_the_particle_zoo_from_observer_consistency.tex](paper/deriving_the_particle_zoo_from_observer_consistency.tex)
 
-**Reality as a Consensus Protocol** est l'article compagnon orienté informatique. Il présente la
-lecture distribuée/calculatoire de l'OPH et reformule la loi objective comme point fixe de la
-réconciliation entre patchs d'observateurs.
+**Reality as a Consensus Protocol** est l'article sur l'épine computationnelle de l'OPH. Il
+reformule le cadre comme une réconciliation locale asynchrone sur un réseau de patchs et rend
+précise l'idée selon laquelle la loi objective est un point fixe indépendant du calendrier des
+mises à jour.
 
 - **PDF :** [Reality as a Consensus Protocol](paper/reality_as_consensus_protocol.pdf)
 - **Source LaTeX :** [reality_as_consensus_protocol.tex](paper/reality_as_consensus_protocol.tex)
 
-**Screen Microphysics and Observer Synchronization** est la note constructive de microphysique.
-Elle développe la couche de « matériel du simulateur » de l'OPH : modèles locaux finis
-d'écran, observables de recouvrement, critères d'observateur, couches d'enregistrement et
-opérations de synchronisation.
+**Screen Microphysics and Observer Synchronization** est l'article côté ingénierie. Il donne une
+architecture finie explicite de l'écran avec registres locaux, observables de recouvrement,
+couches d'enregistrement, critères d'observateur, interfaces de réparation et cibles de
+synchronisation.
 
 - **PDF :** [Screen Microphysics and Observer Synchronization](paper/screen_microphysics_and_observer_synchronization.pdf)
 - **Source LaTeX :** [screen_microphysics_and_observer_synchronization.tex](paper/screen_microphysics_and_observer_synchronization.tex)
@@ -183,7 +188,7 @@ Le cadre repose sur quatre axiomes centraux plus un axiome de sélection :
 | **A4** | Markov local | L'information mutuelle conditionnelle décroît à travers les colliers |
 | **MAR** | Réalisation admissible minimale | Parmi les secteurs admissibles, la Nature réalise le minimum lexicographique |
 
-Les hypothèses structurelles supplémentaires (MaxEnt, prémisses de limite d'échelle contrôlée et de branche géométrique OPH, mélange exponentiel) sont détaillées dans la [source principale](paper/tex_fragments/PAPER.tex).
+Les hypothèses structurelles supplémentaires sont détaillées dans *Recovering Relativity and Standard Model Structure from Observer-Overlap Consistency* et synchronisées dans le papier principal de synthèse.
 
 ## La chaîne de prédictions
 

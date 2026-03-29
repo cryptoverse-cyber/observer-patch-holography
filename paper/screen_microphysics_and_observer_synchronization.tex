@@ -20,65 +20,35 @@
 \OPHPaperReleaseBanner
 
 \begin{abstract}
-This paper is a fixed-cutoff microphysics and observer-interface note for Observer-Patch Holography (OPH). The
-objective is constructive and simulator-facing: choose one finite local screen model that can
-actually be encoded in qubits, make the map from local registers to patch algebras and overlap
-observables explicit, and state how stable records, observer patterns, local interaction, and
-observer-level synchronization can be built inside that same microscopic system. The working
-choice is a constrained finite gauge-register or quantum-link style model on a cellulated
-screen, used here as a \emph{reference architecture} rather than as a claim that the unique OPH
-UV completion has already been identified. We separate reused OPH structure, architecture-level
-claims, simulator targets, and conjectural bridges. In particular, this note does \emph{not}
-claim that the OPH continuum or gravity branch has already been derived from the present
-microphysics. The deliverable of this round is a sharper blueprint: local Hilbert spaces,
-qudit-to-qubit encoding agenda, patch and overlap observable dictionary, observer criterion,
-synchronization and repair options, a first implementable reference model, and a validation
-package that can fail.
+This paper is the engineering side of Observer-Patch Holography (OPH). It asks what a concrete
+microscopic model would actually have to look like if patch algebras, overlaps, records, repair,
+and observer synchronization are meant as more than abstract words. The answer given here is a
+finite screen model, encodable in qubits, in which local registers, patch observables, overlap
+observables, records, and repair instruments are all made explicit.
+
+The point of the paper is not to claim that the final OPH UV completion has already been found.
+The point is to supply a workable reference architecture: a finite gauge-register or quantum-link
+style model on a cellulated screen that shows how stable records, observer patterns, local
+interaction, and synchronization could arise inside one shared microscopic system. The paper
+therefore separates what is already explicit at fixed cutoff, what is a simulator target, and
+what still belongs to a later continuum or gravity lift.
 \end{abstract}
 
 \tableofcontents
 \newpage
 
-\section{Project Charter}
+\section{Scope}
 
-\textbf{Status.} Extra side paper. Not part of the compact recovered core. It now carries
-fixed-cutoff theorem packages for the observer-side measurement and checkpoint/restoration
-interfaces, while the continuum/gravity and global-consensus lifts remain open.
-
-\textbf{Purpose.}
-\begin{enumerate}[leftmargin=2em]
-\item Give a concrete reference architecture for local finite screen degrees of freedom.
-\item Make the bridge from local registers to patches, overlaps, records, observers, and
-synchronization explicit enough to build toy simulators and fixed-cutoff theorem packages.
-\item Keep theorem claims, simulator claims, and conjectural bridges sharply separated.
-\item Feed the existing OPH microphysics, repair, and observer branches without pretending
-to close them automatically.
-\end{enumerate}
-
-\textbf{Non-goals.}
-\begin{enumerate}[leftmargin=2em]
-\item Do not claim that a unique microscopic UV completion is known; under the current OPH
-axioms, inert ancillary refinements already leave the physical branch unchanged.
-\item Do not claim that the OPH scaling-limit continuum or gravity branch is already derived
-here.
-\item Do not treat ``observer'' as a consciousness claim.
-\item Do not treat synchronization of overlap data as a proof of full continuum closure.
-\end{enumerate}
-
-\textbf{Phase-1 output.} A reference microscopic screen model, a qubit-encoding agenda, a patch
-and overlap dictionary, an observer criterion, a synchronization design space, and a simulator
-validation package.
+This paper gives a concrete reference architecture for local finite screen degrees of freedom, an explicit bridge from local registers to patches, overlaps, records, observers, and synchronization, and fixed-cutoff theorem packages for measurement and checkpoint/restoration. It keeps theorem claims, simulator claims, and conjectural bridges sharply separated. It does not claim that a unique microscopic UV completion is known, that the OPH scaling-limit continuum or gravity branch is derived here, that ``observer'' is a consciousness claim, or that synchronization of overlap data proves full continuum closure.
 
 \section{Claim Taxonomy}
 
-The point of this paper is not to maximize the number of statements called ``derived.'' The
-point is to keep the layers clean.
+The claims in this paper fall into five types.
 
-\begin{enumerate}[leftmargin=2em,label=\textbf{T\arabic*.}]
+\begin{enumerate}[leftmargin=2em,label=\textbf{(\roman*)}]
 \item \textbf{Reused OPH structure.} The OPH screen-net picture, overlap consistency language,
 local MaxEnt and refinement-stability branch, recoverable generalized entropy package, and the
-regulator-scale edge-center completion language are reused as background structure. This paper
-does not re-prove them.
+regulator-scale edge-center completion language are reused as background structure.
 
 \item \textbf{Architecture claims.} Once one finite gauge-register reference architecture is
 chosen, the patch algebra, overlap algebra, edge-sector observables, record layer, and
@@ -93,7 +63,7 @@ schedules.
 phase of such models lands in the OPH modular-geometric branch and later supports the OPH
 continuum or gravity story, but that bridge is not proved here.
 
-\item \textbf{Excluded claims.} This note does not identify the final OPH microphysics, does not
+\item \textbf{Excluded claims.} This paper does not identify the final OPH microphysics, does not
 establish a unique global repair law, and does not close the Standard Model or continuum branches.
 \end{enumerate}
 
@@ -102,7 +72,7 @@ establish a unique global repair law, and does not close the Standard Model or c
 Several microscopic families are logically possible: constrained finite gauge registers,
 quantum-link truncations of compact gauge systems, string-net or quantum-double models,
 generic tensor-network ans\"atze, or ad hoc observer automata attached to a screen. For a
-phase-1 constructive draft, the first working model should be selected by engineering
+reference-model construction, the first working model should be selected by engineering
 criteria rather than by aesthetic breadth.
 
 The selection criteria are:
@@ -199,7 +169,7 @@ Microscopic screen picture
 
 The simulator-facing question is therefore not ``what is the final microscopic UV completion?'' It is
 ``can one finite local screen model realize the OPH patch, edge, record, and synchronization
-interfaces well enough to be testable?'' In the current OPH suite, the physically meaningful
+interfaces well enough to be testable?'' In OPH, the physically meaningful
 uniqueness statement is quotient-level implementation hiding together with inert ancillary
 stabilization, not uniqueness of one screen-register presentation.
 
@@ -300,12 +270,12 @@ presentation this is the basis $|g\rangle_e$; in a quantum-link truncation it is
 representation basis.
 
 \item \textbf{Gauss projector $P_v$.}
-This is the local admissibility check. It says which neighboring link configurations may be
-regarded as physical around a vertex.
+The Gauss projector is the local admissibility check. It selects the neighboring link
+configurations that are physical around a vertex.
 
 \item \textbf{Plaquette operator $B_f$ or loop operator $W_\gamma$.}
-This is the patch-level probe of curvature, flux, or sector excitation. Closed loops contained
-inside a patch belong to $\mathcal A(P)$.
+The plaquette or loop operator probes curvature, flux, or sector excitation. Closed loops
+contained inside a patch belong to $\mathcal A(P)$.
 
 \item \textbf{Boundary or collar sector projectors $\Pi_{\alpha}$.}
 These are the overlap-accessible center observables. They are the natural candidates for
@@ -339,9 +309,8 @@ Patch/overlap interface
    it is a selected shared observable family on the overlap
 \end{verbatim}
 
-This is where the bridge to observers becomes concrete. An observer never needs access to the
-full global state. It needs persistent access to some patch algebra and to a stable shared
-observable family on overlaps with neighboring patches.
+The observer interface is therefore local: persistent access to a patch algebra together with a
+stable shared observable family on overlaps is sufficient.
 
 \section{Records and the Observer Criterion}
 
@@ -413,15 +382,15 @@ Local registers --> records --> observer pattern --> synchronization
 
 \section{Interaction, Synchronization, and Repair}
 
-The useful phase-1 object is not a vague ``repair option'' but a finite overlap interface that a
-simulator can instantiate on every edge of the patch-overlap graph. For each neighboring patch
-pair $(P,Q)$, the present paper should specify the support of the update, the declared shared
+The fixed-cutoff object used here is a finite overlap interface that a simulator can instantiate
+on every edge of the patch-overlap graph. For each neighboring patch
+pair $(P,Q)$, the paper specifies the support of the update, the declared shared
 observable family, the finite syndrome alphabet, the local correction menu, the acceptance rule,
 and the logging contract. What it does \emph{not} yet claim is a theorem that a chosen family
 must terminate, be confluent, or yield a continuum-consistent normal form. Those theorem-level
 questions remain on the consensus-paper side of the boundary.
 
-The phase-1 default should be explicit syndrome-based overlap repair rather than a fully
+The default should be explicit syndrome-based overlap repair rather than a fully
 implicit dissipative dynamics. Dissipative or record-mediated variants may later be useful, but
 they should compile to the same fixed-cutoff interface: read shared data, compare it, choose one
 local candidate correction, accept or reject it by a declared contract, then refresh the record
@@ -513,7 +482,7 @@ surface of the regulator itself.
 For each neighboring pair $(P,Q)$ with shared collar $B_{PQ}=P\cap Q$, define the one-step
 update neighborhood $N_{PQ}$ to be $B_{PQ}$ together with all links, vertices, record registers,
 and faces at graph distance at most one from $B_{PQ}$. No single repair step is allowed to act
-outside $N_{PQ}$. A phase-1 simulator should instantiate one typed overlap object
+outside $N_{PQ}$. A reference simulator should instantiate one typed overlap object
 \begin{equation}
 \mathfrak I_{PQ}
 =
@@ -678,7 +647,7 @@ L_{PQ}(S_{PQ})
 \sum_{r=1}^{n_M}\sigma_r^{\mathrm{stale}}
 \Bigr),
 \end{equation}
-ordered lexicographically from left to right. A phase-1 accepted correction should strictly
+ordered lexicographically from left to right. An accepted correction should strictly
 lower $L_{PQ}$. This hard-codes the priority order
 \begin{equation}
 \text{gauge admissibility}
@@ -826,7 +795,7 @@ For t = 1,...,T_max:
 \end{verbatim}
 
 Only the schedule $\nu_t$ should vary across the simplest simulation experiments. Reasonable
-phase-1 choices are round-robin over overlap edges, uniform random asynchronous sampling, or
+schedule choices are round-robin over overlap edges, uniform random asynchronous sampling, or
 priority by current largest $\Xi_{PQ}$. The interface $\mathfrak I_{PQ}$ should remain
 unchanged across those schedule experiments.
 
@@ -855,9 +824,9 @@ repair contract, and $\mathcal W_{PQ}:=\operatorname{commit}_{PQ}$ performs the 
 move together with the permitted record refresh. Every committed branch is supported on $N_{PQ}$
 and acts as the identity outside that neighborhood.
 
-This is the exact object-level embedding needed for the regulator lane: packets, syndromes,
-scores, candidate menus, and repair branches are all actual regulator-side data. What is
-\emph{not} automatic is a closed autonomous dynamics on packet space alone. Define the joint
+This gives the object-level embedding used in the regulator lane: packets, syndromes,
+scores, candidate menus, and repair branches are all regulator-side data. A closed autonomous
+dynamics on packet space does not follow automatically. Define the joint
 packet readout
 \begin{equation}
 \mathbf q_{PQ}(\rho)
@@ -884,10 +853,10 @@ candidate branch $c$,
 \end{equation}
 If this packet-closure test passes, the microscopic instrument pushes forward to a genuine
 finite update rule on packet space. If it fails, the finite packet layer is still an embedded
-readout/actuation interface, but not yet an autonomous quotient dynamics. That is the precise
-boundary to keep explicit for the later consensus paper.
+readout/actuation interface, without an autonomous quotient dynamics. This is the boundary kept
+explicit for the later consensus paper.
 
-\subsection{Phase-1 acceptance tests and handoff boundary}
+\subsection{Acceptance Tests and Handoff Boundary}
 
 The first simulator build should be required to pass explicit interface-level tests before any
 larger interpretation is attached to it.
@@ -932,7 +901,7 @@ On a deliberately frustrated cycle, the loop should surface unresolved syndromes
 dependence in the logs rather than silently overwriting record summaries to fake agreement.
 \end{enumerate}
 
-This is the intended handoff boundary. The present microphysics paper owns the fixed-cutoff
+The present microphysics paper owns the fixed-cutoff
 regulator $\mathfrak R_{\Gamma}$, the embedded finite interface layer
 $\mathfrak F_{\Gamma}$, the overlap object $\mathfrak I_{PQ}$, the local repair instrument
 $\mathcal R_{PQ}$, the packet-closure tests, and the unit/integration tests that a simulator can
@@ -947,8 +916,8 @@ the global consensus theorems have already been proved here.
 A first actual build should be deliberately small, explicit, and reproducible. The target of the
 first round is not a unique UV claim; it is one finite cutoff model with enough declared
 structure that two independent teams would compile the same registers, the same layers, the same
-logged observables, and the same validation tests. It should now carry two coupled deliverables
-on the same microscopic screen: the record/repair interface of the phase-1 synchronization
+logged observables, and the same validation tests. It should carry two coupled deliverables
+on the same microscopic screen: the record/repair interface of the synchronization
 architecture, and an explicit edge-sector thermal branch on the same declared overlaps so the
 edge heat-kernel/Casimir law is tested on the same regulator data rather than on a separate toy
 model.
@@ -986,7 +955,7 @@ B_{XY}&=P_X\cap P_Y=\{f_{+++},f_{++-}\},\\
 B_{XZ}&=P_X\cap P_Z=\{f_{+++},f_{+-+}\},\\
 B_{YZ}&=P_Y\cap P_Z=\{f_{+++},f_{-++}\},
 \end{align}
-and the triple overlap is the single face $f_{+++}$. This specific cover is the required phase-1
+and the triple overlap is the single face $f_{+++}$. This specific cover is the required reference-model
 geometry because it already contains pairwise collars, a nontrivial triple-overlap consistency
 check, and one face unique to each patch:
 \begin{equation}
@@ -1020,8 +989,7 @@ P_v=\frac{1+A_v}{2},
 \qquad
 B_f=\prod_{e\subset\partial f}Z_e.
 \end{equation}
-For the phase-1 pilot, the required record layer is not one qubit per patch but three qubits per
-patch,
+For the reference pilot, the record layer uses three qubits per patch,
 \begin{equation}
 R_X=(r_X^{\mathrm{bulk}},r_X^{(Y)},r_X^{(Z)}),\quad
 R_Y=(r_Y^{\mathrm{bulk}},r_Y^{(X)},r_Y^{(Z)}),\quad
@@ -1078,7 +1046,7 @@ a_v(t)\in\{+1,-1\},
 \qquad a_v(t)=\langle A_v\rangle_t
 \end{equation}
 in the exact backend, or their sampled eigenvalues in the shot backend. Because the allowed
-phase-1 bulk and repair moves all commute with every $A_v$, any nonzero star syndrome in the
+reference-model bulk and repair moves all commute with every $A_v$, any nonzero star syndrome in the
 pilot is treated as an implementation fault, not as physical dynamics.
 \item \textbf{Record-write layer $L_{\mathrm{write}}$.}
 Overwrite the record qubits with the declared summaries
@@ -1203,7 +1171,7 @@ Section~\ref{sec:microphysics-feeds-e24} and compare long-run frequencies with t
 edge-state weights.
 \end{enumerate}
 
-The repair menu and the thermal menu need not coincide term by term, but they must be drawn from
+The repair menu and the thermal menu may differ term by term, but they must be drawn from
 the same gauge-preserving local screen operations on $N_{IJ}$. That is what makes the edge law a
 statement about the present microphysics rather than about a separate external model.
 
@@ -1333,7 +1301,7 @@ p_{\mathbf 1}:p_{\mathbf 1'}:p_{\mathbf 2}
 =
 1:e^{-6t}:2e^{-3t}.
 \end{equation}
-This is the first build in which the $d_R$ factor is visible rather than absorbed into equal
+This build is the first one in which the $d_R$ factor is visible rather than absorbed into equal
 abelian multiplicities. A correct simulator must therefore fit the $2e^{-3t}$ weight of the
 standard irrep better than the wrong law $e^{-3t}$ that would arise if the entropic $d_R$
 factor were missing.
@@ -1371,7 +1339,7 @@ compact limit. Those are later merge-level questions.
 
 \subsection{Required deliverables of the first build package}
 
-A phase-1 implementation team should treat the following outputs as mandatory rather than
+An implementation should treat the following outputs as mandatory rather than
 optional.
 \begin{enumerate}[leftmargin=2em]
 \item A machine-readable geometry file containing the vertex list, oriented edge list, face list,
@@ -1399,8 +1367,8 @@ unique UV completion or close any continuum claim.
 
 \section{Simulator Validation Package}
 
-A useful simulator package has to be able to fail. In phase 1 the validation target is not
-continuum closure. It is only the fixed-cutoff architecture claimed in this note: gauge-admissible
+A useful simulator package has to be able to fail. The validation target is not
+continuum closure. It is the fixed-cutoff architecture claimed here: gauge-admissible
 local layers, measurable overlap observables, persistent records, and a repair loop whose
 behavior can be diagnosed. The validation package should therefore be distributed with the first
 build, not added later as an informal plotting appendix.
@@ -1432,7 +1400,7 @@ three-cycle defect on $B_{YZ}$ before the first compare layer; run $20$ cycles.
 
 For each benchmark, run all six sweep orders of the three overlaps $(XY,XZ,YZ)$. The analytic
 backend must run each order once exactly. The sampled backend must run each order with $32$
-independent seeds and $1024$ shots per seed. A reported phase-1 pass is not valid unless it
+independent seeds and $1024$ shots per seed. A reported reference-model pass is not valid unless it
 includes all named benchmarks and all six schedule orders.
 
 \subsection{Required run manifest and per-cycle log}
@@ -1509,7 +1477,7 @@ the residual-obstruction plateau time $N_{\mathrm{plat}}$, defined for frustrate
 the first cycle after which both the residual label and the residual value of $\Phi$ stop
 changing.
 
-\subsection{Phase-1 pass and fail gates}
+\subsection{Pass and Fail Gates}
 
 The validation package should use explicit gates rather than qualitative language.
 \begin{enumerate}[leftmargin=2em]
@@ -1536,8 +1504,8 @@ C_r(5)\ge 0.80,
 \qquad
 Q_{\mathrm{readback}}\le 0.05.
 \end{equation}
-If these fail while the kinematic gate passes, the architecture has local observables but not a
-usable record layer.
+If these fail while the kinematic gate passes, the architecture has local observables while
+lacking a usable record layer.
 \item \textbf{$\mathbb Z_2$ synchronization gate.}
 On \texttt{Z2-1-stale-record}, \texttt{Z2-2-collar-flip}, and \texttt{Z2-3-double-overlap}, the
 analytic backend must reach $\Phi=0$ within $12$ repair activations for all six schedules. The
@@ -1647,13 +1615,13 @@ failing to distinguish removable mismatch from a persistent external fault sourc
 
 \subsection{Reading rule for the validation package}
 
-Even a full phase-1 architecture pass would not prove the OPH continuum branch, would
+Even a full reference-architecture pass would not prove the OPH continuum branch, would
 not prove the final repair law, and would not identify a unique microscopic UV completion. It would only
-show that the fixed-cutoff architecture claimed in this note has been instantiated concretely
+show that the fixed-cutoff architecture claimed here has been instantiated concretely
 enough to measure and debug. Conversely, failure is informative. A failed gate tells the
 implementation team which layer is not doing the job the paper assigns to it, and the required
 logs above tell them where to start looking. Literal microscopic uniqueness is not the target
-invariant here; the current OPH theorem surface fixes only the physical branch modulo gauge or
+invariant here; the OPH theorem surface fixes only the physical branch modulo gauge or
 implementation hiding and inert ancillary refinement.
 
 \section{Dependence on Existing OPH Results and Open Bridges}
@@ -1665,16 +1633,14 @@ implicit. The intended claim boundary is therefore
 \begin{equation}
 \text{imported OPH framework}
 \;\longrightarrow\;
-\text{phase-1 reference architecture}
+\text{reference architecture}
 \;\longrightarrow\;
 \text{later bridge theorems}.
 \end{equation}
 
 \subsection{Imported OPH structure used here without re-derivation}
 
-The following ingredients are reused as background OPH structure or already-existing OPH
-results/conventions. Their status is inherited from the papers that establish them; this note
-does not upgrade or re-prove them.
+The following ingredients are reused as background OPH structure. Their status is inherited from the papers that establish them.
 \begin{enumerate}[leftmargin=2em]
 \item The screen-net viewpoint on a horizon screen $S^2$, together with patch algebras and the
 language of overlap consistency.
@@ -1683,23 +1649,22 @@ projectors $\Pi_{\alpha}$, and the idea that overlap-accessible data live in a b
 sector decomposition.
 \item The recoverable generalized entropy and Markov/recovery vocabulary in which conditional
 mutual information, collar recovery, and edge data are meaningful organizing notions.
-\item The local MaxEnt plus refinement-stability branch as the current OPH dynamical background
+\item The local MaxEnt plus refinement-stability branch as the OPH dynamical background
 against which regulated architectures are later judged.
 \item The OPH observer-access tuple $(P_O,\mathcal A(P_O),\rho_O,R_O)$, understood as an
 existing access model for a record-bearing internal subsystem.
 \end{enumerate}
 
-\subsection{New claims made only at the architecture level in this note}
+\subsection{Architecture-level content}
 
-Relative to that imported framework, the genuinely new content of this side note is narrower than
-full OPH completion but no longer merely a phase-1 dictionary.
+Relative to that imported framework, the new content is at the architecture level rather than at the full OPH-completion level.
 \begin{enumerate}[leftmargin=2em]
 \item It selects one finite gauge-register or quantum-link style reference architecture for a
 cellulated screen, explicitly as a working model rather than as the unique OPH UV completion.
 \item It gives an explicit fixed-cutoff dictionary from local registers to patch observables,
 overlap observables, collar-sector readouts, record variables, observer interfaces, and mismatch
 syndromes.
-\item It specifies one phase-1 repair interface
+\item It specifies one fixed-cutoff repair interface
 \begin{equation}
 \mathcal R_{PQ}=\mathcal W_{PQ}\circ \mathcal C_{PQ}\circ \mathcal M_{PQ}\circ \mathcal P_{PQ},
 \end{equation}
@@ -1710,8 +1675,8 @@ $S_3$ upgrade second.
 mismatch, record persistence, and schedule-divergence diagnostics.
 \end{enumerate}
 
-These are fixed-cutoff regulator claims, simulator-interface claims, and the audit-surface
-theorem packages and partial closures audited in this note. They are still not continuum
+These are fixed-cutoff regulator claims, simulator-interface claims, and theorem packages at the
+architecture level. They are still not continuum
 theorems, gravity theorems, or quantitative Standard Model closures.
 
 \subsection{Boundary markers between imported structure and new architecture content}
@@ -1722,7 +1687,7 @@ Three boundaries matter for reading the paper correctly.
 claim here is only that the chosen finite-register architecture can be organized so that a
 declared family of fixed-cutoff observables plays that interface role.
 \item The tuple $(P_O,\mathcal A(P_O),\rho_O,R_O)$ is imported OPH observer language; the new
-content here is the added update interface $\mathcal U_O$ and the operational phase-1 criterion
+content here is the added update interface $\mathcal U_O$ and the operational fixed-cutoff criterion
 for when a persistent pattern counts as an observer-like subsystem in simulation.
 \item The need for overlap repair or synchronization is imported from the broader OPH consistency
 program; the new content here is only the explicit microscopic syntax of syndromes, local costs,
@@ -1735,40 +1700,28 @@ fixed-cutoff theorem packages directly, while leaving uniqueness and continuum l
 
 \subsection{Open bridges left deliberately open}
 
-The deliberately open bridges are now narrower than they were at the start of this note.
+The remaining open bridges are:
 \begin{enumerate}[leftmargin=2em]
 \item \textbf{Microphysics uniqueness.}
 Nothing below claims that the octahedral $\mathbb Z_2$ pilot, the $S_3$ upgrade, or the
 thermalized edge-law branch are the unique OPH microphysics. They are explicit regulated
-fixed-cutoff constructions on which the present observer-side theorem packages are carried and
-the remaining structural branches are made explicit enough to finish.
+fixed-cutoff constructions on which the observer-side theorem packages are carried and
+the remaining structural branches are stated explicitly.
 \item \textbf{Global repair theory.}
 The local repair kernel, the regulator embedding, the edge-law package, and the local
 measurement/backup packages are carried here as fixed-cutoff theorem packages. What remains
 beyond those branches is the next layer only: global termination, local confluence,
 refinement-stable consensus, continuum-limit uniqueness, and the larger continuum/gravity lift.
 \item \textbf{Continuum / gravity lift.}
-The present results are fixed-cutoff theorems. This note still does not derive the OPH
+The present results are fixed-cutoff theorems. This paper does not derive the OPH
 continuum, the geometric modular branch, or gravity from the finite regulator.
-\item \textbf{Downstream merges.}
-The later compact, reality, and observer papers still need notation-synchronized merges. For all
-four imported packages, those later edits are now packaging and placement work on downstream
-papers, not new proof obligations on the present microphysics note.
 \end{enumerate}
 
-So the right asymmetry is now this: imported OPH structure stays imported, the finite reference
-architecture stays finite, the two observer-side theorem packages are closed on this microphysics
-paper surface, and the regulator and edge-law branches now have their remaining closure gaps made
-explicit rather than hidden. The remaining open work is the larger uniqueness / consensus /
-continuum program together with those still-open regulator and edge-law closures.
+The imported OPH structure stays imported, the finite reference architecture stays finite, the two observer-side theorem packages are closed at fixed cutoff, and the regulator and edge-law branches have their remaining closure gaps stated explicitly. The remaining open work is the larger uniqueness / consensus / continuum program together with the still-open regulator and edge-law closures.
 
-\section{Audit-Surface Status of the Mapped Leaf Tasks}
+\section{Fixed-Cutoff Theorem Packages}
 
-This side paper now serves as the fixed-cutoff microphysics surface for four later theorem
-packages: regulated patch-net embedding, edge heat-kernel / Casimir weights,
-measurement/Born-rule, and observer checkpoint/restoration. The merge boundary is explicit:
-those packages are carried here first, and the later compact, reality, and observer papers
-inherit them by notation-synchronized merge rather than by reproving them on a different surface.
+This paper proves four fixed-cutoff theorem packages: regulated patch-net embedding, edge heat-kernel / Casimir weights, measurement/Born-rule, and observer checkpoint/restoration.
 
 \subsection{Regulated patch-net embedding theorem}\label{sec:microphysics-feeds-a01}
 
@@ -1777,7 +1730,7 @@ From the imported OPH background we use only the screen/patch/collar language, t
 patch algebras and overlap-accessible collar sectors, and the observer-access tuple
 $(P_O,\mathcal A(P_O),\rho_O,R_O)$. The finite cellulation, the explicit patch-overlap graph,
 the boundary-fixed patch and collar algebras, the record registers, the packet readouts, and the
-local repair instruments are the new regulated content of this note.
+local repair instruments are the regulated content established here.
 
 \paragraph{Regulator-side object.}
 On the fixed cellulation $\Gamma$ and fixed patch cover $\mathcal P=\{P_I\}_{I\in\mathcal V}$,
@@ -1879,12 +1832,7 @@ that family. When it fails, the embedding proved here still stands, but the miss
 closure is explicit and logged rather than hidden.
 
 \paragraph{Conclusion for this package.}
-This closes the regulated patch-net embedding package on the present microphysics paper. The
-later consensus paper no longer needs to posit patch vertices, overlap alphabets, syndrome
-components, or candidate menus abstractly. Those objects are now fixed here by the regulator.
-What remains next is packet-level closure when available, global termination, local confluence,
-schedule robustness, normal-form existence, residual-obstruction classification, and
-refinement-limit lift.
+The regulated patch-net embedding is explicit at fixed cutoff: patch vertices, overlap alphabets, syndrome components, and candidate menus are fixed by the regulator. The remaining items are packet-level closure when available, global termination, local confluence, schedule robustness, normal-form existence, residual-obstruction classification, and refinement-limit lift.
 
 \subsection{Edge heat-kernel / Casimir theorem}\label{sec:microphysics-feeds-e24}
 
@@ -1926,7 +1874,7 @@ The stationary sector law of the thermalized overlap branch is
 \qquad
 Z_\beta=\sum_\gamma d_\gamma e^{-\beta C_2(\gamma)}.
 \end{equation}
-In other words, the explicit regulated microphysics carries the edge-sector Casimir law rather
+Thus the explicit regulated microphysics carries the edge-sector Casimir law rather
 than only logging candidate sector frequencies.
 
 \paragraph{Proof.}
@@ -1964,8 +1912,8 @@ heat-kernel / Casimir form
 w_\beta(R)\propto d_R e^{-\beta C_2(R)}
 \end{equation}
 on irreducible representation labels $R$. Thus the explicit screen microphysics carries the
-compact-paper edge-law branch in this note, while leaving only refinement-stable
-universality and UV uniqueness for later work.
+compact-paper edge-law branch, while leaving refinement-stable
+universality and UV uniqueness open.
 
 \paragraph{Fixed-cutoff closure.}
 The previous reference-model section supplies the concrete same-overlap realization needed for
@@ -1976,10 +1924,7 @@ Markov-chain exercise. It is the explicit fixed-cutoff edge law of the same regu
 microphysics used for synchronization and repair.
 
 \paragraph{Conclusion for this package.}
-This closes the edge heat-kernel / Casimir package on the present microphysics paper. The later
-compact-paper merge still needs notation-synchronized transplant of this theorem package, but
-not a new proof. What remains next is the larger uniqueness and refinement-stable universality
-program, not an unfinished leaf-level Casimir derivation.
+This fixes the edge heat-kernel / Casimir package at fixed cutoff. The remaining items are uniqueness and refinement-stable universality, not a missing leaf-level Casimir derivation.
 
 \subsection{Measurement / Born-rule theorem stack}
 
@@ -1999,7 +1944,7 @@ projectors exposed to the observer-accessible collar interfaces.
 
 \paragraph{Centrality proposition.}
 Within one completed compare/write/verify slice, $\mathcal Z_{\mathrm{rec}}(t)$ is a commutative
-subalgebra and commutes with every declared readout observable used by the phase-1 instrument.
+subalgebra and commutes with every declared readout observable used by the measurement instrument.
 
 \paragraph{Proof.}
 Every generator of $\mathcal Z_{\mathrm{rec}}(t)$ is, by construction, a projector on a finite
@@ -2037,10 +1982,8 @@ read of the same event has probability $1$. If the support is touched, the cycle
 the precise place where the conditioning surface changed. So the measurement package is not only
 defined but auditable.
 
-\paragraph{Merge boundary.}
-This closes the fixed-cutoff measurement/Born-rule package on the microphysics surface. The later
-supplement and observer-paper merges should simply import the same record algebra, Born trace,
-and conditioning statements into their surrounding notation.
+\paragraph{Conclusion for this package.}
+This closes the fixed-cutoff measurement/Born-rule package: the record algebra, Born trace, and conditioning statements are fixed on the microphysics surface.
 
 \subsection{Observer continuation / backup theorem stack}
 
@@ -2115,14 +2058,12 @@ Thus the observer-identity criterion is operational and testable rather than rhe
 Any exact copy of $\mathrm{Chk}_O(t)$ is a valid backup. Any approximate copy satisfying the
 same restoration bound is an $\varepsilon$-backup with explicit quantitative degradation.
 
-\paragraph{Merge boundary.}
-This closes the fixed-cutoff observer checkpoint/restoration package on the microphysics surface.
-The later observer-paper merge should port the checkpoint, restoration, error, and identity
-statements above into the observer paper's surrounding vocabulary.
+\paragraph{Conclusion for this package.}
+This closes the fixed-cutoff observer checkpoint/restoration package: the checkpoint, restoration, error, and identity statements above are fixed on the microphysics surface.
 
-\subsection{Program status after this note}
+\subsection{Open Fixed-Cutoff and Continuum Questions}
 
-The program-level reading is now different from the earlier phase-1-only reading.
+The remaining open items are:
 \begin{enumerate}[leftmargin=2em]
 \item The regulated patch-net embedding package now has an explicit regulated tuple and local
 interface theorem here, but its downstream closure still needs one more pass.
@@ -2132,22 +2073,13 @@ here, but its compact heat-kernel lift still needs one more pass.
 algebra, Born trace, and conditioning theorem stack.
 \item The fixed-cutoff observer checkpoint/restoration package is closed here by the
 checkpoint/restoration/error/identity theorem stack.
-\item What remains after this paper is the unfinished regulator and edge-law closure work, plus
-merge propagation, refinement-stable universality, global consensus analysis, and
+\item What remains after these fixed-cutoff results is the unfinished regulator and edge-law closure work, refinement-stable universality, global consensus analysis, and
 continuum/gravity lift.
 \end{enumerate}
 
-So the microphysics side paper is no longer merely upstream scaffolding for those four leaves. It
-is already the theorem-bearing source for the two observer-side closures, and it remains the
-active paper on which the regulator and edge-law branches are being finished before later paper
-merges.
-
 \section{Conclusion}
 
-The constructive gap addressed by this note is now smaller in one precise sense: the regulated
-screen architecture is no longer only a dictionary of possible microscopic objects. On this paper
-surface it carries two closed fixed-cutoff theorem packages and two sharpened in-progress
-structural branches:
+The regulated screen architecture carries two closed fixed-cutoff theorem packages and two sharpened structural branches:
 \begin{enumerate}[leftmargin=2em]
 \item the regulated patch-net embedding branch with its remaining closure gap made explicit,
 \item the edge-sector thermal/Casimir branch with its remaining heat-kernel lift made explicit,
@@ -2155,10 +2087,8 @@ structural branches:
 \item the checkpoint/restoration/backup observer package.
 \end{enumerate}
 
-That still does \emph{not} identify the unique OPH UV completion, prove global repair
+These results do \emph{not} identify the unique OPH UV completion, prove global repair
 convergence, derive the continuum/gravity branch, or finish the remaining regulator and edge-law
-closures. But it is no longer accurate to describe the paper as only a simulator-facing scaffold. It is now
-the current source paper for the closed observer-side theorem packages, while the regulated
-patch-net embedding and edge-law branches remain the next unfinished microphysics packages.
+closures. The regulated patch-net embedding and edge-law branches remain open, while the observer-side measurement and restoration packages are fixed-cutoff theorem surfaces.
 
 \end{document}

@@ -193,7 +193,7 @@ Equivalently, there exists a recovery map from AB to ABC with error controlled b
 1. **MaxEnt selection**: local states are chosen by maximum entropy given constraints.
 2. **Refinement-stable local branch**: the same finite local constraint family survives under refinement, so quasi-local propagation and endpoint control are carried internally by the MaxEnt branch rather than imported separately.
 3. **Geometric-branch condition**: in the controlled scaling limit, the realized cap net lies in the BW geometric modular class for caps and their conformal images, so BW$_{S^2}$ identifies the standard cap-preserving conformal dilation carried by that branch and fixes the \(2\pi\) normalization.
-4. **Gauge-as-gluing and obstruction data**: overlap identifications form a redundancy; loop defects live in a 2-group cocycle, with the central case as a simple truncation. A refinement-stable category of transportable edge sectors then reconstructs a compact gauge group.
+4. **Gauge-as-gluing and obstruction data**: overlap identifications form a redundancy; loop defects live in a 2-group cocycle, with the central case as a simple truncation. At fixed cutoff the genuinely noncentral branch now has a crossed-module higher-gauge collar and transport theorem, while the refinement-stable category of transportable edge sectors needed for compact gauge reconstruction remains a separate refinement-limit burden.
 5. **ExtEFT and UV limits**: a low-energy EFT limit exists (for SM contact)
    and either (a) a null-surface modular route is first pushed internally to
    strip additivity, the weak-tail-generator stage, and the derived positive
@@ -299,7 +299,7 @@ The "island formula" shows that after Page time, an island inside the black hole
 
 ### Anomalies as Loop-Gluing Obstructions
 
-Gluing overlap descriptions around loops can fail by a central phase. In the EFT limit this is the familiar 't Hooft anomaly. Vanishing of the obstruction is equivalent to loop-coherent gluing and immediately yields Standard Model-facing constraints, including hypercharge relations (and the Witten anomaly condition that N_c is odd).
+Gluing overlap descriptions around loops can fail by a central phase or, more generally, by a crossed-module higher-gauge defect. In the EFT limit the central truncation is the familiar 't Hooft anomaly. Vanishing of the relevant obstruction is equivalent to loop-coherent gluing and immediately yields Standard Model-facing constraints, including hypercharge relations (and the Witten anomaly condition that N_c is odd).
 
 ### Laws as Survivors
 
@@ -315,7 +315,7 @@ The Hilbert space is finite-dimensional. The second fundamental parameter, **scr
 
 ## 18.8 The Remaining Frontier
 
-The framework derives the Standard Model gauge group, the conditional scaling-limit Einstein branch, and the absence of gauge-mediated proton decay while keeping input-dependent cosmological statements and later phenomenological continuations explicitly separate from the recovered structural core. The main engineering deliverables are well-scoped: geometric modular flow on caps (BW$_{S^2}$) is established on the OPH geometric branch, while the next tasks are to force or verify that branch in concrete UV models. Non-central loop defects are classified by a 2-group cocycle; in the EFT limit this obstruction data is structurally analogous to anomaly cancellation, while hypercharges are fixed by the separate anomaly/Yukawa analysis once the SM gauge structure is in place. What remains is to compute those classes in concrete models and to derive the Lagrange multiplier $t$ from UV microphysics. On the string-side, the present OPH result is only a conditional worldsheet-like large-$N_{\mathrm{edge}}$ reorganization; any further critical-superstring completion remains conjectural.
+The framework derives the Standard Model gauge group, the conditional scaling-limit Einstein branch, and the absence of gauge-mediated proton decay while keeping input-dependent cosmological statements and later phenomenological continuations explicitly separate from the recovered structural core. The main engineering deliverables are well-scoped: geometric modular flow on caps (BW$_{S^2}$) is established on the OPH geometric branch, while the next tasks are to force or verify that branch in concrete UV models. Non-central loop defects are now closed at fixed cutoff by a higher-gauge crossed-module collar and transport package; in the EFT limit the central truncation of the same obstruction data is structurally analogous to anomaly cancellation, while hypercharges are fixed by the separate anomaly/Yukawa analysis once the SM gauge structure is in place. What remains is to connect those sectors to the refinement-stable transportable gauge branch and to derive the Lagrange multiplier $t$ from UV microphysics. On the string-side, the present OPH result is only a conditional worldsheet-like large-$N_{\mathrm{edge}}$ reorganization; any further critical-superstring completion remains conjectural.
 
 **Progress on numerical predictions.** The extraction of gauge couplings from
 edge-sector probabilities has been validated numerically in 2D gauge models.
@@ -443,8 +443,8 @@ QFT. We apply it once the cap inputs above are satisfied.
 
 **Recovery Maps and Fawzi-Renner Bounds**: The Petz recovery map and its error
 bounds are mathematical theorems. We apply them to S^2 patch networks to enable
-constructive gluing (tree covers explicit; loopy covers classified by 2-group
-obstructions).
+constructive gluing (tree covers explicit; loopy covers carrying theorem-level
+fixed-cutoff classification on the central and higher-gauge branches).
 
 ### Technical Frontier
 

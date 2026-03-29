@@ -297,10 +297,12 @@ $$\|\rho_{ABC} - (\mathrm{id}\otimes\mathcal R)(\rho_{AB})\|_1 \le 2\sqrt{\ln 2\
 
 (CMI in bits), and errors accumulate at most additively (capped by 2).
 
-**Loopy covers** require additional cycle-consistency control and remain an active target.
-Under a central-defect assumption, loop frustration becomes a Cech 2-cocycle in
-the center of triple-overlap algebras; global gluing is possible iff this
-obstruction class vanishes. In the EFT limit, this reduces to anomaly
+**Loopy covers** require additional cycle-consistency control. At fixed cutoff,
+the central-defect branch is governed by a Cech 2-cocycle in the center of
+triple-overlap algebras, while the genuinely noncentral branch is governed by a
+crossed-module / 2-group class \(q_\Sigma\in \check H^2(N_\Sigma,H_\Sigma\to
+G_\Sigma)\). Global gluing is possible iff the relevant obstruction class
+vanishes. In the EFT limit, the central truncation reduces to anomaly
 cancellation.
 
 This matches holographic expectations. In AdS/CFT, entanglement between boundary regions scales with the area of the minimal surface connecting them. The recovery rule says the same thing in our model: correlations scale with boundary area.

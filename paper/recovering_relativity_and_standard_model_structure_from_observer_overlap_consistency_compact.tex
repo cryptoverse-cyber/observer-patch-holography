@@ -39,7 +39,17 @@ Observer-Overlap Consistency\\[0.4em]
 \OPHPaperReleaseBanner
 
 \begin{abstract}
-We present a compact, falsifiable Phase-I statement of Observer-Patch Holography (OPH) as a conditional reconstruction program whose claimed recovered core is limited to relativity and Standard Model structure. From five axioms, the stated scaling-limit/categorical regularity package, and two external continuous inputs used only in the current quantitative implementation, the compact note derives a schedule-independent normal form for overlap consistency, a conditional Lorentz branch on the screen, a conditional Jacobson-type Einstein branch from fixed-cap generalized-entropy stationarity together with the null modular bridge and the scaling-limit null-stress premise, and conditional compact gauge reconstruction in the bosonic internal-gauge branch from a refinement-stable symmetric edge-sector colimit. After Axiom~\ref{ax:mar} (Minimal Admissible Realization, MAR) is imposed on the connected positive-dimensional Lie admissible class with one connected abelian charge factor, the realized low-energy gauge group on that realized branch is
+This paper is the compact statement of what Observer-Patch Holography (OPH) currently claims at
+its most defensible core. The goal is not to explain all of particle physics and gravity at once.
+The goal is to isolate the smallest theorem-bearing package in which relativity and the structural
+part of the Standard Model can be recovered from overlap consistency among local observer
+descriptions on a finite-capacity screen.
+
+Starting from five axioms and an explicit scaling-limit/categorical premise ledger, the paper
+derives a schedule-independent normal form for overlap consistency, a conditional Lorentz branch,
+a conditional Jacobson-type Einstein branch, and a conditional compact-gauge reconstruction route.
+Once the Minimal Admissible Realization axiom is imposed on the admissible low-energy class, the
+realized gauge structure on that branch is
 \[
 \frac{\SU(3)\times \SU(2)\times \U(1)}{\mathbb Z_6},
 \qquad
@@ -47,7 +57,12 @@ N_g=3,
 \qquad
 N_c=3,
 \]
-together with the exact rational hypercharge lattice for the realized one-generation Standard Model chiral matter package with one Higgs doublet. The realized counting chain is sequential rather than joint: on the realized MAR-admissible branch, the asymptotic-freedom/CP-capability window and minimal admissibility yield \(N_g=3\), and then Witten's \(\SU(2)\) anomaly parity constraint together with the same realized-branch selector yield \(N_c=3\). The two external continuous inputs of the present implementation are the pixel area
+together with the exact rational hypercharge lattice for the realized one-generation Standard
+Model chiral matter package with one Higgs doublet. The realized counting chain is sequential:
+first \(N_g=3\), then \(N_c=3\).
+
+The paper also states the present boundaries clearly. The quantitative implementation uses two
+external continuous inputs, the pixel area
 \[
 P \equiv a_{\mathrm{cell}}/\ell_P^2 = 1.63094
 \]
@@ -55,7 +70,12 @@ and the total screen capacity
 \[
 N_{\mathrm{scr}} \equiv \log \dim \mathcal H_{\mathrm{tot}} \sim 10^{122}.
 \]
-In the current implementation, $P$ feeds a supplement-backed gauge-coupling calibration sector and $N_{\mathrm{scr}}$ feeds the capacity branch for $\Lambda$; these non-core numerical branches are reported only as implementation-level checks, not as the recovered core itself. Charged-lepton/Koide, texture, capacity-level neutrino estimates, dark-sector, baryogenesis, black-hole-spectroscopy, proton-spin, proton-lifetime estimates beyond the structural exclusion of gauge-mediated decay, and string/worldsheet discussions are explicitly deferred continuations requiring additional ans\"atze beyond the recovered core and are not claimed as outputs of overlap consistency plus the stated scaling-limit and categorical premises. The purpose of this compact note is therefore to state a clean Phase-I claim set: relativity and Standard Model structure are the recovered core, while all downstream branches are either input-dependent or supplement-backed secondary sectors, or post-Phase-I phenomenology.
+Here \(P\) feeds the supplement-backed gauge-coupling calibration sector and \(N_{\mathrm{scr}}\)
+feeds the capacity branch for \(\Lambda\); neither numerical branch belongs to the recovered core.
+At fixed cutoff, the topological regulator package is closed on the ordinary, central-defect, and
+genuinely noncentral branches. What remains open sits where it should: in the continuum
+Bisognano--Wichmann/geometric lift, the refinement-limit compact-gauge reconstruction lane, and
+the further phenomenological continuations.
 \end{abstract}
 
 \section{Introduction}
@@ -68,12 +88,7 @@ why the observed three generations and three colors are realized, why hypercharg
 
 This paper presents a single framework that addresses this list as a conditional reconstruction program. The framework is Observer-Patch Holography (OPH). Its starting point is an observer-centric organization of physical data: each observer has access only to a patch algebra, neighboring observers must agree on overlaps, and global physical law is recovered from the resulting consistency conditions. The same formal structure that produces schedule-independent overlap consistency then feeds a Lorentzian modular-phase classification, a Jacobson-type Einstein branch conditional on fixed-cap stationarity and the null-stress premise, compact gauge reconstruction in a bosonic internal-gauge sector, charge quantization, and the low-energy architecture selected by the admissibility conditions used in the gauge branch.
 
-Two decisions shape the present version.
-
-\begin{enumerate}[leftmargin=2em]
-\item The compact note presents the main theorem statements in one place, but some quantitative conventions and implementation details live in repository supplements.\footnote{Broader interpretive questions are deferred here so the compact note can keep its claim-tier boundary explicit.} For length, several theorem-level arguments below are recorded only as proof sketches; the synchronized main paper contains the full derivations.
-\item The paper separates exact structural theorems, conditional scaling-limit branches, calibration-sector outputs, and phenomenological continuations. This keeps strong claims visible and weak claims identifiable.
-\end{enumerate}
+The paper separates exact structural theorems, conditional scaling-limit branches, calibration-sector outputs, and phenomenological continuations.\footnote{Broader interpretive questions are deferred here so the claim-tier boundary remains explicit.} Several longer arguments are recorded below as proof sketches.
 
 The framework is intended as a candidate fundamental theory in the precise sense relevant for physics: general relativity and the Standard Model appear as effective sectors derived from a smaller axiom set plus an explicit refinement/scaling-limit package. The paper does not use simulation language, observer continuation stories, or other non-falsifiable additions.
 
@@ -89,29 +104,30 @@ The results emphasized in this paper are ordered below by a combination of impac
 \]
 is recovered in the bosonic compact-gauge branch once the MAR admissibility package is imposed.
 \item On the realized one-generation chiral matter plus one-Higgs package, anomaly constraints and Yukawa invariance fix the hypercharge lattice, and on the realized MAR-admissible branch the counting chain yields \(N_g=3\) and then, using Witten's \(\SU(2)\) anomaly parity constraint, \(N_c=3\).
-\item The current quantitative implementation uses two external continuous configuration inputs, $P$ and $N_{\mathrm{scr}}$.
+\item The quantitative implementation used here uses two external continuous configuration inputs, $P$ and $N_{\mathrm{scr}}$.
 \item Downstream matter-sector continuations, including charged-lepton/Koide structure, remain visible but explicitly outside the compact paper's recovered-core theorem package.
 \item A separate input-dependent capacity corollary ties the cosmological-constant branch to global screen capacity rather than local vacuum energy.
 \item Exclusion of gauge-mediated proton decay follows from product-group structure; any stronger proton-lifetime claim remains UV/EFT/QCD-dependent.
-\item Dark-sector, baryogenesis, string, and spectroscopy branches are kept visible, but only as program-level continuations or, where additional ans\"atze are involved, conjectural phenomenology.
+\item Dark-sector, baryogenesis, string, and spectroscopy branches are kept visible only as phenomenological continuations or, where additional ans\"atze are involved, conjectural phenomenology.
 \item Overlap repair admits a unique schedule-independent normal form on the stated finite patch-net hypotheses.
+\item The fixed-cutoff topological UV package closes on the ordinary branch, the central-defect branch, and the genuinely noncentral branch through a compact crossed-module higher-gauge collar theorem; the remaining UV-side burdens are the continuum BW/geometric lift and the refinement-limit compact-gauge premises.
 \end{enumerate}
 
-\section{Results at a Glance}
+\section{Overview of Results}
 
-This section is the authoritative status ledger for the compact note and the sync rule for mirrored summary surfaces. The three-phase boundary used throughout is
+This section summarizes the claim tiers used throughout. The three-phase boundary is
 \[
 \text{Phase I}=(D1\text{--}D5)\cup(D7\text{--}D9),\qquad
 \text{Phase II}=D6\cup D10,\qquad
 \text{Phase III}=D12.
 \]
-Phase I is the recovered-core claim set. Phase II contains the separate input-dependent capacity corollary and the current supplement-backed gauge-calibration sector. Phase III collects deferred continuations. The canonical five-axiom basis, the two external continuous inputs, and the technical-premise labels used below are fixed in Section~\ref{sec:premise-ledger}. Each row names a node in the reconstruction program, records its immediate OPH-side parents, separates imported standard mathematics from extra non-axiom physical premises or external inputs, and states the resulting claim tier.
+Phase I is the recovered-core claim set. Phase II contains the separate input-dependent capacity corollary and the supplement-backed gauge-calibration sector. Phase III collects phenomenological continuations. The canonical five-axiom basis, the two external continuous inputs, and the technical-premise labels used below are fixed in Section~\ref{sec:premise-ledger}. Each row names a node in the reconstruction program, records its immediate OPH-side parents, separates imported standard mathematics from extra non-axiom physical premises or external inputs, and states the resulting claim tier.
 
 \begingroup
 \scriptsize
 \setlength{\tabcolsep}{2pt}
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.05\textwidth}>{\raggedright\arraybackslash}p{0.16\textwidth}>{\raggedright\arraybackslash}p{0.14\textwidth}>{\raggedright\arraybackslash}p{0.13\textwidth}>{\raggedright\arraybackslash}p{0.20\textwidth}>{\raggedright\arraybackslash}p{0.16\textwidth}@{}}
-\caption{Authoritative dependency checklist for the compact OPH program.}\\
+\caption{Dependency checklist for the compact OPH program.}\\
 \toprule
 Node & Output & Immediate OPH ingredients & Standard mathematics used & Extra non-axiom physical premises / external inputs & Claim tier \\
 \midrule
@@ -120,29 +136,29 @@ Node & Output & Immediate OPH ingredients & Standard mathematics used & Extra no
 \endfoot
 \textbf{D1} & Unique schedule-independent normal form (Theorem~\ref{thm:confluence}) & overlap-consistency problem on a finite patch net & Newman's lemma for terminating locally confluent rewrite systems & finite state spaces, termination, and local confluence & Phase I structural theorem \\
 \textbf{D2} & Collar Markov/entropy split and \(G\)-dictionary setup (Theorem~\ref{thm:markovcollar}, Propositions~\ref{prop:approxrecover}, \ref{prop:splice}, \ref{prop:gensplit}, Definition~\ref{def:newton}) & Axioms~\ref{ax:screen}--\ref{ax:entropy} & HJPW Markov structure theorem; Petz and Fawzi--Renner recovery theory & exact block-factorized identities require exact Markovity or an explicitly stated idealized limit; the \(A/(4G)\) step is the coarse-grained dictionary of Definition~\ref{def:newton} & Phase I structural lemma/proposition layer \\
-\textbf{D3} & Lorentz branch \(\Conf^+(S^2)\cong \mathrm{SO}^+(3,1)\) (Theorem~\ref{thm:bw}, Corollary~\ref{cor:lorentz}) & Axioms~\ref{ax:screen}--\ref{ax:entropy} & Bisognano--Wichmann modular geometry; conformal-group classification & T4 together with T8, with the standard cap-dilation identification carried directly by the BW geometric branch in T4 & Phase I conditional scaling-limit theorem \\
-\textbf{D4} & Null modular bridge to \(T_{kk}\) (Propositions~\ref{prop:nullec}, \ref{prop:n3}; Corollaries~\ref{cor:n1}, \ref{cor:n2}; Theorem~\ref{lem:density}, Lemma~\ref{lem:translation}; Theorem~\ref{thm:stress}) & D2+D3 and Axioms~\ref{ax:screen}--\ref{ax:entropy} & Borchers--Wiesbrock half-sided modular inclusion; distributional differentiation on half-lines & the theorem-local inherited-strip decomposition and exact-or-controlled Markov hypotheses of Proposition~\ref{prop:nullec} and Corollary~\ref{cor:n1}, plus T8 together with the density-upgrade hypotheses of Theorem~\ref{lem:density} and the relativistic null-stress identification premise; the propagation controls denoted T2--T3 are supplied internally by Axiom~\ref{ax:maxent} on the local finite-constraint branch & Phase I conditional bridge theorem \\
-\textbf{D5} & Jacobson-type Einstein branch: rest-frame relation plus conditional tensor upgrade (Lemma~\ref{lem:smallball}, Theorem~\ref{thm:einstein}, Corollary~\ref{cor:einstein}) & D3+D4 and Axioms~\ref{ax:screen}--\ref{ax:entropy} & Jacobson small-ball first law; null-to-tensor reconstruction modulo a metric term & T9 fixed-cap stationarity; locally Lorentzian \(d=4\) scaling regime; small-ball constancy assumptions; D4 carried remainder negligible at order \(\ell^4\); all local directions/reference states for the tensor upgrade & Phase I conditional scaling-limit theorem/corollary \\
+\textbf{D3} & Lorentz branch \(\Conf^+(S^2)\cong \mathrm{SO}^+(3,1)\) (Theorem~\ref{thm:bw}, Corollary~\ref{cor:lorentz}) & Axioms~\ref{ax:screen}--\ref{ax:entropy} & Bisognano--Wichmann modular geometry; conformal-group classification & T1 together with T3, with the standard cap-dilation identification carried directly by the BW geometric branch in T1 & Phase I conditional scaling-limit theorem \\
+\textbf{D4} & Null modular bridge to \(T_{kk}\) (Propositions~\ref{prop:nullec}, \ref{prop:n3}; Corollaries~\ref{cor:n1}, \ref{cor:n2}; Theorem~\ref{lem:density}, Lemma~\ref{lem:translation}; Theorem~\ref{thm:stress}) & D2+D3 and Axioms~\ref{ax:screen}--\ref{ax:entropy} & Borchers--Wiesbrock half-sided modular inclusion; distributional differentiation on half-lines & the theorem-local inherited-strip decomposition and exact-or-controlled Markov hypotheses of Proposition~\ref{prop:nullec} and Corollary~\ref{cor:n1}, plus T3 together with the density-upgrade hypotheses of Theorem~\ref{lem:density} and the relativistic null-stress identification premise; quasi-local propagation and endpoint control are supplied internally by Axiom~\ref{ax:maxent} on the local finite-constraint branch & Phase I conditional bridge theorem \\
+\textbf{D5} & Jacobson-type Einstein branch: rest-frame relation plus conditional tensor upgrade (Lemma~\ref{lem:smallball}, Theorem~\ref{thm:einstein}, Corollary~\ref{cor:einstein}) & D3+D4 and Axioms~\ref{ax:screen}--\ref{ax:entropy} & Jacobson small-ball first law; null-to-tensor reconstruction modulo a metric term & T4 fixed-cap stationarity; locally Lorentzian \(d=4\) scaling regime; small-ball constancy assumptions; D4 carried remainder negligible at order \(\ell^4\); all local directions/reference states for the tensor upgrade & Phase I conditional scaling-limit theorem/corollary \\
 \textbf{D6} & Capacity branch for \(\Lambda\) and the separate order-of-magnitude neutrino estimate (Proposition~\ref{prop:lambda}, Corollary~\ref{cor:lambda}) & D5 leaves a \(+\Lambda g_{ab}\) ambiguity & de Sitter entropy relation and dimensional analysis & external input \(N_{\mathrm{scr}}\) and the screen-capacity identification & Phase II input-dependent corollary / estimate \\
-\textbf{D7} & Compact gauge reconstruction (Theorem~\ref{thm:compactgauge}) & Axioms~\ref{ax:screen}--\ref{ax:entropy} & Doplicher--Roberts / Tannaka reconstruction & T7 and T10--T11 together with the directed-colimit/fiber clause of T12; the refinement-stable qualifier on that colimit is supplied internally by Axiom~\ref{ax:maxent} & Phase I conditional structural theorem \\
-\textbf{D8} & Product gauge structure up to finite quotient (Lemmas~\ref{lem:mincontent}--\ref{lem:commutant}, Theorem~\ref{thm:sm}) & D7 + Axiom~\ref{ax:mar} & compact Lie representation classification; Schur's lemma & connected positive-dimensional Lie admissible class; one connected abelian factor; faithful action on the minimal coupled carrier; vanishing obstruction \([z]=0\) & Phase I realized-branch theorem \\
+\textbf{D7} & Compact gauge reconstruction (Theorem~\ref{thm:compactgauge}) & Axioms~\ref{ax:screen}--\ref{ax:entropy} & Doplicher--Roberts / Tannaka reconstruction & T2 and T5--T6 together with the directed-colimit/fiber clause of T7; the refinement-stable qualifier on that colimit is supplied internally by Axiom~\ref{ax:maxent} & Phase I conditional structural theorem \\
+\textbf{D8} & Product gauge structure up to finite quotient (Lemmas~\ref{lem:mincontent}--\ref{lem:commutant}, Theorem~\ref{thm:sm}) & D7 + Axiom~\ref{ax:mar} & compact Lie representation classification; Schur's lemma & connected positive-dimensional Lie admissible class; one connected abelian factor; faithful action on the minimal coupled carrier; vanishing relevant transport obstruction & Phase I realized-branch theorem \\
 \textbf{D9} & Realized Standard Model quotient, hypercharges, the counting chain \(N_g=3\) then \(N_c=3\), and product-group corollaries (Theorem~\ref{thm:hypercharge}, Corollaries~\ref{cor:ng}, \ref{cor:nc}, Proposition~\ref{prop:z6}) & D8 & anomaly-cancellation algebra; Witten global-anomaly argument; CKM CP counting & realized one-generation chiral matter plus one Higgs package; asymptotic-freedom and MAR admissibility premises & Phase I realized-branch theorem/corollary chain \\
-\textbf{D10} & Gauge-coupling numerical closure of the current supplement-backed implementation & D9 + external input \(P\) & RG evolution and matching conventions supplied in the supplement & pixel constraint; edge heat-kernel closure; supplement-backed beta-function and threshold conventions & Phase II calibration sector \\
-\textbf{D12} & Charged-lepton/Koide, texture, dark-sector, baryogenesis, black-hole spectroscopy, proton-spin, proton-lifetime estimates beyond the gauge-channel exclusion, conditional string/worldsheet reorganizations, conjectural critical-superstring extensions, and other continuations & various subsets of D6, D9, and D10 & branch-specific EFT and phenomenological manipulations & additional ans\"atze such as the uniform \(\mathbb Z_6\) center-label ensemble, discrete texture choices, dark-sector response assumptions, discrete-horizon assumptions, or extra worldsheet/CFT premises & Phase III phenomenological continuation / program-level branch \\
+\textbf{D10} & Gauge-coupling numerical closure of the supplement-backed implementation & D9 + external input \(P\) & RG evolution and matching conventions supplied in the supplement & pixel constraint; edge heat-kernel closure; supplement-backed beta-function and threshold conventions & Phase II calibration sector \\
+\textbf{D12} & Charged-lepton/Koide, texture, dark-sector, baryogenesis, black-hole spectroscopy, proton-spin, proton-lifetime estimates beyond the gauge-channel exclusion, conditional string/worldsheet reorganizations, conjectural critical-superstring extensions, and other continuations & various subsets of D6, D9, and D10 & branch-specific EFT and phenomenological manipulations & additional ans\"atze such as the uniform \(\mathbb Z_6\) center-label ensemble, discrete texture choices, dark-sector response assumptions, discrete-horizon assumptions, or extra worldsheet/CFT premises & Phase III phenomenological continuation branch \\
 \end{longtable}
 \endgroup
 
-Accordingly, the recovered-core structural program of the compact note is D1--D5 together with D7--D9. D6 is the separate Phase-II input-dependent corollary; D10 is the current Phase-II supplement-backed calibration sector; and D12 is the Phase-III continuation layer. The modular-anomaly dark-sector branch sits in D12: neither MOND/RAR-style response laws nor galaxy/cluster phenomenology are part of the compact note's theorem-level claim set. The only external continuous inputs are \(N_{\mathrm{scr}}\) in D6 and \(P\) in D10, together with descendants built from those branches.
-\section{Five Axioms, Two External Continuous Inputs in the Current Quantitative Implementation, and Technical Premises}\label{sec:premise-ledger}
+The recovered core of the compact paper is D1--D5 together with D7--D9. D6 is a separate input-dependent corollary, D10 is the supplement-backed calibration sector, and D12 collects phenomenological continuations. The modular-anomaly dark-sector branch belongs to D12 and does not derive MOND/RAR-style response laws or galaxy/cluster phenomenology. The only external continuous inputs are \(N_{\mathrm{scr}}\) in D6 and \(P\) in D10, together with descendants built from those branches.
+\section{Five Axioms, Two External Continuous Inputs, and Technical Premises}\label{sec:premise-ledger}
 
-This section is the authoritative premise ledger and dependency map for the compact note. The OPH basis used below is exactly the five core axioms, the two external continuous inputs of the current quantitative implementation, and the theorem-local technical premises collected afterward. Older A1--A4 / B / MX / LR / R0--R1 packaging is retained elsewhere only as shorthand for pieces of this canonical package, not as a competing axiom basis. In the present version, the local finite-constraint MaxEnt/refinement branch already internalizes the quasi-local propagation and refinement-stability control that older packaging sometimes carried as separate regularity language, Theorem~\ref{thm:bw} fixes the cap generator and its \(2\pi\) normalization on the OPH Bisognano--Wichmann geometric branch without adding any separate cap-isotropy selector, and Corollary~\ref{cor:n2} derives the null half-sided modular pair inside the synchronized bridge. What remains genuinely theorem-external is the scaling-limit scope clause, the geometric-branch selection burden, the density-upgrade burden, fixed-cap stationarity, the bosonic/fiber-functor fork, the relativistic null-stress identification premise, and the vanishing obstruction premise where invoked.
+This section states the premise ledger and dependency map for the compact paper. The OPH basis used below consists of the five core axioms, the two external continuous inputs listed next, and the external technical premises \(T1\)--\(T7\) collected afterward. On the fixed-cutoff local finite-constraint MaxEnt branch, quasi-local propagation and refinement-stability control are internal consequences; Theorem~\ref{thm:bw} fixes the cap generator and its \(2\pi\) normalization on the Bisognano--Wichmann geometric branch; and Corollary~\ref{cor:n2} derives the null half-sided modular pair inside the null bridge. The remaining theorem-external items are the scaling-limit scope clause, the geometric-branch selection burden, the density-upgrade burden, fixed-cap stationarity, the bosonic/fiber-functor fork, the relativistic null-stress identification premise, and the vanishing obstruction premise where invoked.
 
-The formulation uses two external continuous configuration inputs in the current quantitative implementation:
+The formulation uses two external continuous configuration inputs:
 \begin{align}
 P &\equiv a_{\mathrm{cell}}/\ell_P^2 = 1.63094,\\
 N_{\mathrm{scr}} &\equiv \log \dim \mathcal H_{\mathrm{tot}} \sim 10^{122}.
 \end{align}
-In the current implementation, \(P\) is calibrated from the gauge sector and \(N_{\mathrm{scr}}\) is inferred from the observed cosmological constant. The first sets the particle-physics scale. The second enters the cosmological-capacity branch and a separate order-of-magnitude neutrino estimate.
+In the quantitative implementation used here, \(P\) is calibrated from the gauge sector and \(N_{\mathrm{scr}}\) is inferred from the observed cosmological constant. The first sets the particle-physics scale. The second enters the cosmological-capacity branch and a separate order-of-magnitude neutrino estimate.
 
 \begin{axiom}[Screen Net]\label{ax:screen}
 Physical data is organized on a horizon screen \(S^2\) carrying a net of local algebras
@@ -169,7 +185,7 @@ At the regulator scale \(\ell_{\mathrm{UV}}\), the realized branch is selected b
 \[
 \mathcal C_{\ell_{\mathrm{UV}}}=\{O_a(x)\}_{a=1}^{N_{\mathrm{con}}},
 \]
-where each \(O_a(x)\) is supported in a ball of radius \(O(\ell_{\mathrm{UV}})\) and the label set \(a\) is independent of the number of regulator cells. Under refinement, the same finite constraint family is preserved, so the realized states at different cutoffs belong to one common finite-dimensional MaxEnt family rather than unrelated maximizers. The realized low-energy branch is the refinement-stable branch of that family; therefore symmetry-allowed relevant operators are not held at zero by unexplained fine tuning, but only by symmetry or because they lie in the explicitly retained constraint family.
+where each \(O_a(x)\) is supported in a ball of radius \(O(\ell_{\mathrm{UV}})\) and the label set \(a\) is independent of the number of regulator cells. Under refinement, the same finite constraint family is preserved, so the realized states at different cutoffs belong to one common finite-dimensional MaxEnt family. The realized low-energy branch is the refinement-stable branch of that family; symmetry-allowed relevant operators are therefore held at zero only by symmetry or because they lie in the explicitly retained constraint family.
 \end{axiom}
 
 \paragraph{Derived local-Gibbs branch.}
@@ -189,7 +205,7 @@ K_{\ell_{\mathrm{UV}}}(\lambda)
 where the \(Q_b\) are the finitely many optional global conserved-charge constraints. Thus the logarithm of the selected state is itself a quasi-local UV generator built from the same bounded-support densities that define the branch.
 
 \paragraph{Derived quasi-local propagation and interval control.}
-Let \(\tau_t^{\ell_{\mathrm{UV}}}\) denote the automorphism group generated by \(K_{\ell_{\mathrm{UV}}}(\lambda)\), or more generally by any branch generator lying in the norm-closed algebra generated by the same bounded-support local densities. Standard Lieb--Robinson estimates for finite-range interactions on the finite regulator net then give constants \(C,\xi,v_{\ell_{\mathrm{UV}}}<\infty\) such that for local observables \(A_X,B_Y\),
+Let \(\tau_t^{\ell_{\mathrm{UV}}}\) denote the automorphism group generated by \(K_{\ell_{\mathrm{UV}}}(\lambda)\), or more generally by any branch generator lying in the norm-closed algebra generated by the same bounded-support local densities. Standard Lieb--Robinson estimates for finite-range interactions on the finite regulator net then give constants \(C,\xi,v_{\ell_{\mathrm{UV}}}<\infty\) such that for local observables \(A_X,B_Y\), \cite{liebRobinson72}
 \[
 \bigl\|[\tau_t^{\ell_{\mathrm{UV}}}(A_X),B_Y]\bigr\|
 \le
@@ -202,7 +218,7 @@ So finite-velocity quasi-local propagation is branch-internal: it is the local f
 \le
 C_{\psi,\phi,I_{\max}}\,|I'\Delta I|,
 \]
-which is precisely the endpoint-Lipschitz / finite-variation control later denoted by \textbf{T2}--\textbf{T3}. The compact note does \emph{not} separately derive a second independent microscopic generator beyond this quasi-local branch generator; if a UV completion carries one, the only later requirement is that it lie in the same bounded-support algebraic closure so that the same propagation constants control the selected branch.
+which is precisely the endpoint-Lipschitz / finite-variation control used later in the null modular chain. The compact note does \emph{not} separately derive a second independent microscopic generator beyond this quasi-local branch generator; if a UV completion carries one, the only later requirement is that it lie in the same bounded-support algebraic closure so that the same propagation constants control the selected branch.
 So the fixed-cutoff UV branch is already interacting in the ordinary finite-range sense. This local-Gibbs/Lieb--Robinson package should not be read as a proof that the refinement limit lands in a trivial gauge phase or that OPH has selected a unique microscopic realization; its theorem-level role is collar-local mixing and the carried propagation/error control used by the later scaling-limit arguments.
 
 \paragraph{Internal refinement notion.}
@@ -213,7 +229,7 @@ A generalized entropy functional exists on caps,
 \[
 S_{\mathrm{gen}}(C)=S_{\mathrm{bulk}}(C)+\langle L_C\rangle,
 \]
-where \(L_C\) is a positive edge-center entropy functional. In the semiclassical scaling branch, its leading coarse-grained contribution is identified with \(A(\partial C)/(4G)\). The functional obeys quantum focusing on null generators, and collar tripartitions have small conditional mutual information with controlled recovery maps \cite{LiebRuskai,Petz86,Petz88,FawziRenner}.
+where \(L_C\) is a positive edge-center entropy functional. In the semiclassical scaling branch, its leading coarse-grained contribution is identified with \(A(\partial C)/(4G)\). The functional obeys quantum focusing on null generators, and collar tripartitions have small conditional mutual information with controlled recovery maps \cite{liebRuskai73,petz86,petz88,fawziRenner15}.
 \end{axiom}
 
 \begin{axiom}[Minimal Admissible Realization]\label{ax:mar}
@@ -225,34 +241,25 @@ C(\mathfrak S)=\bigl(\chi_{\mathrm{cpl}},\,N_{\mathrm{nonab}},\,N_c,\,N_g\bigr).
 \end{axiom}
 
 \begin{assumption}[Technical Premises]\label{ass:technical}
-The continuum reductions still use several historical shorthand labels, but not all of them are extra premises, and the retained numbering is intentionally nonconsecutive for compatibility with earlier drafts and review surfaces. The labels \textbf{T2}--\textbf{T3} now refer only to the branch-internal quasi-local propagation and bounded-interval endpoint control already derived from Axiom~\ref{ax:maxent}; likewise, whenever later sections speak of a ``refinement-stable'' sector colimit, that qualifier means persistence along the same Axiom~\ref{ax:maxent} branch rather than an additional categorical regularity axiom. The old label \textbf{T6} is retained only as legacy shorthand for the derived half-sided modular-inclusion conclusion of Corollary~\ref{cor:n2}; it is no longer an extra premise. The genuinely theorem-external items retained below are therefore eight in number:
+The compact paper uses one canonical numbered list of external technical premises. Derived fixed-cutoff regulator bookkeeping, quasi-local propagation, endpoint control, and the fixed-cutoff half-sided modular pair are not listed here because they are already established internally from the axioms and earlier results. The seven external items are:
 \begin{itemize}[leftmargin=2.3em]
-\item[\textbf{T1}] type-I local algebras at the regulator scale and boundary gauge invariance on collars;
-\item[\textbf{T4}] the branch condition that the refinement-stable cap net lies in the Bisognano--Wichmann geometric modular class for caps and their conformal images: for each round cap \(C\subset S^2\), the scaling-limit modular automorphism group of \(\mathcal A(C)\) is implemented by the standard cap-preserving conformal one-parameter subgroup \(\lambda_C(s)\subset \Conf^+(S^2)\), with geometric parameter \(s\) normalized so that the null blow-up near a smooth cut acts by \(v\mapsto e^{-s}v\); no separate cap-isotropy / \(\mathrm{SO}(2)\)-equivariance selector is imposed;
-\item[\textbf{T7}] vanishing gluing obstruction \([z]=0\) whenever global sector transportability is invoked;
-\item[\textbf{T8}] all Lorentz/null-modular/Einstein statements are claims about a controlled refinement/scaling limit of the regulator net, not literal exactness at fixed finite cutoff;
-\item[\textbf{T9}] fixed-cap generalized-entropy stationarity for the admissible first-variation class used in the Jacobson branch;
-\item[\textbf{T10}] symmetric braiding in the \(3+1\)D EFT branch;
-\item[\textbf{T11}] a bosonic Tannakian fiber-functor premise, or else an explicit super-Tannakian fork;
-\item[\textbf{T12}] whenever compact gauge reconstruction is invoked, the sector category means the directed colimit of transportable edge sectors with objectwise finite-dimensional fibers.
+\item[\textbf{T1}] the branch condition that the refinement-stable cap net lies in the Bisognano--Wichmann geometric modular class for caps and their conformal images: for each round cap \(C\subset S^2\), the scaling-limit modular automorphism group of \(\mathcal A(C)\) is implemented by the standard cap-preserving conformal one-parameter subgroup \(\lambda_C(s)\subset \Conf^+(S^2)\), with geometric parameter \(s\) normalized so that the null blow-up near a smooth cut acts by \(v\mapsto e^{-s}v\); no separate cap-isotropy / \(\mathrm{SO}(2)\)-equivariance selector is imposed;
+\item[\textbf{T2}] vanishing of the relevant gluing obstruction class whenever global sector transportability is invoked: \([z]=0\) on the central branch, or its higher-gauge analogue \(q_\Sigma=0\) on the genuinely noncentral branch;
+\item[\textbf{T3}] all Lorentz/null-modular/Einstein statements are claims about a controlled refinement/scaling limit of the regulator net, not literal exactness at fixed finite cutoff;
+\item[\textbf{T4}] fixed-cap generalized-entropy stationarity for the admissible first-variation class used in the Jacobson branch;
+\item[\textbf{T5}] symmetric braiding in the \(3+1\)D EFT branch;
+\item[\textbf{T6}] a bosonic Tannakian fiber-functor premise, or else an explicit super-Tannakian fork;
+\item[\textbf{T7}] whenever compact gauge reconstruction is invoked, the sector category means the directed colimit of transportable edge sectors with objectwise finite-dimensional fibers.
 \end{itemize}
 \end{assumption}
-
-\begin{remark}[Legacy shorthand]
-Historical labels are read as follows in the compact note and in mirrored surfaces: A1/A2 mean Screen Net and Overlap Consistency; B together with refinement stability means Axiom~\ref{ax:maxent}; A3 means Axiom~\ref{ax:entropy}; A4 together with the old MX / collar terminology means the recoverability and collar-control ingredients explicitly cited from Axiom~\ref{ax:entropy}; LR or the later \textbf{T2}--\textbf{T3} shorthand now mean the derived quasi-local propagation and endpoint control of the local finite-constraint MaxEnt branch, not an extra premise; and R0/R1 and \([z]=0\) remain theorem-local technical premises.
-\end{remark}
-
-\begin{remark}
-The five axioms fix the OPH core, and in the present packaging they already internalize the quasi-local propagation and refinement-stable notion of sector persistence used by the scaling-limit and gauge branches. On the gravity side this means the null bridge no longer imports a separate propagation, endpoint-control, or half-sided-inclusion premise: c.12 closes the fixed-cutoff strip argument through exact-or-controlled strip additivity, the weak tail generator, and the derived half-sided modular pair whose Borchers--Wiesbrock consequence is an explicit positive null-translation generator on its Stone domain. The cap-modular geometric action and the \(2\pi\) KMS normalization are recovered in Theorem~\ref{thm:bw} once the OPH Bisognano--Wichmann geometric branch of \textbf{T4} is imposed; what remains genuinely theorem-external is the retained eight-item technical package: the obstruction clause \textbf{T7} when transportability is invoked, the scaling-limit scope clause \textbf{T8}, fixed-cap stationarity \textbf{T9}, and the bosonic/symmetric/fiber-functor part of \textbf{T10}--\textbf{T12}, together with \textbf{T1} and \textbf{T4} where the fixed-cutoff regulator presentation and the geometric cap-modular branch hypothesis are used. In particular, the Lorentz/null-modular/Einstein and compact-gauge statements below are still scaling-limit claims rather than fixed-cutoff matrix-algebra identities.
-\end{remark}
 
 \begin{remark}[Log convention]
 Unless an explicit base is written, logarithms and entropies in this compact note use natural logs (nats). Base-2 logarithms are written as \(\log_2\) and quoted in bits.
 \end{remark}
 
-\subsection*{Authoritative dependency DAG}
+\subsection*{Dependency DAG}
 
-The table below is the authoritative dependency map for the compact note. The ``Immediate OPH ingredients'' column records only parents internal to the OPH program. Imported standard mathematics and extra non-axiom physical premises or external inputs are stated separately rather than hidden inside the word ``derived.''
+The table below is the dependency map for the compact paper. The ``Immediate OPH ingredients'' column records only parents internal to the OPH program. Imported standard mathematics and extra non-axiom physical premises or external inputs are stated separately rather than hidden inside the word ``derived.''
 
 \begingroup
 \scriptsize
@@ -266,22 +273,22 @@ Node & Compact theorem labels and output & Immediate OPH ingredients & Standard 
 \endfoot
 \textbf{D1} & Theorem~\ref{thm:confluence}: unique normal form and schedule independence & overlap-consistency problem on a finite patch net & Newman's lemma for terminating locally confluent rewrite systems & finite state spaces, termination, and local confluence & structural theorem \\
 \textbf{D2} & Theorem~\ref{thm:markovcollar}, Propositions~\ref{prop:approxrecover}, \ref{prop:splice}, \ref{prop:gensplit}, Definition~\ref{def:newton}: collar Markov/entropy layer & Axioms~\ref{ax:screen}--\ref{ax:entropy} & HJPW Markov structure theorem; Petz and Fawzi--Renner recovery theory & exact Markov identities require exact Markovity or an explicitly stated idealized recoverability limit; the \(A/(4G)\) identification is the coarse-grained dictionary of Definition~\ref{def:newton} & structural lemma/proposition layer \\
-\textbf{D3} & Theorem~\ref{thm:bw}, Corollary~\ref{cor:lorentz}: geometric modular flow and Lorentz branch & Axioms~\ref{ax:screen}--\ref{ax:entropy} & Bisognano--Wichmann modular geometry; \(\Conf^+(S^2)\cong \mathrm{SO}^+(3,1)\) & T4 together with T8, with the standard cap-dilation identification carried directly by the BW geometric branch in T4 & conditional scaling-limit theorem \\
-\textbf{D4} & Propositions~\ref{prop:nullec}, \ref{prop:n3}; Corollaries~\ref{cor:n1}, \ref{cor:n2}; Theorem~\ref{lem:density}, Lemma~\ref{lem:translation}; Theorem~\ref{thm:stress}: null modular bridge to \(T_{kk}\) & D2+D3 and Axioms~\ref{ax:screen}--\ref{ax:entropy} & Borchers--Wiesbrock half-sided modular inclusion; distributional differentiation on half-lines & the theorem-local inherited-strip decomposition and exact-or-controlled Markov hypotheses of Proposition~\ref{prop:nullec} and Corollary~\ref{cor:n1}, plus T8 together with the density-upgrade hypotheses of Theorem~\ref{lem:density} and the relativistic null-stress identification premise; the propagation controls denoted T2--T3 are supplied internally by Axiom~\ref{ax:maxent} on the local finite-constraint branch & conditional bridge theorem \\
-\textbf{D5} & Lemma~\ref{lem:smallball}, Theorem~\ref{thm:einstein}, Corollary~\ref{cor:einstein}: Jacobson-type Einstein branch via a rest-frame relation plus conditional tensor upgrade & D3+D4 and Axioms~\ref{ax:screen}--\ref{ax:entropy} & Jacobson small-ball first law; Lemma~\ref{lem:nullreconstruct} for the null-to-tensor upgrade modulo a metric term & T9 fixed-cap stationarity; locally Lorentzian \(d=4\) scaling regime; small-ball constancy assumptions; D4 carried remainder negligible at order \(\ell^4\); all local directions/reference states for the tensor upgrade & conditional scaling-limit theorem/corollary \\
+\textbf{D3} & Theorem~\ref{thm:bw}, Corollary~\ref{cor:lorentz}: geometric modular flow and Lorentz branch & Axioms~\ref{ax:screen}--\ref{ax:entropy} & Bisognano--Wichmann modular geometry; \(\Conf^+(S^2)\cong \mathrm{SO}^+(3,1)\) & T1 together with T3, with the standard cap-dilation identification carried directly by the BW geometric branch in T1 & conditional scaling-limit theorem \\
+\textbf{D4} & Propositions~\ref{prop:nullec}, \ref{prop:n3}; Corollaries~\ref{cor:n1}, \ref{cor:n2}; Theorem~\ref{lem:density}, Lemma~\ref{lem:translation}; Theorem~\ref{thm:stress}: null modular bridge to \(T_{kk}\) & D2+D3 and Axioms~\ref{ax:screen}--\ref{ax:entropy} & Borchers--Wiesbrock half-sided modular inclusion; distributional differentiation on half-lines & the theorem-local inherited-strip decomposition and exact-or-controlled Markov hypotheses of Proposition~\ref{prop:nullec} and Corollary~\ref{cor:n1}, plus T3 together with the density-upgrade hypotheses of Theorem~\ref{lem:density} and the relativistic null-stress identification premise; quasi-local propagation and endpoint control are supplied internally by Axiom~\ref{ax:maxent} on the local finite-constraint branch & conditional bridge theorem \\
+\textbf{D5} & Lemma~\ref{lem:smallball}, Theorem~\ref{thm:einstein}, Corollary~\ref{cor:einstein}: Jacobson-type Einstein branch via a rest-frame relation plus conditional tensor upgrade & D3+D4 and Axioms~\ref{ax:screen}--\ref{ax:entropy} & Jacobson small-ball first law; Lemma~\ref{lem:nullreconstruct} for the null-to-tensor upgrade modulo a metric term & T4 fixed-cap stationarity; locally Lorentzian \(d=4\) scaling regime; small-ball constancy assumptions; D4 carried remainder negligible at order \(\ell^4\); all local directions/reference states for the tensor upgrade & conditional scaling-limit theorem/corollary \\
 \textbf{D6} & Proposition~\ref{prop:lambda}, Corollary~\ref{cor:lambda}: capacity branch for \(\Lambda\), plus the separate neutrino estimate & D5, which already leaves the \(+\Lambda g_{ab}\) ambiguity & de Sitter entropy relation and dimensional analysis & external input \(N_{\mathrm{scr}}\) and the screen-capacity identification & input-dependent corollary / estimate \\
-\textbf{D7} & Theorem~\ref{thm:compactgauge}: compact gauge reconstruction & Axioms~\ref{ax:screen}--\ref{ax:entropy} & Doplicher--Roberts / Tannaka reconstruction & T7 and T10--T11 together with the directed-colimit/fiber clause of T12; the refinement-stable qualifier on that colimit is supplied internally by Axiom~\ref{ax:maxent} & conditional structural theorem \\
-\textbf{D8} & Lemmas~\ref{lem:mincontent}--\ref{lem:commutant}, Theorem~\ref{thm:sm}: product gauge structure up to finite quotient & D7 + Axiom~\ref{ax:mar} & compact Lie representation classification; Schur's lemma & connected positive-dimensional Lie admissible class; one connected abelian factor; faithful action on the minimal coupled carrier; vanishing obstruction \( [z]=0 \) & realized-branch theorem \\
+\textbf{D7} & Theorem~\ref{thm:compactgauge}: compact gauge reconstruction & Axioms~\ref{ax:screen}--\ref{ax:entropy} & Doplicher--Roberts / Tannaka reconstruction & T2 and T5--T6 together with the directed-colimit/fiber clause of T7; the refinement-stable qualifier on that colimit is supplied internally by Axiom~\ref{ax:maxent} & conditional structural theorem \\
+\textbf{D8} & Lemmas~\ref{lem:mincontent}--\ref{lem:commutant}, Theorem~\ref{thm:sm}: product gauge structure up to finite quotient & D7 + Axiom~\ref{ax:mar} & compact Lie representation classification; Schur's lemma & connected positive-dimensional Lie admissible class; one connected abelian factor; faithful action on the minimal coupled carrier; vanishing relevant transport obstruction & realized-branch theorem \\
 \textbf{D9} & Theorem~\ref{thm:hypercharge}, Corollaries~\ref{cor:ng}, \ref{cor:nc}, Proposition~\ref{prop:z6}: realized Standard Model quotient, hypercharges, the counting chain \(N_g=3\) then \(N_c=3\), and product-group corollaries & D8 & anomaly-cancellation algebra; Witten global-anomaly argument; CKM CP counting & realized one-generation chiral matter plus one Higgs package; asymptotic-freedom and MAR admissibility premises & realized-branch theorem/corollary chain \\
 \textbf{D10} & gauge-coupling numerical closure of Section~7 & D9 + external input \(P\) & RG evolution and matching conventions supplied in the supplement & pixel constraint; edge heat-kernel closure; supplement-backed beta-function and threshold conventions & calibration sector \\
-\textbf{D12} & Sections~8--10 program continuations, including charged-lepton/Koide structure, proton-spin and non-gauge proton-lifetime estimates together with the string/worldsheet branch & various subsets of D6, D9, and D10 & branch-specific EFT and phenomenological manipulations & additional ans\"atze such as the uniform \(\mathbb Z_6\) center-label ensemble, texture choices, dark-sector response assumptions, discrete-horizon assumptions, or extra worldsheet/CFT premises & phenomenological continuation / program-level branch \\
+\textbf{D12} & Sections~8--10 phenomenological continuations, including charged-lepton/Koide structure, proton-spin and non-gauge proton-lifetime estimates together with the string/worldsheet branch & various subsets of D6, D9, and D10 & branch-specific EFT and phenomenological manipulations & additional ans\"atze such as the uniform \(\mathbb Z_6\) center-label ensemble, texture choices, dark-sector response assumptions, discrete-horizon assumptions, or extra worldsheet/CFT premises & phenomenological continuation branch \\
 \end{longtable}
 \endgroup
 
-No theorem in the compact note is meant to hide standard mathematical imports or extra physical premises inside the phrase ``from the axioms.'' The authoritative unpacking of every such claim is the dependency DAG above. In particular, quasi-local propagation and the refinement-stable sector-persistence notion are now internal to the local finite-constraint MaxEnt branch, the cap generator and its \(2\pi\) normalization are packaged inside Theorem~\ref{thm:bw} on the OPH geometric branch, the half-sided modular pair is derived inside Corollary~\ref{cor:n2}, and the remaining explicit gravity-side burdens are the downstream density-upgrade, fixed-cap stationarity, and null-stress-identification hypotheses. The only rows that use the two external continuous inputs are D6, D10, the separate order-of-magnitude neutrino estimate attached to D6, and downstream branches built from them.
+The dependency DAG records the OPH parents, imported mathematics, and extra premises for each node.
 
 \begin{theorem}[Summary theorem for the recovered relativity-plus-Standard-Model core]\label{thm:master}
-This theorem packages the recovered-core nodes D1--D5 and D7--D9 of the authoritative dependency DAG above. Node D6 is a separate input-dependent corollary, while D10 and D12 remain outside this theorem's scope. Assume Axioms~\ref{ax:screen}--\ref{ax:entropy}, Axiom~\ref{ax:mar}, Assumption~\ref{ass:technical}, and the hypotheses of Theorems~\ref{thm:confluence}, \ref{thm:bw}, \ref{thm:stress}, \ref{thm:einstein}, \ref{thm:compactgauge}, \ref{thm:sm}, and \ref{thm:hypercharge}, together with Corollaries~\ref{cor:ng}, \ref{cor:nc}, and Proposition~\ref{prop:z6}. Then, in the controlled refinement/scaling regime singled out by Assumption~\ref{ass:technical}:
+This theorem packages the recovered-core nodes D1--D5 and D7--D9 of the dependency DAG above. Node D6 is a separate input-dependent corollary, while D10 and D12 remain outside this theorem's scope. Assume Axioms~\ref{ax:screen}--\ref{ax:entropy}, Axiom~\ref{ax:mar}, Assumption~\ref{ass:technical}, and the hypotheses of Theorems~\ref{thm:confluence}, \ref{thm:bw}, \ref{thm:stress}, \ref{thm:einstein}, \ref{thm:compactgauge}, \ref{thm:sm}, and \ref{thm:hypercharge}, together with Corollaries~\ref{cor:ng}, \ref{cor:nc}, and Proposition~\ref{prop:z6}. Then, in the controlled refinement/scaling regime singled out by Assumption~\ref{ass:technical}:
 \begin{enumerate}[label=(\roman*),leftmargin=2em]
 \item overlap repair admits a unique schedule-independent normal form;
 \item cap modular flow is geometric in the assumed modular phase and yields the connected Lorentz group
@@ -391,7 +398,7 @@ A sufficient condition for (ii) is that each $S_i$ is finite and every enabled r
 \end{theorem}
 
 \begin{proof}
-Termination is assumed. Local confluence plus termination imply confluence by Newman's lemma. The resulting normal form is unique. By assumption it is a globally consistent state.
+Termination is assumed. Local confluence plus termination imply confluence by Newman's lemma~\cite{newman42}. The resulting normal form is unique. By assumption it is a globally consistent state.
 \end{proof}
 
 \begin{corollary}[Schedule Independence]
@@ -499,7 +506,7 @@ The physically relevant uniqueness statement is therefore quotient uniqueness to
 
 \section{Collars, Edge Centers, and Generalized Entropy}
 
-The fixed-point picture explains why overlap consistency produces gauge quotients, but the gravity and consensus arguments later use a more specific collar fact: after edge-center completion, interior observables become insensitive to compatible exterior substitutions, and modular additivity becomes exact in the Markov normal form. The point of this section is therefore twofold. First, at fixed regulator scale and on the ordinary or central-defect branch, we derive the collar block decomposition from overlap consistency itself. Second, we state precisely when the approximate recoverability premise of Axiom~\ref{ax:entropy} is allowed to converge to the exact HJPW normal form used by the later spatial and null collar theorems.
+The fixed-point picture explains why overlap consistency produces gauge quotients, but the gravity and consensus arguments later use a more specific collar fact: after edge-center completion, interior observables become insensitive to compatible exterior substitutions, and modular additivity becomes exact in the Markov normal form. The point of this section is therefore twofold. First, at fixed regulator scale, we derive the collar block decomposition from overlap consistency itself on the ordinary or central-defect branch and then state its genuinely noncentral higher-gauge replacement. Second, we state precisely when the approximate recoverability premise of Axiom~\ref{ax:entropy} is allowed to converge to the exact HJPW normal form used by the later spatial and null collar theorems.
 
 The sharp claim boundary is as follows. Small conditional mutual information always gives a constructive recovered comparison state with \(O(\varepsilon^{1/2})\) observable error. It does \emph{not} by itself give a universal one-shot trace-norm bound to an exact Markov state. The exact Markov normal form is recovered either when \(I(A:D\mid B)=0\) holds literally, or for a controlled family on one fixed finite-dimensional collar model, or after pullback to such a model, where \(\varepsilon\to0\). On that fixed collar one gets a collar-dependent modulus \(\delta^{\mathrm M}_{A:B:D}(\varepsilon)\to0\) measuring distance to the exact Markov set, and this is the error that must be carried into later exact splice or modular-additivity identities.
 
@@ -526,7 +533,7 @@ before the choice of reference chart, the same data form a compact unitary group
 \]
 \noindent with the convention \(\widehat K_\Sigma=K_\Sigma\) whenever no central extension is needed.
 \end{enumerate}
-Historical labels \(R0\) and \(R1\) are shorthand for items 1 and 4 on that branch; they are not extra axioms beyond the finite regulator presentation plus overlap redundancy.
+Items 1 and 4 are the fixed-cutoff realized presentation used later; they are not extra axioms beyond the finite regulator presentation plus overlap redundancy.
 \end{proposition}
 
 \begin{proof}[Proof sketch]
@@ -593,11 +600,184 @@ By Schur's lemma,
 0, & \alpha\neq \beta,
 \end{cases}
 \]
-which yields the displayed block decomposition and shows that the center is generated by the block projectors. Within each block, observables from \(A\cup B\) act only on the left factor and observables from \(B\cup D\) act only on the right factor. If the state is exact Markov, the standard HJPW structure theorem gives the blockwise factorized normal form \cite{HJPW}. The same formula is used in the idealized recoverability limit when exact identities are taken literally.
+which yields the displayed block decomposition and shows that the center is generated by the block projectors. Within each block, observables from \(A\cup B\) act only on the left factor and observables from \(B\cup D\) act only on the right factor. If the state is exact Markov, the standard HJPW structure theorem gives the blockwise factorized normal form \cite{hjpw04}. The same formula is used in the idealized recoverability limit when exact identities are taken literally.
+\end{proof}
+
+\begin{theorem}[Derived higher-gauge cut datum]\label{thm:hgdatum}
+Fix a connected cut \(\Sigma\) and a finite regulator chart \(\{P_i\}_{i\in I_\Sigma}\) meeting along \(\Sigma\), with finite nerve \(N_\Sigma\). On the genuinely noncentral branch, the weak gluing data are implemented by a compact crossed module
+\[
+\mathbb K_\Sigma=(H_\Sigma\xrightarrow{\partial_\Sigma}G_\Sigma,\triangleright)
+\]
+together with maps
+\[
+g_{ij}:P_{ij}\to G_\Sigma,
+\qquad
+h_{ijk}:P_{ijk}\to H_\Sigma,
+\]
+obeying
+\[
+g_{ij}g_{jk}=\partial_\Sigma(h_{ijk})\,g_{ik},
+\qquad
+h_{jkl}h_{ijl}=(g_{ij}\triangleright h_{ikl})\,h_{ijk}.
+\]
+The corresponding higher-gauge change system on the cut is the compact semidirect product
+\[
+\mathcal T_\Sigma:=C^1(N_\Sigma,H_\Sigma)\rtimes C^0(N_\Sigma,G_\Sigma),
+\]
+with multiplication
+\[
+(\eta,u)\cdot(\eta',u')
+=
+\bigl(\eta\,(u\triangleright \eta'),\,uu'\bigr),
+\]
+and standard coboundary action
+\[
+g_{ij}\mapsto u_i\,\partial_\Sigma(\eta_{ij})\,g_{ij}\,u_j^{-1},
+\]
+\[
+h_{ijk}\mapsto
+(u_i\triangleright h_{ijk})\,
+\eta_{ij}\,
+(g_{ij}\triangleright \eta_{jk})\,
+\eta_{ik}^{-1}.
+\]
+The fixed-cutoff physical sector on the genuinely noncentral branch is therefore the orbit class
+\[
+q_\Sigma=[(g,h)]\in \check H^2(N_\Sigma,H_\Sigma\to G_\Sigma),
+\]
+and no external continuous input \(P\) or \(N_{\mathrm{scr}}\) enters this theorem package.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+On pair overlaps, every regulator-scale recharting acts on a finite-dimensional matrix algebra and is therefore inner, so it is implemented by a unitary on the cut Hilbert space. On triple overlaps, genuinely noncentral failure of strict composition is recorded by unitary associators rather than scalars. These \(1\)- and \(2\)-morphisms form a compact unitary \(2\)-group of rechartings. Skeletal strictification of a compact \(2\)-group is equivalent to crossed-module data, which yields the displayed compact \(\mathbb K_\Sigma\). Because the nerve is finite, \(C^1(N_\Sigma,H_\Sigma)\) and \(C^0(N_\Sigma,G_\Sigma)\) are finite products of compact groups, hence \(\mathcal T_\Sigma\) is compact. The displayed formulas are the standard crossed-module coboundary action, and the orbit class is exactly the nonabelian \v{C}ech \(2\)-class of the defect data; see \cite{bullivant17} for an explicit higher-lattice-gauge realization of the same crossed-module structures.
+\end{proof}
+
+\begin{theorem}[Higher-gauge edge-center completion]\label{thm:hgedgecenter}
+Let \(B=B_L\cup B_R\) be a fixed-cutoff collar around a connected cut \(\Sigma\) on the genuinely noncentral branch of Theorem~\ref{thm:hgdatum}. Then, as unitary \(\mathcal T_\Sigma\)-modules,
+\[
+\widetilde{\mathcal H}_{B_L}
+\cong
+\bigoplus_{\lambda\in\Lambda_\Sigma}
+W_\lambda\otimes \mathcal H_{b_L^\lambda},
+\qquad
+\widetilde{\mathcal H}_{B_R}
+\cong
+\bigoplus_{\mu\in\Lambda_\Sigma}
+W_\mu^*\otimes \mathcal H_{b_R^\mu},
+\]
+for a finite set \(\Lambda_\Sigma\) of irreducible unitary representations of \(\mathcal T_\Sigma\) that actually occur. Hence the physical higher-gauge collar space is
+\[
+\mathcal H_B^{2g}
+:=
+\bigl(\widetilde{\mathcal H}_{B_L}\otimes \widetilde{\mathcal H}_{B_R}\bigr)^{\mathcal T_\Sigma}
+\cong
+\bigoplus_{\lambda\in\Lambda_\Sigma}
+\mathcal H_{b_L^\lambda}\otimes \mathcal H_{b_R^\lambda},
+\]
+and the collar algebra and its center are
+\[
+\mathcal A_{2g}(B)
+\cong
+\bigoplus_{\lambda\in\Lambda_\Sigma}
+\mathcal B(\mathcal H_{b_L^\lambda})\otimes
+\mathcal B(\mathcal H_{b_R^\lambda}),
+\qquad
+Z\bigl(\mathcal A_{2g}(B)\bigr)
+=
+\bigoplus_{\lambda\in\Lambda_\Sigma}\mathbb C\,\mathbf 1_\lambda.
+\]
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+Because \(\mathcal T_\Sigma\) is compact and the half-collar spaces are finite-dimensional, both \(\widetilde{\mathcal H}_{B_L}\) and \(\widetilde{\mathcal H}_{B_R}\) split orthogonally into irreducible unitary \(\mathcal T_\Sigma\)-modules with finite multiplicity. The right side sees inverse transport across the same cut, hence the contragredient module. Therefore
+\[
+\widetilde{\mathcal H}_{B_L}\otimes \widetilde{\mathcal H}_{B_R}
+\cong
+\bigoplus_{\lambda,\mu}
+(W_\lambda\otimes W_\mu^*)\otimes
+(\mathcal H_{b_L^\lambda}\otimes \mathcal H_{b_R^\mu}).
+\]
+Taking \(\mathcal T_\Sigma\)-invariants leaves
+\[
+(W_\lambda\otimes W_\mu^*)^{\mathcal T_\Sigma}
+\cong
+\mathrm{Hom}_{\mathcal T_\Sigma}(W_\mu,W_\lambda)
+\cong
+\begin{cases}
+\mathbb C, & \lambda=\mu,\\
+0, & \lambda\neq\mu,
+\end{cases}
+\]
+by Schur's lemma. This yields the matched block decomposition and the center formula.
+\end{proof}
+
+\begin{theorem}[Higher-gauge Markov collar and carried errors]\label{thm:hgmarkov}
+Let \(\rho_{ABD}\) be a faithful state on a collar whose middle region \(B\) carries the higher-gauge block decomposition of Theorem~\ref{thm:hgedgecenter}. If
+\[
+I(A:D\mid B)_\rho=0,
+\]
+then
+\[
+\rho_{ABD}
+=
+\bigoplus_{\lambda\in\Lambda_\Sigma}
+p_\lambda\,
+\rho_{A b_L^\lambda}\otimes \rho_{b_R^\lambda D}.
+\]
+If instead \(I(A:D\mid B)_\rho\le \varepsilon\) on one fixed faithful collar model, then the same carried Fawzi--Renner and fixed-collar Markov errors as in the ordinary branch continue to hold:
+\[
+r_{\mathrm{FR}}(\varepsilon)=2\sqrt{1-e^{-\varepsilon}}\le 2\sqrt{\varepsilon},
+\qquad
+4\lambda_\ast^{-1}\,\delta^{\mathrm M}_{A:B:D}(\varepsilon).
+\]
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+Theorem~\ref{thm:hgedgecenter} shows that the higher-gauge collar algebra is still a finite direct sum of type-I tensor blocks. HJPW depends only on that finite-dimensional algebraic structure, not on whether the block label arose from an ordinary compact group, a central extension, or a crossed-module gauge system. Likewise, the Fawzi--Renner remainder and the fixed-collar Markov modulus are finite-dimensional entropy and recovery statements and are blind to the origin of the block label.
+\end{proof}
+
+\begin{theorem}[Higher-gauge defect transportability]\label{thm:hgtransport}
+With the genuinely noncentral cut data of Theorem~\ref{thm:hgdatum}, define
+\[
+q_\Sigma:=\bigl[(g,h)\bigr]\in \check H^2(N_\Sigma,H_\Sigma\to G_\Sigma).
+\]
+Then:
+\begin{enumerate}[leftmargin=2em]
+\item \(q_\Sigma\) is invariant under all local rechartings and higher-gauge changes \((\eta,u)\in \mathcal T_\Sigma\).
+\item Two genuinely noncentral representatives describe the same fixed-cutoff physical cut sector if and only if they determine the same class \(q_\Sigma\).
+\item The defect is removable if and only if \(q_\Sigma=0\).
+\end{enumerate}
+Thus the genuinely noncentral branch carries the same transportability logic as the ordinary or central branch, but in crossed-module \v{C}ech degree \(2\) rather than ordinary group cohomology.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+Items 1--3 are the crossed-module version of ordinary \v{C}ech transportability: coboundaries
+change representatives while preserving classes, the trivial class strictifies the cocycle, and a
+nontrivial class cannot be gauged away. In any explicit crossed-module lattice realization, the
+same sectors are equivalently the connected components of the \(2\)-flat configuration groupoid,
+or homotopy classes of maps into the classifying space \(B\mathbb K_\Sigma\).
+\end{proof}
+
+\begin{proposition}[Higher-gauge interacting compatibility]\label{prop:hginteracting}
+In a fixed-cutoff crossed-module lattice realization of Theorem~\ref{thm:hgdatum}, one may add local collar terms
+\[
+K_{\mathrm{collar}}^{2g}
+=
+\sum_{v\in\Sigma_0}\beta_v(1-A_v)
++
+\sum_{e\in\Sigma_1}\beta_e(1-B_e)
++
+\sum_{c\in\mathcal C_\Sigma}\beta_c(1-C_c),
+\]
+where \(A_v\), \(B_e\), and \(C_c\) are the local gauge and fake-flat projectors of the chosen higher-gauge realization. These terms are bounded-support and commute in the standard higher-gauge projector realization \cite{bullivant17}, so the full fixed-cutoff generator remains quasi-local and inside the Axiom~\ref{ax:maxent} class.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+The additional terms are local projector constraints supported on finitely many collar cells, so they preserve bounded support and quasi-locality. In the standard higher-gauge projector realization they commute, so the same finite-constraint MaxEnt/Lieb--Robinson bookkeeping used on the ordinary branch continues to apply.
 \end{proof}
 
 \begin{remark}[Status of the regulator package and the precise Markov boundary]
-Proposition~\ref{prop:regulatedrealization} and Theorem~\ref{thm:markovcollar} show that, on the ordinary or central-defect branch, edge-center completion is a theorem of overlap consistency plus the finite regulator presentation; no preferred quantum-link realization is being assumed there. Assumption~\ref{ass:technical}\textbf{T1} is therefore theorem-local shorthand for this derived regulator package. The only remaining fixed-cutoff obstruction to a fully general ordinary-group theorem is a genuinely noncentral 2-group defect. On that branch the fixed-cutoff topological UV package is therefore closed up to that named noncentral obstruction; the further transportable compact-gauge lift still carries \textbf{T7} and \textbf{T10}--\textbf{T12} whenever it is invoked. In the genuinely noncentral case, the right replacement is a higher-gauge or crossed-module version of the collar block decomposition and transportability theorem rather than one more ordinary-group lemma. The distinct issue addressed next is \emph{state} control: exact splice and modular-additivity identities require either literal exact Markovity or a controlled family that converges to the exact Markov set on one fixed finite-dimensional collar.
+Proposition~\ref{prop:regulatedrealization}, Theorem~\ref{thm:markovcollar}, and Theorems~\ref{thm:hgdatum}--\ref{thm:hgtransport} together with Proposition~\ref{prop:hginteracting} show that edge-center completion is a theorem of overlap consistency plus the finite regulator presentation on the ordinary, central-defect, and genuinely noncentral higher-gauge branches. No preferred quantum-link realization is assumed on the ordinary or central branch, and the genuinely noncentral branch is handled by the compact crossed-module replacement rather than by one more ordinary-group lemma. The fixed-cutoff topological UV package is closed on all three branches. What remains open is the continuum modular/geometric lift behind \textbf{T1}+\textbf{T3} and, whenever refinement-limit compact gauge reconstruction is invoked, the transportable bosonic gauge lift behind \textbf{T2} and \textbf{T5}--\textbf{T7}. The distinct issue addressed next is \emph{state} control: exact splice and modular-additivity identities require either literal exact Markovity or a controlled family that converges to the exact Markov set on one fixed finite-dimensional collar.
 \end{remark}
 
 \begin{definition}[Exact Markov set and collar-distance modulus]\label{def:markovmodulus}
@@ -653,7 +833,7 @@ then there exist exact Markov states \(\sigma^{(n)}\in\mathfrak M_{A:B:D}\) such
 \delta^{\mathrm M}_{A:B:D}(\varepsilon_n)
 \longrightarrow 0.
 \]
-This is the precise sense in which approximate recoverability converges to the exact HJPW normal form used later.
+Thus approximate recoverability converges to the exact HJPW normal form used later.
 \end{proposition}
 
 \begin{proof}
@@ -717,7 +897,7 @@ The fidelity lower bound and the Fuchs--van de Graaf inequality give
 =
 r_{\mathrm{FR}}(\varepsilon).
 \]
-The estimate \(r_{\mathrm{FR}}(\varepsilon)\le 2\sqrt{\varepsilon}\) follows from \(1-e^{-x}\le x\). Contractivity of trace norm under CPTP maps gives the transported bound, and the observable estimate is the duality between trace norm and operator norm \cite{FawziRenner}. The bound is constructive and dimension-free. What it controls is closeness to a recovered comparison state; no claim is made that \(\rho^{\mathrm{rec}}_{ABD}\) is itself exact Markov.
+The estimate \(r_{\mathrm{FR}}(\varepsilon)\le 2\sqrt{\varepsilon}\) follows from \(1-e^{-x}\le x\). Contractivity of trace norm under CPTP maps gives the transported bound, and the observable estimate is the duality between trace norm and operator norm \cite{fawziRenner15}. The bound is constructive and dimension-free. What it controls is closeness to a recovered comparison state; no claim is made that \(\rho^{\mathrm{rec}}_{ABD}\) is itself exact Markov.
 \end{proof}
 
 \begin{proposition}[Exact splice theorem and controlled collar approximation]\label{prop:splice}
@@ -920,7 +1100,7 @@ Proposition~\ref{prop:splice} is the algebraic version of interior invariance un
 
 \subsection{Geometric modular flow}
 
-The collar analysis identifies where modular nonadditivity can live, but by itself it does not determine the continuum geometric action of the limiting modular group. The theorem therefore works on the refinement-stable cap branch lying in the Bisognano--Wichmann geometric modular class of \textbf{T4}. On that branch, OPH supplies a controlled reduction from the regulator collar to the refinement limit together with the \(2\pi\) normalization and carried-error statement for the standard cap-preserving conformal subgroup.
+The collar analysis identifies where modular nonadditivity can live, but by itself it does not determine the continuum geometric action of the limiting modular group. The theorem therefore works on the refinement-stable cap branch lying in the Bisognano--Wichmann geometric modular class of \textbf{T1}. On that branch, OPH supplies a controlled reduction from the regulator collar to the refinement limit together with the \(2\pi\) normalization and carried-error statement for the standard cap-preserving conformal subgroup.
 
 Fix a cap \(C\subset S^2\) and a shrinking collar family \((A_\delta,B_\delta,D_\delta)\) around \(\partial C\), with \(\delta\downarrow 0\) and \(A_\delta\cup B_\delta\cup D_\delta\) covering a neighborhood of the cut. Write
 \[
@@ -949,7 +1129,7 @@ with the finite-stage errors \(r_{\mathrm{FR}}(\varepsilon_\delta)\) and \(\eta_
 \end{enumerate}
 
 \begin{theorem}[Geometric modular flow on caps in the OPH Bisognano--Wichmann branch]\label{thm:bw}
-Assume Axioms~\ref{ax:screen}--\ref{ax:entropy}, together with the fixed-cutoff regulator presentation \textbf{T1}, the branch-internal control statements denoted \textbf{T2}--\textbf{T3}, and the controlled scaling-limit scope clause \textbf{T8} of Assumption~\ref{ass:technical}. Assume in addition the \textbf{T4} branch condition that the refinement-stable MaxEnt branch selected by OPH lies in the Bisognano--Wichmann geometric modular class for caps and their conformal images. For each cap \(C\subset S^2\), let \(\lambda_C(s)\subset \Conf^+(S^2)\) denote the standard cap-preserving conformal one-parameter subgroup supplied by \textbf{T4}, with geometric parameter \(s\) normalized so that the null blow-up near a smooth cut acts by \(v\mapsto e^{-s}v\), and let \(B_C\) be its infinitesimal generator. Then for every cap \(C\subset S^2\) the following hold.
+Assume Axioms~\ref{ax:screen}--\ref{ax:entropy}, together with the derived fixed-cutoff regulator/collar package established above and the controlled scaling-limit scope clause \textbf{T3} of Assumption~\ref{ass:technical}. Assume in addition the \textbf{T1} branch condition that the refinement-stable MaxEnt branch selected by OPH lies in the Bisognano--Wichmann geometric modular class for caps and their conformal images. For each cap \(C\subset S^2\), let \(\lambda_C(s)\subset \Conf^+(S^2)\) denote the standard cap-preserving conformal one-parameter subgroup supplied by \textbf{T1}, with geometric parameter \(s\) normalized so that the null blow-up near a smooth cut acts by \(v\mapsto e^{-s}v\), and let \(B_C\) be its infinitesimal generator. Then for every cap \(C\subset S^2\) the following hold.
 \begin{enumerate}[label=\textup{(\roman*)},leftmargin=2em]
 \item At regulator scale, the modular defect is confined to the shrinking collar up to the carried errors measured by \(r_{\mathrm{FR}}(\varepsilon_\delta)\) and \(\eta_\delta^{\mathrm M}\).
 \item In the refinement limit, the modular action on \(\mathcal A(C)\) is geometric and is implemented by \(\lambda_C(\kappa_C t)\) for some \(\kappa_C>0\). Equivalently, the limiting modular Hamiltonian is of the form
@@ -979,12 +1159,12 @@ K_C=2\pi B_C.
 \begin{proof}
 Step 1: collar localization. At one fixed collar scale, Propositions~\ref{prop:splice} and~\ref{prop:gensplit} together with the controlled Markov replacement results show that all exact collar identities are justified either literally at exact Markovity or along a family whose failure of exactness is measured by \(r_{\mathrm{FR}}(\varepsilon_\delta)\) and \(\eta_\delta^{\mathrm M}\). In particular, the nonadditive part of the modular generator is confined to the shrinking collar around \(\partial C\) up to those carried errors.
 
-Step 2: passage to the Bisognano--Wichmann geometric branch. By the \textbf{T4} branch hypothesis, the refinement-stable cap net belongs to the Bisognano--Wichmann geometric modular class. Therefore the limiting modular automorphism group of \(\mathcal A(C)\) is implemented by the standard cap-preserving conformal one-parameter subgroup \(\lambda_C(s)\). Writing \(B_C\) for the infinitesimal generator supplied by that branch data, there exists \(\kappa_C>0\) such that
+Step 2: passage to the Bisognano--Wichmann geometric branch. By the \textbf{T1} branch hypothesis, the refinement-stable cap net belongs to the Bisognano--Wichmann geometric modular class. Therefore the limiting modular automorphism group of \(\mathcal A(C)\) is implemented by the standard cap-preserving conformal one-parameter subgroup \(\lambda_C(s)\). Writing \(B_C\) for the infinitesimal generator supplied by that branch data, there exists \(\kappa_C>0\) such that
 \[
 K_C=\kappa_C B_C.
 \]
 
-Step 3: normalization. The modular flow is KMS at inverse temperature \(1\) by definition. Since the geometric parameter \(s\) in \(\lambda_C(s)\) is normalized by unit null dilation in the \textbf{T4} branch, the usual Bisognano--Wichmann relation identifies the modular parameter with the geometric one by \(s=2\pi t\). Equivalently,
+Step 3: normalization. The modular flow is KMS at inverse temperature \(1\) by definition. Since the geometric parameter \(s\) in \(\lambda_C(s)\) is normalized by unit null dilation in the \textbf{T1} branch, the usual Bisognano--Wichmann relation identifies the modular parameter with the geometric one by \(s=2\pi t\) \cite{bw75,bw76,bgl93}. Equivalently,
 \[
 \kappa_C=2\pi.
 \]
@@ -1005,7 +1185,7 @@ K_C=2\pi B_C.
 \end{proof}
 
 \begin{remark}[What is proved and what is not]
-The theorem proves the controlled collar reduction together with the \(2\pi\) normalization \emph{on the OPH refinement branch in which the cap net has the Bisognano--Wichmann geometric modular action of \textbf{T4}}. On that branch, the standard cap-preserving conformal subgroup is part of the branch data, and the theorem identifies its modular generator with the carried collar remainder made explicit. The branch-selection question is encoded in the stated \textbf{T4} hypothesis; the theorem then fixes the normalization and controlled refinement limit on that branch.
+The theorem proves the controlled collar reduction together with the \(2\pi\) normalization \emph{on the OPH refinement branch in which the cap net has the Bisognano--Wichmann geometric modular action of \textbf{T1}}. On that branch, the standard cap-preserving conformal subgroup is part of the branch data, and the theorem identifies its modular generator with the carried collar remainder made explicit. The branch-selection question is encoded in the stated \textbf{T1} hypothesis; the theorem then fixes the normalization and controlled refinement limit on that branch.
 \end{remark}
 
 \begin{corollary}[Lorentz Kinematics]\label{cor:lorentz}
@@ -1021,12 +1201,12 @@ Orientation-preserving conformal maps of \(S^2\) are exactly the M\"obius transf
 \[
 \Conf^+(S^2)\cong \mathrm{PSL}(2,\mathbb C)\cong \mathrm{SO}^+(3,1).
 \]
-By Theorem~\ref{thm:bw} together with the \textbf{T4} branch hypothesis, the cap modular groups are identified with the standard cap-preserving conformal dilations inside this group. Hence the local kinematics induced by modular flow is the connected Lorentz group.
+By Theorem~\ref{thm:bw} together with the \textbf{T1} branch hypothesis, the cap modular groups are identified with the standard cap-preserving conformal dilations inside this group. Hence the local kinematics induced by modular flow is the connected Lorentz group.
 \end{proof}
 
 \subsection{The null modular bridge}
 
-The fixed-cutoff strip analysis begins from the transferred cut-center data and the inherited-strip Markov structure. At fixed regulator scale one obtains exact or controlled four-term strip additivity together with endpoint-Lipschitz control of the renormalized half-line family; on the same OPH geometric scaling branch used in Theorem~\ref{thm:bw}, the null half-line blow-up net then inherits geometric dilation and therefore half-sided modular inclusion. Standard Borchers--Wiesbrock theory consequently applies to the resulting OPH half-sided modular pair, yielding positivity and unitary implementation of null translations. What is still not proved here is the downstream density upgrade from the weak tail generator to a local operator-valued density and the relativistic identification of that density with continuum \(T_{kk}\).
+The fixed-cutoff strip analysis begins from the transferred cut-center data and the inherited-strip Markov structure. At fixed regulator scale one obtains exact or controlled four-term strip additivity together with endpoint-Lipschitz control of the renormalized half-line family; on the same OPH geometric scaling branch used in Theorem~\ref{thm:bw}, the null half-line blow-up net then inherits geometric dilation and therefore half-sided modular inclusion. Standard Borchers--Wiesbrock theory~\cite{wiesbrock93} consequently applies to the resulting OPH half-sided modular pair, yielding positivity and unitary implementation of null translations. What is still not proved here is the downstream density upgrade from the weak tail generator to a local operator-valued density and the relativistic identification of that density with continuum \(T_{kk}\).
 \par
 The present subsection therefore establishes the following chain:
 \begin{enumerate}[leftmargin=2em]
@@ -1035,7 +1215,7 @@ The present subsection therefore establishes the following chain:
 \item endpoint-Lipschitz matrix elements for the renormalized half-line family and the resulting weak tail generator;
 \item derived half-sided modular inclusion on the null half-line blow-up net from OPH scaling-limit geometry, and the resulting Borchers positive translation generator.
 \end{enumerate}
-The labels \(\ref{lem:density}\) and \(\ref{thm:stress}\) are retained below as the only explicit downstream boundaries. Historical references elsewhere to the old null half-sided-inclusion label \textbf{T6} should, within this subsection, be read as shorthand for the derived statement of Corollary~\ref{cor:n2}. The positive null-translation generator is now stated explicitly in Lemma~\ref{lem:translation}: the Borchers unitary group is constructed on its Stone domain, positivity is theorem-level rather than implicit, and the half-line modular Hamiltonians are tied to it by explicit affine covariance and quadratic-form identities. Bounded-interval formulas remain downstream and continue to require the separate interval-preserving projective branch.
+The labels \(\ref{lem:density}\) and \(\ref{thm:stress}\) are retained below as the only explicit downstream boundaries. Lemma~\ref{lem:translation} states the positive null-translation generator explicitly: the Borchers unitary group is constructed on its Stone domain, positivity is theorem-level rather than implicit, and the half-line modular Hamiltonians are tied to it by explicit affine covariance and quadratic-form identities. Bounded-interval formulas remain downstream and continue to require the separate interval-preserving projective branch.
 
 \begin{proposition}[Null-strip center transfer and inherited split]\label{prop:nullec}
 Fix a null generator \(\Omega\) and a regulated tripartition
@@ -1050,7 +1230,7 @@ with cuts
 \qquad
 \Gamma_+:=\{v=v_3\}.
 \]
-Assume the fixed-cutoff regulator package \textbf{T1} of Assumption~\ref{ass:technical}, and assume that the two null cuts inherit the ordinary or central-defect boundary-redundancy data of Proposition~\ref{prop:regulatedrealization} in the following precise sense:
+Assume the derived fixed-cutoff regulator/collar package established above, and assume that the two null cuts inherit the ordinary or central-defect boundary-redundancy data of Proposition~\ref{prop:regulatedrealization} in the following precise sense:
 \begin{enumerate}[leftmargin=2em,label=(\roman*)]
 \item each cut \(\Gamma_\pm\) carries a compact derived boundary action \(\widehat K_\pm\) on a reference cut Hilbert space, with \(\widehat K_\pm=K_\pm\) on the ordinary branch;
 \item in a compatible type-I regulator presentation, the adjacent regions carry inverse transport across each cut, so for irreducible \(\widehat K_\pm\)-modules \(W_{\alpha_\pm}\) one has decompositions
@@ -1649,7 +1829,7 @@ for the same domain vectors. The half-sided-inclusion step proves only this affi
 \end{lemma}
 
 \begin{proof}
-Corollary~\ref{cor:n2} gives the required half-sided modular inclusion. The standard Borchers--Wiesbrock theorem for a standard half-sided inclusion then yields a unique strongly continuous unitary group \(U_\Omega(a)\) with \(U_\Omega(a)\omega=\omega\), the translation law for the nested half-line net, and a positive self-adjoint generator \(P_\Omega\); Stone's theorem gives the displayed domain formula.
+Corollary~\ref{cor:n2} gives the required half-sided modular inclusion. The standard Borchers--Wiesbrock theorem for a standard half-sided inclusion~\cite{wiesbrock93} then yields a unique strongly continuous unitary group \(U_\Omega(a)\) with \(U_\Omega(a)\omega=\omega\), the translation law for the nested half-line net, and a positive self-adjoint generator \(P_\Omega\); Stone's theorem gives the displayed domain formula.
 
 The affine covariance relation
 \[
@@ -1811,7 +1991,8 @@ For admissible variations preserving cap labels, cap size/volume, and relevant c
 \]
 \end{assumption}
 
-This is the Jacobson-type fixed-cap stationarity premise used in the compact note. MaxEnt alone does not derive it here.
+This is the Jacobson-type fixed-cap stationarity premise used in the compact note; it is not
+derived from MaxEnt alone.
 
 \begin{lemma}[d=4 small-ball modular bridge]\label{lem:smallball}
 Assume the hypotheses of Theorem~\ref{thm:stress} and a locally Lorentzian scaling regime in which $\delta\langle T_{00}\rangle$ is approximately constant across a small radius-$\ell$ ball/diamond centered at the cap point. Assume moreover that the transported D4 carried remainder contributes only
@@ -1883,7 +2064,7 @@ modulo the metric-term ambiguity already isolated by Lemma~\ref{lem:nullreconstr
 \end{corollary}
 
 \begin{proof}
-Overlap consistency across observers through the same point supplies all timelike directions, and Theorem~\ref{thm:stress} together with Lemma~\ref{lem:nullreconstruct} upgrades the rest-frame relation to the full tensor equation in the Jacobson entanglement-equilibrium line of argument \cite{Jacobson95,Jacobson16}.
+Overlap consistency across observers through the same point supplies all timelike directions, and Theorem~\ref{thm:stress} together with Lemma~\ref{lem:nullreconstruct} upgrades the rest-frame relation to the full tensor equation in the Jacobson entanglement-equilibrium line of argument \cite{jacobson95,jacobson16}.
 \end{proof}
 
 \subsection{The cosmological constant}
@@ -1921,6 +2102,8 @@ At any fixed UV cutoff, edge-center completion equips collars with finitely many
 \mathsf{Sect}_\infty := \varinjlim_r \mathsf{Sect}_r
 \]
 over regulator refinements $r$, retaining only transportable sectors and intertwiners that persist under refinement. This is the object on which Tannaka/Doplicher-Roberts reconstruction is applied.
+over regulator refinements $r$, retaining only transportable sectors and intertwiners that persist
+under refinement. Tannaka/Doplicher--Roberts reconstruction is applied to this category.
 
 \begin{theorem}[Conditional compact gauge reconstruction in the bosonic branch]\label{thm:compactgauge}
 Assume Axioms~\ref{ax:screen}--\ref{ax:entropy}, the relevant parts of Assumption~\ref{ass:technical}, and that the refinement-stable edge-sector category $\mathsf{Sect}_\infty$ in the EFT regime is a rigid symmetric $C^*$-tensor category with a faithful bosonic fiber functor to finite-dimensional Hilbert spaces. Then
@@ -1931,7 +2114,7 @@ for a compact group $G$ uniquely determined up to isomorphism.
 \end{theorem}
 
 \begin{proof}[Proof sketch]
-Each fixed-cutoff category has only finitely many simple blocks, but the refinement-stable colimit $\mathsf{Sect}_\infty$ can have infinitely many simple objects while still carrying objectwise finite-dimensional fibers. In the bosonic EFT branch, symmetry and rigidity place the category in the Doplicher-Roberts/Tannakian reconstruction class, and the faithful bosonic fiber functor identifies it with $\mathrm{Rep}(G)$ for a compact group $G$ \cite{DR89,DR90}.
+Each fixed-cutoff category has only finitely many simple blocks, but the refinement-stable colimit $\mathsf{Sect}_\infty$ can have infinitely many simple objects while still carrying objectwise finite-dimensional fibers. In the bosonic EFT branch, symmetry and rigidity place the category in the Doplicher-Roberts/Tannakian reconstruction class, and the faithful bosonic fiber functor identifies it with $\mathrm{Rep}(G)$ for a compact group $G$ \cite{dr89,dr90}.
 \end{proof}
 
 If a fermionic sign object is present, the correct reconstruction statement is super-Tannakian rather than purely Tannakian. The compact note does not prove that fermionic/chiral extension; it works only in the bosonic internal-gauge branch.
@@ -2011,7 +2194,7 @@ The $\SU(3)$ action is irreducible on the first tensor factor and trivial on the
 \end{proof}
 
 \begin{theorem}[Product Gauge Structure up to Finite Quotient]\label{thm:sm}
-Assume Axiom~\ref{ax:mar}, vanishing obstruction $[z]=0$ on the realized low-energy branch, the hypotheses of Theorem~\ref{thm:compactgauge}, the weak-type / color-type MAR premises above, and that the realized connected gauge image acts faithfully on the minimal coupled carrier. Then the realized connected gauge structure has the form
+Assume Axiom~\ref{ax:mar}, vanishing of the relevant transport obstruction on the realized low-energy branch, the hypotheses of Theorem~\ref{thm:compactgauge}, the weak-type / color-type MAR premises above, and that the realized connected gauge image acts faithfully on the minimal coupled carrier. Then the realized connected gauge structure has the form
 \[
 G_{\mathrm{phys}}=
 \frac{\SU(3)\times\SU(2)\times\U(1)}{\Gamma}
@@ -2124,7 +2307,7 @@ Witten's global $\SU(2)$ anomaly requires the total number of left-handed weak d
 \[
 N_g(N_c+1)\equiv 0 \pmod 2.
 \]
-With $N_g=3$, this implies $N_c$ is odd. The case $N_c=1$ is inadmissible because it removes the intrinsically complex color sector demanded by Lemma~\ref{lem:mincontent}. Minimal admissibility therefore selects $N_c=3$ \cite{Witten82}.
+With $N_g=3$, this implies $N_c$ is odd. The case $N_c=1$ is inadmissible because it removes the intrinsically complex color sector demanded by Lemma~\ref{lem:mincontent}. Minimal admissibility therefore selects $N_c=3$ \cite{witten82}.
 \end{proof}
 
 \begin{proposition}[Global quotient from the realized matter spectrum]\label{prop:z6}
@@ -2198,7 +2381,7 @@ The resulting relation
 \[
 \Lambda=\frac{3\pi}{G N_{\mathrm{scr}}}
 \]
-fits naturally with a de Sitter static patch of finite entropy via $N_{\mathrm{scr}}=A_{\mathrm{dS}}/(4G)$. This is the same D6 local/global split in prose: null-modular reconstruction says what local data cannot fix, and screen capacity supplies the missing global datum. OPH is therefore formulated in a de Sitter-first language. The positive cosmological constant is tied to finite capacity rather than to a deformation of a negative-$\Lambda$ starting point.
+fits naturally with a de Sitter static patch of finite entropy via $N_{\mathrm{scr}}=A_{\mathrm{dS}}/(4G)$. The local null-modular reconstruction leaves the metric ambiguity, while screen capacity supplies the global datum that fixes \(\Lambda\). OPH is therefore formulated in a de Sitter-first language. The positive cosmological constant is tied to finite capacity rather than to a deformation of a negative-$\Lambda$ starting point.
 
 \subsection{Factorization, gauge structure, and the string sector}
 
@@ -2231,13 +2414,13 @@ String sector & Fundamental dual description & Effective large-$N_{\mathrm{edge}
 \end{tabular}
 \endgroup
 
-\section{Predictive Status and Falsifiability}
+\section{Claim Tiers and Falsifiability}
 
-This section is the authoritative falsifiability ledger for the three-phase program. In the compact note, the recovered core is
+The recovered core is
 \[
 (D1\text{--}D5)\cup(D7\text{--}D9),
 \]
-namely the relativity chain together with the realized Standard Model structural chain. D6 is a separate input-dependent capacity corollary, D10 is an implementation-level supplement-backed calibration branch, and D12 collects deferred continuations.
+namely the relativity chain together with the realized Standard Model structural chain. D6 is a separate input-dependent capacity corollary, D10 is the supplement-backed calibration sector, and D12 collects phenomenological continuations.
 
 \subsection{Prediction audit by claim tier}
 
@@ -2252,14 +2435,12 @@ Tier & Representative outputs & What would actually falsify the tier \\
 \endfoot
 Phase I recovered core (Theorem~\ref{thm:master}; D1--D5, D7--D9) & Confluence of overlap repair, conditional Lorentz kinematics, the conditional Jacobson-type Einstein branch in the stated scaling regime, compact gauge reconstruction in the bosonic branch, the realized Standard Model quotient chain, the exact hypercharge lattice on the realized matter package, the realized counting chain \(N_g=3\) then \(N_c=3\), and the product-group consequence of no gauge-mediated proton decay & A mathematical failure in the derivation chain, or data that require a different realized gauge quotient, different realized hypercharges, a different color or generation count on the admissible branch, or gauge-mediated proton decay \\
 Phase II input-dependent corollary (D6) & \(\Lambda=\frac{3\pi}{G N_{\mathrm{scr}}}\) once the screen-capacity identification is made, together with the separate order-of-magnitude neutrino estimate tied to the same capacity input & Failure of the screen-capacity identification or of the specific global capacity relation. Such a failure would not by itself erase the recovered core \\
-Phase II current implementation: calibration sector (D10) & Pixel-closure gauge-coupling consistency, \(\alpha_i(m_Z)\), \(\alpha_{\mathrm{em}}^{-1}(m_Z)\), \(\sin^2\theta_W(m_Z)\), and the present supplement-backed \(W/Z\) carrier diagnostics & Failure of the supplement-backed closure of the present implementation once \(P\) and the printed running/matching conventions are imposed \\
-Phase III deferred continuations (D12 and beyond) & Flavor ans\"atze, charged-lepton/Koide fits, texture branches, neutrino mass/mixing constructions beyond the D6 estimate, dark-sector response laws, baryogenesis estimates, proton-spin bookkeeping, proton-lifetime estimates beyond the gauge-channel exclusion, black-hole spectroscopy templates, conditional string/worldsheet reorganizations, conjectural critical-superstring extensions, and other downstream phenomenology & Retraction of the corresponding continuation only. These branches are not part of the compact paper's recovered core and their failure is not, by itself, a falsification of relativity-plus-Standard-Model recovery \\
+Phase II calibration sector (D10) & Pixel-closure gauge-coupling consistency, \(\alpha_i(m_Z)\), \(\alpha_{\mathrm{em}}^{-1}(m_Z)\), \(\sin^2\theta_W(m_Z)\), and the supplement-backed \(W/Z\) carrier diagnostics & Failure of the supplement-backed closure once \(P\) and the printed running/matching conventions are imposed \\
+Phase III phenomenological continuations (D12 and beyond) & Flavor ans\"atze, charged-lepton/Koide fits, texture branches, neutrino mass/mixing constructions beyond the D6 estimate, dark-sector response laws, baryogenesis estimates, proton-spin bookkeeping, proton-lifetime estimates beyond the gauge-channel exclusion, black-hole spectroscopy templates, conditional string/worldsheet reorganizations, conjectural critical-superstring extensions, and other downstream phenomenology & Retraction of the corresponding continuation only. These branches are not part of the recovered core and their failure is not, by itself, a falsification of relativity-plus-Standard-Model recovery \\
 \end{longtable}
 \endgroup
 
-This tier split is the sync rule for mirrored status surfaces: Phase I is the recovered-core falsifiability standard, Phase II is visible but non-core, and Phase III is explicitly continuation-level.
-
-Mirrored interpretive surfaces may discuss a separate OPH-internal state-and-law habitat theorem for the strange-loop wrapper. That result, when stated carefully, still sits outside Phase I and does not change this falsifiability ledger: the missing ingredients remain the actual OPH closure map, an invariant admissible observer-supporting sector for that map, and any uniqueness or stability estimate.
+Phase I is the recovered-core tier, Phase II is adjacent but non-core, and Phase III contains phenomenological continuations. Interpretive strange-loop discussions lie outside these tiers: the paper does not define an OPH closure map on an invariant observer-supporting sector or prove uniqueness or stability for such a map.
 
 \subsection{Recovered-core discriminators}
 
@@ -2313,38 +2494,34 @@ The following do \emph{not} falsify Theorem~\ref{thm:master} if they fail in the
 \end{enumerate}
 These are all post-Phase-I, non-core branches. Some are Phase-II input-dependent estimates, while the rest are Phase-III continuations. None is part of the compact note's recovered relativity-plus-Standard-Model core.
 
-\subsection{What the compact paper claims after scope-cleaning}
-
-After the present scope clean, the compact paper claims exactly this: observer-overlap consistency, together with the stated scaling-limit and categorical premises, recovers a conditional relativity branch and the realized Standard Model structural branch. The Phase-II capacity relation and the current Phase-II D10 calibration sector remain visible but secondary. Everything in Phase III is explicitly non-core, including the modular-anomaly dark-sector branch, which remains future work rather than a theorem-level output.
-
 \section{Common Objections and Clarifications}
 
 \subsection{\texorpdfstring{Is the use of $P$ circular?}{Is the use of P circular?}}
 
-The answer depends on which sector is under discussion. In the current public formulation the pixel area $P$ calibrates a separate gauge-coupling sector. Quantities algebraically entangled with that calibration are therefore consistency checks for the implementation rather than part of the recovered-core claim set.
+The pixel area $P$ calibrates the separate gauge-coupling sector used here. Quantities algebraically entangled with that calibration are therefore consistency checks for that implementation rather than part of the recovered-core claim set.
 
 Operationally, changing $P$ moves the calibration family $(\alpha_U,\alpha_i(m_Z),\sin^2\theta_W(m_Z))$. It does not alter the parameter-free structural outputs such as the gauge quotient or hypercharge lattice. Downstream matter-sector continuations, including Koide-style relations, remain outside the compact paper's recovered-core theorem package.
 
 \subsection{Does a fixed UV cell size break Lorentz invariance?}
 
-The UV regulator is placed on the screen algebra, not on an emergent bulk spacetime lattice. Lorentz kinematics in the present framework arise from the continuum modular action on caps, summarized in Corollary~\ref{cor:lorentz}, rather than from microscopic invariance of a bulk discretization.
+The UV regulator is placed on the screen algebra, not on an emergent bulk spacetime lattice. Lorentz kinematics arise from the continuum modular action on caps, summarized in Corollary~\ref{cor:lorentz}, rather than from microscopic invariance of a bulk discretization.
 
 This is conceptually similar to other continuum limits in statistical mechanics and lattice field theory. A regulator may break a symmetry at finite cutoff while the infrared fixed point restores it exactly. In OPH the restoration is stronger than a generic RG expectation because the modular-flow theorem identifies the symmetry group itself:
 \[
 \Conf^+(S^2)\cong \mathrm{SO}^+(3,1).
 \]
 Residual Lorentz violation would therefore have to arise from a failure of the regulator premises or from a failure of the modular-flow theorem, not merely from the existence of a UV cell size.
-The remaining UV-side burden on the Lorentz branch is therefore the explicit branch-selection and scaling-limit package \textbf{T4}+\textbf{T8}, not the mere existence of a finite cell size.
+The remaining UV-side burden on the Lorentz branch is therefore the explicit branch-selection and scaling-limit package \textbf{T1}+\textbf{T3}, not the mere existence of a finite cell size.
 
 \subsection{Why use type-I algebras if continuum QFT uses type III?}
 
 The type-I assumption is a regulator statement. At finite cutoff the local patch algebras are finite-dimensional matrix algebras, which makes entropy and recovery theory well defined. The continuum limit is expected to recover the familiar type-III behavior of local QFT algebras. There is no contradiction here. The two statements refer to different scales.
 
-This is no more problematic than using a lattice regulator for Yang-Mills theory and then taking a continuum limit in which the operator algebra changes type. The mathematical burden is the existence of a controlled scaling regime. In the present manuscript that burden is isolated in Assumption~\ref{ass:technical}. It is not hidden inside the main theorems.
+This is no more problematic than using a lattice regulator for Yang-Mills theory and then taking a continuum limit in which the operator algebra changes type. The mathematical burden is the existence of a controlled scaling regime, isolated in Assumption~\ref{ass:technical}.
 
-\subsection{What is the current UV-completion claim?}
+\subsection{UV branch and scaling-limit scope}
 
-At fixed cutoff, Axiom~\ref{ax:maxent} already yields a quasi-local finite-range interacting branch, and Propositions~\ref{prop:gauge} and \ref{prop:ancillauv} show that the physical normal form is unique only modulo quotient-level OPH-stable equivalence. The present suite therefore does not merely decline to prove a unique microscopic UV completion; it shows that literal microscopic uniqueness is not the invariant fixed by the current axiom language. What is fixed is the class \([\mathfrak U]_{\mathrm{OPH}}\) of the physical branch modulo implementation hiding and inert ancillary stabilization. On the ordinary or central-defect branch, the remaining fixed-cutoff topological obstruction is the genuinely noncentral 2-group defect singled out above. Beyond fixed cutoff, the continuum modular/geometric lift remains frozen behind \textbf{T4} and \textbf{T8}, and the transportable bosonic gauge lift still carries \textbf{T7} and \textbf{T10}--\textbf{T12} when invoked; the noncentral case points to a higher-gauge crossed-module extension rather than an ordinary-group proof patch.
+At fixed cutoff, Axiom~\ref{ax:maxent} yields a quasi-local finite-range interacting branch, and Propositions~\ref{prop:gauge} and \ref{prop:ancillauv} show that the physical normal form is unique only modulo quotient-level OPH-stable equivalence. The invariant fixed by the axiom language is the class \([\mathfrak U]_{\mathrm{OPH}}\) of the physical branch modulo implementation hiding and inert ancillary stabilization, not a unique microscopic representative. The genuinely noncentral topological case is also closed at fixed cutoff by the higher-gauge package of Theorems~\ref{thm:hgdatum}--\ref{thm:hgtransport} and Proposition~\ref{prop:hginteracting}, so the fixed-cutoff topological UV surface is closed on the ordinary, central-defect, and crossed-module branches alike. Beyond fixed cutoff, the continuum modular/geometric lift remains behind \textbf{T1} and \textbf{T3}, and the transportable bosonic gauge lift still carries \textbf{T2} and \textbf{T5}--\textbf{T7} when invoked.
 
 \subsection{Why is charge quantization possible without a simple GUT?}
 
@@ -2359,25 +2536,27 @@ The framework is strongest where the outputs are discrete or structurally rigid:
 \item the Standard Model gauge quotient chain;
 \item exact hypercharges on the realized one-generation matter package with one Higgs doublet;
 \item the realized counting chain \(N_g=3\) then \(N_c=3\) on the realized MAR-admissible branch;
-\item the compact two-input economy of the present quantitative implementation, kept explicit as a secondary layer rather than as part of Phase I.
+\item the compact two-input quantitative layer, kept explicit as a secondary layer rather than as part of Phase I.
 \end{enumerate}
 
-At the same time, the UV status is sharper than a generic ``open gap'' label. The local MaxEnt branch already gives a finite-range interacting fixed-cutoff dynamics, and Propositions~\ref{prop:gauge} and \ref{prop:ancillauv} show that the physically meaningful uniqueness theorem is uniqueness of the UV branch only modulo OPH-stable equivalence, not uniqueness of one microscopic representative. On the ordinary or central-defect branch, the fixed-cutoff topological sector is reduced to the named noncentral 2-group obstruction. What remains open is the continuum BW/geometric lift of \textbf{T4}+\textbf{T8}, the fuller transportable compact-gauge lift when \textbf{T7} and \textbf{T10}--\textbf{T12} are invoked, and the higher-gauge crossed-module extension required by the genuinely noncentral defect case.
+The local MaxEnt branch gives a finite-range interacting fixed-cutoff dynamics, Propositions~\ref{prop:gauge} and \ref{prop:ancillauv} fix uniqueness of the UV branch only modulo OPH-stable equivalence, and Theorems~\ref{thm:hgdatum}--\ref{thm:hgtransport} with Proposition~\ref{prop:hginteracting} close the genuinely noncentral topological branch at fixed cutoff. The open items on the UV side are the continuum BW/geometric lift of \textbf{T1}+\textbf{T3} and the fuller transportable compact-gauge lift when \textbf{T2} and \textbf{T5}--\textbf{T7} are invoked.
 
-The next strongest non-core sector is the supplement-backed D10 calibration branch. On the present local implementation, the current D10 carrier closes its own exact \(W/Z\) chart, but exact PDG \(W/Z\) does not yet honestly follow on that carrier; the remaining quantitative burden should therefore be read as a repair branch beyond the present carrier rather than as a hidden extra decimal place or an unnamed selector on the existing point. The separate D6 cosmological-capacity relation remains visible as an input-dependent corollary rather than as part of the recovered core. The charged-lepton and Koide sectors remain phenomenological continuations rather than core theorem outputs; the strongest current local charged-lepton result is an explicit same-carrier obstruction together with a two-scalar support-extension shell, not a closed emitted spectrum. On the flavor side, the only structural output already fixed before those continuations is the realized counting chain \(N_g=3\) then \(N_c=3\).
+The D10 calibration sector gives supplement-backed gauge-coupling closure on the displayed carrier. That carrier closes its own exact \(W/Z\) chart, but exact PDG \(W/Z\) matching is not obtained on that carrier. The separate D6 cosmological-capacity relation remains an input-dependent corollary. The charged-lepton and Koide sectors remain phenomenological continuations rather than theorem-level spectra; the charged-lepton branch has an explicit same-carrier obstruction together with a two-scalar support-extension shell, not a closed emitted spectrum. On the flavor side, the structural output fixed before those continuations is the realized counting chain \(N_g=3\) then \(N_c=3\).
 
-The weakest part is the light-quark and hadron branch. Current local tier audits indicate that a nonzero light-quark pure-\(B\) selector is not available at recovered-core tier in the present corpus, so the honest light-quark split frontier remains a D12 continuation branch rather than a hidden core theorem. The hadron lane is weaker still: its present frontier is nonperturbative runtime completion plus stable-channel convergence rather than a closed theorem-level mass surface.
+The light-quark and hadron sectors remain weaker. A recovered-core nonzero light-quark pure-\(B\) selector is not derived, so the light-quark split remains a D12 continuation branch. The hadron lane depends on nonperturbative runtime completion and stable-channel convergence rather than a closed theorem-level mass surface.
 
-The framework should therefore be evaluated in stages. It already contains several results that are normally postulated independently in other approaches: kinematics, dynamics, gauge structure, charge lattice, matter multiplicities, symmetry-protected massless sectors, and a limited downstream quantitative surface in supplement-backed or continuation-level form. The strongest current local descendant beyond D10 is a compact Higgs/top forward seed on the same gauge core, but that branch also remains secondary to the recovered core. Whether one regards this as evidence for fundamentality depends on whether these simultaneous derivations survive further scrutiny.
-
-Topics intentionally excluded from the present formulation include simulation narratives, observer-continuation mechanisms, and claims of final completeness for all low-energy observables.\footnote{Questions outside this theorem package do not alter the specific claim set established here. Even a separate interpretive habitat theorem for OPH state-and-law data would not enlarge the compact paper's Phase-I scope unless the actual closure map, invariant admissible sector, and stability hypotheses were also proved at the same tier.}
+The paper does not address simulation narratives, observer-continuation mechanisms, or complete closure of all low-energy observables.\footnote{Questions outside this theorem package do not alter the specific claim set established here. Even a separate interpretive habitat theorem for OPH state-and-law data would not enlarge the compact paper's Phase-I scope unless the actual closure map, invariant admissible sector, and stability hypotheses were also proved at the same tier.}
 
 \section{Conclusion}
 
-Observer-Patch Holography starts from overlap consistency of observer patches and yields, within one framework, several effective structures usually treated separately in modern fundamental physics. The compact note supports a unique schedule-independent normal form for overlap repair and hence a unique physical UV branch only modulo boundary redundancy, implementation hiding, and inert ancillary stabilization, a conditional Lorentz branch in the assumed geometric modular phase, a conditional Jacobson-type Einstein branch under fixed-cap stationarity and the null-stress premise, the Standard Model gauge quotient with exact hypercharges on the realized matter package under the MAR admissibility package in the bosonic internal-gauge branch, the realized counting chain \(N_g=3\) then \(N_c=3\) on that branch, a separate supplement-backed gauge-calibration sector that remains secondary to the recovered core, and a separate input-dependent cosmological-capacity corollary. It also records several phenomenological continuations whose present status is weaker and is labeled as such in the text.
+Observer-Patch Holography starts from overlap consistency of observer patches and yields, within one framework, several effective structures usually treated separately in modern fundamental physics. The compact paper supports a unique schedule-independent normal form for overlap repair and hence a unique physical UV branch only modulo boundary redundancy, implementation hiding, and inert ancillary stabilization, a conditional Lorentz branch in the assumed geometric modular phase, a conditional Jacobson-type Einstein branch under fixed-cap stationarity and the null-stress premise, the Standard Model gauge quotient with exact hypercharges on the realized matter package under the MAR admissibility package in the bosonic internal-gauge branch, the realized counting chain \(N_g=3\) then \(N_c=3\) on that branch, a separate supplement-backed gauge-calibration sector, and a separate input-dependent cosmological-capacity corollary. Phenomenological continuations are discussed separately from the recovered core.
 
-Accordingly, the framework functions as a candidate underlying theory from which general relativity and the Standard Model may arise as effective descriptions once the stated scaling-limit and categorical premises are realized. The next technical tasks are sharper quantitative control, derivation or reduction of the noncentral topological obstruction together with the higher-gauge crossed-module replacement it points toward, derivation or removal of the transportability-side premises, a fuller fermionic gauge branch, and explicit microscopic realizations whose continuum lift lands in the required modular/geometric phase.
+The framework therefore presents general relativity and the Standard Model as effective descriptions arising once the stated scaling-limit and categorical premises are realized. Open items are sharper quantitative control, derivation or removal of the transportability-side premises on the refinement-limit compact-gauge branch, a fuller fermionic gauge branch, and explicit microscopic realizations whose continuum lift lands in the required modular/geometric phase.
 
 \appendix
+
+\begin{thebibliography}{99}
+\input{tex_fragments/FOUNDATIONAL_REFERENCES.tex}
+\end{thebibliography}
 
 \end{document}

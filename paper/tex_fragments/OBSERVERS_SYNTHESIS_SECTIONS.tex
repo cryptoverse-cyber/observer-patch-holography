@@ -1,0 +1,234 @@
+\section{Consensus, Defects, and Implementation Hiding}
+
+The OPH core admits an equivalent finite patch-net formulation. Local patch descriptions agree on
+overlaps, local repair rules remove mismatches, and the physical output is the
+schedule-independent normal form on the gauge quotient. This section records the fixed-point,
+defect, and gauge-quotient statements in that language.
+
+\paragraph{Theorem (Asynchronous confluence).}
+On a finite patch net with local repair maps, if every accepted repair strictly decreases a
+finite inconsistency potential and the repair relation is locally confluent, then every initial
+configuration has a unique schedule-independent normal form.
+
+\paragraph{Proof sketch.}
+Strict decrease of the inconsistency potential rules out infinite repair sequences. Newman's
+lemma~\cite{newman42} then upgrades local confluence to global confluence. Therefore every initial state has a
+unique normal form, independent of the asynchronous update schedule.
+
+\paragraph{Theorem (Cycle holonomy and higher-gauge defects).}
+Pairwise overlap agreement is not enough for global consistency. On the abelian branch, a global
+solution exists iff the cycle holonomy vanishes on every loop. On the genuinely noncentral
+branch, weak gluing data define a crossed-module Cech class
+\[
+q_\Sigma \in \check H^2(N_\Sigma,H_\Sigma \to G_\Sigma),
+\]
+and strict global reconciliation exists iff \(q_\Sigma=0\). Nonzero \(q_\Sigma\) labels stable
+fixed-cutoff higher-gauge defects.
+
+\paragraph{Proof sketch.}
+In the abelian case, summing edge constraints around a loop telescopes, so vanishing of the loop
+sum is necessary and sufficient for path-independent reconstruction. In the crossed-module case,
+local rechartings are exactly crossed-module coboundaries, so they preserve the class and remove
+the defect precisely when the class is trivial.
+
+\paragraph{Theorem (Gauge quotient, ancilla-stable physical uniqueness, and record closure).}
+If the repair dynamics is gauge covariant, the normal-form map descends to the quotient by
+implementation hiding:
+\[
+[s]\mapsto [\operatorname{nf}(s)].
+\]
+Gauge-invariant observables are therefore uniquely fixed on the quotient, and inert ancillary
+refinement does not change the physical output. On the classical record layer, commuting closure
+operators on a finite lattice converge under any asynchronous fair schedule to the least common
+fixed point above the initial record state.
+
+\paragraph{Proof sketch.}
+Gauge covariance carries each repair sequence to a repair sequence on a gauge-related state, so
+uniqueness of normal forms forces equivariance of the normal-form map. Inert ancillary factors
+remain spectators under the lifted dynamics, so gauge-invariant observables are unchanged. For
+records, commutativity and idempotence make the closure order-independent and force convergence to
+the least common fixed point.
+
+\paragraph{Extended derivation.}
+The full consensus, gauge-quotient, and record-layer theorem package is developed in
+\emph{Reality as a Consensus Protocol: The Fixed-Point Computation That Implements Physics}~\cite{ophconsensus}.
+
+\section{Particle-Spectrum Branch}
+
+The particle branch follows the same logical order as
+\emph{Deriving the Particle Zoo from Observer Consistency}~\cite{ophparticles}.
+One first fixes the OPH basis and the compact gauge branch, then identifies the realized Standard
+Model quotient, and only then asks how transport-stable overlap data organize the observed
+particle families.
+
+\paragraph{Structural particle theorem package.}
+On the realized OPH branch, the structural carrier skeleton is fixed by the compact gauge and
+MAR-admissibility chain:
+\[
+\frac{\SU(3)\times\SU(2)\times\U(1)}{\mathbb Z_6},
+\qquad
+N_g=3,
+\qquad
+N_c=3.
+\]
+This already determines the exact structural zero rows carried by the gauge and gravity sectors:
+the photon, gluons, and graviton are massless structural carriers on the realized branch.
+
+\paragraph{Proof route.}
+The proof route is the one developed in
+\emph{A Conditional Reconstruction Program for Relativity and Standard Model Structure from Observer-Overlap Consistency: Observers Are All You Need (Compact)}~\cite{ophcompact}
+and
+\emph{Deriving the Particle Zoo from Observer Consistency}~\cite{ophparticles}.
+Refinement-stable transportable edge sectors reconstruct a compact internal symmetry group under
+the stated categorical premises. MAR then selects the realized admissible branch, anomaly freedom
+fixes the hypercharge lattice, and the realized one-generation/one-Higgs package forces \(N_g=3\)
+and then \(N_c=3\). The particle branch builds on that structural skeleton rather than bypassing
+it.
+
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.18\textwidth}>{\raggedright\arraybackslash}p{0.17\textwidth}>{\raggedright\arraybackslash}p{0.23\textwidth}>{\raggedright\arraybackslash}p{0.34\textwidth}@{}}
+\toprule
+Sector & Current status & What is fixed here & Remaining boundary \\
+\midrule
+\endfirsthead
+\toprule
+Sector & Current status & What is fixed here & Remaining boundary \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Structural carriers & realized-branch structural theorem & photon, gluons, graviton; realized quotient; \(N_g=3\); \(N_c=3\) & none on the particle side \\
+Electroweak bosons & calibration branch & \(W\) and \(Z\) values on the electroweak calibration surface & repair/value law beyond the present electroweak carrier \\
+Higgs/top stage & secondary quantitative branch & Higgs and top values on the closed forward seed used in the particle paper & presentation-level proof package for the one-scalar forward seed \\
+Quark family & continuation branch & transport and family structure; emitted quark rows remain continuation-level & selector/value law, CKM generator, and CP closure \\
+Charged leptons and neutrinos & continuation branch & family-level overlap and eta-class structure & theorem-grade emission of the remaining source and basis data \\
+Hadrons & nonperturbative continuation & stable-channel and readout architecture are defined & executed unquenching, runtime receipt, and production systematics \\
+\end{longtable}
+
+\paragraph{Status boundary.}
+Structural carrier content and the realized Standard Model branch are theorem-bearing outputs.
+Electroweak calibration, the Higgs/top stage, quark rows, charged-lepton rows, neutrino rows, and
+hadron rows retain their stated calibration, continuation, or nonperturbative status.
+
+\paragraph{Extended derivation.}
+The structural-to-family route and the full per-sector status audit are developed in
+\emph{Deriving the Particle Zoo from Observer Consistency}~\cite{ophparticles}.
+
+\section{Records, Measurement, and Observer Continuation}
+
+The observer-facing measurement package is part of the main synthesis surface. At fixed cutoff,
+the OPH regulator carries a finite central record algebra, Born probabilities for its event
+projectors, Luders conditioning on that same commuting algebra, and a checkpoint/restoration
+theorem for observer-accessible event algebras.
+
+\paragraph{Theorem (Fixed-cutoff record algebra and Born-Luders package).}
+For each completed compare/write/verify slice of the regulated microphysics, the declared pointer
+and overlap-sector projectors generate a finite commutative record algebra
+\[
+\mathcal Z_{\mathrm{rec}}.
+\]
+Every observer-accessible event \(E\) in that algebra has probability
+\[
+\mathbb P(E)=\operatorname{Tr}(\rho P_E),
+\]
+and conditioning on \(E\) gives the operational post-measurement state
+\[
+\rho\!\mid_E = \frac{P_E \rho P_E}{\operatorname{Tr}(\rho P_E)}.
+\]
+
+\paragraph{Proof sketch.}
+At fixed cutoff, the declared record and pointer projectors commute and the measurement surface
+factors through that finite classical algebra. Finite-dimensional projective measurement on a
+commuting projector algebra gives the Born trace and the Luders update directly.
+
+\paragraph{Theorem (Checkpoint/restoration and observer backup).}
+For an observer patch \(P_O\), let the checkpoint data consist of the observer-facing record
+algebra, the accessible local state, the future update schedule, and the externally visible
+overlap interface data. Exact restoration reproduces the full future law of observer-accessible
+events, while an \(\varepsilon\)-accurate restoration changes that future law by at most
+\(\varepsilon\) in total variation.
+
+\paragraph{Proof sketch.}
+Exact restoration reinstates the same accessible state on the same observer-facing algebra with
+the same future channel sequence, so every later event probability agrees exactly. Approximate
+restoration is controlled by contractivity of trace distance under completely positive
+trace-preserving maps, which propagates the initial \(\varepsilon\) error bound to all later
+observer-accessible events.
+
+\paragraph{Observer-facing conclusion.}
+The theorem-level content is modest but sharp: OPH supplies a fixed-cutoff measurement interface,
+a fixed-cutoff checkpoint/restoration package, and an operational observer-identity criterion on
+observer-accessible event algebras. Stronger substrate-selection or strange-loop closure claims
+remain outside the recovered theorem package.
+
+\paragraph{Extended derivation.}
+The fixed-cutoff measurement, Born-rule, and checkpoint/restoration packages are developed in
+\emph{Screen Microphysics, Patches, and Observer Synchronization in OPH}~\cite{ophmicrophysics}.
+
+\section{Conditional Worldsheet/String Branch}
+
+The synthesis paper carries the string/worldsheet branch at the same status as the dedicated
+string paper: a genuine theorem-level bridge from OPH edge sectors to the two-dimensional
+Yang-Mills partition function, followed by a conditional large-\(N_{\mathrm{edge}}\) continuation
+to a worldsheet reorganization.
+
+\paragraph{Theorem (Heat-kernel edge-sector bridge).}
+Under the OPH axioms, the fixed-cutoff overlap-gauge realization, and the local-Gibbs/MaxEnt edge
+branch, the edge-sector weights satisfy
+\[
+p_R(t)\propto d_R e^{-t C_2(R)}.
+\]
+Consequently the edge partition function matches the standard two-dimensional Yang-Mills
+heat-kernel form.
+
+\paragraph{Proof sketch.}
+The fixed-cutoff collar package produces a sector decomposition on the edge algebra, and the
+local-Gibbs MaxEnt branch fixes the sector weights by the quadratic Casimir. Peter--Weyl
+decomposition~\cite{peterWeyl27}
+then identifies the resulting sum with the standard heat-kernel expression for
+two-dimensional Yang-Mills.
+
+\paragraph{Continuation boundary.}
+If a controlled large-\(N_{\mathrm{edge}}\) regime exists, with \(N_{\mathrm{edge}}\) distinct from
+the physical color rank \(N_c=3\), then the Gross-Taylor rewriting~\cite{grossTaylor93} gives a genus expansion and a
+worldsheet-like reorganization. Critical-superstring claims, worldsheet CFT closure, anomaly
+cancellation, and full massless-spectrum matching remain outside the recovered OPH core.
+
+\paragraph{Extended derivation.}
+The present section records the synthesis-level statement; the longer technical discussion remains
+in the repository string fragment.
+
+\section{Current Status and Open Directions}
+
+The current state of the OPH suite is:
+
+\begin{enumerate}[leftmargin=2em]
+\item The fixed-cutoff collar and higher-gauge theorem package is part of the closed finite
+regulator surface. The genuinely noncentral topological branch is no longer a live fixed-cutoff
+gap.
+\item Physical UV uniqueness is quotient-level and ancilla-stable: OPH fixes the physical branch
+modulo implementation hiding and inert ancillary refinement, not a unique microscopic
+representative.
+\item The Lorentz/null-modular/Einstein chain remains a controlled refinement/scaling-limit
+branch. In the canonical premise ledger, the live external burdens are the geometric modular
+branch, the scaling-limit scope clause, and the fixed-cap stationarity step.
+\item Compact gauge reconstruction and the realized Standard Model quotient remain tied to the
+transportability, symmetric-braiding, and fiber-functor premises stated in the canonical
+technical-premise list.
+\item The particle branch is structurally rich but status-split: structural carriers and the
+realized Standard Model skeleton are fixed, while flavor, neutrino, and hadron quantitative
+closures still sit on explicit continuation fronts.
+\item The string branch is a continuation of the heat-kernel edge-sector theorem, not a promoted
+recovered-core result.
+\end{enumerate}
+
+\paragraph{Companion papers.}
+Detailed derivations appear in Refs.~\cite{ophcompact,ophconsensus,ophmicrophysics,ophparticles}.
+
+\section{Conclusion}
+
+Observer-Patch Holography is presented here as a single synthesis surface. The OPH basis, the
+conditional gravity and gauge branches, the consensus formulation, the particle-spectrum branch,
+the fixed-cutoff measurement and observer package, and the conditional worldsheet continuation
+appear on one common theorem and status surface. The companion papers remain the depth surfaces
+for extended derivations, sector-by-sector proofs, calibration details, and continuation-level
+material.

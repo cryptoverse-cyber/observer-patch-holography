@@ -319,7 +319,7 @@ In our model, anomaly cancellation has a geometric interpretation.
 
 When you glue observer patches together, you can go around loops. If you come back with a phase that doesn't match, the gluing is inconsistent. This is a "loop obstruction."
 
-The mathematical structure is a 2-cocycle in Cech cohomology. The anomaly-free condition says this cocycle must be trivial. In physics language: gauge anomalies must cancel.
+On the central branch, the mathematical structure is a Cech 2-cocycle. More generally, the genuinely noncentral branch is a crossed-module / 2-group obstruction class. The anomaly-free condition says the relevant class must be trivial. In physics language: gauge anomalies must cancel.
 
 The Standard Model's hypercharges aren't arbitrary. They're the unique solution that makes loop-coherent gluing possible.
 
