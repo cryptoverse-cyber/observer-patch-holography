@@ -133,7 +133,7 @@ A conserved current on the screen creates a gauge boson in the bulk.
 
 ### Our Route: Gauge Group from Gluing
 
-In this book we take a different route. The gauge group is not assumed in advance. A refinement-stable category of transportable edge sectors is reconstructed from how edge charges fuse when you glue patches, and Tannaka-Krein/Doplicher-Roberts reconstruction yields some compact gauge group. Axiom 5 (MAR, Minimal Admissible Realization) then acts on admissible sector packages, not on the bare category alone. Within the positive-dimensional connected Lie admissible class, and once the admissible class includes one connected abelian charge factor, MAR selects $SU(3) \times SU(2) \times U(1)/\mathbb{Z}_6$ with three colors; the separate CP/UV window argument then fixes three generations.
+In this book we take a different route. The gauge group is not assumed in advance. A refinement-stable category of transportable edge sectors is reconstructed from how edge charges fuse when you glue patches, and Tannaka-Krein/Doplicher-Roberts reconstruction yields some compact gauge group. Axiom 5 (MAR, Minimal Admissible Realization) then acts on admissible sector packages, not on the bare category alone. Within the positive-dimensional connected Lie admissible class, and once the admissible class includes one connected abelian charge factor, MAR selects $SU(3) \times SU(2) \times U(1)/\mathbb{Z}_6$; the CP/UV admissibility window and MAR then fix three generations, and Witten parity with that realized generation count fixes three colors.
 
 ## 12.8 Symmetry Breaking
 

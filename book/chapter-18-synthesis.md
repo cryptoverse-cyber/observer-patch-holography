@@ -149,8 +149,8 @@ Let us gather all the reverse engineering insights from Chapters 6-17:
 | 13 (De Sitter) | Universe decelerating | 1998: accelerating expansion | De Sitter horizon is natural screen |
 | 14 (Standard Model) | Particles are fundamental | UV divergences, anomalies, running couplings | The SM is an effective theory constrained by consistency |
 | 15 (Relativity) | Time is absolute, gravity is a force | Light is invariant, time dilates | Spacetime geometry is emergent and relativistic |
-| 16 (Darwin) | Laws are eternal truths | Fine-tuning | Laws are survivors of selection |
-| 17 (Classical Physics) | Matter is fundamental stuff and motion is force | Quantum interference and creation/annihilation | Matter is stable patterns; least action is a classical limit |
+| 16 (Classical Physics) | Matter is fundamental stuff and motion is force | Quantum interference and creation/annihilation | Matter is stable patterns; least action is a classical limit |
+| 17 (Darwin) | Laws are eternal truths | Fine-tuning | Laws are survivors of selection |
 
 ## 18.5 Core Axioms and Bridge Assumptions
 
@@ -211,8 +211,11 @@ Under explicit assumptions (Markov/recoverability, a refinement-stable MaxEnt br
 2. **A conditional scaling-limit Einstein branch** via entanglement equilibrium and tensor upgrade
 3. **Compact gauge symmetry** reconstructed from a refinement-stable transportable edge-sector category via Tannaka-Krein/DR
 4. **Masslessness of gauge bosons and the graviton** from emergent gauge/diffeomorphism invariance
+5. **A tiered particle-spectrum ledger**: structural carriers, calibration-stage $W/Z$, secondary-quantitative Higgs/top rows, continuation-level quark rows, and explicitly open charged-lepton / flavor-neutrino plus execution-bound hadron fronts
 
 The photon and graviton are forced by the axiom chain, not postulated. Once gauge-as-gluing yields a gauge group and entanglement equilibrium yields dynamical geometry, gauge invariance forbids mass terms. These are symmetry-protected zeros.
+
+This is not yet a uniform closure of the full particle zoo. The book needs to keep the same public status split as the particle paper: photon/gluons/graviton are structural; $W$ and $Z$ are calibration rows; Higgs and top are secondary quantitative; up/down/strange/charm/bottom are continuation-level outputs; charged leptons and flavor-labeled neutrinos are not yet promoted; hadrons remain execution-bound because the remaining burden is real production computation and systematics control.
 
 The EFT bridge (null-surface modular additivity) remains conditional. The MaxEnt branch supplies the quasi-local propagation and endpoint control internally, and the fixed-cutoff bridge reaches the derived positive null-translation stage without separate propagation, endpoint-control, or half-sided-inclusion premises. The remaining extra gravity-side burdens are the downstream density-upgrade and null-stress identification steps for the intended EFT phase. The gauge group reconstruction yields a compact group; within the connected Lie admissible class, and once one connected abelian charge factor is included, MAR fixes the Standard Model gauge quotient $SU(3) \times SU(2) \times U(1)/\mathbb{Z}_6$. On that realized branch, the CP/UV window and MAR then fix $N_g = 3$ generations, and Witten's SU(2) anomaly parity with that realized generation count fixes $N_c = 3$ colors.
 
@@ -315,7 +318,7 @@ The Hilbert space is finite-dimensional. The second fundamental parameter, **scr
 
 ## 18.8 The Remaining Frontier
 
-The framework derives the Standard Model gauge group, the conditional scaling-limit Einstein branch, and the absence of gauge-mediated proton decay while keeping input-dependent cosmological statements and later phenomenological continuations explicitly separate from the recovered structural core. The main engineering deliverables are well-scoped: geometric modular flow on caps (BW$_{S^2}$) is established on the OPH geometric branch, while the next tasks are to force or verify that branch in concrete UV models. Non-central loop defects are now closed at fixed cutoff by a higher-gauge crossed-module collar and transport package; in the EFT limit the central truncation of the same obstruction data is structurally analogous to anomaly cancellation, while hypercharges are fixed by the separate anomaly/Yukawa analysis once the SM gauge structure is in place. What remains is to connect those sectors to the refinement-stable transportable gauge branch and to derive the Lagrange multiplier $t$ from UV microphysics. On the string-side, the present OPH result is only a conditional worldsheet-like large-$N_{\mathrm{edge}}$ reorganization; any further critical-superstring completion remains conjectural.
+The framework derives the Standard Model gauge group, the conditional scaling-limit Einstein branch, and the absence of gauge-mediated proton decay while keeping input-dependent cosmological statements and later phenomenological continuations explicitly separate from the recovered structural core. The particle-spectrum side is now sharper but still tiered rather than closed: structural carriers are fixed, $W/Z$ live on a calibration surface, Higgs/top live on a secondary quantitative stage, the broader quark family is continuation-level, charged leptons and flavor-labeled neutrinos remain open, and hadrons remain execution-bound. The main engineering deliverables are therefore well-scoped: geometric modular flow on caps (BW$_{S^2}$) is established on the OPH geometric branch, while the next tasks are to force or verify that branch in concrete UV models. Non-central loop defects are now closed at fixed cutoff by a higher-gauge crossed-module collar and transport package; in the EFT limit the central truncation of the same obstruction data is structurally analogous to anomaly cancellation, while hypercharges are fixed by the separate anomaly/Yukawa analysis once the SM gauge structure is in place. What remains is to connect those sectors to the refinement-stable transportable gauge branch and to derive the Lagrange multiplier $t$ from UV microphysics. On the string-side, the present OPH result is only a conditional worldsheet-like large-$N_{\mathrm{edge}}$ reorganization; any further critical-superstring completion remains conjectural.
 
 **Progress on numerical predictions.** The extraction of gauge couplings from
 edge-sector probabilities has been validated numerically in 2D gauge models.
@@ -342,8 +345,7 @@ a consequence of Peter-Weyl structure plus the distinction between entropy
 The main open directions are:
 
 1. **Screen microphysics**: What exactly are the degrees of freedom on S²?
-2. **Standard Model structure**: Why the reconstructed gauge group selects the
-   SM factors, why chirality, why N_c = 3, and how masses are selected.
+2. **Particle-spectrum closure**: complete the target-free electroweak repair law, close the CKM/CP and overlap-law fronts behind the current quark rows, close the charged-lepton and flavor-neutrino bridges, and replace the hadron surrogate bridge with real production execution plus systematics.
 3. **Dynamics and gravity**: Can local horizon thermodynamics be made fully internal?
 4. **Cosmology**: What fixes Λ and the initial low‑entropy condition?
 5. **Numerical predictions**: Implement SU(2)/SU(3) quantum link models and
@@ -409,6 +411,19 @@ These follow from our axioms plus stated additional assumptions:
 | $\Delta b \approx (2.49, 4.38, 3.97)$ from Peter-Weyl | Heat-kernel at $t_U \approx 1.64$ + $N_{\text{eff}} = d \cdot p$ (entropy sees one index, loops see both) |
 | Electroweak scale from transmutation | Refinement stability (no unprotected relevant scalar) + pixel scale + β_EW = N_c + 1 = 4 |
 | Top Yukawa y_t ≈ 1 | MaxEnt/refinement stability selects least-suppressed channel |
+
+### Current Particle-Spectrum Status
+
+This is the live public status ledger that the rest of the synthesis chapter should respect:
+
+| Sector | Current status |
+| --- | --- |
+| Structural carriers | Photon, gluons, and graviton are structural massless rows |
+| Electroweak surface | $W$ and $Z$ are emitted on the frozen authoritative calibration surface; the target-free repair law from $P$ alone remains open |
+| Secondary quantitative stage | Higgs boson and top quark are emitted on the Higgs/top critical stage |
+| Continuation-level matter rows | Up, down, strange, charm, and bottom quarks have continuation-level emitted rows |
+| Open closure fronts | Charged leptons and flavor-labeled neutrinos do not yet have promoted public rows |
+| Execution boundary | Hadrons still require real production correlator dumps, unquenching, and production systematics before any promotable rows |
 
 ### Deferred flavor continuation
 

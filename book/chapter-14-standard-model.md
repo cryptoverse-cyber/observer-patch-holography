@@ -536,6 +536,20 @@ The technical statement is that particles correspond to irreducible representati
 
 This sounds abstract, but it has concrete consequences. The model does not postulate particles and then check whether they are consistent. It derives which particle types must exist from the structure of the algebra net itself. Some particles are forced to exist by the axioms. Others are permitted but not required. And some hypothetical particles are forbidden.
 
+### The Current Particle-Status Ledger
+
+The most important synchronization point for this chapter is that OPH does **not** currently claim a uniform theorem-level closure of the full particle zoo. The live status surface is tiered:
+
+| Sector | Current status | Strongest live output |
+|---|---|---|
+| Structural carriers | Structural | Photon, gluons, and graviton are exact massless carriers |
+| Electroweak bosons | Calibration | $W$ and $Z$ are emitted on the frozen authoritative calibration surface; a target-free repair law from $P$ alone remains open |
+| Higgs/top stage | Secondary quantitative | Higgs boson and top quark are emitted on the closed one-scalar forward seed |
+| Quark family | Continuation | Continuation-level rows are emitted for up, down, strange, charm, and bottom; CKM/CP and overlap-law closure remain open |
+| Charged leptons | Continuation gap | No promoted charged-lepton masses yet |
+| Flavor-labeled neutrinos | Continuation gap | No promoted flavor rows yet; the intrinsic branch still needs the same-label scalar certificate and shared charged-lepton basis to close publicly |
+| Hadrons | Execution-bound | No paper-derived hadron masses yet; real production correlator dumps and production systematics are still required |
+
 ## 14.15 Why the Photon Is Inevitable
 
 The photon is not an optional feature of the model. It emerges necessarily from the way observer patches glue together.
@@ -589,6 +603,8 @@ Now consider the proton. Its mass is 938.272 MeV, measured to extraordinary prec
 Not directly—and for good reason. The proton mass is a qualitatively different kind of prediction than the photon or graviton mass.
 
 The photon and graviton masses are symmetry-protected zeros. Their values are fixed by the algebraic structure of the theory-any deviation would break a required redundancy. The argument is exact and does not depend on knowing coupling constants or solving difficult equations.
+
+This is why the OPH mass story is split into tiers rather than a single headline. The photon, gluons, and graviton are structural zeros. The $W$ and $Z$ rows sit on an electroweak calibration surface. The Higgs and top sit on a secondary quantitative forward seed. The broader quark rows are emitted only as continuation-level outputs. Charged-lepton and flavor-labeled neutrino rows are not yet promoted, and hadron rows are still execution-bound. "Mass derived" does not mean the same thing in all of these cases.
 
 The proton mass is a bound-state eigenvalue in a strongly coupled gauge theory. The proton is made of three quarks held together by gluons, and its mass emerges from the complicated nonperturbative dynamics of quantum chromodynamics. The dominant contribution is not the masses of the constituent quarks (which sum to only about 10 MeV) but the energy stored in the gluon field and the kinetic energy of the quarks bouncing around inside.
 
@@ -654,9 +670,13 @@ Let's step back and see what the framework actually accounts for.
 
 **The zeros.** The photon and graviton masses are exactly zero, not approximately but exactly. This is a symmetry-protected prediction. The photon's masslessness follows from U(1) gauge invariance being a genuine overlap redundancy; any mass would break the consistency of how charged patches glue together. Similarly, the graviton's masslessness follows from diffeomorphism invariance being the redundancy structure of bulk spacetime. Current experimental/observational upper bounds are consistent with these predictions to extraordinary precision: the photon mass is constrained below ~10⁻¹⁸ eV (often summarized as ~27 orders of magnitude), and the graviton mass is constrained below ~10⁻²³ eV by gravitational-wave dispersion (often summarized as ~22 orders of magnitude).
 
+**The tiered particle rows.** On top of those structural zeros, the current public particle surface is split by derivation tier. The electroweak calibration stage emits the $W$ and $Z$ rows on a frozen authoritative calibration surface. The Higgs/top critical stage emits the Higgs boson and top quark as secondary quantitative rows. The quark branch emits continuation-level rows for the up, down, strange, charm, and bottom quarks. These are all real outputs, but they do **not** sit at one uniform epistemic level.
+
 **Charge quantization.** All color-singlet particles have integer electric charge. No fractional charges like $\pm 1/3$ can exist outside hadrons. This follows from the global structure of the gauge group.
 
 **Gauge-mediated proton decay.** Gauge-mediated proton decay is forbidden. The gauge group is a product, not embedded in a larger simple group, so no leptoquark generators exist. Current experimental limits ($\tau_p > 10^{34}$ years) are consistent with this prediction.
+
+**The open frontier.** Charged leptons and flavor-labeled neutrinos do not yet have promoted public rows, and hadron masses remain outside the paper-derived surface because the remaining work is operational rather than purely symbolic: real nonperturbative production computation and systematics control are still required.
 
 ## 14.21 The Big Picture
 
@@ -667,6 +687,8 @@ The photon and graviton are particles the theory *forces* upon us. The photon ex
 The quarks and leptons aren't arbitrary. Their charges are fixed by the requirement that reality be self-consistent. The generations aren't accidental: the admissible window is $3 \le N_g \le 5$, and MAR selects the minimal viable value. Chirality isn't a quirk; it's the only way to keep fermions light without fine tuning.
 
 Axiom 5 (MAR) provides the selector inside the admissible class. Within the connected Lie sector package with one connected abelian charge factor, it picks the Standard Model gauge structure and leaves the realized hypercharge lattice and the realized counting chain $N_g = 3$ then $N_c = 3$ as discrete structural outputs. From gauge reconstruction, anomaly analysis, and refinement stability, the framework derives a sharply constrained set of particles and forces while keeping later quantitative branches epistemically separate from the structural core.
+
+That last clause matters. The current OPH particle claim is not "the full Standard Model spectrum is now theorem-closed." The honest claim is narrower: structural carriers are fixed; $W/Z$ live on the calibration surface; Higgs/top live on a secondary quantitative stage; the broader quark family has continuation-level emitted rows; and charged-lepton, flavor-labeled neutrino, and hadron closure remain open or execution-bound. This chapter should be read with that ledger in mind.
 
 We've now seen how particles emerge from the screen as stable patterns that transform under emergent symmetries. But how does spacetime itself emerge? How does Einstein's relativity fit into this picture?
 
