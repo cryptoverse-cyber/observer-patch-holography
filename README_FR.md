@@ -72,7 +72,8 @@ supérieure.
 - **Source LaTeX :** [recovering_relativity_and_standard_model_structure_from_observer_overlap_consistency_compact.tex](paper/recovering_relativity_and_standard_model_structure_from_observer_overlap_consistency_compact.tex)
 
 **Deriving the Particle Zoo from Observer Consistency** est l'article de statut sur le spectre de
-particules. Il enregistre le théorème fermé de calibration électrofaible pour \(W/Z\), suit les
+particules. Il enregistre le théorème fermé de calibration électrofaible pour \(W/Z\) après
+fixation de l'échelle commune \(P\), suit les
 sorties actuelles pour Higgs/top et plusieurs quarks, garde explicites les frontières
 théorématiques encore ouvertes pour les leptons chargés et les neutrinos, et indique que les
 hadrons restent liés à l'exécution plutôt qu'à des lignes de sortie déjà dérivées dans l'article.

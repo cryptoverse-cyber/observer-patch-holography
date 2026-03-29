@@ -215,7 +215,7 @@ Under explicit assumptions (Markov/recoverability, a refinement-stable MaxEnt br
 
 The photon and graviton are forced by the axiom chain, not postulated. Once gauge-as-gluing yields a gauge group and entanglement equilibrium yields dynamical geometry, gauge invariance forbids mass terms. These are symmetry-protected zeros.
 
-This is not yet a uniform closure of the full particle zoo. The book needs to keep the same public status split as the particle paper: photon/gluons/graviton are structural; $W$ and $Z$ are closed calibration rows on the target-free source-only electroweak theorem; Higgs and top are secondary quantitative; up/down/strange/charm/bottom are continuation-level outputs; charged leptons and flavor-labeled neutrinos are not yet promoted; hadrons remain execution-bound because the remaining burden is real production computation and systematics control.
+This is not yet a uniform closure of the full particle zoo. The book needs to keep the same public status split as the particle paper: photon/gluons/graviton are structural; $W$ and $Z$ are closed calibration rows on the target-free source-only electroweak theorem after fixing the shared scale $P$ on the D10 branch; Higgs and top are secondary quantitative; up/down/strange/charm/bottom are continuation-level outputs; charged leptons and flavor-labeled neutrinos are not yet promoted; hadrons remain execution-bound because the remaining burden is real production computation and systematics control.
 
 The EFT bridge (null-surface modular additivity) remains conditional. The MaxEnt branch supplies the quasi-local propagation and endpoint control internally, and the fixed-cutoff bridge reaches the derived positive null-translation stage without separate propagation, endpoint-control, or half-sided-inclusion premises. The remaining extra gravity-side burdens are the downstream density-upgrade and null-stress identification steps for the intended EFT phase. The gauge group reconstruction yields a compact group; within the connected Lie admissible class, and once one connected abelian charge factor is included, MAR fixes the Standard Model gauge quotient $SU(3) \times SU(2) \times U(1)/\mathbb{Z}_6$. On that realized branch, the CP/UV window and MAR then fix $N_g = 3$ generations, and Witten's SU(2) anomaly parity with that realized generation count fixes $N_c = 3$ colors.
 
@@ -419,7 +419,7 @@ This is the live public status ledger that the rest of the synthesis chapter sho
 | Sector | Current status |
 | --- | --- |
 | Structural carriers | Photon, gluons, and graviton are structural massless rows |
-| Electroweak surface | $W$ and $Z$ are emitted on the closed target-free source-only electroweak theorem surface |
+| Electroweak surface | $W$ and $Z$ are emitted on the closed target-free source-only electroweak theorem surface after fixing the shared scale $P$ on the D10 branch |
 | Secondary quantitative stage | Higgs boson and top quark are emitted on the Higgs/top critical stage |
 | Continuation-level matter rows | Up, down, strange, charm, and bottom quarks have continuation-level emitted rows |
 | Open closure fronts | Charged leptons and flavor-labeled neutrinos do not yet have promoted public rows |

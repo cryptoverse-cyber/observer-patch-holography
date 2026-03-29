@@ -85,7 +85,7 @@ At full completion, OPH aims to:
 - **PDF (compact submission paper):** [Recovering Relativity and Standard Model Structure from Observer-Overlap Consistency](paper/recovering_relativity_and_standard_model_structure_from_observer_overlap_consistency_compact.pdf)
 - **LaTeX source:** [recovering_relativity_and_standard_model_structure_from_observer_overlap_consistency_compact.tex](paper/recovering_relativity_and_standard_model_structure_from_observer_overlap_consistency_compact.tex)
 
-**Deriving the Particle Zoo from Observer Consistency** is the particle-spectrum status paper. It records the closed target-free electroweak \(W/Z\) theorem, tracks the current Higgs/top and quark outputs, keeps the charged-lepton and neutrino theorem frontiers explicit, and marks hadrons as execution-bound rather than paper-derived output rows.
+**Deriving the Particle Zoo from Observer Consistency** is the particle-spectrum status paper. It records the closed target-free electroweak \(W/Z\) theorem after fixing the shared calibration scale \(P\), tracks the current Higgs/top and quark outputs, keeps the charged-lepton and neutrino theorem frontiers explicit, and marks hadrons as execution-bound rather than paper-derived output rows.
 
 - **PDF:** [Deriving the Particle Zoo from Observer Consistency](paper/deriving_the_particle_zoo_from_observer_consistency.pdf)
 - **LaTeX source:** [deriving_the_particle_zoo_from_observer_consistency.tex](paper/deriving_the_particle_zoo_from_observer_consistency.tex)

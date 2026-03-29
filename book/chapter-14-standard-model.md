@@ -543,7 +543,7 @@ The most important synchronization point for this chapter is that OPH does **not
 | Sector | Current status | Strongest live output |
 |---|---|---|
 | Structural carriers | Structural | Photon, gluons, and graviton are exact massless carriers |
-| Electroweak bosons | Calibration | $W$ and $Z$ are emitted on the closed target-free source-only electroweak theorem surface |
+| Electroweak bosons | Calibration | $W$ and $Z$ are emitted on the closed target-free source-only electroweak theorem surface after fixing the shared scale $P$ on the D10 branch |
 | Higgs/top stage | Secondary quantitative | Higgs boson and top quark are emitted on the closed one-scalar forward seed |
 | Quark family | Continuation | Continuation-level rows are emitted for up, down, strange, charm, and bottom; CKM/CP and overlap-law closure remain open |
 | Charged leptons | Continuation gap | No promoted charged-lepton masses yet |
@@ -670,7 +670,7 @@ Let's step back and see what the framework actually accounts for.
 
 **The zeros.** The photon and graviton masses are exactly zero, not approximately but exactly. This is a symmetry-protected prediction. The photon's masslessness follows from U(1) gauge invariance being a genuine overlap redundancy; any mass would break the consistency of how charged patches glue together. Similarly, the graviton's masslessness follows from diffeomorphism invariance being the redundancy structure of bulk spacetime. Current experimental/observational upper bounds are consistent with these predictions to extraordinary precision: the photon mass is constrained below ~10⁻¹⁸ eV (often summarized as ~27 orders of magnitude), and the graviton mass is constrained below ~10⁻²³ eV by gravitational-wave dispersion (often summarized as ~22 orders of magnitude).
 
-**The tiered particle rows.** On top of those structural zeros, the current public particle surface is split by derivation tier. The electroweak calibration stage is closed on a target-free source-only theorem that emits the $W$ and $Z$ rows. The Higgs/top critical stage emits the Higgs boson and top quark as secondary quantitative rows. The quark branch emits continuation-level rows for the up, down, strange, charm, and bottom quarks. These are all real outputs, but they do **not** sit at one uniform epistemic level.
+**The tiered particle rows.** On top of those structural zeros, the current public particle surface is split by derivation tier. The electroweak calibration stage is closed on a target-free source-only theorem that emits the $W$ and $Z$ rows after fixing the shared pixel scale $P$ on the D10 running/matching surface. The Higgs/top critical stage emits the Higgs boson and top quark as secondary quantitative rows. The quark branch emits continuation-level rows for the up, down, strange, charm, and bottom quarks. These are all real outputs, but they do **not** sit at one uniform epistemic level.
 
 **Charge quantization.** All color-singlet particles have integer electric charge. No fractional charges like $\pm 1/3$ can exist outside hadrons. This follows from the global structure of the gauge group.
 
