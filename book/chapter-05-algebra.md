@@ -66,7 +66,7 @@ Heisenberg started with observations (spectral lines) and reverse-engineered the
 
 ### Why Non-Commutativity Is Not Arbitrary
 
-Here is something our model explains: non-commutativity is not a bizarre quantum quirk. It's a **consistency requirement**.
+Here is the OPH reading developed in this chapter: non-commutativity is not just a bizarre quantum quirk, but part of what makes overlap consistency nontrivial.
 
 Consider the overlap condition. When two observers compare notes, they must agree on their shared observables. In a commutative world-where all measurements are compatible-this consistency is trivial. You could assign pre-existing values to everything, and agreement would be automatic.
 
@@ -74,7 +74,7 @@ But the Quantum Marginal Problem shows this doesn't work. Pairwise-consistent ma
 
 Here's the deeper point: **non-commutativity is what makes consistency hard, and hard consistency is what makes physics non-trivial.** If measurements all commuted, any random assignment would satisfy the overlap conditions. There would be no constraints, no laws, no structure. The universe would be arbitrary.
 
-Non-commutativity creates a tension between local freedom and global consistency. That tension is resolved by specific patterns of entanglement-and those patterns are what we call physical law. Quantum mechanics is non-commutative because a commutative universe couldn't be consistently structured.
+Non-commutativity creates a tension between local freedom and global consistency. That tension is resolved by specific patterns of entanglement-and those patterns are what we call physical law. OPH interprets quantum non-commutativity as deeply connected to the difficulty of global consistency, rather than treating it as an arbitrary extra feature.
 
 ## 5.3 The Order of Questions
 
@@ -307,7 +307,7 @@ The KMS condition characterizes thermal equilibrium states.
 
 Here's the stunning implication: once you specify an algebra and a state, the algebra tells you how to flow in time. Time evolution isn't imposed from outside-it emerges from the algebraic structure.
 
-This connects to the **thermal time principle** of Connes and Rovelli: the time we experience is modular flow. Given the quantum state of our patch, the algebra provides a natural clock.
+This connects to the **thermal time principle** of Connes and Rovelli: modular flow provides an important candidate for organizing experienced time. Given the quantum state of our patch, the algebra provides a natural clock.
 
 ## 5.11 Commutation and Causality
 
