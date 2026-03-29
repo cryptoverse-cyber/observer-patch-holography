@@ -56,7 +56,7 @@ That's a 41% violation. Not subtle. Testable.
 
 ### What Makes This So Strange
 
-Let me be concrete. Alice and Bob each receive one particle from an entangled pair. They're far apart-is different continents, different planets, doesn't matter. Each chooses randomly whether to measure their particle along angle A1 or A2 (for Alice) or B1 or B2 (for Bob).
+Let me be concrete. Alice and Bob each receive one particle from an entangled pair. They're far apart-on different continents, different planets, it doesn't matter. Each chooses randomly whether to measure their particle along angle A1 or A2 (for Alice) or B1 or B2 (for Bob).
 
 In the hidden variable picture, each particle carries a tiny instruction manual: "If measured at angle A1, give result +1. If measured at B2, give result -1." And so on. The instruction manual was written when the particles were created. The particles are like correlated coins-maybe both were programmed to give the same answers.
 
@@ -321,7 +321,7 @@ At that moment, their descriptions must agree. The consistency condition forces 
 
 This is observer-relativity, but with teeth. The "facts" depend on who's asking, but not arbitrarily-the overlap conditions constrain what facts can coexist.
 
-Recent experiments (notably the 2019 Frauchiger-Renner experiment) have pushed these ideas further, showing that even sophisticated extensions of quantum mechanics struggle to maintain consistency when observers observe observers. The consistency conditions are doing real work.
+Recent no-go arguments and related experimental discussions have pushed these ideas further, showing that even sophisticated extensions of quantum mechanics struggle to maintain consistency when observers observe observers. The consistency conditions are doing real work.
 
 ## 6.9 Quantum Darwinism: How Overlaps Build Objectivity
 
@@ -331,7 +331,7 @@ The answer involves a concept called **quantum Darwinism**, developed by Wojciec
 
 Here's the idea. A quantum system interacts with its environment-air molecules, photons, everything around it. Some information about the system gets copied into the environment. Not perfectly copied (quantum mechanics forbids that), but redundantly encoded.
 
-Consider Schrodinger's cat. If the cat is alive, air molecules bounce off it in a certain way. Light reflects off it in a certain way. Heat radiates from it in a certain way. Each of these environmental fragments carries partial information about the cat's state.
+Consider Schr\"odinger's cat. If the cat is alive, air molecules bounce off it in a certain way. Light reflects off it in a certain way. Heat radiates from it in a certain way. Each of these environmental fragments carries partial information about the cat's state.
 
 When you look at the cat, you're not accessing the cat directly-you're reading information from these environmental fragments. And crucially, many observers can read many different fragments and still agree.
 
@@ -388,7 +388,7 @@ Let's state the consistency condition precisely.
 ### Setup
 
 We have:
-- A screen S squared
+- A screen \(S^2\)
 - A collection of patches {P_i}
 - For each patch P_i, an algebra A(P_i) of observables
 - For each patch P_i, a state omega_i
