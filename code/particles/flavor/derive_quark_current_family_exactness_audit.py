@@ -23,6 +23,8 @@ QUADRATIC_SCALAR_JSON = ROOT / "particles" / "runs" / "flavor" / "quark_quadrati
 PHYSICAL_INVARIANT_JSON = ROOT / "particles" / "runs" / "flavor" / "generation_bundle_same_label_physical_invariant_bundle.json"
 SCALARIZED_BUNDLE_JSON = ROOT / "particles" / "runs" / "flavor" / "quark_scalarized_continuation_bundle.json"
 ONE_SCALAR_SPECIALIZATION_JSON = ROOT / "particles" / "runs" / "flavor" / "quark_d12_one_scalar_specialization.json"
+MASS_SIDE_UNDERDETERMINATION_JSON = ROOT / "particles" / "runs" / "flavor" / "quark_d12_mass_side_underdetermination_theorem.json"
+PHYSICAL_BRANCH_REPAIR_JSON = ROOT / "particles" / "runs" / "flavor" / "quark_physical_branch_repair_theorem.json"
 DEFAULT_OUT = ROOT / "particles" / "runs" / "flavor" / "quark_current_family_exactness_audit.json"
 
 
@@ -57,6 +59,8 @@ def main() -> int:
     parser.add_argument("--physical-invariants", default=str(PHYSICAL_INVARIANT_JSON))
     parser.add_argument("--scalarized-bundle", default=str(SCALARIZED_BUNDLE_JSON))
     parser.add_argument("--one-scalar-specialization", default=str(ONE_SCALAR_SPECIALIZATION_JSON))
+    parser.add_argument("--mass-side-underdetermination", default=str(MASS_SIDE_UNDERDETERMINATION_JSON))
+    parser.add_argument("--physical-branch-repair", default=str(PHYSICAL_BRANCH_REPAIR_JSON))
     parser.add_argument("--output", default=str(DEFAULT_OUT))
     args = parser.parse_args()
 
@@ -82,6 +86,18 @@ def main() -> int:
     one_scalar_specialization = (
         json.loads(one_scalar_specialization_path.read_text(encoding="utf-8"))
         if one_scalar_specialization_path.exists()
+        else None
+    )
+    mass_side_underdetermination_path = Path(args.mass_side_underdetermination)
+    mass_side_underdetermination = (
+        json.loads(mass_side_underdetermination_path.read_text(encoding="utf-8"))
+        if mass_side_underdetermination_path.exists()
+        else None
+    )
+    physical_branch_repair_path = Path(args.physical_branch_repair)
+    physical_branch_repair = (
+        json.loads(physical_branch_repair_path.read_text(encoding="utf-8"))
+        if physical_branch_repair_path.exists()
         else None
     )
 
@@ -259,8 +275,8 @@ def main() -> int:
             "artifact": d12_mass_branch.get("artifact"),
             "status": d12_mass_branch.get("status"),
             "theorem_tier": d12_mass_branch.get("theorem_tier"),
-            "candidate_mass_branch_from_t1_over_5": d12_mass_branch.get("candidate_mass_branch_from_t1_over_5"),
-            "best_honest_one_scalar_mass_point_on_same_family": d12_mass_branch.get("best_honest_one_scalar_mass_point_on_same_family"),
+            "sample_same_family_point": d12_mass_branch.get("sample_same_family_point"),
+            "comparison_only_best_same_family_point": d12_mass_branch.get("comparison_only_best_same_family_point"),
             "forward_same_label_transport_closed": (
                 d12_mass_branch.get("closure_residual", {}).get("fro_norm") is not None
             ),
@@ -273,14 +289,15 @@ def main() -> int:
             "theorem_tier": d12_overlap_law.get("theorem_tier"),
             "next_single_residual_object": d12_overlap_law.get("next_single_residual_object"),
             "transport_formulas": d12_overlap_law.get("transport_formulas"),
-            "candidate_branch_from_t1_over_5": d12_overlap_law.get("candidate_branch_from_t1_over_5"),
+            "sample_same_family_point": d12_overlap_law.get("sample_same_family_point"),
+            "comparison_only_best_same_family_point": d12_overlap_law.get("comparison_only_best_same_family_point"),
         },
         "d12_quadratic_even_transport_scalar": None if quadratic_scalar is None else {
             "artifact": quadratic_scalar.get("artifact"),
             "proof_status": quadratic_scalar.get("proof_status"),
             "next_single_residual_object": quadratic_scalar.get("next_single_residual_object"),
             "quadratic_even_log_formula_direct": quadratic_scalar.get("quadratic_even_log_formula_direct"),
-            "same_t1_candidate": quadratic_scalar.get("same_t1_candidate"),
+            "sample_same_family_ray_point": quadratic_scalar.get("sample_same_family_ray_point"),
         },
         "d12_same_label_physical_invariant_bundle": None if physical_invariants is None else {
             "artifact": physical_invariants.get("artifact"),
@@ -299,17 +316,36 @@ def main() -> int:
             "artifact": one_scalar_specialization.get("artifact"),
             "proof_status": one_scalar_specialization.get("proof_status"),
             "scalar_name": one_scalar_specialization.get("scalar_name"),
+            "sample_scalar_name": one_scalar_specialization.get("sample_scalar_name"),
             "next_single_residual_object": one_scalar_specialization.get("next_single_residual_object"),
             "mass_side_object_count_reduction": one_scalar_specialization.get("mass_side_object_count_reduction"),
             "specialization_formulas": one_scalar_specialization.get("specialization_formulas"),
-            "specialization_values": one_scalar_specialization.get("specialization_values"),
-            "diagnostic_mass_point": one_scalar_specialization.get("diagnostic_mass_point"),
+            "sample_same_family_point": one_scalar_specialization.get("sample_same_family_point"),
+            "sample_same_family_mass_point": one_scalar_specialization.get("sample_same_family_mass_point"),
+        },
+        "d12_mass_side_underdetermination_theorem": None if mass_side_underdetermination is None else {
+            "artifact": mass_side_underdetermination.get("artifact"),
+            "proof_status": mass_side_underdetermination.get("proof_status"),
+            "theorem_statement": mass_side_underdetermination.get("theorem_statement"),
+            "same_family_ray": mass_side_underdetermination.get("same_family_ray"),
+            "next_exact_missing_object": mass_side_underdetermination.get("next_exact_missing_object"),
+            "minimal_new_theorem": mass_side_underdetermination.get("minimal_new_theorem"),
+        },
+        "d12_physical_branch_repair_theorem": None if physical_branch_repair is None else {
+            "artifact": physical_branch_repair.get("artifact"),
+            "proof_status": physical_branch_repair.get("proof_status"),
+            "current_d12_sheet": physical_branch_repair.get("current_d12_sheet"),
+            "comparison_shell": physical_branch_repair.get("comparison_shell"),
+            "current_sheet_invariants": physical_branch_repair.get("current_sheet_invariants"),
+            "physical_shell_mismatch": physical_branch_repair.get("physical_shell_mismatch"),
+            "minimal_branch_shift_repair_theorem": physical_branch_repair.get("minimal_branch_shift_repair_theorem"),
+            "relative_sheet_scan": physical_branch_repair.get("relative_sheet_scan"),
         },
         "source_readback_payload_kind": "pure_B_light_sector_payload_pair",
         "recovered_core_no_go_for_nonzero_light_quark_pure_b_selector": True,
         "recovered_core_no_go_basis": "March 28, 2026 final-wave consolidation against the OPH tier ledger in the uploaded corpus",
         "active_builder_smallest_missing_object": "source_readback_u_log_per_side_and_source_readback_d_log_per_side",
-        "broader_honest_frontier": "D12_mass_side_value_laws_Delta_ud_overlap_and_eta_Q_centered",
+        "broader_honest_frontier": "quark_relative_sheet_selector",
         "predictive_J_B_source_law_status": (
             j_b_evaluator.get("predictive_J_B_source_law_status")
             if j_b_evaluator is not None
@@ -317,7 +353,8 @@ def main() -> int:
         ),
         "smallest_exact_obstruction": (
             "the builder-facing pure-B payload pair is still open on the active public branch, "
-            "and the broader D12 continuation branch still lacks OPH-emitted value laws for Delta_ud_overlap and eta_Q_centered"
+            "and the broader D12 continuation branch is a strict no-go for the physical CKM shell until one discrete quark_relative_sheet_selector is emitted; "
+            "mass-side scale fixing is a separate burden after that branch selection"
         ),
         "smallest_constructive_missing_object": (
             "source_readback_u_log_per_side_and_source_readback_d_log_per_side"
@@ -340,9 +377,14 @@ def main() -> int:
                 else "No D12 overlap transport law is attached to this audit."
             ),
             (
-                "A stronger D12 continuation mass-side candidate is now explicit too: the one-scalar point Delta_ud_overlap = t1/5 gives (u,c,t) = (0.002176632493, 1.256692171439, 172.851929939314) GeV and (d,s,b) = (0.004708229529, 0.091608271273, 4.155513989985) GeV with RMS log-mass error about 1.08e-02, and the CKM/CP lane closes on that same branch because the forward Yukawa step already emits the same-label transport unitary V_CKM^fwd = U_u^dagger U_d and its principal logarithm."
+                "A stronger D12 continuation sample point is now explicit too: the retained same-family point with t1_sample = ray_modulus = 0.6695617711471163 gives (u,c,t) = (0.002176632493, 1.256692171439, 172.851929939314) GeV and (d,s,b) = (0.004708229529, 0.091608271273, 4.155513989985) GeV with RMS log-mass error about 1.08e-02, and the CKM/CP lane closes on that same branch because the forward Yukawa step already emits the same-label transport unitary V_CKM^fwd = U_u^dagger U_d and its principal logarithm."
                 if d12_mass_branch is not None
                 else "No D12 quark mass-branch followup is attached to this audit."
+            ),
+            (
+                "The current D12 sheet is now known to be a strict no-go for the physical CKM shell: same-sheet rephasing leaves the CKM invariants frozen, the emitted angles are too small, and the exact next object is one discrete quark_relative_sheet_selector rather than a continuous repair scalar."
+                if physical_branch_repair is not None
+                else "No explicit D12 physical-branch repair theorem is attached to this audit yet."
             ),
             (
                 "The quadratic even transport is scalarized too: once the ordered-family carrier is fixed, the even residual collapses to one centered scalar eta_Q_centered with direct log formula (eta_Q_centered / 6) * (1,-2,1)."
@@ -355,9 +397,14 @@ def main() -> int:
                 else "No scalarized D12 continuation bundle is attached to this audit."
             ),
             (
-                "There is also a stricter same-family diagnostic specialization: on the current candidate branch both mass-side continuation scalars collapse to one scalar t1, with Delta_ud_overlap = t1/5 and eta_Q_centered = -((1 - x2^2) / 27) * t1. That specialization is explicit on disk, but t1 itself is still not OPH-derived."
+                "There is also a stricter same-family diagnostic specialization: on the current sample branch both mass-side continuation scalars collapse to one ray coordinate, with Delta_ud_overlap = ray_modulus / 5 and eta_Q_centered = -((1 - x2^2) / 27) * ray_modulus. That specialization is explicit on disk, but the retained numerical point is sample-only rather than OPH-emitted."
                 if one_scalar_specialization is not None
                 else "No one-scalar D12 same-family specialization is attached to this audit."
+            ),
+            (
+                "The mass-side theorem boundary remains sharp too: the present same-family D12 branch emits only the one-parameter ray D12_ud_mass_ray = { ray_modulus * (1/5, -((1 - x2^2) / 27)) }, but that scalar issue is now downstream of the branch question rather than the first global frontier."
+                if mass_side_underdetermination is not None
+                else "No explicit D12 mass-side underdetermination theorem is attached to this audit yet."
             ),
         ],
     }

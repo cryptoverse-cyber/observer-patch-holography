@@ -97,6 +97,27 @@ python3 scripts/build_results_status_table.py
 python3 scripts/generate_mass_derivation_svg.py
 ```
 
+## One-Shot CLI Table
+
+For a disposable runtime rebuild that prints the current particle status table
+directly in the terminal:
+
+```bash
+python3 compute_current_output_table.py
+```
+
+Useful flags:
+
+```bash
+python3 compute_current_output_table.py --show-paths
+python3 compute_current_output_table.py --with-hadrons --show-paths
+python3 compute_current_output_table.py --no-print-table --show-paths
+python3 compute_current_output_table.py --verbose
+python3 compute_current_output_table.py --format markdown
+python3 compute_current_output_table.py --format json
+python3 compute_current_output_table.py --color always
+```
+
 ## Focused Verification
 
 ```bash

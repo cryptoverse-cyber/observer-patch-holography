@@ -1,9 +1,9 @@
 {
   "artifact": "oph_quark_scalarized_continuation_bundle",
-  "generated_utc": "2026-03-29T09:13:43Z",
+  "generated_utc": "2026-03-29T12:42:14Z",
   "honest_remaining_value_laws": [
-    "Delta_ud_overlap_value_law",
-    "eta_Q_centered_value_law",
+    "D12_ud_mass_ray",
+    "intrinsic_scale_law_D12",
     "quark_exact_mean_split_value_law_or_carrier_repair"
   ],
   "mass_side": {
@@ -64,14 +64,16 @@
     "odd_transport_scalar_name": "Lambda_ud_B_transport",
     "quadratic_even_log_formula_direct": "(eta_Q_centered / 6) * (1, -2, 1)",
     "quadratic_scalar_name": "eta_Q_centered",
-    "same_t1_candidate": {
+    "sample_same_family_ray_point": {
       "Delta_ud_overlap": 0.13391235422942327,
-      "Delta_ud_overlap_formula": "t1 / 5",
+      "Delta_ud_overlap_formula": "ray_modulus / 5",
       "eta_Q_centered": -0.018155152181872827,
-      "eta_Q_centered_formula": "2 * (1 - x2^2) * kappa_Q = -((1 - x2^2) / 27) * t1",
+      "eta_Q_centered_formula": "2 * (1 - x2^2) * kappa_Q = -((1 - x2^2) / 27) * ray_modulus",
       "exact_mean_rms": 0.0027768355284593363,
-      "kappa_Q_formula": "-t1 / 54",
-      "t1": 0.6695617711471163,
+      "kappa_Q_formula": "-ray_modulus / 54",
+      "ray_modulus": 0.6695617711471163,
+      "status": "sample_only_not_theorem",
+      "t1_sample": 0.6695617711471163,
       "theorem_mean_rms": 0.006597329560808134
     },
     "selector_scalar_name": "Delta_ud_overlap",
@@ -103,6 +105,7 @@
   },
   "notes": [
     "The D12 quark mass branch reduces to two scalar laws, Delta_ud_overlap and eta_Q_centered, once the current ordered-family carrier is fixed.",
+    "On the stricter same-family branch, those two scalars collapse further to the emitted D12_ud_mass_ray with unresolved ray_modulus; the retained numerical point is sample-only.",
     "The CKM/CP side closes on the D12 continuation branch because the same-label transport unitary is emitted directly by the forward Yukawa step and its principal logarithm exists uniquely on the standard gauge representative.",
     "This bundle is diagnostic only and does not alter the live public quark rows."
   ],

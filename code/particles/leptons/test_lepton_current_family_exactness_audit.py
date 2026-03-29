@@ -58,8 +58,17 @@ def test_lepton_exactness_audit_identifies_common_shift_as_insufficient() -> Non
     assert payload["absolute_scale_underdetermination_theorem"]["artifact"] == "oph_charged_absolute_scale_underdetermination_theorem"
     assert abs(payload["absolute_scale_gap_identity"]["identity_residual"]) < 1.0e-12
     assert payload["absolute_scale_closure_status"]["present_chain_under_determines_g_e"] is True
-    assert payload["absolute_scale_closure_status"]["honest_missing_transport_scalar"] == "Delta_e_abs"
+    assert payload["absolute_scale_closure_status"]["charged_absolute_equalizer_status"] == "NO_GO_COMMON_SHIFT"
+    assert payload["absolute_scale_closure_status"]["honest_missing_transport_scalar"] == "A_ch"
+    assert payload["absolute_scale_closure_status"]["hard_reject"]["g_e"] == 0.6822819838027987
+    assert payload["charged_sector_response_operator_candidate"]["name"] == "C_hat_e^{cand}"
+    assert payload["charged_sector_response_operator_candidate"]["smallest_missing_clause"] == "compression_descendant_commutator_vanishes_or_is_uniformly_quadratic_small_after_central_split"
+    assert payload["charged_sector_response_operator_candidate"]["latent_in_flavor_chain"] is True
+    assert payload["red_team_branch_verdict"]["smallest_missing_theorem_object"] == "oph_generation_bundle_branch_generator_splitting"
     waiting = payload["exact_waiting_set"]
     assert waiting["mandatory_package_a"]["id"] == "charged_sector_response_pushforward_to_C_hat_e"
-    assert waiting["mandatory_package_b"]["id"] == "charged_common_refinement_transport_equalizer"
+    assert waiting["mandatory_package_a"]["status"] == "blocked_by_upstream_promotion_theorem"
+    assert waiting["mandatory_package_a"]["blocked_candidate_object"] == "C_hat_e^{cand}"
+    assert waiting["mandatory_package_b"]["id"] == "charged_absolute_anchor_A_ch"
+    assert waiting["mandatory_package_b"]["replaces_invalid_route"] == "charged_common_refinement_transport_equalizer"
     assert waiting["optional_package_c"]["id"] == "charged_holonomy_bridge_for_legacy_delta_2_over_9"

@@ -20,11 +20,17 @@ def test_charged_absolute_scale_is_explicitly_underdetermined() -> None:
     payload = json.loads(OUTPUT.read_text(encoding="utf-8"))
 
     assert payload["artifact"] == "oph_charged_absolute_scale_underdetermination_theorem"
-    assert payload["proof_status"] == "centered_shape_closed_absolute_scale_underdetermined"
+    assert payload["proof_status"] == "centered_shape_closed_absolute_scale_no_go_common_shift"
     assert payload["public_promotion_allowed"] is False
+    assert payload["charged_absolute_equalizer"] == "NO_GO_COMMON_SHIFT"
     assert abs(payload["centered_sum_rule"]["value"]) < 1.0e-12
-    assert payload["next_exact_missing_object"] == "charged_common_refinement_transport_equalizer"
-    assert payload["minimal_new_theorem"]["required_new_scalar"] == "Delta_e_abs"
+    assert payload["theorem_forbid_emit"] == ["g_e", "Delta_e_abs"]
+    assert payload["next_exact_missing_object"] == "charged_absolute_anchor_A_ch"
+    assert payload["minimal_new_theorem"]["required_new_scalar"] == "A_ch"
+    assert payload["no_go_theorem"]["id"] == "charged_absolute_shift_invariance_no_go"
+    assert payload["no_go_theorem"]["target_transforms"]["g_e"] == "exp(c) * g_e"
+    assert payload["future_single_slot_only"]["required_contract"] == "A_ch(logm + c*(1,1,1)) = A_ch(logm) + c"
+    assert payload["hard_reject"]["g_e"] == 0.6822819838027987
 
     compare = payload["compare_only_continuation_target"]
     assert math.isclose(compare["g_e_star"], 0.04577885783568762, rel_tol=0.0, abs_tol=1.0e-15)

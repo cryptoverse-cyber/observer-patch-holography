@@ -66,6 +66,62 @@
   },
   "centering_rule": "K_gen - tr(K_gen)/3 * I",
   "charged_block_projector_kind": "same_label_sector_block",
+  "charged_sector_response_operator_candidate": {
+    "artifact_kind": "latent_charged_declaration_of_centered_generation_bundle_branch_generator",
+    "declaration_missing_theorem": "oph_generation_bundle_branch_generator_splitting",
+    "declaration_status": "candidate_only",
+    "formula": "sum_{f in {f1,f2,f3}} (lambda_f - mean_lambda) * Pi_f^(e)",
+    "matrix": {
+      "imag": [
+        [
+          0.0,
+          0.34099999999999997,
+          0.16399999999999998
+        ],
+        [
+          -0.34099999999999997,
+          0.0,
+          0.019
+        ],
+        [
+          -0.16399999999999998,
+          -0.019,
+          0.0
+        ]
+      ],
+      "real": [
+        [
+          0.476,
+          0.1908,
+          0.0322
+        ],
+        [
+          0.1908,
+          -0.06400000000000006,
+          0.2162
+        ],
+        [
+          0.0322,
+          0.2162,
+          -0.41200000000000003
+        ]
+      ]
+    },
+    "name": "C_hat_e^{cand}",
+    "notes": [
+      "This is the latent charged operator candidate beneath the charged-sector response functor.",
+      "It is defined from the centered generation-bundle branch generator only.",
+      "Target charged masses and diagnostic D12 continuation values are not part of the defining data.",
+      "Theorem-grade declaration is blocked until the branch-generator splitting theorem closes."
+    ],
+    "ordered_spectrum": [
+      0.7349137562771554,
+      -0.21627404800912356,
+      -0.5186397082680317
+    ],
+    "sigma_formula": "lambda_max(C_hat_e^{cand}) - lambda_min(C_hat_e^{cand})",
+    "smallest_missing_clause": "compression_descendant_commutator_vanishes_or_is_uniformly_quadratic_small_after_central_split"
+  },
   "compressed_branch_generator": {
     "imag": [
       [
@@ -222,11 +278,11 @@
       }
     }
   ],
-  "generated_utc": "2026-03-25T14:54:49Z",
+  "generated_utc": "2026-03-29T12:28:06Z",
   "generation_bundle_projector_kind": "realized_ng_equals_3_bundle",
   "latest_refinement_level": 1,
   "metadata": {
-    "note": "This artifact promotes the flavor origin from a vague missing transport functor to a concrete centered compressed branch-generator candidate on the realized three-generation charged bundle. The standard Kato/Riesz persistence shell is now explicit on the current proxy; the remaining OPH-only burden is proving that the actual compressed branch generator satisfies the same defect-vs-gap estimate, with the current constructive bridge being a central split plus compression-descendant commutator control where the first surviving residual vanishes when the descended commutator vanishes and otherwise is treated as uniformly quadratic through P->Q->P factorization.",
+    "note": "This artifact promotes the flavor origin from a vague missing transport functor to a concrete centered compressed branch-generator candidate on the realized three-generation charged bundle. The standard Kato/Riesz persistence shell is now explicit on the current proxy; the remaining OPH-only burden is proving that the actual compressed branch generator satisfies the same defect-vs-gap estimate, with the current constructive bridge being a central split plus compression-descendant commutator control where the first surviving residual vanishes when the descended commutator vanishes and otherwise is treated as uniformly quadratic through P->Q->P factorization. On the charged side, this same centered operator is only the latent candidate C_hat_e^{cand}; theorem-grade declaration remains blocked by the upstream promotion theorem.",
     "transport_artifact": "oph_family_transport_kernel"
   },
   "noncentrality_certificate": {

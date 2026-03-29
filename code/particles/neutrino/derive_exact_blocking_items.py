@@ -31,6 +31,7 @@ PMNS_JSON = ROOT / "particles" / "runs" / "neutrino" / "pmns_from_shared_basis.j
 CHARGED_LEFT_JSON = ROOT / "particles" / "runs" / "neutrino" / "shared_charged_lepton_left_basis.json"
 ETA_DEMO_JSON = ROOT / "particles" / "runs" / "neutrino" / "intrinsic_neutrino_eta_demo_payload.json"
 INTRINSIC_VALIDATION_JSON = ROOT / "particles" / "runs" / "neutrino" / "intrinsic_neutrino_exact_mixing_law_validation.json"
+REPAIR_JSON = ROOT / "particles" / "runs" / "neutrino" / "neutrino_weighted_cycle_repair.json"
 DEFAULT_EXACT_OUT = ROOT / "particles" / "runs" / "neutrino" / "exact_blocking_items.json"
 DEFAULT_SUMMARY_OUT = ROOT / "particles" / "runs" / "neutrino" / "current_snapshot_blocker_summary.json"
 
@@ -50,10 +51,17 @@ def build_exact_blockers(
     charged_left: dict,
     eta_demo: dict,
     intrinsic_validation: dict,
+    repair: dict,
 ) -> tuple[dict, dict]:
     same_label_present = bool(certificate.get("sufficient_for_intrinsic_mass_eigenstates"))
     charged_basis_present = charged_left.get("status") == "closed"
     pmns_present = pmns.get("status") == "closed"
+    repair_present = repair.get("artifact") == "oph_neutrino_weighted_cycle_repair"
+    repair_shape_closed = repair.get("physical_window_status") == "pmns_and_hierarchy_repaired"
+    absolute_normalization_open = repair.get("absolute_normalization_status") == "open_one_positive_scale"
+    physical_branch_closed = bool(pmns.get("physical_branch_closed", False)) or (
+        repair_present and repair_shape_closed and not absolute_normalization_open
+    )
     eta_payload = dict(eta_demo.get("eta_e") or {})
     exact_blockers = []
     if not same_label_present:
@@ -75,15 +83,48 @@ def build_exact_blockers(
             }
         )
 
-    fully_completed = same_label_present and charged_basis_present and pmns_present
-    exact_payload = {
-        "artifact": "oph_exact_neutrino_blocker_audit_v7",
-        "generated_utc": _timestamp(),
-        "fully_completed": fully_completed,
-        "reason_not_fully_completed": (
-            ""
-            if fully_completed
-            else (
+    branch_repair_required = (
+        same_label_present
+        and charged_basis_present
+        and not repair_shape_closed
+        and pmns_present
+        and not physical_branch_closed
+    )
+    if branch_repair_required:
+        exact_blockers.append(
+            {
+                "name": "physical_neutrino_branch_repair",
+                "kind": "branch_selection_or_minimal_repair_theorem",
+                "current_snapshot_status": "open",
+                "required_contract": "emit_a_physically_correct_flavor_branch_or_prove_a_no_go_for_the_current_continuation_branch",
+            }
+        )
+    if same_label_present and charged_basis_present and repair_shape_closed and absolute_normalization_open:
+        exact_blockers.append(
+            {
+                "name": "one_positive_neutrino_mass_normalization_scalar",
+                "kind": "absolute_scale_coordinate",
+                "current_snapshot_status": "open",
+                "required_contract": "emit_one_OPH_normalization_scalar_that_upgrades_the_repaired_weighted_cycle_branch_from_dimensionless_hierarchy_to_absolute_masses_and_splittings_without_external_anchor",
+            }
+        )
+
+    fully_completed = same_label_present and charged_basis_present and pmns_present and physical_branch_closed
+    reason_not_fully_completed = ""
+    if not fully_completed:
+        if same_label_present and charged_basis_present and repair_shape_closed and absolute_normalization_open:
+            reason_not_fully_completed = (
+                "The old isotropic branch has been repaired at the physical-pattern level: the weighted-cycle branch lands in the observed PMNS window and gives the right splitting hierarchy. "
+                "But one overall positive neutrino normalization is still open, so the absolute masses and absolute delta m^2 values remain compare-only unless an external atmospheric anchor is supplied."
+            )
+        elif branch_repair_required:
+            reason_not_fully_completed = (
+                "The continuation branch closes numerically from the same-label scalar certificate and shared charged basis, "
+                "but the emitted PMNS angles and mass splittings are quantitatively wrong. The honest remaining object is a "
+                "branch-repair or minimal-repair theorem at the flavor-to-neutrino interface or in the intrinsic neutrino ansatz."
+            )
+        else:
+            reason_not_fully_completed = (
                 "The intrinsic chain is exact once the same-label scalar certificate exists, but the current snapshot still "
                 + (
                     "lacks a live physical certificate"
@@ -96,7 +137,12 @@ def build_exact_blockers(
                     else "."
                 )
             )
-        ),
+
+    exact_payload = {
+        "artifact": "oph_exact_neutrino_blocker_audit_v8",
+        "generated_utc": _timestamp(),
+        "fully_completed": fully_completed,
+        "reason_not_fully_completed": reason_not_fully_completed,
         "closed_theorem_chain": [
             "oph_native_scale_anchor_m_star_equals_v2_over_mu_u",
             "oph_fixed_cutoff_trace_pullback_metric",
@@ -150,20 +196,48 @@ def build_exact_blockers(
             ),
             "first_honest_solar_mover": "realized_arrow_pullback_from_flavor_gap_and_defect_certificates",
         },
+        "live_continuation_branch_status": {
+            "same_label_scalar_certificate_present": same_label_present,
+            "shared_charged_left_basis_present": charged_basis_present,
+            "pmns_present": pmns_present,
+            "repair_artifact_present": repair_present,
+            "status": (
+                "physically_repaired_up_to_one_positive_scale"
+                if repair_shape_closed and absolute_normalization_open
+                else (
+                    "numerically_closed_but_quantitatively_wrong_branch"
+                    if branch_repair_required
+                    else "waiting_on_missing_upstream_artifacts"
+                )
+            ),
+            "physical_branch_closed": physical_branch_closed,
+            "current_pmns_parameters": dict(
+                (repair.get("pmns_observables") if repair_shape_closed else pmns.get("standard_pmns_parameters")) or {}
+            ),
+            "current_mass_splittings_gev2": {
+                "delta_m21_sq_gev2": pmns.get("intrinsic_delta_m21_sq_gev2", forward.get("delta_m21_sq_gev2")),
+                "delta_m31_sq_gev2": pmns.get("intrinsic_delta_m31_sq_gev2", forward.get("delta_m31_sq_gev2")),
+            },
+            "repaired_branch_dimensionless_dm2": dict(repair.get("dimensionless_dm2") or {}),
+            "compare_only_atmospheric_anchor": dict(repair.get("compare_only_atmospheric_anchor") or {}),
+        },
         "current_snapshot_scan": {
             "live_same_label_artifact_found": same_label_present,
             "live_charged_left_artifact_found": charged_basis_present,
             "live_pmns_artifact_found": pmns_present,
+            "live_repair_artifact_found": repair_present,
         },
     }
 
     summary_payload = {
-        "artifact": "oph_current_snapshot_blocker_summary_v7",
+        "artifact": "oph_current_snapshot_blocker_summary_v8",
         "generated_utc": _timestamp(),
         "exact_remaining_blockers": [item["name"] for item in exact_blockers],
         "live_same_label_scalar_certificate_present": same_label_present,
         "shared_charged_left_basis_present": charged_basis_present,
         "pmns_present": pmns_present,
+        "repair_artifact_present": repair_present,
+        "physical_branch_closed": physical_branch_closed,
         "same_label_proof_facing_continuous_dof_mod_common_scale": 5,
         "same_label_builder_facing_centered_eta_dof": 2,
         "charged_left_basis_artifact_dof_before_phase_quotients": 9,
@@ -179,6 +253,7 @@ def main() -> int:
     parser.add_argument("--charged-left", default=str(CHARGED_LEFT_JSON))
     parser.add_argument("--eta-demo", default=str(ETA_DEMO_JSON))
     parser.add_argument("--intrinsic-validation", default=str(INTRINSIC_VALIDATION_JSON))
+    parser.add_argument("--repair", default=str(REPAIR_JSON))
     parser.add_argument("--exact-output", default=str(DEFAULT_EXACT_OUT))
     parser.add_argument("--summary-output", default=str(DEFAULT_SUMMARY_OUT))
     args = parser.parse_args()
@@ -190,6 +265,7 @@ def main() -> int:
         _load_json(Path(args.charged_left)),
         _load_json(Path(args.eta_demo)),
         _load_json(Path(args.intrinsic_validation)),
+        _load_json(Path(args.repair)) if Path(args.repair).exists() else {},
     )
 
     exact_out = Path(args.exact_output)

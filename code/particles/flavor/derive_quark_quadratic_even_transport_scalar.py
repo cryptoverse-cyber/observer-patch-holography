@@ -60,12 +60,14 @@ def build_artifact() -> dict[str, object]:
             "eta_Q_centered": -0.018073642054692307,
             "source": "current-carrier audit lift",
         },
-        "same_t1_candidate": {
-            "t1": 0.6695617711471163,
-            "kappa_Q_formula": "-t1 / 54",
-            "eta_Q_centered_formula": "2 * (1 - x2^2) * (-t1 / 54) = -((1 - x2^2) / 27) * t1",
+        "sample_same_family_ray_point": {
+            "ray_modulus": 0.6695617711471163,
+            "t1_sample": 0.6695617711471163,
+            "kappa_Q_formula": "-ray_modulus / 54",
+            "eta_Q_centered_formula": "2 * (1 - x2^2) * (-ray_modulus / 54) = -((1 - x2^2) / 27) * ray_modulus",
             "eta_Q_centered": -0.018155152181872827,
             "kappa_Q": -0.012399292058279932,
+            "status": "sample_only_not_theorem",
         },
         "next_single_residual_object": "eta_Q_centered_value_law",
         "notes": [

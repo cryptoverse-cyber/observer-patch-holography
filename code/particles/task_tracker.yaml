@@ -300,7 +300,7 @@ stages:
     success_rule: "Charged leptons come from the forward dictionary plus declared standard-QFT completion only."
     tasks:
       - id: papers.compact.e.30-replace-koide-assisted-lepton-fitting-with-a-theorem
-        title: "Derive the charged same-carrier support pair (eta then sigma) without Koide import"
+        title: "Promote the latent charged candidate C_hat_e^{cand} by closing branch-generator splitting, then derive the theorem-grade absolute charged anchor A_ch so eta/sigma/g_e become induced invariants without Koide import"
         status: in_progress
         owner_lane: pro_paper
         depends_on: ["papers.compact.e.29-derive-the-yukawa-excitation-dictionary"]
@@ -432,7 +432,7 @@ stages:
         owner_lane: local_code
         depends_on: ["particles.flavor.41-add-mean-side-vs-gap-side-support-fields"]
       - id: particles.leptons.15-track-support-completion-as-eta-then-sigma
-        title: "Track charged support completion explicitly as eta readback first and sigma second"
+        title: "Track eta and sigma only as builder-facing residual order beneath C_hat_e^{cand} promotion and the future absolute anchor A_ch"
         status: in_progress
         owner_lane: pro_paper
         depends_on: ["particles.leptons.14-add-eta-source-readback-primitive"]
@@ -447,7 +447,7 @@ stages:
         owner_lane: local_code
         depends_on: ["particles.leptons.16-record-d12-charged-continuation-bridge"]
       - id: particles.leptons.18-record-exact-charged-waiting-set
-        title: "Record the exact charged waiting set as C_hat_e plus the common-refinement transport equalizer, with eta/sigma demoted to downstream invariants"
+        title: "Record the exact charged waiting set as C_hat_e^{cand} promotion plus the future absolute anchor A_ch, with eta/sigma demoted to downstream invariants"
         status: completed
         owner_lane: local_docs
         depends_on: ["particles.leptons.17-fix-charged-absolute-scale-type-mismatch-and-shell"]
@@ -457,7 +457,7 @@ stages:
         owner_lane: local_code
         depends_on: ["particles.leptons.18-record-exact-charged-waiting-set"]
       - id: particles.leptons.20-derive-determinant-normalization-transport-theorem
-        title: "Derive the charged determinant-normalization transport theorem emitting Delta_e_abs or an equivalent absolute-scale coordinate"
+        title: "Derive the theorem-grade affine-covariant absolute charged anchor A_ch for the common-shift quotient"
         status: in_progress
         owner_lane: pro_paper
         depends_on:
@@ -634,22 +634,41 @@ stages:
         owner_lane: local_code
         depends_on: ["particles.flavor.48-record-gauge-fixed-d12-physical-invariant-shell"]
       - id: particles.flavor.50-record-same-family-d12-selector-value-law
-        title: "Record the same-family D12 selector/value-law specialization Delta_ud_overlap = t1/5 and eta_Q_centered = -((1-x2^2)/27) t1"
+        title: "Record the same-family D12 mass ray D12_ud_mass_ray with Delta_ud_overlap = ray_modulus/5 and eta_Q_centered = -((1-x2^2)/27) ray_modulus"
         status: completed
         owner_lane: local_code
         depends_on: ["particles.flavor.49-build-scalarized-d12-quark-continuation-bundle"]
+      - id: particles.flavor.51-certify-current-d12-sheet-no-go-for-physical-ckm-shell
+        title: "Certify that the current D12 sheet is a strict no-go for the physical CKM shell and expose the discrete relative-sheet selector boundary"
+        status: completed
+        owner_lane: local_code
+        depends_on: ["particles.flavor.50-record-same-family-d12-selector-value-law"]
+      - id: particles.flavor.52-emit-quark-relative-sheet-selector
+        title: "Emit the discrete relative up/down sheet selector that leaves the current D12 no-go class"
+        status: in_progress
+        owner_lane: pro_paper
+        depends_on:
+          [
+            "particles.flavor.51-certify-current-d12-sheet-no-go-for-physical-ckm-shell",
+            "papers.compact.e.31-derive-quark-textures-ckm-mixing-and-cp-from-overlap-defects"
+          ]
+      - id: particles.flavor.53-derive-selected-branch-quark-mass-scale-law
+        title: "Derive the intrinsic mass-side scale law on the selected quark branch after the discrete CKM branch selector is fixed"
+        status: pending
+        owner_lane: pro_paper
+        depends_on: ["particles.flavor.52-emit-quark-relative-sheet-selector"]
   - id: stage-5
     title: "Close the neutrino sector"
     status: active
-    success_rule: "Forward neutrino outputs reproduce the relevant scale and splitting structure without PMNS import."
+    success_rule: "Emit the physically correct neutrino branch without PMNS import and either emit the final absolute normalization scalar or state explicitly that one positive mass normalization remains open."
     tasks:
       - id: papers.compact.e.32-derive-neutrino-masses-from-screen-capacity-as-a-theorem
-        title: "Derive neutrino masses from screen capacity as a theorem"
+        title: "Repair the neutrino continuation branch so the emitted spectrum and PMNS reach the physical oscillation regime"
         status: in_progress
         owner_lane: pro_paper
         depends_on: ["papers.compact.e.29-derive-the-yukawa-excitation-dictionary"]
       - id: particles.e.32b-close-neutrino-splittings-and-mixing
-        title: "Close neutrino splittings and mixing"
+        title: "Repair neutrino PMNS and hierarchy on the live continuation branch, then emit the final absolute normalization scalar"
         status: in_progress
         owner_lane: pro_neutrino
         depends_on: ["papers.compact.e.32-derive-neutrino-masses-from-screen-capacity-as-a-theorem"]
@@ -803,7 +822,7 @@ stages:
         owner_lane: local_code
         depends_on: ["particles.neutrino.28-add-same-label-scalar-certificate"]
       - id: particles.neutrino.30-record-exact-blocker-audit
-        title: "Record the exact neutrino blocker audit: isotropic no-go, live same-label scalar certificate, and shared charged-lepton left basis"
+        title: "Record the exact neutrino blocker audit, including branch-repair status once the live certificate and charged basis are present"
         status: completed
         owner_lane: local_code
         depends_on: ["particles.neutrino.29-build-intrinsic-mass-eigenstate-bundle-from-scalar-certificate"]

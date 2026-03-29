@@ -133,6 +133,23 @@ def build_artifact(payload: dict[str, Any]) -> dict[str, Any]:
         "compressed_branch_generator": _encode_complex_matrix(compressed),
         "centered_compressed_branch_generator": _encode_complex_matrix(centered),
         "centering_rule": "K_gen - tr(K_gen)/3 * I",
+        "charged_sector_response_operator_candidate": {
+            "name": "C_hat_e^{cand}",
+            "artifact_kind": "latent_charged_declaration_of_centered_generation_bundle_branch_generator",
+            "declaration_status": "candidate_only",
+            "declaration_missing_theorem": "oph_generation_bundle_branch_generator_splitting",
+            "smallest_missing_clause": "compression_descendant_commutator_vanishes_or_is_uniformly_quadratic_small_after_central_split",
+            "formula": "sum_{f in {f1,f2,f3}} (lambda_f - mean_lambda) * Pi_f^(e)",
+            "matrix": _encode_complex_matrix(centered),
+            "ordered_spectrum": eigenvalues,
+            "sigma_formula": "lambda_max(C_hat_e^{cand}) - lambda_min(C_hat_e^{cand})",
+            "notes": [
+                "This is the latent charged operator candidate beneath the charged-sector response functor.",
+                "It is defined from the centered generation-bundle branch generator only.",
+                "Target charged masses and diagnostic D12 continuation values are not part of the defining data.",
+                "Theorem-grade declaration is blocked until the branch-generator splitting theorem closes.",
+            ],
+        },
         "selfadjoint": bool(np.allclose(centered, centered.conj().T)),
         "canonicality_certificate": {
             "carrier_kind": "persistent_charged_generation_multiplicity_bundle",
@@ -205,7 +222,7 @@ def build_artifact(payload: dict[str, Any]) -> dict[str, Any]:
         "latest_refinement_level": level,
         "metadata": {
             "transport_artifact": payload.get("artifact"),
-            "note": "This artifact promotes the flavor origin from a vague missing transport functor to a concrete centered compressed branch-generator candidate on the realized three-generation charged bundle. The standard Kato/Riesz persistence shell is now explicit on the current proxy; the remaining OPH-only burden is proving that the actual compressed branch generator satisfies the same defect-vs-gap estimate, with the current constructive bridge being a central split plus compression-descendant commutator control where the first surviving residual vanishes when the descended commutator vanishes and otherwise is treated as uniformly quadratic through P->Q->P factorization.",
+            "note": "This artifact promotes the flavor origin from a vague missing transport functor to a concrete centered compressed branch-generator candidate on the realized three-generation charged bundle. The standard Kato/Riesz persistence shell is now explicit on the current proxy; the remaining OPH-only burden is proving that the actual compressed branch generator satisfies the same defect-vs-gap estimate, with the current constructive bridge being a central split plus compression-descendant commutator control where the first surviving residual vanishes when the descended commutator vanishes and otherwise is treated as uniformly quadratic through P->Q->P factorization. On the charged side, this same centered operator is only the latent candidate C_hat_e^{cand}; theorem-grade declaration remains blocked by the upstream promotion theorem.",
         },
     }
 

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Record the gauge-fixed physical-invariant shell for the D12 quark route.
 
-Chain role: separate the physical CKM/CP invariant shell from the remaining
-mass-side value-law burden on the D12 continuation branch.
+Chain role: separate the honest same-sheet CKM/CP invariant shell from the
+remaining physical-branch and mass-side burdens on the D12 continuation branch.
 
 Mathematics: read the honest forward same-label transport unitary and its
 principal logarithm from the D12 mass/transport closure artifact, then expose
@@ -13,7 +13,7 @@ OPH-derived inputs: the D12 mass branch together with the forward-emitted
 same-label transport closure.
 
 Output: a D12 continuation bundle of physical invariants with zero remaining
-transport-generator residual.
+transport-generator residual on the current D12 sheet.
 """
 
 from __future__ import annotations
@@ -41,7 +41,7 @@ def build_artifact(transport: dict[str, object]) -> dict[str, object]:
         "artifact": "oph_generation_bundle_same_label_physical_invariant_bundle",
         "generated_utc": _timestamp(),
         "scope": "D12_continuation_only",
-        "proof_status": "forward_same_label_transport_closed_on_D12_continuation",
+        "proof_status": "forward_same_label_transport_closed_on_current_D12_sheet",
         "full_matrix_artifact": transport["artifact"],
         "gauge_convention": (
             "standard rephasing makes V_ud, V_us, V_cs, V_cb, V_tb real-positive; "
@@ -66,10 +66,14 @@ def build_artifact(transport: dict[str, object]) -> dict[str, object]:
         ),
         "generator_invariants": invariants,
         "closure_residual_fro_norm": transport["closure_residual"]["fro_norm"],
-        "next_single_residual_object": None,
+        "current_sheet_status": transport.get("current_sheet_status"),
+        "physical_branch_status": transport.get("physical_branch_status"),
+        "quark_relative_sheet_selector": transport.get("quark_relative_sheet_selector"),
+        "next_single_residual_object": "quark_relative_sheet_selector",
         "notes": [
-            "This bundle records the gauge-fixed physical CKM/CP shell emitted by the forward same-label transport unitary on the D12 continuation branch.",
-            "The transport-generator residual is closed to machine precision; the remaining open burden on this branch is mass-side rather than CKM/CP-side.",
+            "This bundle records the gauge-fixed CKM/CP shell emitted by the forward same-label transport unitary on the current D12 sheet.",
+            "The transport-generator residual is closed to machine precision on that sheet, but the current D12 sheet is not the physical quark branch.",
+            "The exact next object is one discrete relative-sheet selector; mass-side scale fixing remains separate after branch selection.",
         ],
     }
 

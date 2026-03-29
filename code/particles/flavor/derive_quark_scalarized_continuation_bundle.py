@@ -85,15 +85,17 @@ def main() -> int:
                 "m_d_GeV": [0.004700052692857295, 0.09350445861546268, 4.182753646232867],
                 "rms_log_mass_error": 5.2130513964914564e-05,
             },
-            "same_t1_candidate": {
-                "t1": 0.6695617711471163,
-                "Delta_ud_overlap_formula": "t1 / 5",
+            "sample_same_family_ray_point": {
+                "ray_modulus": 0.6695617711471163,
+                "t1_sample": 0.6695617711471163,
+                "Delta_ud_overlap_formula": "ray_modulus / 5",
                 "Delta_ud_overlap": 0.13391235422942327,
-                "kappa_Q_formula": "-t1 / 54",
-                "eta_Q_centered_formula": "2 * (1 - x2^2) * kappa_Q = -((1 - x2^2) / 27) * t1",
+                "kappa_Q_formula": "-ray_modulus / 54",
+                "eta_Q_centered_formula": "2 * (1 - x2^2) * kappa_Q = -((1 - x2^2) / 27) * ray_modulus",
                 "eta_Q_centered": -0.018155152181872827,
                 "theorem_mean_rms": 0.006597329560808134,
                 "exact_mean_rms": 0.0027768355284593363,
+                "status": "sample_only_not_theorem",
             },
         },
         "mixing_side": {
@@ -107,12 +109,13 @@ def main() -> int:
             "transport_closure_residual_fro_norm": physical["closure_residual_fro_norm"],
         },
         "honest_remaining_value_laws": [
-            "Delta_ud_overlap_value_law",
-            "eta_Q_centered_value_law",
+            "D12_ud_mass_ray",
+            "intrinsic_scale_law_D12",
             "quark_exact_mean_split_value_law_or_carrier_repair",
         ],
         "notes": [
             "The D12 quark mass branch reduces to two scalar laws, Delta_ud_overlap and eta_Q_centered, once the current ordered-family carrier is fixed.",
+            "On the stricter same-family branch, those two scalars collapse further to the emitted D12_ud_mass_ray with unresolved ray_modulus; the retained numerical point is sample-only.",
             "The CKM/CP side closes on the D12 continuation branch because the same-label transport unitary is emitted directly by the forward Yukawa step and its principal logarithm exists uniquely on the standard gauge representative.",
             "This bundle is diagnostic only and does not alter the live public quark rows.",
         ],

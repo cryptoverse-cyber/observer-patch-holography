@@ -203,6 +203,10 @@ def build_artifact(payload: dict[str, Any], generator_artifact: dict[str, Any] |
         "functor_kind": "projective_polar_riesz_common_refinement",
         "line_lift_is_readout_of": readout_of,
         "intrinsic_generation_branch_generator_artifact": readout_of,
+        "charged_sector_response_operator_name": "C_hat_e^{cand}",
+        "charged_declaration_functor_kind": "projective_polar_riesz_common_refinement_to_charged_sector_response",
+        "charged_declaration_status": "candidate_only",
+        "charged_declaration_unique_mod_objectwise_u1": True,
         "object_labels": object_labels,
         "transport_group": "objectwise_u1",
         "presentation_independence_status": "candidate_only",
@@ -250,6 +254,7 @@ def build_artifact(payload: dict[str, Any], generator_artifact: dict[str, Any] |
         "raw_entry_readback_forbidden_as_closed_origin": True,
         "notes": [
             "This artifact now tracks the projective polar-Riesz common-refinement eigenline transport as a downstream readout of the centered compressed generation-bundle branch generator candidate. Same-label diagonal transport is explicit here; the off-diagonal flavor-edge overlaps are induced downstream after transport and are not the transport maps themselves.",
+            "On the charged branch, this same transport layer is the declaration/readout shell beneath the latent operator candidate C_hat_e^{cand}.",
             "The remaining OPH-native blocker is now the persistent simple-spectrum splitting theorem for the centered compressed branch generator on the realized generation bundle, not the downstream projector-overlap algebra on the current family.",
         ],
     }

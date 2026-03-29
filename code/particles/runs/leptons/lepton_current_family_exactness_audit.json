@@ -1,9 +1,15 @@
 {
   "absolute_scale_closure_status": {
+    "charged_absolute_equalizer_status": "NO_GO_COMMON_SHIFT",
     "compare_only_delta_e_abs_star": 3.003986333402356,
     "compare_only_g_e_star": 0.04577885783568762,
     "current_theorem_output": "E_e_log_centered mod common shift",
-    "honest_missing_transport_scalar": "Delta_e_abs",
+    "hard_reject": {
+      "Delta_e_abs": 0.30236566025890826,
+      "g_e": 0.6822819838027987,
+      "reason": "common-shift orbit pick; not theorem-grade; does not land on physical charged masses"
+    },
+    "honest_missing_transport_scalar": "A_ch",
     "present_chain_under_determines_g_e": true
   },
   "absolute_scale_gap_identity": {
@@ -60,14 +66,34 @@
       "shape_operator": "det(Y_e_shape) = 1"
     },
     "minimal_new_theorem": {
-      "formula": "g_e = g_ch_shared * exp(-Delta_e_abs)",
-      "id": "charged_absolute_determinant_transport_theorem",
+      "formula": "A_ch(logm + c*(1,1,1)) = A_ch(logm) + c",
+      "id": "charged_absolute_anchor_section",
       "must_be_independent_of_measured_masses": true,
-      "required_new_scalar": "Delta_e_abs",
-      "source": "charged operator C_hat_e together with the common-refinement transport equalizer"
+      "required_new_scalar": "A_ch",
+      "source": "theorem-grade affine-covariant section of the charged common-shift quotient"
     },
-    "next_exact_missing_object": "charged_common_refinement_transport_equalizer",
-    "proof_status": "centered_shape_closed_absolute_scale_underdetermined",
+    "next_exact_missing_object": "charged_absolute_anchor_A_ch",
+    "no_go_theorem": {
+      "conclusion": "no theorem-grade absolute normalization scalar is emitted on the current charged surface",
+      "family_action": "Y_e(c) = exp(c) * diag(exp(E_e_log_centered))",
+      "id": "charged_absolute_shift_invariance_no_go",
+      "invariant_payload": [
+        "eta_ext",
+        "sigma_ext",
+        "gamma21",
+        "gamma32",
+        "E_e_log_centered",
+        "charged ratios",
+        "det(Y_e_shape)=1"
+      ],
+      "target_transforms": {
+        "Delta_e_abs": "Delta_e_abs - c",
+        "det(Y_e)": "exp(3*c) * det(Y_e)",
+        "g_e": "exp(c) * g_e",
+        "mu_e_absolute_log": "mu_e_absolute_log + c"
+      }
+    },
+    "proof_status": "centered_shape_closed_absolute_scale_no_go_common_shift",
     "same_carrier_mass_formulas": {
       "family_operator": "Y_e(c) = exp(c) * diag(exp(E_e_log_centered))",
       "m_e": "g_e * exp(e_log_centered)",
@@ -79,7 +105,7 @@
       "theorem_scope": "shared_budget_only",
       "writeback_scope": "current_family_only"
     },
-    "theorem_statement": "The present charged OPH chain fixes only the centered charged log class E_e_log_centered in R^3 modulo the common shift direction (1,1,1). It does not emit the absolute scalar g_e."
+    "theorem_statement": "The present charged OPH chain fixes only the centered charged log class E_e_log_centered in R^3 modulo the common shift direction (1,1,1). It emits only the quotient class and does not emit theorem-grade g_e or Delta_e_abs."
   },
   "active_readout_contract": {
     "eta_e_rigid_fallback": -0.809613811928119,
@@ -140,6 +166,67 @@
     "status": "diagnostic_only_d12_continuation",
     "theorem_tier": "D12_continuation_only"
   },
+  "charged_sector_response_operator_candidate": {
+    "artifact": "oph_intrinsic_generation_bundle_branch_generator",
+    "declaration_missing_theorem": "oph_generation_bundle_branch_generator_splitting",
+    "declaration_status": "candidate_only",
+    "declared_operator_name": null,
+    "eta_current": 2.220446049250313e-16,
+    "eta_formula_on_current_family": "x2 * sigma(C_hat_e^{cand}) - 3 * lambda_mid(C_hat_e^{cand})",
+    "latent_in_flavor_chain": true,
+    "matrix": {
+      "imag": [
+        [
+          0.0,
+          0.34099999999999997,
+          0.16399999999999998
+        ],
+        [
+          -0.34099999999999997,
+          0.0,
+          0.019
+        ],
+        [
+          -0.16399999999999998,
+          -0.019,
+          0.0
+        ]
+      ],
+      "real": [
+        [
+          0.476,
+          0.1908,
+          0.0322
+        ],
+        [
+          0.1908,
+          -0.06400000000000006,
+          0.2162
+        ],
+        [
+          0.0322,
+          0.2162,
+          -0.41200000000000003
+        ]
+      ]
+    },
+    "name": "C_hat_e^{cand}",
+    "ordered_family_coordinate_x2": -0.5175863354681689,
+    "ordered_spectrum": [
+      0.7349137562771554,
+      -0.21627404800912356,
+      -0.5186397082680317
+    ],
+    "same_label_overlap_amplitudes": [
+      0.9971698845725937,
+      0.9959502888149423,
+      0.9987517128757214
+    ],
+    "sigma_current": 1.2535534645451878,
+    "sigma_formula": "lambda_max(C_hat_e^{cand}) - lambda_min(C_hat_e^{cand})",
+    "smallest_missing_clause": "compression_descendant_commutator_vanishes_or_is_uniformly_quadratic_small_after_central_split",
+    "status": "candidate_only"
+  },
   "common_shift_audit": {
     "best_common_scale": 0.04958899556862701,
     "best_common_shift": -3.003986333402356,
@@ -183,16 +270,22 @@
   },
   "exact_waiting_set": {
     "mandatory_package_a": {
+      "blocked_candidate_object": "C_hat_e^{cand}",
       "id": "charged_sector_response_pushforward_to_C_hat_e",
-      "immediate_downstream_effect": "Once C_hat_e exists, eta and sigma become charged spectral invariants rather than independent primitive theorem objects.",
+      "immediate_downstream_effect": "If the upstream splitting theorem closes and C_hat_e^{cand} is promoted to theorem-grade C_hat_e, then eta and sigma become charged spectral invariants rather than independent primitive theorem objects.",
       "linked_issue": "papers.compact.e.29-derive-the-yukawa-excitation-dictionary",
-      "summary": "Derive the quotient-natural charged sector-response / declaration functor that emits the unique charged color-singlet three-family excitation operator C_hat_e from the shared OPH flavor dictionary."
+      "smallest_missing_clause": "compression_descendant_commutator_vanishes_or_is_uniformly_quadratic_small_after_central_split",
+      "status": "blocked_by_upstream_promotion_theorem",
+      "summary": "Promote the latent charged operator candidate C_hat_e^{cand} to theorem-grade declaration by closing the quotient-natural charged sector-response functor on the shared OPH flavor dictionary.",
+      "upstream_missing_theorem": "oph_generation_bundle_branch_generator_splitting"
     },
     "mandatory_package_b": {
-      "id": "charged_common_refinement_transport_equalizer",
-      "immediate_downstream_effect": "This is the honest absolute-scale bridge from the shared charged evaluator descent to the physical scale g_e via the emitted scalar Delta_e_abs or an equivalent mu_e_absolute_log transport coordinate.",
+      "id": "charged_absolute_anchor_A_ch",
+      "immediate_downstream_effect": "Once A_ch exists, the absolute charged scale is emitted by g_e = exp(A_ch), and Delta_e_abs follows as log(g_ch_shared) - A_ch.",
       "linked_issue": "papers.compact.e.30-replace-koide-assisted-lepton-fitting-with-a-theorem",
-      "summary": "Derive the common-refinement transport equalizer under ordered_common_refinement_seed_rigidity so the charged absolute-scale lane upgrades from shared_budget_only to theorem-grade and emits the determinant-normalization transport scalar."
+      "replaces_invalid_route": "charged_common_refinement_transport_equalizer",
+      "status": "open_future_single_slot_only",
+      "summary": "Derive one theorem-grade affine-covariant absolute charged anchor A_ch, i.e. a section of the common-shift quotient satisfying A_ch(logm + c*(1,1,1)) = A_ch(logm) + c."
     },
     "optional_package_c": {
       "id": "charged_holonomy_bridge_for_legacy_delta_2_over_9",
@@ -200,7 +293,7 @@
       "summary": "Retain a charged holonomy bridge only if the older delta = 2/9 D12 benchmark is kept as a theorem-grade bridge instead of a diagnostic continuation."
     }
   },
-  "generated_utc": "2026-03-29T10:25:14Z",
+  "generated_utc": "2026-03-29T12:32:53Z",
   "notes": [
     "The current charged-lepton builder now exposes the two-scalar ordered-gap family in formula form plus one common shift.",
     "A common shift rescales all three masses together and cannot fix a large hierarchy mismatch.",
@@ -209,16 +302,36 @@
     "The current-support obstruction certificate is now on disk, and the next charged mover is the minimal support-extension emitter on the canonical quadratic ordered direction.",
     "The full two-scalar support-extension completion law is now explicit on disk; the live same-carrier primitive is the eta source-readback, followed by the sigma endpoint-ratio breaker.",
     "The stronger same-carrier source-scalar pair readback is also now explicit on disk, collecting those eta and sigma invariants into one ordered primitive beneath the full completion shell.",
-    "At theorem level, eta and sigma are no longer the deepest honest waiting set. The live builder still exposes eta then sigma as the first same-carrier residuals, but the paper-facing exact burden is to derive the charged sector-response functor C_hat_e and then the common-refinement transport equalizer for the absolute scale.",
-    "The present charged theorem determines only the centered charged log class modulo a common additive shift, so g_e remains unresolved on the live theorem lane.",
+    "At theorem level, eta and sigma are no longer the deepest honest waiting set. The live builder still exposes eta then sigma as the first same-carrier residuals, but the paper-facing exact burden is first to promote the latent candidate C_hat_e^{cand} by closing the branch-generator splitting theorem, and then to derive one theorem-grade affine-covariant absolute anchor A_ch for the charged common-shift quotient.",
+    "The charged sector-response operator remains undeclared: only the latent candidate C_hat_e^{cand} is on disk, and its promotion is blocked by the upstream theorem oph_generation_bundle_branch_generator_splitting together with the smaller clause compression_descendant_commutator_vanishes_or_is_uniformly_quadratic_small_after_central_split.",
+    "The present charged theorem determines only the centered charged log class modulo a common additive shift, so no theorem-grade g_e, Delta_e_abs, or charged absolute equalizer exists on the live theorem lane.",
     "The eta-only extension acts at fixed current span, so it preserves the endpoint ratio tau/e and can only move the middle state against that fixed endpoint pair.",
     "A rigid eta candidate can be written from the current ordered-gap ratio alone, but it lands far from the charged targets; the remaining charged burden then shifts to the still-open total source span.",
     "A D12 continuation bridge is now explicit too: under the extra assumptions A1-A3 it emits eta = -6.729586682888832 and sigma = 8.154061112725994, with centered-log residual norm about 2.13e-05 against charged references, but the required absolute scale remains compare-only and therefore nonpromotable.",
-    "The current-family absolute-scale restore candidate is also cleaner now: the common gap subtracted from log(g_e_raw) matches the emitted overlap-edge theorem gap gamma on the current family, so mu_e_absolute_log_candidate = log(g_e_raw) - gamma_gap is explicit even though the charged hierarchy still remains blocked first on eta then sigma.",
+    "The current-family absolute-scale restore candidate is also cleaner now: the common gap subtracted from log(g_e_raw) matches the emitted overlap-edge theorem gap gamma on the current family, so mu_e_absolute_log_candidate = log(g_e_raw) - gamma_gap is explicit. But that restore shell is not theorem-grade, because it only chooses a representative on the common-shift orbit.",
     "The D12 continuation bridge remains compare-only on the absolute side: it would need g_e_star = 0.04577885783568762, equivalently Delta_e_abs_star = 3.003986333402356, but that value is not OPH-emitted."
   ],
   "ordered_gap_ratio_current": 0.31788218782492417,
   "ordered_gap_ratio_reference": 1.8890082165302142,
+  "red_team_branch_verdict": {
+    "blocked_candidate_object": "C_hat_e^{cand}",
+    "do_not_promote": [
+      "eta_source_support_extension_log_per_side",
+      "sigma_source_support_extension_total_log_per_side",
+      "compare_only_g_e_star",
+      "compare_only_delta_e_abs_star",
+      "Delta_e_abs = 0.30236566025890826",
+      "g_e = 0.6822819838027987"
+    ],
+    "next_exact_object_after_that": "charged_absolute_anchor_A_ch",
+    "smallest_missing_clause": "compression_descendant_commutator_vanishes_or_is_uniformly_quadratic_small_after_central_split",
+    "smallest_missing_theorem_object": "oph_generation_bundle_branch_generator_splitting",
+    "smallest_wrong_frontier": [
+      "eta_source_support_extension_log_per_side",
+      "sigma_source_support_extension_total_log_per_side"
+    ],
+    "status": "current_branch_cannot_be_closed_as_stated"
+  },
   "reference_targets": {
     "singular_values_abs": [
       0.0005109989499999999,

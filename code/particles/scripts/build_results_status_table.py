@@ -76,9 +76,9 @@ CHARGED_CONTINUATION_NOTE = (
     "A representation-consistent absolute-scale shell is also explicit: future charged scale code must emit either "
     "`mu_e_absolute_log_candidate` or `g_e_linear_candidate` and convert exactly once via `g_e = exp(mu_e_absolute_log_candidate)`. "
     "But the present charged theorem still fixes only the centered charged log class modulo a common shift, so the absolute scale `g_e` remains unresolved on the live theorem lane. "
-    "At theorem level, the exact waiting set is sharper than a standalone eta/sigma fit: the missing burden is the charged sector-response / declaration functor that emits `C_hat_e`, then the common-refinement transport equalizer that upgrades the absolute scale from `shared_budget_only` to theorem-grade. Once `C_hat_e` exists, eta and sigma become charged spectral invariants rather than separate primitive theorem goals. "
+    "At theorem level, the exact waiting set is sharper than a standalone eta/sigma fit: the charged sector-response object is still only the latent candidate `C_hat_e^{cand}`, not a declared theorem-grade operator. Promoting that candidate is blocked by the upstream theorem `oph_generation_bundle_branch_generator_splitting`, reduced further to the clause `compression_descendant_commutator_vanishes_or_is_uniformly_quadratic_small_after_central_split`. On the absolute side, the charged equalizer route is now an explicit no-go under common-shift symmetry: the current theorem emits only the quotient class of charged logs modulo `(1,1,1)`, so no theorem-grade `g_e` or `Delta_e_abs` exists yet. The single honest future slot is one affine-covariant absolute charged anchor `A_ch` satisfying `A_ch(logm + c*(1,1,1)) = A_ch(logm) + c`; then `g_e = exp(A_ch)` and `Delta_e_abs = log(g_ch_shared) - A_ch`. "
     "A D12 continuation bridge exists under the extra assumptions A1-A3 and gives eta = -6.729586682888832 and sigma = 8.154061112725994 with near-exact centered-log shape closure, "
-    "but the theorem-grade lane still lacks emitted eta, sigma, and absolute scale. On that continuation bridge the compare-only absolute target would be `g_e* = 0.04577885783568762`, equivalently `Delta_e_abs* = 3.003986333402356`, and that target is kept strictly non-promotable until the transport equalizer emits the normalization scalar on the live theorem branch."
+    "but the theorem-grade lane still lacks emitted eta, sigma, and absolute scale. On that continuation bridge the compare-only absolute target would be `g_e* = 0.04577885783568762`, equivalently `Delta_e_abs* = 3.003986333402356`, and that target is kept strictly non-promotable until a theorem-grade absolute anchor `A_ch` exists on the live branch."
 )
 QUARK_CONTINUATION_NOTE = (
     "Derived from the local quark chain "
@@ -93,21 +93,27 @@ QUARK_CONTINUATION_NOTE = (
     "the pure-`B` payload pair "
     "`source_readback_u_log_per_side_and_source_readback_d_log_per_side`, but the broader D12 continuation branch is now scalarized: "
     "the mass side reduces to `Delta_ud_overlap` together with the quadratic-even scalar `eta_Q_centered`, and the mixing side closes on the same D12 branch because the forward Yukawa step already emits the same-label transport unitary `V_CKM^fwd = U_u^dagger U_d`, whose principal logarithm yields the honest generator `K_CKM`. "
-    "On the current same-family continuation branch, the exact mass-side selector law sharpens to `Delta_ud_overlap = t1 / 5`, with `eta_Q_centered = -((1 - x2^2) / 27) * t1`; that is a real structural reduction, but `t1` itself is still not OPH-emitted. "
+    "On the current same-family continuation branch, the exact mass-side reduction sharpens to the emitted ray `D12_ud_mass_ray`, with `Delta_ud_overlap = ray_modulus / 5` and `eta_Q_centered = -((1 - x2^2) / 27) * ray_modulus`; that is a real structural reduction on the current sheet. "
     "The strongest current exact-mean specialization gives "
     "`alpha_u = 1.0007763698011345`, `alpha_d = 1.008463281557513`, "
     "`Delta_ud_overlap = 0.14049991320632976`, `eta_Q_centered = -0.018104730181494357`, "
     "with RMS log-mass error about `5.21e-05`, but those values remain compare-derived rather than OPH-emitted. "
-    "The remaining open burden on the D12 branch is therefore mass-side rather than CKM/CP-side."
+    "The retained same-family numerical point on the emitted ray is sample-only: `t1_sample = ray_modulus = 0.6695617711471163`, giving `Delta_ud_overlap = 0.13391235422942327` and `eta_Q_centered = -0.018155152181872827`. "
+    "But the current D12 sheet is now an explicit no-go for the physical CKM shell: same-sheet rephasing leaves CKM invariants frozen, and the emitted angles undershoot the comparison shell by factors about `29.68`, `34.02`, and `117.06`. "
+    "The exact next quark object is therefore one discrete `quark_relative_sheet_selector`; only after the physical branch is selected does the mass-side scale question remain, via a selected-branch intrinsic scale law independent of target masses and independent of CKM/CP."
 )
 NEUTRINO_CONTINUATION_NOTE = (
     "No public value is emitted yet. The active neutrino path is `derive_neutrino_scale_anchor.py -> "
     "derive_family_response_tensor.py -> derive_majorana_holonomy_lift.py -> derive_majorana_phase_pullback_metric.py -> "
     "build_forward_majorana_matrix.py -> build_forward_splittings.py -> export_forward_neutrino_closure_bundle.py`, and the "
     "new exact intrinsic branch is `derive_same_label_scalar_certificate.py -> build_intrinsic_neutrino_mass_eigenstate_bundle.py -> "
-    "derive_intrinsic_neutrino_exact_eta_map.py -> derive_intrinsic_neutrino_exact_mixing_law_validation.py`. "
-    "The proof-facing same-label pullback data compresses to a scalar certificate `(gap_e, overlap_sq_e)` modulo one common scale, and once that certificate is complete "
-    "the intrinsic neutrino mass-eigenstate bundle is exact. The current neutrino-only branch is still exactly `S_3`-isotropic and therefore edge-constant at the same-label level, so it cannot open the solar 1-2 split by itself; the first honest solar mover has to come from the flavor-side realized same-label gap/defect readback. Public flavor-labeled rows remain gated by the live same-label scalar certificate and the shared charged-lepton left basis needed for PMNS."
+    "derive_intrinsic_neutrino_exact_eta_map.py -> derive_intrinsic_neutrino_exact_mixing_law_validation.py -> "
+    "derive_neutrino_weighted_cycle_repair.py`. "
+    "The old isotropic intrinsic ansatz is now explicitly ruled out on the live branch by the exact cap `max |Delta m^2| <= 8 a rho`, which is far below the atmospheric scale. "
+    "The strongest honest repaired branch on disk is therefore the shared-basis weighted cycle lift: using the live same-label scalar certificate `(gap_e, overlap_sq_e)`, the live flavor cocycle invariants `gamma` and `eps`, and the live selector phases, it emits the repaired edge law `w_e = q_e^(1 + gamma + eps)` with diagonal load `chi = 1 + eps`. "
+    "That repaired branch lands in the current PDG oscillation window at the dimensionless pattern level, with `theta12 = 33.9756 deg`, `theta23 = 49.7785 deg`, `theta13 = 8.64594 deg`, `delta = 307.818 deg`, and `J = -0.02652`; its predicted splitting ratio is `Delta m21^2 / Delta m32^2 = 0.0316024`. "
+    "But one overall positive neutrino normalization remains open on the live theorem lane, so absolute neutrino masses and absolute `Delta m^2` values are still compare-only unless an external atmospheric anchor is supplied. "
+    "With the compare-only anchor `Delta m32^2 = 2.433e-3 eV^2`, the repaired branch gives `m = (0.01730, 0.01940, 0.05300) eV` and `Delta m21^2 = 7.689e-5 eV^2`. These rows therefore remain unpromoted as exact OPH mass predictions until that single normalization scalar is emitted."
 )
 HADRON_CONTINUATION_NOTE = (
     "Rows are suppressed by default because hadrons are execution-bound on the current branch rather than paper-derived outputs. The active hadron path is `derive_lambda_msbar_descendant.py -> "
@@ -371,7 +377,7 @@ def build_note(
     if row_spec["particle_id"] in {"up_quark", "down_quark", "strange_quark", "charm_quark", "bottom_quark"}:
         pieces.append("PDG quark references are running masses, not direct free-particle pole masses.")
     if row_spec["particle_id"] in {"electron_neutrino", "muon_neutrino", "tau_neutrino"}:
-        pieces.append("Comparison is qualitative until splittings and mixing close without PMNS import.")
+        pieces.append("Comparison remains partly qualitative because the repaired oscillation branch still waits on one overall positive neutrino normalization.")
     if row_spec["group"] == "Hadrons":
         pieces.append("Use this only when explicitly debugging the hadron pipeline.")
     return " ".join(piece for piece in pieces if piece)

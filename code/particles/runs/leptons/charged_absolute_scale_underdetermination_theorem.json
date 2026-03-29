@@ -4,6 +4,7 @@
     "formula": "e_log_centered + mu_log_centered + tau_log_centered = 0",
     "value": -6.661338147750939e-16
   },
+  "charged_absolute_equalizer": "NO_GO_COMMON_SHIFT",
   "compare_only_continuation_target": {
     "continuation_shape_singular_values": [
       0.011162188544790551,
@@ -38,20 +39,54 @@
     0.8363886515979087,
     3.6588214572101716
   ],
-  "generated_utc": "2026-03-29T10:25:14Z",
-  "minimal_new_theorem": {
-    "formula": "g_e = g_ch_shared * exp(-Delta_e_abs)",
-    "id": "charged_absolute_determinant_transport_theorem",
-    "must_be_independent_of_measured_masses": true,
-    "required_new_scalar": "Delta_e_abs",
-    "source": "charged operator C_hat_e together with the common-refinement transport equalizer"
+  "future_single_slot_only": {
+    "A_ch": null,
+    "on_fill": {
+      "Delta_e_abs": "log(g_ch_shared) - A_ch",
+      "g_e": "exp(A_ch)"
+    },
+    "required_contract": "A_ch(logm + c*(1,1,1)) = A_ch(logm) + c"
   },
-  "next_exact_missing_object": "charged_common_refinement_transport_equalizer",
+  "generated_utc": "2026-03-29T12:32:53Z",
+  "hard_reject": {
+    "Delta_e_abs": 0.30236566025890826,
+    "g_e": 0.6822819838027987,
+    "reason": "common-shift orbit pick; not theorem-grade; does not land on physical charged masses"
+  },
+  "minimal_new_theorem": {
+    "formula": "A_ch(logm + c*(1,1,1)) = A_ch(logm) + c",
+    "id": "charged_absolute_anchor_section",
+    "must_be_independent_of_measured_masses": true,
+    "required_new_scalar": "A_ch",
+    "source": "theorem-grade affine-covariant section of the charged common-shift quotient"
+  },
+  "next_exact_missing_object": "charged_absolute_anchor_A_ch",
+  "no_go_theorem": {
+    "conclusion": "no theorem-grade absolute normalization scalar is emitted on the current charged surface",
+    "family_action": "Y_e(c) = exp(c) * diag(exp(E_e_log_centered))",
+    "id": "charged_absolute_shift_invariance_no_go",
+    "invariant_payload": [
+      "eta_ext",
+      "sigma_ext",
+      "gamma21",
+      "gamma32",
+      "E_e_log_centered",
+      "charged ratios",
+      "det(Y_e_shape)=1"
+    ],
+    "target_transforms": {
+      "Delta_e_abs": "Delta_e_abs - c",
+      "det(Y_e)": "exp(3*c) * det(Y_e)",
+      "g_e": "exp(c) * g_e",
+      "mu_e_absolute_log": "mu_e_absolute_log + c"
+    }
+  },
   "notes": [
-    "This artifact records the honest closure status of the charged absolute-scale lane: the shape is emitted, the absolute normalization is not.",
-    "The compare-only continuation target is useful for audit and branch repair, but it must not be promoted as an OPH-emitted charged mass theorem."
+    "This artifact records the honest closure status of the charged absolute-scale lane: the shape is emitted, but the absolute scale is quotient-only.",
+    "The compare-only continuation target is useful for audit and branch repair, but it must not be promoted as an OPH-emitted charged mass theorem.",
+    "The current restore shell based on gamma_min_common is representation-consistent only; it is not a theorem-grade symmetry breaker."
   ],
-  "proof_status": "centered_shape_closed_absolute_scale_underdetermined",
+  "proof_status": "centered_shape_closed_absolute_scale_no_go_common_shift",
   "public_promotion_allowed": false,
   "same_carrier_mass_formulas": {
     "family_operator": "Y_e(c) = exp(c) * diag(exp(E_e_log_centered))",
@@ -65,5 +100,17 @@
     "theorem_scope": "shared_budget_only",
     "writeback_scope": "current_family_only"
   },
-  "theorem_statement": "The present charged OPH chain fixes only the centered charged log class E_e_log_centered in R^3 modulo the common shift direction (1,1,1). It does not emit the absolute scalar g_e."
+  "theorem_emit": {
+    "meaning": "[(log m_e, log m_mu, log m_tau)] mod R*(1,1,1)",
+    "quotient_class": [
+      -4.495210108808081,
+      0.8363886515979087,
+      3.6588214572101716
+    ]
+  },
+  "theorem_forbid_emit": [
+    "g_e",
+    "Delta_e_abs"
+  ],
+  "theorem_statement": "The present charged OPH chain fixes only the centered charged log class E_e_log_centered in R^3 modulo the common shift direction (1,1,1). It emits only the quotient class and does not emit theorem-grade g_e or Delta_e_abs."
 }

@@ -1,6 +1,14 @@
 {
   "artifact": "oph_quark_d12_mass_branch_and_ckm_closure",
-  "best_honest_one_scalar_mass_point_on_same_family": {
+  "branch_key": [
+    "D12",
+    null
+  ],
+  "closure_residual": {
+    "definition": "||exp(K_CKM) - V_CKM^fwd||_F on the generator-gauge surface",
+    "fro_norm": 1.1224045809338492e-15
+  },
+  "comparison_only_best_same_family_point": {
     "Delta_ud_overlap": 0.14039999999999997,
     "Lambda_ud_B_transport": 0.14580774897025428,
     "abs_V_CKM": [
@@ -32,49 +40,11 @@
       173.2690628822735
     ],
     "rms_log_error_vs_reference_targets": 0.01042141570737968,
+    "status": "comparison_only_not_promotable",
     "tau_d_log_per_side": 0.04411865683386919,
     "tau_u_log_per_side": 0.026081343166130807
   },
-  "candidate_mass_branch_from_t1_over_5": {
-    "Delta_ud_overlap": 0.13391235422942327,
-    "Lambda_ud_B_transport": 0.13907022029558064,
-    "abs_V_CKM": [
-      [
-        0.9999711211934649,
-        0.007599730282401467,
-        2.9643208226183302e-05
-      ],
-      [
-        0.00759971902545621,
-        0.9999702929711931,
-        0.0012874182854748012
-      ],
-      [
-        3.240091299227056e-05,
-        0.0012873518331854138,
-        0.9999991708373758
-      ]
-    ],
-    "jarlskog": 2.8755912280868794e-10,
-    "m_d": [
-      0.004708229528844486,
-      0.09160827127333702,
-      4.155513989984608
-    ],
-    "m_u": [
-      0.002176632492997213,
-      1.2566921714397312,
-      172.85192993931355
-    ],
-    "rms_log_error_vs_reference_targets": 0.01078398352557181,
-    "tau_d_log_per_side": 0.04208000856170554,
-    "tau_u_log_per_side": 0.024876168553006103
-  },
-  "candidate_selector_value_source": "same_family_specialization_delta_ud_overlap_equals_t1_over_5",
-  "closure_residual": {
-    "definition": "||exp(K_CKM) - V_CKM^fwd||_F on the generator-gauge surface",
-    "fro_norm": 1.1224045809338492e-15
-  },
+  "current_sheet_status": "single_local_reference_sheet_only",
   "debug_only_target_seeded_generator": {
     "reason": "the honest same-label transport unitary is emitted directly by the forward Yukawa step and no target CKM seed is needed",
     "status": "retired"
@@ -161,16 +131,37 @@
       ]
     }
   },
-  "generated_utc": "2026-03-29T09:13:53Z",
+  "generated_utc": "2026-03-29T12:55:27Z",
   "notes": [
-    "This artifact records the strongest current D12 continuation candidate for the light-quark split without overriding the recovered-core no-go.",
+    "This artifact records the strongest current D12 continuation sample point for the light-quark split without overriding the recovered-core no-go.",
     "On the D12 continuation branch the CKM/CP lane closes honestly once the forward Yukawa step is reached, because the same-label transport unitary is already V_CKM^fwd = U_u^dagger U_d.",
-    "The remaining open burden on this branch is mass-side rather than transport-side: the OPH-emitted value laws for Delta_ud_overlap and eta_Q_centered are still missing, and the current t1/5 continuation branch remains quantitatively far from the physical CKM matrix."
+    "But the current D12 sheet is not the physical quark branch: same-sheet rephasing leaves CKM invariants frozen, and the emitted angles on this sheet undershoot the comparison shell substantially.",
+    "The exact next object is therefore one discrete quark_relative_sheet_selector; mass-side scale fixing on the selected branch remains a separate issue after that branch shift."
   ],
+  "physical_branch_status": "current_d12_sheet_is_strict_no_go_for_physical_ckm_shell",
+  "physical_ckm_comparison_shell": {
+    "absolute_misses": {
+      "theta_12": 0.21800019655748054,
+      "theta_13": 0.0034403567917694754,
+      "theta_23": 0.04251258135832161
+    },
+    "jarlskog_fraction_of_max_allowed_by_current_angles": 0.9915097627732455,
+    "selection_loss": 0.04934324132770274,
+    "theta_12": 0.2256,
+    "theta_13": 0.00347,
+    "theta_23": 0.0438,
+    "undershoot_factors": {
+      "theta_12": 29.684978263754964,
+      "theta_13": 117.05885452799333,
+      "theta_23": 34.02156733018765
+    }
+  },
   "public_promotion_allowed": false,
+  "quark_relative_sheet_selector": null,
   "remaining_open_objects": [
-    "Delta_ud_overlap_value_law",
-    "eta_Q_centered_value_law",
+    "quark_relative_sheet_selector",
+    "D12_ud_mass_ray",
+    "intrinsic_scale_law_D12",
     "quark_exact_mean_split_value_law_or_carrier_repair"
   ],
   "same_label_transport_generator": {
@@ -280,6 +271,42 @@
       ]
     ]
   },
+  "sample_same_family_point": {
+    "Delta_ud_overlap": 0.13391235422942327,
+    "Lambda_ud_B_transport": 0.13907022029558064,
+    "abs_V_CKM": [
+      [
+        0.9999711211934649,
+        0.007599730282401467,
+        2.9643208226183302e-05
+      ],
+      [
+        0.00759971902545621,
+        0.9999702929711931,
+        0.0012874182854748012
+      ],
+      [
+        3.240091299227056e-05,
+        0.0012873518331854138,
+        0.9999991708373758
+      ]
+    ],
+    "jarlskog": 2.8755912280868794e-10,
+    "m_d": [
+      0.004708229528844486,
+      0.09160827127333702,
+      4.155513989984608
+    ],
+    "m_u": [
+      0.002176632492997213,
+      1.2566921714397312,
+      172.85192993931355
+    ],
+    "rms_log_error_vs_reference_targets": 0.01078398352557181,
+    "tau_d_log_per_side": 0.04208000856170554,
+    "tau_u_log_per_side": 0.024876168553006103
+  },
+  "sample_selector_value_source": "sample_same_family_point_on_D12_ud_mass_ray",
   "standard_ckm_parameters": {
     "delta_ckm": 1.7011978493658404,
     "jarlskog": 2.875591228134216e-10,
@@ -287,6 +314,6 @@
     "theta_13": 2.964320823052465e-05,
     "theta_23": 0.0012874186416783878
   },
-  "status": "d12_continuation_ckm_cp_closed_mass_value_laws_open",
+  "status": "d12_current_sheet_ckm_cp_transport_closed_wrong_branch_no_go",
   "theorem_tier": "D12_continuation_only"
 }

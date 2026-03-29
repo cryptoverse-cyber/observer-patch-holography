@@ -18,6 +18,8 @@ J_B_EVALUATOR_SCRIPT = ROOT / "particles" / "flavor" / "derive_quark_diagonal_B_
 D12_SELECTOR_SCRIPT = ROOT / "particles" / "flavor" / "derive_light_quark_isospin_overlap_defect_selector_law.py"
 D12_OVERLAP_LAW_SCRIPT = ROOT / "particles" / "flavor" / "derive_quark_d12_overlap_transport_law.py"
 ONE_SCALAR_SPECIALIZATION_SCRIPT = ROOT / "particles" / "flavor" / "derive_quark_d12_one_scalar_specialization.py"
+MASS_SIDE_UNDERDETERMINATION_SCRIPT = ROOT / "particles" / "flavor" / "derive_quark_d12_mass_side_underdetermination_theorem.py"
+PHYSICAL_BRANCH_REPAIR_SCRIPT = ROOT / "particles" / "flavor" / "derive_quark_physical_branch_repair_theorem.py"
 AUDIT_SCRIPT = ROOT / "particles" / "flavor" / "derive_quark_current_family_exactness_audit.py"
 DESCENT_OUTPUT = ROOT / "particles" / "runs" / "flavor" / "quark_sector_descent.json"
 OUTPUT = ROOT / "particles" / "runs" / "flavor" / "quark_current_family_exactness_audit.json"
@@ -32,6 +34,8 @@ def test_quark_exactness_audit_identifies_current_family_residual_after_spread_c
     subprocess.run([sys.executable, str(D12_SELECTOR_SCRIPT)], check=True, cwd=ROOT)
     subprocess.run([sys.executable, str(D12_OVERLAP_LAW_SCRIPT)], check=True, cwd=ROOT)
     subprocess.run([sys.executable, str(ONE_SCALAR_SPECIALIZATION_SCRIPT)], check=True, cwd=ROOT)
+    subprocess.run([sys.executable, str(MASS_SIDE_UNDERDETERMINATION_SCRIPT)], check=True, cwd=ROOT)
+    subprocess.run([sys.executable, str(PHYSICAL_BRANCH_REPAIR_SCRIPT)], check=True, cwd=ROOT)
     subprocess.run([sys.executable, str(AUDIT_SCRIPT)], check=True, cwd=ROOT)
 
     payload = json.loads(OUTPUT.read_text(encoding="utf-8"))
@@ -59,7 +63,14 @@ def test_quark_exactness_audit_identifies_current_family_residual_after_spread_c
     assert payload["d12_overlap_transport_law"]["artifact"] == "oph_quark_d12_overlap_transport_law"
     assert payload["d12_overlap_transport_law"]["next_single_residual_object"] == "Delta_ud_overlap"
     assert payload["d12_one_scalar_specialization"]["artifact"] == "oph_quark_d12_one_scalar_specialization"
-    assert payload["d12_one_scalar_specialization"]["next_single_residual_object"] == "t1_value_law"
+    assert payload["d12_one_scalar_specialization"]["scalar_name"] == "ray_modulus"
+    assert payload["d12_one_scalar_specialization"]["sample_scalar_name"] == "t1_sample"
+    assert payload["d12_one_scalar_specialization"]["next_single_residual_object"] == "D12_ud_mass_ray"
+    assert payload["d12_mass_side_underdetermination_theorem"]["artifact"] == "oph_quark_d12_mass_side_underdetermination_theorem"
+    assert payload["d12_mass_side_underdetermination_theorem"]["next_exact_missing_object"] == "D12_ud_mass_ray"
+    assert payload["d12_physical_branch_repair_theorem"]["artifact"] == "oph_quark_physical_branch_repair_theorem"
+    assert payload["d12_physical_branch_repair_theorem"]["minimal_branch_shift_repair_theorem"]["must_emit"] == "quark_relative_sheet_selector"
+    assert payload["broader_honest_frontier"] == "quark_relative_sheet_selector"
     assert payload["predictive_J_B_source_law_status"] == "missing"
     assert payload["diagnostic_fit_promotion_allowed"] is False
     assert payload["diagnostic_only_tau_best_fit"]["tau_u_best_fit"] is not None

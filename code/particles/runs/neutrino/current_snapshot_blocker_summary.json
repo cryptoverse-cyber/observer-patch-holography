@@ -1,10 +1,14 @@
 {
-  "artifact": "oph_current_snapshot_blocker_summary_v7",
+  "artifact": "oph_current_snapshot_blocker_summary_v8",
   "charged_left_basis_artifact_dof_before_phase_quotients": 9,
-  "exact_remaining_blockers": [],
-  "generated_utc": "2026-03-29T09:29:28Z",
+  "exact_remaining_blockers": [
+    "one_positive_neutrino_mass_normalization_scalar"
+  ],
+  "generated_utc": "2026-03-29T11:42:50Z",
   "live_same_label_scalar_certificate_present": true,
+  "physical_branch_closed": false,
   "pmns_present": true,
+  "repair_artifact_present": true,
   "same_label_builder_facing_centered_eta_dof": 2,
   "same_label_proof_facing_continuous_dof_mod_common_scale": 5,
   "shared_charged_left_basis_present": true

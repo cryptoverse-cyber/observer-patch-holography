@@ -1,0 +1,214 @@
+{
+  "absolute_normalization_status": "open_one_positive_scale",
+  "artifact": "oph_neutrino_weighted_cycle_repair",
+  "compare_only_atmospheric_anchor": {
+    "delta_m21_sq_eV2": 7.688870300464483e-05,
+    "delta_m31_sq_eV2": 0.0025098887030046446,
+    "delta_m32_sq_eV2": 0.002433,
+    "delta_m32_sq_input_eV2": 0.002433,
+    "m0": 1.784113126943906,
+    "masses_eV": [
+      0.0173038239577873,
+      0.01939873775704849,
+      0.05300293413167556
+    ],
+    "normalization_kind": "atmospheric_anchor",
+    "status": "compare_only",
+    "sum_masses_eV": 0.08970549584651136
+  },
+  "cycle_basis_order": [
+    "f3",
+    "f1",
+    "f2"
+  ],
+  "defect_gap_ratio": 0.10458455029121368,
+  "diag_loading": 1.1045845502912137,
+  "dimensionless_dm2": {
+    "21": 2.415559601940881e-05,
+    "31": 0.0007885145046574088,
+    "32": 0.000764358908638
+  },
+  "dimensionless_masses": [
+    0.009698837868777897,
+    0.010873042445619763,
+    0.029708281011567278
+  ],
+  "dimensionless_ratio_dm21_over_dm32": 0.031602426224679334,
+  "edge_weights": {
+    "psi12": 0.015500429962169287,
+    "psi23": 0.009151812121696877,
+    "psi31": 0.003999026148685999
+  },
+  "final_verdict": "current_branch_impossible_repair_required",
+  "gamma": 0.30236566025890826,
+  "gamma_times_eps": 0.03162277660168382,
+  "generated_utc": "2026-03-29T11:42:09Z",
+  "holonomy_orientation": "021",
+  "neutrino_branch_status": "repaired_shared_basis_weighted_cycle_lift",
+  "notes": [
+    "The repaired weighted-cycle branch closes PMNS angles and the neutrino splitting hierarchy from live OPH artifacts.",
+    "Absolute neutrino masses and absolute delta m^2 values still require one overall positive normalization; the atmospheric-anchored numbers are compare-only.",
+    "This artifact supersedes the old isotropic continuation branch as the strongest honest neutrino branch on disk."
+  ],
+  "old_isotropic_no_go": {
+    "a_gev": 2.4617526608923523e-12,
+    "ansatz": "M_nu = a I + rho C with |C_ij| = 1 off diagonal",
+    "max_delta_m2_eV2_bound": 1.4998364796968516e-06,
+    "rho_gev": 7.615694417250985e-14,
+    "statement": "The isotropic intrinsic ansatz cannot reach atmospheric neutrino splitting because max |Delta m^2| <= 8 a rho.",
+    "status": "closed"
+  },
+  "pdg_2025_no_3sigma_window": {
+    "ranges": {
+      "delta_deg": [
+        124.0,
+        364.0
+      ],
+      "delta_m21_sq_eV2": [
+        6.92e-05,
+        8.05e-05
+      ],
+      "delta_m32_sq_eV2": [
+        0.002376,
+        0.002503
+      ],
+      "theta12_deg": [
+        31.63,
+        35.95
+      ],
+      "theta13_deg": [
+        8.19,
+        8.89
+      ],
+      "theta23_deg": [
+        41.3,
+        49.9
+      ]
+    },
+    "source": "PDG 2025 neutrino review Table 14.7, Ref. [193] with SK-ATM and IC24, normal ordering, 3sigma window",
+    "within_window": {
+      "delta_deg": true,
+      "delta_m21_sq_eV2": true,
+      "delta_m32_sq_eV2": true,
+      "theta12_deg": true,
+      "theta13_deg": true,
+      "theta23_deg": true
+    }
+  },
+  "physical_window_status": "pmns_and_hierarchy_repaired",
+  "pmns_abs": [
+    [
+      0.8198517449449622,
+      0.5524894520600562,
+      0.15032804686112056
+    ],
+    [
+      0.4259218497100867,
+      0.49875001524684354,
+      0.7548768112949369
+    ],
+    [
+      0.38266655752788087,
+      0.6678351800060038,
+      0.6384062014862553
+    ]
+  ],
+  "pmns_imag": [
+    [
+      -0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.3303722753936005,
+      -0.45864214283096344,
+      -0.11615490683972811
+    ],
+    [
+      0.3747463206784323,
+      -0.6056448115043401,
+      0.18210803441371848
+    ]
+  ],
+  "pmns_observables": {
+    "J": -0.026522158828835723,
+    "delta_deg": 307.81750422696206,
+    "delta_rad": 5.37242894403205,
+    "theta12_deg": 33.97561492020427,
+    "theta12_rad": 0.592986345747275,
+    "theta13_deg": 8.645937826302099,
+    "theta13_rad": 0.15090008199169322,
+    "theta23_deg": 49.778494281953684,
+    "theta23_rad": 0.8687986219052624
+  },
+  "pmns_real": [
+    [
+      -0.8198517449449622,
+      -0.5524894520600562,
+      -0.15032804686112056
+    ],
+    [
+      0.2688188641292063,
+      -0.19595653224158877,
+      -0.7458867459928926
+    ],
+    [
+      0.07745249762413461,
+      -0.2814217297074336,
+      0.6118816404322662
+    ]
+  ],
+  "pmns_row_order_for_pdg": [
+    "e",
+    "mu",
+    "tau"
+  ],
+  "remaining_object": "one_positive_neutrino_mass_normalization_scalar",
+  "repaired_cycle_matrix_imag": [
+    [
+      0.0,
+      -0.003284486316883438,
+      -0.004173164733547774
+    ],
+    [
+      -0.003284486316883438,
+      0.0,
+      -0.004860208274716927
+    ],
+    [
+      -0.004173164733547774,
+      -0.004860208274716927,
+      0.0
+    ]
+  ],
+  "repaired_cycle_matrix_real": [
+    [
+      -0.004417262500049129,
+      0.002281306593178533,
+      0.008144959252047307
+    ],
+    [
+      0.002281306593178533,
+      -0.017121535459083216,
+      0.014718753498122334
+    ],
+    [
+      0.008144959252047307,
+      0.014718753498122334,
+      -0.010108950276794223
+    ]
+  ],
+  "selector_phases_absolute": {
+    "psi12": 0.31893255645006824,
+    "psi23": 0.4734879499188133,
+    "psi31": 0.9637237704217096
+  },
+  "source_artifacts": {
+    "isotropic_reference_bundle": "/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/code/particles/runs/neutrino/forward_neutrino_closure_bundle.json",
+    "overlap_edge_transport_cocycle": "/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/code/particles/runs/flavor/overlap_edge_transport_cocycle.json",
+    "same_label_scalar_certificate": "/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/code/particles/runs/neutrino/same_label_scalar_certificate.json",
+    "selector_phase_source": "/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/code/particles/runs/neutrino/intrinsic_neutrino_mass_eigenstate_bundle_from_scalar_certificate.json"
+  },
+  "theorem_status": "dimensionless_physical_branch_closed_absolute_normalization_open",
+  "weight_exponent": 1.406950210550122
+}

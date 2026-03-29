@@ -44,7 +44,7 @@ main, et non comme une affirmation selon laquelle tout le spectre observé serai
 
 - **Sorties structurelles exactes déjà présentes sur la surface actuelle :** photon, gluons, graviton.
 - **Lignes quantitatives actuellement les plus fortes :** bosons \(W\) et \(Z\) sur le théorème fermé de calibration électrofaible sans cible gelée, plus boson de Higgs et quark top sur l'étage critique Higgs/top.
-- **Toujours inachevé :** la famille plus large des quarks reste au niveau continuation ; la voie des leptons chargés ferme déjà la forme centrée mais laisse encore ouverte la normalisation absolue faute de scalaire de transport de normalisation déterminant ; les neutrinos à saveur étiquetée restent un front ouvert de réparation de branche ; et les hadrons sont liés à l'exécution, car des lignes promouvables exigent un calcul non perturbatif de production et un contrôle systématique réel, pas seulement une fermeture symbolique supplémentaire.
+- **Toujours inachevé :** la famille plus large des quarks reste au niveau continuation et la feuille D12 actuelle est maintenant connue comme une mauvaise branche stricte pour la coquille CKM physique, si bien que le prochain objet exact est un sélecteur discret de feuille relative avant toute loi d'échelle de masse sur la branche choisie ; la voie des leptons chargés ferme déjà la forme centrée mais laisse encore ouverte la normalisation absolue faute de scalaire de transport de normalisation déterminant ; la branche neutrino réparée reproduit désormais le motif physique PMNS/hiérarchie mais laisse encore ouverte une unique scalaire positive de normalisation absolue ; et les hadrons sont liés à l'exécution, car des lignes promouvables exigent un calcul non perturbatif de production et un contrôle systématique réel, pas seulement une fermeture symbolique supplémentaire.
 
 ## Objectifs du programme
 
@@ -74,10 +74,14 @@ supérieure.
 **Deriving the Particle Zoo from Observer Consistency** est l'article de statut sur le spectre de
 particules. Il enregistre le théorème fermé de calibration électrofaible pour \(W/Z\) après
 fixation de l'échelle commune \(P\), suit les sorties actuelles pour Higgs/top et plusieurs
-quarks, explique explicitement que la voie des leptons chargés ne fixe pour l'instant que la
-classe de logs centrés tant que le scalaire de transport de normalisation déterminant n'est pas
-émis, garde explicite le front de réparation de branche pour les neutrinos, et indique que les
-hadrons restent liés à l'exécution plutôt qu'à des lignes de sortie déjà dérivées dans l'article.
+quarks, précise explicitement que la feuille quark D12 actuelle est fermée du côté transport mais
+reste une mauvaise branche pour la coquille CKM physique et attend donc d'abord un sélecteur
+discret de feuille relative avant toute loi d'échelle de masse sur la branche choisie, explique
+que la voie des leptons chargés ne fixe pour l'instant que la classe de logs centrés tant que le
+scalaire de transport de normalisation déterminant n'est pas émis, enregistre la branche neutrino
+réparée au niveau PMNS/hiérarchie avec son unique scalaire positive de normalisation encore
+ouverte, et indique que les hadrons restent liés à l'exécution plutôt qu'à des lignes de sortie
+déjà dérivées dans l'article.
 
 - **PDF :** [Deriving the Particle Zoo from Observer Consistency](paper/deriving_the_particle_zoo_from_observer_consistency.pdf)
 - **Source LaTeX :** [deriving_the_particle_zoo_from_observer_consistency.tex](paper/deriving_the_particle_zoo_from_observer_consistency.tex)

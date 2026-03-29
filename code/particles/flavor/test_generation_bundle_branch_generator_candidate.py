@@ -31,6 +31,16 @@ def main() -> int:
     if payload.get("operator_theorem_candidate") != "oph_generation_bundle_branch_generator_splitting":
         print("generation-bundle theorem candidate id missing", file=sys.stderr)
         return 1
+    charged_candidate = dict(payload.get("charged_sector_response_operator_candidate", {}))
+    if charged_candidate.get("name") != "C_hat_e^{cand}":
+        print("generation-bundle artifact does not expose the latent charged operator candidate", file=sys.stderr)
+        return 1
+    if charged_candidate.get("declaration_missing_theorem") != "oph_generation_bundle_branch_generator_splitting":
+        print("generation-bundle artifact does not tie C_hat_e to the upstream promotion theorem", file=sys.stderr)
+        return 1
+    if charged_candidate.get("smallest_missing_clause") != "compression_descendant_commutator_vanishes_or_is_uniformly_quadratic_small_after_central_split":
+        print("generation-bundle artifact is missing the reduced charged declaration clause", file=sys.stderr)
+        return 1
     transfer = dict(payload.get("actual_generator_transfer_candidate", {}))
     if transfer.get("smaller_exact_missing_clause") != "compression_descendant_commutator_vanishes_or_is_uniformly_quadratic_small_after_central_split":
         print("generation-bundle artifact is missing the commutator-transfer bridge reduction", file=sys.stderr)

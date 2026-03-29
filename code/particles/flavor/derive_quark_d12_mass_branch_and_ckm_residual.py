@@ -13,8 +13,9 @@ OPH-derived inputs: the current forward Yukawa artifact, the quark exactness
 audit, and the already-emitted spread package.
 
 Output: a D12 continuation artifact carrying the strongest current mass-side
-candidate, the honest forward CKM transport unitary, its principal generator,
-and the remaining mass-side value-law burden.
+sample point on the emitted D12 ray, the honest forward CKM transport unitary,
+its principal generator, and the sharper branch-repair boundary beneath the
+physical CKM shell.
 """
 
 from __future__ import annotations
@@ -33,6 +34,9 @@ ROOT = Path(__file__).resolve().parents[2]
 FORWARD_JSON = ROOT / "particles" / "runs" / "flavor" / "forward_yukawas.json"
 AUDIT_JSON = ROOT / "particles" / "runs" / "flavor" / "quark_current_family_exactness_audit.json"
 DEFAULT_OUT = ROOT / "particles" / "runs" / "flavor" / "quark_d12_mass_branch_and_ckm_residual.json"
+TARGET_THETA_12 = 0.2256
+TARGET_THETA_23 = 0.0438
+TARGET_THETA_13 = 0.00347
 
 
 def _timestamp() -> str:
@@ -146,6 +150,16 @@ def _standard_ckm_parameters(v_ckm: np.ndarray) -> dict[str, float]:
     }
 
 
+def _j_max(theta_12: float, theta_23: float, theta_13: float) -> float:
+    s12 = math.sin(theta_12)
+    s23 = math.sin(theta_23)
+    s13 = math.sin(theta_13)
+    c12 = math.cos(theta_12)
+    c23 = math.cos(theta_23)
+    c13 = math.cos(theta_13)
+    return c12 * c23 * (c13**2) * s12 * s23 * s13
+
+
 def _apply_delta(delta_value: float, y_u: np.ndarray, y_d: np.ndarray, sigma_u: float, sigma_d: float) -> dict[str, Any]:
     b_ord = np.asarray([-1.0, 0.0, 1.0], dtype=float)
     tau_u = 0.5 * delta_value * sigma_d / (sigma_u + sigma_d)
@@ -226,20 +240,28 @@ def main() -> int:
     }
     standard_parameters = _standard_ckm_parameters(v_standard)
     closure_residual = float(np.linalg.norm(_matrix_exp(k_ckm) - v_generator_surface, ord="fro"))
+    theta_12 = standard_parameters["theta_12"]
+    theta_23 = standard_parameters["theta_23"]
+    theta_13 = standard_parameters["theta_13"]
+    j_max = _j_max(theta_12, theta_23, theta_13)
 
     result = {
         "artifact": "oph_quark_d12_mass_branch_and_ckm_closure",
         "generated_utc": _timestamp(),
-        "status": "d12_continuation_ckm_cp_closed_mass_value_laws_open",
+        "status": "d12_current_sheet_ckm_cp_transport_closed_wrong_branch_no_go",
         "public_promotion_allowed": False,
         "theorem_tier": "D12_continuation_only",
-        "candidate_selector_value_source": "same_family_specialization_delta_ud_overlap_equals_t1_over_5",
-        "candidate_mass_branch_from_t1_over_5": {
+        "branch_key": ["D12", None],
+        "quark_relative_sheet_selector": None,
+        "current_sheet_status": "single_local_reference_sheet_only",
+        "physical_branch_status": "current_d12_sheet_is_strict_no_go_for_physical_ckm_shell",
+        "sample_selector_value_source": "sample_same_family_point_on_D12_ud_mass_ray",
+        "sample_same_family_point": {
             key: value
             for key, value in candidate.items()
             if key not in {"U_u_left", "U_d_left", "V_CKM_forward"}
         },
-        "best_honest_one_scalar_mass_point_on_same_family": best,
+        "comparison_only_best_same_family_point": dict(best, status="comparison_only_not_promotable"),
         "forward_same_label_transport": {
             "definition": "V_CKM^fwd = U_u_left(candidate)^dagger @ U_d_left(candidate)",
             "standard_rephasing_gauge": {
@@ -264,13 +286,37 @@ def main() -> int:
             "generator_invariants": generator_invariants,
         },
         "standard_ckm_parameters": standard_parameters,
+        "physical_ckm_comparison_shell": {
+            "theta_12": TARGET_THETA_12,
+            "theta_23": TARGET_THETA_23,
+            "theta_13": TARGET_THETA_13,
+            "absolute_misses": {
+                "theta_12": TARGET_THETA_12 - theta_12,
+                "theta_23": TARGET_THETA_23 - theta_23,
+                "theta_13": TARGET_THETA_13 - theta_13,
+            },
+            "undershoot_factors": {
+                "theta_12": TARGET_THETA_12 / theta_12 if theta_12 > 0.0 else None,
+                "theta_23": TARGET_THETA_23 / theta_23 if theta_23 > 0.0 else None,
+                "theta_13": TARGET_THETA_13 / theta_13 if theta_13 > 0.0 else None,
+            },
+            "jarlskog_fraction_of_max_allowed_by_current_angles": (
+                abs(standard_parameters["jarlskog"]) / j_max if j_max > 0.0 else None
+            ),
+            "selection_loss": (
+                (theta_12 - TARGET_THETA_12) ** 2
+                + (theta_23 - TARGET_THETA_23) ** 2
+                + (theta_13 - TARGET_THETA_13) ** 2
+            ),
+        },
         "closure_residual": {
             "definition": "||exp(K_CKM) - V_CKM^fwd||_F on the generator-gauge surface",
             "fro_norm": closure_residual,
         },
         "remaining_open_objects": [
-            "Delta_ud_overlap_value_law",
-            "eta_Q_centered_value_law",
+            "quark_relative_sheet_selector",
+            "D12_ud_mass_ray",
+            "intrinsic_scale_law_D12",
             "quark_exact_mean_split_value_law_or_carrier_repair",
         ],
         "debug_only_target_seeded_generator": {
@@ -278,9 +324,10 @@ def main() -> int:
             "reason": "the honest same-label transport unitary is emitted directly by the forward Yukawa step and no target CKM seed is needed",
         },
         "notes": [
-            "This artifact records the strongest current D12 continuation candidate for the light-quark split without overriding the recovered-core no-go.",
+            "This artifact records the strongest current D12 continuation sample point for the light-quark split without overriding the recovered-core no-go.",
             "On the D12 continuation branch the CKM/CP lane closes honestly once the forward Yukawa step is reached, because the same-label transport unitary is already V_CKM^fwd = U_u^dagger U_d.",
-            "The remaining open burden on this branch is mass-side rather than transport-side: the OPH-emitted value laws for Delta_ud_overlap and eta_Q_centered are still missing, and the current t1/5 continuation branch remains quantitatively far from the physical CKM matrix.",
+            "But the current D12 sheet is not the physical quark branch: same-sheet rephasing leaves CKM invariants frozen, and the emitted angles on this sheet undershoot the comparison shell substantially.",
+            "The exact next object is therefore one discrete quark_relative_sheet_selector; mass-side scale fixing on the selected branch remains a separate issue after that branch shift.",
         ],
     }
 

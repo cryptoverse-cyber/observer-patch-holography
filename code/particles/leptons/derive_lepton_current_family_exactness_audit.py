@@ -24,6 +24,7 @@ SOURCE_SCALAR_PAIR_READBACK_JSON = ROOT / "particles" / "runs" / "leptons" / "ch
 CHARGED_D12_CONTINUATION_JSON = ROOT / "particles" / "runs" / "leptons" / "charged_d12_continuation_followup.json"
 ABSOLUTE_SCALE_GAP_IDENTITY_JSON = ROOT / "particles" / "runs" / "leptons" / "charged_absolute_scale_transport_gap_identity.json"
 ABSOLUTE_SCALE_UNDERDETERMINATION_JSON = ROOT / "particles" / "runs" / "leptons" / "charged_absolute_scale_underdetermination_theorem.json"
+GENERATION_BUNDLE_JSON = ROOT / "particles" / "runs" / "flavor" / "generation_bundle_branch_generator.json"
 DEFAULT_OUT = ROOT / "particles" / "runs" / "leptons" / "lepton_current_family_exactness_audit.json"
 
 
@@ -55,6 +56,7 @@ def main() -> int:
     parser.add_argument("--charged-d12-continuation", default=str(CHARGED_D12_CONTINUATION_JSON))
     parser.add_argument("--absolute-scale-gap-identity", default=str(ABSOLUTE_SCALE_GAP_IDENTITY_JSON))
     parser.add_argument("--absolute-scale-underdetermination", default=str(ABSOLUTE_SCALE_UNDERDETERMINATION_JSON))
+    parser.add_argument("--generation-bundle", default=str(GENERATION_BUNDLE_JSON))
     parser.add_argument("--output", default=str(DEFAULT_OUT))
     args = parser.parse_args()
 
@@ -119,6 +121,12 @@ def main() -> int:
     absolute_scale_underdetermination = (
         json.loads(absolute_scale_underdetermination_path.read_text(encoding="utf-8"))
         if absolute_scale_underdetermination_path.exists()
+        else None
+    )
+    generation_bundle_path = Path(args.generation_bundle)
+    generation_bundle = (
+        json.loads(generation_bundle_path.read_text(encoding="utf-8"))
+        if generation_bundle_path.exists()
         else None
     )
 
@@ -340,6 +348,7 @@ def main() -> int:
             "same_carrier_mass_formulas": absolute_scale_underdetermination.get("same_carrier_mass_formulas"),
             "centered_sum_rule": absolute_scale_underdetermination.get("centered_sum_rule"),
             "determinant_rules": absolute_scale_underdetermination.get("determinant_rules"),
+            "no_go_theorem": absolute_scale_underdetermination.get("no_go_theorem"),
             "shared_budget_seed": absolute_scale_underdetermination.get("shared_budget_seed"),
             "compare_only_continuation_target": absolute_scale_underdetermination.get("compare_only_continuation_target"),
             "next_exact_missing_object": absolute_scale_underdetermination.get("next_exact_missing_object"),
@@ -348,28 +357,80 @@ def main() -> int:
         "absolute_scale_closure_status": None if absolute_scale_underdetermination is None else {
             "present_chain_under_determines_g_e": True,
             "current_theorem_output": "E_e_log_centered mod common shift",
+            "charged_absolute_equalizer_status": absolute_scale_underdetermination.get("charged_absolute_equalizer"),
             "compare_only_g_e_star": absolute_scale_underdetermination.get("compare_only_continuation_target", {}).get("g_e_star"),
             "compare_only_delta_e_abs_star": absolute_scale_underdetermination.get("compare_only_continuation_target", {}).get("delta_e_abs_star"),
+            "hard_reject": absolute_scale_underdetermination.get("hard_reject"),
             "honest_missing_transport_scalar": absolute_scale_underdetermination.get("minimal_new_theorem", {}).get("required_new_scalar"),
+        },
+        "charged_sector_response_operator_candidate": None if generation_bundle is None else {
+            "name": generation_bundle.get("charged_sector_response_operator_candidate", {}).get("name", "C_hat_e^{cand}"),
+            "artifact": generation_bundle.get("artifact"),
+            "status": generation_bundle.get("charged_sector_response_operator_candidate", {}).get("declaration_status", "candidate_only"),
+            "declaration_missing_theorem": generation_bundle.get("charged_sector_response_operator_candidate", {}).get("declaration_missing_theorem", generation_bundle.get("remaining_missing_theorem")),
+            "smallest_missing_clause": generation_bundle.get("charged_sector_response_operator_candidate", {}).get(
+                "smallest_missing_clause",
+                generation_bundle.get("promotion_gate", {}).get("smaller_exact_missing_clause"),
+            ),
+            "matrix": generation_bundle.get("charged_sector_response_operator_candidate", {}).get("matrix"),
+            "ordered_spectrum": generation_bundle.get("charged_sector_response_operator_candidate", {}).get("ordered_spectrum"),
+            "same_label_overlap_amplitudes": generation_bundle.get("projective_readout_certificate", {}).get("same_label_overlap_amplitudes"),
+            "sigma_formula": generation_bundle.get("charged_sector_response_operator_candidate", {}).get("sigma_formula"),
+            "eta_formula_on_current_family": "x2 * sigma(C_hat_e^{cand}) - 3 * lambda_mid(C_hat_e^{cand})",
+            "ordered_family_coordinate_x2": x2,
+            "sigma_current": current_sigma,
+            "eta_current": float(readout["eta_e_split_log_per_side"]),
+            "latent_in_flavor_chain": True,
+            "declaration_status": "candidate_only",
+            "declared_operator_name": None,
         },
         "exact_waiting_set": {
             "mandatory_package_a": {
                 "id": "charged_sector_response_pushforward_to_C_hat_e",
                 "linked_issue": "papers.compact.e.29-derive-the-yukawa-excitation-dictionary",
-                "summary": "Derive the quotient-natural charged sector-response / declaration functor that emits the unique charged color-singlet three-family excitation operator C_hat_e from the shared OPH flavor dictionary.",
-                "immediate_downstream_effect": "Once C_hat_e exists, eta and sigma become charged spectral invariants rather than independent primitive theorem objects.",
+                "summary": "Promote the latent charged operator candidate C_hat_e^{cand} to theorem-grade declaration by closing the quotient-natural charged sector-response functor on the shared OPH flavor dictionary.",
+                "immediate_downstream_effect": "If the upstream splitting theorem closes and C_hat_e^{cand} is promoted to theorem-grade C_hat_e, then eta and sigma become charged spectral invariants rather than independent primitive theorem objects.",
+                "status": "blocked_by_upstream_promotion_theorem" if generation_bundle is not None else "open",
+                "blocked_candidate_object": "C_hat_e^{cand}",
+                "upstream_missing_theorem": generation_bundle.get("remaining_missing_theorem") if generation_bundle is not None else None,
+                "smallest_missing_clause": generation_bundle.get("promotion_gate", {}).get("smaller_exact_missing_clause") if generation_bundle is not None else None,
             },
             "mandatory_package_b": {
-                "id": "charged_common_refinement_transport_equalizer",
+                "id": "charged_absolute_anchor_A_ch",
                 "linked_issue": "papers.compact.e.30-replace-koide-assisted-lepton-fitting-with-a-theorem",
-                "summary": "Derive the common-refinement transport equalizer under ordered_common_refinement_seed_rigidity so the charged absolute-scale lane upgrades from shared_budget_only to theorem-grade and emits the determinant-normalization transport scalar.",
-                "immediate_downstream_effect": "This is the honest absolute-scale bridge from the shared charged evaluator descent to the physical scale g_e via the emitted scalar Delta_e_abs or an equivalent mu_e_absolute_log transport coordinate.",
+                "summary": "Derive one theorem-grade affine-covariant absolute charged anchor A_ch, i.e. a section of the common-shift quotient satisfying A_ch(logm + c*(1,1,1)) = A_ch(logm) + c.",
+                "immediate_downstream_effect": "Once A_ch exists, the absolute charged scale is emitted by g_e = exp(A_ch), and Delta_e_abs follows as log(g_ch_shared) - A_ch.",
+                "status": "open_future_single_slot_only",
+                "replaces_invalid_route": "charged_common_refinement_transport_equalizer",
             },
             "optional_package_c": {
                 "id": "charged_holonomy_bridge_for_legacy_delta_2_over_9",
                 "summary": "Retain a charged holonomy bridge only if the older delta = 2/9 D12 benchmark is kept as a theorem-grade bridge instead of a diagnostic continuation.",
                 "required_only_if": "legacy_continuation_bridge_kept_as_theorem_grade",
             },
+        },
+        "red_team_branch_verdict": {
+            "status": "current_branch_cannot_be_closed_as_stated",
+            "smallest_wrong_frontier": [
+                "eta_source_support_extension_log_per_side",
+                "sigma_source_support_extension_total_log_per_side",
+            ],
+            "smallest_missing_theorem_object": "oph_generation_bundle_branch_generator_splitting",
+            "blocked_candidate_object": "C_hat_e^{cand}",
+            "smallest_missing_clause": (
+                generation_bundle.get("promotion_gate", {}).get("smaller_exact_missing_clause")
+                if generation_bundle is not None
+                else None
+            ),
+            "next_exact_object_after_that": "charged_absolute_anchor_A_ch",
+            "do_not_promote": [
+                "eta_source_support_extension_log_per_side",
+                "sigma_source_support_extension_total_log_per_side",
+                "compare_only_g_e_star",
+                "compare_only_delta_e_abs_star",
+                "Delta_e_abs = 0.30236566025890826",
+                "g_e = 0.6822819838027987",
+            ],
         },
         "charged_d12_continuation_followup": None if charged_d12_continuation is None else {
             "artifact": charged_d12_continuation.get("artifact"),
@@ -416,9 +477,14 @@ def main() -> int:
             "The current-support obstruction certificate is now on disk, and the next charged mover is the minimal support-extension emitter on the canonical quadratic ordered direction.",
             "The full two-scalar support-extension completion law is now explicit on disk; the live same-carrier primitive is the eta source-readback, followed by the sigma endpoint-ratio breaker.",
             "The stronger same-carrier source-scalar pair readback is also now explicit on disk, collecting those eta and sigma invariants into one ordered primitive beneath the full completion shell.",
-            "At theorem level, eta and sigma are no longer the deepest honest waiting set. The live builder still exposes eta then sigma as the first same-carrier residuals, but the paper-facing exact burden is to derive the charged sector-response functor C_hat_e and then the common-refinement transport equalizer for the absolute scale.",
+            "At theorem level, eta and sigma are no longer the deepest honest waiting set. The live builder still exposes eta then sigma as the first same-carrier residuals, but the paper-facing exact burden is first to promote the latent candidate C_hat_e^{cand} by closing the branch-generator splitting theorem, and then to derive one theorem-grade affine-covariant absolute anchor A_ch for the charged common-shift quotient.",
             (
-                "The present charged theorem determines only the centered charged log class modulo a common additive shift, so g_e remains unresolved on the live theorem lane."
+                "The charged sector-response operator remains undeclared: only the latent candidate C_hat_e^{cand} is on disk, and its promotion is blocked by the upstream theorem oph_generation_bundle_branch_generator_splitting together with the smaller clause compression_descendant_commutator_vanishes_or_is_uniformly_quadratic_small_after_central_split."
+                if generation_bundle is not None
+                else "No latent charged sector-response candidate is attached to this audit yet."
+            ),
+            (
+                "The present charged theorem determines only the centered charged log class modulo a common additive shift, so no theorem-grade g_e, Delta_e_abs, or charged absolute equalizer exists on the live theorem lane."
                 if absolute_scale_underdetermination is not None
                 else "No explicit charged absolute-scale underdetermination theorem is attached to this audit yet."
             ),
@@ -430,7 +496,7 @@ def main() -> int:
                 else "No D12 charged continuation bridge is attached to this audit."
             ),
             (
-                "The current-family absolute-scale restore candidate is also cleaner now: the common gap subtracted from log(g_e_raw) matches the emitted overlap-edge theorem gap gamma on the current family, so mu_e_absolute_log_candidate = log(g_e_raw) - gamma_gap is explicit even though the charged hierarchy still remains blocked first on eta then sigma."
+                "The current-family absolute-scale restore candidate is also cleaner now: the common gap subtracted from log(g_e_raw) matches the emitted overlap-edge theorem gap gamma on the current family, so mu_e_absolute_log_candidate = log(g_e_raw) - gamma_gap is explicit. But that restore shell is not theorem-grade, because it only chooses a representative on the common-shift orbit."
                 if absolute_scale_gap_identity is not None
                 else "No current-family charged absolute-scale gap identity is attached to this audit."
             ),

@@ -70,8 +70,8 @@ def main() -> int:
 
     sigma_u = float(spread_map["sigma_u_total_log_per_side"])
     sigma_d = float(spread_map["sigma_d_total_log_per_side"])
-    candidate_delta = float(d12_branch["candidate_mass_branch_from_t1_over_5"]["Delta_ud_overlap"])
-    best_delta = float(d12_branch["best_honest_one_scalar_mass_point_on_same_family"]["Delta_ud_overlap"])
+    sample_delta = float(d12_branch["sample_same_family_point"]["Delta_ud_overlap"])
+    comparison_only_best_delta = float(d12_branch["comparison_only_best_same_family_point"]["Delta_ud_overlap"])
 
     artifact = {
         "artifact": "oph_quark_d12_overlap_transport_law",
@@ -80,7 +80,7 @@ def main() -> int:
         "theorem_tier": "D12_continuation_only",
         "strictly_smaller_than": "source_readback_u_log_per_side_and_source_readback_d_log_per_side",
         "next_single_residual_object": "Delta_ud_overlap",
-        "input_kind": "closed_spread_totals_plus_one_scalar_overlap_selector",
+        "input_kind": "closed_spread_totals_plus_emitted_same_family_mass_ray",
         "spread_totals": {
             "sigma_u_total_log_per_side": sigma_u,
             "sigma_d_total_log_per_side": sigma_d,
@@ -94,12 +94,13 @@ def main() -> int:
             "Lambda_from_tau_u": "sigma_u_total_log_per_side * tau_u_log_per_side",
             "Lambda_from_tau_d": "sigma_d_total_log_per_side * tau_d_log_per_side",
         },
-        "candidate_branch_from_t1_over_5": _evaluate_branch(candidate_delta, sigma_u, sigma_d),
-        "best_same_family_mass_point": _evaluate_branch(best_delta, sigma_u, sigma_d),
+        "sample_same_family_point": _evaluate_branch(sample_delta, sigma_u, sigma_d),
+        "comparison_only_best_same_family_point": _evaluate_branch(comparison_only_best_delta, sigma_u, sigma_d),
         "notes": [
             "On the D12 one-scalar overlap family, the odd quark payload pair is not free once the spread totals are fixed.",
             "The remaining D12 mass-side scalar is therefore Delta_ud_overlap, with tau_u, tau_d, and Lambda all determined affinely from it.",
-            "This does not close the D12 selector value itself, and it does not solve the CKM/CP residual generator.",
+            "The retained numerical point on this overlap family is sample-only and inherits its ray_modulus from the sample same-family point on D12_ud_mass_ray.",
+            "This does not close the intrinsic D12 scale law that would single out a unique point on the ray.",
         ],
     }
 

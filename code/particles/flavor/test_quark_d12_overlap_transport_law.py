@@ -25,9 +25,9 @@ def test_quark_d12_overlap_transport_law_collapses_tau_pair_to_one_scalar() -> N
     assert payload["artifact"] == "oph_quark_d12_overlap_transport_law"
     assert payload["next_single_residual_object"] == "Delta_ud_overlap"
     assert payload["strictly_smaller_than"] == "source_readback_u_log_per_side_and_source_readback_d_log_per_side"
-    candidate = payload["candidate_branch_from_t1_over_5"]
-    best = payload["best_same_family_mass_point"]
-    for branch in (candidate, best):
+    sample = payload["sample_same_family_point"]
+    comparison_only_best = payload["comparison_only_best_same_family_point"]
+    for branch in (sample, comparison_only_best):
         assert abs(branch["tau_sum_half_delta_identity"]) < 1.0e-15
         assert abs(branch["tau_ratio_minus_sigma_ratio"]) < 1.0e-15
         assert abs(branch["lambda_minus_sigma_u_tau_u"]) < 1.0e-15

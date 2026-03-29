@@ -14,7 +14,7 @@
   },
   "eta_Q_centered_name": "eta_Q_centered",
   "eta_Q_projector_formula": "v1 - 2*v2 + v3",
-  "generated_utc": "2026-03-28T15:42:44Z",
+  "generated_utc": "2026-03-29T12:42:14Z",
   "kappa_Q_formula": "eta_Q_centered / (2 * (1 - x2^2))",
   "next_single_residual_object": "eta_Q_centered_value_law",
   "notes": [
@@ -25,12 +25,14 @@
   "proof_status": "scalarized_transport_shape_closed_value_open",
   "quadratic_even_log_formula_direct": "(eta_Q_centered / 6) * (1, -2, 1)",
   "quadratic_even_log_formula_via_Q_ord": "(eta_Q_centered / (2 * (1 - x2^2))) * Q_ord",
-  "same_t1_candidate": {
+  "sample_same_family_ray_point": {
     "eta_Q_centered": -0.018155152181872827,
-    "eta_Q_centered_formula": "2 * (1 - x2^2) * (-t1 / 54) = -((1 - x2^2) / 27) * t1",
+    "eta_Q_centered_formula": "2 * (1 - x2^2) * (-ray_modulus / 54) = -((1 - x2^2) / 27) * ray_modulus",
     "kappa_Q": -0.012399292058279932,
-    "kappa_Q_formula": "-t1 / 54",
-    "t1": 0.6695617711471163
+    "kappa_Q_formula": "-ray_modulus / 54",
+    "ray_modulus": 0.6695617711471163,
+    "status": "sample_only_not_theorem",
+    "t1_sample": 0.6695617711471163
   },
   "scope": "D12_continuation_only",
   "x2": -0.5175863354681689
