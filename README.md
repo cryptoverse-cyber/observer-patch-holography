@@ -28,15 +28,15 @@ From this starting point (plus entropy and Markov constraints), OPH treats space
 
 ## Current Achievements
 
-- **OPH now has a real synthesis paper.** *Observers Are All You Need* presents the current program on one common theorem and status surface, so readers can see in one place what OPH is, what is already sharp, and what is still conditional.
-- **The fixed-cutoff core is explicit.** The collar package is constructive and interacting at fixed cutoff, and the topological branch is closed on the ordinary, central-defect, and genuinely noncentral higher-gauge branches.
-- **There is a disciplined relativity/gravity route.** OPH derives schedule-independent overlap consistency and develops a conditional Lorentz/null-modular/Einstein branch under an explicit scaling-limit premise ledger.
-- **There is a disciplined gauge route.** OPH develops a conditional compact-gauge reconstruction route and, on the realized branch, recovers the Standard Model quotient \(\SU(3)\times\SU(2)\times\U(1)/\mathbb Z_6\) together with the realized hypercharge/counting chain.
-- **The particle branch has moved beyond pure structure.** Structural massless carriers are fixed; the electroweak calibration stage now closes a target-free source-only \(W/Z\) theorem on the Phase II calibration tier; the Higgs/top stage emits quantitative rows; the wider quark, lepton, and neutrino sectors remain openly status-split rather than silently promoted, while hadrons are explicitly execution-bound rather than claimed as paper-derived outputs.
-- **Measurement and observers are part of the theorem surface.** OPH now has fixed-cutoff record, Born-Luders, checkpoint/restoration, and observer-interface packages rather than treating observers as pure interpretation.
-- **The microphysics side is concrete enough to simulate.** The screen-microphysics paper gives a finite reference architecture with explicit registers, overlap observables, records, repair moves, and synchronization tests.
-- **The worldsheet/string lane is integrated but not oversold.** OPH relates the edge-sector heat-kernel theorem to a continuation-level worldsheet reorganization while keeping that branch outside the recovered core.
-- **Some hardware-facing signatures exist already.** Early IBM Quantum Cloud benchmarks reproduce the expected reduced-sector recoverability ordering and exact-ratio patterns on real devices.
+- **There is now one clear entry point for the whole program.** *Observers Are All You Need* presents OPH on a single theorem/status surface, so readers can see in one place what the program is, what is already sharp, and what remains conditional.
+- **The basic machinery is now spelled out at finite resolution.** Technically, the collar package is constructive and interacting at fixed cutoff, and the topological branch closes on the ordinary, central-defect, and genuinely noncentral higher-gauge branches.
+- **There is a concrete route from overlap consistency to spacetime physics.** OPH derives schedule-independent overlap consistency and develops a conditional Lorentz/null-modular/Einstein branch under an explicit scaling-limit premise ledger.
+- **There is a concrete route from the overlap framework to known gauge structure.** OPH develops a conditional compact-gauge reconstruction route and, on the realized branch, recovers the Standard Model gauge quotient `SU(3) x SU(2) x U(1) / Z_6` together with the realized hypercharge/counting chain.
+- **The particle branch has moved beyond pure structural claims.** Structural massless carriers are fixed; the electroweak calibration stage now closes a target-free source-only `W/Z` theorem on the Phase II calibration tier; the Higgs/top stage emits quantitative rows; the wider quark, lepton, and neutrino sectors remain openly status-split rather than silently promoted, while hadrons are explicitly execution-bound rather than claimed as paper-derived outputs.
+- **Measurement and observers are treated as part of the physics, not just interpretation.** OPH now has fixed-cutoff record, Born-Luders, checkpoint/restoration, and observer-interface packages rather than treating observers as pure interpretation.
+- **The microphysics side is concrete enough to build and test against.** The screen-microphysics paper gives a finite reference architecture with explicit registers, overlap observables, records, repair moves, and synchronization tests.
+- **The worldsheet/string lane is connected to the program without being overstated.** OPH relates the edge-sector heat-kernel theorem to a continuation-level worldsheet reorganization while keeping that branch outside the recovered core.
+- **There are already some hardware-facing signatures.** Early IBM Quantum Cloud benchmarks reproduce the expected reduced-sector recoverability ordering and exact-ratio patterns on real devices.
 
 ## Particle Status
 
