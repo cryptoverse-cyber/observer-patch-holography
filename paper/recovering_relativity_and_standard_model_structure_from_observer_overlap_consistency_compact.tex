@@ -203,6 +203,7 @@ So finite-velocity quasi-local propagation is branch-internal: it is the local f
 C_{\psi,\phi,I_{\max}}\,|I'\Delta I|,
 \]
 which is precisely the endpoint-Lipschitz / finite-variation control later denoted by \textbf{T2}--\textbf{T3}. The compact note does \emph{not} separately derive a second independent microscopic generator beyond this quasi-local branch generator; if a UV completion carries one, the only later requirement is that it lie in the same bounded-support algebraic closure so that the same propagation constants control the selected branch.
+So the fixed-cutoff UV branch is already interacting in the ordinary finite-range sense. This local-Gibbs/Lieb--Robinson package should not be read as a proof that the refinement limit lands in a trivial gauge phase or that OPH has selected a unique microscopic realization; its theorem-level role is collar-local mixing and the carried propagation/error control used by the later scaling-limit arguments.
 
 \paragraph{Internal refinement notion.}
 Because Axiom~\ref{ax:maxent} preserves the same finite local constraint family under coarse-graining, the regulator-scale states are parameterized by one common finite-dimensional multiplier space \(\lambda\). The refinement-stable OPH branch is therefore the fixed point or stable manifold selected inside that multiplier space, not an imported theorem-external regularity package. Any transportable edge sector that persists along this branch defines a canonical directed system under refinement. Accordingly, whenever later sections speak of a ``refinement-stable directed colimit'' of edge sectors, the refinement-stable qualifier means persistence along the Axiom~\ref{ax:maxent} branch itself; only the bosonic/symmetric/fiber-functor clauses used in gauge reconstruction remain additional categorical premises.
@@ -426,6 +427,7 @@ Gauge covariance maps repair sequences to repair sequences. Since the normal for
 \end{proof}
 
 These three results already encode much of the eventual physical interpretation. Objectivity becomes confluence, gauge symmetry becomes quotient invariance, and stable defects are represented by nontrivial overlap holonomy classes.
+The physically relevant uniqueness statement is therefore quotient uniqueness: OPH fixes a unique gauge-invariant normal form modulo boundary redundancy and implementation hiding, not a unique microscopic regulator presentation.
 
 \section{Collars, Edge Centers, and Generalized Entropy}
 
@@ -527,7 +529,7 @@ which yields the displayed block decomposition and shows that the center is gene
 \end{proof}
 
 \begin{remark}[Status of the regulator package and the precise Markov boundary]
-Proposition~\ref{prop:regulatedrealization} and Theorem~\ref{thm:markovcollar} show that, on the ordinary or central-defect branch, edge-center completion is a theorem of overlap consistency plus the finite regulator presentation; no preferred quantum-link realization is being assumed there. Assumption~\ref{ass:technical}\textbf{T1} is therefore theorem-local shorthand for this derived regulator package. The only remaining fixed-cutoff obstruction to a fully general ordinary-group theorem is a genuinely noncentral 2-group defect. The distinct issue addressed next is \emph{state} control: exact splice and modular-additivity identities require either literal exact Markovity or a controlled family that converges to the exact Markov set on one fixed finite-dimensional collar.
+Proposition~\ref{prop:regulatedrealization} and Theorem~\ref{thm:markovcollar} show that, on the ordinary or central-defect branch, edge-center completion is a theorem of overlap consistency plus the finite regulator presentation; no preferred quantum-link realization is being assumed there. Assumption~\ref{ass:technical}\textbf{T1} is therefore theorem-local shorthand for this derived regulator package. The only remaining fixed-cutoff obstruction to a fully general ordinary-group theorem is a genuinely noncentral 2-group defect. On that branch the fixed-cutoff topological UV package is therefore closed up to that named noncentral obstruction; the further transportable compact-gauge lift still carries \textbf{T7} and \textbf{T10}--\textbf{T12} whenever it is invoked. The distinct issue addressed next is \emph{state} control: exact splice and modular-additivity identities require either literal exact Markovity or a controlled family that converges to the exact Markov set on one fixed finite-dimensional collar.
 \end{remark}
 
 \begin{definition}[Exact Markov set and collar-distance modulus]\label{def:markovmodulus}
@@ -2264,12 +2266,17 @@ This is conceptually similar to other continuum limits in statistical mechanics 
 \Conf^+(S^2)\cong \mathrm{SO}^+(3,1).
 \]
 Residual Lorentz violation would therefore have to arise from a failure of the regulator premises or from a failure of the modular-flow theorem, not merely from the existence of a UV cell size.
+The remaining UV-side burden on the Lorentz branch is therefore the explicit branch-selection and scaling-limit package \textbf{T4}+\textbf{T8}, not the mere existence of a finite cell size.
 
 \subsection{Why use type-I algebras if continuum QFT uses type III?}
 
 The type-I assumption is a regulator statement. At finite cutoff the local patch algebras are finite-dimensional matrix algebras, which makes entropy and recovery theory well defined. The continuum limit is expected to recover the familiar type-III behavior of local QFT algebras. There is no contradiction here. The two statements refer to different scales.
 
 This is no more problematic than using a lattice regulator for Yang-Mills theory and then taking a continuum limit in which the operator algebra changes type. The mathematical burden is the existence of a controlled scaling regime. In the present manuscript that burden is isolated in Assumption~\ref{ass:technical}. It is not hidden inside the main theorems.
+
+\subsection{What is the current UV-completion claim?}
+
+At fixed cutoff, Axiom~\ref{ax:maxent} already yields a quasi-local finite-range interacting branch, and Proposition~\ref{prop:gauge} makes the physical normal form unique only after quotienting by boundary redundancy. The present suite therefore does not claim a unique microscopic UV completion. What is fixed is a unique physical branch modulo implementation hiding. On the ordinary or central-defect branch, the remaining fixed-cutoff topological obstruction is the genuinely noncentral 2-group defect singled out above. Beyond fixed cutoff, the continuum modular/geometric lift remains frozen behind \textbf{T4} and \textbf{T8}, and the transportable bosonic gauge lift still carries \textbf{T7} and \textbf{T10}--\textbf{T12} when invoked.
 
 \subsection{Why is charge quantization possible without a simple GUT?}
 
@@ -2287,6 +2294,8 @@ The framework is strongest where the outputs are discrete or structurally rigid:
 \item the compact two-input economy of the present quantitative implementation, kept explicit as a secondary layer rather than as part of Phase I.
 \end{enumerate}
 
+At the same time, the UV status is sharper than a generic ``open gap'' label. The local MaxEnt branch already gives a finite-range interacting fixed-cutoff dynamics, and Proposition~\ref{prop:gauge} gives a unique physical branch modulo implementation hiding. On the ordinary or central-defect branch, the fixed-cutoff topological sector is reduced to the named noncentral 2-group obstruction. What remains open is the continuum BW/geometric lift of \textbf{T4}+\textbf{T8} and the fuller transportable compact-gauge lift when \textbf{T7} and \textbf{T10}--\textbf{T12} are invoked.
+
 The next strongest non-core sector is the supplement-backed D10 calibration branch. On the present local implementation, the current D10 carrier closes its own exact \(W/Z\) chart, but exact PDG \(W/Z\) does not yet honestly follow on that carrier; the remaining quantitative burden should therefore be read as a repair branch beyond the present carrier rather than as a hidden extra decimal place or an unnamed selector on the existing point. The separate D6 cosmological-capacity relation remains visible as an input-dependent corollary rather than as part of the recovered core. The charged-lepton and Koide sectors remain phenomenological continuations rather than core theorem outputs; the strongest current local charged-lepton result is an explicit same-carrier obstruction together with a two-scalar support-extension shell, not a closed emitted spectrum. On the flavor side, the only structural output already fixed before those continuations is the realized counting chain \(N_g=3\) then \(N_c=3\).
 
 The weakest part is the light-quark and hadron branch. Current local tier audits indicate that a nonzero light-quark pure-\(B\) selector is not available at recovered-core tier in the present corpus, so the honest light-quark split frontier remains a D12 continuation branch rather than a hidden core theorem. The hadron lane is weaker still: its present frontier is nonperturbative runtime completion plus stable-channel convergence rather than a closed theorem-level mass surface.
@@ -2297,9 +2306,9 @@ Topics intentionally excluded from the present formulation include simulation na
 
 \section{Conclusion}
 
-Observer-Patch Holography starts from overlap consistency of observer patches and yields, within one framework, several effective structures usually treated separately in modern fundamental physics. The compact note supports a unique schedule-independent normal form for overlap repair, a conditional Lorentz branch in the assumed geometric modular phase, a conditional Jacobson-type Einstein branch under fixed-cap stationarity and the null-stress premise, the Standard Model gauge quotient with exact hypercharges on the realized matter package under the MAR admissibility package in the bosonic internal-gauge branch, the realized counting chain \(N_g=3\) then \(N_c=3\) on that branch, a separate supplement-backed gauge-calibration sector that remains secondary to the recovered core, and a separate input-dependent cosmological-capacity corollary. It also records several phenomenological continuations whose present status is weaker and is labeled as such in the text.
+Observer-Patch Holography starts from overlap consistency of observer patches and yields, within one framework, several effective structures usually treated separately in modern fundamental physics. The compact note supports a unique schedule-independent normal form for overlap repair and hence a unique physical UV branch modulo boundary redundancy and implementation hiding, a conditional Lorentz branch in the assumed geometric modular phase, a conditional Jacobson-type Einstein branch under fixed-cap stationarity and the null-stress premise, the Standard Model gauge quotient with exact hypercharges on the realized matter package under the MAR admissibility package in the bosonic internal-gauge branch, the realized counting chain \(N_g=3\) then \(N_c=3\) on that branch, a separate supplement-backed gauge-calibration sector that remains secondary to the recovered core, and a separate input-dependent cosmological-capacity corollary. It also records several phenomenological continuations whose present status is weaker and is labeled as such in the text.
 
-Accordingly, the framework functions as a candidate underlying theory from which general relativity and the Standard Model may arise as effective descriptions once the stated scaling-limit and categorical premises are realized. The next technical tasks are sharper quantitative control, a fuller fermionic gauge branch, and explicit UV completions that land in the required modular/geometric phase.
+Accordingly, the framework functions as a candidate underlying theory from which general relativity and the Standard Model may arise as effective descriptions once the stated scaling-limit and categorical premises are realized. The next technical tasks are sharper quantitative control, derivation or reduction of the noncentral topological obstruction and the transportability-side premises, a fuller fermionic gauge branch, and explicit microscopic realizations whose continuum lift lands in the required modular/geometric phase.
 
 \appendix
 

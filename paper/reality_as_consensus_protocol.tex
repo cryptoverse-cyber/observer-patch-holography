@@ -29,7 +29,7 @@ We show that a distributed consensus protocol running between observer patches a
 
 We then prove that pairwise agreement between neighboring observers is not enough to guarantee a globally consistent reality. A cycle-holonomy obstruction shows that topology can permanently prevent global reconciliation. The minimal example is a triangle over $\mathbb{Z}_2$ where every edge looks fine but the whole system is frustrated. These irreducible frustrations are stable defects of the reconciliation process, and OPH interprets them as particle-like excitations.
 
-The framework yields four exact theorems: (1) asynchronous confluence, giving schedule-independent physical law; (2) a cycle-obstruction criterion showing when local consistency fails globally; (3) a gauge quotient theorem identifying gauge symmetry with implementation hiding; and (4) a record-layer convergence theorem giving CRDT-like semantics for classical observations. We also formalize a selection principle over the space of possible reconciliation laws, where schedule-robust, observer-supporting, and simple laws are favored by a monotonically increasing fitness functional.
+The framework yields four exact theorems: (1) asynchronous confluence, giving schedule-independent physical law; (2) a cycle-obstruction criterion showing when local consistency fails globally; (3) a gauge quotient theorem identifying gauge symmetry with implementation hiding and fixing the unique physical branch on the quotient; and (4) a record-layer convergence theorem giving CRDT-like semantics for classical observations. We also formalize a selection principle over the space of possible reconciliation laws, where schedule-robust, observer-supporting, and simple laws are favored by a monotonically increasing fitness functional.
 
 The formalism is the computational spine of Observer-Patch Holography (OPH), a framework in which a conditional scaling-limit Einstein branch, conditional compact gauge reconstruction, an extended-MAR Standard Model closure, and a worldsheet/string reorganization of the bosonic edge sector are developed as emergent sectors. The full OPH manuscript is available at \url{https://oph-book.floatingpragma.io/papers/observers_are_all_you_need.pdf}.
 \end{abstract}
@@ -59,7 +59,7 @@ This paper proves four core results:
 \begin{enumerate}
 \item \textbf{Asynchronous confluence.} Under termination and local confluence, every initial state has a unique normal form, independent of update schedule (Theorem~\ref{thm:confluence}).
 \item \textbf{Cycle obstruction.} For affine overlap constraints over an abelian group, global consistency holds if and only if the holonomy vanishes on every cycle (Theorem~\ref{thm:holonomy}). The parity triangle gives the minimal frustrated example.
-\item \textbf{Gauge quotient.} Under gauge-covariant dynamics, the normal-form map descends to the quotient. Gauge-invariant observables are strictly unique (Theorem~\ref{thm:gauge}).
+\item \textbf{Gauge quotient.} Under gauge-covariant dynamics, the normal-form map descends to the quotient. Gauge-invariant observables are strictly unique on the quotient, even though microscopic representatives need not be unique (Theorem~\ref{thm:gauge}).
 \item \textbf{Record-layer convergence.} Commuting closure operators on a finite lattice converge to the least common fixed point under any asynchronous schedule that applies each operator at least once (Theorem~\ref{thm:crdt}).
 \end{enumerate}
 
@@ -282,7 +282,7 @@ If $M:\Sigma\to Y$ is gauge-invariant ($M(\gamma\cdot s)=M(s)$ for all $\gamma$)
 $M(\operatorname{nf}_\lambda(\gamma\cdot s)) = M(\gamma\cdot\operatorname{nf}_\lambda(s)) = M(\operatorname{nf}_\lambda(s))$.
 \end{proof}
 
-Uniqueness is physically meaningful only up to gauge. The universe's internal representation is not unique, but every measurement you can actually perform gives a unique answer. This is exactly what physicists mean when they say gauge symmetry is ``not a real symmetry.'' In our language: it is the freedom to choose different internal data structures on each node without affecting the distributed computation's output.
+Uniqueness is physically meaningful only up to gauge. The universe's internal representation is not unique, but every measurement you can actually perform gives a unique answer. This is exactly what physicists mean when they say gauge symmetry is ``not a real symmetry.'' In our language: it is the freedom to choose different internal data structures on each node without affecting the distributed computation's output. In the broader OPH UV discussion, this is the physically meaningful uniqueness theorem: the model fixes the normal form on the quotient by implementation hiding, not a unique microscopic representative of a given physical branch.
 
 
 \section{Classical Records as an Eventually Consistent Layer}
