@@ -106,6 +106,7 @@ def build_exact_blockers(
                 "kind": "absolute_scale_coordinate",
                 "current_snapshot_status": "open",
                 "required_contract": "emit_one_OPH_normalization_scalar_that_upgrades_the_repaired_weighted_cycle_branch_from_dimensionless_hierarchy_to_absolute_masses_and_splittings_without_external_anchor",
+                "insufficiency_theorem": "neutrino_weighted_cycle_absolute_scale_no_go",
             }
         )
 
@@ -220,6 +221,40 @@ def build_exact_blockers(
             },
             "repaired_branch_dimensionless_dm2": dict(repair.get("dimensionless_dm2") or {}),
             "compare_only_atmospheric_anchor": dict(repair.get("compare_only_atmospheric_anchor") or {}),
+            "absolute_scale_no_go": (
+                {
+                    "status": "closed",
+                    "theorem": "neutrino_weighted_cycle_absolute_scale_no_go",
+                    "proof_obstruction": "positive_rescaling_nonidentifiability",
+                    "statement": (
+                        "The repaired weighted-cycle branch fixes only the dimensionless hierarchy and PMNS pattern. "
+                        "For every lambda_nu > 0, the family m_i(lambda_nu) = lambda_nu * mhat_i and "
+                        "Delta m^2_ij(lambda_nu) = lambda_nu^2 * Delta_hat_ij has the same dimensionless observables, "
+                        "so no unique absolute scale is emitted without one further OPH theorem fixing lambda_nu."
+                    ),
+                    "absolute_family_parameter": "lambda_nu > 0",
+                    "dimensionless_mass_family": [
+                        "m1 = 0.009698837868777897 * lambda_nu",
+                        "m2 = 0.010873042445619763 * lambda_nu",
+                        "m3 = 0.029708281011567278 * lambda_nu",
+                    ],
+                    "dimensionless_dm2_family_eV2": {
+                        "21": "2.415559601940881e-05 * lambda_nu^2",
+                        "31": "7.885145046574088e-04 * lambda_nu^2",
+                        "32": "7.64358908638e-04 * lambda_nu^2",
+                    },
+                    "external_anchor_disallowed": {
+                        "name": "atmospheric_delta_m32_sq",
+                        "value_eV2": 2.433e-3,
+                        "reason": "compare_only_external_oscillation_anchor",
+                    },
+                    "minimal_missing_object": (
+                        "one_OPH_theorem_fixing_lambda_nu_from_an_internal_dimensionful_invariant_without_oscillation_data"
+                    ),
+                }
+                if repair_shape_closed and absolute_normalization_open
+                else None
+            ),
         },
         "current_snapshot_scan": {
             "live_same_label_artifact_found": same_label_present,
