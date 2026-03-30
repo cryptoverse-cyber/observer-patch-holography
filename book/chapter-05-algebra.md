@@ -349,9 +349,9 @@ Let's trace the logic explicitly.
 4. Consistency means agreeing on shared observables where patches overlap
 5. Type III algebras naturally produce thermal states and modular time flow
 6. Causality requires commutation for spacelike-separated regions
-7. **Non-commutativity is required by consistency**-a commutative universe would have trivial constraints and no structure
+7. **Non-commutativity is central to the kind of consistency problem quantum physics presents**-a fully commutative picture would miss the nontrivial constraint structure highlighted in this chapter
 
-The algebraic structure is not optional. It is what the hints from quantum mechanics force us to accept. But our model goes further: non-commutativity isn't just observed, it's necessary. A universe built on observer consistency needs non-commuting observables to have non-trivial laws. The "strangeness" of quantum mechanics is the price of a structured reality.
+The algebraic structure is not optional. It is what the hints from quantum mechanics force us to accept. OPH then explores a stronger interpretation: that non-commutativity is deeply tied to the difficulty of global consistency, rather than being an arbitrary extra feature. The "strangeness" of quantum mechanics is thereby read as part of the price of a structured reality, not yet as a standalone theorem from consistency alone.
 
 The next chapter develops the overlap consistency condition in detail: exactly how must measurements on shared regions agree?
 
