@@ -1,0 +1,74 @@
+{
+  "artifact": "oph_neutrino_lambda_nu_bridge_candidate",
+  "bridge_ansatz": "lambda_nu = m_star_eV * F_nu",
+  "compare_only_bridge_factor": {
+    "F_nu_star": 700.275271524102,
+    "interpretation": "If the bridge ansatz is correct, the theorem-grade evaluator would have to emit this positive dimensionless factor on the current branch.",
+    "lambda_nu_weighted_fit": 1.7239045130315727
+  },
+  "current_dimensionless_theorem_object": "p_nu_gamma_eps_midpoint_law",
+  "dimensionful_anchor": {
+    "formula": "v^2 / mu_u",
+    "m_star_eV": 0.0024617526608923523,
+    "m_star_gev": 2.4617526608923523e-12,
+    "name": "m_star"
+  },
+  "exact_missing_interface_object": "oph_majorana_overlap_defect_scalar_evaluator",
+  "generated_utc": "2026-03-30T09:26:30Z",
+  "next_theorem_if_this_route_is_right": {
+    "current_status": "candidate_only",
+    "id": "oph_majorana_scalar_from_centered_edge_norm",
+    "promotion_gate": "close_only_if_bundle_descent_is_defined_for_xi\u00b1eta_and_xi\u00b1i_eta",
+    "smallest_missing_clause": "same_label_overlap_nonzero_on_realized_refinement_arrows"
+  },
+  "notes": [
+    "This bridge candidate does not claim lambda_nu is already emitted.",
+    "It packages the strongest current local interface between the emitted D10 amplitude scale and the emitted weighted-cycle theorem object."
+  ],
+  "public_promotion_allowed": false,
+  "ruled_out_shortcuts": {
+    "edge_amplitude_only_formulas": {
+      "reason": "Current edge-amplitude invariants are far too small and do not carry the required bridge factor.",
+      "status": "ruled_out_local_shape_only"
+    },
+    "lambda_nu_equals_m_star_eV": {
+      "source_artifact": "neutrino_weighted_cycle_absolute_amplitude_bridge.json",
+      "status": "ruled_out"
+    },
+    "trace_determinant_minor_repackages_of_isotropic_majorana_matrix": {
+      "reason": "They reconstruct the isotropic amplitude sector again rather than the weighted-cycle branch attachment.",
+      "status": "not_weighted_cycle_sensitive"
+    }
+  },
+  "status": "candidate_interface_not_promoted",
+  "target_free_closed_form_candidates": [
+    {
+      "delta_m_sq_eV2": {
+        "21": 7.500206728793084e-05,
+        "31": 0.0025163873899132134,
+        "32": 0.0024413853226252823
+      },
+      "equivalent_statement": "Delta m21^2 = gamma^2 * Delta_hat_32",
+      "formula": "lambda_nu = gamma / sqrt(Delta_hat_21 / Delta_hat_32)",
+      "lambda_nu": 1.7250989638874759,
+      "masses_eV": [
+        0.017468872200257307,
+        0.01949778354677406,
+        0.05311825379153701
+      ],
+      "name": "gamma_over_sqrt_ratio_hat",
+      "residual_sigma": {
+        "21": 0.052342198938890104,
+        "32": 0.16926613126411194
+      },
+      "status": "compare_only_local_candidate_not_promoted",
+      "why_not_promoted": "This closed-form law is numerically strong on the live emitted invariants, but the current corpus does not yet derive it as a theorem-grade attachment law for the weighted-cycle absolute family."
+    }
+  ],
+  "where_F_nu_should_come_from": "The exact finite-angle Majorana overlap-defect scalar evaluator on the selected weighted-cycle / midpoint branch.",
+  "why_this_is_the_sharpest_local_candidate": [
+    "The weighted-cycle theorem object closes the dimensionless branch only.",
+    "The scale anchor closes only the isotropic dimensionful amplitude m_star.",
+    "The scalar evaluator is the only current local object family already sitting at the interface between those two emitted sectors."
+  ]
+}

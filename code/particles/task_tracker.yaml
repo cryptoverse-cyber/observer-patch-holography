@@ -17,6 +17,11 @@ stages:
         status: completed
         owner_lane: local_docs
         depends_on: []
+      - id: particles.audit.03-add-uv-bw-internalization-scaffold
+        title: "Add the machine-readable UV/BW internalization scaffold so scaling-limit cap-pair extraction and ordered cut-pair rigidity are tracked as separate exact objects"
+        status: completed
+        owner_lane: local_code
+        depends_on: ["particles.audit.02-machine-readable-claim-ledger"]
       - id: particles.validation.01-frozen-forward-blind-harness
         title: "Separate forward prediction artifacts from compare-only validation"
         status: completed
@@ -300,7 +305,7 @@ stages:
     success_rule: "Charged leptons come from the forward dictionary plus declared standard-QFT completion only."
     tasks:
       - id: papers.compact.e.30-replace-koide-assisted-lepton-fitting-with-a-theorem
-        title: "Promote the latent charged candidate C_hat_e^{cand} by closing branch-generator splitting, then derive the theorem-grade absolute charged anchor A_ch so eta/sigma/g_e become induced invariants without Koide import"
+        title: "Promote the latent charged candidate C_hat_e^{cand} by closing branch-generator splitting, then derive the theorem-grade uncentered determinant-line lift whose affine coordinate A_ch makes eta/sigma/g_e induced invariants without Koide import"
         status: in_progress
         owner_lane: pro_paper
         depends_on: ["papers.compact.e.29-derive-the-yukawa-excitation-dictionary"]
@@ -432,7 +437,7 @@ stages:
         owner_lane: local_code
         depends_on: ["particles.flavor.41-add-mean-side-vs-gap-side-support-fields"]
       - id: particles.leptons.15-track-support-completion-as-eta-then-sigma
-        title: "Track eta and sigma only as builder-facing residual order beneath C_hat_e^{cand} promotion and the future absolute anchor A_ch"
+        title: "Track eta and sigma only as builder-facing residual order beneath C_hat_e^{cand} promotion and the future uncentered determinant-line lift / affine anchor A_ch"
         status: in_progress
         owner_lane: pro_paper
         depends_on: ["particles.leptons.14-add-eta-source-readback-primitive"]
@@ -447,7 +452,7 @@ stages:
         owner_lane: local_code
         depends_on: ["particles.leptons.16-record-d12-charged-continuation-bridge"]
       - id: particles.leptons.18-record-exact-charged-waiting-set
-        title: "Record the exact charged waiting set as C_hat_e^{cand} promotion plus the future absolute anchor A_ch, with eta/sigma demoted to downstream invariants"
+        title: "Record the exact charged waiting set as C_hat_e^{cand} promotion plus the future uncentered determinant-line lift and affine anchor A_ch, with eta/sigma demoted to downstream invariants"
         status: completed
         owner_lane: local_docs
         depends_on: ["particles.leptons.17-fix-charged-absolute-scale-type-mismatch-and-shell"]
@@ -457,7 +462,7 @@ stages:
         owner_lane: local_code
         depends_on: ["particles.leptons.18-record-exact-charged-waiting-set"]
       - id: particles.leptons.20-derive-determinant-normalization-transport-theorem
-        title: "Derive the theorem-grade affine-covariant absolute charged anchor A_ch for the common-shift quotient"
+        title: "Derive the theorem-grade uncentered charged determinant-line section whose affine coordinate A_ch closes the common-shift quotient"
         status: in_progress
         owner_lane: pro_paper
         depends_on:
@@ -468,7 +473,7 @@ stages:
             "papers.compact.e.30-replace-koide-assisted-lepton-fitting-with-a-theorem"
           ]
       - id: particles.leptons.21-add-charged-absolute-anchor-section-scaffold
-        title: "Add the machine-readable charged absolute-anchor section scaffold so theorem search targets A_ch directly rather than centered-shape orbit picks"
+        title: "Add the machine-readable charged determinant-line / absolute-anchor scaffold so theorem search targets the uncentered lift rather than centered-shape orbit picks"
         status: completed
         owner_lane: local_code
         depends_on: ["particles.leptons.19-record-charged-absolute-scale-underdetermination"]
@@ -653,12 +658,12 @@ stages:
         owner_lane: local_code
         depends_on: ["particles.flavor.49-build-scalarized-d12-quark-continuation-bundle"]
       - id: particles.flavor.51-certify-current-d12-sheet-no-go-for-physical-ckm-shell
-        title: "Certify that the current D12 sheet is a strict no-go for the physical CKM shell and expose the discrete relative-sheet selector boundary"
+        title: "Certify that the current D12 sheet is a strict no-go for the physical CKM shell and expose the finite relative-sheet orbit / selector boundary"
         status: completed
         owner_lane: local_code
         depends_on: ["particles.flavor.50-record-same-family-d12-selector-value-law"]
       - id: particles.flavor.52-emit-quark-relative-sheet-selector
-        title: "Emit the discrete relative up/down sheet selector that leaves the current D12 no-go class"
+        title: "Emit the discrete relative up/down sheet selector from a finite left-handed same-label sigma_ud_orbit that leaves the current D12 no-go class"
         status: in_progress
         owner_lane: pro_paper
         depends_on:
@@ -697,7 +702,7 @@ stages:
         owner_lane: pro_paper
         depends_on: ["papers.compact.e.29-derive-the-yukawa-excitation-dictionary"]
       - id: particles.e.32b-close-neutrino-splittings-and-mixing
-        title: "Promote the repaired neutrino branch from scale-free PMNS/hierarchy closure to a theorem-grade absolute spectrum by emitting one internal positive normalization scalar lambda_nu"
+        title: "Promote the weighted-cycle neutrino branch from scale-free PMNS/hierarchy closure to a theorem-grade absolute spectrum by emitting one internal positive normalization scalar lambda_nu, equivalently an internal attachment from the D10 amplitude sector to the weighted-cycle absolute normal form"
         status: in_progress
         owner_lane: pro_neutrino
         depends_on: ["papers.compact.e.32-derive-neutrino-masses-from-screen-capacity-as-a-theorem"]
@@ -893,6 +898,35 @@ stages:
         status: completed
         owner_lane: local_code
         depends_on: ["particles.neutrino.35-add-dimensionless-law-candidate-audit"]
+      - id: particles.neutrino.37-record-lambda-nu-bridge-candidate
+        title: "Record the strongest local lambda_nu bridge candidate as lambda_nu = m_star_eV * F_nu with F_nu supplied by the Majorana overlap-defect scalar evaluator"
+        status: completed
+        owner_lane: local_code
+        depends_on:
+          [
+            "particles.neutrino.34-resolve-fixed-hierarchy-ratio-mismatch-beyond-lambda-nu",
+            "particles.neutrino.32-add-compare-only-single-scale-fit-surface"
+          ]
+      - id: particles.neutrino.38-close-majorana-overlap-defect-scalar-evaluator
+        title: "Close the finite-angle Majorana overlap-defect scalar evaluator that would attach the D10 amplitude sector to the weighted-cycle branch and emit lambda_nu"
+        status: in_progress
+        owner_lane: pro_neutrino
+        depends_on: ["particles.neutrino.37-record-lambda-nu-bridge-candidate"]
+      - id: particles.neutrino.37-add-absolute-attachment-scaffold
+        title: "Add the machine-readable neutrino absolute-attachment scaffold so lambda_nu is tracked as an internal attachment theorem from the D10 amplitude sector to the weighted-cycle normal form"
+        status: completed
+        owner_lane: local_code
+        depends_on: ["particles.neutrino.34-resolve-fixed-hierarchy-ratio-mismatch-beyond-lambda-nu"]
+      - id: particles.neutrino.38-record-lambda-nu-bridge-candidate
+        title: "Record the sharpest current local lambda_nu bridge candidate through the Majorana overlap-defect scalar evaluator"
+        status: completed
+        owner_lane: local_code
+        depends_on: ["particles.neutrino.37-add-absolute-attachment-scaffold"]
+      - id: particles.neutrino.39-add-target-free-lambda-nu-candidate
+        title: "Record the strongest current target-free closed-form lambda_nu candidate from live emitted invariants while keeping it compare-only until a theorem-grade attachment law exists"
+        status: completed
+        owner_lane: local_code
+        depends_on: ["particles.neutrino.38-record-lambda-nu-bridge-candidate"]
   - id: stage-6
     title: "Hadron branch (deferred, execution-bound)"
     status: deferred

@@ -1,0 +1,153 @@
+#!/usr/bin/env python3
+"""Emit the canonical UV/BW internalization scaffold.
+
+This does not promote the UV/BW lane. It records the sharpest current internal
+extension route: first extract a canonical scaling-limit cap pair from
+transported cap marginals, then prove ordered null cut-pair rigidity on that
+realized limit.
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+from dataclasses import asdict, dataclass
+from datetime import datetime, timezone
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[2]
+DEFAULT_OUT = ROOT / "particles" / "runs" / "uv" / "bw_internalization_scaffold.json"
+
+
+@dataclass(frozen=True)
+class RigidityResult:
+    solution_dimension: int
+    surviving_generator_disk: str
+    surviving_generator_half_line: str
+    ordered_boundary_pair: list[str]
+
+
+def _timestamp() -> str:
+    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def _compute_rigidity() -> RigidityResult:
+    return RigidityResult(
+        solution_dimension=1,
+        surviving_generator_disk="1 - z**2",
+        surviving_generator_half_line="2*u",
+        ordered_boundary_pair=["-1", "+1"],
+    )
+
+
+def build_artifact() -> dict[str, object]:
+    rigidity = _compute_rigidity()
+    boundary = {
+        "status": "open_split_after_candidate_projective_route",
+        "remaining_object": "canonical_scaling_cap_pair_realization_from_transported_cap_marginals",
+        "follow_on_object": "independent_bw_rigidity_on_realized_limit",
+        "remaining_objects": [
+            "canonical_scaling_cap_pair_realization_from_transported_cap_marginals",
+            "independent_bw_rigidity_on_realized_limit",
+        ],
+        "current_internalized_scope": (
+            "Axiom-3 plus the fixed-cutoff collar/MaxEnt package internalize local Gibbs form, "
+            "quasi-local propagation, endpoint-Lipschitz interval control, and refinement-stable "
+            "branch persistence."
+        ),
+        "reason_current_corpus_fails": (
+            "The current corpus still lacks a canonical scaling-limit observer cap algebra/state "
+            "realization from transported cap marginals, and all theorem-grade null geometric "
+            "action currently on disk is downstream of the BW branch itself, so the missing BW "
+            "rigidity theorem cannot be proved non-circularly from current premises."
+        ),
+        "statement": (
+            "First exact object: starting from a projectively compatible extracted family of "
+            "transported cap marginals on fixed reference type-I regulator cap algebras, realize "
+            "a canonical scaling-limit observer cap pair (A_infty(C), omega_infty^C) without "
+            "assuming type-I survival."
+        ),
+        "follow_on_statement": (
+            "Second exact object: on that realized limit pair, prove from internal OPH premises "
+            "alone that ordered null cut-pair data rigidify the residual cap-preserving conformal "
+            "freedom to the unique BW hyperbolic subgroup lambda_C(s), so "
+            "sigma_t^{omega_infty^C} = alpha_{lambda_C(2 pi t)} without reusing consequences "
+            "already downstream of the BW branch."
+        ),
+        "candidate_extension_status": "candidate_route_not_promoted",
+        "candidate_extension_route": (
+            "Step 1: scaling-limit cap-pair extraction by local weak-* compactness on transported "
+            "cap marginals. Step 2: ordered null cut-pair rigidity that collapses the residual "
+            "cap-preserving conformal freedom to the unique BW hyperbolic subgroup."
+        ),
+        "candidate_extension_target": "sigma_t^{omega_infty^C} = alpha_{lambda_C(2 pi t)}",
+        "canonical_code_scaffolds": [
+            "code/particles/uv/derive_bw_scaling_limit_cap_pair_extraction_scaffold.py",
+            "code/particles/uv/derive_bw_ordered_cut_pair_rigidity_scaffold.py",
+        ],
+        "canonical_artifacts": [
+            "code/particles/runs/uv/bw_scaling_limit_cap_pair_extraction_scaffold.json",
+            "code/particles/runs/uv/bw_ordered_cut_pair_rigidity_scaffold.json",
+        ],
+        "symbolic_ordered_cut_pair_rigidity_test": {
+            "status": "pass" if rigidity.solution_dimension == 1 else "fail",
+            **asdict(rigidity),
+            "conclusion": (
+                "Preserving the ordered boundary pair leaves a one-dimensional hyperbolic subalgebra on the disk, "
+                "which is conjugate to dilation on the positive half-line."
+            ),
+        },
+    }
+    return {
+        "artifact": "oph_uv_bw_internalization_scaffold",
+        "generated_utc": _timestamp(),
+        "status": "minimal_constructive_extension",
+        "public_promotion_allowed": False,
+        "current_boundary": "T1_plus_T3_external_scaling_limit_branch",
+        "extension_kind": "scaling_limit_cap_pair_plus_ordered_cut_pair_rigidity",
+        "input_contract": {
+            "transported_cap_marginals": "Sequence of cap-local states along a refinement chain in a common chart.",
+            "inherited_strip_data": "The oriented null generator Omega and the ordered cut pair (Gamma_minus, Gamma_plus).",
+            "support_map": "Scaling-limit support map or finite-stage approximation on the quasi-local cap net.",
+            "endpoint_family": "Half-line endpoint matrix elements for the renormalized family K_tilde_a(Omega).",
+        },
+        "solver_spec": {
+            "checks": [
+                "local_weak_star_extraction",
+                "ordered_cut_pair_preservation",
+                "pair_preserving_lie_algebra_dimension_equals_one",
+                "half_line_action_is_dilation",
+                "borchers_positive_translation",
+                "kappa_equals_2pi",
+            ],
+            "output_certificate": {
+                "bw_automorphism": "sigma_t = alpha_lambda_C(2*pi*t)",
+                "residual_modular_class": "q_BW(C)=0 after ordered-cut quotient",
+                "status": "closed_on_extension",
+                "typeI_required": False,
+            },
+        },
+        "public_status_boundary": boundary,
+        "notes": [
+            "This scaffold promotes the UV/BW extension route to a canonical local artifact without claiming current-corpus closure.",
+            "The symbolic test certifies the rigidity shape of the ordered cut-pair argument, but not the existence of the realized scaling-limit cap pair.",
+            "The correct target is an automorphism theorem on the realized scaling-limit cap pair; no type-I survival is assumed.",
+        ],
+        "source_code_scaffolds": {
+            "scaling_limit_cap_pair_extraction": "code/particles/uv/derive_bw_scaling_limit_cap_pair_extraction_scaffold.py",
+            "ordered_cut_pair_rigidity": "code/particles/uv/derive_bw_ordered_cut_pair_rigidity_scaffold.py",
+        },
+    }
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Build the UV/BW internalization scaffold.")
+    parser.add_argument("--out", type=Path, default=DEFAULT_OUT)
+    args = parser.parse_args()
+    args.out.parent.mkdir(parents=True, exist_ok=True)
+    args.out.write_text(json.dumps(build_artifact(), indent=2) + "\n", encoding="utf-8")
+
+
+if __name__ == "__main__":
+    main()

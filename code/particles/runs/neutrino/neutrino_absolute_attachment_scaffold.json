@@ -1,0 +1,54 @@
+{
+  "artifact": "oph_neutrino_absolute_attachment_scaffold",
+  "generated_utc": "2026-03-30T09:26:19Z",
+  "status": "minimal_constructive_extension",
+  "public_promotion_allowed": false,
+  "exact_missing_object": "neutrino_weighted_cycle_absolute_attachment",
+  "equivalent_scalar": {
+    "name": "lambda_nu",
+    "meaning": "positive absolute normalization scalar for the weighted-cycle scale-free normal form"
+  },
+  "current_no_go": {
+    "statement": "The repaired weighted-cycle branch emits only a scale-free normal form, while the live D10 neutrino scale anchor emits only the isotropic amplitude scale m_star. No emitted theorem presently attaches that dimensionful anchor to the repaired weighted-cycle normal form, so lambda_nu cannot be emitted from the current corpus.",
+    "direct_attachment_diagnostic": {
+      "absolute_dm2_eV2": {
+        "21": 1.527225828934854e-10,
+        "31": 5.123746892444374e-09,
+        "32": 4.971024309550889e-09
+      },
+      "absolute_masses_eV": [
+        2.492665688393888e-05,
+        2.7821948283739995e-05,
+        7.579633972596561e-05
+      ],
+      "candidate_rule": "lambda_nu = m_star_eV",
+      "compare_only_atmospheric_shortfall_factor": 489436.35124162387,
+      "m_star_eV": 0.0024617526608923523,
+      "status": "diagnostic_only_nonpromotable"
+    }
+  },
+  "extension_contract": {
+    "input_objects": [
+      "oph_neutrino_weighted_cycle_theorem_object",
+      "oph_neutrino_scale_anchor",
+      "oph_neutrino_family_response",
+      "oph_forward_majorana_matrix"
+    ],
+    "forbidden_inputs": [
+      "external_oscillation_anchors",
+      "PDG_target_backsolve",
+      "PMNS_target_seed"
+    ],
+    "must_emit": "lambda_nu > 0 or an exactly equivalent amplitude attachment A_nu",
+    "must_imply": [
+      "m_i = lambda_nu * mhat_i",
+      "Delta m^2_ij = lambda_nu^2 * Delta_hat_ij"
+    ],
+    "bridge_statement": "Attach the internal D10 amplitude sector to the weighted-cycle scale-free normal form without reusing external oscillation anchors."
+  },
+  "theorem_object_context": {
+    "name": "p_nu_gamma_eps_midpoint_law",
+    "D_nu_formula": "D_nu = (chi_nu + 1 + gamma_half) / 2 = 1 + eps/2 + gamma/4",
+    "p_nu_formula": "p_nu(gamma, eps) = 1 + gamma + eps / D_nu"
+  }
+}

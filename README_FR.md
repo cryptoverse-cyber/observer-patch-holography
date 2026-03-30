@@ -45,21 +45,35 @@ main, et non comme une affirmation selon laquelle tout le spectre observé serai
 - **Lignes quantitatives actuellement les plus fortes :** bosons \(W\) et \(Z\) sur le théorème fermé de calibration électrofaible sans cible gelée, plus boson de Higgs et quark top sur l'étage critique Higgs/top. La branche neutrino pondérée reproduit aussi très précisément la hiérarchie d'oscillation une fois l'ancre atmosphérique compare-only fournie.
 - **Toujours inachevé :** la famille plus large des quarks reste au niveau continuation et la feuille quark actuelle est maintenant connue comme une mauvaise branche stricte pour la coquille CKM physique, si bien que le prochain objet exact est un sélecteur discret de feuille relative avant toute loi d'échelle de masse sur la branche choisie ; la voie des leptons chargés ferme déjà la forme centrée mais laisse encore ouverte la normalisation absolue faute de scalaire de transport de normalisation déterminant ; la branche neutrino pondérée actuelle reproduit le motif physique PMNS/hiérarchie mais laisse encore ouverte une unique scalaire positive de normalisation absolue ; et les hadrons sont liés à l'exécution, car des lignes promouvables exigent un calcul non perturbatif de production et un contrôle systématique réel, pas seulement une fermeture symbolique supplémentaire.
 
-Le tableau ci-dessous contient les résultats les plus forts à ce stade.
+Le tableau ci-dessous contient les résultats les plus forts à ce stade. Les notes de statut / réserve sont placées juste après pour garder les colonnes de comparaison lisibles dans les différents rendus markdown.
 
-| Particule / observable | Valeur OPH | PDG / référence | Erreur | Unité | Statut / réserve |
-| --- | ---: | ---: | ---: | --- | --- |
-| Photon | `0` | `<1e-27` | `dans la borne` | `GeV` | zéro structurel exact ; comparé à la borne supérieure actuelle sur la masse du photon |
-| Gluon | `0` | `pas de mesure directe de masse libre` | `n/a` | `GeV` | zéro structurel exact pour le secteur de jauge de couleur ; les gluons libres sont confinés |
-| Graviton | `0` | `<1e-32` | `dans la borne` | `GeV` | zéro structurel exact ; comparé à la borne supérieure actuelle sur la masse du graviton |
-| Boson W | `80.37700001539531` | `80.377` | `+1.539531e-08` | `GeV` | émis sur le théorème fermé et target-free de calibration électrofaible |
-| Boson Z | `91.18797807794321` | `91.1879781` | `-2.205679e-08` | `GeV` | émis sur le même théorème fermé de calibration électrofaible |
-| Boson de Higgs | `125.218922` | `125.19953` | `+0.019392` | `GeV` | ligne quantitative secondaire sur l'étage critique Higgs/top |
-| Quark top | `172.388646` | `172.352355` | `+0.036291` | `GeV` | ligne quantitative secondaire sur l'étage critique Higgs/top |
-| Écart solaire des neutrinos `Δm21²` | `7.489806641884242e-5` | `7.49e-5` | `-1.933581e-9` | `eV^2` | écart absolu compare-only ; `lambda_nu` reste ouvert |
-| Écart atmosphérique des neutrinos `Δm32²` | `2.438e-3` | `2.438e-3` | `0` | `eV^2` | ancre atmosphérique compare-only utilisée pour fixer l'échelle en eV |
-| Écart d'ordre normal des neutrinos `Δm31²` | `2.5128980664188426e-3` | `2.5129e-3` | `-1.933581e-9` | `eV^2` | écart absolu compare-only ; `lambda_nu` reste ouvert |
-| Rapport hiérarchique des neutrinos `Δm21² / Δm32²` | `0.030721110097966534` | `0.030721903199343724` | `-7.931014e-7` | `sans dimension` | rapport hiérarchique sans échelle au niveau théorématique sur la branche pondérée |
+| Particule /<br>observable | Valeur OPH | PDG /<br>référence | Erreur | Unité |
+| --- | ---: | ---: | ---: | --- |
+| Photon | `0` | `<1e-27` | `dans la borne` | `GeV` |
+| Gluon | `0` | `pas de mesure directe de masse libre` | `n/a` | `GeV` |
+| Graviton | `0` | `<1e-32` | `dans la borne` | `GeV` |
+| Boson W | `80.37700001539531` | `80.377` | `+1.539531e-08` | `GeV` |
+| Boson Z | `91.18797807794321` | `91.1879781` | `-2.205679e-08` | `GeV` |
+| Boson de Higgs | `125.218922` | `125.19953` | `+0.019392` | `GeV` |
+| Quark top | `172.388646` | `172.352355` | `+0.036291` | `GeV` |
+| Écart solaire des neutrinos<br>`Δm21²` | `7.489806641884242e-5` | `7.49e-5` | `-1.933581e-9` | `eV^2` |
+| Écart atmosphérique des neutrinos<br>`Δm32²` | `2.438e-3` | `2.438e-3` | `0` | `eV^2` |
+| Écart d'ordre normal des neutrinos<br>`Δm31²` | `2.5128980664188426e-3` | `2.5129e-3` | `-1.933581e-9` | `eV^2` |
+| Rapport hiérarchique des neutrinos<br>`Δm21² / Δm32²` | `0.030721110097966534` | `0.030721903199343724` | `-7.931014e-7` | `sans dimension` |
+
+Statut / réserve :
+
+- Photon : zéro structurel exact ; comparé à la borne supérieure actuelle sur la masse du photon.
+- Gluon : zéro structurel exact pour le secteur de jauge de couleur ; les gluons libres sont confinés.
+- Graviton : zéro structurel exact ; comparé à la borne supérieure actuelle sur la masse du graviton.
+- Boson W : émis sur le théorème fermé et target-free de calibration électrofaible.
+- Boson Z : émis sur le même théorème fermé de calibration électrofaible.
+- Boson de Higgs : ligne quantitative secondaire sur l'étage critique Higgs/top.
+- Quark top : ligne quantitative secondaire sur l'étage critique Higgs/top.
+- Écart solaire des neutrinos `Δm21²` : écart absolu compare-only ; `lambda_nu` reste ouvert.
+- Écart atmosphérique des neutrinos `Δm32²` : ancre atmosphérique compare-only utilisée pour fixer l'échelle en eV.
+- Écart d'ordre normal des neutrinos `Δm31²` : écart absolu compare-only ; `lambda_nu` reste ouvert.
+- Rapport hiérarchique des neutrinos `Δm21² / Δm32²` : rapport hiérarchique sans échelle au niveau théorématique sur la branche pondérée.
 
 La calibration électrofaible fixe d'abord une constante de pixel partagée `P` sur la surface source de running/matching ; une fois `P` fixé, la base électrofaible target-free émet un quintette cohérent `(W, Z, alpha_em^-1, sin^2 theta_W, v)` sans ajuster séparément `W` et `Z`.
 

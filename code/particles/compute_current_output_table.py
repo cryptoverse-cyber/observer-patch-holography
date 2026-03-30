@@ -107,6 +107,7 @@ def _copy_outputs(work_particles: Path, current_dir: Path) -> None:
         "particle_mass_derivation_graph.svg",
         "runs/status/status_table_forward_current.json",
         "runs/neutrino/neutrino_compare_only_scale_fit.json",
+        "runs/uv/bw_internalization_scaffold.json",
     ]
     for rel in outputs:
         src = work_particles / rel
@@ -438,6 +439,7 @@ def build_runtime(runtime_root: Path, *, with_hadrons: bool, verbose: bool) -> P
 
     _seed_curated_quark_surface(work_particles)
     _seed_curated_neutrino_surface(work_particles)
+    _run(["python3", "particles/uv/derive_bw_internalization_scaffold.py"], cwd=work_code, verbose=verbose)
     _run(["python3", "particles/neutrino/derive_neutrino_compare_only_scale_fit.py"], cwd=work_code, verbose=verbose)
 
     status_cmd = ["python3", "particles/scripts/build_results_status_table.py"]

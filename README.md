@@ -47,21 +47,35 @@ particle spectrum is finished.
 - **Current strongest quantitative rows:** \(W\) boson and \(Z\) boson on the closed target-free electroweak calibration theorem, plus the Higgs boson and top quark on the Higgs/top critical stage. The neutrino weighted-cycle branch also reproduces the observed oscillation hierarchy extremely well once the compare-only atmospheric anchor is supplied.
 - **Still unfinished:** the broader quark family remains continuation-level and the current quark sheet is now known to be a wrong-branch no-go for the physical CKM shell, so the next exact quark object is one discrete relative-sheet selector before any selected-branch mass-scale law; the charged-lepton lane has its centered shape closed but its absolute normalization still open because the determinant-normalization transport scalar has not yet been emitted; the current weighted-cycle neutrino branch matches the physical PMNS/hierarchy pattern but still lacks one positive absolute-normalization scalar; and hadrons are execution-bound because promotable rows require real nonperturbative production computation and systematics rather than theorem-only completion.
 
-The table below contains the strongest current results.
+The table below contains the strongest current results. Status / caveat notes are listed immediately underneath so the comparison columns stay readable across markdown renderers.
 
-| Particle / observable | OPH value | PDG / reference | Error | Unit | Status / caveat |
-| --- | ---: | ---: | ---: | --- | --- |
-| Photon | `0` | `<1e-27` | `within bound` | `GeV` | exact structural zero; compared against the current photon mass upper bound |
-| Gluon | `0` | `no direct free-particle mass measurement` | `n/a` | `GeV` | exact structural zero for the color gauge sector; free gluons are confined |
-| Graviton | `0` | `<1e-32` | `within bound` | `GeV` | exact structural zero; compared against the current graviton mass upper bound |
-| W boson | `80.37700001539531` | `80.377` | `+1.539531e-08` | `GeV` | emitted on the closed target-free electroweak calibration theorem |
-| Z boson | `91.18797807794321` | `91.1879781` | `-2.205679e-08` | `GeV` | emitted on the same closed electroweak calibration theorem |
-| Higgs boson | `125.218922` | `125.19953` | `+0.019392` | `GeV` | secondary quantitative row on the Higgs/top critical stage |
-| top quark | `172.388646` | `172.352355` | `+0.036291` | `GeV` | secondary quantitative row on the Higgs/top critical stage |
-| Neutrino solar splitting `Δm21²` | `7.489806641884242e-5` | `7.49e-5` | `-1.933581e-9` | `eV^2` | compare-only absolute splitting; `lambda_nu` still open |
-| Neutrino atmospheric splitting `Δm32²` | `2.438e-3` | `2.438e-3` | `0` | `eV^2` | compare-only atmospheric anchor used to place the branch on an eV scale |
-| Neutrino normal-order splitting `Δm31²` | `2.5128980664188426e-3` | `2.5129e-3` | `-1.933581e-9` | `eV^2` | compare-only absolute splitting; `lambda_nu` still open |
-| Neutrino hierarchy ratio `Δm21² / Δm32²` | `0.030721110097966534` | `0.030721903199343724` | `-7.931014e-7` | `dimensionless` | theorem-grade scale-free hierarchy ratio on the weighted-cycle branch |
+| Particle /<br>observable | OPH value | PDG /<br>reference | Error | Unit |
+| --- | ---: | ---: | ---: | --- |
+| Photon | `0` | `<1e-27` | `within bound` | `GeV` |
+| Gluon | `0` | `no direct free-particle mass measurement` | `n/a` | `GeV` |
+| Graviton | `0` | `<1e-32` | `within bound` | `GeV` |
+| W boson | `80.37700001539531` | `80.377` | `+1.539531e-08` | `GeV` |
+| Z boson | `91.18797807794321` | `91.1879781` | `-2.205679e-08` | `GeV` |
+| Higgs boson | `125.218922` | `125.19953` | `+0.019392` | `GeV` |
+| top quark | `172.388646` | `172.352355` | `+0.036291` | `GeV` |
+| Neutrino solar splitting<br>`Δm21²` | `7.489806641884242e-5` | `7.49e-5` | `-1.933581e-9` | `eV^2` |
+| Neutrino atmospheric splitting<br>`Δm32²` | `2.438e-3` | `2.438e-3` | `0` | `eV^2` |
+| Neutrino normal-order splitting<br>`Δm31²` | `2.5128980664188426e-3` | `2.5129e-3` | `-1.933581e-9` | `eV^2` |
+| Neutrino hierarchy ratio<br>`Δm21² / Δm32²` | `0.030721110097966534` | `0.030721903199343724` | `-7.931014e-7` | `dimensionless` |
+
+Status / caveat:
+
+- Photon: exact structural zero; compared against the current photon mass upper bound.
+- Gluon: exact structural zero for the color gauge sector; free gluons are confined.
+- Graviton: exact structural zero; compared against the current graviton mass upper bound.
+- W boson: emitted on the closed target-free electroweak calibration theorem.
+- Z boson: emitted on the same closed electroweak calibration theorem.
+- Higgs boson: secondary quantitative row on the Higgs/top critical stage.
+- top quark: secondary quantitative row on the Higgs/top critical stage.
+- Neutrino solar splitting `Δm21²`: compare-only absolute splitting; `lambda_nu` still open.
+- Neutrino atmospheric splitting `Δm32²`: compare-only atmospheric anchor used to place the branch on an eV scale.
+- Neutrino normal-order splitting `Δm31²`: compare-only absolute splitting; `lambda_nu` still open.
+- Neutrino hierarchy ratio `Δm21² / Δm32²`: theorem-grade scale-free hierarchy ratio on the weighted-cycle branch.
 
 Electroweak calibration works by fixing one shared pixel constant `P` on the source-side running/matching surface; once `P` is fixed, the target-free electroweak basis emits one coherent quintet `(W, Z, alpha_em^-1, sin^2 theta_W, v)` without separately fitting `W` and `Z`.
 
