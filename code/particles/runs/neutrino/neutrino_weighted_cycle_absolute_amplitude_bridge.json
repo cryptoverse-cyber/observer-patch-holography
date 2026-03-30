@@ -1,0 +1,81 @@
+{
+  "artifact": "oph_neutrino_weighted_cycle_absolute_amplitude_bridge",
+  "direct_scale_anchor_attachment_diagnostic": {
+    "absolute_dm2_eV2": {
+      "21": 1.527225828934854e-10,
+      "31": 5.123746892444374e-09,
+      "32": 4.971024309550889e-09
+    },
+    "absolute_masses_eV": [
+      2.492665688393888e-05,
+      2.7821948283739995e-05,
+      7.579633972596561e-05
+    ],
+    "candidate_rule": "lambda_nu = m_star_eV",
+    "compare_only_atmospheric_shortfall_factor": 489436.35124162387,
+    "m_star_eV": 0.0024617526608923523,
+    "status": "diagnostic_only_nonpromotable"
+  },
+  "equivalent_scalar": {
+    "name": "lambda_nu",
+    "relation_to_bridge": "lambda_nu = A_nu in the eV-valued normalization used by the repaired weighted-cycle artifact"
+  },
+  "fixed_live_objects": {
+    "m_star_formula": "v^2 / mu_u",
+    "m_star_gev": 2.4617526608923523e-12,
+    "pmns_observables": {
+      "J": -0.027529439676807144,
+      "delta_deg": 305.58447923271865,
+      "delta_rad": 5.3334553056031755,
+      "theta12_deg": 34.22545935007586,
+      "theta12_rad": 0.5973469536663023,
+      "theta13_deg": 8.686287749199211,
+      "theta13_rad": 0.15160432099917368,
+      "theta23_deg": 49.72292164123426,
+      "theta23_rad": 0.8678286963506805
+    },
+    "scale_free_dm2_normal_form": {
+      "dm2": {
+        "21": 2.5200805840476436e-05,
+        "31": 0.0008454712339581777,
+        "32": 0.0008202704281177013
+      },
+      "notation": "Delta_hat",
+      "ratio_21_over_32": 0.030722558045040666
+    },
+    "scale_free_mass_normal_form": {
+      "masses": [
+        0.010125573247030959,
+        0.011301683034905266,
+        0.03078958375066423
+      ],
+      "normalization_convention": "internal_weighted_cycle_branch_normal_form",
+      "notation": "m_hat"
+    }
+  },
+  "generated_utc": "2026-03-30T07:23:40Z",
+  "no_go_statement": "The repaired weighted-cycle branch emits only a scale-free normal form, while the live D10 neutrino scale anchor emits only the isotropic amplitude scale m_star. No emitted theorem presently attaches that dimensionful anchor to the repaired weighted-cycle normal form, so lambda_nu cannot be emitted from the current corpus.",
+  "notes": [
+    "This artifact does not reopen the dimensionless selector question; that question is already fixed by the repaired weighted-cycle branch.",
+    "The remaining gap is a dimensionful attachment theorem between the repaired weighted-cycle normal form and the live D10 amplitude sector."
+  ],
+  "remaining_object": "neutrino_weighted_cycle_absolute_amplitude_bridge",
+  "remaining_object_contract": {
+    "absolute_mass_rule": "m_i = A_nu * mhat_i",
+    "absolute_splitting_rule": "Delta m^2_ij = A_nu^2 * Delta_hat_ij",
+    "must_emit": "A_nu > 0",
+    "no_external_inputs": [
+      "measured_oscillation_targets",
+      "external_eV_anchor"
+    ],
+    "role": "dimensionful amplitude that upgrades the repaired weighted-cycle normal form to absolute masses and splittings",
+    "specialization_requirement": "On the isotropic specialization, the bridge must reduce to the live D10 scale anchor or an emitted equivalent attachment law."
+  },
+  "remaining_object_kind": "dimensionful_attachment_theorem",
+  "source_artifacts": {
+    "neutrino_scale_anchor": "/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/code/particles/runs/neutrino/neutrino_scale_anchor.json",
+    "neutrino_weighted_cycle_repair": "/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/code/particles/runs/neutrino/neutrino_weighted_cycle_repair.json"
+  },
+  "status": "constructive_extension_required",
+  "theorem_status": "dimensionless_branch_closed_absolute_bridge_open"
+}

@@ -4,33 +4,33 @@
     "current_compare_only_anchor": {
       "adapter_formula": "lambda_nu_cmp = sqrt(Delta m32^2_anchor / Delta_hat_32)",
       "adapter_status": "hard_separated_compare_only_adapter",
-      "delta_m21_sq_eV2": 7.509357690325038e-05,
-      "delta_m31_sq_eV2": 0.0025080935769032503,
-      "delta_m32_sq_eV2": 0.002433,
-      "delta_m32_sq_input_eV2": 0.002433,
-      "lambda_nu_cmp": 1.7322048288587917,
-      "m0": 1.7322048288587917,
+      "delta_m21_sq_eV2": 7.489806641884242e-05,
+      "delta_m31_sq_eV2": 0.0025128980664188426,
+      "delta_m32_sq_eV2": 0.002438,
+      "delta_m32_sq_input_eV2": 0.002438,
+      "lambda_nu_cmp": 1.7239025033361262,
+      "m0": 1.7239025033361262,
       "masses_eV": [
-        0.01741657965275618,
-        0.019453298530173517,
-        0.05302292734001067
+        0.017456756479999103,
+        0.019484260653687455,
+        0.053081413067295344
       ],
       "normalization_kind": "atmospheric_anchor",
       "status": "compare_only",
-      "sum_masses_eV": 0.08989280552294036
+      "sum_masses_eV": 0.0900224302009819
     },
     "external_anchor_disallowed": {
       "name": "atmospheric_delta_m32_sq",
       "reason": "compare_only_external_oscillation_anchor",
-      "value_eV2": 0.002433
+      "value_eV2": 0.002438
     },
     "hard_separated_compare_only_adapter": {
       "allowed_formula": "lambda_nu_cmp = sqrt(Delta m32^2_anchor / Delta_hat_32)",
       "forbidden_feedback": "compare_only_anchor_must_not_feed_back_into_theorem_state_or_lambda_nu_emission"
     }
   },
-  "generated_utc": "2026-03-30T06:15:20Z",
-  "next_breaking_contract": "one_OPH_theorem_fixing_lambda_nu_from_an_internal_dimensionful_invariant_without_oscillation_data",
+  "generated_utc": "2026-03-30T08:21:13Z",
+  "next_breaking_contract": "neutrino_weighted_cycle_absolute_amplitude_bridge",
   "no_hidden_discrete_branch": {
     "closed_discrete_witnesses": [
       "shape_closed_scale_invariant_left_basis",
@@ -45,39 +45,45 @@
   "proof_primitives": {
     "blocker_audit": {
       "absolute_scale_no_go": {
+        "absolute_amplitude_bridge_summary": {
+          "remaining_object": "neutrino_weighted_cycle_absolute_amplitude_bridge",
+          "remaining_object_kind": "dimensionful_attachment_theorem",
+          "status": "constructive_extension_required"
+        },
         "absolute_family_parameter": "lambda_nu > 0",
         "dimensionless_dm2_family_eV2": {
-          "21": "2.415559601940881e-05 * lambda_nu^2",
-          "31": "7.885145046574088e-04 * lambda_nu^2",
-          "32": "7.64358908638e-04 * lambda_nu^2"
+          "21": "Delta m21^2 = lambda_nu^2 * 2.520259180367675e-05",
+          "31": "Delta m31^2 = lambda_nu^2 * 0.0008455698156217034",
+          "32": "Delta m32^2 = lambda_nu^2 * 0.0008203672238180266"
         },
         "dimensionless_mass_family": [
-          "m1 = 0.009698837868777897 * lambda_nu",
-          "m2 = 0.010873042445619763 * lambda_nu",
-          "m3 = 0.029708281011567278 * lambda_nu"
+          "m1 = lambda_nu * 0.010126301485273374",
+          "m2 = lambda_nu * 0.011302414501969324",
+          "m3 = lambda_nu * 0.03079142408841061"
         ],
         "external_anchor_disallowed": {
           "name": "atmospheric_delta_m32_sq",
           "reason": "compare_only_external_oscillation_anchor",
-          "value_eV2": 0.002433
+          "value_eV2": 0.002438
         },
         "hard_separated_compare_only_adapter": {
           "allowed_formula": "lambda_nu_cmp = sqrt(Delta m32^2_anchor / Delta_hat_32)",
           "forbidden_feedback": "compare_only_anchor_must_not_feed_back_into_theorem_state_or_lambda_nu_emission"
         },
-        "minimal_missing_object": "one_OPH_theorem_fixing_lambda_nu_from_an_internal_dimensionful_invariant_without_oscillation_data",
+        "minimal_missing_object": "neutrino_weighted_cycle_absolute_amplitude_bridge",
         "proof_obstruction": "positive_rescaling_nonidentifiability",
         "scale_free_dm2_normal_form_eV2": {
-          "21": 2.415559601940881e-05,
-          "31": 0.0007885145046574088,
-          "32": 0.000764358908638
+          "21": 2.520259180367675e-05,
+          "31": 0.0008455698156217034,
+          "32": 0.0008203672238180266
         },
         "scale_free_mass_normal_form": {
           "masses": [
-            0.009698837868777897,
-            0.010873042445619763,
-            0.029708281011567278
+            0.010126301485273374,
+            0.011302414501969324,
+            0.03079142408841061
           ],
+          "normalization_convention": "internal_weighted_cycle_branch_normal_form",
           "notation": "m_hat"
         },
         "statement": "The repaired weighted-cycle branch fixes only the dimensionless hierarchy and PMNS pattern. For every lambda_nu > 0, the family m_i(lambda_nu) = lambda_nu * mhat_i and Delta m^2_ij(lambda_nu) = lambda_nu^2 * Delta_hat_ij has the same dimensionless observables, so no unique absolute scale is emitted without one further OPH theorem fixing lambda_nu.",
@@ -105,26 +111,27 @@
         "exact_principal_selector_from_centered_eta_class",
         "exact_depressed_cubic_intrinsic_spectrum",
         "mass_eigenstate_row_policy_nu1_nu2_nu3",
+        "positive_load_balanced_least_distortion_midpoint_selector",
         "shape_closed_scale_invariant_left_basis",
         "pmns_from_shared_charged_and_intrinsic_bases"
       ],
       "compare_only_atmospheric_anchor": {
         "adapter_formula": "lambda_nu_cmp = sqrt(Delta m32^2_anchor / Delta_hat_32)",
         "adapter_status": "hard_separated_compare_only_adapter",
-        "delta_m21_sq_eV2": 7.509357690325038e-05,
-        "delta_m31_sq_eV2": 0.0025080935769032503,
-        "delta_m32_sq_eV2": 0.002433,
-        "delta_m32_sq_input_eV2": 0.002433,
-        "lambda_nu_cmp": 1.7322048288587917,
-        "m0": 1.7322048288587917,
+        "delta_m21_sq_eV2": 7.489806641884242e-05,
+        "delta_m31_sq_eV2": 0.0025128980664188426,
+        "delta_m32_sq_eV2": 0.002438,
+        "delta_m32_sq_input_eV2": 0.002438,
+        "lambda_nu_cmp": 1.7239025033361262,
+        "m0": 1.7239025033361262,
         "masses_eV": [
-          0.01741657965275618,
-          0.019453298530173517,
-          0.05302292734001067
+          0.017456756479999103,
+          0.019484260653687455,
+          0.053081413067295344
         ],
         "normalization_kind": "atmospheric_anchor",
         "status": "compare_only",
-        "sum_masses_eV": 0.08989280552294036
+        "sum_masses_eV": 0.0900224302009819
       },
       "exact_blockers": [
         {
@@ -148,14 +155,14 @@
       "physical_window_status": "pmns_and_hierarchy_repaired",
       "symbolic_absolute_family": {
         "absolute_dm2": {
-          "21": "Delta m21^2 = lambda_nu^2 * 2.415559601940881e-05",
-          "31": "Delta m31^2 = lambda_nu^2 * 7.885145046574088e-04",
-          "32": "Delta m32^2 = lambda_nu^2 * 7.64358908638e-04"
+          "21": "Delta m21^2 = lambda_nu^2 * 2.520259180367675e-05",
+          "31": "Delta m31^2 = lambda_nu^2 * 0.0008455698156217034",
+          "32": "Delta m32^2 = lambda_nu^2 * 0.0008203672238180266"
         },
         "absolute_masses": [
-          "m1 = lambda_nu * 0.009698837868777897",
-          "m2 = lambda_nu * 0.010873042445619763",
-          "m3 = lambda_nu * 0.029708281011567278"
+          "m1 = lambda_nu * 0.010126301485273374",
+          "m2 = lambda_nu * 0.011302414501969324",
+          "m3 = lambda_nu * 0.03079142408841061"
         ],
         "family_parameter": "lambda_nu > 0"
       }
@@ -179,16 +186,17 @@
     "group": "R_{>0}",
     "proof_obstruction": "positive_rescaling_nonidentifiability",
     "scale_free_dm2_normal_form_eV2": {
-      "21": 2.415559601940881e-05,
-      "31": 0.0007885145046574088,
-      "32": 0.000764358908638
+      "21": 2.520259180367675e-05,
+      "31": 0.0008455698156217034,
+      "32": 0.0008203672238180266
     },
     "scale_free_mass_normal_form": {
       "masses": [
-        0.009698837868777897,
-        0.010873042445619763,
-        0.029708281011567278
+        0.010126301485273374,
+        0.011302414501969324,
+        0.03079142408841061
       ],
+      "normalization_convention": "internal_weighted_cycle_branch_normal_form",
       "notation": "m_hat"
     },
     "status": "open"

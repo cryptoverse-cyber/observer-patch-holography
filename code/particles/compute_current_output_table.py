@@ -256,13 +256,14 @@ def _render_terminal_report(payload: dict[str, Any], *, color: bool) -> str:
             f"{uv_boundary['status']} | next={uv_boundary['remaining_object']} | follow_on={uv_boundary['follow_on_object']}"
         )
         lines.append(_style(uv_boundary["reason_current_corpus_fails"], DIM, enabled=color))
-        lines.append(
-            _style(
-                f"Chain: {uv_boundary['remaining_chain'][0]} -> {uv_boundary['remaining_chain'][1]}",
-                DIM,
-                enabled=color,
+        if uv_boundary.get("remaining_objects"):
+            lines.append(
+                _style(
+                    f"Split objects: {uv_boundary['remaining_objects'][0]} + {uv_boundary['remaining_objects'][1]}",
+                    DIM,
+                    enabled=color,
+                )
             )
-        )
         if uv_boundary.get("candidate_extension_route"):
             lines.append(
                 "Candidate extension: "

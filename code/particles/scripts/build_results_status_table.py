@@ -97,7 +97,7 @@ CHARGED_CONTINUATION_NOTE = (
     "`mu_e_absolute_log_candidate` or `g_e_linear_candidate` and convert exactly once via `g_e = exp(mu_e_absolute_log_candidate)`. "
     "But the present charged theorem still fixes only the centered charged log class modulo a common shift, so the absolute scale `g_e` remains unresolved on the live theorem lane. "
     "At theorem level, the exact waiting set is sharper than a standalone eta/sigma fit: the charged sector-response object is still only the latent candidate `C_hat_e^{cand}`, not a declared theorem-grade operator. Promoting that candidate is blocked by the upstream theorem `oph_generation_bundle_branch_generator_splitting`, reduced further to the clause `compression_descendant_commutator_vanishes_or_is_uniformly_quadratic_small_after_central_split`. The local corpus proves neither exact vanishing nor uniform quadratic smallness of that descended commutator yet; only the desired transfer bridge is specified. On the absolute side, the charged equalizer route is now an explicit no-go under common-shift symmetry: the current theorem emits only the quotient class of charged logs modulo `(1,1,1)`, so no theorem-grade `g_e` or `Delta_e_abs` exists yet. The single honest future slot is one affine-covariant absolute charged anchor `A_ch` satisfying `A_ch(logm + c*(1,1,1)) = A_ch(logm) + c`; then `g_e = exp(A_ch)` and `Delta_e_abs = log(g_ch_shared) - A_ch`. "
-    "The sharpest new constructive route is only an extension candidate, not a current-corpus closure: if the actual centered compressed generator factors through centered Schur-type `P->Q->P` feedback with a refinement-uniform middle-factor bound, then the transfer gap closes exactly when the descended commutator vanishes and otherwise only quadratically. On the current local certificate, the proxy margin would survive such an extension whenever the uniform bound satisfies about `M < 119.5600535277701`. That route would promote `C_hat_e^{cand}`, but it still would not emit `A_ch` by itself. "
+    "The sharpest constructive route is therefore two-layered and still only an extension candidate, not a current-corpus closure. First, if the actual centered compressed generator factors through centered Schur-type `P->Q->P` feedback with a refinement-uniform middle-factor bound, then the transfer gap closes exactly when the descended commutator vanishes and otherwise only quadratically. On the current local certificate, the proxy margin would survive such an extension whenever the uniform bound satisfies about `M < 119.5600535277701`. That route can promote only the centered proxy `C_hat_e^{cand}`. End-to-end closure still needs an uncentered determinant-line section of the charged response, because once the route centers first it has removed the only affine mode that could transform by `+c`. The clean future object is therefore a theorem-grade uncentered charged response lift carrying a determinant line, with `A_ch = (1/3) log det(Y_e)` or equivalently `A_ch = (1/3) tr(log Y_e)`. "
     "A D12 continuation bridge exists under the extra assumptions A1-A3 and gives eta = -6.729586682888832 and sigma = 8.154061112725994 with near-exact centered-log shape closure, "
     "but the theorem-grade lane still lacks emitted eta, sigma, and absolute scale. On that continuation bridge the compare-only absolute target would be `g_e* = 0.04577885783568762`, equivalently `Delta_e_abs* = 3.003986333402356`, and that target is kept strictly non-promotable until a theorem-grade absolute anchor `A_ch` exists on the live branch."
 )
@@ -133,14 +133,15 @@ NEUTRINO_CONTINUATION_NOTE = (
     "derive_intrinsic_neutrino_exact_eta_map.py -> derive_intrinsic_neutrino_exact_mixing_law_validation.py -> "
     "derive_neutrino_weighted_cycle_repair.py`. "
     "The old isotropic intrinsic ansatz is now explicitly ruled out on the live branch by the exact cap `max |Delta m^2| <= 8 a rho`, which is far below the atmospheric scale. "
-    "The strongest honest repaired branch on disk is therefore the shared-basis weighted cycle lift: using the live same-label scalar certificate `(gap_e, overlap_sq_e)`, the live flavor cocycle invariants `gamma` and `eps`, and the live selector phases, it emits the repaired edge law `w_e = q_e^(1 + gamma + eps)` with diagonal load `chi = 1 + eps`. "
-    "That repaired branch lands in the current PDG oscillation window at the dimensionless pattern level, with `theta12 = 33.9756 deg`, `theta23 = 49.7785 deg`, `theta13 = 8.64594 deg`, `delta = 307.818 deg`, and `J = -0.02652`; its predicted splitting ratio is `Delta m21^2 / Delta m32^2 = 0.0316024`. "
-    "No hidden discrete branch remains on that repaired lane: the remaining freedom is purely the positive rescaling orbit `lambda_nu > 0`. "
-    "But one overall positive neutrino normalization remains open on the live theorem lane, so absolute neutrino masses and absolute `Delta m^2` values are still compare-only unless an external atmospheric anchor is supplied. "
-    "The sharpened no-go statement is that the repaired weighted-cycle branch emits only the one-parameter absolute family `m_i = lambda_nu * mhat_i`, `Delta m^2_ij = lambda_nu^2 * Delta_hat_ij`; all PMNS data and dimensionless hierarchy ratios are unchanged across that family, so no unique theorem-grade absolute spectrum exists yet. "
-    "A compare-only single-scale fit sharpens that boundary further: fitting `lambda_nu` against PDG 2025 central splittings gives a good one-parameter oscillation match, but exact simultaneous central-value closure is impossible on the current repaired branch because the fixed ratio `Delta_hat_21 / Delta_hat_32 = 0.0316024` sits about `2.87%` above the representative PDG central ratio. The weighted least-squares fit gives `lambda_nu = 1.78358`, `m = (0.01730, 0.01939, 0.05299) eV`, with residuals about `+1.00 sigma` on `Delta m21^2` and `-0.32 sigma` on `Delta m32^2`. "
-    "A separate compare-only law-space audit records stronger candidate exponent laws, including a midpoint-normalized candidate that lands essentially on the representative central splitting ratio while keeping the PMNS angles in the physical window, but those candidates remain unpromoted until their coefficients are emitted by the theorem surface rather than inferred from comparison. "
-    "With the compare-only anchor `Delta m32^2 = 2.433e-3 eV^2`, the repaired branch gives `m = (0.01730, 0.01940, 0.05300) eV` and `Delta m21^2 = 7.689e-5 eV^2`. These rows therefore remain unpromoted as exact OPH mass predictions until that single normalization scalar is emitted."
+    "The strongest honest branch on disk is therefore the shared-basis weighted-cycle lift: using the live same-label scalar certificate `(gap_e, overlap_sq_e)`, the live flavor cocycle invariants `gamma` and `eps`, the live selector phases, and the standard-math-fixed balanced transport-load selector on the positive segment between `chi = 1 + eps` and `1 + gamma_half`, it emits `D_nu = (chi + 1 + gamma_half) / 2` and the edge law `w_e = q_e^(1 + gamma + eps / D_nu)`. "
+    "That current weighted-cycle branch lands in the PDG 2025 oscillation window at the dimensionless pattern level, with `theta12 = 34.2259 deg`, `theta23 = 49.7228 deg`, `theta13 = 8.68636 deg`, `delta = 305.581 deg`, and `J = -0.02753`; its predicted splitting ratio is `Delta m21^2 / Delta m32^2 = 0.03072111`. "
+    "No hidden discrete branch remains on that weighted-cycle lane: the remaining freedom is purely the positive rescaling orbit `lambda_nu > 0`. "
+    "Here `lambda_nu` is the single positive normalization scalar that turns the theorem-grade scale-free normal form `mhat_i` and `Delta_hat_ij` into absolute masses and absolute splittings via `m_i = lambda_nu * mhat_i` and `Delta m^2_ij = lambda_nu^2 * Delta_hat_ij`. "
+    "But that one overall positive neutrino normalization remains open on the live theorem lane, so absolute neutrino masses and absolute `Delta m^2` values are still compare-only unless an external atmospheric anchor is supplied. "
+    "The sharpened no-go statement is therefore that the current weighted-cycle branch emits only the one-parameter absolute family `m_i = lambda_nu * mhat_i`, `Delta m^2_ij = lambda_nu^2 * Delta_hat_ij`; all PMNS data and dimensionless hierarchy ratios are unchanged across that family, so no unique theorem-grade absolute spectrum exists yet. "
+    "A compare-only single-scale fit shows how sharp that remaining gap is: fitting `lambda_nu` against PDG 2025 central splittings gives `lambda_nu = 1.72390`, `m = (0.01746, 0.01948, 0.05308) eV`, `Delta m21^2 = 7.48982e-5 eV^2`, and `Delta m32^2 = 2.43801e-3 eV^2`, with residuals about `-9.02e-4 sigma` on `Delta m21^2` and `+2.84e-4 sigma` on `Delta m32^2`. "
+    "A separate compare-only load-segment audit records nearby alternative selectors on the same positive segment; the geometric mean gives the smallest raw representative central-ratio error, but the promoted theorem branch is the arithmetic midpoint because it is the unique balanced/least-distortion selector on that one-dimensional affine segment. "
+    "With the hard-separated compare-only atmospheric anchor `Delta m32^2 = 2.438e-3 eV^2`, the same branch gives `m = (0.01746, 0.01948, 0.05308) eV`, `Delta m21^2 = 7.48981e-5 eV^2`, and `Delta m31^2 = 2.51290e-3 eV^2`; relative to the representative PDG 2025 central values, the solar and atmospheric residuals are only about `-9.02e-4 sigma` and `+2.84e-4 sigma`. These rows therefore remain unpromoted as exact OPH mass predictions only because that single normalization scalar is still missing."
 )
 HADRON_CONTINUATION_NOTE = (
     "Rows are suppressed by default because hadrons are execution-bound on the current branch rather than paper-derived outputs. The active hadron path is `derive_lambda_msbar_descendant.py -> "
@@ -155,36 +156,36 @@ HADRON_CONTINUATION_NOTE = (
     "`backend_correlator_dump.production.json`."
 )
 UV_BW_PREMISE_BOUNDARY = {
-    "status": "open_with_implementable_two_step_extension_chain",
-    "remaining_object": "scaling_limit_cap_pair_extraction_theorem",
-    "follow_on_object": "ordered_null_cut_pair_rigidity_theorem",
-    "remaining_chain": [
-        "scaling_limit_cap_pair_extraction_theorem",
-        "ordered_null_cut_pair_rigidity_theorem",
+    "status": "open_split_after_candidate_projective_route",
+    "remaining_object": "canonical_scaling_cap_pair_realization_from_transported_projective_marginals",
+    "follow_on_object": "independent_bw_rigidity_on_realized_limit",
+    "remaining_objects": [
+        "canonical_scaling_cap_pair_realization_from_transported_projective_marginals",
+        "independent_bw_rigidity_on_realized_limit",
     ],
     "current_internalized_scope": (
         "Axiom-3 plus the fixed-cutoff collar/MaxEnt package internalize local Gibbs form, quasi-local propagation, "
         "endpoint-Lipschitz interval control, and refinement-stable branch persistence."
     ),
     "reason_current_corpus_fails": (
-        "The current sources prove only fixed-cutoff type-I collar control and a conditional scaling-limit automorphism theorem "
-        "on the assumed BW branch. They do not prove that the realized refinement-stable branch has the needed controlled scaling limit "
-        "or that it lands in the Bisognano-Wichmann geometric modular class from internal premises alone; the limit cap algebra may be non-type-I."
+        "The current corpus still lacks a canonical scaling-limit observer cap algebra/state realization from transported cap marginals, "
+        "and all theorem-grade null geometric action currently on disk is downstream of the BW branch itself, so the missing BW rigidity theorem "
+        "cannot be proved non-circularly from current premises."
     ),
     "statement": (
-        "Next exact object: for each round cap C on the realized refinement-stable Axiom-3 branch, extract a controlled scaling-limit cap pair "
-        "(A_infty(C), omega_infty^C) as a local weak-* limit of transported cap marginals, with vanishing carried collar errors and without assuming "
-        "type-I survival or a surviving cap density matrix."
+        "First exact object: starting from a projectively compatible extracted family of transported cap marginals on fixed reference type-I regulator cap algebras, "
+        "realize a canonical scaling-limit observer cap pair (A_infty(C), omega_infty^C) without assuming type-I survival."
     ),
     "follow_on_statement": (
-        "Follow-on exact object: on any extracted scaling-limit round-cap pair, ordered null cut-pair data rigidify the residual cap-preserving conformal "
-        "freedom to the unique BW hyperbolic subgroup lambda_C(s), after which the modular KMS normalization fixes s = 2 pi t."
+        "Second exact object: on that realized limit pair, prove from internal OPH premises alone that ordered null cut-pair data rigidify the residual cap-preserving conformal "
+        "freedom to the unique BW hyperbolic subgroup lambda_C(s), so sigma_t^{omega_infty^C} = alpha_{lambda_C(2 pi t)} without reusing consequences already downstream of the BW branch."
     ),
-    "candidate_extension_status": "two_step_chain_identified_unproved",
+    "candidate_extension_status": "candidate_route_not_promoted",
     "candidate_extension_route": (
         "Step 1: scaling-limit cap-pair extraction by local weak-* compactness on transported cap marginals. Step 2: ordered null cut-pair rigidity that collapses the residual cap-preserving conformal freedom to the unique BW hyperbolic subgroup."
     ),
     "candidate_extension_target": "sigma_t^{omega_infty^C} = alpha_{lambda_C(2 pi t)}",
+    "symbolic_ordered_cut_pair_rigidity_test": "pass",
 }
 INVENTORY: List[Dict[str, Any]] = [
     {
@@ -472,7 +473,7 @@ def build_note(
     if row_spec["particle_id"] in {"up_quark", "down_quark", "strange_quark", "charm_quark", "bottom_quark"}:
         pieces.append("PDG quark references are running masses, not direct free-particle pole masses.")
     if row_spec["particle_id"] in {"electron_neutrino", "muon_neutrino", "tau_neutrino"}:
-        pieces.append("Comparison remains partly qualitative because the repaired oscillation branch still waits on one overall positive neutrino normalization.")
+        pieces.append("Comparison remains partly qualitative because the current weighted-cycle oscillation branch still waits on one overall positive neutrino normalization.")
     if row_spec["group"] == "Hadrons":
         pieces.append("Use this only when explicitly debugging the hadron pipeline.")
     return " ".join(piece for piece in pieces if piece)
@@ -676,46 +677,46 @@ def build_neutrino_oscillation_comparison_rows(surface_state: Dict[str, Any]) ->
         _row(
             observable_id="theta12_deg",
             observable="theta12",
-            status="repaired_dimensionless",
+            status="weighted_cycle_dimensionless",
             prediction_value=float(pmns["theta12_deg"]),
             reference_value=NEUTRINO_PDG_2025_NO_CENTRAL["theta12_deg"],
             err_plus=NEUTRINO_PDG_2025_NO_1SIGMA["theta12_deg"]["plus"],
             err_minus=NEUTRINO_PDG_2025_NO_1SIGMA["theta12_deg"]["minus"],
             unit="deg",
-            note="Direct PMNS angle from the repaired weighted-cycle branch; no absolute mass anchor is used.",
+            note="Direct PMNS angle from the current weighted-cycle branch; no absolute mass anchor is used.",
         ),
         _row(
             observable_id="theta23_deg",
             observable="theta23",
-            status="repaired_dimensionless",
+            status="weighted_cycle_dimensionless",
             prediction_value=float(pmns["theta23_deg"]),
             reference_value=NEUTRINO_PDG_2025_NO_CENTRAL["theta23_deg"],
             err_plus=NEUTRINO_PDG_2025_NO_1SIGMA["theta23_deg"]["plus"],
             err_minus=NEUTRINO_PDG_2025_NO_1SIGMA["theta23_deg"]["minus"],
             unit="deg",
-            note="Direct PMNS angle from the repaired weighted-cycle branch; this lands inside the PDG 3sigma NO window near its upper edge.",
+            note="Direct PMNS angle from the current weighted-cycle branch; this lands inside the PDG 3sigma NO window near its upper edge.",
         ),
         _row(
             observable_id="theta13_deg",
             observable="theta13",
-            status="repaired_dimensionless",
+            status="weighted_cycle_dimensionless",
             prediction_value=float(pmns["theta13_deg"]),
             reference_value=NEUTRINO_PDG_2025_NO_CENTRAL["theta13_deg"],
             err_plus=NEUTRINO_PDG_2025_NO_1SIGMA["theta13_deg"]["plus"],
             err_minus=NEUTRINO_PDG_2025_NO_1SIGMA["theta13_deg"]["minus"],
             unit="deg",
-            note="Direct PMNS angle from the repaired weighted-cycle branch; no absolute mass anchor is used.",
+            note="Direct PMNS angle from the current weighted-cycle branch; no absolute mass anchor is used.",
         ),
         _row(
             observable_id="delta_cp_deg",
             observable="delta_CP",
-            status="repaired_dimensionless",
+            status="weighted_cycle_dimensionless",
             prediction_value=float(pmns["delta_deg"]),
             reference_value=NEUTRINO_PDG_2025_NO_CENTRAL["delta_deg"],
             err_plus=NEUTRINO_PDG_2025_NO_1SIGMA["delta_deg"]["plus"],
             err_minus=NEUTRINO_PDG_2025_NO_1SIGMA["delta_deg"]["minus"],
             unit="deg",
-            note="Direct PMNS phase from the repaired weighted-cycle branch; inside the PDG 3sigma NO window but displaced from the NO best fit.",
+            note="Direct PMNS phase from the current weighted-cycle branch; inside the PDG 3sigma NO window but displaced from the NO best fit.",
         ),
     ]
 
@@ -724,13 +725,13 @@ def build_neutrino_oscillation_comparison_rows(surface_state: Dict[str, Any]) ->
             {
                 "observable_id": "delta_m21_sq_over_delta_m32_sq",
                 "observable": "Delta m21^2 / Delta m32^2",
-                "status": "repaired_dimensionless",
+                "status": "weighted_cycle_dimensionless",
                 "prediction_value": float(ratio_value),
                 "prediction_display": format_scalar(float(ratio_value)),
                 "reference_value": float(ratio_reference),
                 "reference_display": format_scalar(float(ratio_reference)),
                 "delta_display": format_observable_delta(float(ratio_value), float(ratio_reference), ""),
-                "note": "Dimensionless hierarchy ratio from the repaired branch; this is the cleanest split comparison because it does not depend on the missing absolute normalization scalar.",
+                "note": "Dimensionless hierarchy ratio from the current weighted-cycle branch; this is the cleanest split comparison because it does not depend on the missing absolute normalization scalar.",
                 "reference_source_url": NEUTRINO_OSCILLATION_SOURCE_URL,
                 "reference_label": NEUTRINO_OSCILLATION_REFERENCE_LABEL,
                 "unit": "",
@@ -891,13 +892,13 @@ def render_markdown(
                 "## Premise Boundaries",
                 "",
                 f"- `uv_bw_internalization`: `{uv_boundary['status']}`",
-                f"- Next exact object: `{uv_boundary['remaining_object']}`",
-                f"- Follow-on object: `{uv_boundary['follow_on_object']}`",
-                f"- Remaining chain: `{uv_boundary['remaining_chain'][0]}` -> `{uv_boundary['remaining_chain'][1]}`",
+                f"- First exact object: `{uv_boundary['remaining_object']}`",
+                f"- Second exact object: `{uv_boundary['follow_on_object']}`",
+                f"- Remaining split: `{uv_boundary['remaining_objects'][0]}` + `{uv_boundary['remaining_objects'][1]}`",
                 f"- Internalized scope: {uv_boundary['current_internalized_scope']}",
                 f"- Why still open: {uv_boundary['reason_current_corpus_fails']}",
-                f"- Exact theorem object: {uv_boundary['statement']}",
-                f"- Follow-on theorem object: {uv_boundary['follow_on_statement']}",
+                f"- First theorem object: {uv_boundary['statement']}",
+                f"- Second theorem object: {uv_boundary['follow_on_statement']}",
                 f"- Candidate extension status: `{uv_boundary['candidate_extension_status']}`",
                 f"- Candidate extension route: {uv_boundary['candidate_extension_route']}",
                 f"- Candidate extension target: `{uv_boundary['candidate_extension_target']}`",

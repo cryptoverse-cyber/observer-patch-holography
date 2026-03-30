@@ -28,15 +28,14 @@ From this starting point (plus entropy and Markov constraints), OPH treats space
 
 ## Current Achievements
 
-- **There is now one clear entry point for the whole program.** *Observers Are All You Need* presents OPH on a single theorem/status surface, so readers can see in one place what the program is, what is already sharp, and what remains conditional.
 - **The basic machinery is now spelled out at finite resolution.** Technically, the collar package is constructive and interacting at fixed cutoff, and the topological branch closes on the ordinary, central-defect, and genuinely noncentral higher-gauge branches.
-- **There is a concrete route from overlap consistency to spacetime physics.** OPH derives schedule-independent overlap consistency and develops a conditional Lorentz/null-modular/Einstein branch under an explicit scaling-limit premise ledger.
-- **There is a concrete route from the overlap framework to known gauge structure.** OPH develops a conditional compact-gauge reconstruction route and, on the realized branch, recovers the Standard Model gauge quotient `SU(3) x SU(2) x U(1) / Z_6` together with the realized hypercharge/counting chain.
-- **The particle branch has moved beyond pure structural claims.** Structural massless carriers are fixed; the electroweak calibration stage now closes a target-free source-only `W/Z` theorem on the Phase II calibration tier; the Higgs/top stage emits quantitative rows; the wider quark, lepton, and neutrino sectors remain openly status-split rather than silently promoted, while hadrons are explicitly execution-bound rather than claimed as paper-derived outputs.
+- **There is a concrete route from the overlap framework to known gauge structure.** OPH develops a conditional compact-gauge reconstruction route and, on the realized branch, recovers the Standard Model gauge quotient `SU(3) x SU(2) x U(1) / Z_6` together with the realized hypercharge/counting chain; on that surface, the familiar low-energy Einstein-plus-Standard-Model EFT already appears as the natural long-distance language.
 - **Measurement and observers are treated as part of the physics, not just interpretation.** OPH now has fixed-cutoff record, Born-Luders, checkpoint/restoration, and observer-interface packages rather than treating observers as pure interpretation.
+- **The particle branch has moved beyond pure structural claims.** Structural massless carriers are fixed; the electroweak calibration stage now closes a target-free source-only `W/Z` theorem on the Phase II calibration tier; the Higgs/top stage emits quantitative rows; the wider quark, lepton, and neutrino sectors remain openly status-split rather than silently promoted, while hadrons are explicitly execution-bound rather than claimed as paper-derived outputs.
+- **There is a concrete route from overlap consistency to spacetime physics.** OPH derives schedule-independent overlap consistency and develops a conditional Lorentz/null-modular/Einstein branch under an explicit scaling-limit premise ledger.
 - **The microphysics side is concrete enough to build and test against.** The screen-microphysics paper gives a finite reference architecture with explicit registers, overlap observables, records, repair moves, and synchronization tests.
-- **The worldsheet/string lane is connected to the program without being overstated.** OPH relates the edge-sector heat-kernel theorem to a continuation-level worldsheet reorganization while keeping that branch outside the recovered core.
 - **There are already some hardware-facing signatures.** Early IBM Quantum Cloud benchmarks reproduce the expected reduced-sector recoverability ordering and exact-ratio patterns on real devices.
+- **The worldsheet/string lane is connected to the program without being overstated.** OPH relates the edge-sector heat-kernel theorem to a continuation-level worldsheet reorganization while keeping that branch outside the recovered core.
 
 ## Particle Status
 
@@ -45,8 +44,26 @@ read as a derivation document with real outputs in hand, not as a claim that the
 particle spectrum is finished.
 
 - **Exact structural outputs already on the current surface:** photon, gluons, graviton.
-- **Current strongest quantitative rows:** \(W\) boson and \(Z\) boson on the closed target-free electroweak calibration theorem, plus the Higgs boson and top quark on the Higgs/top critical stage.
-- **Still unfinished:** the broader quark family remains continuation-level and the current D12 sheet is now known to be a wrong-branch no-go for the physical CKM shell, so the next exact quark object is one discrete relative-sheet selector before any selected-branch mass-scale law; the charged-lepton lane has its centered shape closed but its absolute normalization still open because the determinant-normalization transport scalar has not yet been emitted; the repaired neutrino continuation branch matches the physical PMNS/hierarchy pattern but still lacks one positive absolute-normalization scalar; and hadrons are execution-bound because promotable rows require real nonperturbative production computation and systematics rather than theorem-only completion.
+- **Current strongest quantitative rows:** \(W\) boson and \(Z\) boson on the closed target-free electroweak calibration theorem, plus the Higgs boson and top quark on the Higgs/top critical stage. The neutrino weighted-cycle branch also reproduces the observed oscillation hierarchy extremely well once the compare-only atmospheric anchor is supplied.
+- **Still unfinished:** the broader quark family remains continuation-level and the current quark sheet is now known to be a wrong-branch no-go for the physical CKM shell, so the next exact quark object is one discrete relative-sheet selector before any selected-branch mass-scale law; the charged-lepton lane has its centered shape closed but its absolute normalization still open because the determinant-normalization transport scalar has not yet been emitted; the current weighted-cycle neutrino branch matches the physical PMNS/hierarchy pattern but still lacks one positive absolute-normalization scalar; and hadrons are execution-bound because promotable rows require real nonperturbative production computation and systematics rather than theorem-only completion.
+
+The table below contains the strongest current results.
+
+| Particle / observable | OPH value | PDG / reference | Error | Unit | Status / caveat |
+| --- | ---: | ---: | ---: | --- | --- |
+| Photon | `0` | `<1e-27` | `within bound` | `GeV` | exact structural zero; compared against the current photon mass upper bound |
+| Gluon | `0` | `no direct free-particle mass measurement` | `n/a` | `GeV` | exact structural zero for the color gauge sector; free gluons are confined |
+| Graviton | `0` | `<1e-32` | `within bound` | `GeV` | exact structural zero; compared against the current graviton mass upper bound |
+| W boson | `80.37700001539531` | `80.377` | `+1.539531e-08` | `GeV` | emitted on the closed target-free electroweak calibration theorem |
+| Z boson | `91.18797807794321` | `91.1879781` | `-2.205679e-08` | `GeV` | emitted on the same closed electroweak calibration theorem |
+| Higgs boson | `125.218922` | `125.19953` | `+0.019392` | `GeV` | secondary quantitative row on the Higgs/top critical stage |
+| top quark | `172.388646` | `172.352355` | `+0.036291` | `GeV` | secondary quantitative row on the Higgs/top critical stage |
+| Neutrino solar splitting `Δm21²` | `7.489806641884242e-5` | `7.49e-5` | `-1.933581e-9` | `eV^2` | compare-only absolute splitting; `lambda_nu` still open |
+| Neutrino atmospheric splitting `Δm32²` | `2.438e-3` | `2.438e-3` | `0` | `eV^2` | compare-only atmospheric anchor used to place the branch on an eV scale |
+| Neutrino normal-order splitting `Δm31²` | `2.5128980664188426e-3` | `2.5129e-3` | `-1.933581e-9` | `eV^2` | compare-only absolute splitting; `lambda_nu` still open |
+| Neutrino hierarchy ratio `Δm21² / Δm32²` | `0.030721110097966534` | `0.030721903199343724` | `-7.931014e-7` | `dimensionless` | theorem-grade scale-free hierarchy ratio on the weighted-cycle branch |
+
+Electroweak calibration works by fixing one shared pixel constant `P` on the source-side running/matching surface; once `P` is fixed, the target-free electroweak basis emits one coherent quintet `(W, Z, alpha_em^-1, sin^2 theta_W, v)` without separately fitting `W` and `Z`.
 
 As a program target, OPH aims to recover the familiar low-energy effective-action form from a compact axiom set, explicit bridge premises, and minimal external inputs:
 
@@ -85,7 +102,7 @@ At full completion, OPH aims to:
 - **PDF (compact submission paper):** [Recovering Relativity and Standard Model Structure from Observer-Overlap Consistency](paper/recovering_relativity_and_standard_model_structure_from_observer_overlap_consistency_compact.pdf)
 - **LaTeX source:** [recovering_relativity_and_standard_model_structure_from_observer_overlap_consistency_compact.tex](paper/recovering_relativity_and_standard_model_structure_from_observer_overlap_consistency_compact.tex)
 
-**Deriving the Particle Zoo from Observer Consistency** is the particle-spectrum status paper. It records the closed target-free electroweak \(W/Z\) theorem after fixing the shared calibration scale \(P\), tracks the current Higgs/top and quark outputs, states explicitly that the current D12 quark sheet is transport-closed but wrong-branch and therefore waits on one discrete relative-sheet selector before any selected-branch mass-scale law, states explicitly that the charged-lepton lane fixes only the centered log class until the determinant-normalization transport scalar is emitted, records the repaired neutrino PMNS/hierarchy branch together with its one remaining positive normalization scalar, and marks hadrons as execution-bound rather than paper-derived output rows.
+**Deriving the Particle Zoo from Observer Consistency** is the particle-spectrum status paper. It records the closed target-free electroweak \(W/Z\) theorem after fixing the shared calibration scale \(P\), tracks the current Higgs/top and quark outputs, states explicitly that the current quark sheet is transport-closed but wrong-branch and therefore waits on one discrete relative-sheet selector before any selected-branch mass-scale law, states explicitly that the charged-lepton lane fixes only the centered log class until the determinant-normalization transport scalar is emitted, records the current weighted-cycle neutrino branch with `theta12 = 34.2259°`, `theta23 = 49.7228°`, `theta13 = 8.68636°`, `delta = 305.581°`, and `Delta m21^2 / Delta m32^2 = 0.03072111`, compares those numbers directly against the PDG oscillation surface, explains that `lambda_nu` is the one remaining positive normalization scalar for absolute neutrino masses, and marks hadrons as execution-bound rather than paper-derived output rows.
 
 - **PDF:** [Deriving the Particle Zoo from Observer Consistency](paper/deriving_the_particle_zoo_from_observer_consistency.pdf)
 - **LaTeX source:** [deriving_the_particle_zoo_from_observer_consistency.tex](paper/deriving_the_particle_zoo_from_observer_consistency.tex)

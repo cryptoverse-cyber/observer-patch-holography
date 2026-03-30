@@ -4,20 +4,20 @@
   "compare_only_atmospheric_anchor": {
     "adapter_formula": "lambda_nu_cmp = sqrt(Delta m32^2_anchor / Delta_hat_32)",
     "adapter_status": "hard_separated_compare_only_adapter",
-    "delta_m21_sq_eV2": 7.688870300464483e-05,
-    "delta_m31_sq_eV2": 0.0025098887030046446,
-    "delta_m32_sq_eV2": 0.002433,
-    "delta_m32_sq_input_eV2": 0.002433,
-    "lambda_nu_cmp": 1.784113126943906,
-    "m0": 1.784113126943906,
+    "delta_m21_sq_eV2": 7.489806641884242e-05,
+    "delta_m31_sq_eV2": 0.0025128980664188426,
+    "delta_m32_sq_eV2": 0.002438,
+    "delta_m32_sq_input_eV2": 0.002438,
+    "lambda_nu_cmp": 1.7239025033361262,
+    "m0": 1.7239025033361262,
     "masses_eV": [
-      0.0173038239577873,
-      0.01939873775704849,
-      0.05300293413167556
+      0.017456756479999103,
+      0.019484260653687455,
+      0.053081413067295344
     ],
     "normalization_kind": "atmospheric_anchor",
     "status": "compare_only",
-    "sum_masses_eV": 0.08970549584651136
+    "sum_masses_eV": 0.0900224302009819
   },
   "cycle_basis_order": [
     "f3",
@@ -27,30 +27,31 @@
   "defect_gap_ratio": 0.10458455029121368,
   "diag_loading": 1.1045845502912137,
   "dimensionless_dm2": {
-    "21": 2.415559601940881e-05,
-    "31": 0.0007885145046574088,
-    "32": 0.000764358908638
+    "21": 2.520259180367675e-05,
+    "31": 0.0008455698156217034,
+    "32": 0.0008203672238180266
   },
   "dimensionless_masses": [
-    0.009698837868777897,
-    0.010873042445619763,
-    0.029708281011567278
+    0.010126301485273374,
+    0.011302414501969324,
+    0.03079142408841061
   ],
-  "dimensionless_ratio_dm21_over_dm32": 0.031602426224679334,
+  "dimensionless_ratio_dm21_over_dm32": 0.030721110097966534,
   "edge_weights": {
-    "psi12": 0.015500429962169287,
-    "psi23": 0.009151812121696877,
-    "psi31": 0.003999026148685999
+    "psi12": 0.016054473183336446,
+    "psi23": 0.009521121609161645,
+    "psi31": 0.004189533594250126
   },
   "final_verdict": "scale_free_physical_branch_closed_absolute_normalization_open",
   "gamma": 0.30236566025890826,
+  "gamma_half": 0.15118283012945413,
   "gamma_times_eps": 0.03162277660168382,
-  "generated_utc": "2026-03-30T06:18:38Z",
+  "generated_utc": "2026-03-30T07:51:36Z",
   "holonomy_orientation": "021",
   "neutrino_branch_status": "repaired_shared_basis_weighted_cycle_lift",
   "notes": [
     "The repaired weighted-cycle branch closes PMNS angles and the neutrino splitting hierarchy from live OPH artifacts.",
-    "Sharper compare-only law-space audits can be used diagnostically, but they are not promoted unless their coefficients are emitted by the live corpus rather than inferred from comparison.",
+    "The weight exponent is fixed by the live same-label certificate, the overlap-edge cocycle invariants, and the log-affine midpoint selector on the positive segment between chi and 1 + gamma_half.",
     "The theorem-grade repaired branch is scale-free: it emits PMNS observables, J, the hierarchy ratio, and one symbolic positive absolute family parameterized by lambda_nu > 0.",
     "Absolute neutrino masses and absolute delta m^2 values still require one overall positive normalization; the atmospheric-anchored numbers are hard-separated compare-only outputs.",
     "This artifact supersedes the old isotropic continuation branch as the strongest honest neutrino branch on disk."
@@ -103,19 +104,19 @@
   "physical_window_status": "pmns_and_hierarchy_repaired",
   "pmns_abs": [
     [
-      0.8198517449449622,
-      0.5524894520600562,
-      0.15032804686112056
+      0.8173425625636912,
+      0.5560058088046098,
+      0.15102541507094358
     ],
     [
-      0.4259218497100867,
-      0.49875001524684354,
-      0.7548768112949369
+      0.4261549012369229,
+      0.4996117402576609,
+      0.7541751183567779
     ],
     [
-      0.38266655752788087,
-      0.6678351800060038,
-      0.6384062014862553
+      0.38774106769024036,
+      0.6642632381610797,
+      0.6390705867540682
     ]
   ],
   "pmns_imag": [
@@ -125,42 +126,42 @@
       0.0
     ],
     [
-      0.3303722753936005,
-      -0.45864214283096344,
-      -0.11615490683972811
+      0.3399410071301112,
+      -0.4677940542769522,
+      -0.11754341067444676
     ],
     [
-      0.3747463206784323,
-      -0.6056448115043401,
-      0.18210803441371848
+      0.382819069090264,
+      -0.6126151837361802,
+      0.18356699617553507
     ]
   ],
   "pmns_observables": {
-    "J": -0.026522158828835723,
-    "delta_deg": 307.81750422696206,
-    "delta_rad": 5.37242894403205,
-    "theta12_deg": 33.97561492020427,
-    "theta12_rad": 0.592986345747275,
-    "theta13_deg": 8.645937826302099,
-    "theta13_rad": 0.15090008199169322,
-    "theta23_deg": 49.778494281953684,
-    "theta23_rad": 0.8687986219052624
+    "J": -0.02753115613565372,
+    "delta_deg": 305.58061231449796,
+    "delta_rad": 5.333387815148319,
+    "theta12_deg": 34.225904631810025,
+    "theta12_rad": 0.5973547252986625,
+    "theta13_deg": 8.686355527700156,
+    "theta13_rad": 0.15160550395717723,
+    "theta23_deg": 49.72282845058266,
+    "theta23_rad": 0.867827069866978
   },
   "pmns_real": [
     [
-      -0.8198517449449622,
-      -0.5524894520600562,
-      -0.15032804686112056
+      -0.8173425625636912,
+      -0.5560058088046098,
+      -0.15102541507094358
     ],
     [
-      0.2688188641292063,
-      -0.19595653224158877,
-      -0.7458867459928926
+      0.2569982714331308,
+      -0.17544404745222986,
+      -0.7449588282284318
     ],
     [
-      0.07745249762413461,
-      -0.2814217297074336,
-      0.6118816404322662
+      0.06158486757663145,
+      -0.2568039840581324,
+      0.6121391776134575
     ]
   ],
   "pmns_row_order_for_pdg": [
@@ -173,55 +174,59 @@
   "repaired_cycle_matrix_imag": [
     [
       0.0,
-      -0.003284486316883438,
-      -0.004173164733547774
+      -0.0034409541855482603,
+      -0.004341567374288044
     ],
     [
-      -0.003284486316883438,
+      -0.0034409541855482603,
       0.0,
-      -0.004860208274716927
+      -0.005033930258857977
     ],
     [
-      -0.004173164733547774,
-      -0.004860208274716927,
+      -0.004341567374288044,
+      -0.005033930258857977,
       0.0
     ]
   ],
   "repaired_cycle_matrix_real": [
     [
-      -0.004417262500049129,
-      0.002281306593178533,
-      0.008144959252047307
+      -0.004627694081134708,
+      0.0023899845251189994,
+      0.008473638500134547
     ],
     [
-      0.002281306593178533,
-      -0.017121535459083216,
-      0.014718753498122334
+      0.0023899845251189994,
+      -0.017733523041378037,
+      0.01524485668490928
     ],
     [
-      0.008144959252047307,
-      0.014718753498122334,
-      -0.010108950276794223
+      0.008473638500134547,
+      0.01524485668490928,
+      -0.010516883830923774
     ]
   ],
   "scale_free_dm2_normal_form": {
     "dm2": {
-      "21": 2.415559601940881e-05,
-      "31": 0.0007885145046574088,
-      "32": 0.000764358908638
+      "21": 2.520259180367675e-05,
+      "31": 0.0008455698156217034,
+      "32": 0.0008203672238180266
     },
     "notation": "Delta_hat",
-    "ratio_21_over_32": 0.031602426224679334
+    "ratio_21_over_32": 0.030721110097966534
   },
   "scale_free_mass_normal_form": {
     "masses": [
-      0.009698837868777897,
-      0.010873042445619763,
-      0.029708281011567278
+      0.010126301485273374,
+      0.011302414501969324,
+      0.03079142408841061
     ],
     "normalization_convention": "internal_weighted_cycle_branch_normal_form",
     "notation": "m_hat"
   },
+  "selected_D_nu": 1.127883690210334,
+  "selected_tau_nu": 0.5,
+  "selected_transport_load_formula": "D_tau = (1-tau_nu) * chi + tau_nu * (1 + gamma_half)",
+  "selected_transport_load_selector": "balanced_equals_least_distortion_midpoint",
   "selector_phases_absolute": {
     "psi12": 0.31893255645006824,
     "psi23": 0.4734879499188133,
@@ -231,21 +236,29 @@
     "isotropic_reference_bundle": "/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/code/particles/runs/neutrino/forward_neutrino_closure_bundle.json",
     "overlap_edge_transport_cocycle": "/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/code/particles/runs/flavor/overlap_edge_transport_cocycle.json",
     "same_label_scalar_certificate": "/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/code/particles/runs/neutrino/same_label_scalar_certificate.json",
-    "selector_phase_source": "/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/code/particles/runs/neutrino/intrinsic_neutrino_mass_eigenstate_bundle_from_scalar_certificate.json"
+    "selector_phase_source": "/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/code/particles/runs/neutrino/intrinsic_neutrino_mass_eigenstate_bundle_from_scalar_certificate.json",
+    "transport_load_selector": "/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/code/particles/runs/neutrino/neutrino_transport_load_segment_selector.json"
   },
   "symbolic_absolute_family": {
     "absolute_dm2": {
-      "21": "Delta m21^2 = lambda_nu^2 * 2.415559601940881e-05",
-      "31": "Delta m31^2 = lambda_nu^2 * 7.885145046574088e-04",
-      "32": "Delta m32^2 = lambda_nu^2 * 7.64358908638e-04"
+      "21": "Delta m21^2 = lambda_nu^2 * 2.520259180367675e-05",
+      "31": "Delta m31^2 = lambda_nu^2 * 0.0008455698156217034",
+      "32": "Delta m32^2 = lambda_nu^2 * 0.0008203672238180266"
     },
     "absolute_masses": [
-      "m1 = lambda_nu * 0.009698837868777897",
-      "m2 = lambda_nu * 0.010873042445619763",
-      "m3 = lambda_nu * 0.029708281011567278"
+      "m1 = lambda_nu * 0.010126301485273374",
+      "m2 = lambda_nu * 0.011302414501969324",
+      "m3 = lambda_nu * 0.03079142408841061"
     ],
     "family_parameter": "lambda_nu > 0"
   },
   "theorem_status": "dimensionless_physical_branch_closed_absolute_normalization_open",
-  "weight_exponent": 1.406950210550122
+  "transport_load_selector_equivalence_statement": "On a one-dimensional affine segment, the balanced barycentric selector and the least-distortion selector for any positive translation-invariant quadratic form coincide uniquely at the midpoint.",
+  "transport_load_selector_family": [
+    "balanced",
+    "least_distortion"
+  ],
+  "transport_load_selector_status": "standard_math_fixed_balanced_segment_selector_closed",
+  "weight_exponent": 1.395092021318097,
+  "weight_exponent_formula": "p = 1 + gamma + eps / D_nu"
 }

@@ -1,0 +1,123 @@
+#!/usr/bin/env python3
+"""Audit the missing absolute-amplitude bridge for the repaired neutrino lane.
+
+Chain role: state the exact remaining amplitude attachment problem after the
+dimensionless weighted-cycle law is fixed.
+
+Mathematics: the repaired weighted-cycle branch emits only a scale-free normal
+form `m_i = lambda_nu * mhat_i`, `Delta m^2_ij = lambda_nu^2 * Delta_hat_ij`.
+The current D10 scale anchor `m_star` is dimensionful, but no emitted theorem
+attaches it to the repaired weighted-cycle normal form. This script records
+that missing bridge and the direct-attachment diagnostic.
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any
+
+
+ROOT = Path(__file__).resolve().parents[2]
+DEFAULT_REPAIR = ROOT / "particles" / "runs" / "neutrino" / "neutrino_weighted_cycle_repair.json"
+DEFAULT_SCALE_ANCHOR = ROOT / "particles" / "runs" / "neutrino" / "neutrino_scale_anchor.json"
+DEFAULT_OUT = ROOT / "particles" / "runs" / "neutrino" / "neutrino_weighted_cycle_absolute_amplitude_bridge.json"
+
+
+def _timestamp() -> str:
+    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def _load_json(path: Path) -> dict[str, Any]:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description="Build the repaired neutrino absolute-amplitude bridge audit.")
+    parser.add_argument("--repair", default=str(DEFAULT_REPAIR))
+    parser.add_argument("--scale-anchor", default=str(DEFAULT_SCALE_ANCHOR))
+    parser.add_argument("--output", default=str(DEFAULT_OUT))
+    args = parser.parse_args()
+
+    repair = _load_json(Path(args.repair))
+    scale_anchor = _load_json(Path(args.scale_anchor))
+
+    if repair.get("artifact") != "oph_neutrino_weighted_cycle_repair":
+        raise SystemExit("repair artifact mismatch")
+    if scale_anchor.get("artifact") != "oph_neutrino_scale_anchor":
+        raise SystemExit("scale-anchor artifact mismatch")
+
+    mhat = [float(x) for x in repair["scale_free_mass_normal_form"]["masses"]]
+    dh = {key: float(val) for key, val in repair["scale_free_dm2_normal_form"]["dm2"].items()}
+    m_star_eV = float(scale_anchor["anchors"]["m_star_gev"]) * 1.0e9
+
+    direct_masses = [m_star_eV * x for x in mhat]
+    direct_dm2 = {key: m_star_eV * m_star_eV * val for key, val in dh.items()}
+    compare_only_anchor = dict(repair.get("compare_only_atmospheric_anchor") or {})
+    compare_anchor_dm32 = float(compare_only_anchor.get("delta_m32_sq_input_eV2") or 0.0)
+    direct_shortfall = None
+    if compare_anchor_dm32 > 0.0 and direct_dm2["32"] > 0.0:
+        direct_shortfall = compare_anchor_dm32 / direct_dm2["32"]
+
+    payload = {
+        "artifact": "oph_neutrino_weighted_cycle_absolute_amplitude_bridge",
+        "generated_utc": _timestamp(),
+        "status": "constructive_extension_required",
+        "theorem_status": "dimensionless_branch_closed_absolute_bridge_open",
+        "source_artifacts": {
+            "neutrino_weighted_cycle_repair": str(Path(args.repair)),
+            "neutrino_scale_anchor": str(Path(args.scale_anchor)),
+        },
+        "fixed_live_objects": {
+            "scale_free_mass_normal_form": repair.get("scale_free_mass_normal_form"),
+            "scale_free_dm2_normal_form": repair.get("scale_free_dm2_normal_form"),
+            "pmns_observables": repair.get("pmns_observables"),
+            "m_star_gev": scale_anchor["anchors"]["m_star_gev"],
+            "m_star_formula": scale_anchor["anchors"]["m_star_formula"],
+        },
+        "no_go_statement": (
+            "The repaired weighted-cycle branch emits only a scale-free normal form, while the live D10 neutrino scale anchor emits only the isotropic amplitude scale m_star. "
+            "No emitted theorem presently attaches that dimensionful anchor to the repaired weighted-cycle normal form, so lambda_nu cannot be emitted from the current corpus."
+        ),
+        "direct_scale_anchor_attachment_diagnostic": {
+            "candidate_rule": "lambda_nu = m_star_eV",
+            "m_star_eV": m_star_eV,
+            "absolute_masses_eV": direct_masses,
+            "absolute_dm2_eV2": direct_dm2,
+            "compare_only_atmospheric_shortfall_factor": direct_shortfall,
+            "status": "diagnostic_only_nonpromotable",
+        },
+        "remaining_object": "neutrino_weighted_cycle_absolute_amplitude_bridge",
+        "remaining_object_kind": "dimensionful_attachment_theorem",
+        "remaining_object_contract": {
+            "must_emit": "A_nu > 0",
+            "role": "dimensionful amplitude that upgrades the repaired weighted-cycle normal form to absolute masses and splittings",
+            "absolute_mass_rule": "m_i = A_nu * mhat_i",
+            "absolute_splitting_rule": "Delta m^2_ij = A_nu^2 * Delta_hat_ij",
+            "no_external_inputs": [
+                "measured_oscillation_targets",
+                "external_eV_anchor",
+            ],
+            "specialization_requirement": "On the isotropic specialization, the bridge must reduce to the live D10 scale anchor or an emitted equivalent attachment law.",
+        },
+        "equivalent_scalar": {
+            "name": "lambda_nu",
+            "relation_to_bridge": "lambda_nu = A_nu in the eV-valued normalization used by the repaired weighted-cycle artifact",
+        },
+        "notes": [
+            "This artifact does not reopen the dimensionless selector question; that question is already fixed by the repaired weighted-cycle branch.",
+            "The remaining gap is a dimensionful attachment theorem between the repaired weighted-cycle normal form and the live D10 amplitude sector.",
+        ],
+    }
+
+    out_path = Path(args.output)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    print(f"saved: {out_path}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

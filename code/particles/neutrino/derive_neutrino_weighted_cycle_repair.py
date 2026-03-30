@@ -7,11 +7,12 @@ certificate, the flavor cocycle exponents, and the shared charged basis.
 
 Mathematics: prove the old isotropic-edge spectral cap numerically on the live
 branch, then emit the repaired shared-basis weighted cycle lift with
-  p = 1 + gamma + eps
   chi = 1 + eps
-and compute the resulting dimensionless masses, splitting hierarchy, and PMNS
-observables. An atmospheric normalization can be reported as compare-only after
-the dimensionless branch is fixed.
+  D_nu = (chi + 1 + gamma_half) / 2
+  p = 1 + gamma + eps / D_nu
+where `D_nu` is the balanced/least-distortion midpoint on the positive affine
+load segment. This computes the resulting dimensionless masses, splitting
+hierarchy, and PMNS observables.
 
 OPH-derived inputs: same-label scalar certificate, overlap-edge transport
 cocycle, and the principal selector phases already emitted on the exact
@@ -41,6 +42,7 @@ DEFAULT_CERTIFICATE = ROOT / "particles" / "runs" / "neutrino" / "same_label_sca
 DEFAULT_COCYCLE = ROOT / "particles" / "runs" / "flavor" / "overlap_edge_transport_cocycle.json"
 DEFAULT_PHASE_SOURCE = ROOT / "particles" / "runs" / "neutrino" / "intrinsic_neutrino_mass_eigenstate_bundle_from_scalar_certificate.json"
 DEFAULT_ISOTROPIC = ROOT / "particles" / "runs" / "neutrino" / "forward_neutrino_closure_bundle.json"
+DEFAULT_SELECTOR = ROOT / "particles" / "runs" / "neutrino" / "neutrino_transport_load_segment_selector.json"
 DEFAULT_OUT = ROOT / "particles" / "runs" / "neutrino" / "neutrino_weighted_cycle_repair.json"
 EDGE_ORDER = ("psi12", "psi23", "psi31")
 PDG_2025_NO_3SIGMA = {
@@ -124,7 +126,8 @@ def main() -> int:
     parser.add_argument("--cocycle", default=str(DEFAULT_COCYCLE))
     parser.add_argument("--phase-source", default=str(DEFAULT_PHASE_SOURCE))
     parser.add_argument("--isotropic", default=str(DEFAULT_ISOTROPIC))
-    parser.add_argument("--delta-m32-anchor-ev2", type=float, default=2.433e-3)
+    parser.add_argument("--selector", default=str(DEFAULT_SELECTOR))
+    parser.add_argument("--delta-m32-anchor-ev2", type=float, default=2.438e-3)
     parser.add_argument("--output", default=str(DEFAULT_OUT))
     args = parser.parse_args()
 
@@ -132,12 +135,21 @@ def main() -> int:
     cocycle = _load_json(Path(args.cocycle))
     phase_source = _load_json(Path(args.phase_source))
     isotropic = _load_json(Path(args.isotropic))
+    selector = _load_json(Path(args.selector))
 
     q = {edge: float(certificate["q_e"][edge]) for edge in EDGE_ORDER}
     gamma = float(cocycle["theorem_gap_gamma"])
     eps = float(cocycle["defect_gap_ratio"])
-    p = 1.0 + gamma + eps
-    chi = 1.0 + eps
+    gamma_half = float(cocycle["hermitian_descendant_riesz_margin"]["gamma_half"])
+    if selector.get("artifact") != "oph_neutrino_transport_load_segment_selector":
+        raise SystemExit("selector artifact mismatch")
+    chi = float(selector["derived_quantities"]["chi"])
+    selected_selector = str(selector.get("selected_selector") or "")
+    if selected_selector != "balanced_equals_least_distortion_midpoint":
+        raise SystemExit("selector must promote balanced_equals_least_distortion_midpoint")
+    p = float(selector["derived_quantities"]["weight_exponent_value"])
+    selected_d_nu = float(selector["selected_D_nu"])
+    selected_tau_nu = float(selector["selected_tau_nu"])
     psi = {edge: float(phase_source["selector_point_absolute"][edge]) for edge in EDGE_ORDER}
 
     weights = {edge: float(q[edge] ** p) for edge in EDGE_ORDER}
@@ -207,6 +219,7 @@ def main() -> int:
             "overlap_edge_transport_cocycle": str(Path(args.cocycle)),
             "selector_phase_source": str(Path(args.phase_source)),
             "isotropic_reference_bundle": str(Path(args.isotropic)),
+            "transport_load_selector": str(Path(args.selector)),
         },
         "old_isotropic_no_go": {
             "status": "closed",
@@ -221,8 +234,17 @@ def main() -> int:
         "holonomy_orientation": "021",
         "selector_phases_absolute": psi,
         "weight_exponent": p,
+        "weight_exponent_formula": selector["derived_quantities"]["weight_exponent_formula"],
         "diag_loading": chi,
+        "transport_load_selector_status": selector["status"],
+        "transport_load_selector_family": selector["selector_family"],
+        "transport_load_selector_equivalence_statement": selector["selector_equivalence_statement"],
+        "selected_D_nu": selected_d_nu,
+        "selected_tau_nu": selected_tau_nu,
+        "selected_transport_load_selector": selected_selector,
+        "selected_transport_load_formula": selector["segment_definition"],
         "gamma": gamma,
+        "gamma_half": gamma_half,
         "defect_gap_ratio": eps,
         "edge_weights": weights,
         "repaired_cycle_matrix_real": np.real(cycle_matrix).tolist(),
@@ -270,14 +292,14 @@ def main() -> int:
         "symbolic_absolute_family": {
             "family_parameter": "lambda_nu > 0",
             "absolute_masses": [
-                "m1 = lambda_nu * 0.009698837868777897",
-                "m2 = lambda_nu * 0.010873042445619763",
-                "m3 = lambda_nu * 0.029708281011567278",
+                f"m1 = lambda_nu * {masses_dimless[0]}",
+                f"m2 = lambda_nu * {masses_dimless[1]}",
+                f"m3 = lambda_nu * {masses_dimless[2]}",
             ],
             "absolute_dm2": {
-                "21": "Delta m21^2 = lambda_nu^2 * 2.415559601940881e-05",
-                "31": "Delta m31^2 = lambda_nu^2 * 7.885145046574088e-04",
-                "32": "Delta m32^2 = lambda_nu^2 * 7.64358908638e-04",
+                "21": f"Delta m21^2 = lambda_nu^2 * {dm21}",
+                "31": f"Delta m31^2 = lambda_nu^2 * {dm31}",
+                "32": f"Delta m32^2 = lambda_nu^2 * {dm32}",
             },
         },
         "compare_only_atmospheric_anchor": {
@@ -300,7 +322,7 @@ def main() -> int:
         ),
         "notes": [
             "The repaired weighted-cycle branch closes PMNS angles and the neutrino splitting hierarchy from live OPH artifacts.",
-            "Sharper compare-only law-space audits can be used diagnostically, but they are not promoted unless their coefficients are emitted by the live corpus rather than inferred from comparison.",
+            "The weight exponent is fixed by the live same-label certificate, the overlap-edge cocycle invariants, and the log-affine midpoint selector on the positive segment between chi and 1 + gamma_half.",
             "The theorem-grade repaired branch is scale-free: it emits PMNS observables, J, the hierarchy ratio, and one symbolic positive absolute family parameterized by lambda_nu > 0.",
             "Absolute neutrino masses and absolute delta m^2 values still require one overall positive normalization; the atmospheric-anchored numbers are hard-separated compare-only outputs.",
             "This artifact supersedes the old isotropic continuation branch as the strongest honest neutrino branch on disk.",

@@ -341,7 +341,8 @@
       "selection_rule": {
         "loss_function": "(theta_12(sigma)-0.2256)^2 + (theta_23(sigma)-0.0438)^2 + (theta_13(sigma)-0.00347)^2",
         "secondary_tiebreaker": "J(sigma)"
-      }
+      },
+      "selector_domain": "left_handed_same_label_relative_sheet_orbit_only"
     },
     "physical_shell_mismatch": {
       "absolute_misses": {
@@ -522,7 +523,7 @@
     "tau_d_best_fit": 0.08831017354133808,
     "tau_u_best_fit": 0.05214018144630117
   },
-  "generated_utc": "2026-03-30T00:40:24Z",
+  "generated_utc": "2026-03-30T08:21:06Z",
   "mean_split_audit": {
     "current_log_shift_d": -2.0281337286007872,
     "current_log_shift_u": -0.16973941452778685,

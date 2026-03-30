@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Compare-only audit of simple neutrino weighted-cycle law candidates."""
+"""Audit simple neutrino weighted-cycle law candidates around the live selector."""
 
 from __future__ import annotations
 
@@ -17,6 +17,7 @@ ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_CERTIFICATE = ROOT / "particles" / "runs" / "neutrino" / "same_label_scalar_certificate.json"
 DEFAULT_COCYCLE = ROOT / "particles" / "runs" / "flavor" / "overlap_edge_transport_cocycle.json"
 DEFAULT_PHASE_SOURCE = ROOT / "particles" / "runs" / "neutrino" / "intrinsic_neutrino_mass_eigenstate_bundle_from_scalar_certificate.json"
+DEFAULT_SELECTOR = ROOT / "particles" / "runs" / "neutrino" / "neutrino_transport_load_segment_selector.json"
 DEFAULT_OUT = ROOT / "particles" / "runs" / "neutrino" / "neutrino_dimensionless_law_candidate_audit.json"
 EDGE_ORDER = ("psi12", "psi23", "psi31")
 
@@ -105,32 +106,72 @@ def _candidate_surface(q: dict[str, float], psi: dict[str, float], p: float, chi
     }
 
 
+def _segment_candidate(
+    q: dict[str, float],
+    psi: dict[str, float],
+    *,
+    gamma: float,
+    eps: float,
+    chi: float,
+    denominator: float,
+) -> dict[str, Any]:
+    payload = _candidate_surface(q, psi, 1.0 + gamma + eps / denominator, chi)
+    payload["segment_denominator"] = float(denominator)
+    return payload
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Audit compare-only neutrino weighted-cycle law candidates.")
     parser.add_argument("--certificate", default=str(DEFAULT_CERTIFICATE))
     parser.add_argument("--cocycle", default=str(DEFAULT_COCYCLE))
     parser.add_argument("--phase-source", default=str(DEFAULT_PHASE_SOURCE))
+    parser.add_argument("--selector", default=str(DEFAULT_SELECTOR))
     parser.add_argument("--output", default=str(DEFAULT_OUT))
     args = parser.parse_args()
 
     certificate = _load_json(Path(args.certificate))
     cocycle = _load_json(Path(args.cocycle))
     phase_source = _load_json(Path(args.phase_source))
+    selector = _load_json(Path(args.selector))
 
     q = {edge: float(certificate["q_e"][edge]) for edge in EDGE_ORDER}
     psi = {edge: float(phase_source["selector_point_absolute"][edge]) for edge in EDGE_ORDER}
     gamma = float(cocycle["theorem_gap_gamma"])
     eps = float(cocycle["defect_gap_ratio"])
+    gamma_half = float(cocycle["hermitian_descendant_riesz_margin"]["gamma_half"])
+    chi = 1.0 + eps
     representative_ratio = 7.49e-5 / 2.438e-3
 
+    segment_arithmetic = (chi + 1.0 + gamma_half) / 2.0
+    segment_geometric = math.sqrt(chi * (1.0 + gamma_half))
+    segment_harmonic = 2.0 / ((1.0 / chi) + (1.0 / (1.0 + gamma_half)))
+
     candidates = {
-        "current_law": _candidate_surface(q, psi, 1.0 + gamma + eps, 1.0 + eps),
-        "normalized_eps_over_chi": _candidate_surface(q, psi, 1.0 + gamma + eps / (1.0 + eps), 1.0 + eps),
-        "midpoint_normalized_gap_defect": _candidate_surface(
+        "current_law": _candidate_surface(q, psi, 1.0 + gamma + eps, chi),
+        "normalized_eps_over_chi": _candidate_surface(q, psi, 1.0 + gamma + eps / chi, chi),
+        "midpoint_normalized_gap_defect": _segment_candidate(
             q,
             psi,
-            1.0 + gamma + eps / (1.0 + eps / 2.0 + gamma / 4.0),
-            1.0 + eps,
+            gamma=gamma,
+            eps=eps,
+            chi=chi,
+            denominator=segment_arithmetic,
+        ),
+        "segment_geometric_mean": _segment_candidate(
+            q,
+            psi,
+            gamma=gamma,
+            eps=eps,
+            chi=chi,
+            denominator=segment_geometric,
+        ),
+        "segment_harmonic_mean": _segment_candidate(
+            q,
+            psi,
+            gamma=gamma,
+            eps=eps,
+            chi=chi,
+            denominator=segment_harmonic,
         ),
     }
     for payload in candidates.values():
@@ -154,16 +195,40 @@ def main() -> int:
     artifact = {
         "artifact": "oph_neutrino_dimensionless_law_candidate_audit",
         "generated_utc": _timestamp(),
-        "status": "compare_only_law_space_audit",
+        "status": "law_space_audit_around_live_selector",
         "public_promotion_allowed": False,
         "source_artifacts": {
             "same_label_scalar_certificate": str(Path(args.certificate)),
             "overlap_edge_transport_cocycle": str(Path(args.cocycle)),
             "selector_phase_source": str(Path(args.phase_source)),
+            "transport_load_selector": str(Path(args.selector)),
         },
         "live_parameters": {
             "gamma": gamma,
+            "gamma_half": gamma_half,
             "defect_gap_ratio": eps,
+            "chi": chi,
+        },
+        "midpoint_equivalent_law": {
+            "denominator_formula": "D_mid = 1 + eps/2 + gamma/4 = 1 + eps/2 + gamma_half/2 = (chi + 1 + gamma_half)/2",
+            "selector_family": "D_tau = (1-tau_nu) * chi + tau_nu * (1 + gamma_half)",
+            "midpoint_choice": "tau_nu = 1/2",
+            "theorem_status": "live_standard_math_fixed_selector",
+            "exact_missing_object": None,
+        },
+        "live_promoted_selector": {
+            "selector_id": selector.get("selected_selector"),
+            "D_nu": selector.get("selected_D_nu"),
+            "weight_exponent_value": selector.get("derived_quantities", {}).get("weight_exponent_value"),
+            "closure_scope": selector.get("closure_scope"),
+        },
+        "segment_selector_candidates": {
+            "left_endpoint_chi": chi,
+            "right_endpoint_one_plus_gamma_half": 1.0 + gamma_half,
+            "arithmetic_mean": segment_arithmetic,
+            "geometric_mean": segment_geometric,
+            "harmonic_mean": segment_harmonic,
+            "note": "These are selector candidates on the positive load segment between chi and 1 + gamma_half. The arithmetic midpoint is the live standard-math-fixed selector because balanced and least-distortion coincide on a one-dimensional affine segment. The geometric and harmonic means remain compare-only alternatives, and all three mean selectors outperform the legacy raw-defect law by a wide margin.",
         },
         "representative_pdg_central_ratio": {
             "delta_m21_sq_eV2": 7.49e-5,
@@ -175,7 +240,7 @@ def main() -> int:
         "ranking_by_absolute_ratio_error": ranking,
         "leading_observation": {
             "candidate": ranking[0]["candidate"] if ranking else None,
-            "note": "The leading candidate may be numerically excellent without yet being derivable honestly from the current theorem surface.",
+            "note": "The full positive-load segment family between chi and 1 + gamma_half is explicit in the audit. The arithmetic midpoint is the live standard-math-fixed selector on the repaired branch, while the geometric mean remains the numerical leader by raw central-ratio error on this compare-only audit surface.",
         },
     }
 
@@ -188,4 +253,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

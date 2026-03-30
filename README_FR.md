@@ -26,15 +26,14 @@ Les lois de la physique sont les règles de cohérence qui rendent cet accord in
 
 ## Succès actuels
 
-- **Il existe maintenant un point d'entrée clair pour l'ensemble du programme.** *Observers Are All You Need* rassemble l'OPH sur une même surface théorématique et de statut, de sorte qu'on voit en un seul endroit ce qu'est le programme, ce qui est déjà net et ce qui reste conditionnel.
 - **La machinerie de base est désormais décrite à résolution finie.** Techniquement, le paquet de collerette est constructif et interactif à cutoff fixe, et la branche topologique est fermée sur les cas ordinaire, à défaut central, et vraiment non central de type jauge supérieure.
-- **Il existe une voie concrète depuis la cohérence de recouvrement vers la physique de l'espace-temps.** L'OPH dérive une structure de cohérence indépendante de l'ordre des mises à jour et développe une branche conditionnelle Lorentz/null-modulaire/Einstein sous un paquet explicite de prémisses de limite d'échelle.
-- **Il existe une voie concrète depuis le cadre de recouvrement vers la structure de jauge connue.** L'OPH développe une reconstruction conditionnelle de la jauge compacte et retrouve, sur la branche réalisée, le quotient de jauge du Modèle Standard `SU(3) x SU(2) x U(1) / Z_6` avec la chaîne actuelle de quantification des charges et de comptage.
-- **La branche particules dépasse désormais les seuls énoncés structurels.** Les porteurs structurels sans masse sont fixés ; l'étage de calibration électrofaible ferme désormais un théorème source-only sans cible gelée pour `W/Z` au niveau Phase II calibration ; l'étage Higgs/top produit déjà des lignes quantitatives ; les secteurs quarks élargis, leptons et neutrinos restent explicitement ouverts et hiérarchisés par statut, tandis que les hadrons sont explicitement liés à l'exécution et non présentés comme des sorties déjà dérivées dans l'article.
+- **Il existe une voie concrète depuis le cadre de recouvrement vers la structure de jauge connue.** L'OPH développe une reconstruction conditionnelle de la jauge compacte et retrouve, sur la branche réalisée, le quotient de jauge du Modèle Standard `SU(3) x SU(2) x U(1) / Z_6` avec la chaîne actuelle de quantification des charges et de comptage ; sur cette surface, le langage EFT basse énergie de type Einstein plus Modèle Standard apparaît déjà comme la description naturelle à grande distance.
 - **La mesure et les observateurs sont traités comme une partie de la physique, pas seulement comme une interprétation.** L'OPH dispose de paquets fixes-cutoff pour les enregistrements, Born-Luders, checkpoint/restauration et l'interface observateur.
+- **La branche particules dépasse désormais les seuls énoncés structurels.** Les porteurs structurels sans masse sont fixés ; l'étage de calibration électrofaible ferme désormais un théorème source-only sans cible gelée pour `W/Z` au niveau Phase II calibration ; l'étage Higgs/top produit déjà des lignes quantitatives ; les secteurs quarks élargis, leptons et neutrinos restent explicitement ouverts et hiérarchisés par statut, tandis que les hadrons sont explicitement liés à l'exécution et non présentés comme des sorties déjà dérivées dans l'article.
+- **Il existe une voie concrète depuis la cohérence de recouvrement vers la physique de l'espace-temps.** L'OPH dérive une structure de cohérence indépendante de l'ordre des mises à jour et développe une branche conditionnelle Lorentz/null-modulaire/Einstein sous un paquet explicite de prémisses de limite d'échelle.
 - **Le versant microphysique est suffisamment concret pour être construit et testé.** L'article de microphysique d'écran fournit une architecture de référence finie avec registres explicites, observables de recouvrement, couches d'enregistrement, mouvements de réparation et tests de synchronisation.
-- **La voie feuille d'univers / cordes est reliée au programme sans être sur-vendue.** L'OPH relie le théorème de noyau de chaleur des secteurs de bord à une réorganisation de type feuille d'univers, tout en gardant cette branche hors du coeur reconstruit.
 - **Il existe déjà quelques signatures matérielles.** Les premiers benchmarks IBM Quantum Cloud reproduisent sur matériel réel l'ordre attendu de récupérabilité et les motifs de rapports exacts dans les secteurs réduits.
+- **La voie feuille d'univers / cordes est reliée au programme sans être sur-vendue.** L'OPH relie le théorème de noyau de chaleur des secteurs de bord à une réorganisation de type feuille d'univers, tout en gardant cette branche hors du coeur reconstruit.
 
 ## Statut particules
 
@@ -43,8 +42,26 @@ actuel sur le spectre doit être lu comme un document de dérivation avec de vra
 main, et non comme une affirmation selon laquelle tout le spectre observé serait terminé.
 
 - **Sorties structurelles exactes déjà présentes sur la surface actuelle :** photon, gluons, graviton.
-- **Lignes quantitatives actuellement les plus fortes :** bosons \(W\) et \(Z\) sur le théorème fermé de calibration électrofaible sans cible gelée, plus boson de Higgs et quark top sur l'étage critique Higgs/top.
-- **Toujours inachevé :** la famille plus large des quarks reste au niveau continuation et la feuille D12 actuelle est maintenant connue comme une mauvaise branche stricte pour la coquille CKM physique, si bien que le prochain objet exact est un sélecteur discret de feuille relative avant toute loi d'échelle de masse sur la branche choisie ; la voie des leptons chargés ferme déjà la forme centrée mais laisse encore ouverte la normalisation absolue faute de scalaire de transport de normalisation déterminant ; la branche neutrino réparée reproduit désormais le motif physique PMNS/hiérarchie mais laisse encore ouverte une unique scalaire positive de normalisation absolue ; et les hadrons sont liés à l'exécution, car des lignes promouvables exigent un calcul non perturbatif de production et un contrôle systématique réel, pas seulement une fermeture symbolique supplémentaire.
+- **Lignes quantitatives actuellement les plus fortes :** bosons \(W\) et \(Z\) sur le théorème fermé de calibration électrofaible sans cible gelée, plus boson de Higgs et quark top sur l'étage critique Higgs/top. La branche neutrino pondérée reproduit aussi très précisément la hiérarchie d'oscillation une fois l'ancre atmosphérique compare-only fournie.
+- **Toujours inachevé :** la famille plus large des quarks reste au niveau continuation et la feuille quark actuelle est maintenant connue comme une mauvaise branche stricte pour la coquille CKM physique, si bien que le prochain objet exact est un sélecteur discret de feuille relative avant toute loi d'échelle de masse sur la branche choisie ; la voie des leptons chargés ferme déjà la forme centrée mais laisse encore ouverte la normalisation absolue faute de scalaire de transport de normalisation déterminant ; la branche neutrino pondérée actuelle reproduit le motif physique PMNS/hiérarchie mais laisse encore ouverte une unique scalaire positive de normalisation absolue ; et les hadrons sont liés à l'exécution, car des lignes promouvables exigent un calcul non perturbatif de production et un contrôle systématique réel, pas seulement une fermeture symbolique supplémentaire.
+
+Le tableau ci-dessous contient les résultats les plus forts à ce stade.
+
+| Particule / observable | Valeur OPH | PDG / référence | Erreur | Unité | Statut / réserve |
+| --- | ---: | ---: | ---: | --- | --- |
+| Photon | `0` | `<1e-27` | `dans la borne` | `GeV` | zéro structurel exact ; comparé à la borne supérieure actuelle sur la masse du photon |
+| Gluon | `0` | `pas de mesure directe de masse libre` | `n/a` | `GeV` | zéro structurel exact pour le secteur de jauge de couleur ; les gluons libres sont confinés |
+| Graviton | `0` | `<1e-32` | `dans la borne` | `GeV` | zéro structurel exact ; comparé à la borne supérieure actuelle sur la masse du graviton |
+| Boson W | `80.37700001539531` | `80.377` | `+1.539531e-08` | `GeV` | émis sur le théorème fermé et target-free de calibration électrofaible |
+| Boson Z | `91.18797807794321` | `91.1879781` | `-2.205679e-08` | `GeV` | émis sur le même théorème fermé de calibration électrofaible |
+| Boson de Higgs | `125.218922` | `125.19953` | `+0.019392` | `GeV` | ligne quantitative secondaire sur l'étage critique Higgs/top |
+| Quark top | `172.388646` | `172.352355` | `+0.036291` | `GeV` | ligne quantitative secondaire sur l'étage critique Higgs/top |
+| Écart solaire des neutrinos `Δm21²` | `7.489806641884242e-5` | `7.49e-5` | `-1.933581e-9` | `eV^2` | écart absolu compare-only ; `lambda_nu` reste ouvert |
+| Écart atmosphérique des neutrinos `Δm32²` | `2.438e-3` | `2.438e-3` | `0` | `eV^2` | ancre atmosphérique compare-only utilisée pour fixer l'échelle en eV |
+| Écart d'ordre normal des neutrinos `Δm31²` | `2.5128980664188426e-3` | `2.5129e-3` | `-1.933581e-9` | `eV^2` | écart absolu compare-only ; `lambda_nu` reste ouvert |
+| Rapport hiérarchique des neutrinos `Δm21² / Δm32²` | `0.030721110097966534` | `0.030721903199343724` | `-7.931014e-7` | `sans dimension` | rapport hiérarchique sans échelle au niveau théorématique sur la branche pondérée |
+
+La calibration électrofaible fixe d'abord une constante de pixel partagée `P` sur la surface source de running/matching ; une fois `P` fixé, la base électrofaible target-free émet un quintette cohérent `(W, Z, alpha_em^-1, sin^2 theta_W, v)` sans ajuster séparément `W` et `Z`.
 
 ## Objectifs du programme
 
@@ -74,14 +91,16 @@ supérieure.
 **Deriving the Particle Zoo from Observer Consistency** est l'article de statut sur le spectre de
 particules. Il enregistre le théorème fermé de calibration électrofaible pour \(W/Z\) après
 fixation de l'échelle commune \(P\), suit les sorties actuelles pour Higgs/top et plusieurs
-quarks, précise explicitement que la feuille quark D12 actuelle est fermée du côté transport mais
+quarks, précise explicitement que la feuille quark actuelle est fermée du côté transport mais
 reste une mauvaise branche pour la coquille CKM physique et attend donc d'abord un sélecteur
 discret de feuille relative avant toute loi d'échelle de masse sur la branche choisie, explique
 que la voie des leptons chargés ne fixe pour l'instant que la classe de logs centrés tant que le
 scalaire de transport de normalisation déterminant n'est pas émis, enregistre la branche neutrino
-réparée au niveau PMNS/hiérarchie avec son unique scalaire positive de normalisation encore
-ouverte, et indique que les hadrons restent liés à l'exécution plutôt qu'à des lignes de sortie
-déjà dérivées dans l'article.
+pondérée actuelle avec `theta12 = 34.2259°`, `theta23 = 49.7228°`, `theta13 = 8.68636°`,
+`delta = 305.581°` et `Delta m21^2 / Delta m32^2 = 0.03072111`, compare ces nombres directement
+à la surface oscillatoire PDG, explique que `lambda_nu` est l'unique scalaire positif de
+normalisation encore requis pour les masses neutrino absolues, et indique que les hadrons restent
+liés à l'exécution plutôt qu'à des lignes de sortie déjà dérivées dans l'article.
 
 - **PDF :** [Deriving the Particle Zoo from Observer Consistency](paper/deriving_the_particle_zoo_from_observer_consistency.pdf)
 - **Source LaTeX :** [deriving_the_particle_zoo_from_observer_consistency.tex](paper/deriving_the_particle_zoo_from_observer_consistency.tex)

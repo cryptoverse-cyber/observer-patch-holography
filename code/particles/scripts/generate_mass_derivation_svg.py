@@ -231,9 +231,11 @@ LANES: List[Dict[str, Any]] = [
             "`C_hat_e^{cand}`. Promoting it is blocked by the branch-generator splitting theorem and its "
             "commutator clause, and the local corpus proves neither exact vanishing nor uniform quadratic smallness of that descended commutator yet. The strongest new route is only an extension candidate: a centered Schur-type "
             "`P->Q->P` transfer theorem would promote the proxy bridge if a refinement-uniform middle-factor bound can be certified, with the current local proxy gap staying safe for about `M < 119.56`. On the absolute side the equalizer route is no-go under common-shift "
-            "symmetry, so the future slot is one affine-covariant absolute anchor `A_ch`."
+            "symmetry, so the future slot is one affine-covariant absolute anchor `A_ch`. End-to-end closure still needs "
+            "an uncentered charged response lift carrying a determinant line, because centering removes the only affine "
+            "mode that can transform by `+c`; the clean future formula is `A_ch = (1/3) log det(Y_e)`."
         ),
-        "tasks_text": "Open task: close `oph_generation_bundle_branch_generator_splitting`, in particular `compression_descendant_commutator_vanishes_or_is_uniformly_quadratic_small_after_central_split`, so the latent candidate `C_hat_e^{cand}` can be promoted; then derive one affine-covariant absolute charged anchor `A_ch` with `A_ch(logm + c*(1,1,1)) = A_ch(logm) + c`. The common-refinement equalizer route is currently a no-go, while the central-split transfer theorem is only an unpromoted extension route.",
+        "tasks_text": "Open task: close `oph_generation_bundle_branch_generator_splitting`, in particular `compression_descendant_commutator_vanishes_or_is_uniformly_quadratic_small_after_central_split`, so the latent candidate `C_hat_e^{cand}` can be promoted; then derive one affine-covariant absolute charged anchor `A_ch` with `A_ch(logm + c*(1,1,1)) = A_ch(logm) + c` on an uncentered charged response lift carrying a determinant line. The common-refinement equalizer route is currently a no-go, while the central-split transfer theorem is only an unpromoted extension route.",
         "prediction_surface": "Charged forward surface with an eta readback primitive plus a sigma endpoint-ratio breaker on one support-extension family.",
         "particles": ["electron", "muon", "tau"],
         "tasks": [
@@ -284,11 +286,11 @@ LANES: List[Dict[str, Any]] = [
             "Majorana holonomy lift, the pullback metric, the forward Majorana matrix, and the splitting/ordering "
             "bundle. The old selector-law branch is S3-isotropic and is now explicitly ruled out for the physical "
             "atmospheric scale by the exact cap `max |Delta m^2| <= 8 a rho`. The repaired live branch instead uses the "
-            "same-label scalar certificate together with the flavor cocycle invariants `gamma` and `eps` to emit a "
-            "weighted-cycle law `w_e = q_e^(1 + gamma + eps/(1+eps)) = q_e^(1 + gamma + eps/chi)` with diagonal load "
-            "`chi = 1 + eps`. This is the promoted minimal replacement because the raw defect/gap ratio is already "
-            "carried by the diagonal load, so the exponent uses the bounded defect share instead of counting the raw "
-            "defect twice. That repaired branch "
+            "same-label scalar certificate together with the flavor cocycle invariants `gamma`, `eps`, and "
+            "`gamma_half` to define the positive load segment between `chi = 1 + eps` and `1 + gamma_half`. On that "
+            "one-dimensional affine segment, the balanced selector and the least-distortion selector coincide exactly at "
+            "the midpoint, so `D_nu = (chi + 1 + gamma_half) / 2` and the repaired edge law becomes "
+            "`w_e = q_e^(1 + gamma + eps / D_nu)`. That repaired branch "
             "lands in the physical PMNS window and the correct splitting hierarchy. No hidden discrete branch remains on that repaired lane; the remaining open burden is only one "
             "positive absolute neutrino normalization scalar, so the downstream PMNS and hierarchy map are otherwise closed."
         ),
@@ -1267,6 +1269,7 @@ def build_svg(results: Dict[str, Any], tasks: Dict[str, Dict[str, Any]]) -> str:
         "Start with the OPH axioms plus the declared live scalar P and the extra input surface used by the neutrino estimate lane.",
         "Then read each lane from top to bottom: what the lane already does, what is still missing, what prediction surface it produces, and which particle rows are currently publishable.",
         f"The badge reports {closedish} of {total_rows} tracked rows above continuation / simulation status. In plain terms: those are the rows that are already beyond the merely exploratory stage.",
+        "The broader UV/BW premise boundary still sits above the particle lanes. The sharpest internal extension route there is a scaling-limit cap-pair extraction theorem followed by ordered null cut-pair rigidity.",
     ]
     scaffold_h = estimate_box_height(
         title="How to read the mass derivation chart",

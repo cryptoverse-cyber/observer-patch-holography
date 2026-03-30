@@ -69,26 +69,28 @@ The Standard Model is usually treated as a brilliant empirical fact with too man
 
 Particles in OPH are stable excitation patterns in the overlap and transport data of the realized low-energy sector. If a transport obstruction can survive refinement, propagate coherently across patches, and be read consistently by many observers, that is exactly the kind of thing one expects to show up as a particle. Massless carriers appear first for structural reasons. Quantitative masses appear once the transport problem closes strongly enough to give a stable scalar readout.
 
-Here is the current particle-status picture from the OPH Particle Derivation [3](#ref-3):
+Structural zeros for photon, gluons, and graviton are in hand. The strongest quantitative rows are the electroweak calibration outputs, the Higgs/top rows, and the neutrino hierarchy rows. Quarks, charged leptons, and hadrons remain open for the reasons listed above.
 
-| Particle or family | Current OPH status | Current OPH mass |
-| --- | --- | --- |
-| photon | structural zero | `0` |
-| gluons | structural zero | `0` |
-| graviton | structural zero | `0` |
-| `W` boson | emitted | `80.37700001539531 GeV` |
-| `Z` boson | emitted | `91.18797807794321 GeV` |
-| Higgs boson | emitted | `125.218922 GeV` |
-| top quark | emitted | `172.388646 GeV` |
-| up, down, strange, charm, bottom | not yet predicted | `not yet predicted` |
-| electron, muon, tau | not yet predicted | `not yet predicted` |
-| neutrinos | not yet predicted | `not yet predicted` |
-| hadrons | not yet predicted | `not yet predicted` |
+The table below contains the strongest current results.
 
-There is already more behind this table than the table itself shows. Quarks already come with candidate mass outputs together with CKM and CP structure, but the physical selector is still being finished. Charged leptons already come out in a tightly constrained hierarchy, and what is missing is the absolute anchor. Neutrinos already recover the observed PMNS and hierarchy pattern and appear to be one positive normalization scalar away from absolute masses. Hadrons are the hardest case for a very concrete reason. Once real unquenched QCD enters, the problem becomes compute-heavy fast, and it is not yet clear that currently available hardware is enough for the full production program. So the numerical table above only shows the masses that are already emitted in [3](#ref-3).
+| Particle / observable | OPH value | PDG / reference | Error | Unit | Status / caveat |
+| --- | ---: | ---: | ---: | --- | --- |
+| Photon | `0` | `<1e-27` | `within bound` | `GeV` | exact structural zero; compared against the current photon mass upper bound |
+| Gluon | `0` | `no direct free-particle mass measurement` | `n/a` | `GeV` | exact structural zero for the color gauge sector; free gluons are confined |
+| Graviton | `0` | `<1e-32` | `within bound` | `GeV` | exact structural zero; compared against the current graviton mass upper bound |
+| W boson | `80.37700001539531` | `80.377` | `+1.539531e-08` | `GeV` | emitted on the closed target-free electroweak calibration theorem |
+| Z boson | `91.18797807794321` | `91.1879781` | `-2.205679e-08` | `GeV` | emitted on the same closed electroweak calibration theorem |
+| Higgs boson | `125.218922` | `125.19953` | `+0.019392` | `GeV` | secondary quantitative row on the Higgs/top critical stage |
+| top quark | `172.388646` | `172.352355` | `+0.036291` | `GeV` | secondary quantitative row on the Higgs/top critical stage |
+| Neutrino solar splitting `Δm21²` | `7.489806641884242e-5` | `7.49e-5` | `-1.933581e-9` | `eV^2` | compare-only absolute splitting; `lambda_nu` still open |
+| Neutrino atmospheric splitting `Δm32²` | `2.438e-3` | `2.438e-3` | `0` | `eV^2` | compare-only atmospheric anchor used to place the branch on an eV scale |
+| Neutrino normal-order splitting `Δm31²` | `2.5128980664188426e-3` | `2.5129e-3` | `-1.933581e-9` | `eV^2` | compare-only absolute splitting; `lambda_nu` still open |
+| Neutrino hierarchy ratio `Δm21² / Δm32²` | `0.030721110097966534` | `0.030721903199343724` | `-7.931014e-7` | `dimensionless` | theorem-grade scale-free hierarchy ratio on the weighted-cycle branch |
+
+Electroweak calibration fixes one shared pixel constant `P` on the source-side running/matching surface; once `P` is fixed, the target-free electroweak basis emits one coherent quintet `(W, Z, alpha_em^-1, sin^2 theta_W, v)` without separately fitting `W` and `Z`.
 
 - Already achieved: [3](#ref-3) already emits structural zeros for photon, gluons, and graviton, and numerical outputs for `W`, `Z`, Higgs, and top.
-- Current frontier: the live work is the Yukawa dictionary, the discrete selector for the physical quark sector and CKM shell, the charged-lepton anchor `A_ch`, the last positive neutrino normalization scalar, and real unquenched hadron execution with declared systematics.
+- Current frontier: the live work is the Yukawa dictionary, the discrete selector for the physical quark sector and CKM shell, the charged-lepton determinant-line anchor, the last positive neutrino normalization scalar `lambda_nu`, and real unquenched hadron execution with declared systematics.
 
 ## Why String Theory Can Reappear as an Effective Description
 

@@ -1,0 +1,64 @@
+{
+  "artifact": "oph_charged_determinant_line_section_extension",
+  "canonical_formula_on_fill": {
+    "A_ch": "(1/3) * log(det(Y_e))",
+    "determinant_rule": "det(Y_e) = exp(3 * A_ch)",
+    "g_e": "exp((1/3) * log(det(Y_e)))"
+  },
+  "exact_missing_object": "charged_determinant_line_section",
+  "extension_kind": "determinant_line_section",
+  "generated_utc": "2026-03-30T06:43:02Z",
+  "hard_rejections": {
+    "common_shift_invariant_functionals": "cannot emit A_ch because they satisfy F(logm + c*(1,1,1)) = F(logm)",
+    "d12_compare_only_target": {
+      "Delta_e_abs_star": 3.003986333402356,
+      "g_e_star": 0.04577885783568762,
+      "status": "compare_only_not_theorem"
+    },
+    "gamma_min_restore_pick": {
+      "Delta_e_abs": 0.30236566025890826,
+      "g_e": 0.6822819838027987,
+      "status": "invalid_orbit_pick"
+    }
+  },
+  "input_contract": {
+    "must_not_use": [
+      "measured charged masses",
+      "compare-only D12 continuation targets",
+      "PMNS or CKM target fits",
+      "shared-budget seed alone",
+      "centered-shape-only functionals"
+    ],
+    "must_use": [
+      "theorem-grade charged sector-response artifact after C_hat_e promotion",
+      "lepton_current_family_exactness_audit.json"
+    ]
+  },
+  "notes": [
+    "This is a constructive extension route, not a theorem hidden in the current corpus.",
+    "Promoting C_hat_e^cand is still upstream and necessary, but the determinant-line section is the first object that can realize the affine common-shift breaker geometrically."
+  ],
+  "public_promotion_allowed": false,
+  "section_contract": {
+    "charged_anchor_readout": "A_ch = (1/3) * s_det(det Y_e)",
+    "derived_quantities": {
+      "Delta_e_abs": "log(g_ch_shared) - A_ch",
+      "g_e": "exp(A_ch)",
+      "masses": "exp(A_ch + centered_log_i)"
+    },
+    "kind": "determinant_torsor_section",
+    "required_covariance": "s_det(exp(3c) * detY) = s_det(detY) + 3c"
+  },
+  "status": "minimal_constructive_extension",
+  "upstream_prerequisites": {
+    "promotion_effect": "theorem_grade_C_hat_e",
+    "promotion_theorem": "oph_generation_bundle_branch_generator_splitting",
+    "required_operator_surface": "theorem_grade_physical_Y_e_or_equivalent_determinant_line",
+    "transfer_extension_artifact": "oph_charged_central_split_transfer_extension"
+  },
+  "why_this_is_sharper_than_bare_A_ch": [
+    "The common-shift quotient acts on the determinant line by det(Y_e) -> exp(3c) det(Y_e).",
+    "A section of that line is exactly the affine object needed to break the quotient symmetry.",
+    "This packages the charged absolute anchor as a determinant-torsor coordinate rather than an abstract free scalar."
+  ]
+}

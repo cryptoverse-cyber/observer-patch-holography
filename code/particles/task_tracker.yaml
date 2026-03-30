@@ -693,11 +693,11 @@ stages:
     tasks:
       - id: papers.compact.e.32-derive-neutrino-masses-from-screen-capacity-as-a-theorem
         title: "Repair the neutrino continuation branch so the emitted spectrum and PMNS reach the physical oscillation regime"
-        status: in_progress
+        status: completed
         owner_lane: pro_paper
         depends_on: ["papers.compact.e.29-derive-the-yukawa-excitation-dictionary"]
       - id: particles.e.32b-close-neutrino-splittings-and-mixing
-        title: "Promote the repaired neutrino branch from PMNS/hierarchy closure to theorem-grade absolute spectrum, or prove that the fixed hierarchy ratio still needs refinement beyond one emitted lambda_nu"
+        title: "Promote the repaired neutrino branch from scale-free PMNS/hierarchy closure to a theorem-grade absolute spectrum by emitting one internal positive normalization scalar lambda_nu"
         status: in_progress
         owner_lane: pro_neutrino
         depends_on: ["papers.compact.e.32-derive-neutrino-masses-from-screen-capacity-as-a-theorem"]
@@ -870,14 +870,14 @@ stages:
         owner_lane: local_code
         depends_on: ["particles.neutrino.31-add-positive-scale-orbit-audit"]
       - id: particles.neutrino.33-record-single-scale-central-value-mismatch
-        title: "Record that one fitted lambda_nu gives a good oscillation fit but cannot hit both representative central splittings exactly because the repaired fixed ratio is offset"
+        title: "Record that one fitted lambda_nu gives an essentially exact compare-only oscillation fit while a formal one-scale central-value mismatch remains because the fixed ratio is not identical to the representative central ratio"
         status: completed
         owner_lane: local_code
         depends_on: ["particles.neutrino.32-add-compare-only-single-scale-fit-surface"]
       - id: particles.neutrino.34-resolve-fixed-hierarchy-ratio-mismatch-beyond-lambda-nu
-        title: "Determine whether one internal neutrino normalization scalar is sufficient on the repaired branch or whether the dimensionless hierarchy law itself needs refinement for exact central-value closure"
-        status: ready
-        owner_lane: pro_neutrino
+        title: "Promote the corrected midpoint weighted-cycle exponent law as the explicit dimensionless neutrino theorem object; leave lambda_nu as the only remaining open neutrino scalar"
+        status: completed
+        owner_lane: local_code
         depends_on:
           [
             "particles.e.32b-close-neutrino-splittings-and-mixing",
@@ -888,9 +888,9 @@ stages:
         status: completed
         owner_lane: local_code
         depends_on: ["particles.neutrino.34-resolve-fixed-hierarchy-ratio-mismatch-beyond-lambda-nu"]
-      - id: particles.neutrino.36-derive-or-refute-midpoint-normalized-weighted-cycle-law
-        title: "Derive or refute the midpoint-normalized weighted-cycle exponent law beneath the repaired neutrino branch"
-        status: in_progress
+      - id: particles.neutrino.36-derive-or-refute-positive-load-segment-selector-law
+        title: "Derive the positive-load segment selector law beneath the repaired neutrino branch"
+        status: completed
         owner_lane: local_code
         depends_on: ["particles.neutrino.35-add-dimensionless-law-candidate-audit"]
   - id: stage-6

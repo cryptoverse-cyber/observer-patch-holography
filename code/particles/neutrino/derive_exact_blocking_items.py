@@ -32,6 +32,7 @@ CHARGED_LEFT_JSON = ROOT / "particles" / "runs" / "neutrino" / "shared_charged_l
 ETA_DEMO_JSON = ROOT / "particles" / "runs" / "neutrino" / "intrinsic_neutrino_eta_demo_payload.json"
 INTRINSIC_VALIDATION_JSON = ROOT / "particles" / "runs" / "neutrino" / "intrinsic_neutrino_exact_mixing_law_validation.json"
 REPAIR_JSON = ROOT / "particles" / "runs" / "neutrino" / "neutrino_weighted_cycle_repair.json"
+AMPLITUDE_BRIDGE_JSON = ROOT / "particles" / "runs" / "neutrino" / "neutrino_weighted_cycle_absolute_amplitude_bridge.json"
 DEFAULT_EXACT_OUT = ROOT / "particles" / "runs" / "neutrino" / "exact_blocking_items.json"
 DEFAULT_SUMMARY_OUT = ROOT / "particles" / "runs" / "neutrino" / "current_snapshot_blocker_summary.json"
 
@@ -52,6 +53,7 @@ def build_exact_blockers(
     eta_demo: dict,
     intrinsic_validation: dict,
     repair: dict,
+    amplitude_bridge: dict | None,
 ) -> tuple[dict, dict]:
     same_label_present = bool(certificate.get("sufficient_for_intrinsic_mass_eigenstates"))
     charged_basis_present = charged_left.get("status") == "closed"
@@ -59,6 +61,9 @@ def build_exact_blockers(
     repair_present = repair.get("artifact") == "oph_neutrino_weighted_cycle_repair"
     repair_shape_closed = repair.get("physical_window_status") == "pmns_and_hierarchy_repaired"
     absolute_normalization_open = repair.get("absolute_normalization_status") == "open_one_positive_scale"
+    repair_scale_free_mass = dict(repair.get("scale_free_mass_normal_form") or {})
+    repair_scale_free_dm2 = dict((repair.get("scale_free_dm2_normal_form") or {}).get("dm2") or {})
+    repair_symbolic_family = dict(repair.get("symbolic_absolute_family") or {})
     physical_branch_closed = bool(pmns.get("physical_branch_closed", False)) or (
         repair_present and repair_shape_closed and not absolute_normalization_open
     )
@@ -152,6 +157,7 @@ def build_exact_blockers(
             "exact_principal_selector_from_centered_eta_class",
             "exact_depressed_cubic_intrinsic_spectrum",
             "mass_eigenstate_row_policy_nu1_nu2_nu3",
+            "positive_load_balanced_least_distortion_midpoint_selector",
             "shape_closed_scale_invariant_left_basis",
             "pmns_from_shared_charged_and_intrinsic_bases",
         ],
@@ -272,32 +278,13 @@ def build_exact_blockers(
                         "so no unique absolute scale is emitted without one further OPH theorem fixing lambda_nu."
                     ),
                     "absolute_family_parameter": "lambda_nu > 0",
-                    "scale_free_mass_normal_form": {
-                        "notation": "m_hat",
-                        "masses": [
-                            0.009698837868777897,
-                            0.010873042445619763,
-                            0.029708281011567278,
-                        ],
-                    },
-                    "scale_free_dm2_normal_form_eV2": {
-                        "21": 2.415559601940881e-05,
-                        "31": 7.885145046574088e-04,
-                        "32": 7.64358908638e-04,
-                    },
-                    "dimensionless_mass_family": [
-                        "m1 = 0.009698837868777897 * lambda_nu",
-                        "m2 = 0.010873042445619763 * lambda_nu",
-                        "m3 = 0.029708281011567278 * lambda_nu",
-                    ],
-                    "dimensionless_dm2_family_eV2": {
-                        "21": "2.415559601940881e-05 * lambda_nu^2",
-                        "31": "7.885145046574088e-04 * lambda_nu^2",
-                        "32": "7.64358908638e-04 * lambda_nu^2",
-                    },
+                    "scale_free_mass_normal_form": repair_scale_free_mass,
+                    "scale_free_dm2_normal_form_eV2": repair_scale_free_dm2,
+                    "dimensionless_mass_family": list(repair_symbolic_family.get("absolute_masses") or []),
+                    "dimensionless_dm2_family_eV2": dict(repair_symbolic_family.get("absolute_dm2") or {}),
                     "external_anchor_disallowed": {
                         "name": "atmospheric_delta_m32_sq",
-                        "value_eV2": 2.433e-3,
+                        "value_eV2": 2.438e-3,
                         "reason": "compare_only_external_oscillation_anchor",
                     },
                     "hard_separated_compare_only_adapter": {
@@ -316,8 +303,15 @@ def build_exact_blockers(
                             "32": "Delta m32^2 = lambda_nu^2 * Delta_hat_32",
                         },
                     },
-                    "minimal_missing_object": (
-                        "one_OPH_theorem_fixing_lambda_nu_from_an_internal_dimensionful_invariant_without_oscillation_data"
+                    "minimal_missing_object": "neutrino_weighted_cycle_absolute_amplitude_bridge",
+                    "absolute_amplitude_bridge_summary": (
+                        {
+                            "status": amplitude_bridge.get("status"),
+                            "remaining_object": amplitude_bridge.get("remaining_object"),
+                            "remaining_object_kind": amplitude_bridge.get("remaining_object_kind"),
+                        }
+                        if amplitude_bridge
+                        else None
                     ),
                 }
                 if repair_shape_closed and absolute_normalization_open
@@ -357,6 +351,7 @@ def main() -> int:
     parser.add_argument("--eta-demo", default=str(ETA_DEMO_JSON))
     parser.add_argument("--intrinsic-validation", default=str(INTRINSIC_VALIDATION_JSON))
     parser.add_argument("--repair", default=str(REPAIR_JSON))
+    parser.add_argument("--amplitude-bridge", default=str(AMPLITUDE_BRIDGE_JSON))
     parser.add_argument("--exact-output", default=str(DEFAULT_EXACT_OUT))
     parser.add_argument("--summary-output", default=str(DEFAULT_SUMMARY_OUT))
     args = parser.parse_args()
@@ -369,6 +364,7 @@ def main() -> int:
         _load_json(Path(args.eta_demo)),
         _load_json(Path(args.intrinsic_validation)),
         _load_json(Path(args.repair)) if Path(args.repair).exists() else {},
+        _load_json(Path(args.amplitude_bridge)) if Path(args.amplitude_bridge).exists() else None,
     )
 
     exact_out = Path(args.exact_output)

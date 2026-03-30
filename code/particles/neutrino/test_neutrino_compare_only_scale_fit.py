@@ -35,12 +35,12 @@ def test_compare_only_fit_records_single_scale_central_value_mismatch() -> None:
         assert payload["status"] == "compare_only"
         assert payload["exact_central_match_possible_with_single_lambda_nu"] is False
         mismatch = payload["central_ratio_mismatch"]
-        assert abs(mismatch["predicted_ratio_21_over_32"] - 0.031602426224679334) < 1.0e-15
+        assert abs(mismatch["predicted_ratio_21_over_32"] - 0.030721110097966534) < 1.0e-15
         assert abs(mismatch["reference_ratio_21_over_32"] - 0.030721903199343724) < 1.0e-15
-        assert abs(mismatch["relative_difference"] - 0.02866108325458233) < 1.0e-15
+        assert abs(mismatch["relative_difference"] + 2.5815502771561345e-05) < 1.0e-15
         weighted = payload["fits"]["weighted_least_squares"]
-        assert abs(weighted["lambda_nu"] - 1.7835784605231035) < 1.0e-12
-        assert abs(weighted["delta_m_sq_eV2"]["21"] - 7.684262560396642e-05) < 1.0e-15
-        assert abs(weighted["delta_m_sq_eV2"]["32"] - 0.002431541966355659) < 1.0e-15
-        assert abs(weighted["residual_sigma"]["21"] - 0.9962182584443181) < 1.0e-12
-        assert abs(weighted["residual_sigma"]["32"] + 0.32290168221706017) < 1.0e-12
+        assert abs(weighted["lambda_nu"] - 1.7239045130315727) < 1.0e-12
+        assert abs(weighted["delta_m_sq_eV2"]["21"] - 7.489824104866108e-05) < 1.0e-15
+        assert abs(weighted["delta_m_sq_eV2"]["32"] - 0.0024380056843589996) < 1.0e-15
+        assert abs(weighted["residual_sigma"]["21"] + 9.020263276517979e-04) < 1.0e-12
+        assert abs(weighted["residual_sigma"]["32"] - 2.8421794998928524e-04) < 1.0e-12
