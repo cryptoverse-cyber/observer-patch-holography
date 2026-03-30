@@ -322,7 +322,7 @@ Once you accept that information is physical, all the philosophical hints crysta
 
 The philosophers were reverse-engineering reality with logic. Physics gave us the math to make their insights precise.
 
-## 2.12 The Simulation principle: Taking Computation Seriously
+## 2.11 The Simulation principle: Taking Computation Seriously
 
 In 2003, philosopher Nick Bostrom posed a disturbing question: are we living in a computer simulation?
 
@@ -364,7 +364,7 @@ This is a concrete quantum-computational model, with qubits, gates, and constrai
 
 The simulation principle asked the right question but framed it wrong. The question is not "are we simulated?" The question is "what is the nature of the self-simulating loop we are part of?" Our framework provides a direction toward the answer.
 
-## 2.13 The Meter: A Case Study in Agreement
+## 2.12 The Meter: A Case Study in Agreement
 
 Let me illustrate how deep the consistency problem goes with something seemingly simple: the meter.
 
@@ -384,7 +384,7 @@ These definitions are peace treaties. They ensure that when a physicist in Tokyo
 
 Even something as basic as "how long is a meter" requires solving the consistency problem. The solution: ground the definition in quantities that all observers agree on.
 
-## 2.14 The Map We've Built
+## 2.13 The Map We've Built
 
 Let's step back and see the pattern.
 
@@ -403,7 +403,7 @@ Each philosopher identified a crack in the intuitive picture. Each crack pointed
 
 This is not coincidence. The intuitive picture-objective 3D reality independent of observers-really is problematic. The philosophers found the problems through pure reason. The physicists confirmed them through experiment.
 
-## 2.15 Where We Go Next
+## 2.14 Where We Go Next
 
 The philosophers gave us hints. Now we need the machinery.
 
