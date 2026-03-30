@@ -78,6 +78,7 @@ CHARGED_CONTINUATION_NOTE = (
     "`mu_e_absolute_log_candidate` or `g_e_linear_candidate` and convert exactly once via `g_e = exp(mu_e_absolute_log_candidate)`. "
     "But the present charged theorem still fixes only the centered charged log class modulo a common shift, so the absolute scale `g_e` remains unresolved on the live theorem lane. "
     "At theorem level, the exact waiting set is sharper than a standalone eta/sigma fit: the charged sector-response object is still only the latent candidate `C_hat_e^{cand}`, not a declared theorem-grade operator. Promoting that candidate is blocked by the upstream theorem `oph_generation_bundle_branch_generator_splitting`, reduced further to the clause `compression_descendant_commutator_vanishes_or_is_uniformly_quadratic_small_after_central_split`. The local corpus proves neither exact vanishing nor uniform quadratic smallness of that descended commutator yet; only the desired transfer bridge is specified. On the absolute side, the charged equalizer route is now an explicit no-go under common-shift symmetry: the current theorem emits only the quotient class of charged logs modulo `(1,1,1)`, so no theorem-grade `g_e` or `Delta_e_abs` exists yet. The single honest future slot is one affine-covariant absolute charged anchor `A_ch` satisfying `A_ch(logm + c*(1,1,1)) = A_ch(logm) + c`; then `g_e = exp(A_ch)` and `Delta_e_abs = log(g_ch_shared) - A_ch`. "
+    "The sharpest new constructive route is only an extension candidate, not a current-corpus closure: if the actual centered compressed generator factors through centered Schur-type `P->Q->P` feedback with a refinement-uniform middle-factor bound, then the transfer gap closes exactly when the descended commutator vanishes and otherwise only quadratically. On the current local certificate, the proxy margin would survive such an extension whenever the uniform bound satisfies about `M < 119.5600535277701`. That route would promote `C_hat_e^{cand}`, but it still would not emit `A_ch` by itself. "
     "A D12 continuation bridge exists under the extra assumptions A1-A3 and gives eta = -6.729586682888832 and sigma = 8.154061112725994 with near-exact centered-log shape closure, "
     "but the theorem-grade lane still lacks emitted eta, sigma, and absolute scale. On that continuation bridge the compare-only absolute target would be `g_e* = 0.04577885783568762`, equivalently `Delta_e_abs* = 3.003986333402356`, and that target is kept strictly non-promotable until a theorem-grade absolute anchor `A_ch` exists on the live branch."
 )
@@ -102,7 +103,8 @@ QUARK_CONTINUATION_NOTE = (
     "The retained same-family numerical point on the emitted ray is sample-only: `t1_sample = ray_modulus = 0.6695617711471163`, giving `Delta_ud_overlap = 0.13391235422942327` and `eta_Q_centered = -0.018155152181872827`. "
     "But the current D12 sheet is now an explicit no-go for the physical CKM shell: same-sheet rephasing leaves CKM invariants frozen, and the emitted angles undershoot the comparison shell by factors about `29.68`, `34.02`, and `117.06`. "
     "The current local surface is formally insufficient to identify that selector: only one reference-sheet representative is emitted, while no finite `Sigma_ud` orbit or `sigma -> CKM` evaluator is exposed. The only finite local scan now on disk is a 4001-point same-sheet `Delta_ud_overlap` scan against `reference_targets`; it is comparison-only and cannot honestly serve as a `Sigma_ud` selector route. "
-    "So the exact next quark object is one discrete `quark_relative_sheet_selector`, and the minimal solver extension is an emitted finite `sigma_ud_orbit` carrying per-candidate CKM tuples. Only after the physical branch is selected does the mass-side scale question remain, via a selected-branch intrinsic scale law independent of target masses and independent of CKM/CP."
+    "A smaller already-local finite basis orbit has also been exposed and ruled out: swapping in right or conjugate-right singular bases can move CKM moduli, but that orbit leaves the ordered same-label left-eigenframe domain and is therefore diagnostic-only. "
+    "So the exact next quark object is one discrete `quark_relative_sheet_selector`, and the minimal solver extension is an emitted finite left-handed same-label `sigma_ud_orbit` carrying per-candidate CKM tuples. Only after the physical branch is selected does the mass-side scale question remain, via a selected-branch intrinsic scale law independent of target masses and independent of CKM/CP."
 )
 NEUTRINO_CONTINUATION_NOTE = (
     "No public value is emitted yet. The active neutrino path is `derive_neutrino_scale_anchor.py -> "
@@ -114,8 +116,10 @@ NEUTRINO_CONTINUATION_NOTE = (
     "The old isotropic intrinsic ansatz is now explicitly ruled out on the live branch by the exact cap `max |Delta m^2| <= 8 a rho`, which is far below the atmospheric scale. "
     "The strongest honest repaired branch on disk is therefore the shared-basis weighted cycle lift: using the live same-label scalar certificate `(gap_e, overlap_sq_e)`, the live flavor cocycle invariants `gamma` and `eps`, and the live selector phases, it emits the repaired edge law `w_e = q_e^(1 + gamma + eps)` with diagonal load `chi = 1 + eps`. "
     "That repaired branch lands in the current PDG oscillation window at the dimensionless pattern level, with `theta12 = 33.9756 deg`, `theta23 = 49.7785 deg`, `theta13 = 8.64594 deg`, `delta = 307.818 deg`, and `J = -0.02652`; its predicted splitting ratio is `Delta m21^2 / Delta m32^2 = 0.0316024`. "
+    "No hidden discrete branch remains on that repaired lane: the remaining freedom is purely the positive rescaling orbit `lambda_nu > 0`. "
     "But one overall positive neutrino normalization remains open on the live theorem lane, so absolute neutrino masses and absolute `Delta m^2` values are still compare-only unless an external atmospheric anchor is supplied. "
     "The sharpened no-go statement is that the repaired weighted-cycle branch emits only the one-parameter absolute family `m_i = lambda_nu * mhat_i`, `Delta m^2_ij = lambda_nu^2 * Delta_hat_ij`; all PMNS data and dimensionless hierarchy ratios are unchanged across that family, so no unique theorem-grade absolute spectrum exists yet. "
+    "A compare-only single-scale fit sharpens that boundary further: fitting `lambda_nu` against PDG 2025 central splittings gives a good one-parameter oscillation match, but exact simultaneous central-value closure is impossible on the current repaired branch because the fixed ratio `Delta_hat_21 / Delta_hat_32 = 0.0316024` sits about `2.87%` above the representative PDG central ratio. The weighted least-squares fit gives `lambda_nu = 1.78358`, `m = (0.01730, 0.01939, 0.05299) eV`, with residuals about `+1.00 sigma` on `Delta m21^2` and `-0.32 sigma` on `Delta m32^2`. "
     "With the compare-only anchor `Delta m32^2 = 2.433e-3 eV^2`, the repaired branch gives `m = (0.01730, 0.01940, 0.05300) eV` and `Delta m21^2 = 7.689e-5 eV^2`. These rows therefore remain unpromoted as exact OPH mass predictions until that single normalization scalar is emitted."
 )
 HADRON_CONTINUATION_NOTE = (
@@ -147,6 +151,11 @@ UV_BW_PREMISE_BOUNDARY = {
         "(A_infty(C), omega_infty^C) with vanishing carried collar errors and geometric modular automorphism group "
         "sigma_t^{omega_infty^C} = alpha_{lambda_C(2 pi t)}, without assuming type-I survival or a surviving cap density matrix."
     ),
+    "candidate_extension_status": "unpromoted_extension_candidate",
+    "candidate_extension_route": (
+        "Combine scaling-limit extraction of cap pairs by local weak-* compactness on transported cap marginals with ordered null cut-pair rigidity that collapses the residual cap-preserving conformal freedom to the unique BW hyperbolic subgroup."
+    ),
+    "candidate_extension_target": "sigma_t^{omega_infty^C} = alpha_{lambda_C(2 pi t)}",
 }
 INVENTORY: List[Dict[str, Any]] = [
     {
@@ -677,6 +686,9 @@ def render_markdown(
                 f"- Internalized scope: {uv_boundary['current_internalized_scope']}",
                 f"- Why still open: {uv_boundary['reason_current_corpus_fails']}",
                 f"- Exact theorem object: {uv_boundary['statement']}",
+                f"- Candidate extension status: `{uv_boundary['candidate_extension_status']}`",
+                f"- Candidate extension route: {uv_boundary['candidate_extension_route']}",
+                f"- Candidate extension target: `{uv_boundary['candidate_extension_target']}`",
                 "",
             ]
         )

@@ -33,7 +33,7 @@
     "uses_reference_targets": true,
     "why_disqualified": "The only finite scan currently exposed in local code is a same-sheet target-mass comparison scan over Delta_ud_overlap. It neither enumerates Sigma_ud nor emits a relative-sheet sigma->CKM evaluator, so it cannot honestly serve as branch repair."
   },
-  "generated_utc": "2026-03-30T00:40:25Z",
+  "generated_utc": "2026-03-30T05:00:52Z",
   "insufficiency_theorem": {
     "id": "D12_relative_sheet_non_identifiability",
     "proof_obstruction": [
@@ -44,6 +44,18 @@
       "mass-side branch choice is excluded from CKM repair"
     ],
     "statement": "From the presently emitted D12 quark-side data alone there is no sound function that can recover the finite set Sigma_ud, the selector sigma_ud, or the selected-branch CKM invariants. The current surface exposes only one evaluated reference-sheet representative, while same-sheet rephasing is already known to leave the CKM invariants frozen."
+  },
+  "local_basis_orbit_diagnostic": {
+    "artifact_ref": "particles/runs/flavor/quark_local_basis_orbit_diagnostic.json",
+    "best_nonphysical_candidate_ref": [
+      "R",
+      "Rbar"
+    ],
+    "orbit_size": 9,
+    "physical_selector_use_allowed": false,
+    "reason": "right-basis chirality swaps are not admissible quark_relative_sheet_selector candidates",
+    "status": "available_from_current_corpus",
+    "theorem_use": "diagnostic_exclusion_only"
   },
   "minimal_branch_shift_repair_theorem": {
     "branch_key_after_repair": [
@@ -58,10 +70,11 @@
     "selection_rule": {
       "loss_function": "(theta_12(sigma)-0.2256)^2 + (theta_23(sigma)-0.0438)^2 + (theta_13(sigma)-0.00347)^2",
       "secondary_tiebreaker": "J(sigma)"
-    }
+    },
+    "selector_domain": "left_handed_same_label_relative_sheet_orbit_only"
   },
   "minimal_solver_extension": {
-    "definition": "full finite relative-sheet orbit over the present D12 reference representative",
+    "definition": "full finite left-handed relative-sheet orbit over the ordered same-label D12 reference representative",
     "id": "sigma_ud_orbit",
     "must_emit": "sigma_ud_orbit.elements = [{sigma_id, canonical_token, ckm}]",
     "selection_rule": {
@@ -83,8 +96,9 @@
   "notes": [
     "This artifact sharpens the quark CKM boundary: the current D12 sheet is transport-closed but wrong-branch.",
     "The exact next object is discrete rather than continuous: one relative up/down sheet selector sigma_ud.",
-    "The current surface is formally insufficient to identify sigma_ud; the minimal extension is a finite sigma_ud orbit with per-candidate CKM tuples.",
+    "The current surface is formally insufficient to identify sigma_ud; the minimal extension is a finite left-handed same-label sigma_ud orbit with per-candidate CKM tuples.",
     "The only finite local scan on disk is a same-sheet Delta_ud_overlap scan against reference targets; it is comparison-only and cannot be repurposed as a Sigma_ud scan.",
+    "A smaller finite local basis orbit is already extractable from the current forward Yukawa surface, but it is diagnostic-only because its nontrivial elements leave the ordered same-label left-eigenframe domain.",
     "Mass-side scale fixing remains a separate issue after the physical branch is selected; no scalar t1 can repair CKM on the present sheet."
   ],
   "physical_shell_mismatch": {

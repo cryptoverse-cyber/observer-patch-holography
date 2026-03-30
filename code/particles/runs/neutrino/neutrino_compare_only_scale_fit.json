@@ -1,0 +1,129 @@
+{
+  "artifact": "oph_neutrino_compare_only_scale_fit",
+  "central_ratio_mismatch": {
+    "predicted_ratio_21_over_32": 0.031602426224679334,
+    "reference_ratio_21_over_32": 0.030721903199343724,
+    "relative_difference": 0.02866108325458233,
+    "statement": "One lambda_nu cannot hit both reference central splittings exactly because the repaired branch fixes a ratio that differs from the reference central ratio."
+  },
+  "exact_central_match_possible_with_single_lambda_nu": false,
+  "existing_compare_only_adapter": {
+    "adapter_formula": "lambda_nu_cmp = sqrt(Delta m32^2_anchor / Delta_hat_32)",
+    "adapter_status": "hard_separated_compare_only_adapter",
+    "delta_m21_sq_eV2": 7.688870300464483e-05,
+    "delta_m31_sq_eV2": 0.0025098887030046446,
+    "delta_m32_sq_eV2": 0.002433,
+    "delta_m32_sq_input_eV2": 0.002433,
+    "lambda_nu_cmp": 1.784113126943906,
+    "m0": 1.784113126943906,
+    "masses_eV": [
+      0.0173038239577873,
+      0.01939873775704849,
+      0.05300293413167556
+    ],
+    "normalization_kind": "atmospheric_anchor",
+    "status": "compare_only",
+    "sum_masses_eV": 0.08970549584651136
+  },
+  "fits": {
+    "atmospheric_only": {
+      "chi2_21_32": 1.211935798589445,
+      "delta_m_sq_eV2": {
+        "21": 7.704671513576822e-05,
+        "31": 0.002515046715135768,
+        "32": 0.002438
+      },
+      "fit_kind": "atmospheric_only",
+      "lambda_nu": 1.7859454301144422,
+      "masses_eV": [
+        0.01732159516916478,
+        0.019418660467194974,
+        0.053057368709164235
+      ],
+      "ratio_21_over_32": 0.031602426224679334,
+      "residual_sigma": {
+        "21": 1.1008795568042151,
+        "32": 0.0
+      }
+    },
+    "solar_only": {
+      "chi2_21_32": 11.535807309263376,
+      "delta_m_sq_eV2": {
+        "21": 7.49e-05,
+        "31": 0.002444971192239924,
+        "32": 0.002370071192239924
+      },
+      "fit_kind": "solar_only",
+      "lambda_nu": 1.7608892004932672,
+      "masses_eV": [
+        0.017078578860466136,
+        0.019146223018996742,
+        0.052312991198488014
+      ],
+      "ratio_21_over_32": 0.03160242622467934,
+      "residual_sigma": {
+        "21": 0.0,
+        "32": -3.396440388003796
+      }
+    },
+    "weighted_least_squares": {
+      "chi2_21_32": 1.0967163148364376,
+      "delta_m_sq_eV2": {
+        "21": 7.684262560396642e-05,
+        "31": 0.0025083845919596248,
+        "32": 0.002431541966355659
+      },
+      "fit_kind": "weighted_least_squares",
+      "lambda_nu": 1.7835784605231035,
+      "masses_eV": [
+        0.01729863831485806,
+        0.019392924306360856,
+        0.05298705011139891
+      ],
+      "ratio_21_over_32": 0.031602426224679334,
+      "residual_sigma": {
+        "21": 0.9962182584443181,
+        "32": -0.32290168221706017
+      }
+    }
+  },
+  "generated_utc": "2026-03-30T05:22:49Z",
+  "reference_central_values": {
+    "delta_m21_sq_eV2": 7.49e-05,
+    "delta_m21_sq_sigma_eV2": 1.95e-06,
+    "delta_m32_sq_eV2": 0.002438,
+    "delta_m32_sq_sigma_eV2": 2e-05,
+    "source": "PDG 2025 neutrino review Table 14.7, Ref. [193] with SK-ATM and IC24, normal ordering, representative central values"
+  },
+  "scale_free_branch": {
+    "delta_hat_m_sq_eV2": {
+      "21": 2.415559601940881e-05,
+      "31": 0.0007885145046574088,
+      "32": 0.000764358908638
+    },
+    "m_hat_eV": [
+      0.009698837868777897,
+      0.010873042445619763,
+      0.029708281011567278
+    ],
+    "pmns_observables": {
+      "J": -0.026522158828835723,
+      "delta_deg": 307.81750422696206,
+      "delta_rad": 5.37242894403205,
+      "theta12_deg": 33.97561492020427,
+      "theta12_rad": 0.592986345747275,
+      "theta13_deg": 8.645937826302099,
+      "theta13_rad": 0.15090008199169322,
+      "theta23_deg": 49.778494281953684,
+      "theta23_rad": 0.8687986219052624
+    },
+    "ratio_21_over_32": 0.031602426224679334
+  },
+  "source_artifact": "/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/code/particles/runs/neutrino/neutrino_weighted_cycle_repair.json",
+  "status": "compare_only",
+  "theorem_boundary": {
+    "forbidden_feedback": "compare_only_fit_must_not_feed_back_into_theorem_state_or_lambda_nu_emission",
+    "statement": "The repaired weighted-cycle branch fixes the PMNS pattern and the dimensionless splitting ratio. A single positive lambda_nu rescales all masses and all Delta m^2 values together, but it cannot change the fixed ratio Delta_hat_21 / Delta_hat_32.",
+    "status": "scale_parameter_open_compare_only_fit_surface"
+  }
+}

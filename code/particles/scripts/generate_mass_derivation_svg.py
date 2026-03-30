@@ -229,10 +229,11 @@ LANES: List[Dict[str, Any]] = [
             "The live scalar order beneath the public charged rows is eta first and sigma second on the same carrier. "
             "At theorem level, though, the deeper exact waiting set starts with the latent candidate "
             "`C_hat_e^{cand}`. Promoting it is blocked by the branch-generator splitting theorem and its "
-            "commutator clause, and the local corpus proves neither exact vanishing nor uniform quadratic smallness of that descended commutator yet. On the absolute side the equalizer route is no-go under common-shift "
+            "commutator clause, and the local corpus proves neither exact vanishing nor uniform quadratic smallness of that descended commutator yet. The strongest new route is only an extension candidate: a centered Schur-type "
+            "`P->Q->P` transfer theorem would promote the proxy bridge if a refinement-uniform middle-factor bound can be certified, with the current local proxy gap staying safe for about `M < 119.56`. On the absolute side the equalizer route is no-go under common-shift "
             "symmetry, so the future slot is one affine-covariant absolute anchor `A_ch`."
         ),
-        "tasks_text": "Open task: close `oph_generation_bundle_branch_generator_splitting`, in particular `compression_descendant_commutator_vanishes_or_is_uniformly_quadratic_small_after_central_split`, so the latent candidate `C_hat_e^{cand}` can be promoted; then derive one affine-covariant absolute charged anchor `A_ch` with `A_ch(logm + c*(1,1,1)) = A_ch(logm) + c`. The common-refinement equalizer route is currently a no-go.",
+        "tasks_text": "Open task: close `oph_generation_bundle_branch_generator_splitting`, in particular `compression_descendant_commutator_vanishes_or_is_uniformly_quadratic_small_after_central_split`, so the latent candidate `C_hat_e^{cand}` can be promoted; then derive one affine-covariant absolute charged anchor `A_ch` with `A_ch(logm + c*(1,1,1)) = A_ch(logm) + c`. The common-refinement equalizer route is currently a no-go, while the central-split transfer theorem is only an unpromoted extension route.",
         "prediction_surface": "Charged forward surface with an eta readback primitive plus a sigma endpoint-ratio breaker on one support-extension family.",
         "particles": ["electron", "muon", "tau"],
         "tasks": [
@@ -262,10 +263,10 @@ LANES: List[Dict[str, Any]] = [
             "quark object is not a continuous mass scalar but one discrete relative sheet selector "
             "`quark_relative_sheet_selector`; the current local surface is formally insufficient because it exposes only one "
             "reference-sheet representative and no finite `sigma_ud_orbit`. The only finite local scan on disk is a same-sheet 4001-point `Delta_ud_overlap` scan against `reference_targets`, and that route is comparison-only rather than a valid `Sigma_ud` orbit. Only after branch selection does a selected-branch mass-side scale law "
-            "become relevant."
+            "become relevant. A smaller finite local basis orbit is already extractable from the current forward Yukawa surface, but its nontrivial elements use right-singular-basis substitutions and are therefore diagnostic-only rather than admissible physical selectors."
         ),
-        "tasks_text": "Open task: emit a finite `sigma_ud_orbit` and then one discrete `quark_relative_sheet_selector` that leaves the wrong-branch D12 no-go class. After the physical branch is selected, derive a selected-branch intrinsic mass-side scale law independent of target masses and independent of CKM/CP. CKM/CP transport closure on the current D12 sheet is already explicit.",
-        "prediction_surface": "Local forward quark Yukawa surface on the public table, with CKM/CP transport closed on the current D12 sheet, the light-quark mass side reduced to the emitted one-parameter ray `D12_ud_mass_ray`, and the physical branch still waiting on an emitted finite `sigma_ud_orbit` plus one discrete relative-sheet selector. The top row is carried by D11, not this lane.",
+        "tasks_text": "Open task: emit a finite left-handed same-label `sigma_ud_orbit` and then one discrete `quark_relative_sheet_selector` that leaves the wrong-branch D12 no-go class. After the physical branch is selected, derive a selected-branch intrinsic mass-side scale law independent of target masses and independent of CKM/CP. CKM/CP transport closure on the current D12 sheet is already explicit, and the smaller local chirality-basis orbit is already excluded.",
+        "prediction_surface": "Local forward quark Yukawa surface on the public table, with CKM/CP transport closed on the current D12 sheet, the light-quark mass side reduced to the emitted one-parameter ray `D12_ud_mass_ray`, a smaller nonphysical local basis orbit excluded, and the physical branch still waiting on an emitted finite left-handed same-label `sigma_ud_orbit` plus one discrete relative-sheet selector. The top row is carried by D11, not this lane.",
         "particles": ["up_quark", "down_quark", "strange_quark", "charm_quark", "bottom_quark"],
         "tasks": [
             "papers.compact.e.29-derive-the-yukawa-excitation-dictionary",
@@ -285,10 +286,10 @@ LANES: List[Dict[str, Any]] = [
             "atmospheric scale by the exact cap `max |Delta m^2| <= 8 a rho`. The repaired live branch instead uses the "
             "same-label scalar certificate together with the flavor cocycle invariants `gamma` and `eps` to emit a "
             "weighted-cycle law `w_e = q_e^(1 + gamma + eps)` with diagonal load `chi = 1 + eps`. That repaired branch "
-            "lands in the physical PMNS window and the correct splitting hierarchy. The remaining open burden is only one "
-            "positive absolute neutrino normalization scalar; the downstream PMNS and hierarchy map are otherwise closed."
+            "lands in the physical PMNS window and the correct splitting hierarchy. No hidden discrete branch remains on that repaired lane; the remaining open burden is only one "
+            "positive absolute neutrino normalization scalar, so the downstream PMNS and hierarchy map are otherwise closed."
         ),
-        "tasks_text": "Open task: emit the final positive absolute neutrino normalization scalar. The weighted-cycle repair already closes the PMNS pattern and hierarchy; the remaining no-go is pure positive rescaling non-identifiability, so the branch currently emits only the one-parameter family `m_i = lambda_nu * mhat_i`, `Delta m^2_ij = lambda_nu^2 * Delta_hat_ij`.",
+        "tasks_text": "Open task: emit the final positive absolute neutrino normalization scalar. The weighted-cycle repair already closes the PMNS pattern and hierarchy, and the no-hidden-discrete-branch audit says the only remaining freedom is the positive rescaling orbit `m_i = lambda_nu * mhat_i`, `Delta m^2_ij = lambda_nu^2 * Delta_hat_ij`.",
         "prediction_surface": "Repaired weighted-cycle neutrino branch with PMNS and hierarchy closure; public flavor rows remain hidden until the final positive normalization scalar is emitted and the one-parameter absolute family collapses to one theorem-grade spectrum.",
         "particles": ["electron_neutrino", "muon_neutrino", "tau_neutrino"],
         "tasks": [

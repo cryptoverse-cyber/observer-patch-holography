@@ -32,6 +32,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[2]
 D12_BRANCH_JSON = ROOT / "particles" / "runs" / "flavor" / "quark_d12_mass_branch_and_ckm_residual.json"
+LOCAL_BASIS_ORBIT_JSON = ROOT / "particles" / "runs" / "flavor" / "quark_local_basis_orbit_diagnostic.json"
 DEFAULT_OUT = ROOT / "particles" / "runs" / "flavor" / "quark_physical_branch_repair_theorem.json"
 
 TARGET_THETA_12 = 0.2256
@@ -64,6 +65,7 @@ def main() -> int:
     args = parser.parse_args()
 
     branch = _load_json(Path(args.branch))
+    local_basis_orbit = _load_json(LOCAL_BASIS_ORBIT_JSON) if LOCAL_BASIS_ORBIT_JSON.exists() else None
     standard = dict(branch["standard_ckm_parameters"])
 
     theta_12 = float(standard["theta_12"])
@@ -152,6 +154,7 @@ def main() -> int:
             "id": "quark_relative_sheet_selector",
             "must_emit": "quark_relative_sheet_selector",
             "definition": "sigma_ud in Sigma_ud",
+            "selector_domain": "left_handed_same_label_relative_sheet_orbit_only",
             "branch_key_after_repair": ["D12", "sigma_ud"],
             "must_not_use_compare_fit_masses": True,
             "must_not_use_same_sheet_rephasing": True,
@@ -165,7 +168,7 @@ def main() -> int:
         },
         "minimal_solver_extension": {
             "id": "sigma_ud_orbit",
-            "definition": "full finite relative-sheet orbit over the present D12 reference representative",
+            "definition": "full finite left-handed relative-sheet orbit over the ordered same-label D12 reference representative",
             "must_emit": "sigma_ud_orbit.elements = [{sigma_id, canonical_token, ckm}]",
             "selection_rule_kind": "ckm_log_shell_loss",
             "selection_rule": {
@@ -185,6 +188,29 @@ def main() -> int:
                 ],
             },
         },
+        "local_basis_orbit_diagnostic": (
+            {
+                "status": "available_from_current_corpus",
+                "artifact_ref": "particles/runs/flavor/quark_local_basis_orbit_diagnostic.json",
+                "orbit_size": len(local_basis_orbit.get("elements", [])),
+                "theorem_use": "diagnostic_exclusion_only",
+                "best_nonphysical_candidate_ref": [
+                    local_basis_orbit["best_nonphysical_candidate"]["basis_u"],
+                    local_basis_orbit["best_nonphysical_candidate"]["basis_d"],
+                ]
+                if local_basis_orbit and local_basis_orbit.get("best_nonphysical_candidate")
+                else None,
+                "physical_selector_use_allowed": False,
+                "reason": "right-basis chirality swaps are not admissible quark_relative_sheet_selector candidates",
+            }
+            if local_basis_orbit
+            else {
+                "status": "not_yet_materialized_locally",
+                "theorem_use": "diagnostic_exclusion_only",
+                "physical_selector_use_allowed": False,
+                "reason": "local basis orbit diagnostic has not been generated yet",
+            }
+        ),
         "disqualified_existing_local_scan": {
             "status": "not_sigma_ud_orbit",
             "grid_kind": "np.linspace(-0.4, 0.4, 4001)",
@@ -205,8 +231,9 @@ def main() -> int:
         "notes": [
             "This artifact sharpens the quark CKM boundary: the current D12 sheet is transport-closed but wrong-branch.",
             "The exact next object is discrete rather than continuous: one relative up/down sheet selector sigma_ud.",
-            "The current surface is formally insufficient to identify sigma_ud; the minimal extension is a finite sigma_ud orbit with per-candidate CKM tuples.",
+            "The current surface is formally insufficient to identify sigma_ud; the minimal extension is a finite left-handed same-label sigma_ud orbit with per-candidate CKM tuples.",
             "The only finite local scan on disk is a same-sheet Delta_ud_overlap scan against reference targets; it is comparison-only and cannot be repurposed as a Sigma_ud scan.",
+            "A smaller finite local basis orbit is already extractable from the current forward Yukawa surface, but it is diagnostic-only because its nontrivial elements leave the ordered same-label left-eigenframe domain.",
             "Mass-side scale fixing remains a separate issue after the physical branch is selected; no scalar t1 can repair CKM on the present sheet.",
         ],
     }

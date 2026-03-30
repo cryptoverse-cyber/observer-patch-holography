@@ -300,6 +300,9 @@ def test_exact_blocking_items_reduce_to_one_absolute_normalization_after_repair(
         summary_payload = json.loads(summary_out.read_text(encoding="utf-8"))
         assert exact_payload["artifact"] == "oph_exact_neutrino_blocker_audit_v8"
         assert exact_payload["live_continuation_branch_status"]["status"] == "physically_repaired_up_to_one_positive_scale"
+        assert exact_payload["no_hidden_discrete_branch"]["status"] == "closed"
+        assert exact_payload["no_hidden_discrete_branch"]["open_discrete_blockers"] == []
+        assert exact_payload["remaining_positive_scale_orbit"]["group"] == "R_{>0}"
         assert exact_payload["live_continuation_branch_status"]["absolute_scale_no_go"]["theorem"] == "neutrino_weighted_cycle_absolute_scale_no_go"
         assert exact_payload["live_continuation_branch_status"]["absolute_scale_no_go"]["proof_obstruction"] == "positive_rescaling_nonidentifiability"
         assert exact_payload["live_continuation_branch_status"]["absolute_scale_no_go"]["absolute_family_parameter"] == "lambda_nu > 0"

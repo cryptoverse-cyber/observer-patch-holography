@@ -1,0 +1,45 @@
+{
+  "artifact": "oph_quark_relative_sheet_selector",
+  "branch_key_after_repair": [
+    "D12",
+    "sigma_ud"
+  ],
+  "debug_best_candidate": null,
+  "debug_best_candidate_promotable": false,
+  "definition": "sigma_ud in Sigma_ud",
+  "dependencies": {
+    "repair_theorem_artifact": "quark_physical_branch_repair_theorem.json",
+    "solver_artifact": "quark_sigma_ud_orbit.json"
+  },
+  "generated_utc": "2026-03-30T05:00:52Z",
+  "id": "quark_relative_sheet_selector",
+  "must_not_use_compare_fit_masses": true,
+  "must_not_use_same_sheet_rephasing": true,
+  "next_after_selection": {
+    "id": "intrinsic_scale_law_D12",
+    "must_emit": "intrinsic_scale_law_D12",
+    "must_not_use_ckm_cp": true,
+    "must_not_use_target_masses": true,
+    "then_emits": [
+      "ray_modulus",
+      "Delta_ud_overlap",
+      "eta_Q_centered"
+    ],
+    "unique_intersection_with": "D12_ud_mass_ray"
+  },
+  "notes": [
+    "This is the exact next theorem-side object even when the selector value remains open.",
+    "This script refuses to convert compare-only CKM-shell ranking into a theorem-grade selection.",
+    "Once a theorem-grade orbit witness exists, rerunning this script will emit sigma_ud directly."
+  ],
+  "quark_relative_sheet_selector": {
+    "carrier": "Sigma_ud",
+    "symbol": "sigma_ud",
+    "value": null
+  },
+  "reason": "No orbit element carries a theorem-grade selection witness. The current corpus therefore emits only the selector object, not a selector value.",
+  "scope": "D12_relative_sheet_selection",
+  "selection_rule_status": "open_target_free_rule_unemitted",
+  "selection_status": "not_emitted_from_current_corpus",
+  "selector_domain": "left_handed_same_label_relative_sheet_orbit_only"
+}

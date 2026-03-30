@@ -78,7 +78,7 @@
     }
   ],
   "fully_completed": false,
-  "generated_utc": "2026-03-30T00:40:08Z",
+  "generated_utc": "2026-03-30T05:00:53Z",
   "live_continuation_branch_status": {
     "absolute_scale_no_go": {
       "absolute_family_parameter": "lambda_nu > 0",
@@ -165,8 +165,18 @@
       "theta23_deg": 49.778494281953684,
       "theta23_rad": 0.8687986219052624
     },
+    "no_hidden_discrete_branch": {
+      "open_discrete_blockers": [],
+      "statement": "The repaired weighted-cycle branch already fixes the shared-basis discrete data; no unresolved discrete neutrino branch remains.",
+      "status": "closed"
+    },
     "physical_branch_closed": false,
     "pmns_present": true,
+    "remaining_positive_scale_orbit": {
+      "family_parameter": "lambda_nu > 0",
+      "group": "R_{>0}",
+      "status": "open"
+    },
     "repair_artifact_present": true,
     "repaired_branch_dimensionless_dm2": {
       "21": 2.415559601940881e-05,
@@ -182,5 +192,22 @@
     "first_honest_solar_mover": "realized_arrow_pullback_from_flavor_gap_and_defect_certificates",
     "statement": "The current forward neutrino bundle is exactly S_3-isotropic, so neutrino-only same-label readback stays edge-constant and cannot open the solar 1-2 split."
   },
-  "reason_not_fully_completed": "The old isotropic branch has been repaired at the physical-pattern level: the weighted-cycle branch lands in the observed PMNS window and gives the right splitting hierarchy. But one overall positive neutrino normalization is still open, so the absolute masses and absolute delta m^2 values remain compare-only unless an external atmospheric anchor is supplied."
+  "no_hidden_discrete_branch": {
+    "closed_discrete_witnesses": [
+      "shape_closed_scale_invariant_left_basis",
+      "pmns_from_shared_charged_and_intrinsic_bases",
+      "cycle_basis_order_fixed_(f3,f1,f2)",
+      "holonomy_orientation_fixed_021"
+    ],
+    "open_discrete_blockers": [],
+    "statement": "The repaired weighted-cycle branch leaves only positive rescaling freedom; no unresolved discrete branch remains.",
+    "status": "closed"
+  },
+  "reason_not_fully_completed": "The old isotropic branch has been repaired at the physical-pattern level: the weighted-cycle branch lands in the observed PMNS window and gives the right splitting hierarchy. But one overall positive neutrino normalization is still open, so the absolute masses and absolute delta m^2 values remain compare-only unless an external atmospheric anchor is supplied.",
+  "remaining_positive_scale_orbit": {
+    "family_parameter": "lambda_nu > 0",
+    "group": "R_{>0}",
+    "proof_obstruction": "positive_rescaling_nonidentifiability",
+    "status": "open"
+  }
 }

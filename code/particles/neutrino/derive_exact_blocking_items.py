@@ -197,6 +197,31 @@ def build_exact_blockers(
             ),
             "first_honest_solar_mover": "realized_arrow_pullback_from_flavor_gap_and_defect_certificates",
         },
+        "no_hidden_discrete_branch": {
+            "status": "closed" if repair_shape_closed else "not_yet_established",
+            "open_discrete_blockers": [] if repair_shape_closed else ["branch_repair_or_discrete_selector_unknown"],
+            "closed_discrete_witnesses": (
+                [
+                    "shape_closed_scale_invariant_left_basis",
+                    "pmns_from_shared_charged_and_intrinsic_bases",
+                    "cycle_basis_order_fixed_(f3,f1,f2)",
+                    "holonomy_orientation_fixed_021",
+                ]
+                if repair_shape_closed
+                else []
+            ),
+            "statement": (
+                "The repaired weighted-cycle branch leaves only positive rescaling freedom; no unresolved discrete branch remains."
+                if repair_shape_closed
+                else "No hidden-discrete-branch theorem is not yet available before the repaired weighted-cycle branch closes."
+            ),
+        },
+        "remaining_positive_scale_orbit": {
+            "status": "open" if repair_shape_closed and absolute_normalization_open else "not_applicable",
+            "group": "R_{>0}" if repair_shape_closed and absolute_normalization_open else None,
+            "family_parameter": "lambda_nu > 0" if repair_shape_closed and absolute_normalization_open else None,
+            "proof_obstruction": "positive_rescaling_nonidentifiability" if repair_shape_closed and absolute_normalization_open else None,
+        },
         "live_continuation_branch_status": {
             "same_label_scalar_certificate_present": same_label_present,
             "shared_charged_left_basis_present": charged_basis_present,
@@ -212,6 +237,20 @@ def build_exact_blockers(
                 )
             ),
             "physical_branch_closed": physical_branch_closed,
+            "no_hidden_discrete_branch": {
+                "status": "closed" if repair_shape_closed else "not_yet_established",
+                "open_discrete_blockers": [] if repair_shape_closed else ["branch_repair_or_discrete_selector_unknown"],
+                "statement": (
+                    "The repaired weighted-cycle branch already fixes the shared-basis discrete data; no unresolved discrete neutrino branch remains."
+                    if repair_shape_closed
+                    else "The current surface has not yet reduced the neutrino lane to a pure positive-scale orbit."
+                ),
+            },
+            "remaining_positive_scale_orbit": {
+                "status": "open" if repair_shape_closed and absolute_normalization_open else "not_applicable",
+                "group": "R_{>0}" if repair_shape_closed and absolute_normalization_open else None,
+                "family_parameter": "lambda_nu > 0" if repair_shape_closed and absolute_normalization_open else None,
+            },
             "current_pmns_parameters": dict(
                 (repair.get("pmns_observables") if repair_shape_closed else pmns.get("standard_pmns_parameters")) or {}
             ),

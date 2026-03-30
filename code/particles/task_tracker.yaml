@@ -1,5 +1,5 @@
 version: 1
-as_of: "2026-03-29"
+as_of: "2026-03-30"
 goal: "full particle zoo at high precision from calibrated P plus OPH axioms/theorem chain"
 stages:
   - id: stage-0
@@ -467,6 +467,20 @@ stages:
             "papers.compact.e.29-derive-the-yukawa-excitation-dictionary",
             "papers.compact.e.30-replace-koide-assisted-lepton-fitting-with-a-theorem"
           ]
+      - id: particles.leptons.21-add-charged-absolute-anchor-section-scaffold
+        title: "Add the machine-readable charged absolute-anchor section scaffold so theorem search targets A_ch directly rather than centered-shape orbit picks"
+        status: completed
+        owner_lane: local_code
+        depends_on: ["particles.leptons.19-record-charged-absolute-scale-underdetermination"]
+      - id: particles.leptons.22-record-central-split-transfer-extension-route
+        title: "Record the centered Schur-type commutator-transfer extension route and its local numeric promotion margin without promoting C_hat_e on the live corpus"
+        status: completed
+        owner_lane: local_code
+        depends_on:
+          [
+            "particles.leptons.18-record-exact-charged-waiting-set",
+            "particles.leptons.21-add-charged-absolute-anchor-section-scaffold"
+          ]
       - id: particles.flavor.25-add-hermitian-descendant-riesz-margin-and-cocycle-origin-flags
         title: "Add the lifted Hermitian-descendant Riesz margin plus explicit cocycle-origin closure flags"
         status: completed
@@ -652,6 +666,21 @@ stages:
             "particles.flavor.51-certify-current-d12-sheet-no-go-for-physical-ckm-shell",
             "papers.compact.e.31-derive-quark-textures-ckm-mixing-and-cp-from-overlap-defects"
           ]
+      - id: particles.flavor.54-add-quark-sigma-ud-orbit-scaffold
+        title: "Add the machine-readable finite sigma_ud_orbit scaffold and compare-only scorer so solver work targets orbit exposure rather than same-sheet scans"
+        status: completed
+        owner_lane: local_code
+        depends_on: ["particles.flavor.51-certify-current-d12-sheet-no-go-for-physical-ckm-shell"]
+      - id: particles.flavor.55-add-local-basis-orbit-diagnostic-exclusion
+        title: "Enumerate the smallest already-local chirality-basis orbit and mark it diagnostic-only so the remaining solver object is sharply left-handed"
+        status: completed
+        owner_lane: local_code
+        depends_on: ["particles.flavor.54-add-quark-sigma-ud-orbit-scaffold"]
+      - id: particles.flavor.56-add-theorem-side-relative-sheet-selector-scaffold
+        title: "Add the theorem-side quark_relative_sheet_selector scaffold so orbit exposure and selector value emission are tracked separately"
+        status: completed
+        owner_lane: local_code
+        depends_on: ["particles.flavor.54-add-quark-sigma-ud-orbit-scaffold"]
       - id: particles.flavor.53-derive-selected-branch-quark-mass-scale-law
         title: "Derive the intrinsic mass-side scale law on the selected quark branch after the discrete CKM branch selector is fixed"
         status: pending
@@ -668,7 +697,7 @@ stages:
         owner_lane: pro_paper
         depends_on: ["papers.compact.e.29-derive-the-yukawa-excitation-dictionary"]
       - id: particles.e.32b-close-neutrino-splittings-and-mixing
-        title: "Repair neutrino PMNS and hierarchy on the live continuation branch, then emit the final absolute normalization scalar"
+        title: "Promote the repaired neutrino branch from PMNS/hierarchy closure to theorem-grade absolute spectrum, or prove that the fixed hierarchy ratio still needs refinement beyond one emitted lambda_nu"
         status: in_progress
         owner_lane: pro_neutrino
         depends_on: ["papers.compact.e.32-derive-neutrino-masses-from-screen-capacity-as-a-theorem"]
@@ -826,6 +855,34 @@ stages:
         status: completed
         owner_lane: local_code
         depends_on: ["particles.neutrino.29-build-intrinsic-mass-eigenstate-bundle-from-scalar-certificate"]
+      - id: particles.neutrino.31-add-positive-scale-orbit-audit
+        title: "Record that the repaired weighted-cycle neutrino lane has no hidden discrete branch and leaves only the positive absolute-scale orbit"
+        status: completed
+        owner_lane: local_code
+        depends_on:
+          [
+            "particles.e.32b-close-neutrino-splittings-and-mixing",
+            "particles.neutrino.30-record-exact-blocker-audit"
+          ]
+      - id: particles.neutrino.32-add-compare-only-single-scale-fit-surface
+        title: "Add a compare-only one-parameter neutrino scale-fit surface against representative PDG splittings"
+        status: completed
+        owner_lane: local_code
+        depends_on: ["particles.neutrino.31-add-positive-scale-orbit-audit"]
+      - id: particles.neutrino.33-record-single-scale-central-value-mismatch
+        title: "Record that one fitted lambda_nu gives a good oscillation fit but cannot hit both representative central splittings exactly because the repaired fixed ratio is offset"
+        status: completed
+        owner_lane: local_code
+        depends_on: ["particles.neutrino.32-add-compare-only-single-scale-fit-surface"]
+      - id: particles.neutrino.34-resolve-fixed-hierarchy-ratio-mismatch-beyond-lambda-nu
+        title: "Determine whether one internal neutrino normalization scalar is sufficient on the repaired branch or whether the dimensionless hierarchy law itself needs refinement for exact central-value closure"
+        status: ready
+        owner_lane: pro_neutrino
+        depends_on:
+          [
+            "particles.e.32b-close-neutrino-splittings-and-mixing",
+            "particles.neutrino.33-record-single-scale-central-value-mismatch"
+          ]
   - id: stage-6
     title: "Hadron branch (deferred, execution-bound)"
     status: deferred

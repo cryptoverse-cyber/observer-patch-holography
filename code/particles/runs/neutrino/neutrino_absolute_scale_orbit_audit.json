@@ -1,0 +1,214 @@
+{
+  "artifact": "oph_neutrino_absolute_scale_orbit_audit",
+  "compare_only_anchor_separation": {
+    "current_compare_only_anchor": {
+      "adapter_formula": "lambda_nu_cmp = sqrt(Delta m32^2_anchor / Delta_hat_32)",
+      "adapter_status": "hard_separated_compare_only_adapter",
+      "delta_m21_sq_eV2": 7.688870300464483e-05,
+      "delta_m31_sq_eV2": 0.0025098887030046446,
+      "delta_m32_sq_eV2": 0.002433,
+      "delta_m32_sq_input_eV2": 0.002433,
+      "lambda_nu_cmp": 1.784113126943906,
+      "m0": 1.784113126943906,
+      "masses_eV": [
+        0.0173038239577873,
+        0.01939873775704849,
+        0.05300293413167556
+      ],
+      "normalization_kind": "atmospheric_anchor",
+      "status": "compare_only",
+      "sum_masses_eV": 0.08970549584651136
+    },
+    "external_anchor_disallowed": {
+      "name": "atmospheric_delta_m32_sq",
+      "reason": "compare_only_external_oscillation_anchor",
+      "value_eV2": 0.002433
+    },
+    "hard_separated_compare_only_adapter": {
+      "allowed_formula": "lambda_nu_cmp = sqrt(Delta m32^2_anchor / Delta_hat_32)",
+      "forbidden_feedback": "compare_only_anchor_must_not_feed_back_into_theorem_state_or_lambda_nu_emission"
+    }
+  },
+  "generated_utc": "2026-03-30T05:00:54Z",
+  "next_breaking_contract": "one_OPH_theorem_fixing_lambda_nu_from_an_internal_dimensionful_invariant_without_oscillation_data",
+  "no_hidden_discrete_branch": {
+    "closed_discrete_witnesses": [
+      "shape_closed_scale_invariant_left_basis",
+      "pmns_from_shared_charged_and_intrinsic_bases",
+      "cycle_basis_order_fixed_(f3,f1,f2)",
+      "holonomy_orientation_fixed_021"
+    ],
+    "open_discrete_blockers": [],
+    "statement": "The live branch already fixes the shared-basis discrete data and the blocker surface carries no unresolved discrete theorem object.",
+    "status": "closed"
+  },
+  "proof_primitives": {
+    "blocker_audit": {
+      "absolute_scale_no_go": {
+        "absolute_family_parameter": "lambda_nu > 0",
+        "dimensionless_dm2_family_eV2": {
+          "21": "2.415559601940881e-05 * lambda_nu^2",
+          "31": "7.885145046574088e-04 * lambda_nu^2",
+          "32": "7.64358908638e-04 * lambda_nu^2"
+        },
+        "dimensionless_mass_family": [
+          "m1 = 0.009698837868777897 * lambda_nu",
+          "m2 = 0.010873042445619763 * lambda_nu",
+          "m3 = 0.029708281011567278 * lambda_nu"
+        ],
+        "external_anchor_disallowed": {
+          "name": "atmospheric_delta_m32_sq",
+          "reason": "compare_only_external_oscillation_anchor",
+          "value_eV2": 0.002433
+        },
+        "hard_separated_compare_only_adapter": {
+          "allowed_formula": "lambda_nu_cmp = sqrt(Delta m32^2_anchor / Delta_hat_32)",
+          "forbidden_feedback": "compare_only_anchor_must_not_feed_back_into_theorem_state_or_lambda_nu_emission"
+        },
+        "minimal_missing_object": "one_OPH_theorem_fixing_lambda_nu_from_an_internal_dimensionful_invariant_without_oscillation_data",
+        "proof_obstruction": "positive_rescaling_nonidentifiability",
+        "scale_free_dm2_normal_form_eV2": {
+          "21": 2.415559601940881e-05,
+          "31": 0.0007885145046574088,
+          "32": 0.000764358908638
+        },
+        "scale_free_mass_normal_form": {
+          "masses": [
+            0.009698837868777897,
+            0.010873042445619763,
+            0.029708281011567278
+          ],
+          "notation": "m_hat"
+        },
+        "statement": "The repaired weighted-cycle branch fixes only the dimensionless hierarchy and PMNS pattern. For every lambda_nu > 0, the family m_i(lambda_nu) = lambda_nu * mhat_i and Delta m^2_ij(lambda_nu) = lambda_nu^2 * Delta_hat_ij has the same dimensionless observables, so no unique absolute scale is emitted without one further OPH theorem fixing lambda_nu.",
+        "status": "closed",
+        "symbolic_absolute_outputs": {
+          "masses": [
+            "m1 = lambda_nu * mhat_1",
+            "m2 = lambda_nu * mhat_2",
+            "m3 = lambda_nu * mhat_3"
+          ],
+          "splittings": {
+            "21": "Delta m21^2 = lambda_nu^2 * Delta_hat_21",
+            "31": "Delta m31^2 = lambda_nu^2 * Delta_hat_31",
+            "32": "Delta m32^2 = lambda_nu^2 * Delta_hat_32"
+          }
+        },
+        "theorem": "neutrino_weighted_cycle_absolute_scale_no_go"
+      },
+      "artifact": "oph_exact_neutrino_blocker_audit_v8",
+      "closed_theorem_chain": [
+        "oph_native_scale_anchor_m_star_equals_v2_over_mu_u",
+        "oph_fixed_cutoff_trace_pullback_metric",
+        "neutrino_only_isotropy_obstruction",
+        "same_label_scalar_certificate_sufficiency",
+        "exact_principal_selector_from_centered_eta_class",
+        "exact_depressed_cubic_intrinsic_spectrum",
+        "mass_eigenstate_row_policy_nu1_nu2_nu3",
+        "shape_closed_scale_invariant_left_basis",
+        "pmns_from_shared_charged_and_intrinsic_bases"
+      ],
+      "compare_only_atmospheric_anchor": {
+        "adapter_formula": "lambda_nu_cmp = sqrt(Delta m32^2_anchor / Delta_hat_32)",
+        "adapter_status": "hard_separated_compare_only_adapter",
+        "delta_m21_sq_eV2": 7.688870300464483e-05,
+        "delta_m31_sq_eV2": 0.0025098887030046446,
+        "delta_m32_sq_eV2": 0.002433,
+        "delta_m32_sq_input_eV2": 0.002433,
+        "lambda_nu_cmp": 1.784113126943906,
+        "m0": 1.784113126943906,
+        "masses_eV": [
+          0.0173038239577873,
+          0.01939873775704849,
+          0.05300293413167556
+        ],
+        "normalization_kind": "atmospheric_anchor",
+        "status": "compare_only",
+        "sum_masses_eV": 0.08970549584651136
+      },
+      "exact_blockers": [
+        {
+          "current_snapshot_status": "open",
+          "insufficiency_theorem": "neutrino_weighted_cycle_absolute_scale_no_go",
+          "kind": "absolute_scale_coordinate",
+          "name": "one_positive_neutrino_mass_normalization_scalar",
+          "required_contract": "emit_one_OPH_normalization_scalar_that_upgrades_the_repaired_weighted_cycle_branch_from_dimensionless_hierarchy_to_absolute_masses_and_splittings_without_external_anchor"
+        }
+      ]
+    },
+    "repair_artifact": {
+      "absolute_normalization_status": "open_one_positive_scale",
+      "artifact": "oph_neutrino_weighted_cycle_repair",
+      "cycle_basis_order": [
+        "f3",
+        "f1",
+        "f2"
+      ],
+      "holonomy_orientation": "021",
+      "physical_window_status": "pmns_and_hierarchy_repaired",
+      "symbolic_absolute_family": {
+        "absolute_dm2": {
+          "21": "Delta m21^2 = lambda_nu^2 * 2.415559601940881e-05",
+          "31": "Delta m31^2 = lambda_nu^2 * 7.885145046574088e-04",
+          "32": "Delta m32^2 = lambda_nu^2 * 7.64358908638e-04"
+        },
+        "absolute_masses": [
+          "m1 = lambda_nu * 0.009698837868777897",
+          "m2 = lambda_nu * 0.010873042445619763",
+          "m3 = lambda_nu * 0.029708281011567278"
+        ],
+        "family_parameter": "lambda_nu > 0"
+      }
+    },
+    "same_label_scalar_certificate": {
+      "artifact": "oph_neutrino_same_label_scalar_certificate",
+      "builder_facing_exact_object": "centered_log_pullback_class_[log_q_e]",
+      "exact_downstream_factorization_object": "same_label_scalar_certificate_(gap_e,overlap_sq_e)_mod_common_scale",
+      "proof_status": "fixed_cutoff_scalar_sufficient_downstream_certificate",
+      "smallest_constructive_missing_object": null
+    }
+  },
+  "remaining_object": "one_positive_neutrino_mass_normalization_scalar",
+  "remaining_object_contract": "emit_one_OPH_normalization_scalar_that_upgrades_the_repaired_weighted_cycle_branch_from_dimensionless_hierarchy_to_absolute_masses_and_splittings_without_external_anchor",
+  "remaining_object_kind": "absolute_scale_coordinate",
+  "remaining_positive_scale_orbit": {
+    "action_on_lambda_nu": "lambda_nu -> s * lambda_nu, s > 0",
+    "action_on_masses": "m_i -> s * m_i",
+    "action_on_splittings": "Delta m^2_ij -> s^2 * Delta m^2_ij",
+    "family_parameter": "lambda_nu > 0",
+    "group": "R_{>0}",
+    "proof_obstruction": "positive_rescaling_nonidentifiability",
+    "scale_free_dm2_normal_form_eV2": {
+      "21": 2.415559601940881e-05,
+      "31": 0.0007885145046574088,
+      "32": 0.000764358908638
+    },
+    "scale_free_mass_normal_form": {
+      "masses": [
+        0.009698837868777897,
+        0.010873042445619763,
+        0.029708281011567278
+      ],
+      "notation": "m_hat"
+    },
+    "status": "open"
+  },
+  "solver_output_contract": {
+    "emit_now": [
+      "scale_free_mass_normal_form_mhat",
+      "scale_free_dm2_normal_form_Delta_hat",
+      "dimensionless_ratio_Delta21_over_Delta32",
+      "pmns_observables",
+      "no_hidden_discrete_branch_closed",
+      "remaining_positive_scale_orbit_open"
+    ],
+    "must_not_emit_without_new_theorem": [
+      "lambda_nu",
+      "absolute_neutrino_masses",
+      "absolute_delta_m2_values"
+    ]
+  },
+  "status": "closed",
+  "theorem": "repaired_weighted_cycle_no_hidden_discrete_branch_and_positive_scale_orbit",
+  "theorem_statement": "On the current repaired weighted-cycle neutrino lane, all remaining open freedom is the positive rescaling orbit lambda_nu -> s * lambda_nu with s > 0. No unresolved discrete branch remains."
+}

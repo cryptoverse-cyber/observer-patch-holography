@@ -1,0 +1,65 @@
+{
+  "artifact": "oph_quark_sigma_ud_orbit",
+  "branch_key": [
+    "D12",
+    "sigma_ud"
+  ],
+  "compare_only_helper_contract": {
+    "must_not_promote_selector": true,
+    "script": "score_quark_sigma_ud_orbit_against_ckm_shell.py",
+    "status": "compare_only_only"
+  },
+  "debug_compare_shell_ranking": {
+    "kind": "ckm_log_shell_loss",
+    "promotable": false,
+    "ranked": [],
+    "shell": {
+      "theta_12": 0.2256,
+      "theta_13": 0.00347,
+      "theta_23": 0.0438
+    }
+  },
+  "elements": [],
+  "elements_schema": [
+    "sigma_id",
+    "canonical_token",
+    "U_u_left",
+    "U_d_left",
+    "V_CKM",
+    "ckm_invariants"
+  ],
+  "exact_missing_object": "sigma_ud_orbit",
+  "generated_utc": "2026-03-30T05:00:52Z",
+  "input_contract": {
+    "must_not_use": [
+      "CKM target fitting inside the theorem artifact",
+      "target masses",
+      "same-sheet rephasing as a repair"
+    ],
+    "must_use": [
+      "forward_yukawas.json",
+      "same-label transport lifts",
+      "the emitted D12 reference-sheet representative"
+    ]
+  },
+  "notes": [
+    "This scaffold exists to make the missing finite solver object explicit.",
+    "The current D12 sheet is transport-closed but wrong-branch; same-sheet changes cannot move CKM invariants to the physical shell.",
+    "Branch selection is discrete here. A continuous scalar cannot replace orbit exposure.",
+    "If elements is empty, the artifact records the honest frontier rather than inventing Sigma_ud.",
+    "If elements are supplied, the debug ranking remains comparison-only and cannot be promoted."
+  ],
+  "orbit_kind": "finite_relative_sheet_orbit",
+  "public_promotion_allowed": false,
+  "selection_gate": {
+    "may_emit_only_if": [
+      "orbit collapses to one intrinsic canonical token",
+      "or an intrinsic non-target selection theorem is proved"
+    ],
+    "quark_relative_sheet_selector": null
+  },
+  "selection_rule_status": "open_target_free_rule_unemitted",
+  "selector_status": "quark_relative_sheet_selector_not_emittable_without_orbit",
+  "status": "missing_solver_side_orbit",
+  "theorem_grade_selection": null
+}

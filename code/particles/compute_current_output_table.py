@@ -23,6 +23,7 @@ CODE_ROOT = Path(__file__).resolve().parent
 RER_ROOT = CODE_ROOT.parents[1]
 WORKSPACE_ROOT = CODE_ROOT.parents[2]
 DEFAULT_RUNTIME_ROOT = WORKSPACE_ROOT / "temp" / "particles_runtime"
+NEUTRINO_COMPARE_ONLY_FIT = Path("runs/neutrino/neutrino_compare_only_scale_fit.json")
 
 EXCLUDE_NAMES = {
     "__pycache__",
@@ -54,6 +55,7 @@ CURRENT_QUARK_MEAN_SPLIT = {
     "artifact": "oph_quark_sector_mean_split",
     "active_candidate": "ordered_affine_mean_readout_candidate",
 }
+CURATED_NEUTRINO_REPAIR_SRC = CODE_ROOT / "runs" / "neutrino" / "neutrino_weighted_cycle_repair.json"
 
 GROUP_ORDER = ["Bosons", "Leptons", "Quarks", "Hadrons"]
 STATUS_COLORS = {
@@ -104,6 +106,7 @@ def _copy_outputs(work_particles: Path, current_dir: Path) -> None:
         "results_status.json",
         "particle_mass_derivation_graph.svg",
         "runs/status/status_table_forward_current.json",
+        "runs/neutrino/neutrino_compare_only_scale_fit.json",
     ]
     for rel in outputs:
         src = work_particles / rel
@@ -125,12 +128,25 @@ def _seed_curated_quark_surface(work_particles: Path) -> None:
     )
 
 
+def _seed_curated_neutrino_surface(work_particles: Path) -> None:
+    neutrino_dir = work_particles / "runs" / "neutrino"
+    neutrino_dir.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(CURATED_NEUTRINO_REPAIR_SRC, neutrino_dir / "neutrino_weighted_cycle_repair.json")
+
+
 def _read_status_markdown(current_dir: Path) -> str:
     return (current_dir / "RESULTS_STATUS.md").read_text(encoding="utf-8").rstrip()
 
 
 def _read_status_json(current_dir: Path) -> dict[str, Any]:
     return json.loads((current_dir / "results_status.json").read_text(encoding="utf-8"))
+
+
+def _read_optional_neutrino_fit(current_dir: Path) -> dict[str, Any] | None:
+    path = current_dir / NEUTRINO_COMPARE_ONLY_FIT
+    if not path.exists():
+        return None
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 def _use_color(mode: str) -> bool:
@@ -240,6 +256,12 @@ def _render_terminal_report(payload: dict[str, Any], *, color: bool) -> str:
             f"{uv_boundary['status']} | remaining_object={uv_boundary['remaining_object']}"
         )
         lines.append(_style(uv_boundary["reason_current_corpus_fails"], DIM, enabled=color))
+        if uv_boundary.get("candidate_extension_route"):
+            lines.append(
+                "Candidate extension: "
+                f"{uv_boundary['candidate_extension_status']} | target={uv_boundary['candidate_extension_target']}"
+            )
+            lines.append(_style(uv_boundary["candidate_extension_route"], DIM, enabled=color))
 
     grouped: dict[str, list[dict[str, Any]]] = {group: [] for group in GROUP_ORDER}
     for row in payload["rows"]:
@@ -311,6 +333,52 @@ def _render_terminal_report(payload: dict[str, Any], *, color: bool) -> str:
     return "\n".join(lines).rstrip()
 
 
+def _render_neutrino_fit_section(fit_payload: dict[str, Any], *, color: bool) -> str:
+    lines: list[str] = []
+    lines.append(_style("Neutrino Compare-Only Fit", BOLD, enabled=color))
+    mismatch = fit_payload["central_ratio_mismatch"]
+    lines.append(
+        "Single-scale exact central match: "
+        + _style("no", RED, enabled=color)
+        + f" | fixed ratio={mismatch['predicted_ratio_21_over_32']:.7f} "
+        + f"vs PDG central ratio={mismatch['reference_ratio_21_over_32']:.7f}"
+    )
+    lines.append(
+        _style(
+            f"Relative ratio mismatch: {100.0 * mismatch['relative_difference']:.3f}%",
+            DIM,
+            enabled=color,
+        )
+    )
+    weighted = fit_payload["fits"]["weighted_least_squares"]
+    headers = ["Fit", "lambda_nu", "m1 eV", "m2 eV", "m3 eV", "Δ21 (eV²)", "Δ32 (eV²)", "σ21", "σ32"]
+    rows = []
+    for key in ["solar_only", "atmospheric_only", "weighted_least_squares"]:
+        fit = fit_payload["fits"][key]
+        rows.append(
+            [
+                key.replace("_", " "),
+                f"{fit['lambda_nu']:.6f}",
+                f"{fit['masses_eV'][0]:.6f}",
+                f"{fit['masses_eV'][1]:.6f}",
+                f"{fit['masses_eV'][2]:.6f}",
+                f"{fit['delta_m_sq_eV2']['21']:.6e}",
+                f"{fit['delta_m_sq_eV2']['32']:.6e}",
+                f"{fit['residual_sigma']['21']:+.2f}",
+                f"{fit['residual_sigma']['32']:+.2f}",
+            ]
+        )
+    lines.append(_render_box_table(headers, rows))
+    lines.append(
+        _style(
+            "This section is compare-only. It tests whether the repaired scale-free branch can be matched by one fitted positive scale, without promoting lambda_nu to theorem-grade.",
+            DIM,
+            enabled=color,
+        )
+    )
+    return "\n".join(lines)
+
+
 def build_runtime(runtime_root: Path, *, with_hadrons: bool, verbose: bool) -> Path:
     work_code = runtime_root / "work" / "code"
     work_particles = work_code / "particles"
@@ -361,6 +429,8 @@ def build_runtime(runtime_root: Path, *, with_hadrons: bool, verbose: bool) -> P
         _run(step, cwd=work_code, verbose=verbose)
 
     _seed_curated_quark_surface(work_particles)
+    _seed_curated_neutrino_surface(work_particles)
+    _run(["python3", "particles/neutrino/derive_neutrino_compare_only_scale_fit.py"], cwd=work_code, verbose=verbose)
 
     status_cmd = ["python3", "particles/scripts/build_results_status_table.py"]
     svg_cmd = ["python3", "particles/scripts/generate_mass_derivation_svg.py"]
@@ -414,7 +484,13 @@ def main() -> int:
         elif args.format == "json":
             print(json.dumps(_read_status_json(current_dir), indent=2))
         else:
-            print(_render_terminal_report(_read_status_json(current_dir), color=_use_color(args.color)))
+            color = _use_color(args.color)
+            payload = _read_status_json(current_dir)
+            print(_render_terminal_report(payload, color=color))
+            neutrino_fit = _read_optional_neutrino_fit(current_dir)
+            if neutrino_fit is not None:
+                print()
+                print(_render_neutrino_fit_section(neutrino_fit, color=color))
     if args.show_paths:
         if not args.no_print_table:
             print()

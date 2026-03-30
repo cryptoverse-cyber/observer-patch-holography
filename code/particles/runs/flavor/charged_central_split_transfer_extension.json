@@ -1,0 +1,64 @@
+{
+  "artifact": "oph_charged_central_split_transfer_extension",
+  "extension_kind": "minimal_theorem_extension",
+  "generated_utc": "2026-03-30T05:00:53Z",
+  "live_bridge_alignment": {
+    "bridge_strategy": "control the compression-descendant commutator after the central split",
+    "candidate_id": "centered_branch_generator_commutator_transfer",
+    "current_strength_statement": "neither exact vanishing nor uniform quadratic smallness is proved on the live corpus",
+    "smaller_exact_missing_clause": "compression_descendant_commutator_vanishes_or_is_uniformly_quadratic_small_after_central_split"
+  },
+  "local_numeric_promotion_test": {
+    "base_min_gap": 0.3023656602589082,
+    "conservative_gap_lower_bound": 0.23912010705554057,
+    "defect_sup": 0.03162277660168382,
+    "same_label_overlaps": [
+      0.9971698845725937,
+      0.9959502888149423,
+      0.9987517128757214
+    ],
+    "sufficient_uniform_constant_bound": 119.5600535277701
+  },
+  "notes": [
+    "This is an extension route, not a theorem hidden in the current corpus.",
+    "Internalizing this route would promote C_hat_e^cand, but it would still not solve the affine common-shift breaker A_ch by itself."
+  ],
+  "promotion_effect_if_internalized": {
+    "actual_generator_transfer_candidate": {
+      "exact_vanishing_proved": "true_under_extension_when_commutator_zero",
+      "proof_status": "theorem_extension_ready",
+      "uniform_quadratic_smallness_proved": "true_under_extension_with_uniform_middle_factor"
+    },
+    "charged_sector_response_operator_candidate": {
+      "declaration_status": "promotable_once_transfer_extension_certified",
+      "name": "C_hat_e^{cand}",
+      "promotion_effect": "theorem_grade_C_hat_e"
+    }
+  },
+  "public_promotion_allowed": false,
+  "remaining_object_after_extension": {
+    "candidate_route": "charged_determinant_line_section",
+    "id": "charged_absolute_anchor_A_ch",
+    "required_contract": "A_ch(logm + c*(1,1,1)) = A_ch(logm) + c"
+  },
+  "status": "proved_as_minimal_extension",
+  "theorem": {
+    "conclusions": [
+      "if [P_r,D_r] = 0 then C_r^act = C_r^proxy",
+      "||C_r^act - C_r^proxy|| <= 2 M ||[P_r,D_r]||^2",
+      "||[C_r^act,C_r^proxy]|| <= 4 M ||C_r^proxy|| ||[P_r,D_r]||^2",
+      "first_order_residual_after_central_split = vanishes_if_commutator_zero",
+      "all surviving centered P_r->P_r corrections factor through P_r->Q_r->P_r"
+    ],
+    "hypotheses": [
+      "P_r rank-3 realized bundle projector",
+      "Q_r = I - P_r",
+      "D_r selfadjoint descendant law",
+      "C_r^act = cent(P_r D_r P_r + P_r D_r Q_r Theta_r Q_r D_r P_r)",
+      "C_r^proxy = cent(P_r D_r P_r)",
+      "sup_r ||Theta_r|| <= M"
+    ],
+    "id": "central_split_quadratic_commutator_transfer",
+    "statement": "Assume the actual centered compressed generator has centered Schur-type form C_act = cent(PDP + PDQ Theta QDP) with refinement-uniform ||Theta|| <= M and proxy C_proxy = cent(PDP). Then exact vanishing holds when [P,D] = 0, while otherwise ||C_act - C_proxy|| <= 2 M ||[P,D]||^2 and ||[C_act, C_proxy]|| <= 4 M ||C_proxy|| ||[P,D]||^2."
+  }
+}
