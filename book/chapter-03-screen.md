@@ -409,7 +409,7 @@ The holographic principle makes sharp, testable predictions:
 These ideas have strong support in the settings where we can currently probe them:
 - Black hole thermodynamics confirms area-entropy
 - AdS/CFT calculations match both sides of the duality
-- No violation of Bekenstein bounds has ever been observed
+- No violation of the relevant entropy bounds has ever been observed
 
 The holographic principle started as a proposal. It is now one of the most influential and best-supported organizing ideas in quantum gravity.
 
@@ -419,7 +419,7 @@ Let's trace the reverse engineering explicitly.
 
 **The intuitive picture**: Information scales with volume. Space is the fundamental container.
 
-**The hint**: Black hole entropy scales with area. The Bekenstein bound limits information by surface area.
+**The hint**: Black hole entropy scales with area, and gravitational entropy bounds point toward boundary-limited information.
 
 **The lesson**: The fundamental degrees of freedom are 2D, not 3D. The boundary is primary; the bulk is emergent.
 
