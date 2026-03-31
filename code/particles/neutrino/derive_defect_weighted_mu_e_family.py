@@ -39,6 +39,12 @@ def main() -> int:
     readback_complete = readback.get("payload_status") == "complete_from_live_flavor_artifacts"
     smallest_constructive_missing = None if readback_complete else "oph_realized_same_label_gap_defect_readback"
     strict_repo_missing_object = None if readback_complete else "oph_same_label_overlap_defect_log_source"
+    same_label_overlap_sq = dict(readback.get("same_label_overlap_sq") or {})
+    same_label_gap_witness = dict(readback.get("same_label_gap_witness") or {})
+    same_label_defect_witness = dict(readback.get("same_label_defect_witness") or {})
+    raw_edge_score = dict(readback.get("q_e") or {})
+    defect_log_centered = dict(readback.get("eta_e") or {})
+    edge_weights = dict(readback.get("mu_e") or {})
 
     artifact = {
         "artifact": "oph_defect_weighted_majorana_edge_weight_family",
@@ -66,15 +72,15 @@ def main() -> int:
         "raw_edge_score_family": "q_e(alpha) = gap_e^alpha * defect_e^(1-alpha)",
         "canonical_alpha": 0.5,
         "raw_edge_score_rule": "q_e = sqrt(gap_e * defect_e)",
-        "same_label_overlap_sq": {"psi12": None, "psi23": None, "psi31": None},
-        "same_label_gap_witness": {"psi12": None, "psi23": None, "psi31": None},
+        "same_label_overlap_sq": same_label_overlap_sq or {"psi12": None, "psi23": None, "psi31": None},
+        "same_label_gap_witness": same_label_gap_witness or {"psi12": None, "psi23": None, "psi31": None},
         "same_label_defect_rule": "d_e = 0.5 * ||P_head(e) - L_e P_tail(e) L_e^*||_HS^2 = 1 - overlap_sq_e",
-        "same_label_defect_witness": {"psi12": None, "psi23": None, "psi31": None},
-        "raw_edge_score": {"psi12": None, "psi23": None, "psi31": None},
+        "same_label_defect_witness": same_label_defect_witness or {"psi12": None, "psi23": None, "psi31": None},
+        "raw_edge_score": raw_edge_score or {"psi12": None, "psi23": None, "psi31": None},
         "centered_log_rule": "eta_e = 0.5 * ((log g_e + log d_e) - mean_f(log g_f + log d_f))",
-        "defect_log_centered": {"psi12": None, "psi23": None, "psi31": None},
+        "defect_log_centered": defect_log_centered or {"psi12": None, "psi23": None, "psi31": None},
         "weight_rule": "mu_e = base_mu_nu * exp(delta_e) / mean_f(exp(delta_f))",
-        "edge_weights": {"psi12": None, "psi23": None, "psi31": None},
+        "edge_weights": edge_weights or {"psi12": None, "psi23": None, "psi31": None},
         "residual_hessian_formula_2x2": [
             ["mu12 + mu31", "mu31"],
             ["mu31", "mu23 + mu31"],

@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[2]
 SCALE_ANCHOR = ROOT / "particles" / "runs" / "neutrino" / "neutrino_scale_anchor.json"
 COMPARE_FIT = ROOT / "particles" / "runs" / "neutrino" / "neutrino_compare_only_scale_fit.json"
 SCALAR_EVALUATOR = ROOT / "particles" / "runs" / "neutrino" / "majorana_overlap_defect_scalar_evaluator.json"
+NORMALIZER = ROOT / "particles" / "runs" / "neutrino" / "same_label_overlap_defect_weight_normalizer.json"
 THEOREM_OBJECT = ROOT / "particles" / "runs" / "neutrino" / "neutrino_weighted_cycle_theorem_object.json"
 DEFAULT_OUT = ROOT / "particles" / "runs" / "neutrino" / "neutrino_lambda_nu_bridge_candidate.json"
 
@@ -31,6 +32,7 @@ def build_payload(
     scale_anchor: dict[str, Any],
     compare_fit: dict[str, Any],
     scalar_evaluator: dict[str, Any],
+    normalizer: dict[str, Any],
     theorem_object: dict[str, Any],
 ) -> dict[str, Any]:
     m_star_eV = float(scale_anchor["anchors"]["m_star_gev"]) * 1.0e9
@@ -55,6 +57,7 @@ def build_payload(
     }
     phase_clause = scalar_evaluator["strictly_smaller_missing_clause_if_not_closed"]
     normalizer_id = scalar_evaluator["attachment_normalizer_candidate_id"]
+    bridge_invariant_id = "oph_neutrino_attachment_bridge_invariant"
     return {
         "artifact": "oph_neutrino_lambda_nu_bridge_candidate",
         "generated_utc": _timestamp(),
@@ -68,28 +71,35 @@ def build_payload(
             "m_star_eV": m_star_eV,
         },
         "current_candidate_interface_artifact": "oph_majorana_overlap_defect_scalar_evaluator",
-        "exact_next_theorem_object": normalizer_id,
+        "closed_normalizer_artifact": normalizer.get("artifact"),
+        "exact_next_theorem_object": bridge_invariant_id,
         "strictly_smaller_missing_clause": phase_clause,
         "bridge_ansatz": "lambda_nu = m_star_eV * F_nu",
+        "bridge_factor_schema": "F_nu = F_nu(qbar, I_nu)",
         "where_F_nu_should_come_from": (
-            "A normalized same-label overlap-defect weight section built on top of the finite-angle "
-            "Majorana overlap-defect scalar evaluator on the selected weighted-cycle / midpoint branch."
+            "The live normalized same-label overlap-defect weight section qbar_e together with one residual bridge invariant "
+            "I_nu extracted above the finite-angle Majorana overlap-defect scalar interface on the selected weighted-cycle / midpoint branch."
         ),
         "bridge_interface_theorem_stack": [
             {
-                "id": phase_clause,
-                "status": "open_clause",
-                "role": "selector-centered phase-cocycle triviality gate beneath the attachment route",
+                "id": normalizer_id,
+                "status": normalizer.get("status", "candidate_only"),
+                "role": "normalized same-label overlap-defect weight section already emitted from the live scalar certificate",
             },
             {
-                "id": normalizer_id,
-                "status": "candidate_only",
-                "role": "normalized attachment section that converts the centered edge-norm scalar data into the positive bridge factor F_nu",
+                "id": phase_clause,
+                "status": "open_clause",
+                "role": "selector-centered phase-cocycle triviality gate beneath the finite-angle scalar interface",
             },
             {
                 "id": scalar_evaluator["remaining_theorem_object"],
                 "status": scalar_evaluator["proof_status"],
                 "role": "parent finite-angle centered edge-norm theorem furnishing the scalar side of the attachment route",
+            },
+            {
+                "id": bridge_invariant_id,
+                "status": "open",
+                "role": "positive residual bridge invariant that completes F_nu(qbar, I_nu) above the closed normalizer",
             },
             {
                 "id": "neutrino_weighted_cycle_absolute_attachment",
@@ -140,14 +150,15 @@ def build_payload(
             },
         },
         "next_theorem_if_this_route_is_right": {
-            "id": normalizer_id,
-            "current_status": "candidate_only",
+            "id": bridge_invariant_id,
+            "current_status": "open",
             "promotion_gate": scalar_evaluator["phase_cocycle_triviality_candidate_id"],
             "smallest_missing_clause": phase_clause,
         },
         "notes": [
             "This bridge candidate does not claim lambda_nu is already emitted.",
             "It packages the strongest current local interface between the emitted D10 amplitude scale and the emitted weighted-cycle theorem object.",
+            "The normalized overlap-defect weight section is already closed from the live same-label scalar certificate; the remaining attachment gap sits above qbar_e.",
             "The closed-form gamma-over-sqrt-ratio numerology is retained only as a refuted compare-only audit target; it is incompatible with the exact positive-rescaling no-go.",
         ],
     }
@@ -158,6 +169,7 @@ def main() -> int:
     parser.add_argument("--scale-anchor", default=str(SCALE_ANCHOR))
     parser.add_argument("--compare-fit", default=str(COMPARE_FIT))
     parser.add_argument("--scalar-evaluator", default=str(SCALAR_EVALUATOR))
+    parser.add_argument("--normalizer", default=str(NORMALIZER))
     parser.add_argument("--theorem-object", default=str(THEOREM_OBJECT))
     parser.add_argument("--output", default=str(DEFAULT_OUT))
     args = parser.parse_args()
@@ -166,6 +178,7 @@ def main() -> int:
         scale_anchor=_load_json(Path(args.scale_anchor)),
         compare_fit=_load_json(Path(args.compare_fit)),
         scalar_evaluator=_load_json(Path(args.scalar_evaluator)),
+        normalizer=_load_json(Path(args.normalizer)),
         theorem_object=_load_json(Path(args.theorem_object)),
     )
     out_path = Path(args.output)

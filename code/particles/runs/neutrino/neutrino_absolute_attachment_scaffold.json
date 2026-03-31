@@ -1,6 +1,6 @@
 {
   "artifact": "oph_neutrino_absolute_attachment_scaffold",
-  "generated_utc": "2026-03-30T14:20:54Z",
+  "generated_utc": "2026-03-30T23:44:14Z",
   "status": "minimal_constructive_extension",
   "public_promotion_allowed": false,
   "exact_missing_object": "neutrino_weighted_cycle_absolute_attachment",
@@ -27,7 +27,8 @@
       "status": "diagnostic_only_nonpromotable"
     },
     "current_candidate_interface_artifact": "oph_majorana_overlap_defect_scalar_evaluator",
-    "exact_next_theorem_object": "oph_same_label_overlap_defect_weight_normalizer",
+    "closed_normalizer_artifact": "oph_same_label_overlap_defect_weight_normalizer",
+    "exact_next_theorem_object": "oph_neutrino_attachment_bridge_invariant",
     "strictly_smaller_missing_clause": "selector_overlap_phase_coboundary_trivializes_same_label_edge_transport"
   },
   "extension_contract": {
@@ -50,19 +51,24 @@
     "bridge_statement": "Attach the internal D10 amplitude sector to the weighted-cycle scale-free normal form without reusing external oscillation anchors.",
     "current_theorem_stack": [
       {
-        "id": "selector_overlap_phase_coboundary_trivializes_same_label_edge_transport",
-        "role": "selector-centered phase-cocycle triviality gate beneath the attachment route",
-        "status": "open_clause"
+        "id": "oph_same_label_overlap_defect_weight_normalizer",
+        "role": "normalized same-label overlap-defect weight section already emitted from the live scalar certificate",
+        "status": "closed_from_live_same_label_scalar_certificate"
       },
       {
-        "id": "oph_same_label_overlap_defect_weight_normalizer",
-        "role": "normalized attachment section that converts the centered edge-norm scalar data into the positive bridge factor F_nu",
-        "status": "candidate_only"
+        "id": "selector_overlap_phase_coboundary_trivializes_same_label_edge_transport",
+        "role": "selector-centered phase-cocycle triviality gate beneath the finite-angle scalar interface",
+        "status": "open_clause"
       },
       {
         "id": "oph_majorana_scalar_from_centered_edge_norm",
         "role": "parent finite-angle centered edge-norm theorem furnishing the scalar side of the attachment route",
         "status": "candidate_only"
+      },
+      {
+        "id": "oph_neutrino_attachment_bridge_invariant",
+        "role": "positive residual bridge invariant that completes F_nu(qbar, I_nu) above the closed normalizer",
+        "status": "open"
       },
       {
         "id": "neutrino_weighted_cycle_absolute_attachment",

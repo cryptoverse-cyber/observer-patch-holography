@@ -1,0 +1,24 @@
+{
+  "artifact": "oph_neutrino_attachment_bridge_invariant_scaffold",
+  "bridge_factor_schema": "F_nu = F_nu(qbar, I_nu)",
+  "closed_lower_object": "oph_same_label_overlap_defect_weight_normalizer",
+  "collapse_alternative": "prove_F_nu_equals_F_nu(qbar)_with_no_residual_invariant",
+  "contract": {
+    "must_emit": "one positive residual bridge invariant I_nu or a collapse theorem removing it",
+    "must_imply": "lambda_nu = m_star_eV * F_nu(qbar, I_nu)",
+    "must_not_use": [
+      "external_oscillation_anchors",
+      "PDG_target_backsolve",
+      "PMNS_target_seed"
+    ]
+  },
+  "exact_missing_object": "oph_neutrino_attachment_bridge_invariant",
+  "generated_utc": "2026-03-30T23:44:14Z",
+  "notes": [
+    "The normalized same-label overlap-defect weight section is already emitted below this object.",
+    "This scaffold isolates the remaining positive scalar attachment content above qbar_e and below lambda_nu."
+  ],
+  "public_promotion_allowed": false,
+  "residual_invariant_symbol": "I_nu",
+  "status": "minimal_constructive_extension"
+}

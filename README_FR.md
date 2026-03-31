@@ -106,14 +106,16 @@ supérieure.
 particules. Il enregistre le théorème fermé de calibration électrofaible pour \(W/Z\) après
 fixation de l'échelle commune \(P\), suit les sorties actuelles pour Higgs/top et plusieurs
 quarks, précise explicitement que la feuille quark actuelle est fermée du côté transport mais
-reste une mauvaise branche pour la coquille CKM physique et attend donc d'abord un sélecteur
-discret de feuille relative avant toute loi d'échelle de masse sur la branche choisie, explique
-que la voie des leptons chargés ne fixe pour l'instant que la classe de logs centrés tant que le
-scalaire de transport de normalisation déterminant n'est pas émis, enregistre la branche neutrino
+reste une mauvaise branche pour la coquille CKM physique et attend donc d'abord l'orbite finie
+relative de même étiquette ainsi que le provider/evaluator qui l'expose, avant tout sélecteur
+discret et toute loi d'échelle de masse sur la branche choisie, explique que la voie des leptons
+chargés ne fixe pour l'instant que la classe de logs centrés tant que la route non centrée via la
+ligne déterminant ne s'est pas refermée, enregistre la branche neutrino
 pondérée actuelle avec `theta12 = 34.2259°`, `theta23 = 49.7228°`, `theta13 = 8.68636°`,
 `delta = 305.581°` et `Delta m21^2 / Delta m32^2 = 0.03072111`, compare ces nombres directement
-à la surface oscillatoire PDG, explique que `lambda_nu` est l'unique scalaire positif de
-normalisation encore requis pour les masses neutrino absolues, et indique que les hadrons restent
+à la surface oscillatoire PDG, explique que la section normalisée des poids de défaut de
+recouvrement est déjà fermée tandis que le spectre neutrino absolu attend encore un invariant de pont et
+`lambda_nu`, et indique que les hadrons restent
 liés à l'exécution plutôt qu'à des lignes de sortie déjà dérivées dans l'article.
 
 - **PDF :** [Deriving the Particle Zoo from Observer Consistency](paper/deriving_the_particle_zoo_from_observer_consistency.pdf)

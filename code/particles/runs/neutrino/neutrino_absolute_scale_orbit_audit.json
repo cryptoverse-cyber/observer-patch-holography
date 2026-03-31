@@ -29,7 +29,7 @@
       "forbidden_feedback": "compare_only_anchor_must_not_feed_back_into_theorem_state_or_lambda_nu_emission"
     }
   },
-  "generated_utc": "2026-03-30T14:27:07Z",
+  "generated_utc": "2026-03-30T23:44:34Z",
   "next_breaking_contract": "neutrino_weighted_cycle_absolute_attachment",
   "no_hidden_discrete_branch": {
     "closed_discrete_witnesses": [
@@ -87,7 +87,7 @@
           "normalization_convention": "internal_weighted_cycle_branch_normal_form",
           "notation": "m_hat"
         },
-        "sharper_attachment_object": "oph_same_label_overlap_defect_weight_normalizer",
+        "sharper_attachment_object": "oph_neutrino_attachment_bridge_invariant",
         "statement": "The repaired weighted-cycle branch fixes only the dimensionless hierarchy and PMNS pattern. For every lambda_nu > 0, the family m_i(lambda_nu) = lambda_nu * mhat_i and Delta m^2_ij(lambda_nu) = lambda_nu^2 * Delta_hat_ij has the same dimensionless observables, so no unique absolute scale is emitted without one further OPH theorem fixing lambda_nu.",
         "status": "closed",
         "symbolic_absolute_outputs": {

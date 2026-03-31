@@ -13,6 +13,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[2]
 DEFAULT_ACTION_GERM = ROOT / "particles" / "runs" / "neutrino" / "majorana_overlap_defect_action_germ.json"
 DEFAULT_HESSIAN = ROOT / "particles" / "runs" / "neutrino" / "majorana_overlap_defect_hessian.json"
 DEFAULT_READBACK = ROOT / "particles" / "runs" / "neutrino" / "realized_same_label_gap_defect_readback.json"
+DEFAULT_NORMALIZER = ROOT / "particles" / "runs" / "neutrino" / "same_label_overlap_defect_weight_normalizer.json"
 DEFAULT_OUT = ROOT / "particles" / "runs" / "neutrino" / "majorana_overlap_defect_scalar_evaluator.json"
 
 
@@ -25,6 +26,7 @@ def main() -> int:
     parser.add_argument("--action-germ", default=str(DEFAULT_ACTION_GERM))
     parser.add_argument("--hessian", default=str(DEFAULT_HESSIAN))
     parser.add_argument("--readback", default=str(DEFAULT_READBACK))
+    parser.add_argument("--normalizer", default=str(DEFAULT_NORMALIZER))
     parser.add_argument("--output", default=str(DEFAULT_OUT))
     args = parser.parse_args()
 
@@ -32,7 +34,10 @@ def main() -> int:
     hessian = json.loads(pathlib.Path(args.hessian).read_text(encoding="utf-8"))
     readback_path = pathlib.Path(args.readback)
     readback = json.loads(readback_path.read_text(encoding="utf-8")) if readback_path.exists() else {}
+    normalizer_path = pathlib.Path(args.normalizer)
+    normalizer = json.loads(normalizer_path.read_text(encoding="utf-8")) if normalizer_path.exists() else {}
     readback_complete = readback.get("payload_status") == "complete_from_live_flavor_artifacts"
+    normalizer_closed = normalizer.get("status") == "closed_from_live_same_label_scalar_certificate"
     edge_weights = dict(action_germ.get("edge_coefficients", {}))
     mu_nu = float(next(iter(edge_weights.values()), 0.0))
     selector_absolute = dict(hessian.get("selector_point", {}))
@@ -102,7 +107,10 @@ def main() -> int:
         "defect_weighted_mu_e_family_status": "candidate_only",
         "defect_weighted_mu_e_normalizer_candidate": "oph_same_label_overlap_defect_weight_normalizer",
         "attachment_normalizer_candidate_id": "oph_same_label_overlap_defect_weight_normalizer",
-        "attachment_normalizer_status": "candidate_only",
+        "attachment_normalizer_status": (
+            "closed_from_live_same_label_scalar_certificate" if normalizer_closed else "candidate_only"
+        ),
+        "attachment_normalizer_artifact": normalizer.get("artifact"),
         "defect_weight_rule": "mu_e = base_mu_nu * exp(delta_e) / mean_f(exp(delta_f))",
         "defect_weighted_mu_e_family_role": "breaks isotropic 1_2 near_degeneracy while preserving the centered edge-norm route",
         "intrinsic_witness_kind": "centered_edge_character_norm_defect",
@@ -186,7 +194,11 @@ def main() -> int:
                 if readback_complete
                 else "The current local witness hint for overlap nonvanishing is not a theorem yet, but it is expected to live in the same gap/defect fields already exported by the flavor artifacts."
             ),
-            "The sharp live theorem gate is now selector-centered phase-cocycle triviality for same-label edge transport; once that closes, the normalized overlap-defect weight normalizer becomes the direct attachment object beneath the scalar route.",
+            (
+                "The normalized overlap-defect weight normalizer is already carried by the live same-label scalar certificate; the sharp live theorem gate beneath the scalar route remains selector-centered phase-cocycle triviality for same-label edge transport."
+                if normalizer_closed
+                else "The sharp live theorem gate is now selector-centered phase-cocycle triviality for same-label edge transport; once that closes, the normalized overlap-defect weight normalizer becomes the direct attachment object beneath the scalar route."
+            ),
             "Numerically, the current remaining defect is the exact 1-2 near-degeneracy induced by isotropic mu_nu, so the next forward object is a defect-weighted mu_e family rather than another isotropic re-evaluation.",
         ],
     }

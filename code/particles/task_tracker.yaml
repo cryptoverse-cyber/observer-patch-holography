@@ -492,7 +492,7 @@ stages:
             "particles.leptons.21-add-charged-absolute-anchor-section-scaffold"
           ]
       - id: particles.leptons.23-sharpen-determinant-line-to-canonical-lift
-        title: "Audit whether the determinant-line section itself still needs a refinement-stable trivialization or metric-compatibility theorem before A_ch can be emitted canonically"
+        title: "Sharpen the charged absolute-anchor route to the refinement-stable uncentered trace lift beneath the determinant-line section"
         status: in_progress
         owner_lane: pro_paper
         depends_on:
@@ -973,8 +973,8 @@ stages:
             "particles.neutrino.37-add-absolute-attachment-scaffold"
           ]
       - id: particles.neutrino.41-sharpen-normalized-attachment-section
-        title: "Track the normalized overlap-defect weight section as the smaller attachment object beneath lambda_nu, with selector-centered phase-cocycle triviality as the immediate theorem gate"
-        status: in_progress
+        title: "Close the normalized overlap-defect weight section from the live same-label scalar certificate and move the remaining gap above it"
+        status: completed
         owner_lane: local_code
         depends_on:
           [
@@ -988,6 +988,15 @@ stages:
         depends_on:
           [
             "particles.neutrino.41-sharpen-normalized-attachment-section"
+          ]
+      - id: particles.neutrino.43-add-attachment-bridge-invariant-scaffold
+        title: "Track the residual neutrino attachment bridge invariant above the closed normalizer and below lambda_nu"
+        status: in_progress
+        owner_lane: local_code
+        depends_on:
+          [
+            "particles.neutrino.41-sharpen-normalized-attachment-section",
+            "particles.neutrino.42-audit-simple-attachment-normalizers"
           ]
   - id: stage-6
     title: "Hadron branch (deferred, execution-bound)"

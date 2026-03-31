@@ -22,3 +22,6 @@ def test_defect_weighted_mu_e_family_tracks_live_readback_status() -> None:
     assert payload["smallest_constructive_missing_object"] is None
     assert payload["strict_repo_missing_object"] is None
     assert payload["upstream_exact_clause"] == "same_label_overlap_nonzero_on_realized_refinement_arrows"
+    assert payload["same_label_overlap_sq"]["psi12"] > 0.99
+    assert payload["raw_edge_score"]["psi12"] > 0.0
+    assert payload["edge_weights"]["psi12"] > payload["edge_weights"]["psi31"]

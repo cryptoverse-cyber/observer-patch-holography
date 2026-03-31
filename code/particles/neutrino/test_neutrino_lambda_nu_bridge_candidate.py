@@ -25,14 +25,18 @@ def test_neutrino_lambda_nu_bridge_candidate() -> None:
     payload = json.loads(OUTPUT.read_text(encoding="utf-8"))
     assert payload["artifact"] == "oph_neutrino_lambda_nu_bridge_candidate"
     assert payload["current_candidate_interface_artifact"] == "oph_majorana_overlap_defect_scalar_evaluator"
-    assert payload["exact_next_theorem_object"] == "oph_same_label_overlap_defect_weight_normalizer"
+    assert payload["closed_normalizer_artifact"] == "oph_same_label_overlap_defect_weight_normalizer"
+    assert payload["exact_next_theorem_object"] == "oph_neutrino_attachment_bridge_invariant"
     assert payload["strictly_smaller_missing_clause"] == "selector_overlap_phase_coboundary_trivializes_same_label_edge_transport"
     assert payload["bridge_ansatz"] == "lambda_nu = m_star_eV * F_nu"
+    assert payload["bridge_factor_schema"] == "F_nu = F_nu(qbar, I_nu)"
     stack = payload["bridge_interface_theorem_stack"]
-    assert stack[0]["id"] == "selector_overlap_phase_coboundary_trivializes_same_label_edge_transport"
-    assert stack[1]["id"] == "oph_same_label_overlap_defect_weight_normalizer"
+    assert stack[0]["id"] == "oph_same_label_overlap_defect_weight_normalizer"
+    assert stack[0]["status"] == "closed_from_live_same_label_scalar_certificate"
+    assert stack[1]["id"] == "selector_overlap_phase_coboundary_trivializes_same_label_edge_transport"
     assert stack[2]["id"] == "oph_majorana_scalar_from_centered_edge_norm"
-    assert stack[3]["id"] == "neutrino_weighted_cycle_absolute_attachment"
+    assert stack[3]["id"] == "oph_neutrino_attachment_bridge_invariant"
+    assert stack[4]["id"] == "neutrino_weighted_cycle_absolute_attachment"
     assert payload["compare_only_bridge_factor"]["F_nu_star"] > 1.0
     closed_form = payload["target_free_closed_form_candidates"][0]
     assert closed_form["name"] == "gamma_over_sqrt_ratio_hat"

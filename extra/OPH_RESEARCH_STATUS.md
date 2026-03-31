@@ -90,7 +90,7 @@ The table below contains the strongest current results.
 Electroweak calibration fixes one shared pixel constant `P` on the source-side running/matching surface; once `P` is fixed, the target-free electroweak basis emits one coherent quintet `(W, Z, alpha_em^-1, sin^2 theta_W, v)` without separately fitting `W` and `Z`.
 
 - Already achieved: [3](#ref-3) already emits structural zeros for photon, gluons, and graviton, and numerical outputs for `W`, `Z`, Higgs, and top.
-- Current frontier: the live work is the Yukawa dictionary, the discrete selector for the physical quark sector and CKM shell, the charged-lepton determinant-line anchor, the last positive neutrino normalization scalar `lambda_nu`, and real unquenched hadron execution with declared systematics.
+- Current frontier: the Yukawa dictionary, the finite same-label left-handed quark orbit together with its provider/evaluator and selector, the charged-lepton uncentered determinant-line route beneath `A_ch`, the neutrino attachment bridge invariant and `lambda_nu`, and real unquenched hadron execution with declared systematics.
 
 ## Why String Theory Can Reappear as an Effective Description
 

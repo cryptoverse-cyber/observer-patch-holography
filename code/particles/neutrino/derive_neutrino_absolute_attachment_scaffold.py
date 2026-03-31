@@ -3,7 +3,8 @@
 
 This does not emit ``lambda_nu``. It sharpens the live neutrino frontier:
 the remaining theorem object is an internal attachment from the D10 amplitude
-sector to the weighted-cycle scale-free normal form.
+sector to the weighted-cycle scale-free normal form, after the live same-label
+overlap-defect weight normalizer.
 """
 
 from __future__ import annotations
@@ -46,6 +47,7 @@ def build_artifact(bridge: dict[str, Any], bridge_candidate: dict[str, Any], the
             "statement": bridge["no_go_statement"],
             "direct_attachment_diagnostic": diagnostic,
             "current_candidate_interface_artifact": bridge_candidate.get("current_candidate_interface_artifact"),
+            "closed_normalizer_artifact": bridge_candidate.get("closed_normalizer_artifact"),
             "exact_next_theorem_object": bridge_candidate.get("exact_next_theorem_object"),
             "strictly_smaller_missing_clause": bridge_candidate.get("strictly_smaller_missing_clause"),
         },
