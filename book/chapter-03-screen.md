@@ -183,7 +183,7 @@ Here's a way to think about it: near a black hole, space is falling inward like 
 
 Black holes are not the only source of horizons.
 
-**Cosmological horizons**: The universe is expanding. Beyond a certain distance-about 46 billion light-years-galaxies are receding faster than light. Light from those regions will never reach us.
+**Cosmological horizons**: The universe is expanding, and cosmology distinguishes the observable-universe scale from the future event horizon. The key point here is that there are regions from which light cannot reach us, so observer access is finite.
 
 **Acceleration horizons**: If you accelerate continuously, there is a region behind you from which light can never catch up. You have a **Rindler horizon**. This produces the **Unruh effect**: an accelerating observer perceives the vacuum as a warm bath of particles.
 
