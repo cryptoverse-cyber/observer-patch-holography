@@ -275,15 +275,15 @@ John von Neumann classified operator algebras into types. This classification re
 
 **Type II**: No atoms, but a finite "trace"-a way to assign size to projections.
 
-**Type III**: No trace and no atoms. These are the "wild" algebras. Every state looks mixed. Type III is actually generic in quantum field theory: the algebra of any bounded spacetime region is typically Type III.
+**Type III**: No trace and no atoms. These are the "wild" algebras. Type III is actually generic in quantum field theory: the algebra of any bounded spacetime region is typically Type III, and local states do not admit the ordinary finite-trace density-matrix picture familiar from finite systems.
 
 ### Why Type III Matters
 
-Type III algebras have strange properties. In particular, they do not admit the simple finite-trace density-matrix picture familiar from finite systems. This sounds paradoxical until you realize: the observer behind a horizon sees a thermal state, which is necessarily mixed.
+Type III algebras have strange properties. In particular, they do not admit the simple finite-trace density-matrix picture familiar from finite systems. Horizon-restricted examples make this vivid because the restricted state is thermal/KMS-like.
 
-The Unruh effect demonstrates this. An accelerating observer perceives the vacuum as a thermal bath. Their accessible algebra is Type III rather than a finite-dimensional Type I system.
+The Unruh effect is a standard illustration. An accelerating observer perceives the vacuum as a thermal bath on the wedge algebra, which in AQFT is Type III rather than a finite-dimensional Type I system.
 
-This connects to holography. The boundary observer sees a pure state. The bulk observer, limited to a region, sees a mixed state. The bulk algebra is Type III, reflecting this necessary ignorance.
+This also connects to holography. A global pure state can induce mixed local states when attention is restricted to a subregion, and the local algebraic description is subtler than the finite-dimensional textbook picture.
 
 ## 5.10 Modular Flow: Time from Algebra
 
@@ -347,7 +347,7 @@ Let's trace the logic explicitly.
 2. States assign expectation values to observables
 3. Each observer has their own algebra (their patch on the screen)
 4. Consistency means agreeing on shared observables where patches overlap
-5. Type III algebras naturally produce thermal states and modular time flow
+5. Type III algebras support modular flow intrinsically, and horizon-restricted examples make their thermal/KMS aspect especially vivid
 6. Causality requires commutation for spacelike-separated regions
 7. **Non-commutativity is central to the kind of consistency problem quantum physics presents**-a fully commutative picture would miss the nontrivial constraint structure highlighted in this chapter
 
