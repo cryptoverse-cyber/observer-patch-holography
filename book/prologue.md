@@ -55,8 +55,9 @@ because they're broken-because time itself is relative. Your five minutes
 and my five minutes aren't the same five minutes if we're moving differently.
 
 **Measurement affects outcomes.** Try to precisely determine a particle's
-position and momentum simultaneously-you can't. The act of measurement
-changes the system. Properties don't exist independently of observation.
+position and momentum simultaneously-you can't. The measurement setup
+changes what can be treated as definite, and naive classical property
+assignments stop working.
 
 **Entangled particles stay correlated.** Create two particles in a special
 state, separate them by light-years, measure one-and the other instantly

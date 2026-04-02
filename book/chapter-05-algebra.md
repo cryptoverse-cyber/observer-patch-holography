@@ -72,7 +72,7 @@ Consider the overlap condition. When two observers compare notes, they must agre
 
 But the Quantum Marginal Problem shows this doesn't work. Pairwise-consistent marginals can fail to glue into a global state. The consistency constraints are non-trivial precisely because not all observables commute.
 
-Here's the deeper point: **non-commutativity is what makes consistency hard, and hard consistency is what makes physics non-trivial.** If measurements all commuted, any random assignment would satisfy the overlap conditions. There would be no constraints, no laws, no structure. The universe would be arbitrary.
+Here's the deeper point: **non-commutativity is what makes the quantum consistency problem especially hard.** If measurements all commuted, the overlap conditions would be much closer to the classical case. Physics could still have rich laws and dynamics, but it would miss the specifically quantum constraint structure highlighted here.
 
 Non-commutativity creates a tension between local freedom and global consistency. That tension is resolved by specific patterns of entanglement, and those patterns are what we call physical law. OPH interprets quantum non-commutativity as deeply connected to the difficulty of global consistency instead of treating it as an arbitrary extra feature.
 
@@ -281,7 +281,7 @@ John von Neumann classified operator algebras into types. This classification re
 
 Type III algebras have strange properties. They don't admit the simple density-matrix picture familiar from finite quantum systems. This matters because the algebra of any bounded spacetime region, including the region around a horizon, turns out to be Type III.
 
-The Unruh effect is a vivid illustration. An accelerating observer perceives empty space as a warm bath of particles. This happens precisely because the accelerating observer's algebra is Type III: restricting attention to one patch of spacetime automatically turns a pure global state into a thermal local state.
+The Unruh effect is a vivid illustration. An accelerating observer perceives empty space as a warm bath of particles. In the wedge/vacuum setting, the restricted description becomes thermal with respect to the relevant modular flow, and Type III local algebras are part of that algebraic framework.
 
 This connects directly to holography. When you restrict your view to a subregion, the local description is fundamentally subtler than the textbook finite-system picture.
 

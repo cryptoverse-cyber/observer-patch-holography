@@ -230,7 +230,7 @@ In the semiclassical regimes where the generalized second law is expected to hol
 
 Hawking showed black holes radiate. They slowly evaporate, emitting thermal radiation until they disappear.
 
-His original calculation said the radiation is random-no information about what fell in. This would violate quantum mechanics, which says information is always preserved.
+His original calculation said the radiation is random-no information about what fell in. This would conflict with the standard unitary expectation of quantum mechanics and is what makes the information-loss problem so sharp.
 
 Don Page proposed a test. If evaporation is unitary (information-preserving), the radiation entropy should:
 
@@ -330,7 +330,7 @@ Let's trace the logic explicitly.
 - Information is physical (Landauer)
 - Entropy of subsystems scales with boundary area, not volume
 - Black hole entropy saturates the area bound
-- Information is preserved even in black hole evaporation
+- Standard quantum-gravity evidence points toward information-preserving black hole evaporation
 
 **The first-principles reframing**:
 

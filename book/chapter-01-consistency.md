@@ -329,7 +329,7 @@ If you look at a star and I look at the same star, we have to agree on what we s
 You cannot pack infinite information into a finite region. The information content of a region scales with its boundary area, not its volume. This is the holographic principle.
 
 **Principle 4: Conditional Local Recovery**
-If two patches overlap, the data in their shared region often lets you reconstruct what's happening in each patch individually, like reading one chapter of a book and being able to infer the plot of the surrounding chapters.
+Under the relevant Markov and recovery conditions developed later, overlap data can sometimes be used to reconstruct more of the whole system than is obvious from a single local view.
 
 ## 1.12 Reality as Computation
 
