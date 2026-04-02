@@ -11,7 +11,7 @@ L'OPH est un programme de reconstruction. Espace-temps, structure de jauge, part
 ## Ce que l'OPH apporte
 
 - Un paquet théorématique à cutoff fixe pour les patches d'observateurs, les collerettes, la réparation de recouvrement, la jauge supérieure, les enregistrements et le checkpoint/restauration.
-- Une voie conditionnelle vers la géométrie lorentzienne, le temps modulaire, la dynamique d'Einstein de type Jacobson et la cosmologie de Sitter en patch statique.
+- Une voie conditionnelle vers la géométrie lorentzienne, le temps modulaire, la dynamique d'Einstein de type Jacobson et la cosmologie de Sitter en patch statique sur la branche BW explicite ; le scaffold UV/BW restant est la réalisation de la paire de caps à la limite d'échelle puis la rigidité des paires de coupures ordonnées, avec le plancher commun éventuel de transport modulaire sur collerette locale fixe comme plus petit bloqueur inférieur.
 - Une voie de jauge compacte vers le quotient réalisé du Modèle Standard `SU(3) x SU(2) x U(1) / Z_6`, avec le réseau exact des hypercharges et la chaîne de comptage réalisée `N_g = 3`, `N_c = 3`.
 - Un programme particules avec porteurs structurels exactement sans masse, fermeture électrofaible de rang théorème, étage quantitatif Higgs/top, sidecars exacts non hadroniques et voies de continuation explicites pour la saveur et les hadrons.
 - Une architecture microphysique d'écran concrète qui met mesure, enregistrements et observateurs à l'intérieur de la physique.
@@ -33,7 +33,7 @@ L'OPH est un programme de reconstruction. Espace-temps, structure de jauge, part
 - Zéros structurels exacts pour le photon, les gluons et le graviton.
 - Fermeture électrofaible sur la chaîne de calibration D10, avec lignes publiques target-free pour `W/Z` et paire gelée exacte
   `W = 80.377 GeV`, `Z = 91.18797809193725 GeV`.
-- Étage quantitatif Higgs/top en aval du coeur électrofaible, avec lignes forward publiques fortes
+- Étage quantitatif Higgs/top en aval du coeur électrofaible, avec une graine forward scalaire unique fermée qui porte les lignes publiques
   `H = 125.218922 GeV`, `t = 172.388646 GeV`.
 
 ### Surface exacte non hadronique
@@ -42,10 +42,12 @@ L'OPH est un programme de reconstruction. Espace-temps, structure de jauge, part
 | --- | --- | --- |
 | Porteurs structurels | `m_photon = m_gluon = m_graviton = 0` | exactitude structurelle de rang théorème |
 | Sidecar électrofaible | `W = 80.377 GeV`, `Z = 91.18797809193725 GeV` | surface de réparation gelée exacte |
-| Sidecar Higgs | `H = 125.1995304097179 GeV` | tranche inverse compare-only exacte |
+| Sidecar exact Higgs/top | `(H, t) = (125.1995304097179, 172.3523553288311) GeV` | tranche inverse D11 exacte mais compare-only |
 | Témoin chargé | `(e, mu, tau) = (0.00051099895, 0.1056583755, 1.7769324651340912) GeV` | témoin exact sur une chaîne de lecture quadratique fermée à trois points |
 | Témoin quark | `(u, d, s, c, b, t) = (0.00216, 0.00470, 0.0935, 1.273, 4.183, 172.3523553288311) GeV` | témoin exact sur une chaîne de lecture quadratique fermée à trois points |
 | Adaptateur neutrino | `(m1, m2, m3) = (0.01745663295, 0.01948419960, 0.05308139066) eV` avec `Δm21²`, `Δm31²`, `Δm32²` exacts | adaptateur exact compare-only |
+
+Les lignes publiques Higgs/top sont portées par la graine forward D11 scalaire unique fermée. La paire inverse exacte ci-dessus reste un sidecar compare-only sur le même Jacobien et ne remplace pas la branche forward publique.
 
 **Pile de dérivation des particules**
 
@@ -68,7 +70,7 @@ L'OPH est un programme de reconstruction. Espace-temps, structure de jauge, part
 
 ### Résumé bref des écarts restants
 
-Les écarts restants sont étroits et explicites : les leptons chargés attendent `C_hat_e^{cand}` et la levée post-promotion dont le scalaire descendu est `mu_phys(Y_e)`, avec `charged_physical_identity_mode_equalizer` comme plus petit objet forçant sous ce scalaire ; les quarks attendent la loi scalaire `quark_d12_t1_value_law` sur le rayon de masse D12 sélectionné, avec `intrinsic_scale_law_D12` comme enveloppe dérivée ; les neutrinos attendent `C_nu` ; et les hadrons attendent le bundle backend de production et les systématiques complètes.
+Les écarts restants sont étroits et explicites : les leptons chargés attendent `C_hat_e^{cand}` et la levée post-promotion dont le scalaire descendu est `mu_phys(Y_e)`, avec `charged_physical_identity_mode_equalizer` comme plus petit objet forçant sous ce scalaire ; les quarks attendent le scalaire de défaut de recouvrement des quarks légers `Delta_ud_overlap`, qui sur le rayon de masse D12 émis est équivalent à la loi scalaire descendante `quark_d12_t1_value_law`, avec `intrinsic_scale_law_D12` comme enveloppe dérivée ; un sidecar interne de rétrolecture D12, limité à la continuation, fixe numériquement le paquet scalaire du côté masse, mais ne remplace pas la frontière théorème publique et ne supprime pas la mauvaise branche CKM ; les neutrinos attendent `C_nu` ; et les hadrons attendent le bundle backend de production et les systématiques complètes.
 
 ## Articles
 

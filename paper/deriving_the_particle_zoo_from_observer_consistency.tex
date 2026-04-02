@@ -58,10 +58,11 @@ target-free source-only theorem that emits the \(W\) boson and \(Z\) boson; the 
 stage yields the Higgs boson and top quark;
 and the quark branch emits continuation-level rows for the up quark, down quark, strange quark,
 charm quark, and bottom quark. The exact non-hadron output lane is stronger than the theorem lane:
-structural zeros are exact, the \(W/Z\) pair has an exact frozen-repair sidecar, the Higgs has an
-exact inverse slice, the charged and quark families have exact same-family witnesses, and the
-neutrino lane has an exact two-parameter compare-only adapter on the explicit positive selector
-segment. Charged leptons and flavor-labeled neutrinos are nevertheless open for different reasons:
+structural zeros are exact, the \(W/Z\) pair has an exact frozen-repair sidecar, the D11 Higgs/top
+branch has a closed one-scalar forward seed together with a compare-only exact inverse sidecar,
+the charged and quark families have exact same-family witnesses, and the neutrino lane has an
+exact two-parameter compare-only adapter on the explicit positive selector segment. Charged
+leptons and flavor-labeled neutrinos are nevertheless open for different reasons:
 the charged lane fixes the centered hierarchy but not the absolute normalization, while the
 weighted-cycle neutrino branch lands on the observed PMNS/hierarchy pattern and leaves one
 reduced bridge-correction invariant \(C_\nu\) open above the emitted proxy
@@ -332,7 +333,7 @@ branch, to the emitted ray \(\mathcal R_{D12}^{ud}\). The top quark is read out 
 critical stage instead. On the mixing side the same-label left-handed orbit closes negatively at
 the singleton \(\sigma_{\mathrm{ref}}\), so the emitted D12 sheet is fixed and is the wrong CKM
 sheet. The quark continuation boundary is therefore the one-scalar law
-\ophid{quark_d12_t1_value_law} on the already-emitted D12 mass ray, with
+\ophid{quark_d12_t1_value_law} on the emitted D12 mass ray, with
 \ophid{intrinsic_scale_law_D12} retained as the derived wrapper.
 
 \paragraph{Charged leptons.}\label{step5-charged-lepton-continuation}
@@ -377,6 +378,7 @@ s_{\det}(Y_e)=3\mu_{\mathrm{phys}}(Y_e),
 \qquad
 A_{\mathrm{ch}}(Y_e)=\mu_{\mathrm{phys}}(Y_e).
 \]
+This second layer is a descent contract rather than a second fitted invariant: if theorem-grade \(\widehat C_e\) and an admissible refinement-stable uncentered lift exist, the physical identity-mode equalizer forces the descended scalar \(\mu_{\mathrm{phys}}(Y_e)\).
 The public claim is exact same-carrier centered readback together with a closed common-shift no-go and the explicit two-layer remaining obstruction above. Any balanced-circulant / \(Q=2/3\) / \(\delta=2/9\) branch is compare-only continuation and not an emitted charged-lepton mass theorem.
 
 \paragraph{Neutrinos.}\label{step5-neutrino-continuation}
@@ -417,6 +419,15 @@ B_\nu=P_\nu\,C_\nu,
 \qquad
 \lambda_\nu=\frac{m_{\star,\mathrm{eV}}}{q_{\mathrm{mean}}^{p_\nu}}\,P_\nu\,C_\nu.
 \]
+If \(\hat m_i\) and \(\widehat{\Delta m_{ij}^2}\) denote the branch-fixed scale-free eigenmasses and splittings, then
+\[
+m_i=\lambda_\nu\,\hat m_i,
+\qquad
+\Delta m_{ij}^2=\lambda_\nu^2\,\widehat{\Delta m_{ij}^2},
+\qquad
+\lambda_\nu>0,
+\]
+so every PMNS observable and every dimensionless hierarchy ratio is fixed below the remaining scalar \(C_\nu\).
 The best closed constructive local object beneath that reduced scalar is the defect-weighted same-label edge family
 \[
 q_e=\sqrt{g_e d_e},
@@ -427,14 +438,14 @@ q_e=\sqrt{g_e d_e},
 \]
 but that family does not emit \(C_\nu\) or the induced \(B_\nu\) by itself. The compare-only value is \(C_\nu^\ast=0.9995473560\). A direct correction audit gives the target-containing reduced window \(C_\nu\in[0.9994296,1.0015784]\), which induces the sharpened paper-facing corridor \(B_\nu\in[6.69600,6.71040]\) with midpoint \(6.70320\); the earlier three-route bridge corridor \([6.69315,6.71259]\) remains as a wider comparison envelope, and the shortlist-consensus window \([6.70484,6.71259]\) remains diagnostic-only because it misses the compare-only target. Charged leptons and neutrinos are open for different reasons. Charged leptons wait on promotion of \(\widehat C_e^{\mathrm{cand}}\) and then on the post-promotion lift whose descended scalar is \(\mu_{\mathrm{phys}}(Y_e)\), with the physical identity-mode equalizer as the exact smaller forcing object beneath that scalar. Neutrinos wait on the reduced bridge-correction invariant that would emit one positive normalization above the emitted proxy.
 The explicit positive selector segment also supports a stronger compare-only continuation adapter: solving \(\tau_\nu\) on \(D_\tau=(1-\tau_\nu)\chi+\tau_\nu(1+\gamma_{1/2})\) against the representative central ratio and then solving \(\lambda_\nu\) against \(\Delta m_{32}^2=2.438\times10^{-3}\,\mathrm{eV}^2\) yields \(\tau_\nu=0.49717\), \(\lambda_\nu=1.72396\), \((m_1,m_2,m_3)=(0.01745663,\,0.01948420,\,0.05308139)\,\mathrm{eV}\), and exact representative central splittings \(\Delta m_{21}^2=7.49\times10^{-5}\,\mathrm{eV}^2\), \(\Delta m_{31}^2=2.5129\times10^{-3}\,\mathrm{eV}^2\), \(\Delta m_{32}^2=2.438\times10^{-3}\,\mathrm{eV}^2\). This sidecar remains compare-only because the weighted-cycle theorem lane waits on \(C_\nu\), not on another selector or on the paper-facing amplitude parameterization.
-Taken together with the exact \(W/Z\) frozen repair pair, the exact Higgs/top inverse slice, and the exact charged/quark same-family witnesses, the exact non-hadron output lane is complete, even though the theorem-grade charged, quark, and neutrino lanes remain open at their sharper objects.
+Taken together with the exact \(W/Z\) frozen repair pair, the closed Higgs/top forward seed together with its compare-only exact inverse sidecar, and the exact charged/quark same-family witnesses, the exact non-hadron output lane is complete, even though the theorem-grade charged, quark, and neutrino lanes remain open at their sharper objects.
 \paragraph{Status boundary.}
 The Stage-5 summary is this: quarks have continuation-level rows; charged leptons have an exact same-carrier readback theorem together with an exact absolute-scale obstruction; neutrinos have a weighted-cycle continuation with one reduced bridge-correction invariant open. None of those later-family statements belongs on the recovered-core surface fixed earlier by the gauge and relativity chain.
 \subsection{Structural results and open closures}\label{step5-structural-results-and-open-closures}
 
 The move from overlap structure to compact gauge reconstruction and the realized Standard Model branch belongs to the OPH structural core. The move from the realized branch to structural carriers and to the electroweak/Higgs-top bosonic outputs is reflected in the reported numerical rows. The move from the shared flavor dictionary to full family closure remains split by sector.
 
-Quarks have continuation-level rows on an emitted D12 branch. Charged leptons sit on a narrower continuation surface: the same-carrier centered readback is exact, the common-shift quotient surface is closed as a no-go for absolute scale, and the theorem-grade frontier is the two-layer chain
+Quarks have continuation-level rows on an emitted D12 branch. The public theorem frontier on that branch remains the light-quark overlap-defect scalar \(\Delta_{ud}^{\mathrm{overlap}}\), equivalently the one-scalar ray law \ophid{quark_d12_t1_value_law}. A separate D12 internal backread sidecar also fixes the mass-side scalar package numerically on a continuation-only surface, with \(\Delta_{ud}^{\mathrm{overlap}}=0.13431740757663183\), \(t_1=0.6715870378831591\), \(\eta_Q^{\mathrm{centered}}=-0.018210067243314802\), and \(\kappa_Q=-0.012436796997836279\); that sidecar does not replace the public theorem frontier and does not remove the wrong-sheet CKM boundary. Charged leptons sit on a narrower continuation surface: the same-carrier centered readback is exact, the common-shift quotient surface is closed as a no-go for absolute scale, and the theorem-grade frontier is the two-layer chain
 \[
 \widehat C_e^{\mathrm{cand}}
 \longrightarrow
@@ -577,8 +588,8 @@ Sector & Status & Derivation stage & Exact output(s) & Caveat / remaining step \
 \midrule
 Structural carriers & structural & gauge/gravity structural theorems & exact \(m_\gamma=m_g=m_{\mathrm{grav}}=0\) & theorem-grade structural exactness; no particle-side caveat \\
 Electroweak bosons & calibration & electroweak calibration stage & exact frozen-repair pair \(M_W=80.377~\mathrm{GeV}\), \(M_Z=91.18797809193725~\mathrm{GeV}\) & exact only on the frozen authoritative repair surface; the public theorem rows remain the target-free source-only D10 outputs \\
-Higgs/top stage & secondary quantitative + exact sidecars & D10 gauge core followed by D11 / family exact witnesses & exact sidecars \(m_H=125.1995304097179~\mathrm{GeV}\), \(m_t=172.3523553288311~\mathrm{GeV}\) & Higgs exactness is a compare-only D11 inverse slice; top exactness is a same-family witness, not a theorem-grade forward closure \\
-Quark family & continuation + exact sidecar witness & shared excitation dictionary \(\rightarrow\) D12 mass-side continuation \(\rightarrow\) selected D12 sheet & exact same-family quark sextet on a closed ordered-three-point readout chain & same-family-only; the local selector closes to \(\sigma_{\mathrm{ref}}\), so the next primitive theorem-side object is \ophid{quark_d12_t1_value_law} on \ophid{D12_ud_mass_ray}, with \ophid{intrinsic_scale_law_D12} as the derived wrapper \\
+Higgs/top stage & secondary quantitative + closed forward seed + exact sidecars & D10 gauge core followed by D11 forward seed / Jacobian / family exact witnesses & public forward pair \(m_H=125.218922~\mathrm{GeV}\), \(m_t=172.388646~\mathrm{GeV}\); exact inverse-sidecar pair on the D11 Jacobian & the public D11 forward seed is closed on its emitted one-scalar branch; the inverse pair is compare-only and does not replace the forward rows \\
+Quark family & continuation + exact sidecar witness & shared excitation dictionary \(\rightarrow\) D12 mass-side continuation \(\rightarrow\) selected D12 sheet & exact same-family quark sextet on a closed ordered-three-point readout chain & same-family-only; the local selector closes to \(\sigma_{\mathrm{ref}}\), so the broader honest frontier is the light-quark overlap-defect scalar \(\Delta_{ud}^{\mathrm{overlap}}\), and on \ophid{D12_ud_mass_ray} this is equivalently \ophid{quark_d12_t1_value_law}, with \ophid{intrinsic_scale_law_D12} as the derived wrapper \\
 Charged leptons & continuation + exact sidecar witness & shared excitation dictionary \(\rightarrow\) ordered charged carrier \(\rightarrow\) exact centered readback & exact same-family charged triple on a closed ordered-three-point readout chain & same-family-only; theorem-grade waiting set is promotion of \(\widehat C_e^{\mathrm{cand}}\) and then the post-promotion lift whose descended scalar is \(\mu_{\mathrm{phys}}(Y_e)\), with the physical identity-mode equalizer beneath that scalar \\
 Neutrinos & continuation + exact sidecar adapter & same-label scalar certificate \(\rightarrow\) weighted-cycle branch \(\rightarrow\) positive selector segment & exact compare-only masses and central splittings & compare-only; one reduced bridge-correction invariant \(C_\nu\) remains open above the emitted proxy and keeps the theorem lane unclosed \\
 Hadrons & execution-contract-frozen nonperturbative continuation & stable-channel correlator and readout derivation & no paper-derived hadron masses & one production backend export bundle with publication-complete manifest provenance, real correlator arrays, and production systematics \\
@@ -611,9 +622,9 @@ Lane & Exact output(s) & Exact OPH chain on the paper surface & Caveat \\
 \midrule
 Structural carriers & \(m_\gamma=m_g=m_{\mathrm{grav}}=0\) & axioms \(\rightarrow\) realized electromagnetic/color/dynamical-metric carrier skeleton \(\rightarrow\) symmetry-protected zeros & theorem-grade structural exactness \\
 Electroweak exact sidecar & exact frozen \(W/Z\) pair & axioms \(\rightarrow D7\rightarrow D10\) calibration chain \(\rightarrow\) exact frozen repair pair \ophid{oph_d10_ew_w_anchor_neutral_shear_factorization} & exact only on the frozen authoritative repair surface; compare-only beneath the target-free theorem \\
-Higgs exact sidecar & exact Higgs inverse slice & axioms \(\rightarrow D10\) gauge core \(\rightarrow D11\) Jacobian \(\rightarrow\) exact inverse slice & compare-only inverse slice, not the public forward theorem row \\
+Higgs/top exact sidecar & exact Higgs/top inverse pair & axioms \(\rightarrow D10\) gauge core \(\rightarrow D11\) Jacobian \(\rightarrow\) exact inverse slice & compare-only inverse slice; the public D11 rows come from the closed one-scalar forward seed \\
 Charged exact witness & exact same-family charged triple & axioms \(\rightarrow\) shared excitation dictionary \(\rightarrow\) ordered charged carrier \(\rightarrow\) exact centered readback \(\rightarrow\) closed quadratic readout theorem \(\rightarrow\) same-family exact witness & same-family-only; theorem lane waits on \(\widehat C_e^{\mathrm{cand}}\) and the post-promotion lift whose descended scalar is \(\mu_{\mathrm{phys}}(Y_e)\), with the physical identity-mode equalizer beneath that scalar \\
-Quark exact witness & exact same-family quark sextet & axioms \(\rightarrow\) shared excitation dictionary \(\rightarrow\) D12 mass-side continuation \(\rightarrow\) selected D12 sheet \(\rightarrow\) closed quadratic readout theorem \(\rightarrow\) same-family exact witness & same-family-only; the selected D12 sheet is the wrong CKM branch, and the remaining primitive theorem-side object is \ophid{quark_d12_t1_value_law} on \ophid{D12_ud_mass_ray}, with \ophid{intrinsic_scale_law_D12} as the derived wrapper \\
+Quark exact witness & exact same-family quark sextet & axioms \(\rightarrow\) shared excitation dictionary \(\rightarrow\) D12 mass-side continuation \(\rightarrow\) selected D12 sheet \(\rightarrow\) closed quadratic readout theorem \(\rightarrow\) same-family exact witness & same-family-only; the selected D12 sheet is the wrong CKM branch, the broader honest frontier is the light-quark overlap-defect scalar \(\Delta_{ud}^{\mathrm{overlap}}\), and on \ophid{D12_ud_mass_ray} this is equivalently \ophid{quark_d12_t1_value_law}, with \ophid{intrinsic_scale_law_D12} as the derived wrapper \\
 Neutrino exact adapter & exact compare-only mass triple and representative central splittings & axioms \(\rightarrow\) same-label scalar certificate \(\rightarrow\) weighted-cycle branch \(\rightarrow\) explicit positive selector segment \(\rightarrow\) two-parameter exact adapter & compare-only; the theorem lane waits on the reduced bridge-correction invariant \(C_\nu\) \\
 \bottomrule
 \end{tabular}
@@ -669,11 +680,11 @@ Electroweak calibration & \(W\) boson & calibration & \(80.37700001539531~\mathr
 Electroweak calibration & \(Z\) boson & calibration & \(91.18797807794321~\mathrm{GeV}\) from the same closed target-free D10 repair theorem & same closed D10 electroweak theorem; exact \(W/Z\) sidecar sits on the frozen validation surface \\
 Higgs/top critical stage & Higgs boson & secondary quantitative & \(125.218922~\mathrm{GeV}\) & present a proof package for the closed one-scalar forward seed \\
 Quark family & top quark & secondary quantitative & \(172.388646~\mathrm{GeV}\) from the Higgs/top critical stage & same one-scalar seed proof package as the Higgs row \\
-Quark family & up quark & overlap continuation & reported value \(0.00228766~\mathrm{GeV}\); stronger two-scalar candidate \(0.00215992~\mathrm{GeV}\) & the selected D12 sheet is a strict no-go for the physical CKM shell; the local selector closes to \(\sigma_{\mathrm{ref}}\), so the next exact object is \ophid{quark_d12_t1_value_law} on the emitted D12 mass ray \\
-Quark family & down quark & overlap continuation & reported value \(0.00512144~\mathrm{GeV}\); stronger two-scalar candidate \(0.00470005~\mathrm{GeV}\) & same wrong-branch D12 frontier; same-sheet CKM/CP transport is closed, the local selector is fixed to \(\sigma_{\mathrm{ref}}\), and the next quark object is \ophid{quark_d12_t1_value_law} on the emitted D12 ray \\
-Quark family & strange quark & overlap continuation & reported value \(0.0916111~\mathrm{GeV}\); stronger two-scalar candidate \(0.0935045~\mathrm{GeV}\) & same wrong-branch D12 frontier; the local selector is fixed to \(\sigma_{\mathrm{ref}}\), so the next quark object is \ophid{quark_d12_t1_value_law} on the emitted D12 ray \\
+Quark family & up quark & overlap continuation & reported value \(0.00228766~\mathrm{GeV}\); stronger two-scalar candidate \(0.00215992~\mathrm{GeV}\) & the selected D12 sheet is a strict no-go for the physical CKM shell; the local selector closes to \(\sigma_{\mathrm{ref}}\), so the broader honest frontier is \(\Delta_{ud}^{\mathrm{overlap}}\), equivalently \ophid{quark_d12_t1_value_law} on the emitted D12 mass ray \\
+Quark family & down quark & overlap continuation & reported value \(0.00512144~\mathrm{GeV}\); stronger two-scalar candidate \(0.00470005~\mathrm{GeV}\) & same wrong-branch D12 frontier; same-sheet CKM/CP transport is closed, the local selector is fixed to \(\sigma_{\mathrm{ref}}\), and the broader honest frontier is \(\Delta_{ud}^{\mathrm{overlap}}\), equivalently \ophid{quark_d12_t1_value_law} on the emitted D12 ray \\
+Quark family & strange quark & overlap continuation & reported value \(0.0916111~\mathrm{GeV}\); stronger two-scalar candidate \(0.0935045~\mathrm{GeV}\) & same wrong-branch D12 frontier; the local selector is fixed to \(\sigma_{\mathrm{ref}}\), so the broader honest frontier is \(\Delta_{ud}^{\mathrm{overlap}}\), equivalently \ophid{quark_d12_t1_value_law} on the emitted D12 ray \\
 Quark family & charm quark & overlap continuation & reported value \(1.256692~\mathrm{GeV}\); stronger two-scalar candidate \(1.272939~\mathrm{GeV}\) & same wrong-branch D12 frontier; selected-branch mass-scale fixing is the next theorem-side object because the local selector is fixed to \(\sigma_{\mathrm{ref}}\) \\
-Quark family & bottom quark & overlap continuation & reported value \(3.820118~\mathrm{GeV}\); stronger two-scalar candidate \(4.182754~\mathrm{GeV}\) & same wrong-branch D12 frontier; the local selector is fixed to \(\sigma_{\mathrm{ref}}\), so the remaining theorem-side quark burden is \ophid{quark_d12_t1_value_law} on the emitted D12 ray \\
+Quark family & bottom quark & overlap continuation & reported value \(3.820118~\mathrm{GeV}\); stronger two-scalar candidate \(4.182754~\mathrm{GeV}\) & same wrong-branch D12 frontier; the local selector is fixed to \(\sigma_{\mathrm{ref}}\), so the remaining quark burden is the overlap-defect scalar \(\Delta_{ud}^{\mathrm{overlap}}\), equivalently \ophid{quark_d12_t1_value_law} on the emitted D12 ray \\
 Charged leptons & electron & continuation gap & \(n/a\); continuation pair \((\eta,\sigma)=(-6.72959,\,8.15406)\) gives near-exact centered-log shape closure, but the absolute scale remains quotient-only; compare-only target \(g_e^\star=0.0457789\), equivalently \(\Delta_e^{\mathrm{abs},\star}=3.00398633\) & promote the latent candidate \(\widehat C_e^{\mathrm{cand}}\) by closing branch-generator splitting, then emit the post-promotion lift whose descended scalar is \(\mu_{\mathrm{phys}}(Y_e)\); within that lift the exact smaller forcing object is the physical identity-mode equalizer, after which \(\widetilde C_e(Y_e)=\widehat C_e(Y_e)+\mu_{\mathrm{phys}}(Y_e)\,\mathbf 1\), \(A_{\mathrm{ch}}(Y_e)=\mu_{\mathrm{phys}}(Y_e)\), and the readouts \(g_e\), \(\Delta_e^{\mathrm{abs}}\) follow \\
 Charged leptons & muon & continuation gap & \(n/a\); same centered-shape closure and common-shift no-go as the electron row & same \(\widehat C_e^{\mathrm{cand}} \rightarrow\) promotion \(\rightarrow\) post-promotion lift \(\rightarrow \mu_{\mathrm{phys}}(Y_e) \rightarrow A_{\mathrm{ch}} \rightarrow g_e\) closure chain, with the physical identity-mode equalizer beneath the descended scalar \\
 Charged leptons & tau lepton & continuation gap & \(n/a\); same centered-shape closure and common-shift no-go as the electron row & same \(\widehat C_e^{\mathrm{cand}} \rightarrow\) promotion \(\rightarrow \mu \rightarrow A_{\mathrm{ch}} \rightarrow g_e\) closure chain \\
@@ -1286,13 +1297,14 @@ the public repair law inside the calibration branch without changing the emitted
 
 The Higgs/top critical stage is a secondary quantitative stage built on top of the electroweak gauge core.
 It is described by a compact shared seed together with a Jacobian readout map. The reported
-rows use a promoted forward seed whose certificate records the exact fixed-ray forward
-path. This gives
+rows use a promoted forward seed whose certificate closes the fixed-ray forward
+path on its emitted one-scalar branch. This gives
 \[
 m_H = 125.218922~\mathrm{GeV},
 \qquad
 m_t = 172.388646~\mathrm{GeV}.
 \]
+On this branch the paper-facing closure contract is one-scalar: one emitted D11 forward seed determines one forward Higgs/top pair on the fixed ray. The forward seed is closed on that emitted branch, so the public rows are substantive D11 outputs of the critical stage.
 Separately, the same D11 Jacobian admits a compare-only inverse slice that hits the canonical
 Higgs/top reference pair exactly. That exact sidecar is useful for bookkeeping and does not define
 the forward branch used for the public rows.
@@ -1427,7 +1439,7 @@ asymptotic free-particle masses.
 
 \subsection{Strongest overlap-branch mass-side and mixing-side primitives}\label{quark-family-strongest-overlap-branch-primitives}
 
-The emitted same-label left-handed solver surface selects the singleton \(\sigma_{\mathrm{ref}}\) (\ophid{sigma_ref}). This is a negative closure because \(\sigma_{\mathrm{ref}}\) is the wrong D12 CKM sheet. The corpus emits no sector-attached left-handed same-label branch-changing transport from that selected sheet to the physical CKM shell. The exact next quark object is therefore the one-scalar law \ophid{quark_d12_t1_value_law} on \ophid{D12_ud_mass_ray}, with \ophid{intrinsic_scale_law_D12} retained as the derived wrapper. The exact-hit sidecar on top of that theorem boundary is the same-family selected-sheet witness \((u,d,s,c,b,t)=(0.00216,0.00470,0.0935,1.273,4.183,172.3523553288311)\,\mathrm{GeV}\), closed through \ophid{oph_quark_current_family_selected_sheet_exact_closure}. Its caveat is precise: it does not move the selected D12 sheet. The exact primitive split is therefore the following.
+The emitted same-label left-handed solver surface selects the singleton \(\sigma_{\mathrm{ref}}\) (\ophid{sigma_ref}). This is a negative closure because \(\sigma_{\mathrm{ref}}\) is the wrong D12 CKM sheet. The corpus emits no sector-attached left-handed same-label branch-changing transport from that selected sheet to the physical CKM shell. The mass-facing frontier is therefore layered. The active builder still waits on the pure-\(B\) readback payload pair. On the broader D12 continuation branch, the smaller honest theorem-side primitive is the light-quark isospin-breaking / overlap-defect scalar \(\Delta_{ud}^{\mathrm{overlap}}\): once that scalar is emitted, odd-budget neutrality fixes the light-sector pure-\(B\) payload pair, the odd amplitudes, and the \(\tau\)-pair algebraically on the ordered three-point family. On \ophid{D12_ud_mass_ray}, the same scalar is equivalently the downstream one-scalar law \ophid{quark_d12_t1_value_law}, with \ophid{intrinsic_scale_law_D12} retained as the derived wrapper. The exact-hit sidecar on top of that theorem boundary is the same-family selected-sheet witness \((u,d,s,c,b,t)=(0.00216,0.00470,0.0935,1.273,4.183,172.3523553288311)\,\mathrm{GeV}\), closed through \ophid{oph_quark_current_family_selected_sheet_exact_closure}. Its caveat is precise: it does not move the selected D12 sheet. The exact primitive split is therefore the following.
 
 Write
 \[
@@ -1521,10 +1533,13 @@ So the compact same-family continuation emits the one-parameter ray
 \right\},
 \]
 equivalently the one-parameter forward family \(\mathcal M_{D12}^{ud}(\lambda)\). What it does
-\emph{not} yet emit is the distinguished modulus on that ray. The exact next theorem object is the
-value law \ophid{quark_d12_t1_value_law}, which identifies the ray modulus as \(t_1\) on the
-emitted ray. Until that law is emitted, any numerical \(t_1\) is only a compare-only choice
-of \(\lambda\) on this ray, not a theorem-grade branch emission.
+\emph{not} yet emit is a theorem-grade value of the light-quark overlap-defect scalar
+\(\Delta_{ud}^{\mathrm{overlap}}\). On the emitted ray, that is equivalently the distinguished
+modulus, and the ray-facing packaging of the same missing value is the law
+\ophid{quark_d12_t1_value_law}, which identifies the ray modulus as \(t_1\) on the emitted ray.
+Until that law is emitted, any numerical \(t_1\) is only a compare-only choice of \(\lambda\) on
+this ray, not a theorem-grade branch emission.
+This frontier is therefore a one-scalar value-law contract on the emitted ray: once sector-attached data emit the modulus \(t_1\), the mass-side pair \((\Delta_{ud}^{\mathrm{overlap}},\eta_Q^{\mathrm{centered}})\) follows functorially. Conditional on the pure-\(B\) readback payload law, the builder-facing pure-\(B\) amplitudes reduce that same scalar constructively beneath the public ray law.
 
 If one specializes to the exact-mean compare surface, the best point is
 \[
@@ -1582,6 +1597,17 @@ and RMS log error
 \]
 These are sample forward masses on the emitted ray, not theorem-emitted masses of a
 branch-selected \(\lambda^\star\).
+
+A separate D12 internal backread sidecar is also on disk. On that continuation-only surface, feeding the emitted reference-free forward light-quark pair through the coefficient-ratio identification \(c_u/c_d=y_u/y_d=m_u/m_d\) and the D12 normalization \(\Delta_{ud}^{\mathrm{overlap}}=\tfrac16\log(c_d/c_u)\) fixes
+\[
+\Delta_{ud}^{\mathrm{overlap}}=0.13431740757663183,\qquad
+t_1=0.6715870378831591,
+\]
+\[
+\eta_Q^{\mathrm{centered}}=-0.018210067243314802,\qquad
+\kappa_Q=-0.012436796997836279.
+\]
+This closes the D12 mass-side scalar package numerically on that sidecar surface. It does not replace the public theorem frontier \(\Delta_{ud}^{\mathrm{overlap}}\) / \ophid{quark_d12_t1_value_law}, and it does not remove the wrong-sheet CKM boundary.
 
 The mixing side is closed on the same D12 continuation branch. Once the forward Yukawa step emits
 the ordered same-label left eigenframes \(U_u\) and \(U_d\), the canonical transport unitary is
@@ -1655,7 +1681,7 @@ i\,\mathrm{diag}(\chi_1,\chi_2,\chi_3)
 The frontier is therefore ordered rather than doubled:
 \begin{enumerate}[leftmargin=2em]
 \item the selector step closes negatively on the emitted solver surface: the local same-label left-handed orbit collapses to \(\sigma_{\mathrm{ref}}\), and that closure certifies that the selected D12 sheet is not the physical CKM branch; and
-\item on that emitted negative-closure branch, the sole next theorem object is the one-scalar law \ophid{quark_d12_t1_value_law} on the emitted D12 mass ray. The wrapper \ophid{intrinsic_scale_law_D12} is retained only as the derived packaging of that scalar law and does not introduce a second primitive burden.
+\item on that emitted negative-closure branch, the honest mass-facing frontier is the light-quark isospin-breaking / overlap-defect scalar \(\Delta_{ud}^{\mathrm{overlap}}\). On the emitted D12 mass ray this is equivalently the downstream one-scalar law \ophid{quark_d12_t1_value_law}, and the wrapper \ophid{intrinsic_scale_law_D12} remains only the derived packaging of that ray law.
 \end{enumerate}
 CKM and CP closure remain downstream of the wrong-sheet no-go rather than a second open selector task.
 
@@ -1689,11 +1715,11 @@ nonuniformity of the particle derivation across the particle zoo.
 
 The quark lane has one theorem-facing open object on the emitted same-family D12 branch and one separate builder-facing backend burden:
 \begin{enumerate}[leftmargin=2em]
-\item on the emitted same-label left-handed solver surface, the orbit closes negatively to \(\sigma_{\mathrm{ref}}\), and \(\sigma_{\mathrm{ref}}\) is the wrong D12 CKM sheet. The corpus emits no sector-attached left-handed same-label branch-changing transport from that selected sheet to the physical CKM shell. The selector task is therefore closed in the negative sense. On that emitted branch the sole remaining same-family theorem object is the one-scalar law \ophid{quark_d12_t1_value_law} on \(D12_{ud}^{\mathrm{mass}}=\mathcal R_{D12}^{ud}\) (paper id \ophid{D12_ud_mass_ray}), with \ophid{intrinsic_scale_law_D12} retained only as the derived wrapper. CKM and CP closure remain downstream of the wrong-sheet no-go rather than a second open selector task;
+\item on the emitted same-label left-handed solver surface, the orbit closes negatively to \(\sigma_{\mathrm{ref}}\), and \(\sigma_{\mathrm{ref}}\) is the wrong D12 CKM sheet. The corpus emits no sector-attached left-handed same-label branch-changing transport from that selected sheet to the physical CKM shell. The selector task is therefore closed in the negative sense. On that emitted branch the broader honest theorem-side primitive is the light-quark isospin-breaking / overlap-defect scalar \(\Delta_{ud}^{\mathrm{overlap}}\). On \(D12_{ud}^{\mathrm{mass}}=\mathcal R_{D12}^{ud}\) (paper id \ophid{D12_ud_mass_ray}), this is equivalently the downstream one-scalar law \ophid{quark_d12_t1_value_law}, with \ophid{intrinsic_scale_law_D12} retained only as the derived wrapper. CKM and CP closure remain downstream of the wrong-sheet no-go rather than a second open selector task;
 \item the builder-facing pure-\(B\) payload pair beneath the reported quark values remains open, but it is not another selector theorem on the emitted mass ray.
 \end{enumerate}
 
-The quark headline is narrower: quarks are the only matter family with reported numerical rows, the selector problem on the emitted solver surface is closed in the negative sense, and the next theorem-side target on that emitted branch is \ophid{quark_d12_t1_value_law}, with \ophid{intrinsic_scale_law_D12} as the derived wrapper. A target-anchored same-family exact witness reproduces the six quark reference masses exactly on the same ordered three-point family, and within that same-family scope the selected-sheet exact readout closes through \ophid{oph_quark_current_family_selected_sheet_exact_closure}, built on \ophid{oph_quark_current_family_quadratic_readout_theorem}; it does not collapse the wrong-branch D12 boundary. Any same-sheet overlap scan, chirality-basis diagnostic, or other orbit improvement that is not sector-attached, left-handed, and same-label remains outside the theorem ledger.
+The quark headline is narrower: quarks are the only matter family with reported numerical rows, the selector problem on the emitted solver surface is closed in the negative sense, and the broader honest theorem-side target on that emitted branch is \(\Delta_{ud}^{\mathrm{overlap}}\), packaged on the emitted ray as \ophid{quark_d12_t1_value_law} with \ophid{intrinsic_scale_law_D12} as the derived wrapper. A target-anchored same-family exact witness reproduces the six quark reference masses exactly on the same ordered three-point family, and within that same-family scope the selected-sheet exact readout closes through \ophid{oph_quark_current_family_selected_sheet_exact_closure}, built on \ophid{oph_quark_current_family_quadratic_readout_theorem}; it does not collapse the wrong-branch D12 boundary. Any same-sheet overlap scan, chirality-basis diagnostic, or other orbit improvement that is not sector-attached, left-handed, and same-label remains outside the theorem ledger.
 \section{Charged-Lepton Family Derivation}
 
 The charged-lepton derivation is one step less mature than the quark derivation. It contains an

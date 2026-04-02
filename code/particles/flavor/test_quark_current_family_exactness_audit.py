@@ -78,7 +78,7 @@ def test_quark_exactness_audit_identifies_current_family_residual_after_spread_c
     assert payload["d12_physical_branch_repair_theorem"]["artifact"] == "oph_quark_physical_branch_repair_theorem"
     assert payload["d12_physical_branch_repair_theorem"]["minimal_branch_shift_repair_theorem"]["must_emit"] == "quark_relative_sheet_selector"
     assert payload["d12_physical_branch_repair_theorem"]["minimal_branch_shift_repair_theorem"]["selected_value"]["sigma_id"] == "sigma_ref"
-    assert payload["broader_honest_frontier"] == "quark_d12_t1_value_law"
+    assert payload["broader_honest_frontier"] == "oph_light_quark_isospin_overlap_defect_selector_law"
     assert payload["predictive_J_B_source_law_status"] == "missing"
     assert payload["diagnostic_fit_promotion_allowed"] is False
     assert payload["diagnostic_only_tau_best_fit"]["tau_u_best_fit"] is not None

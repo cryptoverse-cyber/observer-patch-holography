@@ -44,6 +44,7 @@ RUNTIME_SURFACED_ARTIFACTS = (
     Path("runs/flavor/quark_current_family_exact_readout.json"),
     Path("runs/flavor/quark_current_family_selected_sheet_closure.json"),
     Path("runs/flavor/quark_current_family_quadratic_readout_theorem.json"),
+    Path("runs/flavor/light_quark_isospin_overlap_defect_selector_law.json"),
     Path("runs/flavor/quark_d12_t1_value_law.json"),
     Path("runs/flavor/quark_physical_branch_repair_theorem.json"),
     Path("runs/flavor/quark_relative_sheet_selector.json"),

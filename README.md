@@ -11,7 +11,7 @@ OPH is a reconstruction program for fundamental physics. Spacetime, gauge struct
 ## What OPH Delivers
 
 - A finite-resolution theorem package for observer patches, collars, overlap repair, higher gauge structure, records, and checkpoint/restoration.
-- A conditional route to Lorentzian geometry, modular time, Jacobson-type Einstein dynamics, and de Sitter static-patch cosmology.
+- A conditional route to Lorentzian geometry, modular time, Jacobson-type Einstein dynamics, and de Sitter static-patch cosmology on the explicit BW branch; the remaining UV/BW scaffold is the scaling-limit cap-pair realization plus ordered cut-pair rigidity, with the eventual fixed-local-collar modular-transport common floor as the smallest lower blocker.
 - A compact gauge route to the realized Standard Model quotient `SU(3) x SU(2) x U(1) / Z_6`, together with the exact hypercharge lattice and the realized counting chain `N_g = 3`, `N_c = 3`.
 - A particle program with exact structural massless carriers, theorem-grade electroweak closure, a quantitative Higgs/top stage, exact non-hadron mass sidecars, and explicit continuation lanes for flavor and hadrons.
 - A concrete screen-microphysics architecture that puts measurement, records, and observers inside the physics.
@@ -33,7 +33,7 @@ OPH is a reconstruction program for fundamental physics. Spacetime, gauge struct
 - Exact structural zeros for the photon, gluons, and graviton.
 - Electroweak closure on the D10 calibration chain, with target-free public `W/Z` rows and an exact frozen pair
   `W = 80.377 GeV`, `Z = 91.18797809193725 GeV`.
-- A quantitative Higgs/top stage downstream of the electroweak core, with strong public forward rows
+- A quantitative Higgs/top stage downstream of the electroweak core, with a closed one-scalar forward seed carrying the public rows
   `H = 125.218922 GeV`, `t = 172.388646 GeV`.
 
 ### Exact non-hadron output surface
@@ -42,10 +42,12 @@ OPH is a reconstruction program for fundamental physics. Spacetime, gauge struct
 | --- | --- | --- |
 | Structural carriers | `m_photon = m_gluon = m_graviton = 0` | theorem-grade structural exactness |
 | Electroweak sidecar | `W = 80.377 GeV`, `Z = 91.18797809193725 GeV` | exact frozen repair surface |
-| Higgs sidecar | `H = 125.1995304097179 GeV` | exact compare-only inverse slice |
+| Higgs/top exact sidecar | `(H, t) = (125.1995304097179, 172.3523553288311) GeV` | exact compare-only D11 inverse slice |
 | Charged witness | `(e, mu, tau) = (0.00051099895, 0.1056583755, 1.7769324651340912) GeV` | exact same-family witness |
 | Quark witness | `(u, d, s, c, b, t) = (0.00216, 0.00470, 0.0935, 1.273, 4.183, 172.3523553288311) GeV` | exact same-family witness |
 | Neutrino adapter | `(m1, m2, m3) = (0.01745663295, 0.01948419960, 0.05308139066) eV` with exact representative `Δm21²`, `Δm31²`, `Δm32²` | exact compare-only adapter |
+
+Public Higgs/top rows are carried by the closed one-scalar D11 forward seed. The exact inverse pair above is a compare-only sidecar on the same Jacobian and does not replace the public forward branch.
 
 **Particle derivation stack**
 
@@ -68,7 +70,7 @@ OPH is a reconstruction program for fundamental physics. Spacetime, gauge struct
 
 ### Brief gap summary
 
-The remaining particle gaps are narrow and explicit: charged leptons wait on `C_hat_e^{cand}` and the post-promotion lift whose descended scalar is `mu_phys(Y_e)`, with `charged_physical_identity_mode_equalizer` as the smaller forcing object beneath that scalar; quarks wait on the one-scalar law `quark_d12_t1_value_law` on the selected D12 mass ray with `intrinsic_scale_law_D12` as the derived wrapper; neutrinos wait on `C_nu`; and hadrons wait on the production backend bundle plus full production systematics.
+The remaining particle gaps are narrow and explicit: charged leptons wait on `C_hat_e^{cand}` and the post-promotion lift whose descended scalar is `mu_phys(Y_e)`, with `charged_physical_identity_mode_equalizer` as the smaller forcing object beneath that scalar; quarks wait on the light-quark overlap-defect scalar `Delta_ud_overlap`, which on the emitted D12 mass ray is equivalently the downstream one-scalar law `quark_d12_t1_value_law` with `intrinsic_scale_law_D12` as the derived wrapper; a separate continuation-only D12 internal backread sidecar fixes the mass-side scalar package numerically, but it does not replace the public theorem frontier and does not remove the wrong-sheet CKM boundary; neutrinos wait on `C_nu`; and hadrons wait on the production backend bundle plus full production systematics.
 
 ## Papers
 

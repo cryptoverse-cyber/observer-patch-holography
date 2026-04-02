@@ -114,7 +114,7 @@ Once you see this, the rest follows:
 
 - **Quantum measurement**: There's no "collapse" puzzle because there's no objective wave function that needs to become definite. There are only correlations between observer records and systems. The wave function is a description of one perspective's information. Different observers can assign different states to the same system until their patches overlap and force agreement.
 
-- **Relativity**: There's no absolute time or space because there's no absolute perspective. Each observer has their own time (modular flow). Where they overlap, their times must be consistently related, and this consistency requirement *is* Lorentz invariance.
+- **Relativity**: There's no absolute time or space because there's no absolute perspective. Each observer has their own time (modular flow). On the explicit BW geometric branch, overlap consistency plus geometric cap modular flow yields Lorentz kinematics.
 
 - **Bell nonlocality**: Quantum correlations exceed classical bounds because reality isn't a pre-existing thing that observers passively discover. The correlations aren't "transmitted" through space; they're established through the consistency requirements of overlapping patches.
 
@@ -192,18 +192,18 @@ Equivalently, there exists a recovery map from AB to ABC with error controlled b
 
 1. **MaxEnt selection**: local states are chosen by maximum entropy given constraints.
 2. **Refinement stability**: the same constraint family survives as you refine the screen to finer resolution.
-3. **Geometric-branch condition**: in the scaling limit, modular flow on caps becomes geometric. It matches a standard conformal transformation on the sphere.
+3. **Geometric-branch condition**: in the scaling limit, modular flow on caps becomes geometric. It matches a standard conformal transformation on the sphere. The internalization scaffold beneath this condition is explicit: the scaling-limit cap-pair realization from transported marginals and the later ordered cut-pair rigidity step remain open, with the eventual fixed-local-collar modular-transport common floor as the smallest lower blocker.
 4. **Gauge-as-gluing**: overlap identifications between patches create redundancies that give rise to gauge structure; a minimality principle selects the specific gauge group.
 5. **EFT bridge**: a low-energy effective field theory limit exists, connecting the screen-level description to familiar particle physics. The stress tensor can be sourced from a conformal field theory on small caps, or built from modular data on light-ray surfaces.
 
-Under these inputs, Lorentz kinematics is recovered from geometric modular flow, Einstein's equation follows from entanglement equilibrium, and the Standard Model gauge group emerges from the gluing structure. Branch selection and the stress-tensor bridge remain explicit assumptions.
+Under these inputs, Lorentz kinematics is recovered from geometric modular flow on the BW branch, Einstein's equation follows from entanglement equilibrium on the stated scaling branch, and the Standard Model gauge group emerges from the gluing structure. Branch selection, the scaling-limit cap-pair route, and the stress-tensor bridge remain explicit assumptions or open scaffold objects.
 
 ## 18.6 What the Model Yields (Under Stated Assumptions)
 
 Under the bridge assumptions above, the model yields:
 
-1. **Lorentz kinematics** from geometric modular flow on caps
-2. **Einstein's equation** via entanglement equilibrium, promoted to a tensor equation by patch consistency
+1. **Lorentz kinematics** on the explicit BW branch from geometric modular flow on caps
+2. **Einstein's equation** on the stated scaling branch via entanglement equilibrium, promoted to a tensor equation by patch consistency
 3. **The Standard Model gauge group** $SU(3) \times SU(2) \times U(1)/\mathbb{Z}_6$, reconstructed from edge-sector fusion rules and a minimality principle
 4. **Three generations, three colors**: fixed by anomaly cancellation and the minimality principle
 5. **Massless gauge bosons and graviton**: forced by emergent gauge and diffeomorphism invariance, which forbid mass terms
@@ -287,7 +287,7 @@ The Hilbert space is finite-dimensional. The second fundamental parameter, **scr
 
 ## 18.8 The Remaining Frontier
 
-The core picture has definite physical content. The framework recovers the Standard Model gauge group, three generations, three colors, massless photon/gluons/graviton, and the absence of gauge-mediated proton decay. On top of that, it has a full exact non-hadron output lane on disk: exact `W/Z` on the frozen-repair surface, an exact Higgs inverse slice, an exact same-family charged witness with its affine coordinate closed on the fixed witness, an exact same-family quark witness on the selected `sigma_ref` sheet, and an exact compare-only neutrino adapter on the explicit positive selector segment. The remaining difficult jobs are to finish the charged-lepton theorem lane through `C_hat_e^{cand}` and the post-promotion lift whose descended scalar is `mu_phys(Y_e)`, with `charged_physical_identity_mode_equalizer` beneath that scalar, bring flavor mixing onto a fully physical quark branch after the negative local selector closure to `sigma_ref` with `quark_d12_t1_value_law` next on the emitted D12 mass ray and `intrinsic_scale_law_D12` retained as the derived wrapper, derive the reduced neutrino bridge-correction invariant `C_nu` that would fix the absolute neutrino scale, and land the production backend bundle plus the nonperturbative work needed for hadrons. On the gravity side, the big open task is to derive the smooth geometric spacetime limit from an explicit microscopic screen model instead of treating it as the right branch of the theory.
+The core picture has definite physical content. The framework recovers the Standard Model gauge group, three generations, three colors, massless photon/gluons/graviton, and the absence of gauge-mediated proton decay. On top of that, it has a full exact non-hadron output lane on disk: exact `W/Z` on the frozen-repair surface, a closed Higgs/top forward seed together with a compare-only exact inverse pair on the same D11 Jacobian, an exact same-family charged witness with its affine coordinate closed on the fixed witness, an exact same-family quark witness on the selected `sigma_ref` sheet, and an exact compare-only neutrino adapter on the explicit positive selector segment. The remaining difficult jobs are to finish the charged-lepton theorem lane through `C_hat_e^{cand}` and the post-promotion lift whose descended scalar is `mu_phys(Y_e)`, with `charged_physical_identity_mode_equalizer` beneath that scalar, bring flavor mixing onto a fully physical quark branch after the negative local selector closure to `sigma_ref` with the broader honest frontier reduced to the light-quark overlap-defect scalar `Delta_ud_overlap` and its emitted-ray packaging `quark_d12_t1_value_law`, keep the continuation-only D12 internal backread sidecar distinct from the public theorem frontier and from the wrong-sheet CKM boundary, derive the reduced neutrino bridge-correction invariant `C_nu` that would fix the absolute neutrino scale, and land the production backend bundle plus the nonperturbative work needed for hadrons. On the gravity side, the UV/BW internalization frontier is explicit: first the canonical scaling-limit cap-pair realization from transported cap marginals, then ordered cut-pair rigidity on that realized limit. Beneath the first object, the smallest lower blocker is the eventual fixed-local-collar modular-transport common floor.
 
 **Progress on numerical predictions.** The extraction of gauge couplings from
 edge-sector probabilities has been validated numerically in 2D gauge models.
@@ -367,7 +367,7 @@ These follow from our axioms plus stated additional assumptions:
 | Error correction structure | Code/QEC ansatz |
 | Markov property on separating regions | Axiom 4 |
 | Local Gibbs structure | MaxEnt selection |
-| Lorentz kinematics on the screen | local recoverability, maximum-entropy state selection, and the spherical Bisognano-Wichmann result, which turns a patch's natural thermal time into a geometric boost-like motion |
+| Lorentz kinematics on the screen | local recoverability, maximum-entropy state selection, the BW geometric branch, and the spherical Bisognano-Wichmann result, which turns a patch's natural thermal time into a geometric boost-like motion |
 | Cap generalized entropy (area operator + bulk entropy) | quantum error correction, redundant encoding across patches, and horizon normalization |
 | Gauge group reconstruction from sector fusion | edge-sector fusion plus the rule that, if you know how charges combine, you can reconstruct the group behind them |
 | Field algebra from transportable sectors | localized charge sectors plus the reconstruction of full fields from how those sectors move |
@@ -389,9 +389,9 @@ For the book, the particle story looks like this:
 | --- | --- | --- |
 | Structural carriers | Photon, gluons, and graviton are exact zeros. | Theorem-grade structural exactness. |
 | Electroweak exact sidecar | Exact frozen-repair `W/Z` pair. | Compare-only beneath the target-free D10 theorem. |
-| Higgs exact sidecar | Exact Higgs inverse slice. | Compare-only inverse slice, not the forward theorem row. |
+| Higgs/top D11 branch | Closed one-scalar forward seed for the public Higgs/top rows, plus an exact Higgs/top inverse pair. | The public D11 rows are secondary-quantitative forward outputs; the inverse pair is compare-only. |
 | Charged exact witness | Exact same-family `(e, μ, τ)` triple, with the affine coordinate closed on that fixed witness. | Same-family-only; the theorem lane runs through `C_hat_e^{cand}` and the post-promotion lift whose descended scalar is `mu_phys(Y_e)`, with `charged_physical_identity_mode_equalizer` beneath that scalar. |
-| Quark exact witness | Exact same-family `(u, d, s, c, b, t)` sextet on the selected `sigma_ref` sheet. | Same-family-only, with the selected-sheet exact readout closed on that scope; the physical branch runs through `quark_d12_t1_value_law` on the emitted D12 mass ray, with `intrinsic_scale_law_D12` as the derived wrapper. |
+| Quark exact witness | Exact same-family `(u, d, s, c, b, t)` sextet on the selected `sigma_ref` sheet. | Same-family-only, with the selected-sheet exact readout closed on that scope; the broader honest frontier is the light-quark overlap-defect scalar `Delta_ud_overlap`, and on the emitted D12 mass ray this is equivalently `quark_d12_t1_value_law`, with `intrinsic_scale_law_D12` as the derived wrapper; a continuation-only D12 internal backread sidecar fixes the mass-side scalar package numerically without removing the wrong CKM branch. |
 | Neutrino exact adapter | Exact compare-only `(m1, m2, m3)` and exact representative central splittings. | The theorem lane runs through `C_nu`. |
 | Hardest frontier | Hadrons. | Still compute-bound behind the production backend bundle. |
 

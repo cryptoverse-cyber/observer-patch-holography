@@ -277,15 +277,15 @@ This modular flow is what the observer experiences as time.
 
 ### Geometric Modular Flow on Caps
 
-Consider a cap C on the sphere S^2. The key claim is that, in the right smooth limit, the cap's natural thermal time stops being an abstract algebraic flow and becomes an actual geometric motion on the sphere. The spherical version of the Bisognano-Wichmann story says, roughly, that the cap's built-in "heat time" is the same thing as a boost-like conformal motion on that cap:
+Consider a cap C on the sphere S^2. The current theorem surface makes this statement on an explicit BW branch. On that branch, for a realized scaling-limit cap pair, the cap's natural thermal time stops being only an abstract algebraic flow and becomes a geometric motion on the sphere. The spherical Bisognano-Wichmann statement is then the automorphism identity
 
 $$\sigma_t^{\omega_C} = \alpha_{\lambda_C(2\pi t)}$$
 
-The modular Hamiltonian becomes proportional to a geometric boost generator:
+On the special type-I realization one may write the corresponding operator form
 
 $$K_C = 2\pi B_C + \text{const}$$
 
-The remaining task is to show this geometric phase emerging directly from an explicit microscopic screen model.
+The remaining UV scaffold is narrower than a generic microscopic-construction problem. First, one needs the canonical scaling-limit cap-pair realization from transported cap marginals; beneath that, the smallest lower blocker is the eventual fixed-local-collar modular-transport common floor. Second, one needs ordered cut-pair rigidity on the realized cap pair.
 
 ### Conformal Symmetry Is Lorentz Symmetry
 
@@ -297,7 +297,7 @@ The conformal group of the sphere is isomorphic to the Lorentz group.
 
 Moebius transformations of the complex plane (which is the Riemann sphere S^2) are exactly Lorentz transformations of the celestial sphere that a relativistic observer sees.
 
-Lorentz kinematics is not assumed. It emerges in that same scaling-limit regime from the requirement that modular clocks on overlapping patches must be compatible.
+Lorentz kinematics is not assumed. It is recovered on that BW geometric branch once the scaling-limit cap pair is realized and the cap modular flow is geometric.
 
 ### Why There Is No Privileged Reference Frame
 
@@ -339,7 +339,7 @@ Special relativity emerges from the conformal structure of the screen. What abou
 
 ### What Patch Consistency Does (and Doesn't) Give Us
 
-Patch consistency does two crucial jobs here. First, it forbids any preferred observer or preferred frame. Second, once each observer gets the same local thermodynamic relation in their own rest frame, patch consistency forces those local relations to fit together into a full tensor equation. To reach Einstein's equation, we also need the maximum-entropy state choice and a bridge from modular energy to ordinary stress-energy.
+Patch consistency does two crucial jobs here. First, it forbids any preferred observer or preferred frame. Second, once each observer gets the same local rest-frame relation, patch consistency forces those local relations to fit together into a full tensor equation. To reach Einstein's equation, the current OPH route also needs the maximum-entropy state choice, the BW geometric branch, and a bridge from modular energy to ordinary stress-energy.
 
 ### Jacobson's Insight (1995, 2016)
 
@@ -385,7 +385,7 @@ $$K = \int_\Sigma T_{ab} \zeta^b d\Sigma^a$$
 
 where ζ is the conformal Killing field preserving the diamond.
 
-**Route 2: Null-surface modular bridge.** Even without assuming a CFT, one can try to reconstruct stress-energy data from modular data on light-ray surfaces. This route is more ambitious: it builds the stress tensor from internal modular structure rather than importing it from an external field theory. The derivation has made progress. It reaches a positive energy generator on null surfaces. But the final steps that promote this to a full local stress tensor still require extra technical assumptions that haven't been derived from the core axioms alone.
+**Route 2: Null-surface modular bridge.** Even without assuming a CFT, one can try to reconstruct stress-energy data from modular data on light-ray surfaces. This route is more ambitious: it builds the stress tensor from internal modular structure rather than importing it from an external field theory. On the present surface, the OPH half-line generator is identified with the effective local null-stress charge on that same half-line family. What remains open is the bounded-interval transport branch and the tensor reconstruction beyond the null-invisible metric ambiguity.
 
 ### The Einstein Equation
 
@@ -549,18 +549,18 @@ This lands remarkably close to the empirical MOND acceleration scale, the thresh
 | Gravity is a force | Free fall is indistinguishable from inertia | Gravity is spacetime curvature |
 | Geometry is fixed | Modular flow is the clock | Spacetime emerges from compatible modular clocks |
 
-**What falls directly from patch consistency:**
+**What patch consistency contributes directly:**
 
 - No preferred reference frame (no privileged observer exists)
-- Lorentz kinematics (Conf(S²) ≅ SO(3,1))
-- The tensor character of Einstein's equation (all observers must agree)
+- The tensor character of Einstein's equation once the same rest-frame scalar relation is available for all local observer velocities
 
 Einstein discovered special relativity by thinking about light and motion. We can understand it differently: Lorentz symmetry is the geometry of how modular times mesh across patches. This follows directly from the absence of a privileged "third-party" frame.
 
-**What requires additional assumptions:**
+**What requires additional assumptions or open branch inputs:**
 
-- The scalar Einstein relation in each frame (requires MaxEnt + EFT bridge)
-- The specific form of the stress tensor (requires UV completion)
+- Lorentz kinematics on the screen (requires the BW geometric branch and the scaling-limit cap-pair route)
+- The scalar Einstein relation in each frame (requires MaxEnt + a stress bridge)
+- Full local stress-tensor reconstruction beyond the null-invisible metric ambiguity
 
 Einstein discovered general relativity by thinking about falling elevators. We can connect this to our framework: Einstein's equation emerges when entanglement entropy is stationary. But this stationarity comes from MaxEnt selection, not from patch consistency alone. Jacobson showed this connection in 1995; our framework provides a reason *why* entropy should be stationary (MaxEnt) and uses patch consistency to promote the result to a tensor equation.
 

@@ -48,6 +48,7 @@ NEUTRINO_WEIGHTED_CYCLE_REPAIR = ROOT / "particles" / "runs" / "neutrino" / "neu
 NEUTRINO_TWO_PARAMETER_EXACT_ADAPTER = ROOT / "particles" / "runs" / "neutrino" / "neutrino_two_parameter_exact_adapter.json"
 NEUTRINO_EXACT_ADAPTER_BRIDGE_COORDINATE = ROOT / "particles" / "runs" / "neutrino" / "neutrino_exact_adapter_bridge_coordinate.json"
 NEUTRINO_LAMBDA_BRIDGE_CANDIDATE = ROOT / "particles" / "runs" / "neutrino" / "neutrino_lambda_nu_bridge_candidate.json"
+QUARK_D12_INTERNAL_BACKREAD_CLOSURE = ROOT / "particles" / "runs" / "flavor" / "quark_d12_internal_backread_continuation_closure.json"
 PUBLIC_SURFACE_KIND = "particles_native_candidate_or_gap_surface"
 P_DEFAULT = 1.63094
 LOG_DIM_H_DEFAULT = 1.0e122
@@ -92,7 +93,7 @@ D10_MASS_PAIR_NOTE = (
     "This closes the electroweak mass-side lane on the Phase II calibration tier; the earlier source-only underdetermination theorem, minimal conditional route through `ColorBalancedQuadraticRepairDescent_D10`, and former candidate `EWTargetEmitter_D10` remain on disk only as historical scaffolding beneath the promoted theorem."
 )
 D11_NOTE = (
-    "Derived from `derive_d11_forward_seed.py -> derive_d11_forward_seed_promotion_certificate.py`, which propagates the D10 gauge core into the compact D11 forward seed, certifies the fixed-ray forward path, and reads out the D11 mass row from the Jacobian surface. "
+    "Derived from `derive_d11_forward_seed.py -> derive_d11_forward_seed_promotion_certificate.py`, which propagates the D10 gauge core into the compact D11 forward seed, closes the emitted one-scalar forward branch on the fixed ray, and reads out the D11 mass row from the Jacobian surface. "
     "A separate exact-hit sidecar is now also on disk as `oph_d11_reference_exact_adapter`: it solves the linear D11 Jacobian against the canonical Higgs/top reference pair and therefore hits those references exactly, but only as a compare-only inverse slice. "
     "The live public D11 rows remain the reference-free forward-seed outputs, not the inverse adapter."
 )
@@ -108,6 +109,24 @@ if _NEUTRINO_EXACT_BRIDGE_COORDINATE is not None:
     _NEUTRINO_EXACT_BRIDGE_COORDINATE_NOTE = (
         f" On the same exact compare-only branch, the explicit bridge-coordinate sidecar evaluates to "
         f"`B_nu = {_b_nu:.8f}` and `C_nu = {_c_nu:.8f}`. Those values remain compare-only and do not emit theorem-grade `C_nu`."
+    )
+_QUARK_D12_INTERNAL_BACKREAD = (
+    json.loads(QUARK_D12_INTERNAL_BACKREAD_CLOSURE.read_text(encoding="utf-8"))
+    if QUARK_D12_INTERNAL_BACKREAD_CLOSURE.exists()
+    else None
+)
+_QUARK_D12_INTERNAL_BACKREAD_NOTE = ""
+if _QUARK_D12_INTERNAL_BACKREAD is not None:
+    _quark_closed = _QUARK_D12_INTERNAL_BACKREAD["closed_mass_side_package"]
+    _QUARK_D12_INTERNAL_BACKREAD_NOTE = (
+        " A separate continuation-only internal backread sidecar is also on disk as "
+        "`oph_quark_d12_internal_backread_continuation_closure`: using the emitted reference-free "
+        "forward light-quark pair together with the explicit D12 backread assumptions, it fixes "
+        f"`Delta_ud_overlap = {_quark_closed['Delta_ud_overlap']:.14f}`, "
+        f"`t1 = {_quark_closed['t1']:.14f}`, "
+        f"`eta_Q_centered = {_quark_closed['eta_Q_centered']:.14f}`, and "
+        f"`kappa_Q = {_quark_closed['kappa_Q']:.14f}` on that continuation surface. "
+        "That sidecar does not replace the public theorem frontier and does not repair the wrong-sheet CKM boundary."
     )
 CHARGED_CONTINUATION_NOTE = (
     "No public value is emitted yet on the theorem lane. A separate exact same-family witness is already on disk: `oph_lepton_current_family_exact_readout` reproduces the charged reference triple exactly on the same ordered eigenvalue family, its target-anchored ordered-three-point readout chain is closed within `current_family_only` by `oph_lepton_current_family_quadratic_readout_theorem`, and the scoped same-family affine coordinate is closed on that same witness by `oph_lepton_current_family_affine_anchor_theorem`; those closures do not promote the live charged theorem lane. The active charged path is "
@@ -153,7 +172,8 @@ QUARK_CONTINUATION_NOTE = (
     "But the current D12 sheet is now an explicit no-go for the physical CKM shell on the emitted same-label left-handed solver surface. The selector is already fixed to `sigma_ref`, but the current theorem-grade rigidity result is only same-sheet rephasing rigidity; the corpus does not yet emit a theorem-grade CKM rigidity law under `ray_modulus` motion on `D12_ud_mass_ray`. The emitted angles still undershoot the comparison shell by factors about `29.68`, `34.02`, and `117.06`. "
     "The current local surface is no longer formally insufficient at the selector level: `oph_quark_sigma_ud_singleton_uniqueness_theorem` closes the emitted same-label left-handed orbit to the singleton `{sigma_ref}`, and `quark_relative_sheet_selector` now emits the theorem-grade selector value `sigma_ref` on the local solver surface. That is a real but negative closure: the singleton is still the current D12 reference sheet, so the physical CKM-shell mismatch survives unchanged on the selected branch. The only finite local scan now on disk is a 4001-point same-sheet `Delta_ud_overlap` scan against `reference_targets`; it remains comparison-only and cannot change the selected branch on the theorem lane. "
     "A smaller already-local finite basis orbit has also been exposed and ruled out: swapping in right or conjugate-right singular bases can move CKM moduli, but that orbit leaves the ordered same-label left-eigenframe domain and is therefore diagnostic-only. A second representative-level transport-frame diagnostic orbit can be extracted from the common-refinement line-lift data, and its gauge-invariant self-overlap `F0^dagger F1` improves the compare-only CKM shell loss from about `46.62` to `2.21`; but the recorded residual objectwise-U(1) quotient acts only by diagonal rephasings `M -> D_u^dagger M D_d` and therefore preserves all entrywise moduli `|M_ij|`. That transport-frame signal is still not an emitted physical `Sigma_ud` element, but for the smaller exact reason that no sector-attached lift/equivalence identifies the common-refinement matrix with an emitted same-label left-handed `Sigma_ud` element carrying `{sigma_id, canonical_token, U_u_left, U_d_left, V_CKM}`. "
-    "So the exact next quark object is no longer another branch selector: on the emitted local solver surface the selector is already fixed to `sigma_ref`, and the next theorem-side burden is the one-scalar value law `quark_d12_t1_value_law` on the already-emitted `D12_ud_mass_ray`, with `intrinsic_scale_law_D12` retained only as the derived wrapper, independent of target masses and independent of CKM/CP. The public quark rows therefore remain continuation-level and still live on the selected wrong-branch D12 sheet."
+    "So the exact next quark burden is no longer another branch selector: on the emitted local solver surface the selector is already fixed to `sigma_ref`, the broader honest theorem-side primitive is the light-quark overlap-defect scalar `Delta_ud_overlap`, and on the already-emitted `D12_ud_mass_ray` this is equivalently the downstream one-scalar law `quark_d12_t1_value_law`, with `intrinsic_scale_law_D12` retained only as the derived wrapper, independent of target masses and independent of CKM/CP. The public quark rows therefore remain continuation-level and still live on the selected wrong-branch D12 sheet."
+    + _QUARK_D12_INTERNAL_BACKREAD_NOTE
 )
 NEUTRINO_CONTINUATION_NOTE = (
     "No public value is emitted yet on the theorem lane, but a stronger exact sidecar is already on disk: the two-parameter positive-segment adapter hits the representative central splittings exactly while staying compare-only because the theorem lane still waits on `C_nu`. The active neutrino path is `derive_neutrino_scale_anchor.py -> "
