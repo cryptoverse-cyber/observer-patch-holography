@@ -289,7 +289,7 @@ This connects directly to holography. When you restrict your view to a subregion
 
 Von Neumann algebras have beautiful modular structure discovered by Tomita and Takesaki in the 1970s. Type III examples are especially important in the local QFT setting discussed here.
 
-Given a von Neumann algebra M with a "cyclic separating" state Ω (a vacuum state), there is a natural one-parameter group of transformations:
+Given a von Neumann algebra M together with a cyclic separating state Ω (for example, the vacuum in standard local-QFT settings), there is a natural one-parameter group of transformations:
 
 $$\sigma_t(A) = \Delta^{it} A \Delta^{-it}$$
 
@@ -305,7 +305,7 @@ The KMS condition characterizes thermal equilibrium states.
 
 ### Time from Algebra
 
-Here's the stunning implication: once you specify an algebra and a state, the algebra tells you how to flow in time. Time evolution isn't imposed from outside-it emerges from the algebraic structure.
+Here's the stunning implication: once you specify an algebra-state pair, modular theory gives a natural flow. Time evolution isn't imposed from outside in this construction-it emerges from that algebraic structure together with the chosen state.
 
 This connects to the **thermal time principle** of Connes and Rovelli: modular flow provides an important candidate for organizing experienced time. Given the quantum state of our patch, the algebra provides a natural clock.
 
