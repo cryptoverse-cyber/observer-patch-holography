@@ -108,7 +108,7 @@ For a baseball, the uncertainty is negligible-about 10⁻³⁴ meters. For an el
 
 ### Compatible Questions
 
-Not every pair of questions interferes. If two observables commute-[A, B] = 0-they share eigenstates and can be measured simultaneously. Energy and angular momentum in hydrogen are a classic example.
+Not every pair of questions interferes. If two observables commute-[A, B] = 0-they share eigenstates and can be measured simultaneously. In hydrogen, the Hamiltonian commutes with \(L^2\) and with a chosen component such as \(L_z\), which is the standard example.
 
 Two observers asking compatible questions can both get definite answers without disturbing each other's results. This is when classical intuition works.
 
@@ -287,9 +287,9 @@ This connects directly to holography. When you restrict your view to a subregion
 
 ## 5.10 Modular Flow: Time from Algebra
 
-Type III algebras have beautiful internal structure discovered by Tomita and Takesaki in the 1970s.
+Von Neumann algebras have beautiful modular structure discovered by Tomita and Takesaki in the 1970s. Type III examples are especially important in the local QFT setting discussed here.
 
-Given a von Neumann algebra M with a "cyclic separating" state Ω (a vacuum state), there is a natural one-parameter group of transformations:
+Given a von Neumann algebra M together with a cyclic separating state Ω (for example, the vacuum in standard local-QFT settings), there is a natural one-parameter group of transformations:
 
 $$\sigma_t(A) = \Delta^{it} A \Delta^{-it}$$
 
@@ -305,7 +305,7 @@ The KMS condition characterizes thermal equilibrium states.
 
 ### Time from Algebra
 
-Here's the stunning implication: once you specify an algebra and a state, the algebra tells you how to flow in time. Time evolution isn't imposed from outside-it emerges from the algebraic structure.
+Here's the stunning implication: once you specify an algebra-state pair, modular theory gives a natural flow. Time evolution isn't imposed from outside in this construction-it emerges from that algebraic structure together with the chosen state.
 
 This connects to the **thermal time principle** of Connes and Rovelli: modular flow provides an important candidate for organizing experienced time. Given the quantum state of our patch, the algebra provides a natural clock.
 
@@ -347,7 +347,7 @@ Let's trace the logic explicitly.
 2. States assign expectation values to observables
 3. Each observer has their own algebra (their patch on the screen)
 4. Consistency means agreeing on shared observables where patches overlap
-5. Type III algebras support modular flow intrinsically, and horizon-restricted examples make their thermal/KMS aspect especially vivid
+5. Von Neumann algebras admit modular flow, and Type III horizon-restricted examples make the thermal/KMS aspect especially vivid
 6. Causality requires commutation for spacelike-separated regions
 7. **Non-commutativity is central to the kind of consistency problem quantum physics presents**-a fully commutative picture would miss the nontrivial constraint structure highlighted in this chapter
 

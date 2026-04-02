@@ -74,7 +74,7 @@ But there were loopholes. What if the particles somehow communicated with each o
 
 Over the following decades, experimenters closed the major loopholes one by one. The 2015 "loophole-free" Bell tests by teams in Delft, Vienna, and Colorado closed the locality and detection loopholes simultaneously, while using fast random setting choices that strongly constrained freedom-of-choice concerns. The particles were separated by large distances, the measurements were completed before any signal could travel between them, and the detection efficiency was high enough to rule out selection effects.
 
-**The result: nature violates Bell's inequality. Every time.**
+**The result: suitable entangled Bell experiments violate Bell inequalities repeatedly.**
 
 This means one of Einstein's assumptions must be wrong:
 1. **Locality**: Distant events can't influence each other faster than light
@@ -279,7 +279,7 @@ Imagine trying to create a "cheat sheet" for a quantum system-a list saying "if 
 
 Kochen-Specker says: no such cheat sheet exists.
 
-It's not that we don't know the values. It's that the values can't exist simultaneously. The act of measurement doesn't reveal a pre-existing fact; it participates in creating that fact.
+The sharp lesson is narrower and more precise: there is no single noncontextual cheat sheet assigning pre-existing values to all observables at once. Any viable hidden-variable picture must therefore be contextual, and the measurement setting cannot be treated as irrelevant bookkeeping.
 
 ### The Peres-Mermin Magic Square
 
@@ -454,7 +454,7 @@ Put differently: OPH treats Bell-violating correlations as an efficient part of 
 
 1. **Objectivity is Agreement**: Things are "real" because observers agree on them. The red Ferrari exists because everyone who looks agrees it's red and it's a Ferrari.
 
-2. **Bell's Theorem**: Local hidden variables cannot reproduce quantum correlations. Nature violates Bell inequalities, so any viable interpretation must relax at least one classical assumption.
+2. **Bell's Theorem**: Local hidden variables cannot reproduce the Bell-violating correlations seen in suitable entangled experiments, so any viable interpretation must relax at least one classical assumption.
 
 3. **Overlap Condition**: When observers share access to a region, their restricted states must agree on the shared overlap algebra.
 

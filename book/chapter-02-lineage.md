@@ -366,7 +366,7 @@ The simulation principle asked the right question but framed it wrong. The quest
 
 Let me illustrate how deep the consistency problem goes with something seemingly simple: the meter.
 
-In 1791, the French Academy of Sciences decided the meter would be one ten-millionth of the distance from the equator to the North Pole. They sent two astronomers to survey the arc from Dunkirk to Barcelona. It took seven years.
+In 1791, the French Academy of Sciences decided the meter would be one ten-millionth of the distance from the equator to the North Pole along a meridian. They sent two astronomers to survey the arc from Dunkirk to Barcelona. It took seven years.
 
 When they finished, they built a platinum bar and declared it the meter. This bar was kept in a vault in Paris. If you wanted to calibrate your meter stick, you had to compare it to this bar.
 
