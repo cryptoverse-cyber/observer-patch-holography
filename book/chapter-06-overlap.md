@@ -40,13 +40,13 @@ For nearly thirty years, everyone assumed it couldn't be settled by experiment. 
 
 John Stewart Bell was an Irish physicist working at CERN in the 1960s. He was quiet, precise, and deeply troubled by the foundations of quantum mechanics. In his spare time, between designing particle accelerators, he worked on a problem everyone else had abandoned.
 
-In 1964, Bell published a short paper that changed everything. He proved that the question wasn't philosophical at all-it was empirical. There was an experiment that could distinguish between quantum mechanics and any hidden variable theory.
+In 1964, Bell published a short paper that changed everything. He proved that the question wasn't philosophical at all-it was empirical. There was an experiment that could distinguish quantum mechanics from the relevant class of local hidden-variable theories.
 
-The key was correlation. When two observers measure entangled particles, their results are correlated. Bell showed that hidden variable theories set a ceiling on how correlated the results can be. This ceiling is now called the Bell inequality:
+The key was correlation. When two observers measure entangled particles, their results are correlated. Bell showed that local hidden-variable theories set a ceiling on how correlated the results can be. This ceiling is now called the Bell inequality:
 
 $$|S| \leq 2$$
 
-The quantity S combines correlations from four different measurement settings. Hidden variables-Einstein's "reasonable" picture where particles have pre-existing values-cannot produce correlations stronger than 2.
+The quantity S combines correlations from four different measurement settings. Local hidden-variable models of Einstein's "reasonable" picture cannot produce correlations stronger than 2.
 
 Quantum mechanics predicts something stronger:
 
@@ -60,7 +60,7 @@ Let me be concrete. Alice and Bob each receive one particle from an entangled pa
 
 In the hidden variable picture, each particle carries a tiny instruction manual: "If measured at angle A1, give result +1. If measured at B2, give result -1." And so on. The instruction manual was written when the particles were created. The particles are like correlated coins-maybe both were programmed to give the same answers.
 
-Bell's genius was realizing you could test this. Run the experiment thousands of times. Calculate the correlations. If there are hidden variables, S <= 2. Period. No hidden variable theory can beat this bound.
+Bell's genius was realizing you could test this. Run the experiment thousands of times. Calculate the correlations. If the world is described by a local hidden-variable model of this Bell type, S <= 2. Period.
 
 But quantum mechanics can. When Alice and Bob choose the right measurement angles, quantum entanglement produces correlations of 2 times the square root of 2.
 
@@ -76,9 +76,10 @@ Over the following decades, experimenters closed the major loopholes one by one.
 
 **The result: suitable entangled Bell experiments violate Bell inequalities repeatedly.**
 
-This means one of Einstein's assumptions must be wrong:
+This means at least one ingredient in the classical Bell-premise package must fail. In the simplest summary, the pressure falls on:
 1. **Locality**: Distant events can't influence each other faster than light
 2. **Realism**: Particles have definite properties even when not measured
+3. **Measurement-setting independence / related Bell premises**: the measurement choices are not secretly pre-coordinated with the hidden variables
 
 Many physicists read the Bell results as strong pressure against naive local realism, but the exact interpretive lesson remains contested. The alternative is to accept a deeper nonlocal structure or preferred causal bookkeeping, which many physicists regard as a high explanatory cost.
 
@@ -271,7 +272,7 @@ Quantum agreement is a budget. Spend it on one overlap and you have less for ano
 
 There's an even more direct demonstration that quantum mechanics resists classical consistency.
 
-In 1967, Simon Kochen and Ernst Specker proved a theorem that sounds technical but has revolutionary implications: in a Hilbert space of dimension 3 or higher, there's no consistent assignment of pre-existing values to all quantum observables.
+In 1967, Simon Kochen and Ernst Specker proved a theorem that sounds technical but has revolutionary implications: in a Hilbert space of dimension 3 or higher, there is no single noncontextual assignment of pre-existing values to all quantum observables.
 
 ### What Does This Mean?
 
@@ -298,7 +299,7 @@ But each observable appears once in a row and once in a column. So the product o
 
 +1 does not equal -1. Contradiction.
 
-No consistent value assignment exists. The values depend on context, on which other measurements you're performing simultaneously. This is **contextuality**, and it is a feature of reality rather than a feature of our ignorance.
+No single noncontextual value assignment exists that satisfies these constraints. Any viable account must therefore treat the value story as context-dependent. This is **contextuality** in the sense highlighted by the theorem.
 
 ## 6.8 Wigner's Friend: Consistency Between Nested Observers
 
@@ -462,7 +463,7 @@ Put differently: OPH treats Bell-violating correlations as an efficient part of 
 
 5. **Monogamy of Entanglement**: You can't be maximally entangled with multiple parties. Quantum correlations are a limited budget.
 
-6. **Contextuality**: Values depend on context. The Kochen-Specker theorem shows no consistent pre-existing values exist.
+6. **Contextuality**: Values depend on context. The Kochen-Specker theorem rules out a single noncontextual assignment of pre-existing values to all observables at once.
 
 7. **Quantum Darwinism**: Classical objectivity emerges when quantum information gets redundantly copied into the environment, making it accessible through multiple overlapping channels.
 

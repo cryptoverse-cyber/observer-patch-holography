@@ -40,7 +40,7 @@ The shadows on the wall are 2D projections of 3D objects. The prisoners think th
 
 ### The Physics
 
-In 1993, Gerard 't Hooft proposed the holographic principle. He showed that the maximum information content of any region of space scales with the *surface area* of its boundary, not its volume. Leonard Susskind developed this into a more precise formulation: everything that happens in a volume of space can be described by data on its boundary.
+In 1993, Gerard 't Hooft proposed the holographic principle, motivated by black-hole entropy and related entropy-bound arguments. Leonard Susskind developed this into a more precise boundary-first formulation: everything that happens in a volume of space may be describable by data on its boundary.
 
 The 3D world is like a hologram-it looks solid and three-dimensional, but the information that creates it lives on a 2D surface.
 
@@ -116,9 +116,9 @@ Pyrrho's answer: we cannot say the honey is sweet or bitter "in itself." We can 
 
 Quantum mechanics later gave this kind of contextual dependence a precise physical form.
 
-The position of an electron is not a property the electron has before you measure it. Position only becomes definite when you make a position measurement. If you measure momentum instead, you get a definite momentum-but then position is undefined.
+In the standard textbook reading of quantum mechanics, the electron is not assigned a single definite position before the position measurement is made. If you measure momentum instead, you get a definite momentum outcome in that measurement context.
 
-Different measurement contexts reveal different aspects of the system. Niels Bohr called these "complementary" features: you can't observe both simultaneously. The electron does not carry a position and a momentum fixed in advance. What becomes definite depends on what you measure.
+Different measurement contexts reveal different aspects of the system. Niels Bohr called these "complementary" features: you can't observe both simultaneously. A full set of classical-style pre-existing values does not survive the quantum measurement structure, and what is treated as definite depends on the measurement context and interpretation.
 
 The Skeptics' "compared to what?" turns out to be essential physics. Properties are relational, not intrinsic. The honey is sweet-relative-to-healthy-observers, just as the electron has position-relative-to-position-measurements.
 

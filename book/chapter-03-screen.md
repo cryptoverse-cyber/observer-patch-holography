@@ -150,14 +150,14 @@ If the maximum information in a region scales with surface area, then **a bounda
 
 't Hooft called this the **holographic principle**, by analogy with holograms. A hologram is a two-dimensional film that encodes a three-dimensional image. When you illuminate it, you see depth that isn't really there-the depth is computed from the 2D pattern.
 
-The holographic principle says the universe works the same way. The fundamental data lives on a 2D surface. The 3D world we experience is the computed image.
+The holographic principle proposes that the universe may work this way: a boundary-first description may be fundamental, while the 3D world we experience is reconstructed from it.
 
 ### The Logic
 
 1. Black holes have entropy proportional to area, not volume.
 2. No region can contain more information than a black hole of the same size.
 3. Therefore, information content of any region is bounded by surface area.
-4. Therefore, the bulk degrees of freedom are not independent-they can be reconstructed from boundary data.
+4. Therefore, a boundary-first description becomes a serious candidate, and the bulk may be reconstructible from suitably organized boundary data.
 
 If you accept Bekenstein-Hawking entropy, holography becomes a very strong organizing interpretation.
 
