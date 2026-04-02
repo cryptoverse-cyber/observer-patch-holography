@@ -224,7 +224,7 @@ When matter falls in:
 - $S_{outside}$ decreases (the matter's entropy disappears)
 - $S_{BH}$ increases (the horizon area grows)
 
-The black hole's entropy increase always compensates for what's lost.
+In the semiclassical regimes where the generalized second law is expected to hold, the black hole's entropy increase compensates for what is lost from the outside description.
 
 ### The Page Curve: Information Escapes
 

@@ -108,7 +108,7 @@ For a baseball, the uncertainty is negligible-about 10⁻³⁴ meters. For an el
 
 ### Compatible Questions
 
-Not every pair of questions interferes. If two observables commute-[A, B] = 0-they share eigenstates and can be measured simultaneously. Energy and angular momentum in hydrogen are a classic example.
+Not every pair of questions interferes. If two observables commute-[A, B] = 0-they share eigenstates and can be measured simultaneously. In hydrogen, the Hamiltonian commutes with \(L^2\) and with a chosen component such as \(L_z\), which is the standard example.
 
 Two observers asking compatible questions can both get definite answers without disturbing each other's results. This is when classical intuition works.
 
