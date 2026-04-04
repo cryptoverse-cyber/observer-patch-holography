@@ -224,6 +224,29 @@ The strongest accurate wording today is:
 - "OPH already has the skeleton of a `W/Z -> edge entropy -> G` bridge."
 - "Electroweak calibration and Newton matching are controlled by the same edge-microphysics law, pending closure of the shared heat-kernel entropy object."
 
+### Smallest Exact-Release Package
+
+The local exact-release frontier consists of five explicit objects:
+
+1. `LocalFamiliarUnitReadoutPackage`
+2. `SharedEdgeEntropyBridge`
+3. `StrictClassicalBranchReleaseClause`
+4. `EWTargetFreeRepairChartIdentity_D10`
+5. `D11LiveForwardExactHiggsPromotion`
+
+On that declared extension surface, the local release package is:
+
+- `c = 299792458 m/s`
+- `G = 6.674299995910528e-11 m^3 kg^-1 s^-2`
+- `M_W = 80.377 GeV`
+- `M_Z = 91.18797809193725 GeV`
+- `M_H = 125.1995304097179 GeV`
+
+with two important caveats:
+
+- `c` is structural from the Lorentz branch rather than a particle-style `P` fit
+- the `G` row is an exact emitted branch value on the local extension surface, not a literal zero-difference identity against the rounded display benchmark `6.6743e-11`
+
 ## Theorem Roadmap For Familiar In-Universe Units
 
 The clean way to organize the familiar-unit problem is:
@@ -238,9 +261,9 @@ Checked against the open `FloatingPragma/observer-patch-holography` tracker on `
 | --- | --- | --- | --- | --- | --- |
 | `c` | Structural Lorentz output: one invariant causal speed. | Keep the BW / Lorentz branch honest; for SI display, close the local unit bridge `c = ell_cell / tau_cell`. | invariant itself: neither; SI display: `a_cell` only | [#106](https://github.com/FloatingPragma/observer-patch-holography/issues/106), [#159](https://github.com/FloatingPragma/observer-patch-holography/issues/159) | `c = 299792458 m/s`, with `ell_cell = 2.06409e-35 m` and `tau_cell = 6.88507e-44 s` |
 | Massless bosons | Photon, gluon, and graviton mass zeros are already structural OPH outputs. | No extra numerical solve is needed; only keep the dynamical-metric / Lorentz branch bookkeeping honest. | neither | [#106](https://github.com/FloatingPragma/observer-patch-holography/issues/106) | `m_gamma = 0`, `m_gluon = 0`, `m_graviton = 0` |
-| `W`, `Z` | D10 already emits the public electroweak pair on the current realized branch. | Close the forward `P -> t -> couplings` story, derive RG / threshold structure internally, and keep the GeV bridge explicit rather than benchmark-hidden. | `a_cell` only for familiar units | [#31](https://github.com/FloatingPragma/observer-patch-holography/issues/31), [#32](https://github.com/FloatingPragma/observer-patch-holography/issues/32), [#33](https://github.com/FloatingPragma/observer-patch-holography/issues/33), [#159](https://github.com/FloatingPragma/observer-patch-holography/issues/159) | `M_W = 80.377000015 GeV`, `M_Z = 91.187978078 GeV` |
-| Higgs / top | D11 already emits a live Higgs/top branch above D10. | Make the critical-surface package fully rigorous and keep the local energy bridge explicit. | `a_cell` only for familiar units | [#34](https://github.com/FloatingPragma/observer-patch-holography/issues/34), [#159](https://github.com/FloatingPragma/observer-patch-holography/issues/159) | `M_H = 125.218922060 GeV`, `m_t = 172.388645595 GeV` |
-| `G` | Gravity-side dictionary already states `G = a_cell / (4 * ellbar(t))`. | Prove that the D10 pixel-closure entropy and the Newton-matching entropy are the same OPH object; then keep the local unit bridge explicit. | `a_cell` only | [#158](https://github.com/FloatingPragma/observer-patch-holography/issues/158), [#22](https://github.com/FloatingPragma/observer-patch-holography/issues/22), [#106](https://github.com/FloatingPragma/observer-patch-holography/issues/106), [#159](https://github.com/FloatingPragma/observer-patch-holography/issues/159) | if the bridge closes with `ellbar = P / 4`, then `G = 6.6743e-11 m^3 kg^-1 s^-2` |
+| `W`, `Z` | D10 already emits the public electroweak pair on the current realized branch. | The remaining exact-live object is one target-free D10 chart-identity theorem `EWTargetFreeRepairChartIdentity_D10`, on top of the already-closed forward `P -> t -> couplings` trunk and the explicit GeV bridge. | `a_cell` only for familiar units | [#31](https://github.com/FloatingPragma/observer-patch-holography/issues/31), [#32](https://github.com/FloatingPragma/observer-patch-holography/issues/32), [#33](https://github.com/FloatingPragma/observer-patch-holography/issues/33), [#159](https://github.com/FloatingPragma/observer-patch-holography/issues/159) | public live rows `M_W = 80.377000015 GeV`, `M_Z = 91.187978078 GeV`; exact codomain `80.377 GeV`, `91.18797809193725 GeV` |
+| Higgs / top | D11 already emits a live Higgs/top branch above D10. | The remaining exact-live object is one live-forward Higgs promotion theorem `D11LiveForwardExactHiggsPromotion`, with the local energy bridge kept explicit. | `a_cell` only for familiar units | [#34](https://github.com/FloatingPragma/observer-patch-holography/issues/34), [#159](https://github.com/FloatingPragma/observer-patch-holography/issues/159) | public live rows `M_H = 125.218922060 GeV`, `m_t = 172.388645595 GeV`; exact codomain `125.1995304097179 GeV`, `172.3523553288312 GeV` |
+| `G` | Gravity-side dictionary already states `G = a_cell / (4 * ellbar(t))`. | The remaining exact-live objects are the shared D10/gravity edge-entropy bridge, the local readout package, and the strict classical-regime clause; the sharp primitive missing proof is the branch-preserving transport step behind the shared entropy object. | `a_cell` only | [#158](https://github.com/FloatingPragma/observer-patch-holography/issues/158), [#22](https://github.com/FloatingPragma/observer-patch-holography/issues/22), [#106](https://github.com/FloatingPragma/observer-patch-holography/issues/106), [#159](https://github.com/FloatingPragma/observer-patch-holography/issues/159) | exact emitted branch value on the local extension surface `6.674299995910528e-11 m^3 kg^-1 s^-2` |
 | Cell / Planck scales | Benchmark translation already gives `a_cell`, `ell_cell`, `tau_cell`, and `E_cell`. | State one honest theorem-facing local unit bridge, then settle whether `hbar` and `k_B` are derived or conventional. | `a_cell` only | [#159](https://github.com/FloatingPragma/observer-patch-holography/issues/159), [#156](https://github.com/FloatingPragma/observer-patch-holography/issues/156) | `a_cell = 4.26047e-70 m^2`, `ell_cell = 2.06409e-35 m`, `tau_cell = 6.88507e-44 s`, `E_cell = 9.55999e18 GeV` |
 | Fine-structure / weak couplings | D10 already emits dimensionless electroweak couplings on the current branch. | Promote calibration to prediction and derive the matching structure from OPH rather than external RG packaging. | neither | [#31](https://github.com/FloatingPragma/observer-patch-holography/issues/31), [#32](https://github.com/FloatingPragma/observer-patch-holography/issues/32), [#33](https://github.com/FloatingPragma/observer-patch-holography/issues/33) | `alpha_U = 0.04112498`, `alpha_em(m_Z)^-1 = 128.30576920`, `sin^2 theta_W(m_Z) = 0.2307354235` |
 | `Lambda`, `H_dS`, de Sitter observables | Once `G` and `N_scr` are supplied, OPH already emits the de Sitter branch algebraically. | Unify the local gravity and global capacity stories into one theorem stack, then propagate the local unit bridge cleanly. | both `a_cell` and `N_scr`, except `S_dS` which is `N_scr` only | [#22](https://github.com/FloatingPragma/observer-patch-holography/issues/22), [#47](https://github.com/FloatingPragma/observer-patch-holography/issues/47), [#52](https://github.com/FloatingPragma/observer-patch-holography/issues/52) | `Lambda = 1.09e-52 m^-2`, `H_dS = 1.80706e-18 s^-1 = 55.76 km s^-1 Mpc^-1`, `r_dS = 1.65900e26 m` |
@@ -252,10 +275,11 @@ If the goal is to maximize how many familiar constants OPH can quote numerically
 
 1. keep the Lorentz / BW branch honest enough that `c` and the local geometric language sit on a declared branch: [#106](https://github.com/FloatingPragma/observer-patch-holography/issues/106)
 2. finish the shared edge-entropy bridge needed for non-circular `G`: [#158](https://github.com/FloatingPragma/observer-patch-holography/issues/158), [#22](https://github.com/FloatingPragma/observer-patch-holography/issues/22)
-3. finish the forward electroweak promotion stack so `W/Z` and the couplings are theorem-facing outputs rather than calibrated checks: [#31](https://github.com/FloatingPragma/observer-patch-holography/issues/31), [#32](https://github.com/FloatingPragma/observer-patch-holography/issues/32), [#33](https://github.com/FloatingPragma/observer-patch-holography/issues/33)
-4. close the local familiar-unit bridge and settle the public role of `hbar` / `k_B`: [#159](https://github.com/FloatingPragma/observer-patch-holography/issues/159), [#156](https://github.com/FloatingPragma/observer-patch-holography/issues/156)
-5. once `G` is clean, propagate the same bridge into `Lambda`, `H_dS`, and the other de Sitter descendants: [#47](https://github.com/FloatingPragma/observer-patch-holography/issues/47), [#52](https://github.com/FloatingPragma/observer-patch-holography/issues/52)
-6. only after that expand the same familiar-unit surface deeper into Higgs/top, charged flavor, quarks, and hadrons: [#34](https://github.com/FloatingPragma/observer-patch-holography/issues/34), [#152](https://github.com/FloatingPragma/observer-patch-holography/issues/152), [#37](https://github.com/FloatingPragma/observer-patch-holography/issues/37), [#157](https://github.com/FloatingPragma/observer-patch-holography/issues/157)
+3. close the local familiar-unit bridge and settle the public role of `hbar` / `k_B`: [#159](https://github.com/FloatingPragma/observer-patch-holography/issues/159), [#156](https://github.com/FloatingPragma/observer-patch-holography/issues/156)
+4. prove the exact live D10 chart identity so public `W/Z` rows land on the exact repaired chart: [#31](https://github.com/FloatingPragma/observer-patch-holography/issues/31), [#32](https://github.com/FloatingPragma/observer-patch-holography/issues/32), [#33](https://github.com/FloatingPragma/observer-patch-holography/issues/33)
+5. prove the exact live D11 Higgs promotion on the forward branch: [#34](https://github.com/FloatingPragma/observer-patch-holography/issues/34)
+6. once the local `c/G/W/Z/H` package is honest, propagate the same bridge into `Lambda`, `H_dS`, and the other de Sitter descendants: [#47](https://github.com/FloatingPragma/observer-patch-holography/issues/47), [#52](https://github.com/FloatingPragma/observer-patch-holography/issues/52)
+7. only after that expand the same familiar-unit surface deeper into charged flavor, quarks, and hadrons: [#152](https://github.com/FloatingPragma/observer-patch-holography/issues/152), [#37](https://github.com/FloatingPragma/observer-patch-holography/issues/37), [#157](https://github.com/FloatingPragma/observer-patch-holography/issues/157)
 
 ### Conditional Familiar-Unit Targets If The Bridges Close
 
@@ -263,8 +287,10 @@ If the remaining theorem gaps close on the presently realized branch, the famili
 
 - local cell bridge: `a_cell = 4.2604724363543046e-70 m^2`, `ell_cell = 2.0640911889629063e-35 m`, `tau_cell = 6.885067098528897e-44 s`, `E_cell = 9.559993349864843e18 GeV`
 - causal speed: `c = 299792458 m/s`
-- electroweak bosons: `M_W = 80.37700001539531 GeV`, `M_Z = 91.18797807794321 GeV`
-- Higgs / top: `M_H = 125.218922060 GeV`, `m_t = 172.388645595 GeV`
+- electroweak bosons, current live public rows: `M_W = 80.37700001539531 GeV`, `M_Z = 91.18797807794321 GeV`
+- electroweak bosons, exact local extension surface: `M_W = 80.377 GeV`, `M_Z = 91.18797809193725 GeV`
+- Higgs / top, current live public rows: `M_H = 125.218922060 GeV`, `m_t = 172.388645595 GeV`
+- Higgs / top, exact local extension surface: `M_H = 125.1995304097179 GeV`, `m_t = 172.3523553288312 GeV`
 - dimensionless electroweak surface: `alpha_U = 0.04112498041477454`, `alpha_em(m_Z)^-1 = 128.30576920`, `sin^2 theta_W(m_Z) = 0.2307354235`
 - Fermi constant: `G_F = 1.16120908925587e-5 GeV^-2`
 - Newton bridge target: if `ellbar = P / 4`, then `G = 6.6743e-11 m^3 kg^-1 s^-2`
@@ -284,7 +310,7 @@ For the unit-setting constants, the comparison has to be separated into three ca
 
 ### Conditional Bridge Match
 
-- `G`: if the shared-entropy bridge closes with `ellbar = P / 4`, then the OPH familiar-unit target is `6.6743e-11 m^3 kg^-1 s^-2`, matching the CODATA / NIST value `6.67430(15)e-11 m^3 kg^-1 s^-2` at the quoted digits. This is numerically strong, but it is not yet a theorem-grade independent prediction because the shared `ellbar` identification and the local familiar-unit bridge remain open.
+- `G`: on the sharpened local extension surface the emitted branch value is `6.674299995910528e-11 m^3 kg^-1 s^-2`, which matches the CODATA / NIST value `6.67430(15)e-11 m^3 kg^-1 s^-2` at the quoted digits. This is numerically strong, but it is not yet a current-corpus theorem-grade independent prediction because the shared `ellbar` identification, the strict classical-regime clause, and the local familiar-unit bridge remain open.
 
 ### Not Yet Comparable As Standalone OPH Outputs
 

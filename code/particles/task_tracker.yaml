@@ -1,5 +1,5 @@
 version: 1
-as_of: "2026-04-02"
+as_of: "2026-04-04"
 goal: "full particle zoo at high precision from calibrated P plus OPH axioms/theorem chain"
 stages:
   - id: stage-0
@@ -1184,6 +1184,51 @@ stages:
         status: pending
         owner_lane: local_hpc
         depends_on: ["particles.hadron.10-implement-production-backend-dump-runner-and-writeback"]
+  - id: stage-6a
+    title: "Local P-to-gravity-and-bosons exact-release surface"
+    status: active
+    note: "2026-04-04 local plus Oracle narrowing reduced the local exact-release frontier to five named objects: the local familiar-unit readout package, the shared D10/gravity edge-entropy bridge, the strict classical-regime clause, `EWTargetFreeRepairChartIdentity_D10`, and `D11LiveForwardExactHiggsPromotion`. Public papers may summarize the extension-level local bundle `(c,G,M_W,M_Z,M_H)` with explicit caveats, but the live corpus does not yet close that bundle uniformly."
+    success_rule: "Either the five-object local exact-release package closes on the live corpus so one calibrated local input P emits the bosonic trunk and the classical-regime gravity coupling with explicit SI readout, or every public surface states the exact five-object frontier without silently promoting the extension surface to current-corpus theorem status."
+    tasks:
+      - id: papers.compact.u.01-record-five-object-local-unification-frontier
+        title: "Record the five-object local unification frontier on the paper and status surfaces"
+        status: completed
+        owner_lane: local_docs
+        depends_on: []
+      - id: papers.compact.u.02-close-shared-d10-gravity-edge-entropy-bridge
+        title: "Close the shared D10/gravity edge-entropy bridge beneath the scalar identity ellbar_shared = ellbar_SU2 + ellbar_SU3"
+        status: ready
+        owner_lane: pro_paper
+        depends_on:
+          [
+            "particles.audit.06-sharpen-uv-carried-collar-witness-to-fixed-local-collar-datum",
+            "particles.calibration.17-promote-target-free-d10-repair-theorem"
+          ]
+      - id: papers.compact.u.03-close-local-familiar-unit-readout-package
+        title: "Close the local familiar-unit readout package for c, ell_cell, tau_cell, E_cell, and G_SI display"
+        status: ready
+        owner_lane: local_docs
+        depends_on: []
+      - id: papers.compact.u.04-close-strict-classical-regime-release-clause
+        title: "Close the strict classical-regime clause above the BW/Lorentz honesty package for the gravity-coupling release wording"
+        status: pending
+        owner_lane: pro_paper
+        depends_on:
+          [
+            "papers.compact.u.02-close-shared-d10-gravity-edge-entropy-bridge",
+            "papers.compact.u.03-close-local-familiar-unit-readout-package",
+            "particles.audit.06-sharpen-uv-carried-collar-witness-to-fixed-local-collar-datum"
+          ]
+      - id: papers.compact.u.05-close-d10-exact-live-wz-chart-identity
+        title: "Close EWTargetFreeRepairChartIdentity_D10 so the live public W/Z lane lands on the exact repaired chart"
+        status: ready
+        owner_lane: pro_paper
+        depends_on: ["particles.calibration.17-promote-target-free-d10-repair-theorem"]
+      - id: papers.compact.u.06-close-d11-exact-live-higgs-promotion
+        title: "Close D11LiveForwardExactHiggsPromotion so the live forward Higgs row lands on the exact codomain without inverse-adapter relabeling"
+        status: ready
+        owner_lane: pro_paper
+        depends_on: ["papers.compact.e.28-make-the-higgs-top-critical-surface-fully-rigorous"]
   - id: stage-7
     title: "Integrated release gate"
     status: pending

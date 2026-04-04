@@ -28,6 +28,7 @@
 
 \newcommand{\SU}{\mathrm{SU}}
 \newcommand{\U}{\mathrm{U}}
+\newcommand{\ellbar}{\bar{\ell}}
 \newcommand{\Conf}{\mathrm{Conf}}
 \newcommand{\ophid}[1]{{\small\path{#1}}}
 
@@ -41,44 +42,7 @@ Observer Consistency}
 \OPHPaperReleaseBanner
 
 \begin{abstract}
-Observer-Patch Holography (OPH) derives physics from consistency
-conditions among overlapping observer patches on a regulated screen. This paper studies its
-particle-spectrum branch. Starting from five axioms, the structural theorem package summarized in
-\emph{Recovering Relativity and Standard Model Structure from Observer Overlap Consistency}~\cite{ophcompact},
-and the dimensionless pixel constant
-\[
-P \equiv a_{\mathrm{cell}}/\ell_P^2,
-\]
-this paper asks how far one can derive the observed spectrum from one shared calibration
-constant rather than from the large fitted parameter list of the Standard Model, typically counted
-as \(19\) free parameters in the minimal massless-neutrino theory and at least \(26\) once
-neutrino masses and mixing are included. On the derivation surface reported here, the photon, gluons,
-and graviton are structural massless carriers; the electroweak calibration stage is closed on a
-target-free source-only theorem that emits the \(W\) boson and \(Z\) boson; the Higgs/top critical
-stage yields the Higgs boson and top quark;
-and the quark branch emits continuation-level rows for the up quark, down quark, strange quark,
-charm quark, and bottom quark. The exact non-hadron output lane is stronger than the theorem lane:
-structural zeros are exact, the \(W/Z\) pair has an exact frozen-repair sidecar, the D11 Higgs/top
-branch has a closed one-scalar forward seed together with a compare-only exact inverse sidecar,
-the charged and quark families have exact same-family witnesses, and the neutrino lane carries
-an emitted weighted-cycle theorem pair together with diagnostic sidecars beneath it. Charged
-leptons and flavor-labeled neutrinos therefore split for different reasons:
-the charged lane fixes the centered hierarchy but not the absolute normalization, while the
-weighted-cycle neutrino branch lands on the observed PMNS/hierarchy pattern and emits
-\[
-C_\nu=G^2Q S^{-1/2}=0.9994295999075177,
-\qquad
-P_\nu=I_\nu^{1/2}\widehat{\mathrm{ratio}}^{\,1/2}\mathrm{sum\_defect}^{-1}=6.699825740519345,
-\]
-so the paper-facing amplitude \(B_\nu=P_\nu C_\nu=6.696004159297337\) and the positive
-normalization \(\lambda_\nu=(m_{\star,\mathrm{eV}}/q_{\mathrm{mean}}^{p_\nu})P_\nu C_\nu=1.7237014208357415\)
-follow by exact \(q_{\mathrm{mean}}^{p_\nu}\) factorization. Hadron masses are outside the current particle roadmap:
-unlike the upstream elementary-particle lanes, the hadron branch requires large-scale classical
-lattice-QCD computation together with production continuum, volume, chiral, and statistics
-systematics, and that nonperturbative execution burden is not a realistic target within the
-current project compute scope. This paper gives a concise
-end-to-end derivation map from observer-consistency axioms and \(P\) to the reported particle
-outputs and marks every remaining closure object explicitly.
+Observer-Patch Holography (OPH) asks how much of the particle spectrum can be derived from one shared local input rather than from a long fitted parameter list. Building on the OPH recovery of relativity and Standard Model structure, this paper develops the particle branch from the dimensionless pixel constant \(P \equiv a_{\mathrm{cell}}/\ell_P^2\). It fixes the structural massless carriers, closes a target-free \(W/Z\) lane, carries a quantitative Higgs/top branch, emits continuation-level quark rows, and gives a theorem-grade weighted-cycle neutrino family that matches the observed mixing and hierarchy pattern. The exact non-hadron surface is stronger than the public theorem lane: it includes exact structural zeros, an exact frozen \(W/Z\) pair, exact same-family charged and quark witnesses, and exact neutrino-side readout objects. Charged-lepton absolute closure, the exact physical quark branch, flavor-labeled neutrinos, and hadrons are kept as explicit boundary objects.
 \end{abstract}
 
 \section{Introduction}
@@ -694,6 +658,54 @@ with emitted weighted-cycle absolute splittings
 \Delta m_{32}^2=2.4374312781107786\times10^{-3}\,\mathrm{eV}^2.
 \]
 The table is lane-based. It states the OPH chain that emits each exact-hit surface and the exact caveat that prevents silent promotion to a stronger theorem claim.
+
+\paragraph{Local unification surface.}
+The bosonic rows carry one cross-lane statement. The same calibrated input \(P\) fixes the
+D10/D11 bosonic trunk
+\[
+P
+\longmapsto
+\alpha_U
+\longmapsto
+(t_U,t_{\mathrm{tr}})
+\longmapsto
+v
+\longmapsto
+(M_W,M_Z),
+\qquad
+\sigma_{D11,\mathrm{HT}}
+=
+\alpha_U\cos(2\theta_{W0})/\sqrt{\pi}
+\longmapsto
+(m_H,m_t).
+\]
+On the companion gravity side, the same pixel law packages
+\[
+\ellbar_{\mathrm{SU(2)}}(t_{2,\mathrm{run}})
+\;+\;
+\ellbar_{\mathrm{SU(3)}}(t_{3,\mathrm{run}})
+=
+P/4,
+\qquad
+G=\frac{a_{\mathrm{cell}}}{4\,\ellbar(t)}.
+\]
+The local unification surface has five explicit boundary objects: exact public \(W/Z\) requires
+one target-free D10 chart-identity theorem, exact public Higgs requires one live-forward D11
+promotion theorem, and the gravity-side release requires one shared edge-entropy bridge together
+with the local readout package and the strict classical-regime clause. On that declared extension surface
+the local release bundle is
+\[
+c=299792458\,\mathrm{m/s},
+\qquad
+G=6.674299995910528\times10^{-11}\,\mathrm{m^3\,kg^{-1}\,s^{-2}},
+\]
+\[
+(M_W,M_Z,M_H)=
+(80.377,\ 91.18797809193725,\ 125.1995304097179)\,\mathrm{GeV},
+\]
+with \(c\) as the structural Lorentz output and with the \(G\) row as an exact emitted branch
+value rather than a literal zero-difference identity against the rounded benchmark
+\(6.6743\times10^{-11}\).
 
 The detailed inventory below records the public theorem/continuation rows sector by sector. Whenever an exact sidecar or same-family witness is stronger than the public theorem row, the caveat is the one stated in the exact-hit table above.
 
@@ -3064,7 +3076,9 @@ this draft. The paper puts the finished structural results, the emitted quantita
 remaining closure fronts onto one common page. The visible gates sit above the shared
 excitation dictionary, not inside it: theorem-level charged-lepton closure, quark branch
 selection plus selected-branch mass closure, theorem-level neutrino absolute-bridge closure, and
-the nonperturbative hadron branch. Until those move, this paper should be read as a technical
+the nonperturbative hadron branch. The same accounting also sharpens the local unification story:
+the bosonic \(P\)-driven trunk is explicit, and the gravity-side bridge to \(G\) is reduced to a
+small named exact-release package rather than a diffuse future ambition. Until those move, this paper should be read as a technical
 derivation document with real outputs in hand, not as a final claim that the entire observed
 spectrum is finished.
 

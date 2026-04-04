@@ -257,6 +257,20 @@ The pixel area is *extracted* from measured constants. A genuine prediction woul
 
 ![The Pixel Constant](../assets/pixel-constant.svg)
 
+That same local calibration surface organizes the numerical unification story. The bosonic route is `P -> alpha_U -> (t_U, t_tr) -> v -> (M_W, M_Z)`, and the D11 Higgs/top seed adds `$\\sigma_{D11,HT} = \\alpha_U \\cos(2\\theta_{W0}) / \\sqrt{\\pi}$` and then `M_H`. The gravity route is `$\\bar\\ell_{SU(2)}(t_{2,\\mathrm{run}}) + \\bar\\ell_{SU(3)}(t_{3,\\mathrm{run}}) = P/4$` together with `G = a_cell / (4 ellbar_shared)`. The invariant causal speed belongs to the Lorentz branch and receives its SI display through the local readout package.
+
+| Quantity | OPH chain | Display value | Claim surface |
+| --- | --- | --- | --- |
+| `c` | Lorentz branch + `LocalFamiliarUnitReadoutPackage` | `299792458 m/s` | structural causal-speed output with SI readout |
+| `G` | `P -> a_cell`, `ellbar_shared`, `G = a_cell / (4 ellbar_shared)` | `6.674299995910528e-11 m^3 kg^-1 s^-2` | exact emitted branch value on the declared local exact-release surface |
+| `W` | `P -> alpha_U -> (t_U, t_tr) -> v -> M_W` | `80.377 GeV` | exact codomain on the D10 chart-identity surface |
+| `Z` | `P -> alpha_U -> (t_U, t_tr) -> v -> M_Z` | `91.18797809193725 GeV` | exact codomain on the D10 chart-identity surface |
+| `H` | `P -> alpha_U -> (t_U, t_tr) -> sigma_D11,HT -> M_H` | `125.1995304097179 GeV` | exact codomain on the D11 live-forward exactification surface |
+
+![Local unification surface](../assets/local-unification-surface.svg)
+
+The boundary of this local package consists of five explicit objects: `LocalFamiliarUnitReadoutPackage`, `SharedEdgeEntropyBridge`, `StrictClassicalBranchReleaseClause`, `EWTargetFreeRepairChartIdentity_D10`, and `D11LiveForwardExactHiggsPromotion`. The same calibrated local input therefore organizes the classical gravity coupling and the electroweak boson/Higgs mass scale within one diagrammatic surface, while `c` enters as the structural Lorentz output displayed in local SI units.
+
 ### The Measurement Problem
 
 There is no wave function of the universe viewed from outside. There are only states on patches, seen by observers within the system. "Measurement" is one patch interacting with another. Collapse is the transition from pre-interaction to post-interaction state.
