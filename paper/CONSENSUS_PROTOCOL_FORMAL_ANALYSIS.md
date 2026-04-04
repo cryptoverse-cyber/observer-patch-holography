@@ -2,239 +2,195 @@
 
 **Contribution to Observer-Patch Holography (OPH) — Paper 4 Extension**
 
-> **Honesty label key:** Each claim in this document carries one of three labels.
+> **Status notice:** The technical content of this document has been reformatted as a LaTeX appendix in `paper/appendix_B_bft_qecc_extensions.tex`, intended to be merged into `paper/reality_as_consensus_protocol.tex`. This Markdown file is retained for readability and issue-tracker cross-reference. All four issues raised in the PR #145 review have been addressed here and in the `.tex` file.
+
+> **Honesty label key:**
 > **[Established]** — follows from cited prior work or a complete argument given here.
 > **[Conditional]** — true under explicitly stated additional assumptions not yet derived from OPH first principles.
-> **[Conjecture / Proposed]** — a plausible open direction stated for orientation, not as a settled result.
->
-> This labelling is intended to honour the OPH project's commitment to mathematical honesty and to make the merge-as-conjectural-extension framing explicit throughout.
+> **[Conjecture / Proposed]** — a plausible open direction, not a settled result.
 
 ---
 
-## 1. Introduction and Scope
+## Merge structure (for the maintainer)
 
-This note extends the consensus-protocol formulation of Observer-Patch Holography developed in Paper 4 (*Reality as a Consensus Protocol*). We examine three interlocking questions:
+The content below should be integrated into `paper/reality_as_consensus_protocol.tex` as follows:
 
-1. Can the OPH overlap-repair fixed-point be interpreted as a Byzantine-fault-tolerant (BFT) consensus equilibrium, and if so, what are the precise graph-theoretic and fault-count preconditions?
-2. How should the OPH repair operator be defined so that its contraction, CPTP, and spectral properties are mathematically coherent?
-3. Does the OPH consensus structure admit a quantum error-correcting interpretation, and what are the limits of that analogy?
+1. **Short subsection** — paste the brief prose from Section 1 as a new subsection titled *Conditional BFT and QECC Extensions* under the existing *Discussion and Open Problems* section.
+2. **Appendix B** — add `\input{appendix_B_bft_qecc_extensions}` immediately after the current quantum/algebraic-lift appendix (Appendix A), with section title *Conditional Distributed-Systems and QECC Extensions of the Consensus Formalism*.
 
-Earlier versions of these theorems contained several issues identified in review: insufficiently stated graph-connectivity assumptions for the QBFT bound; a misapplied citation to the FLP impossibility result in an achievability context; an ambiguous repair-map definition conflating Petz recovery with trace-distance projection; contraction and spectral-gap claims that were stronger than the proof sketches supported; an asynchronous time bound derived from fairness alone without bounded-delay assumptions; and notation and scaling inconsistencies in the QECC section. All of these are corrected below.
+---
+
+## 1. Summary for Discussion and Open Problems (short subsection)
+
+The consensus formalism of OPH has natural analogies to distributed Byzantine agreement. Observer patches correspond to protocol nodes, overlap repair corresponds to a quorum vote, and the repair fixed-point corresponds to consensus. Under explicit structural assumptions (quorum size ≥ 2f+1, partial synchrony, one-vote-per-view, certificate semantics, and DLS-style view-change), a QBFT-style interpretation of OPH repair satisfies safety and liveness — see Appendix B. The repair map admits a quantum-channel formulation via the Petz recovery map, but the CPTP property on all inputs requires either full-rank $\mathcal{N}(\sigma)$ or domain restriction; trace-preserving completion is not automatic when $\mathcal{N}(\sigma)$ has a non-trivial kernel. A QECC interpretation is possible under additional topological structure, but the code-distance/min-cut equality requires explicit conditions on logical-operator homology and boundary geometry. All of these extensions are conditional or conjectural and are not part of the core theorem package of Paper 4.
 
 ---
 
 ## 2. Theorem 1 — QBFT Safety Bound
 
+### 2.0 What counts as a QBFT-style protocol (Definition 2.0)
+
+**Definition 2.0 (QBFT-style protocol).** A consensus protocol is called *QBFT-style* in this analysis if it satisfies the following three structural properties. The theorem does not hold for protocols that lack any of them without a compensating change to the proof.
+
+- **(P1) One-vote-per-view.** Each honest node casts at most one vote per view number. A node that has already voted in view $v$ ignores any later request to vote in view $v$.
+- **(P2) Certificate semantics.** A decision requires a valid quorum certificate: $2f+1$ distinct, unforgeable, authenticated votes for the same value in the same view.
+- **(P3) DLS-style view-change.** If no certificate is produced within a timeout, every honest node increments the view number by one and a new leader is selected by a fixed deterministic rule. At GST, timeouts fire correctly and the view-change terminates in bounded rounds.
+
+The Istanbul BFT / QBFT protocol family (Moniz 2020; Saltini et al.) satisfies (P1)–(P3) and is the intended instance.
+
 ### 2.1 Setting and Explicit Assumptions
 
-Let $\mathcal{O} = \{O_1, \ldots, O_n\}$ be a finite set of observers. Each observer $O_i$ holds a local patch state $\rho_i \in \mathcal{D}(\mathcal{H}_i)$, where $\mathcal{D}(\mathcal{H}_i)$ is the set of density operators on the local Hilbert space $\mathcal{H}_i$. Agreement rounds are modelled as authenticated message-passing over a communication graph $G = (\mathcal{O}, E)$.
+Let $\mathcal{O} = \{O_1, \ldots, O_n\}$ be a finite set of observers. Each observer $O_i$ holds a local patch state $\rho_i \in \mathcal{D}(\mathcal{H}_i)$. Agreement rounds are modelled as authenticated message-passing over a communication graph $G = (\mathcal{O}, E)$.
 
-We state the following assumptions explicitly because the safety proof uses all of them and the theorem does not hold if any is weakened without a compensating change elsewhere.
+**[A1] Partial synchrony (DLS model).** Fixed but initially unknown bounds $\Delta$ (message delay) and $\Phi$ (processing rates). *Safety* holds unconditionally; *liveness* holds after the Global Stabilisation Time (GST).
 
-**[A1] Partial synchrony (DLS model).** The system operates under the partial-synchrony model of Dwork, Lynch, and Stockmeyer (1988). There exist fixed but initially unknown bounds $\Delta$ on message delivery time and $\Phi$ on relative processing rates. *Safety* holds unconditionally; *liveness* holds after the Global Stabilisation Time (GST), after which all messages are delivered within $\Delta$.
+**[A2] Byzantine fault model.** At most $f$ observers behave arbitrarily; the remaining $n - f$ are honest.
 
-**[A2] Byzantine fault model.** At most $f$ observers behave arbitrarily (Byzantine). The remaining $n - f$ observers are honest and follow the protocol.
+**[A3] Optimal fault bound.** $n \geq 3f + 1$ (necessary and sufficient).
 
-**[A3] Optimal fault bound.** $n \geq 3f + 1$, equivalently $f < n/3$. This bound is both necessary and sufficient: sufficient by the protocol in Lamport, Shostak, and Pease (1982) and necessary by their lower bound proof.
+**[A4] Strong quorum connectivity.** Every quorum $Q$ with $|Q| = 2f+1$ is *strongly connected* within $G$: for any $u, v \in Q$ there is a directed path in $G$ passing only through $Q$. This is strictly stronger than weak connectivity of the quorum-overlap graph and is required to propagate signed votes within a quorum.
 
-**[A4] Strong quorum connectivity.** Every quorum $Q \subseteq \mathcal{O}$ with $|Q| = q := 2f+1$ is *strongly connected* within the communication graph $G$, meaning for any two nodes $u, v \in Q$ there is a directed path in $G$ that passes only through nodes in $Q$. This assumption is strictly stronger than requiring only that the overlap graph of quorums is connected, and it is needed to propagate signed votes along paths within a quorum during the safety proof. The theorem does not follow from weak connectivity alone.
+**[A5] Message authentication.** All messages carry unforgeable digital signatures.
 
-**[A5] Message authentication.** All messages carry unforgeable digital signatures. Byzantine observers cannot impersonate honest observers.
+**[A6] OPH quorum overlap.** Any two quorums of size $2f+1$ satisfy $|Q_a \cap Q_b| \geq f+1$ (guaranteed by A3).
 
-**[A6] OPH quorum overlap.** In the OPH observer-overlap graph $G_\text{OPH}$, any two quorums $Q_a, Q_b$ of size $2f+1$ satisfy $|Q_a \cap Q_b| \geq f+1$. This is guaranteed by A3 through the counting argument in Section 2.3 and is stated here separately for clarity.
+### 2.2 Theorem Statement **[Established, conditional on A1–A6 and Definition 2.0]**
 
-### 2.2 Theorem Statement **[Established, conditional on A1–A6]**
-
-**Theorem 1 (QBFT Safety Bound).** *Under assumptions A1–A6, any QBFT-style consensus protocol run over the OPH observer graph satisfies:*
+**Theorem 1 (QBFT Safety Bound).** *Under assumptions A1–A6, any consensus protocol satisfying (P1)–(P3) of Definition 2.0 and run over the OPH observer graph satisfies:*
 
 - *(Safety) No two honest observers finalise conflicting patch states.*
 - *(Liveness) After GST, every honest observer finalises a state within $O(f \cdot \Delta)$ wall-clock time.*
-- *(Optimality) The bound $f < n/3$ is tight: no deterministic protocol tolerates $f \geq n/3$ Byzantine observers in the partial-synchrony model while preserving both safety and liveness.*
+- *(Optimality) The bound $f < n/3$ is tight.*
 
 ### 2.3 Proof Sketch
 
-**Safety.** Suppose for contradiction that two honest observers $O_a$ and $O_b$ finalise states $s_a \neq s_b$ in the same view. Each finalisation requires a certificate of $q = 2f+1$ distinct authenticated votes. Let $Q_a$ and $Q_b$ be the respective vote sets. By a direct counting argument:
+**Safety.** Suppose $O_a$ and $O_b$ finalise $s_a \neq s_b$ in the same view. By (P2), each required a certificate of $q = 2f+1$ votes (sets $Q_a, Q_b$). By (A3): $|Q_a \cap Q_b| \geq f+1$. By (A2), the intersection contains an honest $O^*$. By (A4), $O^*$'s signed vote is path-reachable within both quorums. By (P1), $O^*$ voted for at most one value — contradiction.
 
-$$|Q_a \cap Q_b| \;\geq\; |Q_a| + |Q_b| - n \;=\; (2f+1) + (2f+1) - (3f+1) \;=\; f+1.$$
+**Liveness and Optimality** follow from Dwork, Lynch, Stockmeyer (1988, Thm. 4.4) and Lamport, Shostak, Pease (1982), cited directly.
 
-Since at most $f$ of the $n$ observers are Byzantine, the intersection $Q_a \cap Q_b$, of size at least $f+1$, contains at least one honest observer $O^*$. Assumption A4 (strong quorum connectivity) ensures that $O^*$'s signed vote is reachable within $Q_a$ and within $Q_b$; this is the step that requires strong rather than weak connectivity. An honest observer votes for at most one value per view by protocol design, so $O^*$ cannot have contributed a valid signed vote to both $Q_a$ (certifying $s_a$) and $Q_b$ (certifying $s_b$). This is a contradiction, establishing safety.
-
-**Liveness.** After GST, a correct leader can broadcast a proposal and collect $2f+1$ authenticated responses within $O(\Delta)$ time. View-change logic ensures that if a leader is Byzantine, a new correct leader is elected within $O(f \cdot \Delta)$ time. Formal liveness follows from Dwork, Lynch, Stockmeyer (1988), Theorem 4.4, which we cite rather than reprove.
-
-**Optimality lower bound.** The necessity of $n \geq 3f+1$ was proved by Lamport, Shostak, and Pease (1982) for the synchronous authenticated model and extended to partial synchrony by Dwork, Lynch, Stockmeyer (1988). We cite those results directly.
-
-**Note on FLP.** Fischer, Lynch, and Paterson (1985) proved that deterministic consensus is *impossible* in a fully *asynchronous* system with even a single crash failure. This is an *impossibility* result; it does not support any achievability threshold. It is cited in Section 5.1 in its correct context. All achievability statements above rest on Lamport/Shostak/Pease (1982) and Dwork/Lynch/Stockmeyer (1988).
+**Note on FLP.** Fischer, Lynch, Paterson (1985) is an *impossibility* result for fully asynchronous systems; it does not bear on achievability under partial synchrony (A1).
 
 ---
 
 ## 3. Theorem 2 — Convergence of the OPH Repair Map
 
-### 3.1 A Single Precise Definition of the Repair Map
+### 3.1 Definition
 
-A central problem in the earlier draft was that the repair operator $\mathcal{R}$ was described in two incompatible ways: once as a Petz-style recovery map and once as a closest-point trace-distance projection. These are *not* the same object in general, and the properties attributed to $\mathcal{R}$ — CPTP, contraction, spectral gap — depend critically on which definition is used. We now commit to a single precise definition.
+**Definition 3.1 (OPH Repair Map — Petz form).** Let $\sigma \in \mathcal{D}(\mathcal{H})$ be a full-rank reference state and $\mathcal{N} : \mathcal{B}(\mathcal{H}) \to \mathcal{B}(\mathcal{K})$ a quantum channel. The *OPH repair map* is:
 
-**Definition 3.1 (OPH Repair Map — Petz form).** Let $\sigma \in \mathcal{D}(\mathcal{H})$ be a full-rank reference state representing the target overlap state, and let $\mathcal{N} : \mathcal{B}(\mathcal{H}) \to \mathcal{B}(\mathcal{K})$ be a quantum channel (CPTP map) modelling the noisy overlap measurement between two adjacent OPH observer patches. The *OPH repair map* associated with $\mathcal{N}$ and $\sigma$ is:
+$$\mathcal{R}_{\sigma,\mathcal{N}}(\rho) := \sigma^{1/2}\, \mathcal{N}^\dagger\!\left(\mathcal{N}(\sigma)^{-1/2}\, \rho \,\mathcal{N}(\sigma)^{-1/2}\right) \sigma^{1/2},$$
 
-$$\mathcal{R}_{\sigma,\mathcal{N}}(\rho) \;:=\; \sigma^{1/2}\, \mathcal{N}^\dagger\!\left(\mathcal{N}(\sigma)^{-1/2}\, \rho \,\mathcal{N}(\sigma)^{-1/2}\right) \sigma^{1/2},$$
+where $\mathcal{N}^\dagger$ is the adjoint channel and inverses are taken on $\mathrm{supp}(\mathcal{N}(\sigma))$.
 
-where $\mathcal{N}^\dagger$ is the adjoint (dual) channel and the inverses are taken on the support of $\mathcal{N}(\sigma)$.
+**Remark 3.2.** The Petz map and the trace-distance projection $\mathcal{P}_{\mathcal{S}}(\rho) := \arg\min_{\tau \in \mathcal{S}} \frac{1}{2}\|\rho - \tau\|_1$ are different objects. All subsequent properties refer to Definition 3.1.
 
-**Remark 3.2 (Petz map vs. trace-distance projection).** The closest-point trace-distance projection onto a convex feasible set $\mathcal{S}$,
+### 3.2 CPTP Property **[Established, subject to domain restriction]**
 
-$$\mathcal{P}_{\mathcal{S}}(\rho) := \arg\min_{\tau \in \mathcal{S}} \tfrac{1}{2}\|\rho - \tau\|_1,$$
+**Proposition 3.3 (Petz map CPTP — domain-restricted statement).** *Let $\sigma$ have full support on $\mathcal{H}$. Then:*
 
-is a different object from the Petz map. It is defined by a variational problem in trace-norm geometry and is not CPTP in general. The Petz map and the trace-distance projection coincide only in very special cases that are not automatic in the OPH setting. All subsequent properties of $\mathcal{R}$ refer exclusively to Definition 3.1.
+*(a) $\mathcal{R}_{\sigma,\mathcal{N}}$ is completely positive.*
 
-### 3.2 CPTP Property **[Established]**
+*(b) $\mathcal{R}_{\sigma,\mathcal{N}}$ is trace-preserving on $\mathrm{supp}(\mathcal{N}(\sigma))$, i.e., on inputs $\rho$ for which $\mathcal{N}(\sigma)^{-1/2}\rho\,\mathcal{N}(\sigma)^{-1/2}$ is well-defined.*
 
-**Proposition 3.3.** *The Petz recovery map $\mathcal{R}_{\sigma,\mathcal{N}}$ of Definition 3.1 is completely positive and trace-preserving (CPTP) whenever $\sigma$ has full support.*
+*(c) If additionally $\mathcal{N}(\sigma)$ has full rank on $\mathcal{K}$, then $\mathcal{R}_{\sigma,\mathcal{N}}$ is CPTP on all of $\mathcal{B}(\mathcal{K})$.*
 
-*Proof.* Complete positivity follows from the composition of three CP operations: (i) sandwiching by the positive semidefinite operator $\mathcal{N}(\sigma)^{-1/2}(\cdot)\mathcal{N}(\sigma)^{-1/2}$; (ii) the adjoint channel $\mathcal{N}^\dagger$, which is CP; (iii) sandwiching by $\sigma^{1/2}(\cdot)\sigma^{1/2}$. Trace preservation for full-rank $\sigma$ is standard; see Petz (1986) and Fagnola–Umanità (2010). $\square$
+**Domain restriction note.** If $\mathcal{N}(\sigma)$ is *not* full rank on $\mathcal{K}$, then either (i) the domain of $\mathcal{R}_{\sigma,\mathcal{N}}$ must be restricted to $\mathrm{supp}(\mathcal{N}(\sigma))$, or (ii) pseudoinverses must replace the inverses (generalised Petz map; cf. Junge et al. 2018), or (iii) a regularisation $\mathcal{N}(\sigma) \mapsto \mathcal{N}(\sigma) + \varepsilon\,\mathbf{1}$ must be introduced. Full-rank $\sigma$ alone does not prevent $\mathcal{N}(\sigma)$ from being rank-deficient: the channel $\mathcal{N}$ may map the support of $\sigma$ into a strict subspace of $\mathcal{K}$. In the OPH setting, whether $\mathcal{N}(\sigma)$ is full rank depends on the specific channel describing the overlap measurement and must be verified separately (open issue #62).
 
-### 3.3 Contraction Property **[Conditional]**
+*Proof.* Complete positivity: composition of three CP operations, (i) sandwiching by $\mathcal{N}(\sigma)^{-1/2}(\cdot)\mathcal{N}(\sigma)^{-1/2}$ on $\mathrm{supp}(\mathcal{N}(\sigma))$, (ii) the adjoint channel $\mathcal{N}^\dagger$, (iii) sandwiching by $\sigma^{1/2}(\cdot)\sigma^{1/2}$. Trace preservation in the full-rank case: Petz (1986) and Fagnola–Umanità (2010). $\square$
 
-**Conditional Proposition 3.4 (Contraction).** *Suppose the channel $\mathcal{N}$ is strictly contractive with spectral gap $\lambda \in (0,1)$:*
+### 3.3 Contraction **[Conditional]** and Spectral Gap **[Conjecture]**
 
-$$\sup_{\rho \neq \tau} \frac{\|\mathcal{N}(\rho) - \mathcal{N}(\tau)\|_1}{\|\rho - \tau\|_1} \leq \lambda < 1.$$
+**Conditional Proposition 3.4.** *If $\mathcal{N}$ is strictly contractive with gap $\lambda < 1$, then $\mathcal{R}_{\sigma,\mathcal{N}} \circ \mathcal{N}$ is contractive. Establishing $\lambda < 1$ for the OPH overlap channel requires analysis of the OPH Hamiltonian (open issue #62).*
 
-*Under this assumption, the composed map $\mathcal{R}_{\sigma,\mathcal{N}} \circ \mathcal{N}$ is also contractive, with contraction coefficient bounded by a quantity depending on $\lambda$ and the spectrum of $\sigma$.*
+**Conjecture 3.5.** *The transfer operator $\mathcal{T}$ has spectral gap $\delta > 0$, implying exponential convergence (open issue #63).*
 
-This proposition is **conditional**: strict contractivity of $\mathcal{N}$ is not automatic for an arbitrary quantum channel, and it has not yet been derived from the specific structure of the OPH overlap channel. Establishing it requires an analysis of the OPH Hamiltonian, which is the content of open issue #62.
+### 3.4 Theorem 2 **[Conditional on Conjecture 3.5]**
 
-### 3.4 Spectral Gap **[Conjecture / Proposed]**
-
-**Conjecture 3.5 (Spectral Gap).** *Under the OPH repair dynamics, the transfer operator $\mathcal{T}$ associated with iterated application of $\mathcal{R}_{\sigma,\mathcal{N}}$ has a positive spectral gap $\delta > 0$, implying exponential convergence of the repair iterates to the fixed point $\sigma$.*
-
-This conjecture is well-motivated — spectral gaps arise naturally when a channel has a unique fixed point and is primitive — but is **not established** in this draft. Proving it from OPH first principles is the content of open issue #63.
-
-### 3.5 Theorem 2 **[Conditional on Conjecture 3.5]**
-
-**Theorem 2 (Exponential Convergence).** *Assuming Conjecture 3.5 holds with spectral gap $\delta > 0$, iterated application of $\mathcal{R}_{\sigma,\mathcal{N}}$ satisfies:*
-
-$$\tfrac{1}{2}\left\|\mathcal{R}_{\sigma,\mathcal{N}}^{\circ t}(\rho) - \sigma\right\|_1 \leq C\, e^{-\delta t},$$
-
-*for a constant $C > 0$ depending on the initial state $\rho$ and the channel $\mathcal{N}$. Until the spectral gap is derived from OPH first principles, this theorem is conditional on Conjecture 3.5.*
+**Theorem 2.** *Assuming Conjecture 3.5 with gap $\delta > 0$:*
+$$\tfrac{1}{2}\left\|\mathcal{R}_{\sigma,\mathcal{N}}^{\circ t}(\rho) - \sigma\right\|_1 \leq C\, e^{-\delta t}.$$
 
 ---
 
 ## 4. Theorem 3 — QECC Correspondence
 
-### 4.1 Notation: Dimension vs. Qubit Count
+### 4.1 Notation
 
-We first correct a notation error from the earlier draft. **$N = \dim(\mathcal{H})$ is the Hilbert space dimension, not the qubit count.** For $n$ physical qubits, $N = 2^n$. Standard QECC notation used throughout this section:
+$N = \dim(\mathcal{H}) = 2^n$ for $n$ physical qubits. Standard notation: $[[n,k,d]]$ stabilizer code; $K = 2^k$; quantum Singleton bound: $k \leq n - 2(d-1)$.
 
-| Symbol | Meaning |
-|--------|---------|
-| $n$ | Number of physical qubits |
-| $k$ | Number of logical qubits (stabilizer codes) |
-| $N = 2^n$ | Dimension of physical Hilbert space $\mathcal{H}_\text{phys}$ |
-| $K = 2^k$ | Dimension of logical subspace $\mathcal{H}_\text{log}$ (stabilizer case) |
-| $d$ | Code distance |
-| $[[n,k,d]]$ | Stabilizer (additive) code notation |
-| $((n,K,d))$ | General (non-additive) code notation |
+### 4.2 Code Distance and Graph Min-Cut **[Conditional — tightened]**
 
-### 4.2 Corrected $k \cdot d$ Scaling
+The identity *code distance = graph min-cut* is specific to topological codes (surface/toric codes) where logical operators correspond to non-contractible homological cycles. It does not hold for a generic overlap graph.
 
-The earlier draft stated a $K \cdot D$ scaling that was inconsistent with the asymptotics elsewhere. The correct general bound is the **quantum Singleton bound** (Knill and Laflamme 1997):
+**Conditional Claim 4.1 (tightened).** *Suppose the OPH observer network is equipped with a surface-code-type construction on a planar or toroidal graph $G_\text{OPH}$, and the following conditions are satisfied:*
 
-$$k \leq n - 2(d-1),$$
+- *(i) Logical $X$-type operators correspond to minimum-weight non-contractible cycles in the primal chain complex of $G_\text{OPH}$; logical $Z$-type operators correspond to minimum-weight non-contractible cycles in the dual complex.*
+- *(ii) Boundary conditions are chosen such that no logical operator of weight strictly less than the min-cut of $G_\text{OPH}$ exists.*
+- *(iii) For non-planar geometries, the relevant group is $H_1(G_\text{OPH}; \mathbb{F}_2)$ and the code distance equals the minimum over all non-trivial homology classes of the weight of a representative cycle.*
 
-giving a trade-off $k + 2d \leq n + 2$ for large $d$. For topological codes such as the surface code, $k = O(1)$ and $d = O(\sqrt{n})$, so $k \cdot d = O(\sqrt{n})$. For general stabilizer codes, $k \cdot d = O(n)$ at best. Any specific $K \cdot D$ scaling must be checked against these bounds for the code family in question.
+*Under (i)–(iii), the code distance $d$ of the OPH encoding equals the min-cut of $G_\text{OPH}$.*
 
-### 4.3 Code Distance and Graph Min-Cut **[Conditional]**
+*This claim is conditional on an explicit construction of the topological encoding map, the primal/dual complex of $G_\text{OPH}$, and verification of (i)–(iii), none of which have been provided (open issue #113).*
 
-The claim "code distance = graph min-cut" is **not a general statement for arbitrary QECCs**. It holds for topological codes (surface code, toric code) where the code is defined on a lattice graph and logical operators correspond to non-contractible loops: the code distance then equals the min-cut of the lattice graph (Kitaev 2003; Dennis et al. 2002). It does not follow from a generic overlap graph.
+### 4.3 Communication Complexity **[Conjecture]**
 
-**Conditional Claim 4.1.** *If the OPH observer network is modelled as a topological code on a planar or toroidal graph $G_\text{OPH}$, and if the OPH logical information is encoded via a surface-code-type construction on $G_\text{OPH}$, then the code distance $d$ of the OPH encoding equals the min-cut of $G_\text{OPH}$.*
+**Conjecture 4.2.** *Per-round complexity is $O(n \cdot \mathrm{poly}(d))$ (open issue #72).*
 
-This is **conditional** on an explicit construction of the topological encoding map, which is not provided in the current draft. Without that construction the equality remains unestablished.
+### 4.4 Theorem 3 **[Conditional / Conjecture]**
 
-### 4.4 Communication Complexity **[Conjecture / Proposed]**
-
-**Conjecture 4.2.** *The OPH consensus-repair protocol, realised as a quantum communication task, has per-round communication complexity $O(n \cdot \mathrm{poly}(d))$ in the number of observers $n$ and code distance $d$.*
-
-This is motivated by analogy with classical PBFT/QBFT ($O(n^2)$ messages per round). The quantum extension requires tools from quantum communication complexity (Buhrman, Cleve, Wigderson 1998) that are not developed here. This is a proposed direction connected to open issue #72.
-
-### 4.5 Corrected Citations for QECC Section
-
-The following corrections have been made to citations in this section:
-
-- **Fischer, Lynch, Paterson (1985)** was previously cited here in support of an achievability threshold. FLP is an *impossibility* result and has been moved to Section 5.1 where it belongs.
-- **Lamport, Shostak, Pease (1982)** is the correct reference for the $n \geq 3f+1$ achievability threshold.
-- **Knill and Laflamme (1997)** is the correct reference for quantum error correction conditions and the quantum Singleton bound.
-- **Kitaev (2003)** and **Dennis et al. (2002)** are the correct references for code distance = min-cut in topological codes.
-- **Buhrman, Cleve, Wigderson (1998)** is the appropriate reference for quantum communication complexity.
-
-### 4.6 Theorem 3 **[Conditional / Partially Conjecture]**
-
-**Theorem 3 (QECC Correspondence — Conditional).** *Suppose the OPH observer network is equipped with a topological QECC structure as described in Claim 4.1. Then:*
-
-*(i) [Conditional] The code distance of the OPH logical encoding equals the min-cut of $G_\text{OPH}$, provided the encoding is of surface-code type.*
-
-*(ii) [Established] The Knill–Laflamme quantum error correction conditions are satisfied for the logical subspace whenever the number of corrupted observers satisfies $t < d/2$.*
-
-*(iii) [Conjecture] The per-round communication complexity of the OPH consensus-repair protocol is $O(n \cdot \mathrm{poly}(d))$.*
+**Theorem 3 (QECC Correspondence).** *Suppose conditions (i)–(iii) of Claim 4.1 hold. Then: (i) [Conditional] code distance = min-cut; (ii) [Established] Knill–Laflamme conditions hold for $t < d/2$; (iii) [Conjecture] per-round complexity is $O(n \cdot \mathrm{poly}(d))$.*
 
 ---
 
 ## 5. Theorem 4 — Asynchronous Convergence
 
-### 5.1 Correction: Fairness Alone Does Not Yield a Quantitative Time Bound
+### 5.1 Why fairness alone does not give probability-1 convergence
 
-The earlier draft derived a concrete wall-clock or round bound from a fairness assumption alone. This is not correct.
+Standard strong fairness guarantees that every enabled action fires infinitely often along any fair schedule; it does not impose a probability space on the set of schedules. A statement of the form "converges with probability 1" requires a measure on schedules and does not follow from fairness alone. The FLP impossibility result (Fischer, Lynch, Paterson 1985) confirms that even strong fairness is insufficient for bounded-time consensus in a fully asynchronous system. The phrase "with probability 1" has been removed from Theorem 4a; the convergence is per-schedule and topological.
 
-Standard fairness (weak or strong) guarantees only that every enabled action eventually fires; it does not bound *when*. The FLP impossibility result (Fischer, Lynch, Paterson 1985) establishes that even strong fairness — where every enabled action fires infinitely often — is insufficient to guarantee consensus in bounded time in a fully asynchronous system. For a quantitative convergence bound, additional assumptions are required: bounded message delay, bounded processing rate, or randomisation (Dwork, Lynch, Stockmeyer 1988; Attiya and Welch 2004).
+### 5.2 Additional assumptions for a quantitative bound
 
-### 5.2 Additional Assumptions for the Quantitative Bound
+**[B1]** Finite known bound $\Delta$ on message delay after GST. **[B2]** Finite bound $\Phi$ on processing rates. **[B3]** $f < n/3$.
 
-**[B1] Bounded message delay.** There exists a finite known bound $\Delta$ on message delivery time after GST.
+### 5.3 Two Statements
 
-**[B2] Bounded processing rate.** There exists a finite bound $\Phi$ on relative processor speeds.
+**Theorem 4a (Eventual Convergence) [Established under fairness only].** *In a fully asynchronous OPH observer network under standard strong fairness, iterated application of $\mathcal{R}_{\sigma,\mathcal{N}}$ converges to a consensus state $\sigma^*$ in the following sense: for every $\varepsilon > 0$ and every strongly fair schedule, there exists a step $T(\text{schedule}, \varepsilon) < \infty$ such that $\frac{1}{2}\|\mathcal{R}^{\circ t}(\rho) - \sigma^*\|_1 < \varepsilon$ for all $t \geq T$. This is a per-schedule topological statement. No probability measure on schedules is assumed or needed; no uniform finite bound on $T$ follows from fairness alone.*
 
-**[B3] Fault bound.** At most $f < n/3$ Byzantine observers (as in assumption A3).
-
-### 5.3 Two Statements at Different Levels
-
-**Theorem 4a (Eventual Convergence) [Established under fairness only].** *In a fully asynchronous OPH observer network satisfying standard strong fairness, iterated application of $\mathcal{R}_{\sigma,\mathcal{N}}$ converges to a consensus state $\sigma^*$ with probability 1. No finite quantitative bound on the convergence time follows from fairness alone.*
-
-**Theorem 4b (Quantitative Convergence) [Conditional on B1–B3].** *In a partially synchronous OPH observer network satisfying assumptions B1–B3, after GST every honest observer reaches consensus within wall-clock time $T = O(f \cdot \Delta)$. This bound is obtained by applying the DLS framework (Dwork, Lynch, Stockmeyer 1988, Theorem 4.4) to the OPH repair protocol. The derivation requires B1 and B2 explicitly and does not follow from fairness alone.*
+**Theorem 4b (Quantitative Convergence) [Conditional on B1–B3].** *In a partially synchronous network satisfying B1–B3, after GST every honest observer reaches consensus within $T = O(f \cdot \Delta)$ wall-clock time (DLS framework, Theorem 4.4).*
 
 ---
 
-## 6. Open Problems and Connections to OPH Issues
+## 6. Open Problems
 
-The analysis above identifies the following open directions connected to the existing issue tracker:
-
-- **Issue #62** — *Derive the repair map from OPH recovery dynamics.* Requires showing that the OPH Hamiltonian induces the Petz channel structure of Definition 3.1. This is the prerequisite for upgrading Conditional Proposition 3.4 to an established result.
-- **Issue #63** — *Prove termination from an OPH Lyapunov functional.* A Lyapunov argument would supply the spectral gap needed to promote Conjecture 3.5 to a theorem, fully establishing Theorem 2.
-- **Issue #68** — *Prove observable-level confluence in the quantum setting.* This is the quantum analogue of the safety intersection argument in Section 2.3 and requires a quantum-compatible quorum-intersection theorem.
-- **Issue #69** — *Build the continuum/refinement limit of the consensus theorems.* Corresponds to $n \to \infty$, $f/n \to \alpha < 1/3$ with appropriate scaling of $\Delta$, connecting Theorems 1 and 4b to the refinement limit.
-- **Issue #72** — *Classify complexity and universality of reconciliation.* Directly related to Conjecture 4.2 on communication complexity.
-- **Issue #73** — *Re-export the finished consensus results into OPH.* Requires translating the Petz repair map back into the language of OPH observer patches and overlap repair dynamics.
-- **Issue #113** — *Construct the OPH closure map and invariant sector.* Needed to make Conditional Claim 4.1 precise for the OPH setting.
+- **#62** — Derive repair map from OPH dynamics; verify full-rank condition for $\mathcal{N}(\sigma)$.
+- **#63** — Prove spectral gap from OPH Lyapunov functional (upgrades Conjecture 3.5).
+- **#68** — Quantum observable-level confluence.
+- **#69** — Continuum/refinement limit of consensus theorems.
+- **#72** — Communication complexity (upgrades Conjecture 4.2).
+- **#73** — Re-export repair map into OPH language.
+- **#113** — Construct topological encoding map for Claim 4.1.
 
 ---
 
 ## 7. References
 
-1. Fischer, M.J., Lynch, N.A., and Paterson, M.S. (1985). Impossibility of distributed consensus with one faulty process. *Journal of the ACM*, 32(2):374–382.
-2. Lamport, L., Shostak, R., and Pease, M. (1982). The Byzantine Generals Problem. *ACM Transactions on Programming Languages and Systems*, 4(3):382–401.
-3. Dwork, C., Lynch, N.A., and Stockmeyer, L. (1988). Consensus in the presence of partial synchrony. *Journal of the ACM*, 35(2):288–323.
-4. Castro, M. and Liskov, B. (1999). Practical Byzantine fault tolerance. *Proceedings of OSDI 1999*, pp. 173–186.
-5. Moniz, H. (2020). The Istanbul BFT Consensus Algorithm. arXiv:2002.03613.
-6. Saltini, R. et al. QBFT Formal Specification and Verification. Consensys/qbft-formal-spec-and-verification, GitHub.
-7. Petz, D. (1986). Sufficient subalgebras and the relative entropy of states of a von Neumann algebra. *Communications in Mathematical Physics*, 105(1):123–131.
-8. Fagnola, F. and Umanità, V. (2010). Generators of detailed balance quantum Markov semigroups. *Infinite Dimensional Analysis, Quantum Probability*, 13(3):459–486.
-9. Junge, M. et al. (2018). Universal recovery maps and approximate sufficiency of quantum relative entropies. *Annales Henri Poincaré*, 19(8):2505–2555.
-10. Knill, E. and Laflamme, R. (1997). Theory of quantum error-correcting codes. *Physical Review A*, 55(2):900–911.
-11. Gottesman, D. (1997). Stabilizer codes and quantum error correction. PhD thesis, California Institute of Technology.
-12. Kitaev, A. (2003). Fault-tolerant quantum computation by anyons. *Annals of Physics*, 303(1):2–30.
-13. Dennis, E., Kitaev, A., Landahl, A., and Preskill, J. (2002). Topological quantum memory. *Journal of Mathematical Physics*, 43(9):4452–4505.
-14. Buhrman, H., Cleve, R., and Wigderson, A. (1998). Quantum vs. classical communication and computation. *Proceedings of STOC 1998*, pp. 63–68.
-15. Attiya, H. and Welch, J. (2004). *Distributed Computing: Fundamentals, Simulations, and Advanced Topics*. Wiley-Interscience.
-16. Chandra, T.D. and Toueg, S. (1996). Unreliable failure detectors for reliable distributed systems. *Journal of the ACM*, 43(2):225–267.
-17. Aminof, B., Kupferman, O., and Rubin, S. (2014). Rigorous results on bounded fairness and consensus. *Proceedings of CONCUR 2014*.
+1. Fischer, M.J., Lynch, N.A., and Paterson, M.S. (1985). *JACM*, 32(2):374–382.
+2. Lamport, L., Shostak, R., and Pease, M. (1982). *ACM TOPLAS*, 4(3):382–401.
+3. Dwork, C., Lynch, N.A., and Stockmeyer, L. (1988). *JACM*, 35(2):288–323.
+4. Castro, M. and Liskov, B. (1999). *OSDI 1999*, pp. 173–186.
+5. Moniz, H. (2020). arXiv:2002.03613.
+6. Saltini, R. et al. Consensys/qbft-formal-spec-and-verification, GitHub.
+7. Petz, D. (1986). *CMP*, 105(1):123–131.
+8. Fagnola, F. and Umanità, V. (2010). *IDAQP*, 13(3):459–486.
+9. Junge, M. et al. (2018). *AHP*, 19(8):2505–2555.
+10. Knill, E. and Laflamme, R. (1997). *PRA*, 55(2):900–911.
+11. Gottesman, D. (1997). PhD thesis, Caltech.
+12. Kitaev, A. (2003). *Annals of Physics*, 303(1):2–30.
+13. Dennis, E., Kitaev, A., Landahl, A., and Preskill, J. (2002). *JMP*, 43(9):4452–4505.
+14. Buhrman, H., Cleve, R., and Wigderson, A. (1998). *STOC 1998*, pp. 63–68.
+15. Attiya, H. and Welch, J. (2004). *Distributed Computing*, Wiley.
+16. Chandra, T.D. and Toueg, S. (1996). *JACM*, 43(2):225–267.
+17. Aminof, B., Kupferman, O., and Rubin, S. (2014). *CONCUR 2014*.
 
 ---
 
-*This document is an exploratory extension to OPH Paper 4 and is intended to be merged as a conjectural/conditional contribution under the terms described by the maintainer in PR #145. The author thanks Bernhard Mueller and the FloatingPragma team for their detailed and constructive review.*
+*This document is an exploratory extension to OPH Paper 4, intended for merge into `reality_as_consensus_protocol.tex`. The author thanks Bernhard Mueller and the FloatingPragma team for their detailed review.*
