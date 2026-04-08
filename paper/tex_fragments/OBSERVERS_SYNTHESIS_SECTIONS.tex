@@ -1,7 +1,7 @@
 \section{Consensus, Defects, and Implementation Hiding}
 
 The OPH core admits an equivalent finite patch-net formulation. Local patch descriptions agree on
-overlaps, local repair rules remove mismatches, and the physical output is the
+overlaps, local recovery-derived repair rules remove mismatches, and the physical output is the
 schedule-independent normal form on the gauge quotient. This section records the fixed-point,
 defect, and gauge-quotient statements in that language.
 
@@ -11,14 +11,16 @@ successful reconciliation laws dominate a competing pool. That selection picture
 interpretation of OPH, but it is not part of the recovered-core gravity/gauge theorem surface.
 
 \paragraph{Theorem (Asynchronous confluence).}
-On a finite patch net with local repair maps, if every accepted repair strictly decreases a
-finite inconsistency potential and the repair relation is locally confluent, then every initial
-configuration has a unique schedule-independent normal form.
+On a finite patch net with local recovery-derived repair maps, if normal forms are exactly the
+globally consistent states, every accepted repair strictly decreases a finite inconsistency
+potential, and the repair relation is locally confluent, then every initial configuration has a
+unique schedule-independent normal form.
 
 \paragraph{Proof sketch.}
 Strict decrease of the inconsistency potential rules out infinite repair sequences. Newman's
 lemma~\cite{newman42} then upgrades local confluence to global confluence. Therefore every initial state has a
-unique normal form, independent of the asynchronous update schedule.
+unique normal form, independent of the asynchronous update schedule, and the completeness clause
+identifies that normal form with the globally consistent state.
 
 \paragraph{Theorem (Cycle holonomy and higher-gauge defects).}
 Pairwise overlap agreement is not enough for global consistency. On the abelian branch, a global
@@ -37,7 +39,7 @@ local rechartings are exactly crossed-module coboundaries, so they preserve the 
 the defect precisely when the class is trivial.
 
 \paragraph{Theorem (Gauge quotient, ancilla-stable physical uniqueness, and record closure).}
-If the repair dynamics is gauge covariant, the normal-form map descends to the quotient by
+If the recovery-derived repair dynamics is read on the overlap-invariant quotient, the normal-form map descends to the quotient by
 implementation hiding:
 \[
 [s]\mapsto [\operatorname{nf}(s)].
@@ -48,11 +50,12 @@ operators on a finite lattice converge under any asynchronous fair schedule to t
 fixed point above the initial record state.
 
 \paragraph{Proof sketch.}
-Gauge covariance carries each repair sequence to a repair sequence on a gauge-related state, so
-uniqueness of normal forms forces equivariance of the normal-form map. Inert ancillary factors
-remain spectators under the lifted dynamics, so gauge-invariant observables are unchanged. For
-records, commutativity and idempotence make the closure order-independent and force convergence to
-the least common fixed point.
+Because the repair step is defined first on overlap-invariant quotient data, any representative
+lift of a repair sequence has the same quotient image. Uniqueness of normal forms therefore forces
+equivariance of the quotient normal-form map. Inert ancillary factors remain spectators under the
+lifted dynamics, so gauge-invariant observables are unchanged. For records, commutativity and
+idempotence make the closure order-independent and force convergence to the least common fixed
+point.
 
 \paragraph{Extended derivation.}
 The full consensus, gauge-quotient, and record-layer theorem package is developed in
