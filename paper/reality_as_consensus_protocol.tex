@@ -583,3 +583,256 @@ external references, and that companion ledger is the place to look up the defin
 
 This paper proves the fixed-point consensus spine of OPH: schedule-independent normal forms,
 holonomy obstructions, gauge-quotient invariance, and record-layer convergence. It also gives a
+clean law-selection meta-model. The conditional relativity chain and the realized Standard Model
+structural chain remain the recovered core. The capacity relation is separate and input-dependent.
+Downstream phenomenology requires additional premises beyond the consensus results proved here.
+
+Six directions stand out as immediate next steps:
+
+\begin{enumerate}
+\item \textbf{Computational complexity.} What is the complexity of computing $\operatorname{nf}_\lambda(s)$? The termination bound from $\Phi$-decrease is a worst-case measure, but typical instances may converge much faster. Is there a polynomial bound for natural classes of patch nets?
+
+\item \textbf{Coarse-graining.} When does reconciliation commute with renormalization? If you coarse-grain the patch net and then reconcile, do you get the same result as reconciling first and then coarse-graining? The conditions under which these operations commute would connect the discrete model to continuum field theory.
+
+\item \textbf{Defect classification and refinement-limit transportability.} The fixed-cutoff hierarchy extends from abelian frustrations to crossed-module classes \(q\in \check H^2(N,H\to G)\). The remaining task is to connect those higher-gauge defect sectors to the refinement-stable transportable sector category used in the broader compact-gauge reconstruction lane.
+
+\item \textbf{Observable-level confluence.} When the raw state is not unique because local confluence fails, can gauge-invariant macrostates still be unique? This weaker form of objectivity may hold under broader conditions than the strict normal-form theorem.
+
+\item \textbf{Recovery-channel control.} The fixed-cutoff collar branch already expresses local repair through exact splice or Petz/Fawzi--Renner recovery. What remains is to prove on natural OPH branches that these accepted recovery moves are repair-complete for overlap consistency, strictly \(\Phi\)-decreasing, locally confluent, and fully controlled on their declared domain, including the support/CPTP clause on the Petz branch.
+
+\item \textbf{Scaling-limit bridge to full OPH.} Under what additional regularity conditions does the consensus protocol emit the prime geometric cap pair and support ordered cut-pair rigidity on that extracted limit, so that the D3--D5 gravity chain and the D7--D9 gauge/matter chain become available? This is also the point at which the broader Phase-II and Phase-III branches must remain disciplined: dark-sector, baryogenesis, spectroscopy, and string/worldsheet topics require extra premises beyond what this paper itself proves.
+\end{enumerate}
+
+The last item is the bridge to the broader OPH branches. Failure of that bridge would leave the
+fixed-point theorems proved here unchanged while revising the downstream gravity, gauge, or
+continuation sectors.
+
+\subsection{Conditional BFT and QECC Extensions}
+\label{subsec:conditional-bft-qecc}
+
+The consensus formalism of \textrm{OPH} has natural analogies to classical and quantum
+distributed Byzantine agreement. Observer patches correspond to protocol nodes, overlap repair
+corresponds to a quorum vote, and the repair fixed-point corresponds to a consensus state. Under
+explicit structural assumptions (quorum size $\geq 2f+1$, partial synchrony, one-vote-per-view,
+certificate semantics, and \textrm{DLS}-style view-change), a \textrm{QBFT}-style interpretation
+of \textrm{OPH} repair satisfies safety and liveness (Appendix~\ref{app:bft-qecc},
+Theorem~\ref{thm:qbft-safety}). On the fixed-cutoff collar branch used here, the repair map is
+already written in exact-splice / Petz form; what remains conditional is the \textrm{CPTP}
+property on all inputs, which requires either full-rank $\mathcal{N}(\sigma)$ or an explicit
+domain restriction, and trace-preserving completion is not automatic when
+$\mathcal{N}(\sigma)$ has a non-trivial kernel
+(Proposition~\ref{prop:petz-cptp}). A quantum error-correcting interpretation is possible under
+additional topological structure, but the code-distance / min-cut equality requires explicit
+conditions on logical-operator homology and boundary geometry (Claim~\ref{claim:qecc-mincut}). All
+of these extensions are conditional or conjectural and are not part of the core theorem package of
+Paper~4.
+
+
+\appendix
+\section{Quantum/Algebraic Lift: Markov-Collar Splice Theorem}\label{app:splice}
+
+This appendix records the algebraic splice statement used to relate the finite patch-net model to
+the OPH collar formalism.
+
+In OPH, an observer is written as
+\[
+O=(P,\mathcal{A}(P),\rho,R),
+\]
+where $P$ is the screen patch, $\mathcal{A}(P)$ the local von Neumann algebra, $\rho$ the local state, and $R$ the record algebra.
+
+\begin{theorem}[Markov-collar splice theorem, exact and controlled]\label{thm:splice}
+Suppose a collar tripartition $A$-$B$-$D$ has exact Markov decomposition
+\[
+\rho_{ABD}
+=
+\bigoplus_{\alpha}
+p_\alpha\,
+\rho^{(\alpha)}_{A b_L^\alpha}
+\otimes
+\rho^{(\alpha)}_{b_R^\alpha D}.
+\]
+Let $\sigma_{b_R^\alpha D'}^{(\alpha)}$ be any family of normalized environment states compatible with the same right-boundary sectors. Define
+\[
+\rho'_{AB D'}
+=
+\bigoplus_{\alpha}
+p_\alpha\,
+\rho^{(\alpha)}_{A b_L^\alpha}
+\otimes
+\sigma_{b_R^\alpha D'}^{(\alpha)}.
+\]
+Then for every observable $X$ supported on $A\cup b_L$,
+\[
+\operatorname{Tr}(X\rho'_{AB D'})
+=
+\operatorname{Tr}(X\rho_{ABD}).
+\]
+Now fix one finite-dimensional collar model and let
+\[
+\mathfrak M_{A:B:D}
+:=
+\left\{
+\tau_{ABD}: I(A:D\mid B)_\tau=0
+\right\},
+\]
+with exact-Markov distance modulus
+\[
+\delta^{\mathrm M}_{A:B:D}(\varepsilon)
+:=
+\sup\left\{
+\inf_{\tau\in\mathfrak M_{A:B:D}}\|\omega-\tau\|_1:
+I(A:D\mid B)_\omega\le\varepsilon
+\right\}.
+\]
+Then
+\[
+\delta^{\mathrm M}_{A:B:D}(\varepsilon)\to0
+\qquad
+(\varepsilon\downarrow0).
+\]
+Hence if \(I(A:D\mid B)_\omega\le \varepsilon\) and \(\widetilde\omega_\varepsilon\in\mathfrak M_{A:B:D}\) is chosen so that
+\[
+\|\omega-\widetilde\omega_\varepsilon\|_1
+\le
+\delta^{\mathrm M}_{A:B:D}(\varepsilon),
+\]
+the corresponding exact splice \(\widetilde\omega'_\varepsilon\) satisfies
+\[
+\left|
+\operatorname{Tr}(X\omega)-\operatorname{Tr}(X\widetilde\omega'_\varepsilon)
+\right|
+\le
+\|X\|_\infty\,
+\delta^{\mathrm M}_{A:B:D}(\varepsilon)
+\]
+for every observable \(X\) supported on \(A\cup b_L\).
+
+Independently, if \(I(A:D\mid B)_\omega\le \varepsilon\), then there exists a recovery map \(\mathcal R_{B\to BD}\) such that
+\[
+\left\|
+\omega_{ABD}
+-
+(\mathrm{id}_A\otimes \mathcal R_{B\to BD})(\omega_{AB})
+\right\|_1
+\le
+2\sqrt{1-e^{-\varepsilon}}
+\le
+2\sqrt{\varepsilon}.
+\]
+\end{theorem}
+
+\begin{proof}
+The exact splice statement is the usual blockwise factorization argument:
+\[
+\operatorname{Tr}(X\rho'_{AB D'})
+=
+\sum_\alpha
+p_\alpha\,
+\operatorname{Tr}\!\left(
+X\, \rho^{(\alpha)}_{A b_L^\alpha}
+\right)
+\operatorname{Tr}\!\left(\sigma_{b_R^\alpha D'}^{(\alpha)}\right).
+\]
+Each right factor is normalized, so the value agrees with the same computation for \(\rho_{ABD}\).
+
+For the controlled statement, compactness of the fixed finite-dimensional state space and continuity of conditional mutual information imply \(\delta^{\mathrm M}_{A:B:D}(\varepsilon)\to0\): otherwise one could find a sequence with \(I(A:D\mid B)\to0\) staying a fixed trace distance away from every exact Markov state, contradicting convergence of a subsequence to an exact Markov limit point. Once \(\widetilde\omega_\varepsilon\) is chosen, the exact splice identity for \(\widetilde\omega_\varepsilon\) gives
+\[
+\left|
+\operatorname{Tr}(X\omega)-\operatorname{Tr}(X\widetilde\omega'_\varepsilon)
+\right|
+=
+\left|
+\operatorname{Tr}\!\left[X(\omega-\widetilde\omega_\varepsilon)\right]
+\right|
+\le
+\|X\|_\infty\,
+\delta^{\mathrm M}_{A:B:D}(\varepsilon).
+\]
+The final inequality is the standard Fawzi--Renner recovery bound~\cite{fawziRenner15}.
+\end{proof}
+
+This appendix therefore uses exact splice identities in only two regimes: literal exact Markovity, or a controlled collar family on one fixed finite-dimensional model for which \(\delta^{\mathrm M}_{A:B:D}(\varepsilon)\to0\). Small one-shot conditional mutual information is not silently upgraded to an exact normal form.
+
+\input{tex_fragments/CONSENSUS_TECHNICAL_SUPPLEMENT_PORT.tex}
+
+\section{Conditional Distributed-Systems and QECC Extensions of the Consensus Formalism}\label{app:bft-qecc}
+\input{appendix_B_bft_qecc_extensions}
+
+\begin{thebibliography}{99}
+
+\bibitem{OPH}
+B.~M\"uller,
+\emph{Observers Are All You Need},
+2026.\\
+Available at \url{https://oph-book.floatingpragma.io/papers/observers_are_all_you_need.pdf}.
+
+\bibitem{FLP85}
+M.~J.~Fischer, N.~A.~Lynch, and M.~S.~Paterson,
+``Impossibility of distributed consensus with one faulty process,''
+\emph{J.\ ACM} \textbf{32} (1985), no.~2, 374--382.
+
+\bibitem{Lamport1982}
+L.~Lamport, R.~Shostak, and M.~Pease,
+``The Byzantine generals problem,''
+\emph{ACM Trans.\ Program.\ Lang.\ Syst.} \textbf{4} (1982), no.~3, 382--401.
+
+\bibitem{DLS88}
+C.~Dwork, N.~A.~Lynch, and L.~Stockmeyer,
+``Consensus in the presence of partial synchrony,''
+\emph{J.\ ACM} \textbf{35} (1988), no.~2, 288--323.
+
+\bibitem{Moniz2020}
+H.~Moniz,
+\emph{The Istanbul BFT Consensus Algorithm},
+arXiv:2002.03613, 2020.
+
+\bibitem{Saltini}
+R.~Saltini et al.,
+\emph{QBFT Formal Specification and Verification}.
+Available at \url{https://github.com/Consensys/qbft-formal-spec-and-verification}.
+
+\bibitem{Petz1986}
+D.~Petz,
+``Sufficient subalgebras and the relative entropy of states of a von Neumann algebra,''
+\emph{Commun.\ Math.\ Phys.} \textbf{105} (1986), no.~1, 123--131.
+
+\bibitem{FagnolaUmanita2010}
+F.~Fagnola and V.~Umanit\`a,
+``Generators of detailed balance quantum Markov semigroups,''
+\emph{Infinite Dimensional Analysis, Quantum Probability and Related Topics}
+\textbf{13} (2010), no.~3, 459--486.
+
+\bibitem{Junge2018}
+M.~Junge et al.,
+``Universal recovery maps and approximate sufficiency of quantum relative entropies,''
+\emph{Ann.\ Henri Poincar\'e} \textbf{19} (2018), no.~8, 2505--2555.
+
+\bibitem{KL97}
+E.~Knill and R.~Laflamme,
+``Theory of quantum error-correcting codes,''
+\emph{Phys.\ Rev.\ A} \textbf{55} (1997), no.~2, 900--911.
+
+\bibitem{Kitaev2003}
+A.~Kitaev,
+``Fault-tolerant quantum computation by anyons,''
+\emph{Ann.\ Phys.} \textbf{303} (2003), no.~1, 2--30.
+
+\bibitem{Dennis2002}
+E.~Dennis, A.~Kitaev, A.~Landahl, and J.~Preskill,
+``Topological quantum memory,''
+\emph{J.\ Math.\ Phys.} \textbf{43} (2002), no.~9, 4452--4505.
+
+\bibitem{BCW98}
+H.~Buhrman, R.~Cleve, and A.~Wigderson,
+``Quantum vs.\ classical communication and computation,''
+in \emph{Proceedings of STOC 1998}, pp.~63--68.
+
+\bibitem{fawziRenner15}
+O.~Fawzi and R.~Renner,
+``Quantum conditional mutual information and approximate Markov chains,''
+\emph{Commun.\ Math.\ Phys.} \textbf{340} (2015), 575--611,
+arXiv:1410.0664.
+
+\end{thebibliography}
+
+\end{document}
