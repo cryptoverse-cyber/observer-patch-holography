@@ -45,27 +45,23 @@ sum is necessary and sufficient for path-independent reconstruction. In the cros
 local rechartings are exactly crossed-module coboundaries, so they preserve the class and remove
 the defect precisely when the class is trivial.
 
-\paragraph{Theorem (Gauge quotient, ancilla-stable physical uniqueness, and record closure).}
+\paragraph{Theorem (Gauge quotient and ancilla-stable physical uniqueness).}
 If the recovery-derived repair dynamics is read on the overlap-invariant quotient, the normal-form map descends to the quotient by
 implementation hiding:
 \[
 [s]\mapsto [\operatorname{nf}(s)].
 \]
 Gauge-invariant observables are therefore uniquely fixed on the quotient, and inert ancillary
-refinement does not change the physical output. On the classical record layer, commuting closure
-operators on a finite lattice converge under any asynchronous fair schedule to the least common
-fixed point above the initial record state.
+refinement does not change the physical output.
 
 \paragraph{Proof sketch.}
 Because the repair step is defined first on overlap-invariant quotient data, any representative
 lift of a repair sequence has the same quotient image. Uniqueness of normal forms therefore forces
 equivariance of the quotient normal-form map. Inert ancillary factors remain spectators under the
-lifted dynamics, so gauge-invariant observables are unchanged. For records, commutativity and
-idempotence make the closure order-independent and force convergence to the least common fixed
-point.
+lifted dynamics, so gauge-invariant observables are unchanged.
 
 \paragraph{Extended derivation.}
-The full consensus, gauge-quotient, and record-layer theorem package is developed in
+The full consensus, gauge-quotient, and operator-record theorem package is developed in
 \emph{Reality as a Consensus Protocol: The Fixed-Point Computation That Implements Physics}~\cite{ophconsensus}.
 
 \section{Particle-Spectrum Branch}
@@ -181,13 +177,13 @@ heat-kernel lift, global consensus analysis, refinement-stable universality, and
 continuum/gravity lift.
 
 \paragraph{Reference-architecture takeaway.}
-The synthesis-level point is that OPH has a concrete screen-side habitat in which one can
-write local observables, overlap observables, record registers, and synchronization maps without
-pretending to identify a unique final UV completion.
+The synthesis-level point is that the regulated screen-side architecture supplies a concrete
+habitat in which local observables, overlap observables, record registers, and synchronization
+maps can all be written without pretending to identify a unique final UV completion.
 
-\paragraph{Theorem (Fixed-cutoff record algebra and Born-Luders package).}
+\paragraph{Theorem (Fixed-cutoff record algebra and Born-L\"uders package).}
 For each completed compare/write/verify slice of the regulated microphysics, the declared pointer
-and overlap-sector projectors generate a finite commutative record algebra
+and overlap-sector projectors generate a finite commutative central record algebra
 \[
 \mathcal Z_{\mathrm{rec}}.
 \]
@@ -199,11 +195,25 @@ and conditioning on \(E\) gives the operational post-measurement state
 \[
 \rho\!\mid_E = \frac{P_E \rho P_E}{\operatorname{Tr}(\rho P_E)}.
 \]
+If a practical readout instead uses projectors \(Q_a\) with commuting central reference
+projectors \(\widehat Q_a\) on the same declared slots and
+\[
+\delta_{\mathrm{rec}}=\max_a \|Q_a-\widehat Q_a\|,
+\]
+then
+\[
+\|[Q_a,Q_b]\|\le 4\,\delta_{\mathrm{rec}},
+\]
+and any accessible-state perturbation \(\|\widetilde\rho-\rho\|_1\le\varepsilon\) changes each
+declared elementary record-event probability by at most \(\varepsilon+\delta_{\mathrm{rec}}\).
 
 \paragraph{Proof sketch.}
 At fixed cutoff, the declared record and pointer projectors commute and the measurement surface
-factors through that finite classical algebra. Finite-dimensional projective measurement on a
-commuting projector algebra gives the Born trace and the Luders update directly.
+factors through that finite commutative central algebra. Finite-dimensional projective
+measurement on a commuting projector algebra gives the Born trace and the L\"uders update
+directly. The approximate
+stability estimate is the same two-term bound used on the consensus surface: projector errors
+contribute \(\delta_{\mathrm{rec}}\) and accessible-state errors contribute \(\varepsilon\).
 
 \paragraph{Theorem (Checkpoint/restoration and observer backup).}
 For an observer patch \(P_O\), let the checkpoint data consist of the observer-facing record
@@ -347,7 +357,7 @@ conditional gravity and gauge branches, the consensus formulation, the particle-
 the regulated screen-microphysics lane, the fixed-cutoff measurement and observer package, and the
 conditional worldsheet continuation appear on one common synthesis surface.
 
-The suite is uneven but concrete. OPH has a sharp
+The suite is uneven but concrete. It has a sharp
 fixed-cutoff local picture, a conditional recovered core for relativity and Standard-Model
 structure, real particle-side quantitative outputs, and a usable microscopic engineering lane. The
 main external burdens are equally explicit: the continuum BW/geometric lift, the

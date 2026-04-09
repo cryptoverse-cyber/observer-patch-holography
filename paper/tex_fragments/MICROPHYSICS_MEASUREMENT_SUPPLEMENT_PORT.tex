@@ -1,21 +1,70 @@
-\section{Formal Measurement / Markov / Born-Luders Ledger}
+\section{Formal Measurement / Markov / Born-L\"uders Ledger}
 \label{app:microphysics-measurement-ledger}
 
 This appendix rehouses the formal measurement-theory block that had been stranded in the former
 technical supplement. It belongs in the microphysics paper because it sharpens the fixed-cutoff
 record interface already used in the main theorem packages above. The theorem-bearing leaf-level
-closure remains the main-text fixed-cutoff central-record / Born-Luders package; this appendix is
+closure remains the main-text fixed-cutoff central-record / Born-L\"uders package; this appendix is
 the supporting ledger and comparison surface, not a replacement theorem surface.
 
 \subsection{Records as Central Variables}
 
-\textbf{Definition.} A \emph{record} in patch \(P\) is a family of orthogonal projectors
-\(\{\Pi_r\}\subset\mathcal A(P)\) such that:
+\textbf{Definition.} On one completed observer-facing slice in patch \(P\), an \emph{exact record
+presentation} is a family of orthogonal projectors
+\(\{\widehat\Pi_r\}\subset Z(\mathcal A(P))\) whose generated algebra
+\[
+\mathcal R:=\mathrm{vN}(\{\widehat\Pi_r\})
+\]
+is finite and commutative. A \emph{practical record presentation} is a family of projectors
+\(\{\Pi_r\}\subset\mathcal A(P)\) on the same declared slots such that
+\[
+\delta_{\mathrm{rec}}:=\max_r \|\Pi_r-\widehat\Pi_r\|
+\]
+is finite. The exact central presentation carries the theorem-bearing fixed-cutoff measurement
+surface; the practical presentation records controlled readout error above it. The declared record
+surface must also satisfy:
 \begin{enumerate}[leftmargin=2em]
-\item \textbf{Classicality:} \(\mathcal R:=\mathrm{vN}(\{\Pi_r\})\) is approximately abelian.
-\item \textbf{Stability:} the \(\Pi_r\) are stable under the effective fixed-cutoff dynamics.
-\item \textbf{Shareability:} each \(\Pi_r\) lies in the center of the relevant overlap algebra.
+\item \textbf{Stability:} the declared readout projectors on that slice are stable under the effective fixed-cutoff dynamics.
+\item \textbf{Shareability:} each \(\widehat\Pi_r\) lies in the center of the relevant overlap algebra.
 \end{enumerate}
+
+\paragraph{\textbf{Proposition 3.0 (Quantitative record stability).}}
+For a practical record presentation on the same declared slots,
+\[
+\|[\Pi_r,\Pi_s]\|\le 4\,\delta_{\mathrm{rec}}
+\]
+for all \(r,s\). If \(\|\widetilde\rho-\rho\|_1\le\varepsilon\), then each declared elementary
+record-event probability obeys
+\[
+\Bigl|
+\operatorname{Tr}(\widetilde\rho\,\Pi_r)
+-
+\operatorname{Tr}(\rho\,\widehat\Pi_r)
+\Bigr|
+\le
+\varepsilon+\delta_{\mathrm{rec}}.
+\]
+
+\paragraph{\textbf{Proof sketch.}}
+Because \([\widehat\Pi_r,\widehat\Pi_s]=0\), one writes
+\[
+[\Pi_r,\Pi_s]
+=
+[\Pi_r-\widehat\Pi_r,\Pi_s]
++
+[\widehat\Pi_r,\Pi_s-\widehat\Pi_s],
+\]
+and bounds each term by twice the corresponding operator-norm error. The probability estimate is
+the same two-term decomposition used on the main-text record surface:
+\[
+\operatorname{Tr}(\widetilde\rho\,\Pi_r)-\operatorname{Tr}(\rho\,\widehat\Pi_r)
+=
+\operatorname{Tr}((\widetilde\rho-\rho)\Pi_r)
++
+\operatorname{Tr}(\rho(\Pi_r-\widehat\Pi_r)),
+\]
+so trace-norm control contributes \(\varepsilon\) and projector error contributes
+\(\delta_{\mathrm{rec}}\).
 
 \subsection{Markov Structure and Recoverability}
 

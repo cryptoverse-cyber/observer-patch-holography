@@ -3,8 +3,8 @@
 The synthesis paper keeps the observer-facing theorem package in the main text, but the concrete
 finite screen architecture belongs in an appendix. The current theorem-bearing fixed-cutoff
 source surface for the edge heat-kernel / Casimir leaf is the microphysics side paper; the
-appendix records only the synthesis-level restatement imported from that surface. The working OPH
-reference architecture is a finite cellulation of the horizon screen with boundary-fixed patch
+appendix records only the synthesis-level restatement imported from that surface. The reference
+architecture used here is a finite cellulation of the horizon screen with boundary-fixed patch
 algebras, boundary-fixed overlap algebras on collars, declared shared readout packets, local
 repair instruments, and record registers exposed on the observer-facing interface.
 
@@ -269,7 +269,7 @@ Problem domain & Status & OPH mechanism / scope note \\
 \endfoot
 Quantum gravity consistency & Phase I recovered core (conditional scaling-limit) & Conditional Lorentz and Jacobson-type Einstein branches from modular geometry, the null bridge, and fixed-cap stationarity. \\
 UV completion / microscopic uniqueness & Mixed: fixed-cutoff theorem package / conditional scaling-limit branch & OPH gives a finite-range interacting fixed-cutoff branch, a unique physical UV branch only modulo OPH-stable equivalence, and a fixed-cutoff higher-gauge closure of the genuinely noncentral topological branch. Open items are a unique microscopic representative, the continuum BW lift on the extracted geometric subnet behind T2 plus cap-pair extraction and ordered cut-pair rigidity, and the refinement-limit transportable compact-gauge lift behind T1/T4--T6. \\
-Measurement problem & Mixed: fixed-cutoff theorem package / interpretive synthesis & Ref.~\cite{ophmicrophysics} proves a fixed-cutoff central-record / Born-Luders package for observer-accessible events. Broader philosophical closure claims remain interpretive here. \\
+Measurement problem & Mixed: fixed-cutoff theorem package / interpretive synthesis & Ref.~\cite{ophmicrophysics} proves a fixed-cutoff central-record / Born-L\"uders package for observer-accessible events. Broader philosophical closure claims remain interpretive here. \\
 Cosmological principle and horizon homogeneity & Interpretive or organizational synthesis & MaxEnt state selection under symmetric constraints motivates isotropy and homogeneity stories. Those stories remain outside the independent Phase-I theorems. \\
 Problem of time & Interpretive or organizational synthesis & Modular flow from the BW\(_{S^2}\) geometric branch provides a physical time parameter for each observer patch. It is an organizational principle rather than a separate recovered-core theorem. \\
 Black-hole information paradox & Phenomenological continuation & Edge-center sectorization and recoverability suggest an internal resolution. The full black-hole-information branch remains outside Phase I. \\
@@ -297,14 +297,17 @@ Here, an observer is represented by
 O=(P,\mathcal{A}(P),\rho,R),
 \]
 where \(P\) is a screen patch, \(\mathcal{A}(P)\) is its local algebra, \(\rho\) is the local
-state, and \(R\) is the record algebra. Records are implemented by approximately commuting
-projectors in overlap centers, so they are shareable without violating no-cloning constraints for
-generic quantum states.
+state, and \(R\) is the record algebra. Records are carried exactly by central record projectors
+and, on practical readout surfaces, by approximately commuting projectors in overlap centers, so
+they are shareable without violating no-cloning constraints for generic quantum states.
 
 Ref.~\cite{ophmicrophysics} proves a fixed-cutoff observer-facing measurement interface: a
-finite central record algebra, Born probabilities for its event projectors, and Luders
+finite central record algebra, Born probabilities for its event projectors, and L\"uders
 conditioning on that same commuting record algebra. This appendix uses that fixed-cutoff
-measurement package in observer language.
+measurement package in observer language. If a practical readout uses projectors that are
+\(\delta_{\mathrm{rec}}\)-close in operator norm to that central reference algebra and the
+accessible state is perturbed by at most \(\varepsilon\) in trace norm, each declared elementary
+record-event probability shifts by at most \(\varepsilon+\delta_{\mathrm{rec}}\).
 
 \subsection{Markov Collar Factorization}
 
