@@ -69,9 +69,9 @@ This paper proves four core results:
 The repair step itself is not a free rewrite primitive here. On the
 fixed-cutoff collar branch, a local update is obtained from exact Markov splice or from a
 declared Petz/Fawzi--Renner recovery channel and then read on overlap-invariant physical data.
-The fixed-point theorem below still isolates the separate remaining burdens cleanly: the declared
-repair law already includes the touched-overlap local-fit contract that yields Lyapunov descent of
-\(\Phi\) on accepted moves, so what remains above that step is repair completeness, local
+The fixed-point theorem below isolates the separate remaining burdens cleanly: the declared
+repair law includes the touched-overlap local-fit contract that yields Lyapunov descent of
+\(\Phi\) on accepted moves, so the remaining burdens are repair completeness, local
 confluence, and, on the Petz branch, the support/CPTP clause stated later in
 Proposition~\ref{prop:petz-cptp}.
 
@@ -183,8 +183,8 @@ declared repair package.
 The repair step is therefore not an abstract rewrite primitive. Its declared inputs are the
 fixed-cutoff collar chart, either exact Markov splice or a chosen Petz/Fawzi--Renner recovery
 channel, a local decoder/lift back to the finite patch presentation, and the touched-overlap
-local-fit contract of Definition~\ref{def:localfit}. What the present theorem package still
-assumes rather than derives is repair completeness and local confluence. On the Petz branch, full
+local-fit contract of Definition~\ref{def:localfit}. What the present theorem package assumes is
+repair completeness and local confluence. On the Petz branch, full
 CPTP action on all inputs also requires the support clause recorded later in
 Proposition~\ref{prop:petz-cptp}.
 \end{remark}
@@ -381,10 +381,10 @@ q\circ T_i^\lambda
 \]
 This is the finite patch-net form of saying that the repair step is defined first on
 overlap-invariant physical data and only then lifted to hidden representatives. The separate OPH
-problem here is therefore no longer to invent a repair rule, but to prove that the accepted
+problem here is to prove that the accepted
 recovery-derived local moves satisfy repair completeness together with local confluence on the
 declared branch, and the support/CPTP clause on the Petz branch. The touched-overlap local-fit
-contract already gives Lyapunov \(\Phi\)-descent on accepted moves. The point here is also that no
+contract gives Lyapunov \(\Phi\)-descent on accepted moves. The point here is also that no
 extra gauge-covariance axiom is needed once repair is formulated on the quotient.
 
 \begin{theorem}[Gauge quotient theorem]\label{thm:gauge}
@@ -652,7 +652,7 @@ Six directions stand out as immediate next steps:
 
 \item \textbf{Observable-level confluence.} When the raw state is not unique because local confluence fails, can gauge-invariant macrostates still be unique? This weaker form of objectivity may hold under broader conditions than the strict normal-form theorem.
 
-\item \textbf{Recovery-channel control.} The fixed-cutoff collar branch already expresses local repair through exact splice or Petz/Fawzi--Renner recovery and commits candidate moves only under the touched-overlap local-fit contract that yields Lyapunov descent of \(\Phi\). What remains is to prove on natural OPH branches that these accepted recovery moves are repair-complete for overlap consistency, locally confluent, and fully controlled on their declared domain, including the support/CPTP clause on the Petz branch and the preservation of the local-fit contract under refinement or branch changes.
+\item \textbf{Recovery-channel control.} The fixed-cutoff collar branch expresses local repair through exact splice or Petz/Fawzi--Renner recovery and commits candidate moves only under the touched-overlap local-fit contract that yields Lyapunov descent of \(\Phi\). The remaining task is to prove on natural OPH branches that these accepted recovery moves are repair-complete for overlap consistency, locally confluent, and fully controlled on their declared domain, including the support/CPTP clause on the Petz branch and the preservation of the local-fit contract under refinement or branch changes.
 
 \item \textbf{Scaling-limit bridge to full OPH.} Under what additional regularity conditions does the consensus protocol emit the prime geometric cap pair and support ordered cut-pair rigidity on that extracted limit, so that the D3--D5 gravity chain and the D7--D9 gauge/matter chain become available? This is also the point at which the broader Phase-II and Phase-III branches must remain disciplined: dark-sector, baryogenesis, spectroscopy, and string/worldsheet topics require extra premises beyond what this paper itself proves.
 \end{enumerate}
@@ -671,7 +671,7 @@ explicit structural assumptions (quorum size $\geq 2f+1$, partial synchrony, one
 certificate semantics, and \textrm{DLS}-style view-change), a \textrm{QBFT}-style interpretation
 of \textrm{OPH} repair satisfies safety and liveness (Appendix~\ref{app:bft-qecc},
 Theorem~\ref{thm:qbft-safety}). On the fixed-cutoff collar branch used here, the repair map is
-already written in exact-splice / Petz form; what remains conditional is the \textrm{CPTP}
+written in exact-splice / Petz form; what remains conditional is the \textrm{CPTP}
 property on all inputs, which requires either full-rank $\mathcal{N}(\sigma)$ or an explicit
 domain restriction, and trace-preserving completion is not automatic when
 $\mathcal{N}(\sigma)$ has a non-trivial kernel

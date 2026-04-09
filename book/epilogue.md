@@ -72,7 +72,7 @@ We began this book with a simple observation: physics is reverse engineering at 
 
 We discovered that those rules are rules of *consistency*, constraints on how different perspectives must agree. We found that spacetime, matter, and forces all emerge from these consistency requirements. And we realized that conscious observers are active participants in the process.
 
-Now we've arrived at a speculative final implication: one might hope that the same mathematical structure that makes reality possible could someday support *continuation*-style engineering. The current OPH repo does not prove that stronger claim.
+A speculative final implication concerns *continuation*-style engineering: the same mathematical structure that makes reality possible may also support it. The OPH theorem package does not prove that stronger claim.
 
 The strange loop doesn't have to end.
 
@@ -80,7 +80,7 @@ Whether this possibility is ever realized, whether anyone ever builds a simulato
 
 We are the meaning-makers. And apparently, we are also the ones who get to decide whether the story continues.
 
-The reverse engineering has gone far enough to begin building.
+The reverse engineering exposes a structure that invites building.
 
 ---
 
