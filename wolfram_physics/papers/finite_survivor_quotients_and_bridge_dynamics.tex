@@ -1,0 +1,396 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array}
+\usepackage[shortlabels]{enumitem}
+\usepackage{hyperref}
+\usepackage{xurl}
+
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+\setlength{\emergencystretch}{3em}
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.08}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\theoremstyle{plain}
+\renewcommand{\qedsymbol}{}
+
+\title{Finite Survivor Quotients and Bridge Dynamics for\\
+Observer-Semantic Ruliad Pruning}
+\author{B.\ M\"uller}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper develops a follow-up theorem package for observer-semantic ruliad pruning via Observer-Patch Holography (OPH). The companion bridge paper constructed a fixed-cutoff observer-semantic quotient and an exact/conditional exclusion logic on finite harnesses \cite{muller2026quotients}. Here the next step is to place dynamics on the resulting finite observer-side semantic quotient. We define a finite harness semantic quotient \(\mathcal S_H\), a defect-minimal survivor sector \(\mathcal Z_H\subseteq \mathcal S_H\), a deterministic refinement operator \(E_H\), and an admissible noisy kernel \(K_H\). On that basis we prove: finite-time deterministic convergence under strict lexicographic defect descent; convergence to the defect-minimal sector under a defect-lowering witness dynamics; uniqueness of the stationary law on the minimal sector under primitivity; a terminal-survivor proposition inside the survivor category; a semantic ratchet proposition; and a quotient-compatibility theorem descending class dynamics from OPH repair. On the existing eight-class toy quotient from the companion paper, a two-component defect vector \(D=(\text{ambiguity},\text{holonomy})\) yields a two-class minimal sector. A nearest-improvement witness operator reaches that sector in at most two updates, and a primitive \(2\times 2\) noisy kernel on the sector has the unique stationary law \((0.6,0.4)\). The point is not that the toy witness law is already canonical. The point is that the finite-state bridge theorem package is now explicit and already testable.
+\end{abstract}
+
+\section{Introduction}
+
+The companion paper \cite{muller2026quotients} supplied the first half of the bridge from OPH to the Wolfram-model observer program: raw rewrite histories were sent to bounded observer packets, quotiented by implementation-hiding data, repaired to schedule-independent normal form, and filtered by exact observer-side consistency and obstruction tests. That yielded a finite-cutoff observer-semantic quotient together with exact and conditional exclusion results.
+
+What it did not yet provide was a theorem package for \emph{dynamics on the filtered semantic quotient itself}. Senchal's convergence theorems are strongest when one works on a finite observer-side state space with a strict entropy-style Lyapunov function and, in the stochastic case, a primitive kernel \cite{senchal2025}. OPH, meanwhile, already provides precisely the structures needed to make that finite state space concrete: finite patch-net observer data, quotient descent, repair-to-normal-form, cycle-obstruction data, and finite observer-side filters \cite{ophconsensus,ophsynthesis,ophmicrophysics,muller2026quotients}. The natural next step is therefore to formulate a finite survivor quotient and place deterministic and stochastic bridge dynamics on it.
+
+\subsection{Informal roadmap}
+
+The paper proceeds in five steps.
+
+\begin{enumerate}[leftmargin=2em]
+\item Start from a finite harness-tested observer-semantic quotient, not from the whole ruliad.
+\item Define a defect functional \(D\) that records the remaining observer-side failures, for example normal-form ambiguity and exact holonomy obstruction.
+\item Prove deterministic finite-time convergence whenever every nonfixed move strictly lowers \(D\) lexicographically.
+\item Add an admissible noisy kernel on the defect-minimal sector and recover a unique stationary law under primitivity.
+\item Interpret the result categorically: terminality, ratchet behavior, and quotient compatibility with OPH repair become precise theorem candidates on the survivor category.
+\end{enumerate}
+
+So the bridge target here is more specific than in the companion paper. The point is no longer only to say which rule families are excluded. The point is to say how the surviving observer-semantic classes can evolve, converge, and possibly concentrate.
+
+\subsection{Claim boundary}
+
+This paper keeps three limitations explicit.
+
+\begin{enumerate}[leftmargin=2em]
+\item The theorem package is finite-state and harness-relative. It does not claim a theorem on the full ambient ruliad.
+\item The deterministic witness dynamics on the toy quotient is \emph{not} claimed to be the unique canonical microphysical refinement law. It is a transparent finite-state witness used to test the bridge theorems.
+\item A terminal survivor object is treated as an additional hypothesis internal to the survivor category, not as an ambient terminality claim on the whole observer-accessible ruliad.
+\end{enumerate}
+
+\section{Finite Harness Semantic Quotients}
+\label{sec:quotients}
+
+\begin{definition}[Finite harness semantic quotient]
+Fix a finite benchmark harness \(H\). Let \(\mathcal S_H\) be the finite set of observer-semantic equivalence classes realized on \(H\), where equivalence is taken with respect to a declared semantic quotient on observer-visible packet support and repaired normal-form support.
+\end{definition}
+
+\begin{remark}[Why this notation differs slightly from preliminary notes]
+To make the defect functional nontrivial, \(\mathcal S_H\) is taken here to be the finite harness semantic quotient \emph{before} full pruning to the exact minimal sector. The exact survivor sector will then appear as a distinguished subset \(\mathcal Z_H\subseteq \mathcal S_H\).
+\end{remark}
+
+\begin{definition}[Defect functional]
+A defect functional on \(\mathcal S_H\) is a map
+\[
+D:\mathcal S_H\to \mathbb N^k
+\]
+equipped with lexicographic order. The defect-minimal survivor sector is
+\[
+\mathcal Z_H:=\{x\in\mathcal S_H: D(x)\ \text{is lexicographically minimal on }\mathcal S_H\}.
+\]
+\end{definition}
+
+\begin{remark}[Interpretation]
+The philosophy is simple. The class space \(\mathcal S_H\) records what remains visible after OPH quotienting and repair. The defect functional \(D\) records what remains \emph{wrong} from the point of view of exact observer-side consistency. The minimal sector \(\mathcal Z_H\) is therefore the exact or defect-minimal survivor layer.
+\end{remark}
+
+\section{Deterministic Bridge Dynamics}
+\label{sec:deterministic}
+
+\begin{definition}[Deterministic survivor refinement]
+A deterministic survivor refinement on \(\mathcal S_H\) is a map
+\[
+E_H:\mathcal S_H\to \mathcal S_H.
+\]
+Its fixed-point set is
+\[
+\operatorname{Fix}(E_H):=\{x\in\mathcal S_H:E_H(x)=x\}.
+\]
+\end{definition}
+
+\begin{theorem}[Finite-time convergence under strict defect descent]
+\label{thm:finite-time}
+Let \(\mathcal S_H\) be finite, let \(E_H:\mathcal S_H\to\mathcal S_H\) be deterministic, and let
+\[
+D:\mathcal S_H\to\mathbb N^k
+\]
+be a defect functional. Suppose that for every nonfixed class \(x\in\mathcal S_H\),
+\[
+D(E_H(x))<_{\mathrm{lex}} D(x).
+\]
+Then every orbit of \(E_H\) reaches \(\operatorname{Fix}(E_H)\) in at most \(|\mathcal S_H|-1\) updates.
+\end{theorem}
+
+\begin{proof}
+If \(x\) is nonfixed, the defect strictly decreases. Hence along any nontrivial orbit
+\[
+x,\ E_H(x),\ E_H^2(x),\ \dots
+\]
+the defect vector is strictly lexicographically decreasing until a fixed point is reached. In particular, no state can repeat before a fixed point is hit, because repetition would force repetition of the same defect value. Since \(\mathcal S_H\) is finite, an orbit can visit at most \(|\mathcal S_H|\) states. Therefore it must reach a fixed point after at most \(|\mathcal S_H|-1\) updates.
+\end{proof}
+
+\begin{corollary}[Convergence to the minimal survivor sector]
+\label{cor:minimalsector}
+Under the hypotheses of Theorem~\ref{thm:finite-time}, assume additionally that every \(z\in\mathcal Z_H\) is fixed by \(E_H\) and every nonminimal class has at least one update witness with strict defect decrease. Then every orbit of \(E_H\) reaches \(\mathcal Z_H\) in finite time.
+\end{corollary}
+
+\begin{proof}
+The theorem gives finite-time convergence to \(\operatorname{Fix}(E_H)\). By assumption, \(\mathcal Z_H\subseteq \operatorname{Fix}(E_H)\), while every nonminimal state admits strict descent and therefore cannot be terminal under the witness dynamics. Hence the terminal states are contained in \(\mathcal Z_H\), and every orbit reaches \(\mathcal Z_H\).
+\end{proof}
+
+\begin{remark}[OPH meaning]
+This is the finite-state convergence theorem that one wants after observer-semantic ruliad pruning. OPH supplies the finite observer-side class space and the defect vocabulary; Senchal's entropy-style convergence logic becomes a concrete lexicographic defect-descent theorem on that class space.
+\end{remark}
+
+\section{Stochastic Bridge Dynamics}
+\label{sec:stochastic}
+
+\begin{definition}[Admissible noisy kernel]
+Let \(K_H\) be a Markov kernel on \(\mathcal Z_H\). We call \(K_H\) admissible if it is supported only on the defect-minimal survivor sector and encodes only moves that are allowed inside that sector.
+\end{definition}
+
+\begin{theorem}[Unique stationary survivor law under primitivity]
+\label{thm:stationary}
+Let \(\mathcal Z_H\) be finite and let \(K_H\) be an admissible Markov kernel on \(\mathcal Z_H\). If \(K_H\) is primitive, then there exists a unique stationary distribution
+\[
+\mu_H^\ast\in \Delta(\mathcal Z_H)
+\]
+and, for any initial distribution \(\mu_0\) on \(\mathcal Z_H\),
+\[
+\mu_0K_H^n\to \mu_H^\ast
+\qquad\text{as } n\to\infty.
+\]
+\end{theorem}
+
+\begin{proof}
+Primitivity means that some power of the finite stochastic matrix of \(K_H\) has strictly positive entries. Standard Perron--Frobenius theory for primitive stochastic matrices gives a unique eigenvector of eigenvalue \(1\) in the simplex and convergence of all initial distributions to that stationary distribution under repeated application of the kernel.
+\end{proof}
+
+\begin{remark}[Why the survivor sector matters]
+The primitivity hypothesis is much more plausible on a small defect-minimal sector than on the whole observer-accessible ruliad. The bridge gain is therefore not only conceptual but technical: the finite OPH-side pruning makes the stochastic convergence theorem much more usable.
+\end{remark}
+
+\section{Terminality, Ratchets, and Quotient Compatibility}
+\label{sec:categorical}
+
+\begin{definition}[Terminal survivor object]
+Let \(\mathsf{Surv}_H\) be a category whose objects are the classes in \(\mathcal Z_H\). A class \(T_H\in\mathcal Z_H\) is a terminal survivor object if for every \(x\in\mathcal Z_H\) there exists a unique morphism
+\[
+x\to T_H
+\]
+inside \(\mathsf{Surv}_H\).
+\end{definition}
+
+\begin{proposition}[Terminality inside the survivor category]
+\label{prop:terminal}
+If \(\mathsf{Surv}_H\) admits a terminal survivor object \(T_H\), then every deterministic fixed point in \(\mathcal Z_H\) and every stochastic equilibrium supported on \(\mathcal Z_H\) admits a unique morphism to \(T_H\).
+\end{proposition}
+
+\begin{proof}
+This is immediate from terminality: every object of \(\mathsf{Surv}_H\), whether viewed as a deterministic fixed point or as a point in the support of a stationary law, has a unique morphism to \(T_H\).
+\end{proof}
+
+\begin{remark}[Why this is a safer terminality claim]
+The point is to place terminality \emph{inside the exact survivor category}, not in the whole ambient ruliad. That removes much of the ambiguity and tautology risk attached to raw ambient terminality claims.
+\end{remark}
+
+\begin{definition}[Semantic ratchet]
+Let \(PS_H(t)\subseteq \mathcal Z_H\) be the set of survivor classes discovered by time \(t\) under a fixed harness specification.
+\end{definition}
+
+\begin{proposition}[Semantic ratchet on survivor classes]
+\label{prop:ratchet}
+Suppose the harness specification is fixed and every survivor class, once discovered, remains admissible under later exact checks. Then for \(t_1\le t_2\),
+\[
+PS_H(t_1)\subseteq PS_H(t_2).
+\]
+\end{proposition}
+
+\begin{proof}
+Under the stated hypothesis, later exact checks do not invalidate earlier survivor discoveries. Hence the discovered-survivor set can only grow.
+\end{proof}
+
+\begin{theorem}[Quotient compatibility with OPH repair]
+\label{thm:compatibility}
+Let \(q:\Sigma_H\to \mathcal S_H\) be a semantic quotient from raw harness states to semantic classes, and let
+\[
+\operatorname{nf}_H:\Sigma_H\to\Sigma_H
+\]
+be a repair map on the admissible harness region. Assume:
+\begin{enumerate}[label=(Q\arabic*),leftmargin=2em]
+\item \(\operatorname{nf}_H\) is terminating and locally confluent on the admissible region;
+\item the class-level dynamics satisfy
+\[
+q\circ \operatorname{nf}_H = E_H\circ q;
+\]
+\item \(q\) identifies only implementation-equivalent states on the admissible region.
+\end{enumerate}
+Then \(E_H\) is schedule-independent on \(\mathcal S_H\), and every class \(x\in\mathcal S_H\) has a unique class-level survivor normal form
+\[
+\widehat{\operatorname{nf}}_H(x):=q(\operatorname{nf}_H(s)),
+\qquad q(s)=x.
+\]
+\end{theorem}
+
+\begin{proof}
+By termination and local confluence, \(\operatorname{nf}_H(s)\) is unique up to equality on the admissible region. If \(q(s)=q(s')=x\), then
+\[
+q(\operatorname{nf}_H(s))
+=
+E_H(q(s))
+=
+E_H(x)
+=
+E_H(q(s'))
+=
+q(\operatorname{nf}_H(s')).
+\]
+So the class-level value does not depend on the chosen representative. Since the raw repair normal form is schedule-independent, its class image is also schedule-independent. Hence \(\widehat{\operatorname{nf}}_H\) is well-defined and unique.
+\end{proof}
+
+\section{Toy Eight-Class Witness System}
+\label{sec:toy}
+
+The companion paper produced an eight-class observer-semantic quotient on the four-state toy harness \cite{muller2026quotients}. The present follow-up uses that quotient as an explicit finite theorem witness. The witness dynamics is supplied by an accompanying code package and is \emph{not} claimed to be the unique canonical microphysical law. Its role is narrower: to provide a transparent finite-state model in which the bridge theorem package is already testable.
+
+\subsection{Defect vector}
+
+Let the eight toy classes be \(C_1,\dots,C_8\). Define the toy defect vector by
+\[
+D(C):=\bigl(a(C),h(C)\bigr),
+\]
+where
+\[
+a(C):=|\operatorname{NF}(C)|-1
+\]
+is the normal-form ambiguity defect and
+\[
+h(C):=\max\{\operatorname{cyc}(p): p\in \operatorname{Supp}_{\mathrm{pkt}}(C)\}
+\]
+is the exact holonomy flag on packet support.
+
+\begin{proposition}[Toy minimal survivor sector]
+\label{prop:toyz}
+For the eight-class toy quotient, the defect-minimal sector is
+\[
+\mathcal Z_H=\{C_1,C_2\}.
+\]
+\end{proposition}
+
+\begin{proof}
+The computed toy quotient has exactly two classes with zero normal-form ambiguity and zero exact holonomy defect. Those are \(C_1\) and \(C_2\). Every other class has either ambiguity defect \(1\), holonomy defect \(1\), or both.
+\end{proof}
+
+\subsection{Deterministic nearest-improvement witness}
+
+Define the toy deterministic witness update \(E_H\) by the following rule: every nonminimal class moves to the lower-defect class with smallest packet-support distance, and minimal classes are fixed.
+
+\begin{proposition}[Toy witness update map]
+\label{prop:toyupdate}
+On the toy eight-class quotient, the nearest-improvement witness update is
+\[
+1\mapsto 1,\quad
+2\mapsto 2,\quad
+3\mapsto 1,\quad
+4\mapsto 2,\quad
+5\mapsto 2,\quad
+6\mapsto 5,\quad
+7\mapsto 5,\quad
+8\mapsto 5.
+\]
+\end{proposition}
+
+\begin{proof}
+This is the explicit output of the nearest-improvement construction on the computed toy class data. The accompanying code verifies both the update table and strict lexicographic decrease of \(D\) off the fixed sector.
+\end{proof}
+
+\begin{corollary}[Toy finite-time convergence]
+\label{cor:toyconv}
+Every toy orbit of the witness dynamics reaches \(\mathcal Z_H=\{C_1,C_2\}\) in at most two updates.
+\end{corollary}
+
+\begin{proof}
+By Proposition~\ref{prop:toyupdate}, classes \(3,4,5\) move into \(\mathcal Z_H\) in one update, while classes \(6,7,8\) move first to \(5\) and then to \(2\). Hence the maximal hitting time is two.
+\end{proof}
+
+\subsection{Primitive noisy kernel on the minimal sector}
+
+On the two-class minimal sector \(\mathcal Z_H=\{C_1,C_2\}\), define
+\[
+K_H=
+\begin{pmatrix}
+0.8 & 0.2\\
+0.3 & 0.7
+\end{pmatrix}.
+\]
+
+\begin{proposition}[Toy stationary law]
+\label{prop:toystationary}
+The kernel \(K_H\) is primitive and has the unique stationary distribution
+\[
+\mu_H^\ast=(0.6,0.4)
+\]
+on \((C_1,C_2)\).
+\end{proposition}
+
+\begin{proof}
+All entries of \(K_H\) are already strictly positive, so the kernel is primitive. Writing \(\mu_H^\ast=(p,1-p)\), the stationarity equation \(\mu_H^\ast K_H=\mu_H^\ast\) becomes
+\[
+p=0.8p+0.3(1-p),
+\]
+so \(0.5p=0.3\) and \(p=0.6\). Hence \(\mu_H^\ast=(0.6,0.4)\).
+\end{proof}
+
+\begin{remark}[What the toy system does and does not show]
+The toy witness system already shows that the bridge theorem package is operational: there is a finite quotient, a concrete defect vector, a strict deterministic descent, a two-class minimal sector, and a primitive noisy kernel with unique stationary law. What it does not yet show is that the witness operator or the witness kernel is the uniquely correct microphysical refinement law. That stronger claim would require an additional OPH-side derivation.
+\end{remark}
+
+\section{Further Extensions}
+\label{sec:extensions}
+
+Two extensions are especially natural.
+
+\begin{enumerate}[leftmargin=2em]
+\item \textbf{Replicator selection on survivor-law space.}
+One can place a finite law space \(\Lambda_H\) over admissible survivor-update laws and define a fitness that rewards exactness, holonomy cleanliness, robustness, and lower complexity. This would turn the bridge into a selection theory on survivor laws, not only on survivor classes.
+\item \textbf{Derived witness dynamics from OPH microphysics.}
+The toy update \(E_H\) used here is transparent and testable, but not yet microphysically derived. A stronger follow-up would derive \(E_H\) directly from OPH repair, packet transport, or patch-update data and then use Theorem~\ref{thm:compatibility} to descend that dynamics to the semantic quotient.
+\end{enumerate}
+
+\section{Conclusion}
+
+The companion paper established the static half of observer-semantic ruliad pruning: how to pass from raw histories to quotient normal forms and how to exclude rule families on exact or conditional observer-side grounds. The present follow-up adds the dynamic half. Once one has a finite harness semantic quotient \(\mathcal S_H\), one can place lexicographically defect-lowering deterministic dynamics on it, prove finite-time convergence to a minimal survivor sector \(\mathcal Z_H\), place primitive noisy kernels on that sector, and recover a unique stationary survivor law.
+
+This is already enough to make the bridge sharper. It says not only which observer-semantic classes survive, but also how one may formulate convergence, concentration, and eventual terminality claims on the finite survivor quotient itself. The toy witness system is deliberately small, yet it already exhibits the full theorem pattern: a finite quotient of eight classes, a two-class minimal sector, deterministic convergence in at most two updates, and a unique primitive stationary law on the minimal sector. That is a mathematically concrete starting point for the next generation of OPH/Wolfram bridge results.
+
+\begin{thebibliography}{99}
+
+\bibitem{muller2026quotients}
+B.~M\"uller,
+\emph{Observer-Consistent Semantic Quotients for the Ruliad: An OPH Bridge to Multiway Homotopy and Generalized Observers},
+companion manuscript, 2026.
+
+\bibitem{ophconsensus}
+B.~M\"uller and K.~A.~Anirudha,
+\emph{Reality as a Consensus Protocol: The Fixed-Point Computation That Implements Physics},
+2026.
+Available at \url{https://oph-book.floatingpragma.io/papers/reality_as_consensus_protocol.pdf}.
+
+\bibitem{ophmicrophysics}
+B.~M\"uller,
+\emph{Screen Microphysics, Patches, and Observer Synchronization in OPH},
+2026.
+Available at \url{https://oph-book.floatingpragma.io/papers/screen_microphysics_and_observer_synchronization.pdf}.
+
+\bibitem{ophsynthesis}
+B.~M\"uller and P.~Nguyen,
+\emph{Observers Are All You Need},
+2026.
+Available at \url{https://oph-book.floatingpragma.io/papers/observers_are_all_you_need.pdf}.
+
+\bibitem{senchal2025}
+S.~A.~Senchal,
+``Observer Theory and the Ruliad: An Extension to the Wolfram Model,''
+private-circulation manuscript, May 2025.
+
+\end{thebibliography}
+
+\end{document}

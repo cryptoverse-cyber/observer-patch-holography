@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 320" width="850" height="320" style="background-color: #ffffff; font-family: 'Segoe UI', -apple-system, sans-serif;">
+  <defs>
+    <marker id="arrow-main-2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 L 2.5 5 z" fill="#7f8c8d" />
+    </marker>
+  </defs>
+
+  <style>
+    .box { fill: #fcfcfc; stroke: #bdc3c7; stroke-width: 1.5px; rx: 6px; }
+    .node-raw { fill: #7f8c8d; }
+    .node-pkt { fill: #d35400; }
+    .node-nf { fill: #2980b9; }
+    .edge-raw { stroke: #bdc3c7; stroke-width: 1.5px; fill: none; }
+    .edge-active { stroke: #d35400; stroke-width: 1.5px; fill: none; }
+    .title { font-size: 15px; font-weight: 600; fill: #2c3e50; text-anchor: middle; }
+    .math { font-size: 16px; font-style: italic; font-family: serif; fill: #555; text-anchor: middle; }
+    .functor { font-size: 16px; font-family: serif; font-style: italic; fill: #2c3e50; stroke: #fff; stroke-width: 4px; paint-order: stroke; text-anchor: middle; }
+    .functor-arrow { stroke: #7f8c8d; stroke-width: 2px; fill: none; }
+    .highlight-box { fill: rgba(211, 84, 0, 0.05); stroke: #d35400; stroke-width: 1.5px; stroke-dasharray: 4,4; rx: 4px; }
+  </style>
+
+  <rect x="0" y="0" width="850" height="320" fill="#ffffff" />
+
+  <rect class="box" x="20" y="60" width="160" height="190" />
+  <text x="100" y="85" class="title">Raw Histories</text>
+  <text x="100" y="235" class="math">R<tspan baseline-shift="super" font-size="0.7em">(L)</tspan><tspan baseline-shift="sub" font-size="0.7em">r, x0</tspan></text>
+  
+  <g transform="translate(60, 110)">
+    <path class="edge-raw" d="M 40 0 L 20 40 L 40 80 L 60 120" />
+    <path class="edge-raw" d="M 40 0 L 60 40 L 20 80 L 40 120" />
+    <path class="edge-raw" d="M 60 40 L 80 80" />
+    <circle class="node-raw" cx="40" cy="0" r="3"/>
+    <circle class="node-raw" cx="20" cy="40" r="3"/>
+    <circle class="node-raw" cx="60" cy="40" r="3"/>
+    <circle class="node-raw" cx="40" cy="80" r="3"/>
+    <circle class="node-raw" cx="20" cy="80" r="3"/>
+    <circle class="node-raw" cx="80" cy="80" r="3"/>
+    <circle class="node-raw" cx="60" cy="120" r="3"/>
+    <circle class="node-raw" cx="40" cy="120" r="3"/>
+  </g>
+
+  <path class="functor-arrow" d="M 195 155 L 235 155" marker-end="url(#arrow-main-2)" />
+  <text x="215" y="145" class="functor">P<tspan baseline-shift="sub" font-size="0.7em">O</tspan><tspan baseline-shift="super" font-size="0.7em">(L)</tspan></text>
+
+  <rect class="box" x="250" y="60" width="160" height="190" />
+  <text x="330" y="85" class="title">Observer Packets</text>
+  <text x="330" y="235" class="math">R<tspan baseline-shift="super" font-size="0.7em">(L)</tspan><tspan baseline-shift="sub" font-size="0.7em">O, pkt</tspan></text>
+
+  <g transform="translate(290, 110)">
+    <path class="edge-active" d="M 40 0 L 20 40 L 40 80" />
+    <path class="edge-active" d="M 40 0 L 60 40 L 40 80" />
+    <circle class="node-pkt" cx="40" cy="0" r="3.5"/>
+    <circle class="node-pkt" cx="20" cy="40" r="3.5"/>
+    <circle class="node-pkt" cx="60" cy="40" r="3.5"/>
+    <circle class="node-pkt" cx="40" cy="80" r="3.5"/>
+    <rect class="highlight-box" x="5" y="-10" width="70" height="100" />
+  </g>
+
+  <path class="functor-arrow" d="M 425 155 L 465 155" marker-end="url(#arrow-main-2)" />
+  <text x="445" y="145" class="functor">q<tspan baseline-shift="sub" font-size="0.7em">O</tspan><tspan baseline-shift="super" font-size="0.7em">(L)</tspan></text>
+
+  <rect class="box" x="480" y="60" width="160" height="190" />
+  <text x="560" y="85" class="title">Quotient Classes</text>
+  <text x="560" y="235" class="math">R<tspan baseline-shift="super" font-size="0.7em">(L)</tspan><tspan baseline-shift="sub" font-size="0.7em">O</tspan> / Γ</text>
+
+  <g transform="translate(560, 155)">
+    <circle class="node-pkt" cx="-20" cy="-20" r="5"/>
+    <circle class="node-pkt" cx="20" cy="-20" r="5"/>
+    <circle class="node-pkt" cx="0" cy="20" r="5"/>
+    <path class="edge-raw" stroke-dasharray="3,3" d="M -20 -20 L 20 -20 L 0 20 Z" />
+  </g>
+
+  <path class="functor-arrow" d="M 655 155 L 695 155" marker-end="url(#arrow-main-2)" />
+  <text x="675" y="145" class="functor">N<tspan baseline-shift="sub" font-size="0.7em">O</tspan><tspan baseline-shift="super" font-size="0.7em">(L)</tspan></text>
+
+  <rect class="box" x="710" y="60" width="120" height="190" />
+  <text x="770" y="85" class="title">Normal Form</text>
+  <text x="770" y="235" class="math">R<tspan baseline-shift="super" font-size="0.7em">(L)</tspan><tspan baseline-shift="sub" font-size="0.7em">O</tspan></text>
+
+  <g transform="translate(770, 155)">
+    <circle class="node-nf" cx="0" cy="0" r="8"/>
+    <circle fill="none" stroke="#2980b9" stroke-width="2" cx="0" cy="0" r="16"/>
+  </g>
+</svg>

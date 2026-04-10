@@ -1,0 +1,112 @@
+{
+  "defect_vectors": {
+    "1": [
+      0,
+      0
+    ],
+    "2": [
+      0,
+      0
+    ],
+    "3": [
+      1,
+      0
+    ],
+    "4": [
+      1,
+      0
+    ],
+    "5": [
+      0,
+      1
+    ],
+    "6": [
+      1,
+      1
+    ],
+    "7": [
+      1,
+      1
+    ],
+    "8": [
+      1,
+      1
+    ]
+  },
+  "input_results": "/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/wolfram_physics/code/ruliad_toy_benchmark_results.json",
+  "kernel_is_primitive": true,
+  "max_steps_to_fixpoint": 2,
+  "minimal_sector": [
+    1,
+    2
+  ],
+  "minimal_sector_kernel": {
+    "1": {
+      "1": 0.8,
+      "2": 0.2
+    },
+    "2": {
+      "1": 0.3,
+      "2": 0.7
+    }
+  },
+  "nearest_improvement_update": {
+    "1": 1,
+    "2": 2,
+    "3": 1,
+    "4": 2,
+    "5": 2,
+    "6": 5,
+    "7": 5,
+    "8": 5
+  },
+  "orbits": {
+    "1": [
+      1,
+      1
+    ],
+    "2": [
+      2,
+      2
+    ],
+    "3": [
+      3,
+      1,
+      1
+    ],
+    "4": [
+      4,
+      2,
+      2
+    ],
+    "5": [
+      5,
+      2,
+      2
+    ],
+    "6": [
+      6,
+      5,
+      2,
+      2
+    ],
+    "7": [
+      7,
+      5,
+      2,
+      2
+    ],
+    "8": [
+      8,
+      5,
+      2,
+      2
+    ]
+  },
+  "semantic_class_count": 8,
+  "stationary_distribution": {
+    "1": 0.5999999999999998,
+    "2": 0.3999999999999998
+  },
+  "strict_lexicographic_descent": true
+}

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 550" width="600" height="550" style="background-color: #ffffff; font-family: 'Segoe UI', -apple-system, sans-serif;">
+  <defs>
+    <marker id="arrow-1" viewBox="0 0 10 10" refX="28" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 L 2.5 5 z" fill="#34495e" />
+    </marker>
+    <marker id="arrow-loop-1" viewBox="0 0 10 10" refX="25" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 L 2.5 5 z" fill="#34495e" />
+    </marker>
+  </defs>
+
+  <style>
+    .node { fill: #fdfefe; stroke: #2c3e50; stroke-width: 2.5px; }
+    .edge { stroke: #34495e; stroke-width: 1.5px; fill: none; }
+    .edge-cross { stroke: #7f8c8d; stroke-width: 1.5px; fill: none; stroke-dasharray: 4,4; }
+    .label { font-size: 18px; font-weight: 600; fill: #2c3e50; text-anchor: middle; dominant-baseline: central; }
+    .annotation { font-size: 14px; fill: #555; font-style: italic; stroke: #ffffff; stroke-width: 5px; paint-order: stroke; text-anchor: middle; }
+  </style>
+
+  <rect x="0" y="0" width="600" height="550" fill="#ffffff" />
+
+  <path class="edge" d="M 300 100 L 180 270" marker-end="url(#arrow-1)" />
+  <path class="edge" d="M 300 100 L 420 270" marker-end="url(#arrow-1)" />
+  
+  <path class="edge" d="M 180 270 L 300 440" marker-end="url(#arrow-1)" />
+  <path class="edge" d="M 420 270 L 300 440" marker-end="url(#arrow-1)" />
+  
+  <path class="edge-cross" d="M 195 260 Q 300 240 405 260" marker-end="url(#arrow-1)" />
+  <path class="edge-cross" d="M 405 280 Q 300 300 195 280" marker-end="url(#arrow-1)" />
+
+  <path class="edge" d="M 160 270 C 80 200, 80 340, 160 270" marker-end="url(#arrow-loop-1)" />
+  <path class="edge" d="M 440 270 C 520 200, 520 340, 440 270" marker-end="url(#arrow-loop-1)" />
+
+  <circle class="node" cx="300" cy="100" r="22" />
+  <text x="300" y="100" class="label">E</text>
+  
+  <circle class="node" cx="180" cy="270" r="22" />
+  <text x="180" y="270" class="label">F</text>
+  
+  <circle class="node" cx="420" cy="270" r="22" />
+  <text x="420" y="270" class="label">H</text>
+  
+  <circle class="node" cx="300" cy="440" r="22" />
+  <text x="300" y="440" class="label">G</text>
+
+  <text x="300" y="55" class="annotation">Root Branching</text>
+  <text x="300" y="270" class="annotation" style="fill: #7f8c8d;">Intermediate Persistence</text>
+  <text x="300" y="495" class="annotation">Terminal Merge</text>
+</svg>
