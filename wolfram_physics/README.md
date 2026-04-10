@@ -2,7 +2,7 @@
 
 This folder holds OPH material connected to the Wolfram observer and Ruliad program.
 
-The central idea is simple. Senchal's observer theory says the right rule must admit observers whose reality is shaped by boundedness, persistence, and relevance. OPH adds observer overlap consistency and quotient repair. The paper here studies how those ingredients can cut down rule space.
+The basic idea: Senchal's observer theory says the right rule must admit observers whose reality is shaped by boundedness, persistence, and relevance. OPH adds observer overlap consistency and quotient repair. The paper here studies how those ingredients can cut down rule space.
 
 The local paper in this folder is [Observer-Consistent Semantic Quotients for the Ruliad](papers/observer_consistent_semantic_quotients_for_the_ruliad.pdf).
 
