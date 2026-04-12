@@ -1,10 +1,21 @@
 {
   "artifact": "oph_quark_lane_closure_contract",
   "base_theorem_emitted_package_artifact": "oph_quark_maximal_theorem_emitted_package",
+  "candidate_one_theorem_physical_compression": {
+    "artifact": "oph_quark_public_physical_sigma_datum_descent",
+    "conditional_statement": "Assume the theorem-grade shared quark normalization g_ch together with a theorem-grade physical sigma datum (sigma_u, sigma_d) on the quark physical sheet. Define sigma_seed_ud := (sigma_u + sigma_d) / 2 and eta_ud := (sigma_u - sigma_d) / 2. Then the quark absolute sector readout is algebraic: g_u = g_ch * exp(-(A_ud * sigma_seed_ud - B_ud * eta_ud)) and g_d = g_ch * exp(-(A_ud * sigma_seed_ud + B_ud * eta_ud)), where A_ud = 1 / (2 * (1 + rho_ord - x2^2)) and B_ud = 1 / (2 * (1 - x2^2 - x2^2 / (1 + rho_ord))). So once a strengthened physical sigma lift emits the physical sigma pair, the old absolute readout is no longer an independent theorem burden.",
+    "local_strengthened_theorem_statement": "On the explicit current-family common-refinement transport-frame carrier, the same-label line-lift transport data determine a sector-attached element of Sigma_ud^phys over the frame class [F0^dagger F1], and the fixed affine readout law attaches the unique exact sigma target (sigma_seed_ud, eta_ud, sigma_u, sigma_d). Equivalently, the restricted-carrier analogue of the strengthened quark physical sigma lift is closed on that declared surface.",
+    "public_strengthened_theorem_statement": "Let f_P be the physical quark frame class selected by P, represented on the realized quark lane by the explicit same-label common-refinement transport-frame class [F0^dagger F1]. The already-closed restricted sector-attached lift emits a class in Sigma_ud^phys over [F0^dagger F1], and the restricted strengthened lift attaches the exact physical sigma datum (sigma_seed_ud, eta_ud, sigma_u, sigma_d). Because the realized current-family/common-refinement transport-frame section on this selected class is unique up to the defining diagonal (U(1)^3 x U(1)^3) quotient, the emitted Sigma_ud^phys element and attached sigma datum depend only on f_P and not on the chosen declared transport-frame representative. Therefore the exact sigma readout descends uniquely to a target-free public datum on the physical quark frame class selected by P.",
+    "remaining_exact_gap": null,
+    "remaining_nonalgebraic_theorem": null,
+    "status": "closed",
+    "supporting_algebraic_collapse_artifact": "oph_quark_absolute_readout_algebraic_collapse"
+  },
   "closure_chain": [
-    "(axioms + light-data transport) => Theta_ud^mass = quark_d12_t1_value_law => t1 => (Delta_ud_overlap, eta_Q_centered, kappa_Q, tau_u, tau_d)",
-    "(axioms + same-label left-handed sector data) => Theta_ud^phys = quark_physical_sigma_ud_lift => Sigma_ud^phys = (sigma_id, tau, U_uL, U_dL, V_CKM, I_CKM)",
-    "(axioms + Sigma_ud^phys) => Theta_ud^abs = quark_absolute_sector_readout_theorem => (g_u, g_d) => (m_u, m_d, m_s, m_c, m_b, m_t)"
+    "(axioms + light-data transport) => light_quark_overlap_defect_value_law => Delta_ud_overlap => quark_d12_t1_value_law => t1 => (eta_Q_centered, kappa_Q, tau_u, tau_d)",
+    "(selected public quark frame class chosen by P) => target_free_public_physical_sigma_datum_descent => strengthened_quark_physical_sigma_ud_lift",
+    "(axioms + public Sigma_ud^phys datum) => quark_absolute_readout_algebraic_collapse => (g_u, g_d) => (m_u, m_d, m_s, m_c, m_b, m_t)",
+    "(public selected class + exact forward construction) => oph_quark_public_exact_yukawa_end_to_end_theorem => exact forward Y_u, Y_d"
   ],
   "continuation_only_mass_sidecar": {
     "artifact": "oph_quark_d12_internal_backread_continuation_closure",
@@ -34,147 +45,242 @@
         0.0,
         0.06715870378831591
       ],
-      "tau_d_log_per_side": -0.06715870378831591,
-      "tau_u_log_per_side": 0.06715870378831591
+      "tau_d_log_per_side_note": "weighted transport tau_d depends on the chosen sigma branch and is recorded separately",
+      "tau_u_log_per_side_note": "weighted transport tau_u depends on the chosen sigma branch and is recorded separately"
     },
     "scope": "D12_continuation_internal_backread_only",
     "theorem_boundary_note": "This sidecar closes the D12 mass-side scalar package numerically on an internal backread continuation surface. It does not replace the public theorem-grade frontier quark_d12_t1_value_law, does not alter the active builder's primary-path open payload pair, and does not repair the wrong-sheet CKM boundary."
   },
-  "exact_missing_theorems": [
-    {
-      "builder_reduction_beneath_public_frontier": {
-        "conditional_on": "pure_B_readback_payload_law",
-        "source_readback_d_log_per_side": "(+t1/10, 0, -t1/10)",
-        "source_readback_u_log_per_side": "(-t1/10, 0, +t1/10)"
+  "current_family_physical_target_surface": {
+    "absolute_readout_algebraic_collapse": {
+      "artifact": "oph_quark_absolute_readout_algebraic_collapse",
+      "candidate_merged_theorem_text": "A strengthened quark physical sigma lift emits a sector-attached same-label left-handed physical datum together with the theorem-grade physical sigma pair (sigma_u, sigma_d). With theorem-grade g_ch already available, the affine mean law algebraically emits (g_u, g_d), hence the ordered three-point readout emits the quark sextet.",
+      "proof_status": "closed_algebraic_collapse_given_theorem_grade_sigma_datum",
+      "remaining_nonalgebraic_theorem": "strengthened_quark_physical_sigma_ud_lift",
+      "theorem_scope": "conditional_on_strengthened_physical_sigma_lift"
+    },
+    "affine_anchor_theorem": {
+      "A_q_current_family": -1.1742812832285385,
+      "artifact": "oph_quark_current_family_affine_anchor_theorem",
+      "delta_q_current_family": 0.9253713569359814,
+      "proof_status": "closed_current_family_affine_anchor"
+    },
+    "end_to_end_exact_pdg_derivation_chain": {
+      "artifact": "oph_quark_current_family_end_to_end_exact_pdg_derivation_chain",
+      "exact_running_values_gev": {
+        "b": 4.182999999999994,
+        "c": 1.2729999999999992,
+        "d": 0.004699999999999999,
+        "s": 0.09349999999999999,
+        "t": 172.35235532883115,
+        "u": 0.0021600000000000005
       },
-      "equivalently_emits": [
-        "ray_modulus",
-        "Delta_ud_overlap",
-        "eta_Q_centered",
-        "kappa_Q"
-      ],
-      "id": "quark_d12_t1_value_law",
-      "induced_formulas": {
-        "Delta_ud_overlap": "t1 / 5",
-        "eta_Q_centered": "-((1 - x2^2) / 27) * t1",
-        "kappa_Q": "-t1 / 54"
-      },
-      "mathematical_name": "Theta_ud^mass",
-      "minimal_light_branch": {
-        "epsilon": "1/6",
-        "light_isospin_breaking_scalar": "Delta_ud_overlap = (1/6) * log(c_d / c_u)",
-        "textures": [
-          "y_u = c_u * epsilon^6",
-          "y_d = c_d * epsilon^6"
-        ]
-      },
-      "must_emit": "t1",
-      "must_not_use_ckm_cp": true,
-      "must_not_use_target_masses": true,
-      "odd_source_pair_forced_by_mass_scalar": {
-        "beta_d_diag_B_source": "-t1 / 10",
-        "beta_u_diag_B_source": "t1 / 10",
-        "source_readback_d_log_per_side": "(+t1/10, 0, -t1/10)",
-        "source_readback_u_log_per_side": "(-t1/10, 0, +t1/10)",
-        "tau_d": "sigma_u * t1 / (10 * (sigma_u + sigma_d))",
-        "tau_u": "sigma_d * t1 / (10 * (sigma_u + sigma_d))"
-      },
-      "role": "mass_side_value_law_on_emitted_D12_mass_ray",
-      "same_family_d12_hypercharge_law": {
-        "C1": "C_1(Y) = (3/5) * Y^2",
-        "difference": "C_1(u^c) - C_1(d^c) = 1/5",
-        "equivalent_scalar_identities": [
-          "log(c_d / c_u) = (6/5) * t1",
-          "t1 = 5 * Delta_ud_overlap = (5/6) * log(c_d / c_u)"
-        ],
-        "ray_identity": "Delta_ud_overlap = t1 / 5"
-      },
-      "step": 1,
-      "target_free_map": {
-        "codomain": "R_{>= 0}",
-        "domain": "G_ud^light",
-        "formula": "Theta_ud^mass(OPH light data) = t1"
+      "proof_status": "closed_current_family_end_to_end_exact_pdg_chain",
+      "theorem_scope": "current_family_common_refinement_transport_frame_only"
+    },
+    "exact_forward_yukawas": {
+      "artifact": "oph_quark_current_family_transport_frame_exact_forward_yukawas",
+      "certification_status": "forward_matrix_certified",
+      "forward_certified": true,
+      "proof_status": "closed_current_family_transport_frame_exact_forward_yukawas",
+      "scope": "current_family_common_refinement_transport_frame_only"
+    },
+    "exact_pdg_reconstruction": {
+      "artifact": "oph_quark_current_family_exact_pdg_theorem",
+      "proof_status": "closed_current_family_exact_pdg_reconstruction",
+      "reconstructed_current_family_running_values_gev": {
+        "b": 4.182999999999994,
+        "c": 1.2729999999999992,
+        "d": 0.004699999999999999,
+        "s": 0.09349999999999999,
+        "t": 172.35235532883115,
+        "u": 0.0021600000000000005
       }
     },
-    {
-      "current_exact_obstruction": "No sector-attached lift or equivalence currently identifies the common-refinement self-overlap matrix with an emitted same-label left-handed Sigma_ud element.",
-      "current_negative_closure": {
-        "selected_sigma": "sigma_ref",
-        "statement": "On the emitted local solver surface, sigma_ud closes to sigma_ref and the selected-branch CKM invariants are exactly the current D12 sheet invariants. Those invariants still miss the physical shell, so local branch repair is impossible on the present corpus."
+    "exact_sigma_target": {
+      "artifact": "oph_quark_current_family_exact_sigma_target",
+      "delta_vs_current_theorem_grade_sigma_pair": {
+        "eta_ud": -0.003967886206572402,
+        "sigma_d": -0.00863580119131191,
+        "sigma_seed_ud": -0.012603687397883867,
+        "sigma_u": -0.01657157360445627
       },
-      "id": "quark_physical_sigma_ud_lift",
-      "mathematical_name": "Theta_ud^phys",
-      "must_emit": "{sigma_id, canonical_token, U_u_left, U_d_left, V_CKM, ckm_invariants}",
-      "must_not_use_compare_fit_masses": true,
-      "physical_carrier": {
-        "definition": "{(sigma_id, tau, U_uL, U_dL, V_CKM, I_CKM) : V_CKM = U_uL^dagger U_dL} / ~",
-        "equivalence_relation": "(U_uL, U_dL, V) ~ (U_uL D_u, U_dL D_d, D_u^dagger V D_d) for diagonal D_u, D_d in U(1)^3",
-        "name": "Sigma_ud^phys"
-      },
-      "quotient_section_form": {
-        "compare_only_frame_signal": "[F_0^dagger F_1]",
-        "missing_theorem": "a sector-attached section s_phys with pi o s_phys = id on the physical frame class",
-        "projection": "pi: Sigma_ud^phys -> F_ud / (U(1)^3 x U(1)^3), sending a same-label left-handed datum to its frame-overlap class [V_CKM]"
-      },
-      "role": "sector_attached_same_label_left_handed_lift_to_physical_ckm_shell",
-      "step": 2
+      "proof_status": "closed_current_family_sigma_target",
+      "sigma_d_target": 3.296264198808688,
+      "sigma_u_target": 5.573928426395543
     },
-    {
-      "affine_mean_split_law": {
-        "A_ud": "1 / (2 * (1 + rho_ord - x2^2))",
-        "B_ud": "1 / (2 * (1 - x2^2 - x2^2 / (1 + rho_ord)))",
-        "eta_ud": "(sigma_u - sigma_d) / 2",
-        "g_d": "g_ch * exp(-(A_ud * sigma_seed_ud + B_ud * eta_ud))",
-        "g_u": "g_ch * exp(-(A_ud * sigma_seed_ud - B_ud * eta_ud))",
-        "rho_ord": 1.2942849363777058,
-        "sigma_seed_ud": "(sigma_u + sigma_d) / 2",
-        "x2": -0.5175863354681689
+    "exact_yukawa_theorem": {
+      "artifact": "oph_quark_current_family_transport_frame_exact_yukawa_theorem",
+      "proof_status": "closed_current_family_transport_frame_exact_yukawa_theorem",
+      "target_name": "exact_forward_quark_yukawas_on_declared_current_family_transport_frame",
+      "theorem_scope": "current_family_common_refinement_transport_frame_only"
+    },
+    "note": "These exact current-family target surfaces are now explicit on disk. They sharpen the remaining public frontier quantitatively, but they do not by themselves promote the target-free physical-sheet lane.",
+    "restricted_absolute_sector_readout_theorem": {
+      "artifact": "oph_quark_current_family_transport_frame_absolute_sector_readout_theorem",
+      "corresponds_to_global_contract": {
+        "carrier_restriction": "current_family_common_refinement_transport_frame_only",
+        "id": "quark_absolute_sector_readout_theorem",
+        "mathematical_name": "Theta_ud^abs"
       },
-      "current_candidate_surface": {
-        "artifact": "oph_quark_sector_mean_split",
-        "candidate_formulas": {
-          "g_d": "g_ch * exp(-(A_ud * sigma_seed_ud + B_ud * eta_ud))",
-          "g_u": "g_ch * exp(-(A_ud * sigma_seed_ud - B_ud * eta_ud))"
-        },
-        "g_d_candidate": 0.12172551081512113,
-        "g_u_candidate": 0.7797392875757557,
-        "theorem_scope": "current_family_only"
+      "emitted_absolute_sector_scales": {
+        "g_d": 0.12249897208633505,
+        "g_u": 0.7796501962057188
       },
-      "current_exact_obstruction": {
-        "certification_status": "placeholder_unpromotable",
-        "forward_artifact": "oph_forward_yukawas",
-        "promotion_blockers": [
-          "quark_even_excitation_candidate_only",
-          "quark_source_mode_unresolved",
-          "quark_b_odd_source_values_open"
-        ],
-        "reason": "The current absolute sector scales live only on a current-family candidate surface; the forward Yukawa artifact remains non-promotable until the spread emitter is theorem-fed."
+      "proof_status": "closed_current_family_transport_frame_absolute_sector_readout_theorem",
+      "theorem_scope": "current_family_common_refinement_transport_frame_only"
+    },
+    "restricted_d12_value_package": {
+      "artifact": "oph_quark_current_family_transport_frame_d12_value_package",
+      "closed_d12_scalars": {
+        "Delta_ud_overlap": 0.12957571450332314,
+        "Delta_ud_overlap_formula": "(1/6) * ell_ud",
+        "eta_Q_centered": -0.01756721274463154,
+        "eta_Q_centered_formula": "-((1 - x2^2) / 27) * t1",
+        "kappa_Q": -0.01199775134290029,
+        "kappa_Q_formula": "-t1 / 54",
+        "ray_modulus": 0.6478785725166157,
+        "t1": 0.6478785725166157,
+        "t1_formula": "(5/6) * ell_ud"
       },
-      "id": "quark_absolute_sector_readout_theorem",
-      "mathematical_name": "Theta_ud^abs",
-      "must_be_on_physical_sheet": true,
-      "must_be_target_free": true,
-      "must_emit": [
-        "g_u",
-        "g_d"
-      ],
-      "ordered_three_point_readout": {
-        "d_sector": "(m_d, m_s, m_b) = g_d * (exp(E_d,1^log), exp(E_d,2^log), exp(E_d,3^log))",
-        "u_sector": "(m_u, m_c, m_t) = g_u * (exp(E_u,1^log), exp(E_u,2^log), exp(E_u,3^log))"
+      "proof_status": "closed_current_family_transport_frame_d12_value_package",
+      "theorem_scope": "current_family_common_refinement_transport_frame_only"
+    },
+    "restricted_light_ratio_theorem": {
+      "artifact": "oph_quark_current_family_transport_frame_light_ratio_theorem",
+      "ell_ud": 0.7774542870199389,
+      "proof_status": "closed_current_family_transport_frame_light_ratio_theorem",
+      "theorem_scope": "current_family_common_refinement_transport_frame_only"
+    },
+    "restricted_physical_sigma_lift_theorem": {
+      "artifact": "oph_quark_current_family_transport_frame_physical_sigma_lift_theorem",
+      "corresponds_to_global_contract": {
+        "carrier_restriction": "current_family_common_refinement_transport_frame_only",
+        "id": "quark_physical_sigma_ud_lift",
+        "mathematical_name": "Theta_ud^phys"
       },
-      "role": "target_free_absolute_sector_scales_on_physical_sheet",
-      "selected_sheet_alignment": {
-        "g_d_candidate": 0.12172551081512113,
-        "g_d_exact_selected_sheet": 0.12249897208633505,
-        "g_u_candidate": 0.7797392875757557,
-        "g_u_exact_selected_sheet": 0.7796501962057188
+      "proof_status": "closed_current_family_transport_frame_physical_sigma_lift_theorem",
+      "theorem_scope": "current_family_common_refinement_transport_frame_only"
+    },
+    "restricted_strengthened_physical_sigma_lift_theorem": {
+      "artifact": "oph_quark_current_family_transport_frame_strengthened_physical_sigma_lift_theorem",
+      "compressed_global_contract": {
+        "carrier_restriction": "current_family_common_refinement_transport_frame_only",
+        "id": "strengthened_quark_physical_sigma_ud_lift",
+        "role": "one_nonalgebraic_public_burden_after_absolute_collapse"
       },
-      "step": 3
+      "proof_status": "closed_current_family_transport_frame_strengthened_physical_sigma_lift_theorem",
+      "theorem_grade_physical_sigma_datum": {
+        "eta_ud": 1.1388321137934274,
+        "sigma_d": 3.296264198808688,
+        "sigma_seed_ud": 4.4350963126021155,
+        "sigma_u": 5.573928426395543
+      },
+      "theorem_scope": "current_family_common_refinement_transport_frame_only"
+    },
+    "transport_frame_exact_pdg_completion": {
+      "artifact": "oph_quark_current_family_transport_frame_exact_pdg_completion",
+      "exact_running_values_gev": {
+        "b": 4.182999999999994,
+        "c": 1.2729999999999992,
+        "d": 0.004699999999999999,
+        "s": 0.09349999999999999,
+        "t": 172.35235532883115,
+        "u": 0.0021600000000000005
+      },
+      "proof_status": "closed_current_family_transport_frame_exact_pdg_completion",
+      "theorem_scope": "current_family_common_refinement_transport_frame_only"
+    },
+    "transport_frame_sector_attached_lift": {
+      "artifact": "oph_quark_current_family_transport_frame_sector_attached_lift",
+      "canonical_token": "CR::same_label_left::transport_frame::current_family_exact",
+      "proof_status": "closed_current_family_sector_attached_transport_frame_lift",
+      "sigma_d_target": 3.296264198808688,
+      "sigma_id": "sigma_phys_transport_frame_current_family",
+      "sigma_u_target": 5.573928426395543,
+      "theorem_scope": "current_family_common_refinement_transport_frame_only"
     }
-  ],
+  },
+  "exact_missing_theorems": [],
+  "exact_pdg_derivation_target": {
+    "artifact": "oph_quark_current_family_end_to_end_exact_pdg_derivation_chain",
+    "exact_running_values_gev": {
+      "b": 4.182999999999994,
+      "c": 1.2729999999999992,
+      "d": 0.004699999999999999,
+      "s": 0.09349999999999999,
+      "t": 172.35235532883115,
+      "u": 0.0021600000000000005
+    },
+    "lemma_chain": [
+      {
+        "artifact": "oph_quark_target_free_bridge_theorem",
+        "lemma": "light_quark_overlap_defect_value_law / quark_d12_t1_value_law",
+        "result": {
+          "Delta_ud_overlap": "Delta_ud_overlap = (1/6) * log(c_d / c_u)",
+          "t1": "t1 = ray_modulus = (5/6) * log(c_d / c_u)"
+        },
+        "step": 1
+      },
+      {
+        "artifact": "oph_quark_current_family_transport_frame_strengthened_physical_sigma_lift_theorem",
+        "lemma": "restricted_strengthened_physical_sigma_lift",
+        "result": {
+          "canonical_token": "CR::same_label_left::transport_frame::current_family_exact",
+          "sigma_d": 3.296264198808688,
+          "sigma_id": "sigma_phys_transport_frame_current_family",
+          "sigma_u": 5.573928426395543,
+          "theorem_scope": "current_family_common_refinement_transport_frame_only"
+        },
+        "step": 2
+      },
+      {
+        "artifact": "oph_quark_current_family_transport_frame_absolute_sector_readout_theorem",
+        "lemma": "restricted_absolute_sector_readout",
+        "result": {
+          "g_d": 0.12249897208633505,
+          "g_u": 0.7796501962057188
+        },
+        "step": 3
+      },
+      {
+        "artifact": "oph_quark_current_family_transport_frame_exact_pdg_completion",
+        "lemma": "exact_running_value_completion",
+        "result": {
+          "b": 4.182999999999994,
+          "c": 1.2729999999999992,
+          "d": 0.004699999999999999,
+          "s": 0.09349999999999999,
+          "t": 172.35235532883115,
+          "u": 0.0021600000000000005
+        },
+        "step": 4
+      },
+      {
+        "artifact": "oph_quark_current_family_transport_frame_exact_forward_yukawas",
+        "lemma": "exact_forward_yukawa_emission",
+        "result": {
+          "certification_status": "forward_matrix_certified",
+          "forward_certified": true,
+          "scope": "current_family_common_refinement_transport_frame_only"
+        },
+        "step": 5
+      }
+    ],
+    "minimal_exact_blocker_set": [],
+    "not_the_same_as": "target_free_public_physical_sheet_promotion",
+    "status": "closed",
+    "strengthening_above_target": "A stronger target-free public physical-sheet theorem remains a separate promotion question and is not part of the exact derivation target recorded here.",
+    "target_name": "exact_running_quark_sextet_on_declared_current_family_transport_frame",
+    "theorem_scope": "current_family_common_refinement_transport_frame_only",
+    "why_closed": "On the declared current-family/common-refinement transport-frame carrier, the target-free D12 bridge, restricted strengthened physical sigma lift, restricted absolute sector readout, and ordered three-point readout already compose to the exact PDG-matched running quark sextet.",
+    "wrapper_theorem": "oph_quark_exact_pdg_end_to_end_theorem"
+  },
   "exact_sidecar_mass_surface": {
     "artifact": "oph_quark_current_family_exact_readout",
     "closure_statement": "On the emitted same-label left-handed selected sheet sigma_ref and the fixed ordered three-point family, the target-anchored quadratic readout together with the exact sector geometric means g_u and g_d emit one exact same-family quark sextet. This closes the selected-sheet exact readout chain on current_family_only.",
+    "current_family_affine_anchor_theorem": "oph_quark_current_family_affine_anchor_theorem",
+    "current_family_exact_pdg_theorem": "oph_quark_current_family_exact_pdg_theorem",
     "exact_outputs_gev": {
       "b": 4.182999999999994,
       "c": 1.2729999999999995,
@@ -190,19 +296,645 @@
     "scope": "current_family_only",
     "selected_sheet": "sigma_ref"
   },
-  "generated_utc": "2026-04-03T04:42:59Z",
+  "exact_yukawa_derivation_target": {
+    "artifact": "oph_quark_current_family_transport_frame_exact_yukawa_theorem",
+    "certification_status": "forward_matrix_certified",
+    "forward_certified": true,
+    "minimal_exact_blocker_set": [],
+    "not_the_same_as": "target_free_public_physical_sheet_yukawa_promotion",
+    "status": "closed",
+    "target_name": "exact_forward_quark_yukawas_on_declared_current_family_transport_frame",
+    "theorem_scope": "current_family_common_refinement_transport_frame_only",
+    "why_closed": "On the declared current-family/common-refinement transport-frame carrier, the closed exact chain now emits explicit forward Yukawa matrices Y_u and Y_d with certified singular values matching the exact running quark sextet.",
+    "wrapper_theorem": "oph_quark_exact_yukawa_end_to_end_theorem"
+  },
+  "generated_utc": "2026-04-12T16:09:50Z",
+  "internalized_theorems": [
+    {
+      "formula": "Theta_ud^Delta(public light-quark D12 data) = (1/6) * log(c_d / c_u)",
+      "id": "light_quark_overlap_defect_value_law",
+      "proof_status": "closed_target_free_overlap_defect_theorem"
+    },
+    {
+      "formula": "t1 = (5/6) * log(c_d / c_u)",
+      "id": "quark_d12_t1_value_law",
+      "proof_status": "closed_mass_ray_one_scalar_value_law"
+    }
+  ],
   "mass_comparison_surface": {
     "kind": "running_mass_comparison_surface",
     "note": "Quark references are running masses, not asymptotic free-particle pole masses."
   },
   "notes": [
-    "The maximal theorem-emitted quark package on the present ledger is the D12 mass ray, the negative selector closure sigma_ref, and the restricted-scope affine mean package; the three exact missing theorem objects recorded here sit above that package.",
-    "The exact current-family witness and the D12 internal backread sidecar exhibit the mass data on sidecar surfaces, but they do not promote the public quark theorem lane.",
+    "The mass bridge is now internalized on the local code surface: light_quark_overlap_defect_value_law and quark_d12_t1_value_law are no longer part of the remaining exact frontier.",
+    "The exact-PDG derivation target is closed on the declared current-family/common-refinement transport-frame carrier and is recorded explicitly above.",
+    "The exact forward-Yukawa derivation target is also closed on that declared carrier and is recorded explicitly above.",
+    "The direct public sigma-datum descent theorem is now also closed on the selected public quark frame class.",
+    "That public descent closes the previously open physical-sheet promotion frontier and lifts the exact Yukawa package to a target-free public theorem on the selected class.",
+    "The exact current-family witness and the D12 internal backread sidecar still exhibit the mass data on sidecar surfaces, but they do not repair the physical CKM branch by themselves.",
     "The selected local same-label left-handed sheet closes negatively to sigma_ref; the remaining physical quark burden is not another local selector search.",
-    "Full end-to-end physical quark closure waits on three exact theorem objects: the D12 one-scalar value law, a sector-attached physical CKM lift, and a target-free absolute sector readout on that physical sheet."
+    "The historical public physical-sheet contract named Theta_ud^phys and Theta_ud^abs separately, but after public sigma descent the absolute readout is algebraic and no exact blocker remains on the selected class."
   ],
-  "proof_status": "maximal_theorem_emitted_package_identified_three_exact_missing_theorems_recorded_exact_sidecar_masses_recorded",
-  "public_promotion_allowed": false,
+  "proof_status": "target_free_public_exact_yukawa_derivation_closed",
+  "public_current_family_yukawa_frontier": {
+    "closure_after_t1": {
+      "candidate_scalar_identities": [
+        "log(c_d / c_u) = (6/5) * t1",
+        "t1 = 5 * Delta_ud_overlap = (5/6) * log(c_d / c_u)"
+      ],
+      "forced_source_payload_after_t1": {
+        "Delta_ud_overlap": "t1 / 5",
+        "J_B_source_d": "-t1 / 10",
+        "J_B_source_u": "t1 / 10",
+        "beta_d_diag_B_source": "-t1 / 10",
+        "beta_u_diag_B_source": "t1 / 10",
+        "selector_scalar_name": "Delta_ud_overlap",
+        "source_readback_d_log_per_side": "(+t1/10, 0, -t1/10)",
+        "source_readback_u_log_per_side": "(-t1/10, 0, +t1/10)"
+      },
+      "transport_side_reduction": {
+        "closed_identities_after_t1": {
+          "tau_d_over_tau_u": "sigma_u_total_log_per_side / sigma_d_total_log_per_side",
+          "tau_u_plus_tau_d": "t1 / 10"
+        },
+        "exact_gap_after_transport_reduction": "honest_sigma_branch_emission",
+        "law_statement": "On any fixed ordered-family sigma branch with positive totals (sigma_u_total_log_per_side, sigma_d_total_log_per_side), the D12 pure-B transport pair is not free. It is an exact affine readback of the single selector scalar Delta_ud_overlap.",
+        "reduced_gap_note": "The transport side no longer contributes a separate exact theorem burden once a sigma branch is fixed. The remaining nontransport question is the value law itself together with promotion of any candidate sigma branch used downstream.",
+        "status": "closed_given_fixed_sigma_branch",
+        "weighted_transport_formulas_after_t1": {
+          "Lambda_ud_B_transport": "sigma_u_total_log_per_side * sigma_d_total_log_per_side * t1 / (10 * (sigma_u_total_log_per_side + sigma_d_total_log_per_side))",
+          "tau_d_log_per_side": "sigma_u_total_log_per_side * t1 / (10 * (sigma_u_total_log_per_side + sigma_d_total_log_per_side))",
+          "tau_u_log_per_side": "sigma_d_total_log_per_side * t1 / (10 * (sigma_u_total_log_per_side + sigma_d_total_log_per_side))"
+        }
+      }
+    },
+    "definition": "Theorem-grade current-family quark Yukawas on the emitted D12 mass ray, using the already-closed mean-surface sigma branch rather than the optional edge-statistics bridge.",
+    "minimal_exact_blocker_set": [],
+    "sharper_target_1_primitive": {
+      "artifact": "oph_light_quark_overlap_defect_value_law",
+      "equivalent_ray_coordinate_presentation": "quark_d12_t1_value_law",
+      "exact_missing_object": null,
+      "proof_status": "closed_target_free_overlap_defect_theorem"
+    },
+    "target_1_internalized_theorem_text": "On the minimal light branch y_u = c_u * epsilon^6 and y_d = c_d * epsilon^6 with epsilon = 1/6, the normalized light overlap defect is Delta_ud_overlap = (1/6) * log(y_d / y_u) = (1/6) * log(c_d / c_u). On the emitted D12 mass ray this closes the target-free mass bridge and yields the equivalent ray-coordinate theorem quark_d12_t1_value_law via t1 = 5 * Delta_ud_overlap.",
+    "target_1_status": "closed",
+    "theorem_grade_sigma_branch": {
+      "artifact": "oph_family_excitation_spread_map",
+      "proof_status": "exact_reduced_family_on_simple_ordered_three_point_spectrum",
+      "sigma_d_total_log_per_side": 3.3049,
+      "sigma_source_kind": "theorem_grade_mean_surface_readback",
+      "sigma_u_total_log_per_side": 5.5905,
+      "spread_emitter_status": "closed"
+    },
+    "transport_reduction": {
+      "artifact": "oph_quark_d12_overlap_transport_law",
+      "main_builder_sigma_branch": {
+        "provider_artifact": "oph_family_excitation_spread_map",
+        "provider_status": "closed",
+        "sigma_source_kind": "theorem_grade_mean_surface_readback"
+      },
+      "proof_status": "one_scalar_transport_law_closed_given_sigma_branch",
+      "remaining_scalar_on_fixed_sigma_branch": "Delta_ud_overlap",
+      "status": "closed_exact_transport_reduction"
+    },
+    "why_closed": "light_quark_overlap_defect_value_law is now internalized on the code surface, so the emitted D12 ray fixes t1 and the closed sigma/transport laws force the full target-1 source and transport package.",
+    "why_edge_statistics_bridge_is_not_required": "The edge-statistics/mean-surface compatibility theorem would strengthen the bridge from overlap-edge data to the sigma pair, but it is not needed to provide a theorem-grade sigma branch for current-family public Yukawas because oph_family_excitation_spread_map already closes that branch."
+  },
+  "public_exact_yukawa_derivation_target": {
+    "artifact": "oph_quark_public_exact_yukawa_end_to_end_theorem",
+    "exact_running_values_gev": {
+      "b": 4.182999999999994,
+      "c": 1.2729999999999992,
+      "d": 0.004699999999999999,
+      "s": 0.09349999999999999,
+      "t": 172.35235532883115,
+      "u": 0.0021600000000000005
+    },
+    "forward_yukawa_artifact": {
+      "V_CKM": {
+        "imag": [
+          [
+            -0.021075106800808,
+            0.035136732330326076,
+            0.002916513311259807
+          ],
+          [
+            0.0322775354867898,
+            -0.05158633104777016,
+            0.014626401431637612
+          ],
+          [
+            -0.002634430293622458,
+            -0.011760738521600898,
+            -0.13810628753754062
+          ]
+        ],
+        "real": [
+          [
+            -0.9983615199144433,
+            0.03969185676376108,
+            0.003402341157797594
+          ],
+          [
+            -0.0421860965126713,
+            -0.9966389212066333,
+            -0.03184766129860623
+          ],
+          [
+            0.0012919630054201992,
+            -0.03318678595956761,
+            0.9897870307385931
+          ]
+        ]
+      },
+      "Y_d": {
+        "imag": [
+          [
+            -8.469032392492673e-05,
+            -0.04469356247073978,
+            0.03061658929677337
+          ],
+          [
+            -0.001988344011406569,
+            0.003194924642756838,
+            0.04791198586575021
+          ],
+          [
+            -0.0009676819844115424,
+            0.004796317114471378,
+            -0.059471442759862325
+          ]
+        ],
+        "real": [
+          [
+            0.0040119161110299196,
+            -0.018444696054507805,
+            0.2504632492273224
+          ],
+          [
+            0.001015080721988674,
+            0.07040928504554975,
+            -1.8986086663126518
+          ],
+          [
+            0.000258935251149727,
+            0.03760118401287332,
+            3.71796617878044
+          ]
+        ]
+      },
+      "Y_u": {
+        "imag": [
+          [
+            0.0,
+            -0.6595080949875203,
+            -0.22197603877932698
+          ],
+          [
+            -0.0009919417678881874,
+            6.814628833822519e-17,
+            6.528135920646223
+          ],
+          [
+            -0.0004959708839440939,
+            0.09669476926225765,
+            -2.6864877063647804e-16
+          ]
+        ],
+        "real": [
+          [
+            0.0017972723209952284,
+            -0.23305927823150263,
+            13.056271841292437
+          ],
+          [
+            0.0004384586490648617,
+            0.9333176005235941,
+            -78.78158312531318
+          ],
+          [
+            0.00011502446975846438,
+            0.5008291361595694,
+            152.59641044700592
+          ]
+        ]
+      },
+      "artifact": "oph_quark_current_family_transport_frame_exact_forward_yukawas",
+      "certification_status": "forward_matrix_certified",
+      "forward_certified": true,
+      "jarlskog": -3.735348679994253e-06,
+      "scope": "current_family_common_refinement_transport_frame_only",
+      "singular_values_d": [
+        0.0046999999999367175,
+        0.09350000000000759,
+        4.182999999999995
+      ],
+      "singular_values_u": [
+        0.002160000710515581,
+        1.2730000000009922,
+        172.35235532883115
+      ]
+    },
+    "minimal_exact_blocker_set": [],
+    "status": "closed",
+    "target_name": "target_free_public_exact_forward_quark_yukawas",
+    "theorem_scope": "selected_public_physical_quark_frame_class_only",
+    "why_closed": "The public sigma-datum descent theorem now identifies the selected public quark frame class with the same exact sigma datum already realized on the closed local chain, so the algebraic absolute readout and exact forward construction lift to the selected public class."
+  },
+  "public_exact_yukawa_promotion_frontier": {
+    "alternate_upstream_route": {
+      "current_attached_data_obstruction": {
+        "commutator_operator_norm": 0.04861550547372144,
+        "commutator_over_defect": 0.7639462085733872,
+        "commutator_over_defect_squared": 12.004684594077071,
+        "projector_defect_operator_norm": 0.06363734112184061,
+        "reason": "On the displayed level-0/level-1 projector systems, the natural centered operators built from the proxy ordered spectrum have a commutator that is linear in the projector defect rather than quadratic-small, so the displayed current artifacts do not themselves force the transfer lemma."
+      },
+      "id": "oph_generation_bundle_branch_generator_splitting",
+      "smaller_exact_missing_clause": "compression_descendant_commutator_vanishes_or_is_uniformly_quadratic_small_after_central_split",
+      "statement": "On the realized generation bundle, the centered compressed generation-bundle branch generator has a persistent simple spectrum with label-stable one-dimensional Riesz projectors functorial under every refinement intertwiner, and the same-label transport classes are presentation-independent modulo objectwise U(1).",
+      "status": "upstream_alternative_route_currently_deprioritized",
+      "upstream_object": "oph_generation_bundle_branch_generator_splitting",
+      "why_relevant": "If the persistent simple-spectrum splitting theorem closes, the overlap-edge line lift upgrades from candidate readout to public same-label transport class, providing an upstream route into the public same-label physical sigma carrier."
+    },
+    "artifact": "oph_quark_public_exact_yukawa_promotion_frontier",
+    "closed_public_endpoint": {
+      "artifact": "oph_quark_public_exact_yukawa_end_to_end_theorem",
+      "proof_status": "closed_target_free_public_exact_yukawa_end_to_end_theorem",
+      "public_exact_outputs": {
+        "exact_running_values_gev": {
+          "b": 4.182999999999994,
+          "c": 1.2729999999999992,
+          "d": 0.004699999999999999,
+          "s": 0.09349999999999999,
+          "t": 172.35235532883115,
+          "u": 0.0021600000000000005
+        },
+        "forward_yukawa_artifact": {
+          "V_CKM": {
+            "imag": [
+              [
+                -0.021075106800808,
+                0.035136732330326076,
+                0.002916513311259807
+              ],
+              [
+                0.0322775354867898,
+                -0.05158633104777016,
+                0.014626401431637612
+              ],
+              [
+                -0.002634430293622458,
+                -0.011760738521600898,
+                -0.13810628753754062
+              ]
+            ],
+            "real": [
+              [
+                -0.9983615199144433,
+                0.03969185676376108,
+                0.003402341157797594
+              ],
+              [
+                -0.0421860965126713,
+                -0.9966389212066333,
+                -0.03184766129860623
+              ],
+              [
+                0.0012919630054201992,
+                -0.03318678595956761,
+                0.9897870307385931
+              ]
+            ]
+          },
+          "Y_d": {
+            "imag": [
+              [
+                -8.469032392492673e-05,
+                -0.04469356247073978,
+                0.03061658929677337
+              ],
+              [
+                -0.001988344011406569,
+                0.003194924642756838,
+                0.04791198586575021
+              ],
+              [
+                -0.0009676819844115424,
+                0.004796317114471378,
+                -0.059471442759862325
+              ]
+            ],
+            "real": [
+              [
+                0.0040119161110299196,
+                -0.018444696054507805,
+                0.2504632492273224
+              ],
+              [
+                0.001015080721988674,
+                0.07040928504554975,
+                -1.8986086663126518
+              ],
+              [
+                0.000258935251149727,
+                0.03760118401287332,
+                3.71796617878044
+              ]
+            ]
+          },
+          "Y_u": {
+            "imag": [
+              [
+                0.0,
+                -0.6595080949875203,
+                -0.22197603877932698
+              ],
+              [
+                -0.0009919417678881874,
+                6.814628833822519e-17,
+                6.528135920646223
+              ],
+              [
+                -0.0004959708839440939,
+                0.09669476926225765,
+                -2.6864877063647804e-16
+              ]
+            ],
+            "real": [
+              [
+                0.0017972723209952284,
+                -0.23305927823150263,
+                13.056271841292437
+              ],
+              [
+                0.0004384586490648617,
+                0.9333176005235941,
+                -78.78158312531318
+              ],
+              [
+                0.00011502446975846438,
+                0.5008291361595694,
+                152.59641044700592
+              ]
+            ]
+          },
+          "artifact": "oph_quark_current_family_transport_frame_exact_forward_yukawas",
+          "certification_status": "forward_matrix_certified",
+          "forward_certified": true,
+          "jarlskog": -3.735348679994253e-06,
+          "scope": "current_family_common_refinement_transport_frame_only",
+          "singular_values_d": [
+            0.0046999999999367175,
+            0.09350000000000759,
+            4.182999999999995
+          ],
+          "singular_values_u": [
+            0.002160000710515581,
+            1.2730000000009922,
+            172.35235532883115
+          ]
+        }
+      }
+    },
+    "final_public_theorem_candidate": {
+      "id": "target_free_public_physical_sigma_datum_descent",
+      "selected_public_exact_sigma_datum": {
+        "eta_ud": 1.1388321137934274,
+        "sigma_d": 3.296264198808688,
+        "sigma_seed_ud": 4.4350963126021155,
+        "sigma_u": 5.573928426395543
+      },
+      "selected_public_frame_class": {
+        "representative": {
+          "imag": [
+            [
+              -1.3877787807814457e-17,
+              0.05009425914198984,
+              0.00330779312957997
+            ],
+            [
+              0.05017324446641114,
+              2.7755575615628914e-17,
+              -0.03502914355626323
+            ],
+            [
+              0.002639713781749561,
+              -0.03518891333641638,
+              0.0
+            ]
+          ],
+          "real": [
+            [
+              0.9985839396728717,
+              -0.017337781091391193,
+              0.003023322652421325
+            ],
+            [
+              0.017439941964954978,
+              0.9979730902258549,
+              0.0010790045157064929
+            ],
+            [
+              -0.001281133298986152,
+              -0.0011908447009604676,
+              0.9993756615386034
+            ]
+          ]
+        },
+        "representative_abs_matrix": [
+          [
+            0.9985839396728717,
+            0.053009748652090724,
+            0.004481291694226159
+          ],
+          [
+            0.053117850446222435,
+            0.9979730902258549,
+            0.0350457579320267
+          ],
+          [
+            0.0029341764397066705,
+            0.035209057540633325,
+            0.9993756615386034
+          ]
+        ],
+        "selected_by": "P",
+        "symbol": "[F0^dagger F1]"
+      },
+      "statement": "Let f_P be the physical quark frame class selected by P, represented on the realized quark lane by the explicit same-label common-refinement transport-frame class [F0^dagger F1]. The already-closed restricted sector-attached lift emits a class in Sigma_ud^phys over [F0^dagger F1], and the restricted strengthened lift attaches the exact physical sigma datum (sigma_seed_ud, eta_ud, sigma_u, sigma_d). Because the realized current-family/common-refinement transport-frame section on this selected class is unique up to the defining diagonal (U(1)^3 x U(1)^3) quotient, the emitted Sigma_ud^phys element and attached sigma datum depend only on f_P and not on the chosen declared transport-frame representative. Therefore the exact sigma readout descends uniquely to a target-free public datum on the physical quark frame class selected by P."
+    },
+    "proof_status": "closed_target_free_public_exact_yukawa_end_to_end_theorem",
+    "resolved_by_theorem_artifact": "oph_quark_public_exact_yukawa_end_to_end_theorem",
+    "target_name": "target_free_public_exact_forward_quark_yukawas"
+  },
+  "public_final_theorem_frontier": {
+    "algebraic_consequence_after_closure": {
+      "forced_exact_yukawas": {
+        "V_CKM": {
+          "imag": [
+            [
+              -0.021075106800808,
+              0.035136732330326076,
+              0.002916513311259807
+            ],
+            [
+              0.0322775354867898,
+              -0.05158633104777016,
+              0.014626401431637612
+            ],
+            [
+              -0.002634430293622458,
+              -0.011760738521600898,
+              -0.13810628753754062
+            ]
+          ],
+          "real": [
+            [
+              -0.9983615199144433,
+              0.03969185676376108,
+              0.003402341157797594
+            ],
+            [
+              -0.0421860965126713,
+              -0.9966389212066333,
+              -0.03184766129860623
+            ],
+            [
+              0.0012919630054201992,
+              -0.03318678595956761,
+              0.9897870307385931
+            ]
+          ]
+        },
+        "artifact": "oph_quark_current_family_transport_frame_exact_forward_yukawas",
+        "certification_status": "forward_matrix_certified",
+        "forward_certified": true,
+        "jarlskog": -3.735348679994253e-06,
+        "singular_values_d": [
+          0.0046999999999367175,
+          0.09350000000000759,
+          4.182999999999995
+        ],
+        "singular_values_u": [
+          0.002160000710515581,
+          1.2730000000009922,
+          172.35235532883115
+        ]
+      },
+      "forced_running_values_gev": {
+        "b": 4.182999999999994,
+        "c": 1.2729999999999992,
+        "d": 0.004699999999999999,
+        "s": 0.09349999999999999,
+        "t": 172.35235532883115,
+        "u": 0.0021600000000000005
+      },
+      "statement": "Once the theorem-grade physical sigma datum is public, the affine mean law algebraically emits (g_u, g_d), the ordered three-point readout yields the exact running quark sextet, and the already-closed exact forward construction emits explicit quark Yukawa matrices Y_u and Y_d.",
+      "supporting_algebraic_collapse_artifact": "oph_quark_absolute_readout_algebraic_collapse"
+    },
+    "alternate_upstream_route": {
+      "current_attached_data_obstruction": {
+        "commutator_operator_norm": 0.04861550547372144,
+        "commutator_over_defect": 0.7639462085733872,
+        "commutator_over_defect_squared": 12.004684594077071,
+        "projector_defect_operator_norm": 0.06363734112184061,
+        "reason": "On the displayed level-0/level-1 projector systems, the natural centered operators built from the proxy ordered spectrum have a commutator that is linear in the projector defect rather than quadratic-small, so the displayed current artifacts do not themselves force the transfer lemma."
+      },
+      "id": "oph_generation_bundle_branch_generator_splitting",
+      "smaller_exact_missing_clause": "compression_descendant_commutator_vanishes_or_is_uniformly_quadratic_small_after_central_split",
+      "statement": "On the realized generation bundle, the centered compressed generation-bundle branch generator has a persistent simple spectrum with label-stable one-dimensional Riesz projectors functorial under every refinement intertwiner, and the same-label transport classes are presentation-independent modulo objectwise U(1).",
+      "status": "upstream_alternative_route_currently_deprioritized",
+      "upstream_object": "oph_generation_bundle_branch_generator_splitting",
+      "why_relevant": "If the persistent simple-spectrum splitting theorem closes, the overlap-edge line lift upgrades from candidate readout to public same-label transport class, providing an upstream route into the public same-label physical sigma carrier."
+    },
+    "artifact": "oph_quark_public_strengthened_physical_sigma_lift_frontier",
+    "final_public_theorem_candidate": {
+      "id": "target_free_public_physical_sigma_datum_descent",
+      "induces_global_contract": {
+        "id": "strengthened_quark_physical_sigma_ud_lift",
+        "role": "public_same_label_left_handed_sigma_datum_on_selected_physical_frame_class"
+      },
+      "kind": "public_bridge_descent_of_exact_sigma_readout",
+      "must_emit": {
+        "physical_sigma_datum": {
+          "eta_ud": 1.1388321137934274,
+          "sigma_d": 3.296264198808688,
+          "sigma_seed_ud": 4.4350963126021155,
+          "sigma_u": 5.573928426395543
+        },
+        "sigma_ud_phys_element": "{sigma_id, canonical_token, U_u_left, U_d_left, V_CKM, ckm_invariants}"
+      },
+      "selected_public_exact_sigma_datum": {
+        "eta_ud": 1.1388321137934274,
+        "sigma_d": 3.296264198808688,
+        "sigma_seed_ud": 4.4350963126021155,
+        "sigma_u": 5.573928426395543
+      },
+      "selected_public_frame_class": {
+        "representative": {
+          "imag": [
+            [
+              -1.3877787807814457e-17,
+              0.05009425914198984,
+              0.00330779312957997
+            ],
+            [
+              0.05017324446641114,
+              2.7755575615628914e-17,
+              -0.03502914355626323
+            ],
+            [
+              0.002639713781749561,
+              -0.03518891333641638,
+              0.0
+            ]
+          ],
+          "real": [
+            [
+              0.9985839396728717,
+              -0.017337781091391193,
+              0.003023322652421325
+            ],
+            [
+              0.017439941964954978,
+              0.9979730902258549,
+              0.0010790045157064929
+            ],
+            [
+              -0.001281133298986152,
+              -0.0011908447009604676,
+              0.9993756615386034
+            ]
+          ]
+        },
+        "representative_abs_matrix": [
+          [
+            0.9985839396728717,
+            0.053009748652090724,
+            0.004481291694226159
+          ],
+          [
+            0.053117850446222435,
+            0.9979730902258549,
+            0.0350457579320267
+          ],
+          [
+            0.0029341764397066705,
+            0.035209057540633325,
+            0.9993756615386034
+          ]
+        ],
+        "selected_by": "P",
+        "symbol": "[F0^dagger F1]"
+      },
+      "statement": "Let f_P be the physical quark frame class selected by P, represented on the realized quark lane by the explicit same-label common-refinement transport-frame class [F0^dagger F1]. The already-closed restricted sector-attached lift emits a class in Sigma_ud^phys over [F0^dagger F1], and the restricted strengthened lift attaches the exact physical sigma datum (sigma_seed_ud, eta_ud, sigma_u, sigma_d). Because the realized current-family/common-refinement transport-frame section on this selected class is unique up to the defining diagonal (U(1)^3 x U(1)^3) quotient, the emitted Sigma_ud^phys element and attached sigma datum depend only on f_P and not on the chosen declared transport-frame representative. Therefore the exact sigma readout descends uniquely to a target-free public datum on the physical quark frame class selected by P.",
+      "why_sufficient": "Once this descent holds, the theorem-grade physical sigma datum is intrinsic public data on the selected physical quark frame class. The affine mean law then emits the absolute sector scales algebraically, and the already-closed exact forward construction lifts from the local transport-frame representative to the public selected class."
+    },
+    "proof_status": "closed_target_free_public_physical_sigma_datum_descent",
+    "resolved_by_theorem_artifact": "oph_quark_public_physical_sigma_datum_descent"
+  },
+  "public_promotion_allowed": true,
   "scope": "quark_lane_theorem_boundary_plus_exact_sidecars",
   "selected_local_sheet_status": {
     "proof_status": "closed_current_family_selected_sheet_exact_readout",

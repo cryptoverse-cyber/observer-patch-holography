@@ -1,8 +1,9 @@
 # Exact Fits Only
 
-Generated: `2026-04-03T04:42:24Z`
+Generated: `2026-04-12T17:01:35Z`
 
-This surface lists only exact target-matching diagnostic fits currently on disk. It is narrower than `RESULTS_STATUS.md` and does not promote any compare-only or current-family witness into theorem-grade OPH output.
+This surface lists exact target matches on declared OPH carriers. It separates theorem-grade selected-class outputs from compare-only and carrier-restricted exact surfaces.
+For quarks, the selected-class theorem and its supporting exact carriers coincide with the official PDG 2025 API running-quark target surface.
 
 ## Electroweak Frozen-Target Exact Pair
 
@@ -11,7 +12,7 @@ This surface lists only exact target-matching diagnostic fits currently on disk.
 - Promotable: `false`
 - Source artifact: `code/particles/runs/calibration/d10_ew_w_anchor_neutral_shear_factorization_official_pdg_2025_update.json`
 - Max absolute residual: `0.0`
-- Note: Exact on the frozen-authoritative D10 repair surface. The active public theorem surface remains the target-free source-only emission, which is separate and differs only at the `1e-8 GeV` scale.
+- Note: Exact on the frozen-authoritative D10 repair surface. The public theorem surface is the target-free source-only emission, which is separate and differs only at the `1e-8 GeV` scale.
 
 | Observable | Value | Reference |
 | --- | ---: | ---: |
@@ -25,7 +26,7 @@ This surface lists only exact target-matching diagnostic fits currently on disk.
 - Promotable: `false`
 - Source artifact: `code/particles/runs/calibration/d11_reference_exact_adapter.json`
 - Max absolute residual: `0.0`
-- Note: Exact only as a compare-only inverse slice on the D11 Jacobian. The live predictive D11 branch remains the reference-free forward seed, not this adapter.
+- Note: Exact only as a compare-only inverse slice on the D11 Jacobian. The public D11 branch uses the reference-free forward seed, not this adapter.
 
 | Observable | Value | Reference |
 | --- | ---: | ---: |
@@ -39,13 +40,31 @@ This surface lists only exact target-matching diagnostic fits currently on disk.
 - Promotable: `false`
 - Source artifact: `code/particles/runs/leptons/lepton_current_family_exact_readout.json`
 - Max absolute residual: `1.1102230246251565e-15`
-- Note: Exact on the current ordered charged eigenvalue triple, with a closed ordered-three-point readout theorem inside `current_family_only`, and with the scoped affine coordinate `A_ch_current_family` closed on that same exact family. The live charged theorem lane still does not emit a theorem-grade absolute anchor.
+- Note: Exact on the ordered charged eigenvalue triple, with a closed ordered-three-point readout theorem inside `current_family_only`, and with the scoped affine coordinate `A_ch_current_family` closed on that same exact family. The charged theorem lane does not emit a theorem-grade absolute anchor.
 
 | Observable | Value | Reference |
 | --- | ---: | ---: |
 | `m_e` | `0.0005109989499999994` | `0.0005109989499999999` |
 | `m_mu` | `0.10565837550000004` | `0.10565837550000001` |
 | `m_tau` | `1.7769324651340912` | `1.77693246513409` |
+
+## Quark Selected-Class Exact Theorem
+
+- Fit kind: `selected_class_theorem_grade_exact_forward_quark_closure`
+- Scope: `selected_public_physical_quark_frame_class_only`
+- Promotable: `true`
+- Source artifact: `code/particles/runs/flavor/quark_public_exact_yukawa_end_to_end_theorem.json`
+- Max absolute residual: `5.684341886080802e-14`
+- Note: Exact theorem on the selected public physical quark frame class chosen by `P`. `oph_quark_public_physical_sigma_datum_descent` makes the exact physical sigma datum target-free public on that selected class, and `oph_quark_public_exact_yukawa_end_to_end_theorem` emits the exact PDG 2025 running-quark sextet together with explicit exact forward Yukawas `Y_u` and `Y_d`. The top coordinate uses PDG summary `Q007TP4` rather than the auxiliary direct-top entry `Q007TP`. This is selected-class closure only. It does not claim a global classification of all quark frame classes.
+
+| Observable | Value | Reference |
+| --- | ---: | ---: |
+| `m_u` | `0.0021600000000000005` | `0.00216` |
+| `m_c` | `1.2729999999999992` | `1.273` |
+| `m_t` | `172.35235532883115` | `172.3523553288312` |
+| `m_d` | `0.004699999999999999` | `0.0047` |
+| `m_s` | `0.09349999999999999` | `0.0935` |
+| `m_b` | `4.182999999999994` | `4.183` |
 
 ## Quark Current-Family Exact Witness
 
@@ -54,7 +73,7 @@ This surface lists only exact target-matching diagnostic fits currently on disk.
 - Promotable: `false`
 - Source artifact: `code/particles/runs/flavor/quark_current_family_exact_readout.json`
 - Max absolute residual: `1.1368683772161603e-13`
-- Note: Exact on the current ordered three-point quark family witness, with the internal same-family quadratic readout closed on the fixed carrier and the selected-sheet exact closure packaged on `sigma_ref`; theorem scope remains `current_family_only`, so it does not resolve the wrong-branch D12 CKM no-go or emit `quark_d12_t1_value_law`.
+- Note: Exact on the official PDG 2025 API running-quark target surface on the ordered three-point quark family witness, with the internal same-family quadratic readout closed on the fixed carrier and the selected-sheet exact closure packaged on `sigma_ref`. The top coordinate uses PDG summary `Q007TP4` rather than the auxiliary direct-top entry `Q007TP`. The declared scope is `current_family_only`. A separate restricted theorem chain emits a sector-attached `Sigma_ud^phys` element on the explicit `current_family_common_refinement_transport_frame_only` carrier, and the merged transport-frame theorem reconstructs the same running sextet exactly on `current_family_common_refinement_transport_frame_only`. The declared transport-frame chain also closes explicit exact forward Yukawas `Y_u` and `Y_d` with certification status `forward_matrix_certified`, and the full declared-carrier chain is recorded in `oph_quark_current_family_end_to_end_exact_pdg_derivation_chain`. A separate target-free mass bridge closes `Delta_ud_overlap = (1/6) * log(c_d / c_u)`, equivalently `quark_d12_t1_value_law`, on the emitted D12 ray. A separate public theorem closes on the selected public physical quark frame class chosen by `P`: `oph_quark_public_physical_sigma_datum_descent` makes the exact physical sigma datum target-free public on that selected class, and `oph_quark_public_exact_yukawa_end_to_end_theorem` emits the same exact sextet together with explicit exact forward Yukawas `Y_u` and `Y_d`. This entry remains an exact-fit surface rather than that public selected-class theorem.
 
 | Observable | Value | Reference |
 | --- | ---: | ---: |
@@ -72,7 +91,7 @@ This surface lists only exact target-matching diagnostic fits currently on disk.
 - Promotable: `false`
 - Source artifact: `code/particles/runs/neutrino/neutrino_two_parameter_exact_adapter.json`
 - Max absolute residual: `4.0657581468206416e-20`
-- Note: Exact compare-only fit to both representative PDG central splittings by moving along the already-explicit positive selector segment and then rescaling with one positive `lambda_nu`. It remains diagnostic-only after the emitted weighted-cycle bridge-rigidity and absolute-attachment theorems. On that same exact compare-only branch, the explicit bridge coordinates are `B_nu = 6.69675975` and `C_nu = 0.99952948`, but they remain sidecars and must not feed back into theorem state.
+- Note: Exact compare-only fit to both representative PDG central splittings by moving along the explicit positive selector segment and then rescaling with one positive `lambda_nu`. It is diagnostic-only after the emitted weighted-cycle bridge-rigidity and absolute-attachment theorems. On that same exact compare-only branch, the explicit bridge coordinates are `B_nu = 6.69675975` and `C_nu = 0.99952948`, but they remain sidecars and must not feed back into theorem state.
 
 | Observable | Value | Reference |
 | --- | ---: | ---: |

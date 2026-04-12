@@ -230,6 +230,14 @@ def build_artifact(payload: dict[str, Any]) -> dict[str, Any]:
         "delta_logg_q_status": payload.get("delta_logg_q_status"),
         "sector_mean_split_artifact": payload.get("sector_mean_split_artifact"),
         "sector_mean_split_status": payload.get("sector_mean_split_status"),
+        "even_excitation_source_artifact": payload.get("even_excitation_source_artifact"),
+        "even_excitation_source_status": payload.get("even_excitation_source_status"),
+        "spread_sigma_u_total_log_per_side": payload.get("spread_sigma_u_total_log_per_side"),
+        "spread_sigma_d_total_log_per_side": payload.get("spread_sigma_d_total_log_per_side"),
+        "spread_sigma_source_kind": payload.get("spread_sigma_source_kind"),
+        "constructive_edge_statistics_bridge_artifact": payload.get("constructive_edge_statistics_bridge_artifact"),
+        "constructive_edge_statistics_bridge_status": payload.get("constructive_edge_statistics_bridge_status"),
+        "constructive_edge_statistics_bridge_candidate_sigmas": payload.get("constructive_edge_statistics_bridge_candidate_sigmas"),
         "degenerate_placeholder_fallback_used": payload.get("degenerate_placeholder_fallback_used"),
         "predictive_promotion_allowed": forward_certified,
         "public_surface_candidate_allowed": public_surface_candidate_allowed,
@@ -254,7 +262,7 @@ def build_artifact(payload: dict[str, Any]) -> dict[str, Any]:
         "noncentrality_witness": payload.get("noncentrality_witness"),
         "metadata": {
             **dict(payload.get("metadata", {})),
-            "note": "This artifact stays a sandbox placeholder until the quark descent law closes. The exact reduced even family is already fixed on the current spectrum class; if a current-family spread pair is populated, the builder now emits a real hierarchy candidate, but it remains non-promotable until the spread emitter itself is theorem-fed. Factorized-only mode is allowed, and dense entrywise amplitudes are not promotable in certified quark mode.",
+            "note": "This artifact stays a sandbox placeholder until the quark descent law closes. The exact reduced even family is already fixed on the current spectrum class; if a current-family spread pair is populated, the builder now emits a real hierarchy candidate, but it remains non-promotable until the spread emitter itself is theorem-fed. Factorized-only mode is allowed, and dense entrywise amplitudes are not promotable in certified quark mode. When the spread map carries a direct edge-statistics bridge, this builder preserves that constructive provenance instead of burying it.",
         },
     }
 

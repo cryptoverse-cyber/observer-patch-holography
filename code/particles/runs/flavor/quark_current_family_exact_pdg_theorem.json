@@ -1,0 +1,61 @@
+{
+  "artifact": "oph_quark_current_family_exact_pdg_theorem",
+  "centered_log_shapes": {
+    "E_d_log_exact": [
+      -3.260540130101604,
+      -0.2701412025229759,
+      3.53068133262458
+    ],
+    "E_u_log_exact": [
+      -5.888737130993507,
+      0.4902862458678261,
+      5.39845088512568
+    ]
+  },
+  "current_family_affine_data": {
+    "A_q_current_family": -1.1742812832285385,
+    "delta_q_current_family": 0.9253713569359814
+  },
+  "exact_fit_residuals_gev": {
+    "b": 0.0,
+    "c": -2.220446049250313e-16,
+    "d": -2.6020852139652106e-18,
+    "s": 0.0,
+    "t": 5.684341886080802e-14,
+    "u": 8.673617379884035e-19
+  },
+  "generated_utc": "2026-04-12T16:09:49Z",
+  "next_target_free_bridge": {
+    "note": "This theorem is exact only on the target-anchored current-family witness. Promoting it to a target-free theorem-grade OPH derivation still requires the remaining public frontier.",
+    "remaining_public_frontier": []
+  },
+  "notes": [
+    "This closes the exact current-family PDG-matched running-value reconstruction on the current-family witness.",
+    "It does not by itself prove the stronger target-free physical-sheet quark lane."
+  ],
+  "proof_status": "closed_current_family_exact_pdg_reconstruction",
+  "public_promotion_allowed": false,
+  "reconstructed_current_family_running_values_gev": {
+    "b": 4.182999999999994,
+    "c": 1.2729999999999992,
+    "d": 0.004699999999999999,
+    "s": 0.09349999999999999,
+    "t": 172.35235532883115,
+    "u": 0.0021600000000000005
+  },
+  "reference_current_family_running_values_gev": {
+    "b": 4.182999999999994,
+    "c": 1.2729999999999995,
+    "d": 0.004700000000000002,
+    "s": 0.09349999999999999,
+    "t": 172.3523553288311,
+    "u": 0.0021599999999999996
+  },
+  "supporting_artifacts": {
+    "affine_anchor_theorem": "oph_quark_current_family_affine_anchor_theorem",
+    "exact_readout": "oph_quark_current_family_exact_readout",
+    "lane_closure_contract": "oph_quark_lane_closure_contract"
+  },
+  "theorem_scope": "current_family_only",
+  "theorem_statement": "On the fixed exact current-family quark witness, the exact six running values are reconstructed by the ordered centered shapes and the affine sector data: m_u,m_c,m_t = exp(A_q^(cf) + delta_q^(cf) + E_u^log), m_d,m_s,m_b = exp(A_q^(cf) - delta_q^(cf) + E_d^log). Hence the current-family quark sextet is exact on this witness."
+}

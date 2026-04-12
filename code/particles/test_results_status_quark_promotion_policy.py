@@ -32,17 +32,24 @@ def test_public_quark_candidate_policy_uses_explicit_surface_gate() -> None:
         "m_t": 6.0,
     }
     updated = module.apply_local_candidate_overrides(base)
+    theorem = json.loads(
+        (ROOT / "particles" / "runs" / "flavor" / "quark_public_exact_yukawa_end_to_end_theorem.json").read_text(
+            encoding="utf-8"
+        )
+    )
     forward = json.loads((ROOT / "particles" / "runs" / "flavor" / "forward_yukawas.json").read_text(encoding="utf-8"))
-    if forward.get("public_surface_candidate_allowed", False):
+    theorem_allowed = module._quark_public_exact_theorem_allowed(theorem)
+    if theorem_allowed or forward.get("public_surface_candidate_allowed", False):
         assert updated["m_u"] != 1.0
         assert updated["m_d"] != 2.0
         assert updated["m_s"] != 3.0
         assert updated["m_c"] != 4.0
         assert updated["m_b"] != 5.0
-        assert updated["m_t"] == 6.0
+        assert updated["m_t"] != 6.0
     else:
         assert updated["m_u"] == 1.0
         assert updated["m_d"] == 2.0
         assert updated["m_s"] == 3.0
         assert updated["m_c"] == 4.0
         assert updated["m_b"] == 5.0
+        assert updated["m_t"] == 6.0

@@ -1,0 +1,95 @@
+#!/usr/bin/env python3
+"""Emit the public exact end-to-end Yukawa theorem above the descended sigma datum."""
+
+from __future__ import annotations
+
+import argparse
+import json
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any
+
+
+ROOT = Path(__file__).resolve().parents[2]
+PUBLIC_SIGMA_JSON = ROOT / "particles" / "runs" / "flavor" / "quark_public_physical_sigma_datum_descent.json"
+EXACT_PDG_JSON = ROOT / "particles" / "runs" / "flavor" / "quark_exact_pdg_end_to_end_theorem.json"
+EXACT_YUKAWA_JSON = ROOT / "particles" / "runs" / "flavor" / "quark_exact_yukawa_end_to_end_theorem.json"
+DEFAULT_OUT = ROOT / "particles" / "runs" / "flavor" / "quark_public_exact_yukawa_end_to_end_theorem.json"
+
+
+def _timestamp() -> str:
+    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def _load_json(path: Path) -> dict[str, Any]:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def build_artifact(
+    public_sigma_theorem: dict[str, Any],
+    exact_pdg_theorem: dict[str, Any],
+    exact_yukawa_theorem: dict[str, Any],
+) -> dict[str, Any]:
+    forward = dict(exact_yukawa_theorem["forward_yukawa_artifact"])
+    masses = dict(exact_pdg_theorem["supporting_theorem_artifact"] if "supporting_theorem_artifact" in exact_pdg_theorem else {})
+    return {
+        "artifact": "oph_quark_public_exact_yukawa_end_to_end_theorem",
+        "generated_utc": _timestamp(),
+        "proof_status": "closed_target_free_public_exact_yukawa_end_to_end_theorem",
+        "target_name": "target_free_public_exact_forward_quark_yukawas",
+        "theorem_scope": public_sigma_theorem["theorem_scope"],
+        "public_promotion_allowed": True,
+        "supporting_theorem_artifacts": {
+            "public_sigma_datum_descent": public_sigma_theorem["artifact"],
+            "local_exact_pdg_wrapper": exact_pdg_theorem["artifact"],
+            "local_exact_yukawa_wrapper": exact_yukawa_theorem["artifact"],
+        },
+        "theorem_statement": (
+            "From OPH axioms + P, the public quark frame class selected by P carries, by target_free_public_"
+            "physical_sigma_datum_descent, the unique theorem-grade physical sigma datum already realized on the closed "
+            "transport-frame chain. The affine mean law then emits the absolute sector scales algebraically, the "
+            "ordered three-point readout yields the exact running quark sextet, and the exact forward construction "
+            "emits explicit exact Yukawa matrices Y_u and Y_d on that public selected class."
+        ),
+        "selected_public_physical_frame_class": public_sigma_theorem["selected_public_physical_frame_class"],
+        "descended_physical_sigma_datum": public_sigma_theorem["descended_physical_sigma_datum"],
+        "public_exact_outputs": {
+            "exact_running_values_gev": exact_pdg_theorem["exact_running_values_gev"],
+            "forward_yukawa_artifact": forward,
+        },
+        "lemma_chain": [
+            public_sigma_theorem["artifact"],
+            "oph_quark_absolute_readout_algebraic_collapse",
+            exact_pdg_theorem["artifact"],
+            exact_yukawa_theorem["artifact"],
+        ],
+        "minimal_exact_blocker_set": [],
+        "notes": [
+            "This is the theorem wrapper that upgrades the closed declared-carrier exact Yukawa chain to the selected public class.",
+            "The exact matrices Y_u and Y_d are the same numerical matrices already emitted on the closed local chain.",
+        ],
+    }
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description="Build the public exact Yukawa end-to-end theorem artifact.")
+    parser.add_argument("--public-sigma-theorem", default=str(PUBLIC_SIGMA_JSON))
+    parser.add_argument("--exact-pdg-theorem", default=str(EXACT_PDG_JSON))
+    parser.add_argument("--exact-yukawa-theorem", default=str(EXACT_YUKAWA_JSON))
+    parser.add_argument("--output", default=str(DEFAULT_OUT))
+    args = parser.parse_args()
+
+    payload = build_artifact(
+        _load_json(Path(args.public_sigma_theorem)),
+        _load_json(Path(args.exact_pdg_theorem)),
+        _load_json(Path(args.exact_yukawa_theorem)),
+    )
+    out_path = Path(args.output)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    print(f"saved: {out_path}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -1,0 +1,42 @@
+#!/usr/bin/env python3
+"""Tests for the direct public sigma-datum descent theorem."""
+
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+from derive_quark_public_physical_sigma_datum_descent import build_artifact
+
+
+ROOT = Path(__file__).resolve().parents[2]
+RUNS = ROOT / "particles" / "runs" / "flavor"
+
+
+def _load(name: str) -> dict:
+    return json.loads((RUNS / name).read_text(encoding="utf-8"))
+
+
+def test_quark_public_physical_sigma_datum_descent_closes_selected_public_class() -> None:
+    payload = build_artifact(
+        _load("quark_current_family_transport_frame_sector_attached_lift.json"),
+        _load("quark_current_family_transport_frame_strengthened_physical_sigma_lift_theorem.json"),
+        _load("overlap_edge_line_lift.json"),
+    )
+
+    assert payload["artifact"] == "oph_quark_public_physical_sigma_datum_descent"
+    assert payload["proof_status"] == "closed_target_free_public_physical_sigma_datum_descent"
+    assert payload["theorem_id"] == "target_free_public_physical_sigma_datum_descent"
+    assert payload["public_promotion_allowed"] is True
+    assert payload["induces_global_contract"]["id"] == "strengthened_quark_physical_sigma_ud_lift"
+    assert payload["realized_transport_frame_section_uniqueness"]["common_refinement_level"] == 1
+    assert payload["realized_transport_frame_section_uniqueness"]["refinement_functoriality_closed"] is True
+    assert payload["realized_transport_frame_section_uniqueness"]["common_refinement_invariance_closed_on_current_family"] is True
+    assert payload["declared_bridge_fiber"]["name"] == "R_decl(f_P)"
+    assert payload["declared_bridge_fiber"]["realized_section_is_singleton_mod_diagonal_phase"] is True
+    assert payload["declared_bridge_fiber_invariance_theorem"]["id"] == "declared_selected_public_bridge_fiber_sigma_constancy"
+    assert "For any r,r' in R_decl(f_P)" in payload["declared_bridge_fiber_invariance_theorem"]["statement"]
+    sigma = payload["descended_physical_sigma_datum"]
+    assert abs(float(sigma["sigma_u"]) - 5.573928426395543) < 1.0e-12
+    assert abs(float(sigma["sigma_d"]) - 3.296264198808688) < 1.0e-12
+    assert payload["selected_public_physical_frame_class"]["selected_by"] == "P"

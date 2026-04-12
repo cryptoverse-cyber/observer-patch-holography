@@ -1,0 +1,86 @@
+{
+  "artifact": "oph_quark_current_family_affine_anchor_theorem",
+  "centered_log_shapes_exact": {
+    "E_d_log_exact": [
+      -3.260540130101604,
+      -0.2701412025229759,
+      3.53068133262458
+    ],
+    "E_u_log_exact": [
+      -5.888737130993507,
+      0.4902862458678261,
+      5.39845088512568
+    ]
+  },
+  "current_family_affine_anchor": {
+    "formula": "(1/2) * (log(g_u) + log(g_d)) = log(sqrt(g_u * g_d))",
+    "name": "A_q_current_family",
+    "value": -1.1742812832285385
+  },
+  "current_family_sector_means": {
+    "g_d_exact": 0.12249897208633505,
+    "g_u_exact": 0.7796501962057188,
+    "reconstructed_g_d": 0.12249897208633505,
+    "reconstructed_g_u": 0.7796501962057188
+  },
+  "current_family_sector_split": {
+    "formula": "(1/2) * (log(g_u) - log(g_d))",
+    "name": "delta_q_current_family",
+    "value": 0.9253713569359814
+  },
+  "current_family_shared_sector_mean": {
+    "formula": "exp(A_q_current_family) = sqrt(g_u * g_d)",
+    "name": "g_q_current_family",
+    "value": 0.3090410128479875
+  },
+  "do_not_claim_now": [
+    "theorem-grade target-free A_q^phys on the live quark theorem lane",
+    "theorem-grade physical-sheet promotion of the current-family affine anchor"
+  ],
+  "exact_fit_residuals": {
+    "d_sector": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "u_sector": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "generated_utc": "2026-04-12T16:09:49Z",
+  "notes": [
+    "This closes the exact affine coordinate on the target-anchored current-family quark witness.",
+    "It does not promote Theta_ud^abs, which still requires a target-free physical-sheet carrier A_q^phys."
+  ],
+  "predicted_singular_values_exact": {
+    "d_sector": [
+      0.004700000000000002,
+      0.09349999999999999,
+      4.182999999999994
+    ],
+    "u_sector": [
+      0.0021599999999999996,
+      1.2729999999999995,
+      172.3523553288311
+    ]
+  },
+  "proof_status": "closed_current_family_affine_anchor",
+  "public_promotion_allowed": false,
+  "reconstructed_from_affine_anchor": {
+    "d_sector": [
+      0.004700000000000002,
+      0.09349999999999999,
+      4.182999999999994
+    ],
+    "u_sector": [
+      0.0021599999999999996,
+      1.2729999999999995,
+      172.3523553288311
+    ]
+  },
+  "supporting_exact_readout_artifact": "oph_quark_current_family_exact_readout",
+  "theorem_scope": "current_family_only",
+  "theorem_statement": "On the fixed exact current-family quark witness, the unique common affine coordinate is A_q^(cf) = (1/2) * (log g_u + log g_d) = log(sqrt(g_u g_d)). Equivalently delta_q^(cf) = (1/2) * (log g_u - log g_d), so g_u = exp(A_q^(cf) + delta_q^(cf)) and g_d = exp(A_q^(cf) - delta_q^(cf)). Together with the exact centered ordered shapes E_u^log and E_d^log, this reconstructs the exact current-family quark sextet."
+}

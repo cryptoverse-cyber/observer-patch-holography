@@ -99,7 +99,7 @@
     "e2": "(gamma21_q - gamma32_q)/3",
     "e3": "(gamma21_q + 2*gamma32_q)/3"
   },
-  "generated_utc": "2026-04-03T04:43:00Z",
+  "generated_utc": "2026-04-12T16:09:49Z",
   "input_kind": "ordered_branch_generator_spectral_package",
   "kappa_d_log_per_side": null,
   "kappa_u_log_per_side": null,
@@ -122,6 +122,12 @@
     "skew_denominator": 0.6153378885446816
   },
   "metadata": {
+    "constructive_edge_statistics_bridge_artifact": "oph_quark_edge_statistics_spread_candidate",
+    "constructive_edge_statistics_bridge_candidate_sigmas": {
+      "sigma_d_total_log_per_side": 3.4210589139721543,
+      "sigma_u_total_log_per_side": 5.578418804072826
+    },
+    "constructive_edge_statistics_bridge_status": "candidate_only",
     "note": "The spread map now prefers the inverse affine readback from the closed current-family mean surface. When that mean surface is present, the spread-emitter lane is theorem-fed rather than diagnostic-seeded. The remaining exactness audit is isolated to the unique trace-zero quadratic residual basis Q_ord on the same ordered three-point surface; otherwise it falls back to the older reference-free candidate route.",
     "odd_response_artifact": "oph_quark_odd_response_law",
     "sector_mean_split_artifact": "oph_quark_sector_mean_split"

@@ -6,7 +6,7 @@ This directory is the canonical particle-spectrum code path for OPH inside
 ## Scope
 
 The goal is to keep one auditable derivation surface from the OPH inputs
-already derived in the papers to the emitted particle-spectrum artifacts used by
+derived in the papers to the emitted particle-spectrum artifacts used by
 the particle paper:
 
 - electroweak calibration
@@ -34,7 +34,7 @@ part of this canonical tree.
 - [particle_mass_derivation_graph.svg](/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/code/particles/particle_mass_derivation_graph.svg)
 - [task_tracker.yaml](/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/code/particles/task_tracker.yaml)
 
-## Current High-Level Chain
+## High-Level Chain
 
 - electroweak calibration:
   `calibration/derive_d10_ew_observable_family.py ->
@@ -98,26 +98,67 @@ part of this canonical tree.
 - derivation graph:
   [particle_mass_derivation_graph.svg](/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/code/particles/particle_mass_derivation_graph.svg)
 
-## Current Quark Boundary
+## Quark Closure Surface
 
 - maximal theorem-emitted package artifact:
   [quark_maximal_theorem_emitted_package.json](/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/code/particles/runs/flavor/quark_maximal_theorem_emitted_package.json)
-- present-premise no-go artifact:
-  [quark_current_premise_no_go_theorem.json](/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/code/particles/runs/flavor/quark_current_premise_no_go_theorem.json)
-- minimal-extension closure artifact:
-  [quark_minimal_extension_closure_theorem.json](/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/code/particles/runs/flavor/quark_minimal_extension_closure_theorem.json)
+- target-free mass bridge artifacts:
+  [light_quark_overlap_defect_value_law.json](/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/code/particles/runs/flavor/light_quark_overlap_defect_value_law.json)
+  and
+  [quark_d12_t1_value_law.json](/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/code/particles/runs/flavor/quark_d12_t1_value_law.json)
+- physical-sheet contract artifact:
+  [quark_lane_closure_contract.json](/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/code/particles/runs/flavor/quark_lane_closure_contract.json)
+- algebraic-collapse artifact:
+  [quark_absolute_readout_algebraic_collapse.json](/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/code/particles/runs/flavor/quark_absolute_readout_algebraic_collapse.json)
+- exact `current_family_only` PDG witness:
+  [quark_current_family_exact_pdg_theorem.json](/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/code/particles/runs/flavor/quark_current_family_exact_pdg_theorem.json)
+- restricted current-family common-refinement transport-frame sector-attached lift:
+  [quark_current_family_transport_frame_sector_attached_lift.json](/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/code/particles/runs/flavor/quark_current_family_transport_frame_sector_attached_lift.json)
+- restricted current-family common-refinement transport-frame physical sigma lift theorem:
+  [quark_current_family_transport_frame_physical_sigma_lift_theorem.json](/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/code/particles/runs/flavor/quark_current_family_transport_frame_physical_sigma_lift_theorem.json)
+- restricted current-family common-refinement transport-frame strengthened physical sigma lift theorem:
+  [quark_current_family_transport_frame_strengthened_physical_sigma_lift_theorem.json](/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/code/particles/runs/flavor/quark_current_family_transport_frame_strengthened_physical_sigma_lift_theorem.json)
+- restricted current-family common-refinement transport-frame absolute sector readout theorem:
+  [quark_current_family_transport_frame_absolute_sector_readout_theorem.json](/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/code/particles/runs/flavor/quark_current_family_transport_frame_absolute_sector_readout_theorem.json)
+- restricted current-family common-refinement transport-frame exact PDG completion:
+  [quark_current_family_transport_frame_exact_pdg_completion.json](/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/code/particles/runs/flavor/quark_current_family_transport_frame_exact_pdg_completion.json)
+- restricted current-family common-refinement transport-frame exact forward Yukawas:
+  [quark_current_family_transport_frame_exact_forward_yukawas.json](/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/code/particles/runs/flavor/quark_current_family_transport_frame_exact_forward_yukawas.json)
+- restricted current-family common-refinement end-to-end exact PDG derivation chain:
+  [quark_current_family_end_to_end_exact_pdg_derivation_chain.json](/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/code/particles/runs/flavor/quark_current_family_end_to_end_exact_pdg_derivation_chain.json)
+- public exact physical sigma-datum descent theorem:
+  [quark_public_physical_sigma_datum_descent.json](/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/code/particles/runs/flavor/quark_public_physical_sigma_datum_descent.json)
+- public exact end-to-end Yukawa theorem:
+  [quark_public_exact_yukawa_end_to_end_theorem.json](/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/code/particles/runs/flavor/quark_public_exact_yukawa_end_to_end_theorem.json)
+- public exact Yukawa promotion frontier:
+  [quark_public_exact_yukawa_promotion_frontier.json](/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/code/particles/runs/flavor/quark_public_exact_yukawa_promotion_frontier.json)
+- selected-class public closure summary:
+  [quark_public_strengthened_physical_sigma_lift_frontier.json](/Users/muellerberndt/Projects/oph-meta/reverse-engineering-reality/code/particles/runs/flavor/quark_public_strengthened_physical_sigma_lift_frontier.json)
 
-These artifacts fix the current quark theorem boundary. On the present premise
-set, the maximal theorem-emitted package consists of the D12 mass ray, the
-negative selector `sigma_ref`, and the restricted-scope affine mean package
-with `g_ch = 0.9231656602589082` on `shared_budget_only` and
+These artifacts fix the quark claim boundary on the local code surface. The
+maximal theorem-emitted package consists of the D12 mass ray, the negative
+selector `sigma_ref`, and the restricted-scope affine mean package with
+`g_ch = 0.9231656602589082` on `shared_budget_only` and
 `(g_u, g_d) = (0.7797392875757557, 0.12172551081512113)` on
-`current_family_only`. The stronger physical closure objects
-`Theta_ud^mass`, `Theta_ud^phys`, and `Theta_ud^abs` are absent on that
-ledger. The exact minimal extension triple above that package is
-`H_mass : ell_ud = log(c_d / c_u)`,
-`H_phys : s_ud^phys : M_ud^{CR,phys} -> Sigma_ud^phys`, and
-`H_abs : A_q^phys : Sigma_ud^phys -> R`.
+`current_family_only`. A separate target-free mass bridge internalizes
+`Delta_ud^overlap = (1/6) * log(c_d / c_u)`, equivalently
+`quark_d12_t1_value_law`, on the emitted D12 ray. The exact six-mass witness
+closes on `current_family_only` and matches the official PDG 2025 API running
+quark reference sextet exactly on that declared surface; its top coordinate is
+the PDG 2025 cross-section mass entry rather than the auxiliary direct-top
+entry. A separate restricted theorem chain on the explicit
+`current_family_common_refinement_transport_frame_only` carrier emits a
+sector-attached `Sigma_ud^phys` element, the exact physical sigma datum, the
+restricted absolute sector readout, the same sextet, and explicit exact
+forward Yukawas `Y_u` and `Y_d`. The declared end-to-end exact chain closes on
+that carrier. A separate direct public descent theorem closes on the selected
+public physical quark frame class chosen by `P`: the exact physical sigma
+datum becomes target-free public on that selected class, the affine mean law
+emits `(g_u, g_d)` algebraically, and the exact forward construction emits the
+same sextet together with explicit exact forward Yukawas `Y_u` and `Y_d`. This
+is selected-class closure only. It does not claim a global classification of
+all quark frame classes. The upstream generation-bundle transfer route is an
+alternative route, not a blocker on this selected-class surface.
 
 ## Typical Rebuild
 
@@ -145,7 +186,7 @@ python3 scripts/generate_mass_derivation_svg.py
 ## One-Shot CLI Table
 
 For a disposable runtime rebuild that re-runs the active D10/D11/UV builders,
-stages the current canonical flavor/lepton/neutrino public-surface artifacts,
+stages the canonical flavor/lepton/neutrino public-surface artifacts,
 and prints the resulting particle status table directly in the terminal:
 
 ```bash

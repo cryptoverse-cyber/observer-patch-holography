@@ -30,8 +30,34 @@
       0.0,
       0.06715870378831591
     ],
-    "tau_d_log_per_side": -0.06715870378831591,
-    "tau_u_log_per_side": 0.06715870378831591
+    "tau_d_log_per_side_note": "weighted transport tau_d depends on the chosen sigma branch and is recorded separately",
+    "tau_u_log_per_side_note": "weighted transport tau_u depends on the chosen sigma branch and is recorded separately"
+  },
+  "closed_weighted_transport_by_sigma_branch": {
+    "edge_statistics_bridge_sigma_pair": {
+      "Lambda_ud_B_transport": 0.14241530644150724,
+      "provider_artifact": "oph_quark_edge_statistics_spread_candidate",
+      "provider_status": "candidate_only",
+      "sigma_d_total_log_per_side": 3.4210589139721543,
+      "sigma_source_kind": "shared_edge_suppression_plus_ordered_gap",
+      "sigma_u_total_log_per_side": 5.578418804072826,
+      "tau_d_log_per_side": 0.04162901312802894,
+      "tau_ratio_minus_sigma_ratio": 0.0,
+      "tau_sum_half_delta_identity": 0.0,
+      "tau_u_log_per_side": 0.02552969066028697
+    },
+    "main_builder_sigma_pair": {
+      "Lambda_ud_B_transport": 0.139490874973425,
+      "provider_artifact": "oph_family_excitation_spread_map",
+      "provider_status": "closed",
+      "sigma_d_total_log_per_side": 3.3049,
+      "sigma_source_kind": "theorem_grade_mean_surface_readback",
+      "sigma_u_total_log_per_side": 5.5905,
+      "tau_d_log_per_side": 0.04220729068154104,
+      "tau_ratio_minus_sigma_ratio": 2.220446049250313e-16,
+      "tau_sum_half_delta_identity": 1.3877787807814457e-17,
+      "tau_u_log_per_side": 0.024951413106774883
+    }
   },
   "closure_surface": "mass_side_numeric_package_closed_ckm_branch_open",
   "coefficient_ratio": {
@@ -54,11 +80,12 @@
     "d": 0.005121438948009003,
     "u": 0.002287663517422587
   },
-  "generated_utc": "2026-04-03T04:42:59Z",
+  "generated_utc": "2026-04-12T16:09:49Z",
   "notes": [
     "The numeric closure uses only the emitted reference-free forward light-quark pair and the explicit continuation assumptions listed in this artifact.",
     "No target masses or CKM data are used to fix the mass-side scalar package on this sidecar surface.",
-    "The closed values belong to a continuation-only internal backread surface rather than to the public theorem-grade quark lane."
+    "The closed values belong to a continuation-only internal backread surface rather than to the public theorem-grade quark lane.",
+    "This sidecar now distinguishes the pure-B source payload pair beta/source_readback from the weighted transport pair tau/Lambda, which depends additionally on the chosen sigma branch."
   ],
   "proof_status": "internal_backread_mass_side_continuation_closed",
   "public_promotion_allowed": false,

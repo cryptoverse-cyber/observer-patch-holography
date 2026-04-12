@@ -1,5 +1,5 @@
 version: 1
-as_of: "2026-03-24"
+as_of: "2026-04-12"
 goal: "full particle zoo at high precision from calibrated P plus OPH axioms/theorem chain"
 notes:
   - "This is an initial machine-readable claim ledger scaffold."
@@ -73,14 +73,13 @@ entries:
       ["papers.compact.e.29-derive-the-yukawa-excitation-dictionary", "papers.compact.e.30-replace-koide-assisted-lepton-fitting-with-a-theorem"]
   - id: continuation.flavor.quarks
     output_keys: ["m_u", "m_d", "m_s", "m_c", "m_b", "m_t"]
-    label: "Quark texture branch"
-    tier: continuation
+    label: "Selected-class exact quark theorem"
+    tier: selected_class_theorem
     branch: D12
-    oph_derived_piece: "upstream structural backdrop only"
-    borrowed_qft_piece: "QCD/EW matching"
-    extra_ansatz: "texture class, integer exponents, order-one residuals"
-    blocked_by:
-      ["papers.compact.e.29-derive-the-yukawa-excitation-dictionary", "papers.compact.e.31-derive-quark-textures-ckm-mixing-and-cp-from-overlap-defects"]
+    oph_derived_piece: "target-free D12 mass bridge plus direct public sigma-datum descent on the physical quark frame class selected by P"
+    borrowed_qft_piece: "QCD/EW running-mass comparison surface only"
+    extra_ansatz: "selected-class closure only; no global classification of all quark frame classes"
+    blocked_by: []
   - id: continuation.flavor.ckm_cp
     output_keys: ["ckm_matrix", "ckm_cp_phase"]
     label: "CKM and CP"

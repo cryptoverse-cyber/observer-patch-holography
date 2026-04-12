@@ -38,3 +38,11 @@ def test_quark_d12_internal_backread_sidecar_closes_mass_side_without_moving_pub
     assert math.isclose(source["beta_u_diag_B_source"], -source["beta_d_diag_B_source"], rel_tol=0.0, abs_tol=1.0e-15)
     assert source["source_readback_u_log_per_side"][1] == 0.0
     assert source["source_readback_d_log_per_side"][1] == 0.0
+    assert "weighted transport tau_u depends on the chosen sigma branch" in source["tau_u_log_per_side_note"]
+    weighted = payload["closed_weighted_transport_by_sigma_branch"]
+    main_branch = weighted["main_builder_sigma_pair"]
+    edge_branch = weighted["edge_statistics_bridge_sigma_pair"]
+    assert main_branch["provider_artifact"] == "oph_family_excitation_spread_map"
+    assert edge_branch["provider_artifact"] == "oph_quark_edge_statistics_spread_candidate"
+    assert math.isclose(main_branch["tau_sum_half_delta_identity"], 0.0, abs_tol=1.0e-15)
+    assert math.isclose(edge_branch["tau_sum_half_delta_identity"], 0.0, abs_tol=1.0e-15)

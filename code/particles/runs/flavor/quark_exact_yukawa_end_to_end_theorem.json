@@ -1,0 +1,145 @@
+{
+  "artifact": "oph_quark_exact_yukawa_end_to_end_theorem",
+  "forward_yukawa_artifact": {
+    "V_CKM": {
+      "imag": [
+        [
+          -0.021075106800808,
+          0.035136732330326076,
+          0.002916513311259807
+        ],
+        [
+          0.0322775354867898,
+          -0.05158633104777016,
+          0.014626401431637612
+        ],
+        [
+          -0.002634430293622458,
+          -0.011760738521600898,
+          -0.13810628753754062
+        ]
+      ],
+      "real": [
+        [
+          -0.9983615199144433,
+          0.03969185676376108,
+          0.003402341157797594
+        ],
+        [
+          -0.0421860965126713,
+          -0.9966389212066333,
+          -0.03184766129860623
+        ],
+        [
+          0.0012919630054201992,
+          -0.03318678595956761,
+          0.9897870307385931
+        ]
+      ]
+    },
+    "Y_d": {
+      "imag": [
+        [
+          -8.469032392492673e-05,
+          -0.04469356247073978,
+          0.03061658929677337
+        ],
+        [
+          -0.001988344011406569,
+          0.003194924642756838,
+          0.04791198586575021
+        ],
+        [
+          -0.0009676819844115424,
+          0.004796317114471378,
+          -0.059471442759862325
+        ]
+      ],
+      "real": [
+        [
+          0.0040119161110299196,
+          -0.018444696054507805,
+          0.2504632492273224
+        ],
+        [
+          0.001015080721988674,
+          0.07040928504554975,
+          -1.8986086663126518
+        ],
+        [
+          0.000258935251149727,
+          0.03760118401287332,
+          3.71796617878044
+        ]
+      ]
+    },
+    "Y_u": {
+      "imag": [
+        [
+          0.0,
+          -0.6595080949875203,
+          -0.22197603877932698
+        ],
+        [
+          -0.0009919417678881874,
+          6.814628833822519e-17,
+          6.528135920646223
+        ],
+        [
+          -0.0004959708839440939,
+          0.09669476926225765,
+          -2.6864877063647804e-16
+        ]
+      ],
+      "real": [
+        [
+          0.0017972723209952284,
+          -0.23305927823150263,
+          13.056271841292437
+        ],
+        [
+          0.0004384586490648617,
+          0.9333176005235941,
+          -78.78158312531318
+        ],
+        [
+          0.00011502446975846438,
+          0.5008291361595694,
+          152.59641044700592
+        ]
+      ]
+    },
+    "artifact": "oph_quark_current_family_transport_frame_exact_forward_yukawas",
+    "certification_status": "forward_matrix_certified",
+    "forward_certified": true,
+    "jarlskog": -3.735348679994253e-06,
+    "scope": "current_family_common_refinement_transport_frame_only",
+    "singular_values_d": [
+      0.0046999999999367175,
+      0.09350000000000759,
+      4.182999999999995
+    ],
+    "singular_values_u": [
+      0.002160000710515581,
+      1.2730000000009922,
+      172.35235532883115
+    ]
+  },
+  "generated_utc": "2026-04-12T16:09:49Z",
+  "minimal_exact_blocker_set": [],
+  "notes": [
+    "This is the single theorem wrapper above the exact forward Yukawa package on the declared carrier.",
+    "It does not claim target-free public physical-sheet promotion."
+  ],
+  "proof_status": "closed_current_family_exact_yukawa_end_to_end_theorem",
+  "public_promotion_allowed": false,
+  "strengthening_above_target": {
+    "name": "target_free_public_physical_sheet_yukawa_promotion",
+    "note": "This theorem closes the exact forward Yukawa package only on the declared current-family/common-refinement transport-frame carrier. Promoting it to a target-free public physical-sheet theorem remains a separate strengthening question.",
+    "status": "separate_question"
+  },
+  "supporting_theorem_artifact": "oph_quark_current_family_transport_frame_exact_yukawa_theorem",
+  "target_name": "exact_forward_quark_yukawas_on_declared_current_family_transport_frame",
+  "theorem_scope": "current_family_common_refinement_transport_frame_only",
+  "theorem_statement": "On the explicit current-family/common-refinement transport-frame chain internalized on the code surface, the OPH bridge theorem, strengthened transport-frame physical sigma lift, algebraic absolute readout, exact running-value completion, and exact forward-Yukawa emission jointly derive explicit quark Yukawa matrices Y_u and Y_d."
+}

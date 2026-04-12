@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_INPUT = ROOT / "particles" / "runs" / "flavor" / "family_excitation_evaluator.json"
 DEFAULT_ODD_RESPONSE = ROOT / "particles" / "runs" / "flavor" / "quark_odd_response_law.json"
 DEFAULT_SECTOR_MEAN_SPLIT = ROOT / "particles" / "runs" / "flavor" / "quark_sector_mean_split.json"
+DEFAULT_EDGE_STATS_CANDIDATE = ROOT / "particles" / "runs" / "flavor" / "quark_edge_statistics_spread_candidate.json"
 DEFAULT_OUT = ROOT / "particles" / "runs" / "flavor" / "quark_spread_map.json"
 
 
@@ -137,6 +138,7 @@ def main() -> int:
     parser.add_argument("--input", default=str(DEFAULT_INPUT))
     parser.add_argument("--odd-response-law", default=str(DEFAULT_ODD_RESPONSE))
     parser.add_argument("--sector-mean-split", default=str(DEFAULT_SECTOR_MEAN_SPLIT))
+    parser.add_argument("--edge-stats-candidate", default=str(DEFAULT_EDGE_STATS_CANDIDATE))
     parser.add_argument("--output", default=str(DEFAULT_OUT))
     args = parser.parse_args()
 
@@ -145,6 +147,12 @@ def main() -> int:
     odd_response = json.loads(odd_response_path.read_text(encoding="utf-8")) if odd_response_path.exists() else None
     sector_mean_split_path = Path(args.sector_mean_split)
     sector_mean_split = json.loads(sector_mean_split_path.read_text(encoding="utf-8")) if sector_mean_split_path.exists() else None
+    edge_stats_candidate_path = Path(args.edge_stats_candidate)
+    edge_stats_candidate = (
+        json.loads(edge_stats_candidate_path.read_text(encoding="utf-8"))
+        if edge_stats_candidate_path.exists()
+        else None
+    )
     rho = float(payload.get("rho_ord"))
     x2 = float(payload["family_coordinate_x"][1])
     denom = 3.0 * (1.0 + rho)
@@ -271,6 +279,15 @@ def main() -> int:
         "metadata": {
             "odd_response_artifact": None if odd_response is None else odd_response.get("artifact"),
             "sector_mean_split_artifact": None if sector_mean_split is None else sector_mean_split.get("artifact"),
+            "constructive_edge_statistics_bridge_artifact": (
+                None if edge_stats_candidate is None else edge_stats_candidate.get("artifact")
+            ),
+            "constructive_edge_statistics_bridge_status": (
+                None if edge_stats_candidate is None else edge_stats_candidate.get("bridge_status")
+            ),
+            "constructive_edge_statistics_bridge_candidate_sigmas": (
+                None if edge_stats_candidate is None else edge_stats_candidate.get("candidate_sigmas")
+            ),
             "note": (
                 "The spread map now prefers the inverse affine readback from the closed current-family mean surface. "
                 "When that mean surface is present, the spread-emitter lane is theorem-fed rather than diagnostic-seeded. "

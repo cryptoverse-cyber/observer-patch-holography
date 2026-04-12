@@ -47,7 +47,7 @@ In 1905, Einstein explained the photoelectric effect. When light hits metal, ele
 
 Einstein's explanation: light really does come in packets. A photon of frequency f carries energy hf. One photon kicks out one electron. The photon's frequency determines the electron's energy.
 
-This was radical. For two centuries, physicists had proven that light was a wave. Young's double-slit experiment showed interference patterns. Maxwell's equations described electromagnetic waves. And now Einstein was saying light was particles?
+This was radical. For two centuries, physicists had proven that light was a wave. Young's double-slit experiment showed interference patterns. Maxwell's equations described electromagnetic waves. Einstein was saying light was particles?
 
 Both were true. Light is neither purely wave nor purely particle. It's something new that exhibits both behaviors depending on how you probe it.
 
@@ -129,7 +129,7 @@ $$i\hbar \gamma^\mu \partial_\mu \psi - mc\psi = 0$$
 
 The equation had a problem: it predicted states with negative energy. An electron could fall into these states, releasing infinite energy.
 
-Dirac's solution was audacious. The negative energy states are already filled. The vacuum is a sea of negative-energy electrons. What we call a "positron" is a hole in this sea.
+Dirac's solution was audacious. The negative energy states are filled. The vacuum is a sea of negative-energy electrons. What we call a "positron" is a hole in this sea.
 
 This prediction was confirmed in 1932 when Carl Anderson photographed positron tracks in a cloud chamber. Antimatter exists.
 
@@ -271,7 +271,7 @@ Lee and Yang had predicted this. Wu proved it. Parity violation earned Lee and Y
 
 Chirality has major implications:
 
-1. **Neutrinos are very light**: If neutrinos were exactly massless, only left-handed neutrinos would participate in the weak interaction. We now know neutrinos have tiny masses, so massive neutrino propagation mixes left- and right-handed components, while the weak interaction still acts only on the left-chiral fields.
+1. **Neutrinos are very light**: If neutrinos were exactly massless, only left-handed neutrinos would participate in the weak interaction. Neutrinos have tiny masses, so massive neutrino propagation mixes left- and right-handed components, while the weak interaction still acts only on the left-chiral fields.
 
 2. **CP violation**: The asymmetry between matter and antimatter requires both C (charge conjugation) and P (parity) violation. The weak force provides both.
 
@@ -483,7 +483,7 @@ $$b_{SU(2)} = \frac{1}{3}[22 - N_g(N_c + 1)]$$
 
 For $b_{SU(2)} > 0$ (asymptotic freedom): $N_g(N_c + 1) < 22$.
 
-Since the color-type requirement already forces $N_c \ge 3$, we have $N_c + 1 \ge 4$:
+Since the color-type requirement forces $N_c \ge 3$, we have $N_c + 1 \ge 4$:
 
 $$4 N_g < 22 \implies N_g \le 5$$
 
@@ -545,7 +545,7 @@ For the book, the picture is this:
 | Electroweak exact sidecar | Exact frozen-repair `W/Z` pair | Compare-only beneath the target-free electroweak theorem |
 | Higgs/top forward branch | Closed one-scalar forward seed for the public Higgs/top rows, plus an exact Higgs/top inverse pair | The public Higgs/top rows are secondary quantitative forward outputs; the inverse pair is compare-only |
 | Charged exact witness | Exact same-family `(e, μ, τ)` triple, with the affine coordinate closed on that fixed witness | Same-family-only; the remaining public boundary is the final charged-lepton promotion and absolute-normalization step |
-| Quark exact witness | Exact same-family `(u, d, s, c, b, t)` sextet on the selected continuation branch | Same-family-only. The public theorem surface emits a continuation ray together with restricted-scope affine-mean data. Completing the quark story requires three further ingredients: mass-ratio, physical-sheet, and absolute-normalization data. A continuation-only internal backread sidecar fixes the scalar package numerically without removing the wrong CKM branch |
+| Quark selected-class theorem | Exact running `(u, d, s, c, b, t)` sextet plus explicit exact forward Yukawas `Y_u`,`Y_d` on the selected public quark frame class `f_P` | Selected-class closure only. The sextet matches the official PDG 2025 API running-quark surface exactly, with the top coordinate taken from the PDG cross-section entry. Supporting exact surfaces: the same-family witness on `current_family_only` and the restricted common-refinement transport-frame exact chain realize the same sextet and explicit exact forward Yukawas. The target-free mass bridge closes separately on the emitted D12 mass ray. The historical selector `sigma_ref` is a lower negative sheet statement beneath the selected-class theorem. No global classification of all quark frame classes is claimed. A stronger class-uniform public descent theorem is separate and is not claimed. |
 | Neutrino theorem branch | Emitted weighted-cycle `(m1, m2, m3)` and emitted weighted-cycle splittings | The theorem lane is carried by the emitted bridge-rigidity and absolute-attachment pair; the older exact adapter remains diagnostic-only |
 | Hard frontier | Hadrons | Compute-bound behind the production backend bundle and nonperturbative strong-dynamics work |
 
@@ -605,7 +605,7 @@ Not directly, and for good reason. The proton mass is a qualitatively different 
 
 The photon and graviton masses are symmetry-protected zeros. Their values are fixed by the algebraic structure of the theory-any deviation would break a required redundancy. The argument is exact and does not depend on knowing coupling constants or solving difficult equations.
 
-Not all mass claims have the same character. The cleanest results are the symmetry-protected zeros: photon, gluons, and graviton. The next easiest are masses tied closely to electroweak structure, such as the $W$ and $Z$. The Higgs/top lane and the neutrino lane lie on explicit quantitative branches, while quarks remain on narrower continuation surfaces. Hadrons are hardest because they require solving the full strongly coupled dynamics of bound states.
+Not all mass claims have the same character. The cleanest results are the symmetry-protected zeros: photon, gluons, and graviton. The next easiest are masses tied closely to electroweak structure, such as the $W$ and $Z$. The Higgs/top lane and the neutrino lane lie on explicit quantitative branches, and the quark lane closes on the selected public quark frame class `f_P` with exact running masses and explicit exact forward Yukawas. Hadrons are hardest because they require solving the full strongly coupled dynamics of bound states.
 
 The proton mass is a bound-state eigenvalue in a strongly coupled gauge theory. The proton is made of three quarks held together by gluons, and its mass emerges from the complicated nonperturbative dynamics of quantum chromodynamics. The dominant contribution is not the masses of the constituent quarks (which sum to only about 10 MeV) but the energy stored in the gluon field and the kinetic energy of the quarks bouncing around inside.
 
@@ -671,7 +671,7 @@ Let's step back and see what the framework actually accounts for.
 
 **The zeros.** The photon and graviton masses are exactly zero. This is a symmetry-protected prediction. The photon's masslessness follows from U(1) gauge invariance being a genuine overlap redundancy; any mass would break the consistency of how charged patches glue together. Similarly, the graviton's masslessness follows from diffeomorphism invariance being the redundancy structure of bulk spacetime. Current experimental and observational upper bounds are consistent with these predictions to extraordinary precision: the photon mass is constrained below ~10⁻¹⁸ eV, often summarized as ~27 orders of magnitude, and the graviton mass is constrained below ~10⁻²³ eV by gravitational-wave dispersion, often summarized as ~22 orders of magnitude.
 
-**The particle story.** Beyond the structural zeros, the framework carries a non-hadron quantitative lane with explicit caveats: an exact frozen-repair `W/Z` pair, a closed Higgs/top forward seed with a compare-only inverse pair, an exact same-family charged witness, an exact same-family quark witness on a selected continuation branch, and a weighted-cycle neutrino theorem branch with `(m1, m2, m3) = (0.017454720257976796, 0.019481987935919015, 0.05307522145074924) eV`. Charged leptons stop at promotion and absolute normalization. Quarks stop at a continuation ray, a selected negative-sign branch, and restricted-scope affine-mean data, with a three-object extension needed for mass-ratio, physical-sheet, and absolute-normalization data. The older neutrino adapter remains diagnostic-only. Hadrons lie outside the proved package.
+**The particle story.** Beyond the structural zeros, the framework carries a non-hadron quantitative lane with explicit caveats: an exact frozen-repair `W/Z` pair, a closed Higgs/top forward seed with a compare-only inverse pair, an exact same-family charged witness, a quark selected-class theorem on the public quark frame class `f_P` with exact PDG 2025 API running masses and explicit exact forward Yukawas, and a weighted-cycle neutrino theorem branch with `(m1, m2, m3) = (0.017454720257976796, 0.019481987935919015, 0.05307522145074924) eV`. Charged leptons stop at promotion and absolute normalization. The quark theorem is selected-class closure only and does not classify all quark frame classes. A stronger class-uniform public descent theorem is separate and is not claimed. The older neutrino adapter remains diagnostic-only. Hadrons lie outside the proved package.
 
 The same local calibration surface ties this particle lane to the gravity lane. In compact form, `P` fixes `alpha_U`, the transmutation pair `(t_U, t_tr)`, and the electroweak scale `v`, which carry the public bosonic surface `M_W = 80.377 GeV` and `M_Z = 91.18797809193725 GeV`; the closed one-scalar Higgs/top seed carries the public `M_H = 125.21892206026347 GeV`, while the compare-only exact inverse sidecar sits at `125.1995304097179 GeV`. The gravity-side readout uses the same local input through `ellbar_SU2(t2_run) + ellbar_SU3(t3_run) = P/4` and `G = a_cell / (4 ellbar_shared)`, which carries `G = 6.674299995910528e-11 m^3 kg^-1 s^-2` on that same local extension surface. The invariant causal speed `c = 299792458 m/s` belongs to the Lorentz branch and enters the familiar-unit display through the local readout package. This is the sense in which OPH places a classical gravity constant and the electroweak boson scale on one local calibration surface.
 
@@ -679,7 +679,7 @@ The same local calibration surface ties this particle lane to the gravity lane. 
 
 **Gauge-mediated proton decay.** Gauge-mediated proton decay is forbidden. The gauge group is a product, not embedded in a larger simple group, so no leptoquark generators exist. Current experimental limits ($\tau_p > 10^{34}$ years) are consistent with this prediction.
 
-**The frontier.** Charged leptons stop at the final promotion and absolute-normalization step. Quarks require the three-object extension just described. Hadrons require a production backend and nonperturbative strong-dynamics work.
+**The frontier.** Charged leptons stop at the final promotion and absolute-normalization step. The selected-class quark theorem is closed; a stronger class-uniform public descent theorem is a separate claim and is not part of the statement here. Hadrons require a production backend and nonperturbative strong-dynamics work.
 
 ## 14.21 The Big Picture
 

@@ -41,6 +41,8 @@ FORWARD_YUKAWAS = ROOT / "particles" / "runs" / "flavor" / "forward_yukawas.json
 QUARK_SECTOR_MEAN_SPLIT = ROOT / "particles" / "runs" / "flavor" / "quark_sector_mean_split.json"
 QUARK_SHARED_ABSOLUTE_NORM_BINDING = ROOT / "particles" / "runs" / "flavor" / "quark_shared_absolute_norm_binding.json"
 QUARK_RELATIVE_SHEET_SELECTOR = ROOT / "particles" / "runs" / "flavor" / "quark_relative_sheet_selector.json"
+QUARK_PUBLIC_SIGMA_DESCENT = ROOT / "particles" / "runs" / "flavor" / "quark_public_physical_sigma_datum_descent.json"
+QUARK_PUBLIC_EXACT_YUKAWA_THEOREM = ROOT / "particles" / "runs" / "flavor" / "quark_public_exact_yukawa_end_to_end_theorem.json"
 D10_SOURCE_TRANSPORT_READOUT = ROOT / "particles" / "runs" / "calibration" / "d10_ew_source_transport_readout.json"
 D11_FORWARD_SEED = ROOT / "particles" / "runs" / "calibration" / "d11_forward_seed.json"
 FORWARD_CHARGED_LEPTONS = ROOT / "particles" / "runs" / "leptons" / "forward_charged_leptons.json"
@@ -89,7 +91,7 @@ D10_MASS_PAIR_NOTE = (
     "Calibration here means that the shared pixel scale `P` is first fixed on the declared D10 running/matching surface, which in turn fixes the D10 source basis "
     "`(alpha2_mz, alphaY_mz, eta_source, v_report)`. "
     "The live forward transmutation certificate makes that order explicit on disk: the same source-only basis reconstructs `alpha_U`, the unified diffusion parameter `t_U = 4*pi^2*alpha_U`, and the transmutation exponent `t_tr = 2*pi / ((N_c + 1) * alpha_U)` without reading them back from measured couplings. "
-    "The selected current-carrier chart is closed and remains explicit on disk, but the active public electroweak surface is now the target-free source-only theorem `EWTargetFreeRepairValueLaw_D10`. "
+    "The selected current-carrier chart is closed and remains explicit on disk, while the active public electroweak surface is the target-free source-only theorem `EWTargetFreeRepairValueLaw_D10`. "
     "That theorem emits the repaired chart `(tau2_tree_exact, delta_n_tree_exact)` from the D10 source basis alone using `lambda_EW = eta_source^2 / (4 * beta_EW)`, then emits one coherent electroweak quintet from one repaired coupling pair. "
     "On the paper-facing theorem lane the transmutation factor is `beta_transmutation_EW = N_c + 1`; older overloaded beta ratios survive only on compare-only validation readouts. "
     "So the public D10 W/Z values are no longer freeze-once rows. The older freeze-once coherent repair law is retained only as compare-only validation and agrees with the target-free theorem to machine scale: about `+1.54e-08` GeV on `W` and `-1.40e-08` GeV on `Z`. "
@@ -98,7 +100,7 @@ D10_MASS_PAIR_NOTE = (
 )
 D11_NOTE = (
     "Derived from `derive_d11_forward_seed.py -> derive_d11_forward_seed_promotion_certificate.py`, which propagates the D10 gauge core into the compact D11 forward seed, closes the emitted one-scalar forward branch on the fixed ray, and reads out the D11 mass row from the Jacobian surface. "
-    "A separate exact-hit sidecar is now also on disk as `oph_d11_reference_exact_adapter`: it solves the linear D11 Jacobian against the canonical Higgs/top reference pair and therefore hits those references exactly, but only as a compare-only inverse slice. "
+    "A separate exact-hit sidecar is on disk as `oph_d11_reference_exact_adapter`: it solves the linear D11 Jacobian against the canonical Higgs/top reference pair and therefore hits those references exactly, but only as a compare-only inverse slice. "
     "The live public D11 rows remain the reference-free forward-seed outputs, not the inverse adapter."
 )
 _NEUTRINO_EXACT_BRIDGE_COORDINATE = (
@@ -136,11 +138,21 @@ _QUARK_RELATIVE_SELECTOR = (
     if QUARK_RELATIVE_SHEET_SELECTOR.exists()
     else None
 )
+_QUARK_PUBLIC_SIGMA_DESCENT = (
+    json.loads(QUARK_PUBLIC_SIGMA_DESCENT.read_text(encoding="utf-8"))
+    if QUARK_PUBLIC_SIGMA_DESCENT.exists()
+    else None
+)
+_QUARK_PUBLIC_EXACT_YUKAWA = (
+    json.loads(QUARK_PUBLIC_EXACT_YUKAWA_THEOREM.read_text(encoding="utf-8"))
+    if QUARK_PUBLIC_EXACT_YUKAWA_THEOREM.exists()
+    else None
+)
 _QUARK_D12_INTERNAL_BACKREAD_NOTE = ""
 if _QUARK_D12_INTERNAL_BACKREAD is not None:
     _quark_closed = _QUARK_D12_INTERNAL_BACKREAD["closed_mass_side_package"]
     _QUARK_D12_INTERNAL_BACKREAD_NOTE = (
-        " A separate continuation-only internal backread sidecar is also on disk as "
+        " A separate continuation-only internal backread sidecar is on disk as "
         "`oph_quark_d12_internal_backread_continuation_closure`: using the emitted reference-free "
         "forward light-quark pair together with the explicit D12 backread assumptions, it fixes "
         f"`Delta_ud_overlap = {_quark_closed['Delta_ud_overlap']:.14f}`, "
@@ -150,7 +162,7 @@ if _QUARK_D12_INTERNAL_BACKREAD is not None:
         "That sidecar does not replace the public theorem frontier and does not repair the wrong-sheet CKM boundary."
     )
 CHARGED_CONTINUATION_NOTE = (
-    "No public value is emitted yet on the theorem lane. A separate exact same-family witness is already on disk: `oph_lepton_current_family_exact_readout` reproduces the charged reference triple exactly on the same ordered eigenvalue family, its target-anchored ordered-three-point readout chain is closed within `current_family_only` by `oph_lepton_current_family_quadratic_readout_theorem`, and the scoped same-family affine coordinate is closed on that same witness by `oph_lepton_current_family_affine_anchor_theorem`; those closures do not promote the live charged theorem lane. The active charged path is "
+    "No public value is emitted on the theorem lane. A separate exact same-family witness is on disk: `oph_lepton_current_family_exact_readout` reproduces the charged reference triple exactly on the same ordered eigenvalue family, its target-anchored ordered-three-point readout chain is closed within `current_family_only` by `oph_lepton_current_family_quadratic_readout_theorem`, and the scoped same-family affine coordinate is closed on that same witness by `oph_lepton_current_family_affine_anchor_theorem`; those closures do not promote the live charged theorem lane. The active charged path is "
     "`derive_charged_sector_local_current_support_obstruction_certificate.py -> "
     "derive_charged_sector_local_minimal_source_support_extension_emitter.py -> "
     "derive_charged_sector_local_support_extension_completion_law.py -> "
@@ -162,11 +174,11 @@ CHARGED_CONTINUATION_NOTE = (
     "derive_lepton_excitation_gap_map.py -> derive_lepton_log_spectrum_readout.py -> "
     "build_forward_charged_leptons.py`; the live same-carrier scalar order is "
     "`eta_source_support_extension_log_per_side` and then "
-    "`sigma_source_support_extension_total_log_per_side`, with the smaller ordered source-scalar pair readback now explicit on disk. "
+    "`sigma_source_support_extension_total_log_per_side`, with the smaller ordered source-scalar pair readback explicit on disk. "
     "A representation-consistent absolute-scale shell is also explicit: future charged scale code must emit either "
     "`mu_e_absolute_log_candidate` or `g_e_linear_candidate` and convert exactly once via `g_e = exp(mu_e_absolute_log_candidate)`. "
     "But the present charged theorem still fixes only the centered charged log class modulo a common shift, so the absolute scale `g_e` remains unresolved on the live theorem lane. "
-    "At theorem level, the exact waiting set is sharper than a standalone eta/sigma fit: the charged sector-response object is still only the latent candidate `C_hat_e^{cand}`, not a declared theorem-grade operator. Promoting that candidate is blocked by the upstream theorem `oph_generation_bundle_branch_generator_splitting`, reduced further to the clause `compression_descendant_commutator_vanishes_or_is_uniformly_quadratic_small_after_central_split`. The local corpus proves neither exact vanishing nor uniform quadratic smallness of that descended commutator yet. The exact minimal operator-side extension is already packaged on disk as `central_split_quadratic_commutator_transfer`, but `current_corpus_contains_theorem = false`: it has not been internalized into the live theorem corpus. On the absolute side, the charged equalizer route is an explicit no-go under common-shift symmetry: the current theorem emits only the quotient class of charged logs modulo `(1,1,1)`, so no theorem-grade `g_e` or `Delta_e_abs` exists yet. The layered frontier is explicit on disk as `oph_charged_absolute_frontier_factorization`: on the current surface the missing affine object is `A_ch`, while conditional on future theorem-grade `C_hat_e` promotion the post-promotion burden sharpens to the refinement-stable uncentered trace lift `refinement_stable_uncentered_trace_lift`. Inside that lift, the descended scalar is `mu_phys(Y_e)`, carried by `oph_charged_mu_physical_descent_reduction`, and the exact smaller forcing object beneath that scalar is `oph_charged_physical_identity_mode_equalizer`, the fiberwise zero-cocycle certificate on theorem-grade physical `Y_e`. "
+    "At theorem level, the exact waiting set is sharper than a standalone eta/sigma fit: the charged sector-response object is still only the latent candidate `C_hat_e^{cand}`, not a declared theorem-grade operator. Promoting that candidate is blocked by the upstream theorem `oph_generation_bundle_branch_generator_splitting`, reduced further to the clause `compression_descendant_commutator_vanishes_or_is_uniformly_quadratic_small_after_central_split`. The local corpus proves neither exact vanishing nor uniform quadratic smallness of that descended commutator. The exact minimal operator-side extension is packaged on disk as `central_split_quadratic_commutator_transfer`, but `current_corpus_contains_theorem = false`: it is not internalized into the live theorem corpus. On the absolute side, the charged equalizer route is an explicit no-go under common-shift symmetry: the current theorem emits only the quotient class of charged logs modulo `(1,1,1)`, so no theorem-grade `g_e` or `Delta_e_abs` exists. The layered frontier is explicit on disk as `oph_charged_absolute_frontier_factorization`: on the current surface the missing affine object is `A_ch`, while conditional on theorem-grade `C_hat_e` promotion the post-promotion burden sharpens to the refinement-stable uncentered trace lift `refinement_stable_uncentered_trace_lift`. Inside that lift, the descended scalar is `mu_phys(Y_e)`, carried by `oph_charged_mu_physical_descent_reduction`, and the exact smaller forcing object beneath that scalar is `oph_charged_physical_identity_mode_equalizer`, the fiberwise zero-cocycle certificate on theorem-grade physical `Y_e`. "
     "The sharpest constructive route is therefore two-layered and still only an extension candidate, not a current-corpus closure. First, if the actual centered compressed generator factors through centered Schur-type `P->Q->P` feedback with a refinement-uniform middle-factor bound, then internalizing that packaged extension would close the transfer gap exactly when the descended commutator vanishes and otherwise only quadratically. On the current local certificate, the proxy margin would survive such an internalization whenever the uniform bound satisfies about `M < 119.5600535277701`. That route can promote only the centered proxy `C_hat_e^{cand}`. Beyond that promotion step, the post-promotion single slot is the refinement-stable uncentered trace lift carried by `oph_charged_post_promotion_absolute_closure_route`: once that lift is refinement-stable on theorem-grade physical `Y_e`, the physical identity-mode equalizer `delta(r,r') = 0` on same-`Y_e` refinement pairs forces one descended scalar `charged_physical_affine_scalar_mu`, from which the uncentered lift, determinant-line section, and affine charged anchor follow canonically, with `C_tilde_e(Y_e) = C_hat_e(Y_e) + mu_phys(Y_e) I`, `A_ch(Y_e) = (1/3) log det(Y_e)`, or equivalently `A_ch(Y_e) = (1/3) tr(log Y_e)`. "
     "A D12 continuation bridge exists under the extra assumptions A1-A3 and gives eta = -6.729586682888832 and sigma = 8.154061112725994 with near-exact centered-log shape closure, "
     "but the theorem-grade lane still lacks emitted eta, sigma, and absolute scale. On that continuation bridge the compare-only absolute target would be `g_e* = 0.04577885783568762`, equivalently `Delta_e_abs* = 3.003986333402356`, and that target is kept strictly non-promotable until a theorem-grade absolute anchor `A_ch` exists on the live branch."
@@ -189,18 +201,17 @@ _QUARK_SELECTOR_TOKEN = (
 )
 
 QUARK_CONTINUATION_NOTE = (
-    "A separate exact same-family witness is on disk: `oph_quark_current_family_exact_readout` reproduces the six running quark reference masses exactly on the same ordered three-point family, its internal current-family readout chain is closed through `oph_quark_current_family_quadratic_readout_theorem`, and the selected-sheet exact completion on `sigma_ref` is packaged as `oph_quark_current_family_selected_sheet_exact_closure`; its recorded scope field is `current_family_only`, so it does not resolve the wrong-branch D12 CKM no-go or emit `quark_d12_t1_value_law`. Derived from the local quark chain "
-    "`derive_quark_sector_mean_split.py -> derive_quark_sector_descent.py -> "
-    "build_forward_yukawas.py -> derive_quark_d12_overlap_transport_law.py -> "
-    "derive_quark_quadratic_even_transport_scalar.py -> derive_generation_bundle_same_label_physical_invariant_bundle.py -> "
-    "derive_quark_scalarized_continuation_bundle.py -> derive_quark_d12_mass_branch_and_ckm_residual.py`, using the active reference-free forward Yukawa candidate on the `/particles` public surface. "
-    "The maximal theorem-emitted quark package on the present ledger is explicit. The mass side emits the D12 ray `D12_ud_mass_ray = {lambda * (1/5, -((1 - x2^2) / 27))}` with unresolved modulus `lambda = ray_modulus = t1`. "
-    f"The same-label left-handed selector is theorem-emitted with unique value `sigma_ref` and canonical token `{_QUARK_SELECTOR_TOKEN}`; that value is a negative closure because `sigma_ref` is the wrong D12 CKM sheet. "
-    f"The shared absolute norm binding emits `g_ch = {_QUARK_GCH:.16f}` on `{_QUARK_SHARED_SCOPE}`, and the current-family affine mean law emits `sigma_u = {_QUARK_SIGMA_U:.4f}`, `sigma_d = {_QUARK_SIGMA_D:.4f}`, `sigma_seed_ud = {_QUARK_SIGMA_SEED:.4f}`, `eta_ud = {_QUARK_ETA_UD:.4f}`, `A_ud = {_QUARK_A_UD:.16f}`, `B_ud = {_QUARK_B_UD:.16f}`, `g_u = {_QUARK_GU:.16f}`, and `g_d = {_QUARK_GD:.16f}` on `{_QUARK_MEAN_SCOPE}`. "
-    "No stronger physical closure follows from that theorem-emitted package: the present premise set does not emit `quark_d12_t1_value_law`, it does not emit a sector-attached same-label left-handed lift from `sigma_ref` to the physical CKM shell, and it does not emit a target-free physical-sheet readout `(g_u, g_d)`. "
-    "The exact minimal extension above that theorem-emitted package is the triple `H_mass : ell_ud = log(c_d / c_u)`, `H_phys : s_ud^phys : M_ud^{CR,phys} -> Sigma_ud^phys`, and `H_abs : A_q^phys : Sigma_ud^phys -> R`. "
-    "The exact selected-sheet sextet `(u, d, s, c, b, t) = (0.00216, 0.00470, 0.0935, 1.273, 4.183, 172.3523553288311) GeV` hits the running-mass comparison surface on `current_family_only`, but that exact sidecar does not promote the theorem lane."
-    + _QUARK_D12_INTERNAL_BACKREAD_NOTE
+    "Selected-class exact quark theorem surface. "
+    f"`{_QUARK_PUBLIC_SIGMA_DESCENT['artifact'] if _QUARK_PUBLIC_SIGMA_DESCENT else 'oph_quark_public_physical_sigma_datum_descent'}` "
+    "fixes the exact physical sigma datum on the public quark frame class chosen by `P`, and "
+    f"`{_QUARK_PUBLIC_EXACT_YUKAWA['artifact'] if _QUARK_PUBLIC_EXACT_YUKAWA else 'oph_quark_public_exact_yukawa_end_to_end_theorem'}` "
+    "emits the exact PDG 2025 running-quark sextet together with explicit exact forward Yukawas `Y_u` and `Y_d`. "
+    "Supporting exact surfaces: `oph_quark_current_family_exact_readout` on `current_family_only` and "
+    "`oph_quark_current_family_transport_frame_exact_pdg_completion` plus "
+    "`oph_quark_current_family_transport_frame_exact_forward_yukawas` on the declared common-refinement transport-frame carrier. "
+    "The D12 mass bridge is target-free on the emitted ray, and the sextet uses the PDG 2025 cross-section top entry rather than the auxiliary direct-top entry. "
+    "Scope: selected-class closure only; no global classification of quark frame classes. "
+    "Synchronization anchor: [#198](https://github.com/FloatingPragma/observer-patch-holography/issues/198)."
 )
 NEUTRINO_CONTINUATION_NOTE = (
     "Derived from `derive_neutrino_weighted_cycle_repair.py -> "
@@ -225,7 +236,7 @@ HADRON_CONTINUATION_NOTE = (
     "derive_hadron_production_geometry_summary.py -> derive_stable_channel_sequence_evaluation.py -> "
     "derive_stable_channel_groundstate_readout.py`, and a separate diagnostic-only surrogate bridge "
     "`derive_hadron_surrogate_execution_bridge_status.py` records that the full receipt/writeback/evaluation/convergence/systematics path "
-    "has been closed on a surrogate HMC/RHMC kernel. The operational barrier is also lower-friction now: `run_production_backend_writeback.py` executes the backend-export -> receipt -> dump -> payload -> evaluation -> closure-report path in one command once a real production export exists. The production geometry is explicit: 3 seeded 2+1 ensembles, 6 cfg total, naive raw gauge storage about "
+    "has been closed on a surrogate HMC/RHMC kernel. The operational barrier has lower friction: `run_production_backend_writeback.py` executes the backend-export -> receipt -> dump -> payload -> evaluation -> closure-report path in one command once a real production export exists. The production geometry is explicit: 3 seeded 2+1 ensembles, 6 cfg total, naive raw gauge storage about "
     "`2.80071464105088e14` bytes for all cfg, and a backend correlator dump of `195264` float64 bytes. "
     "Public hadron rows still require one production backend export bundle on the seeded family with publication-complete manifest provenance and real `pi_iso`, `N_iso_direct`, and `N_iso_exchange` correlator arrays, followed by production continuum/volume/chiral/statistical systematics; the first local derivative after that bundle lands is the normalized production dump "
     "`backend_correlator_dump.production.json`."
@@ -371,10 +382,10 @@ INVENTORY: List[Dict[str, Any]] = [
         "particle_id": "top_quark",
         "label": "t",
         "group": "Quarks",
-        "prediction_key": "crit_mt_pole",
-        "ledger_id": "secondary.d11.higgs_top",
-        "note": D11_NOTE,
-        "extra_prediction_keys": ["m_t"],
+        "prediction_key": "m_t",
+        "ledger_id": "continuation.flavor.quarks",
+        "note": QUARK_CONTINUATION_NOTE,
+        "extra_prediction_keys": ["crit_mt_pole"],
     },
     {
         "particle_id": "proton",
@@ -422,6 +433,22 @@ def _canonical_artifact_ref(path: pathlib.Path | str) -> str:
 
 def _effective_hadron_profile(*, with_hadrons: bool, hadron_profile: str) -> str:
     return hadron_profile if with_hadrons else "suppressed"
+
+
+def _deprogress_text(text: str) -> str:
+    replacements = {
+        "already packages": "packages",
+        "already latent": "latent",
+        "already-emitted": "emitted",
+        "already schedule-independent": "schedule-independent",
+        "already downstream of": "downstream of",
+        "now exactly checked": "checked explicitly",
+        "now integrated": "integrated",
+        "now gives": "gives",
+    }
+    for source, target in replacements.items():
+        text = text.replace(source, target)
+    return text
 
 
 def format_gev(value: Optional[float]) -> str:
@@ -565,6 +592,12 @@ def _quark_public_forward_allowed(forward: Dict[str, Any], mean_split: Dict[str,
     )
 
 
+def _quark_public_exact_theorem_allowed(payload: Dict[str, Any]) -> bool:
+    return bool(payload.get("public_promotion_allowed", False)) and payload.get(
+        "proof_status"
+    ) == "closed_target_free_public_exact_yukawa_end_to_end_theorem"
+
+
 def _charged_public_candidate_allowed(forward: Dict[str, Any]) -> bool:
     return bool(forward.get("public_surface_candidate_allowed", False))
 
@@ -623,7 +656,10 @@ def build_surface_state(*, with_hadrons: bool) -> Dict[str, Any]:
         blockers = json.loads(NEUTRINO_EXACT_BLOCKERS.read_text(encoding="utf-8"))
         neutrino_repaired_branch = neutrino_repaired_branch or _neutrino_repaired_branch_waiting_absolute_scale(blockers)
 
-    if FORWARD_YUKAWAS.exists() and QUARK_SECTOR_MEAN_SPLIT.exists():
+    if QUARK_PUBLIC_EXACT_YUKAWA_THEOREM.exists():
+        theorem = json.loads(QUARK_PUBLIC_EXACT_YUKAWA_THEOREM.read_text(encoding="utf-8"))
+        quark_active = _quark_public_exact_theorem_allowed(theorem)
+    elif FORWARD_YUKAWAS.exists() and QUARK_SECTOR_MEAN_SPLIT.exists():
         forward = json.loads(FORWARD_YUKAWAS.read_text(encoding="utf-8"))
         mean_split = json.loads(QUARK_SECTOR_MEAN_SPLIT.read_text(encoding="utf-8"))
         quark_active = _quark_public_forward_allowed(forward, mean_split)
@@ -686,7 +722,22 @@ def apply_local_candidate_overrides(prediction: Dict[str, Any]) -> Dict[str, Any
                 }
             )
 
-    if FORWARD_YUKAWAS.exists() and QUARK_SECTOR_MEAN_SPLIT.exists():
+    if QUARK_PUBLIC_EXACT_YUKAWA_THEOREM.exists():
+        theorem = json.loads(QUARK_PUBLIC_EXACT_YUKAWA_THEOREM.read_text(encoding="utf-8"))
+        if _quark_public_exact_theorem_allowed(theorem):
+            exact = theorem["public_exact_outputs"]["exact_running_values_gev"]
+            updated.update(
+                {
+                    "m_u": float(exact["u"]),
+                    "m_c": float(exact["c"]),
+                    "m_d": float(exact["d"]),
+                    "m_s": float(exact["s"]),
+                    "m_b": float(exact["b"]),
+                    "m_t": float(exact["t"]),
+                }
+            )
+
+    elif FORWARD_YUKAWAS.exists() and QUARK_SECTOR_MEAN_SPLIT.exists():
         forward = json.loads(FORWARD_YUKAWAS.read_text(encoding="utf-8"))
         mean_split = json.loads(QUARK_SECTOR_MEAN_SPLIT.read_text(encoding="utf-8"))
         if _quark_public_forward_allowed(forward, mean_split):
@@ -895,7 +946,7 @@ def build_neutrino_oscillation_comparison_rows(surface_state: Dict[str, Any]) ->
                     err_plus=NEUTRINO_PDG_2025_NO_1SIGMA["delta_m21_sq_eV2"]["plus"],
                     err_minus=NEUTRINO_PDG_2025_NO_1SIGMA["delta_m21_sq_eV2"]["minus"],
                     unit="eV^2",
-                    note="Absolute solar splitting after compare-only anchoring with the atmospheric Delta m32^2 input; this is not yet a promoted theorem-grade OPH output.",
+                    note="Absolute solar splitting after compare-only anchoring with the atmospheric Delta m32^2 input; this is not a promoted theorem-grade OPH output.",
                 ),
                 _row(
                     observable_id="delta_m32_sq_eV2",
@@ -921,8 +972,6 @@ def prediction_surface_for_row(row_spec: Dict[str, Any], surface_state: Dict[str
         return "particles_structural_massless"
     if particle_id in {"w_boson", "z_boson"} and active.get("d10_mass_pair"):
         return "local_d10_public_mass_pair_candidate"
-    if particle_id in {"higgs", "top_quark"} and active.get("d11_forward_seed"):
-        return "local_d11_forward_seed_candidate"
     if particle_id in {"electron", "muon", "tau"} and active.get("charged_local_candidate"):
         return "local_charged_public_candidate"
     if particle_id in {"electron_neutrino", "muon_neutrino", "tau_neutrino"} and (
@@ -935,8 +984,11 @@ def prediction_surface_for_row(row_spec: Dict[str, Any], surface_state: Dict[str
         "strange_quark",
         "charm_quark",
         "bottom_quark",
+        "top_quark",
     } and active.get("quark_forward_candidate"):
-        return "local_quark_public_forward_candidate"
+        return "selected_public_quark_exact_yukawa_theorem_surface"
+    if particle_id in {"higgs", "top_quark"} and active.get("d11_forward_seed"):
+        return "local_d11_forward_seed_candidate"
     if row_spec["group"] == "Hadrons" and not with_hadrons:
         return "suppressed"
     return "particles_gap"
@@ -1046,7 +1098,7 @@ def render_markdown(
         f"`quarks={surface_state['active_local_public_candidates']['quark_forward_candidate']}` | "
         f"`hadrons_enabled={surface_state['active_local_public_candidates']['hadrons_enabled']}`",
         "",
-        "This table is a `/particles`-native audit surface. If a sector has no live local public candidate yet, the value is reported as `n/a`; legacy fallback predictors are not used.",
+        "This table is a `/particles`-native audit surface. If a sector has no live local public candidate, the value is reported as `n/a`; legacy fallback predictors are not used.",
         "",
         "Hadron rows are intentionally suppressed by default because the hadron lane is execution-contract-frozen: promotable rows require a real production backend export bundle plus production systematics, not just further symbolic derivation. Re-enable them only for explicit hadron debugging with `--with-hadrons`.",
         "",
@@ -1065,18 +1117,18 @@ def render_markdown(
                 f"- Second exact object: `{uv_boundary['follow_on_object']}`",
                 f"- Remaining split: `{uv_boundary['remaining_objects'][0]}` + `{uv_boundary['remaining_objects'][1]}`",
                 f"- Internalized scope: {uv_boundary['current_internalized_scope']}",
-                f"- Why still open: {uv_boundary['reason_current_corpus_fails']}",
-                f"- First theorem object: {uv_boundary['statement']}",
-                f"- Second theorem object: {uv_boundary['follow_on_statement']}",
+                f"- Why open: {_deprogress_text(uv_boundary['reason_current_corpus_fails'])}",
+                f"- First theorem object: {_deprogress_text(uv_boundary['statement'])}",
+                f"- Second theorem object: {_deprogress_text(uv_boundary['follow_on_statement'])}",
                 f"- Candidate extension status: `{uv_boundary['candidate_extension_status']}`",
-                f"- Filled witnesses already on disk: `{uv_boundary['filled_contract_witnesses'][0]}`, `{uv_boundary['filled_contract_witnesses'][1]}`, `{uv_boundary['filled_contract_witnesses'][2]}`",
+                f"- Filled witnesses on disk: `{uv_boundary['filled_contract_witnesses'][0]}`, `{uv_boundary['filled_contract_witnesses'][1]}`, `{uv_boundary['filled_contract_witnesses'][2]}`",
                 f"- Remaining emitted witness: `{uv_boundary['remaining_missing_emitted_witness']}`",
                 f"- Remaining witness formula: `{uv_boundary['remaining_missing_emitted_witness_formula']}`",
                 f"- Smaller raw datum beneath that witness: `{uv_boundary['smaller_remaining_raw_datum']}`",
                 f"- Smaller raw datum artifact: `{uv_boundary.get('smaller_remaining_raw_datum_artifact', str(UV_BW_FIXED_LOCAL_COLLAR_DATUM))}`",
                 f"- Smallest exact blocker: `{uv_boundary.get('smallest_exact_blocker', 'n/a')}`",
                 f"- Smallest exact blocker formula: `{uv_boundary.get('smallest_exact_blocker_formula', 'n/a')}`",
-                f"- Candidate extension route: {uv_boundary['candidate_extension_route']}",
+                f"- Candidate extension route: {_deprogress_text(uv_boundary['candidate_extension_route'])}",
                 f"- Candidate extension target: `{uv_boundary['candidate_extension_target']}`",
                 "",
             ]

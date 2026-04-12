@@ -187,6 +187,12 @@
   },
   "channel_splitter_kind": "odd_projector_resolved_splitter",
   "coefficient_free": true,
+  "constructive_edge_statistics_bridge_artifact": "oph_quark_edge_statistics_spread_candidate",
+  "constructive_edge_statistics_bridge_candidate_sigmas": {
+    "sigma_d_total_log_per_side": 3.4210589139721543,
+    "sigma_u_total_log_per_side": 5.578418804072826
+  },
+  "constructive_edge_statistics_bridge_status": "candidate_only",
   "d_raw_channel_norm_candidate": 0.12172551081512113,
   "degenerate_placeholder_fallback_used": false,
   "delta_logg_q": 0.0,
@@ -214,7 +220,7 @@
   "g_ch": 0.9231656602589082,
   "g_d": 0.12172551081512113,
   "g_u": 0.7797392875757557,
-  "generated_utc": "2026-04-03T04:43:00Z",
+  "generated_utc": "2026-04-12T02:54:21Z",
   "hierarchy_driver_status": "candidate_spread_values_populated",
   "metadata": {
     "note": "Candidate odd quark-sector descent built from an explicit shared charged response seed plus the separate odd-response-law artifact. The local shape map is explicit and coefficient-free on the current single-kappa ray. The reduced even family is fixed as a trace-zero quadratic on the ordered branch coordinate; when a current-family spread pair is available, the centered even-log profiles are read back directly from the exported spread map. If the next diagonal gap-shift family is later populated, the builder can lift those logs by B_ord without reopening the old larger branch. A compact current-family sector-mean split may refine g_u and g_d without changing those rays. No reference-fit exact-readout artifact is consumed here.",
@@ -243,6 +249,9 @@
   "shared_norm_origin": "oph_quark_sector_mean_split",
   "shared_norm_status": "closed_current_family_predictive_law",
   "shared_scalarization_law_status": "candidate_only",
+  "spread_sigma_d_total_log_per_side": 3.3049,
+  "spread_sigma_source_kind": "theorem_grade_mean_surface_readback",
+  "spread_sigma_u_total_log_per_side": 5.5905,
   "tau_d_log_per_side": null,
   "tau_u_log_per_side": null,
   "u_raw_channel_norm_candidate": 0.7797392875757557,

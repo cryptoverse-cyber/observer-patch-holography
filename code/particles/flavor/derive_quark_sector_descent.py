@@ -139,6 +139,7 @@ def build_artifact(
         and str(response_law.get("lift_parameterization_kind", "")) == "single_kappa_signed_projector_ray"
     )
     spread_map = spread_map or {}
+    spread_metadata = dict(spread_map.get("metadata", {}))
     diagonal_gap_shift_map = diagonal_gap_shift_map or {}
     diagonal_gap_shift_scalar_evaluator = diagonal_gap_shift_scalar_evaluator or {}
     diagonal_gap_shift_tau_map = diagonal_gap_shift_tau_map or {}
@@ -289,6 +290,12 @@ def build_artifact(
         ),
         "even_excitation_source_artifact": spread_map.get("artifact"),
         "even_excitation_source_status": spread_map.get("spread_emitter_status"),
+        "spread_sigma_u_total_log_per_side": spread_map.get("sigma_u_total_log_per_side"),
+        "spread_sigma_d_total_log_per_side": spread_map.get("sigma_d_total_log_per_side"),
+        "spread_sigma_source_kind": spread_map.get("sigma_source_kind"),
+        "constructive_edge_statistics_bridge_artifact": spread_metadata.get("constructive_edge_statistics_bridge_artifact"),
+        "constructive_edge_statistics_bridge_status": spread_metadata.get("constructive_edge_statistics_bridge_status"),
+        "constructive_edge_statistics_bridge_candidate_sigmas": spread_metadata.get("constructive_edge_statistics_bridge_candidate_sigmas"),
         "diagonal_gap_shift_artifact": diagonal_gap_shift_map.get("artifact"),
         "diagonal_gap_shift_status": diagonal_gap_shift_map.get("proof_status"),
         "diagonal_gap_shift_scalar_evaluator_artifact": diagonal_gap_shift_scalar_evaluator.get("artifact"),

@@ -123,34 +123,34 @@
       [
         0.0,
         0.0,
-        -0.0
+        0.0
       ],
       [
-        -0.18259259886325166,
-        -0.077861692076673,
-        0.12147433650229307
+        0.002230963662481418,
+        -0.21821585316257053,
+        -0.004788450338296169
       ],
       [
-        0.3021140585207807,
-        0.5955315070731926,
-        0.21604336649457728
+        -7.992710064185835e-05,
+        0.0035157029435659384,
+        -0.6673475026189314
       ]
     ],
     "real": [
       [
-        -0.6151340670052823,
-        0.5253353185526898,
-        -0.5879055048991162
+        0.9999477255784763,
+        0.01022456688478143,
+        -6.589727605605017e-05
       ],
       [
-        0.6706832985871889,
-        -0.002841741840963482,
-        -0.7042849727334568
+        -0.009978093617904632,
+        0.9758342801133381,
+        -0.0013529140629434666
       ],
       [
-        -0.2172119496947942,
-        -0.6027391712627798,
-        -0.31131823566274985
+        -1.307593063475302e-05,
+        -0.003520972741481165,
+        -0.7447298481816883
       ]
     ]
   },
@@ -162,67 +162,67 @@
         0.0
       ],
       [
-        0.5943222183951,
-        -0.03035534322147393,
-        -0.546958380035166
+        0.002709446007237897,
+        -0.8172227475246927,
+        -0.0030234216884088773
       ],
       [
-        -0.37746644784460176,
-        0.8569350990041016,
-        -0.33044662041539496
+        -2.851578123387707e-05,
+        0.0035631844650491134,
+        -0.39600801006718733
       ]
     ],
     "real": [
       [
-        0.5987409642925892,
-        0.5038300507602871,
-        0.6226271256770518
+        0.9999945025957451,
+        0.0033155692659657043,
+        -4.217500440706494e-05
       ],
       [
-        -0.37407053211554686,
-        -0.10283702538838534,
-        0.44293562464674385
+        -0.0019108572152370911,
+        0.5763013888287716,
+        -0.0018858978107496593
       ],
       [
-        -0.07668556679244126,
-        -0.017905736312493186,
-        0.08823296637472317
+        -3.862868717268916e-05,
+        -2.9650165394407987e-05,
+        -0.9182401409732842
       ]
     ]
   },
   "V_CKM": {
     "imag": [
       [
-        -0.4354574861340693,
-        -0.24236781021445955,
-        0.23905264110723423
+        2.2774767510083167e-05,
+        -0.002227227166761761,
+        1.735789696977045e-05
       ],
       [
-        0.21986307039496805,
-        0.5137657240242283,
-        0.22904023604695148
+        -0.006868568662563404,
+        0.6717283139151586,
+        -0.0011918259384535654
       ],
       [
-        0.2408385485548353,
-        -0.18266964242692946,
-        -0.4152211684092517
+        3.383874475023795e-05,
+        -0.001260701648837252,
+        0.31787121976519717
       ]
     ],
     "real": [
       [
-        -0.8250885602877378,
-        0.09075608594860402,
-        -0.0740314640331918
+        0.9999673426336566,
+        0.007768622386644882,
+        -2.848786411803628e-05
       ],
       [
-        -0.11056996205564135,
-        0.788459814516882,
-        -0.03675575803779524
+        -0.00425847192454229,
+        0.7407521417262595,
+        0.0007775249104760823
       ],
       [
-        -0.10505690243680346,
-        0.1184435767807609,
-        -0.8432995570615693
+        1.3558337718190906e-05,
+        0.0006598555693645784,
+        0.94813282905829
       ]
     ]
   },
@@ -230,35 +230,35 @@
     "imag": [
       [
         0.0,
-        0.007231186663580403,
-        -0.001133216261322611
+        0.0001702070771548159,
+        -0.00017210075470507514
       ],
       [
-        -0.023238503228394883,
+        -0.0005469859783704457,
         0.0,
-        0.015088481667959184
+        0.009676391121772843
       ],
       [
-        0.007727585084843482,
-        -0.03201680254108065,
+        0.001173582898993218,
+        -0.020532689151483752,
         0.0
       ]
     ],
     "real": [
       [
-        0.9231656602589083,
-        0.03283256456364592,
-        0.001185972444679012
+        0.005145763060390336,
+        0.0007728102052765961,
+        0.00018011279907902293
       ],
       [
-        0.10551237204973386,
-        0.9231656602589082,
-        0.023809467138375867
+        0.002483541538307436,
+        0.09175834687326959,
+        0.015269244547061455
       ],
       [
-        0.008087338037172617,
-        0.05052218140652949,
-        0.9231656602589084
+        0.0012282183262425249,
+        0.03240036992276522,
+        3.81987763874871
       ]
     ]
   },
@@ -266,35 +266,35 @@
     "imag": [
       [
         0.0,
-        0.05834354863748777,
-        -0.004140804802864551
+        0.003393168226828414,
+        -0.0027538842503975675
       ],
       [
-        -0.01815491672018917,
+        -0.0010558611537056885,
         0.0,
-        0.02134587571569134
+        0.3325445452538477
       ],
       [
-        0.000607230756575218,
-        -0.010059619601597888,
+        0.0004038449761584164,
+        -0.15671746947261356,
         0.0
       ]
     ],
     "real": [
       [
-        0.9231656602589084,
-        0.041372248553876306,
-        0.009576679652906437
+        0.002292013989960925,
+        0.002406144338900564,
+        0.006369067976591737
       ],
       [
-        0.012873912275880608,
-        0.9231656602589082,
-        0.030808273029208723
+        0.0007487263135281124,
+        1.2576712128007081,
+        0.47995796850927086
       ],
       [
-        0.0014043778221784224,
-        0.014518940866323228,
-        0.9231656602589084
+        0.0009339957206940332,
+        0.2261886395417246,
+        164.46135583543406
       ]
     ]
   },
@@ -385,6 +385,7 @@
     },
     "charged_dirac_scalarization_certificate": {
       "additivity_scope": "canonical_charged_direct_sum_submonoid",
+      "artifact": "charged_dirac_common_refinement_gluing_certificate",
       "budget_shape_separation": {
         "budget_inputs_only": [
           "family_eigenvalues",
@@ -400,33 +401,166 @@
           "delta_logg_q"
         ]
       },
+      "candidate_id": "charged_common_refinement_sigma_seed_equalizer",
       "common_scalarization_law_missing": true,
       "conjugation_invariant": true,
+      "current_family_seed_data": {
+        "family_eigenvalues": [
+          1.3557137562771555,
+          0.40452595199087626,
+          0.102160291731968
+        ],
+        "seed_value": 0.9231656602589082,
+        "spectral_gaps": [
+          0.9511878042862792,
+          0.30236566025890826
+        ]
+      },
+      "current_proxy_support": {
+        "current_min_gap": 0.30236566025890826,
+        "projector_order_preserved": false,
+        "same_label_only": true,
+        "selfadjoint": true,
+        "simple_spectrum": true,
+        "trace_free": true
+      },
       "decomposition_independence_status": "candidate_only",
-      "decomposition_independence_witness_status": "missing_gluing_certificate",
+      "decomposition_independence_witness_status": "common_refinement_witness_missing",
       "direct_sum_additivity_closed": false,
+      "equalizer_formula": "E_s(X,X') = sigma_seed(pi_s X') - sigma_seed(pi_s X)",
+      "equalizer_norm_formula": "E_glue = |E_u| + |E_d| + |E_e|",
       "evaluator_kind": "intrinsic_monoidal_scalar_evaluator",
+      "exact_blocking_clause": "ordered_common_refinement_seed_rigidity",
       "family_eigenvalues": [
         1.3557137562771555,
         0.40452595199087626,
         0.102160291731968
       ],
+      "family_eigenvalues_current": [
+        1.3557137562771555,
+        0.40452595199087626,
+        0.102160291731968
+      ],
       "functional_equalizer_closed": false,
+      "gap_side_support_status": "proxy_supported_on_current_family",
+      "generator_kind": "centered_compressed_generation_bundle_branch_generator",
+      "generatorwise_reduction_status": "common_refinement_only_missing",
+      "generatorwise_status": {
+        "common_refinement": {
+          "d": "candidate_only",
+          "e": "candidate_only",
+          "u": "candidate_only"
+        },
+        "conjugation": {
+          "d": "closed_on_current_metadata",
+          "e": "closed_on_current_metadata",
+          "u": "closed_on_current_metadata"
+        },
+        "pre_normal_form_equivalence": {
+          "d": "closed_on_current_metadata",
+          "e": "closed_on_current_metadata",
+          "u": "closed_on_current_metadata"
+        }
+      },
       "gluing_certificate_status": "missing",
+      "gluing_collapse_condition": "Delta_mean = 0 together with the proxy-supported min-gap side",
+      "gluing_norm_formula": "abs(E_u) + abs(E_d) + abs(E_e)",
+      "immediate_promotion_targets": [
+        "functional_equalizer_closed",
+        "decomposition_independence_status",
+        "proof_status",
+        "g_e",
+        "g_ch"
+      ],
       "label_blindness_candidate": true,
       "label_blindness_status": "candidate_only",
       "law_id": "charged_dirac_scalarization_law",
       "law_scope": "direct_sum_u_plus_d_plus_e_pre_normal_form_canonical_decomposable_subfamily",
       "law_status": "candidate_only",
-      "minimal_missing_bridge_object": "charged_dirac_scalarization_gluing_certificate",
+      "mean_clause": {
+        "left_common": 0.6207999999999999,
+        "left_common_family_eigenvalues": [
+          1.3557137562771555,
+          0.40452595199087626,
+          0.102160291731968
+        ],
+        "readback_artifact": "charged_common_refinement_scalar_mean_readout",
+        "residual": 0.0,
+        "right_common": 0.6207999999999999,
+        "right_common_family_eigenvalues": [
+          1.3557137562771555,
+          0.40452595199087626,
+          0.102160291731968
+        ],
+        "witness_grade_status": "independent_scalar_readback_complete",
+        "witness_kind": "charged_common_refinement_mean_eigenvalue_certificate"
+      },
+      "mean_eigenvalue_current": 0.6207999999999999,
+      "mean_gap_invariance_candidate": {
+        "candidate_id": "common_refinement_mean_and_min_gap_invariance",
+        "mean_formula": "mean(family_eigenvalues)",
+        "min_gap_formula": "min(spectral_gaps)",
+        "status": "mean_readback_complete__min_gap_proxy_supported"
+      },
+      "mean_side_support_status": "independent_scalar_readback_complete",
+      "mean_witness_artifact": "charged_common_refinement_mean_eigenvalue_certificate",
+      "mean_witness_formula": "Delta_mean(X,X';rho) = mean(family_eigenvalues(X^rho)) - mean(family_eigenvalues(X'^rho))",
+      "min_gap_clause": {
+        "left_common": null,
+        "residual": null,
+        "right_common": null,
+        "witness_kind": "ordered_min_gap_transport_certificate"
+      },
+      "minimal_missing_bridge_object": "charged_dirac_common_refinement_gluing_certificate",
+      "minimal_missing_witness": "common_refinement_transport_equalizer",
+      "presentation_equalizer_kind": "sector_projected_sigma_seed_equalizer",
       "quotient_equivalence": [
         "conjugation",
         "common_refinement",
         "pre_normal_form_equivalence"
       ],
+      "quotient_generators": [
+        "conjugation",
+        "common_refinement",
+        "pre_normal_form_equivalence"
+      ],
+      "refinement_pair": {
+        "common": "common_refinement_candidate",
+        "left": "snapshot",
+        "right": "refinement_limit_candidate"
+      },
       "refinement_stable_candidate": true,
       "remaining_theorem_object": "charged_dirac_scalarization_law",
       "restriction_formula": "Sigma_ch(i_s R_s) = sigma_seed(R_s)",
+      "sampled_sector_shares": {
+        "d": {
+          "refinement_limit_candidate": 0.3333333333333333,
+          "snapshot": 0.3333333333333333
+        },
+        "e": {
+          "refinement_limit_candidate": 0.3333333333333333,
+          "snapshot": 0.3333333333333333
+        },
+        "u": {
+          "refinement_limit_candidate": 0.3333333333333333,
+          "snapshot": 0.3333333333333333
+        }
+      },
+      "sampled_sector_values": {
+        "d": {
+          "refinement_limit_candidate": 0.9231656602589082,
+          "snapshot": 0.9231656602589082
+        },
+        "e": {
+          "refinement_limit_candidate": 0.9231656602589082,
+          "snapshot": 0.9231656602589082
+        },
+        "u": {
+          "refinement_limit_candidate": 0.9231656602589082,
+          "snapshot": 0.9231656602589082
+        }
+      },
+      "sampled_total_budget": 2.769496980776725,
       "scope": "charged_dirac_response_class",
       "sector_certificates": {
         "d": {
@@ -459,6 +593,7 @@
         "e": "i_e",
         "u": "i_u"
       },
+      "sector_equalizer_formula": "E_s = sigma_seed(pi_s X_right_common) - sigma_seed(pi_s X_left_common)",
       "sector_isolation_required_for_base_closure": false,
       "sector_projections": {
         "d": "pi_d",
@@ -466,15 +601,62 @@
         "u": "pi_u"
       },
       "sector_restriction_compatibility_closed": false,
+      "seed_defect_formula": "abs(mean_left-mean_right) + abs(min_gap_left-min_gap_right)",
       "seed_formula": "sigma_seed = mean(family_eigenvalues) + min(spectral_gaps)",
+      "seed_rigidity_reduction": [
+        "mean_eigenvalue_invariance",
+        "min_gap_invariance"
+      ],
       "seed_source": "common_family_spectral_package",
       "seed_value": 0.9231656602589082,
+      "seed_value_current": 0.9231656602589082,
+      "sigma_seed_clause": {
+        "left_common": null,
+        "residual": null,
+        "right_common": null
+      },
+      "smaller_exact_missing_clause": "common_refinement_preserves_mean_eigenvalue_and_min_gap",
       "spectral_gaps": [
         0.9511878042862792,
         0.30236566025890826
       ],
+      "spectral_gaps_current": [
+        0.9511878042862792,
+        0.30236566025890826
+      ],
       "status": "candidate_only",
-      "universal_formula": "Sigma_ch(sum_s i_s R_s) = sum_s sigma_seed(R_s)"
+      "stored_shared_absolute_scale_status": "historical_compare_only_shell_not_a_theorem_route",
+      "strict_next_clause": "common_refinement_transport_equalizer",
+      "strictly_smaller_next_subclause": "common_refinement_preserves_mean_eigenvalue",
+      "telescoping_descent_proof_mode": "generator_chain",
+      "transport_kind": "projective_polar_riesz_same_label_eigenline_transport",
+      "transported_ordered_spectral_package_evidence_status": "independent_scalar_readback_complete",
+      "transported_ordered_spectral_package_left_at_common": {
+        "family_eigenvalues": [
+          1.3557137562771555,
+          0.40452595199087626,
+          0.102160291731968
+        ],
+        "seed_value": 0.9231656602589082,
+        "spectral_gaps": [
+          0.9511878042862792,
+          0.30236566025890826
+        ]
+      },
+      "transported_ordered_spectral_package_right_at_common": {
+        "family_eigenvalues": [
+          1.3557137562771555,
+          0.40452595199087626,
+          0.102160291731968
+        ],
+        "seed_value": 0.9231656602589082,
+        "spectral_gaps": [
+          0.9511878042862792,
+          0.30236566025890826
+        ]
+      },
+      "universal_formula": "Sigma_ch(sum_s i_s R_s) = sum_s sigma_seed(R_s)",
+      "witness_kind": "common_refinement_transport_equalizer"
     },
     "closure_route": "shared_charged_budget",
     "g_by_sector_by_refinement": {
@@ -509,14 +691,14 @@
         }
       ]
     },
-    "generated_utc": "2026-03-25T10:44:24Z",
+    "generated_utc": "2026-04-03T04:42:56Z",
     "labels": [
       "f1",
       "f2",
       "f3"
     ],
     "metadata": {
-      "note": "Shared charged-sector budget artifact. The current constructive candidate is the monoidal completion of the common family spectral seed sigma_seed = mean(family_eigenvalues) + min(spectral_gaps) on the canonical decomposable charged direct-sum family; the remaining base theorem burden is the decomposition-independent gluing theorem showing that the u/d/e certificates are restrictions of one common evaluator.",
+      "note": "Shared charged-sector budget artifact. The current constructive candidate is the charged_common_refinement_sigma_seed_equalizer: the monoidal completion of the common family spectral seed sigma_seed = mean(family_eigenvalues) + min(spectral_gaps) on the canonical decomposable charged direct-sum family. The current repo state carries an explicit witness-grade common-mean readback with left_common_mean = right_common_mean = current_mean_eigenvalue and zero residual, while the min-gap side remains proxy-supported on the current family. The immediate missing witness inside this candidate route is still the common-refinement transport equalizer. This artifact must not be read as a theorem route to the charged absolute scale: the later live charged theorem records that absolute normalization is quotient-only under common-shift symmetry until an affine-covariant anchor A_ch exists.",
       "sector_response_artifact": "oph_sector_response_object"
     },
     "partition_invariance_certificate": {
@@ -588,7 +770,7 @@
       "13": 3.422911777662352e-05,
       "23": 0.0021129930994784212
     },
-    "generated_utc": "2026-03-25T10:44:24Z",
+    "generated_utc": "2026-04-12T02:50:39Z",
     "global_scale_family": {
       "kappa_canonical": 1.0,
       "kappa_max_admissible": 6.934955573215182,
@@ -647,9 +829,9 @@
     }
   },
   "commutator_invariant": {
-    "det_abs": 3.9956731459007727e-07,
-    "det_imag": -3.9956731459007727e-07,
-    "fro_norm": 0.02228425717756219
+    "det_abs": 1.5690162565944403,
+    "det_imag": 1.5690162565944403,
+    "fro_norm": 794.0698627686396
   },
   "cycle_holonomy_class": {
     "012": 1.7561442767905915,
@@ -782,13 +964,13 @@
     "conjugation_class_stable": true,
     "rephasing_sensitive_cycles_detected": false
   },
-  "generated_utc": "2026-03-25T10:44:25Z",
+  "generated_utc": "2026-04-12T02:53:18Z",
   "intrinsic_label_order": [
     "f1",
     "f2",
     "f3"
   ],
-  "jarlskog": -0.01323024254580132,
+  "jarlskog": 3.8133260918360656e-10,
   "labels": [
     "f1",
     "f2",
@@ -799,7 +981,7 @@
     "charged_budget_artifact": "oph_charged_budget_transport",
     "cocycle_artifact": "oph_overlap_edge_transport_cocycle",
     "line_lift_artifact": "oph_overlap_edge_line_lift",
-    "note": "Blind forward dictionary artifact for flavor-theorem development.",
+    "note": "Blind forward dictionary artifact for flavor-theorem development. The quark branch now preserves any explicit edge-statistics-to-spread bridge metadata all the way to the exported dictionary surface.",
     "observable_artifact": "oph_flavor_observable",
     "pushforward_artifact": "oph_sector_response_object",
     "quark_descent_artifact": "oph_quark_sector_descent",
@@ -814,6 +996,10 @@
   "observable_proof_status": "conjugacy_riesz_candidate",
   "overlap_edge_line_lift": {
     "artifact": "oph_overlap_edge_line_lift",
+    "charged_declaration_functor_kind": "projective_polar_riesz_common_refinement_to_charged_sector_response",
+    "charged_declaration_status": "candidate_only",
+    "charged_declaration_unique_mod_objectwise_u1": true,
+    "charged_sector_response_operator_name": "C_hat_e^{cand}",
     "cocycle_identity_closed": true,
     "common_refinement_level": 1,
     "common_refinement_overlap_certificate": {
@@ -995,7 +1181,8 @@
       "kind": "objectwise_u1",
       "strict_after_projectivization": true
     },
-    "generated_utc": "2026-03-25T10:44:24Z",
+    "generated_utc": "2026-03-29T12:28:06Z",
+    "intrinsic_generation_branch_generator_artifact": "oph_intrinsic_generation_bundle_branch_generator",
     "line_lift_by_refinement": [
       {
         "edge_line_operators": {
@@ -1468,16 +1655,18 @@
         ]
       }
     ],
+    "line_lift_is_readout_of": "oph_intrinsic_generation_bundle_branch_generator",
     "notes": [
-      "This artifact now tracks a projective polar-Riesz common-refinement eigenline transport candidate. Same-label diagonal transport is explicit here; the off-diagonal flavor-edge overlaps are induced downstream after transport and are not the transport maps themselves.",
-      "The remaining OPH-native blocker is the common-refinement eigenline transport functor itself, not the downstream projector-overlap algebra on the current family."
+      "This artifact now tracks the projective polar-Riesz common-refinement eigenline transport as a downstream readout of the centered compressed generation-bundle branch generator candidate. Same-label diagonal transport is explicit here; the off-diagonal flavor-edge overlaps are induced downstream after transport and are not the transport maps themselves.",
+      "On the charged branch, this same transport layer is the declaration/readout shell beneath the latent operator candidate C_hat_e^{cand}.",
+      "The remaining OPH-native blocker is now the persistent simple-spectrum splitting theorem for the centered compressed branch generator on the realized generation bundle, not the downstream projector-overlap algebra on the current family."
     ],
     "object_labels": [
       "f1",
       "f2",
       "f3"
     ],
-    "origin_status": "projective_polar_riesz_common_refinement_candidate",
+    "origin_status": "spectral_readout_of_centered_generation_bundle_candidate",
     "presentation_independence_status": "candidate_only",
     "proof_status": "candidate_only",
     "raw_entry_readback_forbidden_as_closed_origin": true,
@@ -2041,6 +2230,10 @@
       "same_refinement_edge_ops_vanish": true,
       "status": "closed"
     },
+    "schur_diagonal_pairing_certificate": {
+      "exact_markov_required": false,
+      "same_label_only": true
+    },
     "transport_group": "objectwise_u1",
     "transport_partial_isometry_by_label_and_refinement_pair": [
       {
@@ -2593,7 +2786,7 @@
         }
       }
     ],
-    "upstream_missing_object": "oph_common_refinement_eigenline_transport_functor",
+    "upstream_missing_object": "oph_generation_bundle_branch_generator_splitting",
     "vertex_rephasing_gauge_class": "candidate_mod_vertex_rephasing"
   },
   "overlap_edge_transport_cocycle": {
@@ -2813,7 +3006,7 @@
         "level": 1
       }
     ],
-    "generated_utc": "2026-03-25T10:44:24Z",
+    "generated_utc": "2026-03-25T11:36:23Z",
     "hermitian_descendant_riesz_margin": {
       "epsilon_transport_gap": 0.03162277660168382,
       "gamma": 0.30236566025890826,
@@ -2831,7 +3024,7 @@
     ],
     "latest_level": 1,
     "metadata": {
-      "note": "Overlap-edge transport cocycle candidate is now treated as an induced off-diagonal edge object downstream of the projective same-label eigenline transport candidate, not as a primitive transport law. The remaining OPH-native blocker is the eigenline transport functor behind the transported projectors."
+      "note": "Overlap-edge transport cocycle candidate is now treated as an induced off-diagonal edge object downstream of the projective same-label eigenline transport readout, which itself is now a serialization of the centered compressed generation-bundle branch-generator candidate rather than a primitive transport law. The remaining OPH-native blocker is the persistent simple-spectrum splitting theorem behind that generator."
     },
     "non_floor_amplitude_certificate": {
       "all_equal_off_diagonal": false,
@@ -3030,7 +3223,7 @@
         "operator_norm": 1.1643512168916883
       }
     ],
-    "upstream_missing_object": "oph_common_refinement_eigenline_transport_functor",
+    "upstream_missing_object": "oph_generation_bundle_branch_generator_splitting",
     "vertex_rephasing_gauge_class": "candidate_mod_vertex_rephasing"
   },
   "pairwise_suppression": [
@@ -3226,6 +3419,14 @@
   "phi_nu_unclosed": true,
   "pushforward_proof_status": "conjugacy_riesz_candidate",
   "quark_certification_status": "placeholder_unpromotable",
+  "quark_edge_statistics_bridge_artifact": "oph_quark_edge_statistics_spread_candidate",
+  "quark_edge_statistics_bridge_candidate_sigmas": {
+    "sigma_d_total_log_per_side": 3.4210589139721543,
+    "sigma_u_total_log_per_side": 5.578418804072826
+  },
+  "quark_edge_statistics_bridge_status": "candidate_only",
+  "quark_even_excitation_source_artifact": "oph_family_excitation_spread_map",
+  "quark_even_excitation_source_status": "closed",
   "quark_odd_response_law": {
     "Delta_Phi_q": [
       [
@@ -3341,7 +3542,7 @@
       "13": 3.422911777662352e-05,
       "23": 0.0021129930994784212
     },
-    "generated_utc": "2026-03-25T10:44:25Z",
+    "generated_utc": "2026-04-12T02:50:39Z",
     "kappa": 1.0,
     "kappa_max_admissible": 6.934955573215182,
     "lift_constants": null,
@@ -3410,7 +3611,9 @@
     "upstream_missing_object": "oph_charged_dirac_odd_deformation_form"
   },
   "quark_promotion_blockers": [
-    "quark_norm_placeholder"
+    "quark_even_excitation_candidate_only",
+    "quark_source_mode_unresolved",
+    "quark_b_odd_source_values_open"
   ],
   "quark_sector_descent": {
     "D_d_left_log": [
@@ -3477,6 +3680,18 @@
       0.06917969610212979,
       0.44534429365745903
     ],
+    "E_d_log": [
+      -1.5817974645909918,
+      -0.1413050708180164,
+      1.7231025354090082
+    ],
+    "E_u_log": [
+      -2.914764357228376,
+      0.23902871445675228,
+      2.6757356427716235
+    ],
+    "J_B_source_d": null,
+    "J_B_source_u": null,
     "Phi_d": [
       [
         0.0,
@@ -3580,6 +3795,8 @@
       ]
     ],
     "artifact": "oph_quark_sector_descent",
+    "b_odd_source_scalar_evaluator_artifact": "oph_quark_diagonal_B_odd_source_scalar_evaluator",
+    "b_odd_source_scalar_evaluator_status": "pure_B_odd_projection_formula_closed_source_values_open",
     "budget_neutrality_certificate": {
       "delta_logg_q": 0.0,
       "status": "closed",
@@ -3587,22 +3804,50 @@
     },
     "channel_splitter_kind": "odd_projector_resolved_splitter",
     "coefficient_free": true,
+    "constructive_edge_statistics_bridge_artifact": "oph_quark_edge_statistics_spread_candidate",
+    "constructive_edge_statistics_bridge_candidate_sigmas": {
+      "sigma_d_total_log_per_side": 3.4210589139721543,
+      "sigma_u_total_log_per_side": 5.578418804072826
+    },
+    "constructive_edge_statistics_bridge_status": "candidate_only",
+    "d_raw_channel_norm_candidate": 0.12172551081512113,
     "degenerate_placeholder_fallback_used": false,
     "delta_logg_q": 0.0,
     "delta_logg_q_status": "closed_zero_corollary",
     "dense_entrywise_amplitude_used": false,
-    "g_ch": 0.9231656602589083,
-    "g_d": 0.9231656602589083,
-    "g_u": 0.9231656602589083,
-    "generated_utc": "2026-03-25T10:44:25Z",
+    "diagonal_gap_shift_artifact": "oph_family_excitation_diagonal_gap_shift_map",
+    "diagonal_gap_shift_emitter_artifact": "oph_family_excitation_diagonal_gap_shift_emitter",
+    "diagonal_gap_shift_emitter_status": "emitter_shell_waiting_scalar_evaluator",
+    "diagonal_gap_shift_scalar_evaluator_artifact": "oph_family_excitation_diagonal_gap_shift_scalar_evaluator",
+    "diagonal_gap_shift_scalar_evaluator_status": "current_family_scalar_law_closed_waiting_source_readback_pair",
+    "diagonal_gap_shift_status": "next_family_declared_after_current_surface_obstruction",
+    "diagonal_gap_shift_tau_map_artifact": "oph_family_excitation_diagonal_gap_shift_tau_map",
+    "diagonal_gap_shift_tau_map_status": "current_family_scalar_law_closed_waiting_source_readback_pair",
+    "even_evaluator_centering_mode": "trace_zero",
+    "even_evaluator_family": "trace_zero_quadratic_on_ordered_branch_generator",
+    "even_excitation_diagonal_gap_shift_candidate": "oph_family_excitation_diagonal_gap_shift_map",
+    "even_excitation_gap_map_candidate": "oph_family_excitation_gap_map",
+    "even_excitation_input_kind": "ordered_branch_generator_spectral_package",
+    "even_excitation_proof_status": "pure_B_source_readback_open",
+    "even_excitation_source_artifact": "oph_family_excitation_spread_map",
+    "even_excitation_source_status": "closed",
+    "even_excitation_spread_map_candidate": "oph_family_excitation_spread_map",
+    "even_excitation_theorem_candidate": "oph_family_excitation_evaluator",
+    "exact_missing_object": "source_readback_u_log_per_side_and_source_readback_d_log_per_side",
+    "g_ch": 0.9231656602589082,
+    "g_d": 0.12172551081512113,
+    "g_u": 0.7797392875757557,
+    "generated_utc": "2026-04-12T02:53:17Z",
+    "hierarchy_driver_status": "candidate_spread_values_populated",
     "metadata": {
-      "note": "Candidate odd quark-sector descent built from an explicit shared charged response seed plus the separate odd-response-law artifact. The local shape map is now explicit and coefficient-free on the current single-kappa ray; the remaining theorem burdens are the upstream OPH origin of that ray and the shared charged scalarization closure for absolute norms.",
+      "note": "Candidate odd quark-sector descent built from an explicit shared charged response seed plus the separate odd-response-law artifact. The local shape map is explicit and coefficient-free on the current single-kappa ray. The reduced even family is fixed as a trace-zero quadratic on the ordered branch coordinate; when a current-family spread pair is available, the centered even-log profiles are read back directly from the exported spread map. If the next diagonal gap-shift family is later populated, the builder can lift those logs by B_ord without reopening the old larger branch. A compact current-family sector-mean split may refine g_u and g_d without changing those rays. No reference-fit exact-readout artifact is consumed here.",
       "shared_charged_seed_kind": "averaged_u_d_candidate"
     },
     "noncentrality_witness": {
-      "fro_norm": 0.02228425717756219,
+      "fro_norm": 0.00027640229325291395,
       "status": "closed"
     },
+    "ordered_branch_coordinate_formula": "x_a = 2*(lambda_a-lambda_1)/(lambda_3-lambda_1) - 1",
     "orientation_fixed": true,
     "projector_split_coefficients": [
       0.7943923487582518,
@@ -3616,9 +3861,22 @@
       "status": "closed",
       "value": 1.0290479795191776
     },
+    "sector_mean_split_artifact": "oph_quark_sector_mean_split",
+    "sector_mean_split_status": "closed_current_family_predictive_law",
+    "shared_norm_origin": "oph_quark_sector_mean_split",
+    "shared_norm_status": "closed_current_family_predictive_law",
     "shared_scalarization_law_status": "candidate_only",
+    "spread_sigma_d_total_log_per_side": 3.3049,
+    "spread_sigma_source_kind": "theorem_grade_mean_surface_readback",
+    "spread_sigma_u_total_log_per_side": 5.5905,
+    "tau_d_log_per_side": null,
+    "tau_u_log_per_side": null,
+    "u_raw_channel_norm_candidate": 0.7797392875757557,
     "uses_full_projector_algebra": true
   },
+  "quark_spread_sigma_d_total_log_per_side": 3.3049,
+  "quark_spread_sigma_source_kind": "theorem_grade_mean_surface_readback",
+  "quark_spread_sigma_u_total_log_per_side": 5.5905,
   "refinement_stability": {
     "conjugacy_defect_sup": 0.03162277660168382,
     "conjugacy_persistence_candidate": true,
@@ -4050,14 +4308,14 @@
     }
   },
   "singular_values_d": [
-    0.8402238205029884,
-    0.9236052947458946,
-    1.0074645336912607
+    0.005121438948009003,
+    0.0916111424053981,
+    3.82011787992005
   ],
   "singular_values_u": [
-    0.8677592945247851,
-    0.9254060055662021,
-    0.9771187253652676
+    0.002287663517422587,
+    1.2566920642121726,
+    164.4626302858475
   ],
   "spectral_gaps": [
     0.9511878042862792,

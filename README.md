@@ -13,7 +13,7 @@ OPH is a reconstruction program for fundamental physics. Spacetime, gauge struct
 - A finite-resolution theorem package for observer patches, collars, overlap repair, higher gauge structure, records, and checkpoint/restoration.
 - A conditional route to Lorentzian geometry, modular time, Jacobson-type Einstein dynamics, and de Sitter static-patch cosmology on the extracted prime geometric subnet; the Einstein branch uses fixed-cap stationarity, the null-surface bridge, and the separate bounded-interval projective branch, while the remaining UV/BW scaffold is geometric cap-pair realization on that subnet plus ordered cut-pair rigidity, with the eventual fixed-local-collar modular-transport common floor as the smallest lower blocker.
 - A conditional compact gauge route in the bosonic branch to the realized Standard Model quotient `SU(3) x SU(2) x U(1) / Z_6`, under the transportable-sector reconstruction premises and MAR, together with the exact hypercharge lattice and the realized counting chain `N_g = 3`, `N_c = 3`.
-- A particle program with exact structural massless carriers, a forward-emitted Phase II electroweak calibration branch with a closed target-free public `W/Z` theorem surface plus a compare-only exact frozen pair, a quantitative Higgs/top stage, exact non-hadron mass sidecars, and explicit continuation lanes for flavor and hadrons.
+- A particle program with exact structural massless carriers, a forward-emitted Phase II electroweak calibration branch with a closed target-free public `W/Z` theorem surface plus a compare-only exact frozen pair, a quantitative Higgs/top stage, an exact selected-class quark closure with explicit exact forward Yukawas, exact non-hadron mass surfaces, and explicit continuation lanes where theorem boundaries remain open.
 - A concrete screen-microphysics architecture that puts measurement, records, and observers inside the physics.
 
 ## Local Unification Surface
@@ -33,7 +33,7 @@ Constants, theorem chains, and open proof fronts for this surface are tracked in
 
 <p align="center">
   <a href="assets/prediction-chain.svg?v=20260412" target="_blank" rel="noopener noreferrer">
-    <img src="assets/prediction-chain.svg?v=20260412" alt="Current OPH theorem stack and open proof fronts" width="92%">
+    <img src="assets/prediction-chain.svg?v=20260412" alt="OPH theorem stack and open proof fronts" width="92%">
   </a>
 </p>
 
@@ -57,10 +57,11 @@ Constants, theorem chains, and open proof fronts for this surface are tracked in
 | Electroweak sidecar | `W = 80.377 GeV`, `Z = 91.18797809193725 GeV` | exact frozen repair surface |
 | Higgs/top exact sidecar | `(H, t) = (125.1995304097179, 172.3523553288311) GeV` | exact compare-only inverse slice on the same Higgs/top Jacobian |
 | Charged witness | `(e, mu, tau) = (0.00051099895, 0.1056583755, 1.7769324651340912) GeV` | exact same-family witness |
-| Quark witness | `(u, d, s, c, b, t) = (0.00216, 0.00470, 0.0935, 1.273, 4.183, 172.3523553288311) GeV` | exact same-family witness |
+| Quark witness | `(u, d, s, c, b, t) = (0.00216, 0.00470, 0.0935, 1.273, 4.183, 172.3523553288311) GeV` | exact hit on the official PDG 2025 API running-quark surface on `current_family_only`; the selected public physical quark frame class chosen by `P` carries the same exact sextet together with explicit exact forward Yukawas `Y_u`, `Y_d`; the target-free mass bridge closes separately on the emitted D12 ray; selected-class paper/source-of-truth synchronization anchor: [#198](https://github.com/FloatingPragma/observer-patch-holography/issues/198) |
 | Neutrino theorem branch | `(m1, m2, m3) = (0.017454720257976796, 0.019481987935919015, 0.05307522145074924) eV` with emitted weighted-cycle `Δm21²`, `Δm31²`, `Δm32²` | theorem-grade weighted-cycle bridge-rigid absolute family |
 
 Public Higgs/top rows are carried by the closed one-scalar forward seed. The exact inverse pair above is a compare-only sidecar on the same Jacobian and does not replace the public forward branch.
+The quark lane carries four linked surfaces: the exact `current_family_only` sextet, which matches the official PDG 2025 API running-quark target surface exactly; a restricted current-family common-refinement transport-frame closure that emits a sector-attached `Sigma_ud^phys` element, reconstructs the same sextet, and closes explicit exact forward Yukawas `Y_u` and `Y_d` on that carrier; the target-free mass bridge `Delta_ud^overlap = (1/6) log(c_d / c_u)` on the emitted D12 ray; and the selected public physical quark frame class chosen by `P`. On that selected public class, the direct public descent theorem makes the exact physical sigma datum target-free public, the affine mean law emits `(g_u, g_d)` algebraically, the ordered three-point readout yields the exact sextet, and the exact forward construction emits explicit exact forward Yukawas `Y_u` and `Y_d`. This is selected-class closure only. It does not claim a global classification of all quark frame classes. The sextet's top coordinate uses the PDG 2025 cross-section mass entry rather than the auxiliary direct-top entry. Selected-class paper/source-of-truth synchronization anchor: [#198](https://github.com/FloatingPragma/observer-patch-holography/issues/198).
 
 **Particle derivation stack**
 
@@ -72,9 +73,9 @@ Public Higgs/top rows are carried by the closed one-scalar forward seed. The exa
 
 <p align="center"><sub>A compact view of the particle lane. Click to open the full SVG.</sub></p>
 
-### Continuation-grade particle successes
+### Additional particle surfaces
 
-- The quark continuation lane emits public rows for `u`, `d`, `s`, `c`, and `b` on the selected continuation branch.
+- The quark lane closes on the selected public physical quark frame class chosen by `P`, with the exact PDG 2025 running-quark sextet and explicit exact forward Yukawas `Y_u`, `Y_d`; issue anchor: [#198](https://github.com/FloatingPragma/observer-patch-holography/issues/198).
 - The neutrino weighted-cycle branch reaches the observed PMNS and hierarchy regime with
   `theta12 = 34.2259°`, `theta23 = 49.7228°`, `theta13 = 8.68636°`, `delta = 305.581°`,
   and `Δm21² / Δm32² = 0.03072111`.
@@ -85,7 +86,7 @@ Public Higgs/top rows are carried by the closed one-scalar forward seed. The exa
 
 - **Paper 1. [Observers Are All You Need](paper/observers_are_all_you_need.pdf)**: synthesis paper for the whole OPH stack.
 - **Paper 2. [Recovering Relativity and the Standard Model from the OPH Package Rooted in Observer Consistency](paper/recovering_relativity_and_standard_model_structure_from_observer_overlap_consistency_compact.pdf)**: SM/GR derivation paper for the recovered core.
-- **Paper 3. [Deriving the Particle Zoo from Observer Consistency](paper/deriving_the_particle_zoo_from_observer_consistency.pdf)**: particle derivation, exact-hit surface, and continuation map.
+- **Paper 3. [Deriving the Particle Zoo from Observer Consistency](paper/deriving_the_particle_zoo_from_observer_consistency.pdf)**: particle derivation, exact-hit surface, and theorem-boundary map.
 - **Paper 4. [Reality as a Consensus Protocol](paper/reality_as_consensus_protocol.pdf)**: fixed-point, repair, and consensus formulation.
 - **Paper 5. [Screen Microphysics and Observer Synchronization](paper/screen_microphysics_and_observer_synchronization.pdf)**: finite screen architecture, records, and observer machinery.
 

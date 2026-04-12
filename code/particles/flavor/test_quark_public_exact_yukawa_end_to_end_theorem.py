@@ -1,0 +1,40 @@
+#!/usr/bin/env python3
+"""Tests for the public exact Yukawa theorem wrapper."""
+
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+from derive_quark_public_physical_sigma_datum_descent import build_artifact as build_public_sigma_descent
+from derive_quark_public_exact_yukawa_end_to_end_theorem import build_artifact
+
+
+ROOT = Path(__file__).resolve().parents[2]
+RUNS = ROOT / "particles" / "runs" / "flavor"
+
+
+def _load(name: str) -> dict:
+    return json.loads((RUNS / name).read_text(encoding="utf-8"))
+
+
+def test_quark_public_exact_yukawa_end_to_end_theorem_closes_public_target() -> None:
+    public_sigma_theorem = build_public_sigma_descent(
+        _load("quark_current_family_transport_frame_sector_attached_lift.json"),
+        _load("quark_current_family_transport_frame_strengthened_physical_sigma_lift_theorem.json"),
+        _load("overlap_edge_line_lift.json"),
+    )
+    payload = build_artifact(
+        public_sigma_theorem,
+        _load("quark_exact_pdg_end_to_end_theorem.json"),
+        _load("quark_exact_yukawa_end_to_end_theorem.json"),
+    )
+
+    assert payload["artifact"] == "oph_quark_public_exact_yukawa_end_to_end_theorem"
+    assert payload["proof_status"] == "closed_target_free_public_exact_yukawa_end_to_end_theorem"
+    assert payload["target_name"] == "target_free_public_exact_forward_quark_yukawas"
+    assert payload["minimal_exact_blocker_set"] == []
+    outputs = payload["public_exact_outputs"]["forward_yukawa_artifact"]
+    assert outputs["artifact"] == "oph_quark_current_family_transport_frame_exact_forward_yukawas"
+    assert outputs["forward_certified"] is True
+    assert payload["public_exact_outputs"]["exact_running_values_gev"]["d"] == 0.004699999999999999

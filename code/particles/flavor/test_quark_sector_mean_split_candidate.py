@@ -28,6 +28,8 @@ def test_quark_sector_mean_split_candidate_is_compact_and_sector_distinct() -> N
 
     assert spread["sigma_source_kind"] == "theorem_grade_mean_surface_readback"
     assert spread["spread_emitter_status"] == "closed"
+    assert spread["metadata"]["constructive_edge_statistics_bridge_artifact"] == "oph_quark_edge_statistics_spread_candidate"
+    assert spread["metadata"]["constructive_edge_statistics_bridge_status"] == "candidate_only"
     assert mean_split["candidate_kind"] == "two_scalar_affine_mean_split"
     assert mean_split["theorem_candidate"] == "quark_sector_mean_split_theorem"
     assert mean_split["active_candidate"] == "ordered_affine_mean_readout_candidate"

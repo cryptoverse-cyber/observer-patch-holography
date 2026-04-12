@@ -110,6 +110,14 @@ def main() -> int:
         "Y_d": yukawas.get("Y_d"),
         "quark_certification_status": yukawas.get("certification_status"),
         "quark_promotion_blockers": yukawas.get("promotion_blockers"),
+        "quark_even_excitation_source_artifact": yukawas.get("even_excitation_source_artifact"),
+        "quark_even_excitation_source_status": yukawas.get("even_excitation_source_status"),
+        "quark_spread_sigma_u_total_log_per_side": yukawas.get("spread_sigma_u_total_log_per_side"),
+        "quark_spread_sigma_d_total_log_per_side": yukawas.get("spread_sigma_d_total_log_per_side"),
+        "quark_spread_sigma_source_kind": yukawas.get("spread_sigma_source_kind"),
+        "quark_edge_statistics_bridge_artifact": yukawas.get("constructive_edge_statistics_bridge_artifact"),
+        "quark_edge_statistics_bridge_status": yukawas.get("constructive_edge_statistics_bridge_status"),
+        "quark_edge_statistics_bridge_candidate_sigmas": yukawas.get("constructive_edge_statistics_bridge_candidate_sigmas"),
         "template_amplitude_fallback_used": yukawas.get("template_amplitude_fallback_used"),
         "up_down_sector_distinct": yukawas.get("up_down_sector_distinct"),
         "singular_values_u": yukawas.get("singular_values_u"),
@@ -130,7 +138,7 @@ def main() -> int:
             "quark_response_artifact": quark_response.get("artifact"),
             "quark_descent_artifact": quark_descent.get("artifact"),
             "yukawa_artifact": yukawas.get("artifact"),
-            "note": "Blind forward dictionary artifact for flavor-theorem development.",
+            "note": "Blind forward dictionary artifact for flavor-theorem development. The quark branch now preserves any explicit edge-statistics-to-spread bridge metadata all the way to the exported dictionary surface.",
         },
     }
 

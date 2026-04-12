@@ -43,7 +43,7 @@ def build_markdown(
     lines = [
         "# Hadron Pipeline Status",
         "",
-        "This file tracks the execution and publication contract for the active hadron",
+        "This file records the execution and publication contract for the hadron",
         "prediction path separately from the main particle table.",
         "",
         "## Execution Receipt",
@@ -54,7 +54,7 @@ def build_markdown(
         f"- `N_sep`: `{required.get('N_sep')}`",
         f"- kernel_id: `{(receipt.get('execution_contract') or {}).get('kernel_id')}`",
         f"- initial_configuration: `{(receipt.get('execution_contract') or {}).get('initial_configuration')}`",
-        f"- next_single_residual_object_after_execution: `{(receipt.get('execution_contract') or {}).get('next_single_residual_object_after_execution')}`",
+        f"- receipt-stage successor object: `{(receipt.get('execution_contract') or {}).get('next_single_residual_object_after_execution')}`",
         "",
         "## Stable-Channel Execution State",
         "| ensemble_id | cfg_ids | n_cfg | n_src_per_cfg | t_extent | arrays_written |",
@@ -108,10 +108,10 @@ def build_markdown(
     lines.extend(
         [
             "",
-            "## Residual Open Object",
-            f"- current: `{(closure or {}).get('smallest_live_residual_object')}`",
-            "- after-execution: `StableChannelForwardWindowConvergence`",
-            "- after-convergence: `oph_hadron_rho_scattering_readout`",
+            "## Residual Gate Objects",
+            f"- frontier object: `{(closure or {}).get('smallest_live_residual_object')}`",
+            "- window-stage object: `StableChannelForwardWindowConvergence`",
+            "- channel-extension object: `oph_hadron_rho_scattering_readout`",
             "",
             "## Working Rule",
             "Keep hadron rows out of the public particle table until the active pipeline",

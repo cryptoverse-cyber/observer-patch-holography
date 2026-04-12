@@ -28,6 +28,8 @@ ROOT = Path(__file__).resolve().parents[2]
 FORWARD_YUKAWAS = ROOT / "particles" / "runs" / "flavor" / "forward_yukawas.json"
 MASS_RAY = ROOT / "particles" / "runs" / "flavor" / "quark_d12_mass_ray.json"
 SELECTOR_LAW = ROOT / "particles" / "runs" / "flavor" / "light_quark_isospin_overlap_defect_selector_law.json"
+SPREAD_MAP = ROOT / "particles" / "runs" / "flavor" / "quark_spread_map.json"
+EDGE_BRIDGE = ROOT / "particles" / "runs" / "flavor" / "quark_edge_statistics_spread_candidate.json"
 DEFAULT_OUT = (
     ROOT
     / "particles"
@@ -45,10 +47,26 @@ def _load_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def _weighted_transport_branch(delta_value: float, sigma_u: float, sigma_d: float) -> dict[str, float]:
+    denom = 2.0 * (sigma_u + sigma_d)
+    tau_u = sigma_d * delta_value / denom
+    tau_d = sigma_u * delta_value / denom
+    lam = sigma_u * sigma_d * delta_value / denom
+    return {
+        "tau_u_log_per_side": float(tau_u),
+        "tau_d_log_per_side": float(tau_d),
+        "Lambda_ud_B_transport": float(lam),
+        "tau_sum_half_delta_identity": float((tau_u + tau_d) - (0.5 * delta_value)),
+        "tau_ratio_minus_sigma_ratio": float((tau_d / tau_u) - (sigma_u / sigma_d)),
+    }
+
+
 def build_payload(
     forward_yukawas: dict[str, Any],
     mass_ray: dict[str, Any],
     selector_law: dict[str, Any],
+    spread_map: dict[str, Any] | None = None,
+    edge_bridge: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     m_u = float(forward_yukawas["singular_values_u"][0])
     m_d = float(forward_yukawas["singular_values_d"][0])
@@ -64,6 +82,29 @@ def build_payload(
     b_ord = [float(value) for value in selector_law.get("B_ord") or (-1.0, 0.0, 1.0)]
     source_u = [beta_u * value for value in b_ord]
     source_d = [beta_d * value for value in b_ord]
+    weighted_transport_by_sigma_branch: dict[str, Any] = {}
+    if spread_map is not None:
+        sigma_u = float(spread_map["sigma_u_total_log_per_side"])
+        sigma_d = float(spread_map["sigma_d_total_log_per_side"])
+        weighted_transport_by_sigma_branch["main_builder_sigma_pair"] = {
+            "provider_artifact": spread_map.get("artifact"),
+            "provider_status": spread_map.get("spread_emitter_status"),
+            "sigma_source_kind": spread_map.get("sigma_source_kind"),
+            "sigma_u_total_log_per_side": sigma_u,
+            "sigma_d_total_log_per_side": sigma_d,
+            **_weighted_transport_branch(delta_ud_overlap, sigma_u, sigma_d),
+        }
+    if edge_bridge is not None:
+        sigma_u = float(edge_bridge["candidate_sigmas"]["sigma_u_total_log_per_side"])
+        sigma_d = float(edge_bridge["candidate_sigmas"]["sigma_d_total_log_per_side"])
+        weighted_transport_by_sigma_branch["edge_statistics_bridge_sigma_pair"] = {
+            "provider_artifact": edge_bridge.get("artifact"),
+            "provider_status": edge_bridge.get("bridge_status"),
+            "sigma_source_kind": edge_bridge.get("candidate_kind"),
+            "sigma_u_total_log_per_side": sigma_u,
+            "sigma_d_total_log_per_side": sigma_d,
+            **_weighted_transport_branch(delta_ud_overlap, sigma_u, sigma_d),
+        }
     return {
         "artifact": "oph_quark_d12_internal_backread_continuation_closure",
         "generated_utc": _timestamp(),
@@ -115,9 +156,10 @@ def build_payload(
             "source_readback_d_log_per_side": source_d,
             "J_B_source_u": beta_u,
             "J_B_source_d": beta_d,
-            "tau_u_log_per_side": beta_u,
-            "tau_d_log_per_side": beta_d,
+            "tau_u_log_per_side_note": "weighted transport tau_u depends on the chosen sigma branch and is recorded separately",
+            "tau_d_log_per_side_note": "weighted transport tau_d depends on the chosen sigma branch and is recorded separately",
         },
+        "closed_weighted_transport_by_sigma_branch": weighted_transport_by_sigma_branch,
         "consistency_checks": {
             "delta_minus_t1_over_5": delta_ud_overlap - (t1 / 5.0),
             "eta_minus_formula": eta_q_centered + ((1.0 - x2 * x2) / 27.0) * t1,
@@ -132,6 +174,7 @@ def build_payload(
             "The numeric closure uses only the emitted reference-free forward light-quark pair and the explicit continuation assumptions listed in this artifact.",
             "No target masses or CKM data are used to fix the mass-side scalar package on this sidecar surface.",
             "The closed values belong to a continuation-only internal backread surface rather than to the public theorem-grade quark lane.",
+            "This sidecar now distinguishes the pure-B source payload pair beta/source_readback from the weighted transport pair tau/Lambda, which depends additionally on the chosen sigma branch.",
         ],
     }
 
@@ -141,13 +184,21 @@ def main() -> int:
     parser.add_argument("--forward-yukawas", default=str(FORWARD_YUKAWAS))
     parser.add_argument("--mass-ray", default=str(MASS_RAY))
     parser.add_argument("--selector-law", default=str(SELECTOR_LAW))
+    parser.add_argument("--spread-map", default=str(SPREAD_MAP))
+    parser.add_argument("--edge-bridge", default=str(EDGE_BRIDGE))
     parser.add_argument("--output", default=str(DEFAULT_OUT))
     args = parser.parse_args()
 
+    spread_map_path = Path(args.spread_map)
+    spread_map = _load_json(spread_map_path) if spread_map_path.exists() else None
+    edge_bridge_path = Path(args.edge_bridge)
+    edge_bridge = _load_json(edge_bridge_path) if edge_bridge_path.exists() else None
     payload = build_payload(
         _load_json(Path(args.forward_yukawas)),
         _load_json(Path(args.mass_ray)),
         _load_json(Path(args.selector_law)),
+        spread_map=spread_map,
+        edge_bridge=edge_bridge,
     )
     out_path = Path(args.output)
     out_path.parent.mkdir(parents=True, exist_ok=True)

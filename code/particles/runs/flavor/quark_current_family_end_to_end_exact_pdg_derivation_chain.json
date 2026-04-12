@@ -1,0 +1,99 @@
+{
+  "artifact": "oph_quark_current_family_end_to_end_exact_pdg_derivation_chain",
+  "exact_forward_yukawas_artifact": {
+    "artifact": "oph_quark_current_family_transport_frame_exact_forward_yukawas",
+    "certification_status": "forward_matrix_certified",
+    "forward_certified": true,
+    "scope": "current_family_common_refinement_transport_frame_only",
+    "singular_values_d": [
+      0.0046999999999367175,
+      0.09350000000000759,
+      4.182999999999995
+    ],
+    "singular_values_u": [
+      0.002160000710515581,
+      1.2730000000009922,
+      172.35235532883115
+    ]
+  },
+  "exact_running_values_gev": {
+    "b": 4.182999999999994,
+    "c": 1.2729999999999992,
+    "d": 0.004699999999999999,
+    "s": 0.09349999999999999,
+    "t": 172.35235532883115,
+    "u": 0.0021600000000000005
+  },
+  "generated_utc": "2026-04-12T16:09:50Z",
+  "lemma_chain": [
+    {
+      "artifact": "oph_quark_target_free_bridge_theorem",
+      "lemma": "light_quark_overlap_defect_value_law / quark_d12_t1_value_law",
+      "result": {
+        "Delta_ud_overlap": "Delta_ud_overlap = (1/6) * log(c_d / c_u)",
+        "t1": "t1 = ray_modulus = (5/6) * log(c_d / c_u)"
+      },
+      "step": 1
+    },
+    {
+      "artifact": "oph_quark_current_family_transport_frame_strengthened_physical_sigma_lift_theorem",
+      "lemma": "restricted_strengthened_physical_sigma_lift",
+      "result": {
+        "canonical_token": "CR::same_label_left::transport_frame::current_family_exact",
+        "sigma_d": 3.296264198808688,
+        "sigma_id": "sigma_phys_transport_frame_current_family",
+        "sigma_u": 5.573928426395543,
+        "theorem_scope": "current_family_common_refinement_transport_frame_only"
+      },
+      "step": 2
+    },
+    {
+      "artifact": "oph_quark_current_family_transport_frame_absolute_sector_readout_theorem",
+      "lemma": "restricted_absolute_sector_readout",
+      "result": {
+        "g_d": 0.12249897208633505,
+        "g_u": 0.7796501962057188
+      },
+      "step": 3
+    },
+    {
+      "artifact": "oph_quark_current_family_transport_frame_exact_pdg_completion",
+      "lemma": "exact_running_value_completion",
+      "result": {
+        "b": 4.182999999999994,
+        "c": 1.2729999999999992,
+        "d": 0.004699999999999999,
+        "s": 0.09349999999999999,
+        "t": 172.35235532883115,
+        "u": 0.0021600000000000005
+      },
+      "step": 4
+    },
+    {
+      "artifact": "oph_quark_current_family_transport_frame_exact_forward_yukawas",
+      "lemma": "exact_forward_yukawa_emission",
+      "result": {
+        "certification_status": "forward_matrix_certified",
+        "forward_certified": true,
+        "scope": "current_family_common_refinement_transport_frame_only"
+      },
+      "step": 5
+    }
+  ],
+  "minimal_exact_blocker_set": [],
+  "notes": [
+    "This is the full exact derivation chain on the declared current-family/common-refinement surface.",
+    "The transport-frame lift and exact sigma target are explicit theorem artifacts on that surface rather than placeholder gaps.",
+    "Public target-free promotion of this chain is a separate question and is not claimed here."
+  ],
+  "proof_status": "closed_current_family_end_to_end_exact_pdg_chain",
+  "public_promotion_allowed": false,
+  "strengthening_above_target": {
+    "name": "target_free_public_physical_sheet_promotion",
+    "note": "The exact derivation target recorded here is closed on the declared current-family/common-refinement transport-frame carrier. Promoting that chain to a stronger target-free public physical-sheet theorem is a separate strengthening and is not part of this target.",
+    "status": "separate_question"
+  },
+  "target_name": "exact_running_quark_sextet_on_declared_current_family_transport_frame",
+  "theorem_scope": "current_family_common_refinement_transport_frame_only",
+  "theorem_statement": "On the declared current-family/common-refinement transport-frame surface, the OPH bridge theorem emits the D12 mass scalar package, the strengthened transport-frame physical sigma lift emits a sector-attached Sigma_ud^phys class together with the theorem-grade physical sigma datum, the affine mean law forces the absolute sector scales, and the ordered three-point readout reconstructs the exact current-family PDG running quark sextet."
+}

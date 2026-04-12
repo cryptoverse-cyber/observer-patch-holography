@@ -1,6 +1,6 @@
 # Hadron Pipeline Status
 
-This file tracks the execution and publication contract for the active hadron
+This file records the execution and publication contract for the hadron
 prediction path separately from the main particle table.
 
 ## Execution Receipt
@@ -11,7 +11,7 @@ prediction path separately from the main particle table.
 - `N_sep`: `512`
 - kernel_id: `fixed_schedule_rhmc_hmc`
 - initial_configuration: `U_cold = 1`
-- next_single_residual_object_after_execution: `oph_hadron_stable_channel_sequence_evaluator`
+- receipt-stage successor object: `oph_hadron_stable_channel_sequence_evaluator`
 
 ## Stable-Channel Execution State
 | ensemble_id | cfg_ids | n_cfg | n_src_per_cfg | t_extent | arrays_written |
@@ -40,10 +40,10 @@ prediction path separately from the main particle table.
 | `qcd_2p1_seed_n2` | `pi_iso` | `pending` | `pending` | `pending` | `pending` | `no` |
 | `qcd_2p1_seed_n2` | `N_iso` | `pending` | `pending` | `pending` | `pending` | `no` |
 
-## Residual Open Object
-- current: `production backend export bundle on the seeded family with publication-complete manifest provenance and real correlator arrays`
-- after-execution: `StableChannelForwardWindowConvergence`
-- after-convergence: `oph_hadron_rho_scattering_readout`
+## Residual Gate Objects
+- frontier object: `backend_correlator_dump.production.json from real production RHMC/HMC execution on the theorem-emitted seeded family`
+- window-stage object: `StableChannelForwardWindowConvergence`
+- channel-extension object: `oph_hadron_rho_scattering_readout`
 
 ## Working Rule
 Keep hadron rows out of the public particle table until the active pipeline
