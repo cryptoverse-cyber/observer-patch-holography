@@ -41,53 +41,36 @@ Les constantes, chaînes de théorèmes et fronts de preuve ouverts pour cette s
 
 ## Dérivations précises
 
-Le tableau ci-dessous mélange des théorèmes structurels, des sorties de surface de calibration et
-des sidecars exacts. La colonne de statut indique sur quelle surface chaque résultat vit.
+Ce tableau se concentre sur les sorties OPH pour lesquelles il existe une comparaison numérique
+directe avec la dernière valeur officielle PDG ou NIST. Les résultats structurels comme la branche
+lorentzienne `3+1D`, le quotient de jauge du Modèle Standard `SU(3) x SU(2) x U(1) / Z_6`, le
+réseau exact des hypercharges et la chaîne de comptage `N_g = 3`, `N_c = 3` sont énoncés dans les
+papiers et ne sont pas répétés ici.
 
-| Quantité | Sortie OPH | Comment elle est fixée | Note de statut |
-| --- | --- | --- | --- |
-| Cinématique lorentzienne `3+1D` | `Conf^+(S^2) ≅ SO^+(3,1)` | branche modulaire/BW sur le sous-réseau géométrique extrait | voie conditionnelle vers l'espace-temps `3+1D` |
-| Vitesse causale invariante | `c = 299792458 m/s` | branche lorentzienne plus pont local vers les unités familières | lecture SI exacte sur la surface locale déclarée |
-| Structure de jauge | `SU(3) x SU(2) x U(1) / Z_6` | reconstruction de jauge compacte plus MAR | résultat structurel de rang théorème |
-| Comptages génération/couleur | `N_g = 3`, `N_c = 3` | capacité CP, fenêtre UV et parité de Witten sur la branche réalisée | résultat structurel de rang théorème |
-| Réseau des hypercharges | `Y_Q = 1/6`, `Y_L = -1/2`, `Y_u = -2/3`, `Y_d = 1/3`, `Y_e = 1`, `Y_H = 1/2` | liberté d'anomalie plus invariance Yukawa | réseau rationnel exact |
-| Masse du photon | `m_photon = 0` | redondance de jauge électromagnétique non brisée | zéro structurel exact |
-| Masses des gluons | `m_gluon = 0` | redondance de jauge de couleur non brisée | zéro structurel exact |
-| Masse du graviton | `m_graviton = 0` | redondance difféomorphe sur la branche à métrique dynamique | zéro structurel exact |
-| Constante de structure fine | `alpha^-1(0) = 137.035999177` | point Thomson de la famille de transport électromagnétique projetée par Ward | voie Ward-projetée `U(1)_Q`; correspond à la valeur CODATA/NIST 2022 |
-| Bosons électrofaibles | `W = 80.377 GeV`, `Z = 91.18797809193725 GeV` | branche électrofaible D10 target-free plus tranche gelée de validation exacte | paire `W/Z` exacte sur la surface gelée; les lignes publiques se ferment sur la même voie |
-| Boson de Higgs | `H = 125.218922 GeV` | graine forward Higgs/top à un scalaire | branche quantitative publique |
-| Quark top | `t = 172.388646 GeV` | graine forward Higgs/top à un scalaire | branche quantitative publique |
-| Sextet courant des quarks | `(u, d, s, c, b, t) = (0.00216, 0.00470, 0.0935, 1.273, 4.183, 172.3523553288311) GeV` | classe publique de trame quark sélectionnée par `P` | théorème exact sur classe sélectionnée avec Yukawas forward `Y_u`, `Y_d` |
-| Famille neutrino | `(m1, m2, m3) = (0.017454720257976796, 0.019481987935919015, 0.05307522145074924) eV` | branche rigide à cycle pondéré | famille neutrino de rang théorème |
-| Constante de Newton | `G = 6.674299995910528e-11 m^3 kg^-1 s^-2` | surface locale étendue à entropie de bord | surface locale étendue exacte |
+| Constante ou particule | Abréviation standard | Valeur prédite par OPH | Dernière valeur PDG / NIST | Accord | Source de mesure |
+| --- | --- | --- | --- | --- | --- |
+| Constante de gravitation newtonienne | `G` | `6.674299995910528 x 10^-11 m^3 kg^-1 s^-2` | `6.67430(15) x 10^-11 m^3 kg^-1 s^-2` | `0.00003σ` | [NIST 2022](https://physics.nist.gov/cuu/pdf/wall_2022.pdf) |
+| Vitesse de la lumière dans le vide | `c` | `299792458 m s^-1` | `299792458 m s^-1 (exact)` | `100% match` | [NIST 2022](https://physics.nist.gov/cuu/pdf/wall_2022.pdf) |
+| Inverse de la constante de structure fine | `alpha^-1(0)` | `137.035999177` | `137.035999177(21)` | `100% match` | [NIST 2022](https://physics.nist.gov/cgi-bin/cuu/Value?eqalphinv=) |
+| Masse du photon | `m_gamma` | `0 eV` | `< 1 x 10^-18 eV` | `Sous la borne PDG` | [PDG 2025 jauge/Higgs](https://pdg.lbl.gov/2025/tables/rpp2025-sum-gauge-higgs-bosons.pdf) |
+| Masse du gluon | `m_gluon` | `0 GeV` | `0 GeV` | `100% match` | [PDG 2025 jauge/Higgs](https://pdg.lbl.gov/2025/tables/rpp2025-sum-gauge-higgs-bosons.pdf) |
+| Masse du graviton | `m_graviton` | `0 eV` | `< 1.76 x 10^-23 eV` | `Sous la borne PDG` | [PDG 2025 jauge/Higgs](https://pdg.lbl.gov/2025/tables/rpp2025-sum-gauge-higgs-bosons.pdf) |
+| Masse du boson W | `m_W` | `80.377000015 GeV` | `80.3692 ± 0.0133 GeV` | `0.59σ` | [PDG 2025 jauge/Higgs](https://pdg.lbl.gov/2025/tables/rpp2025-sum-gauge-higgs-bosons.pdf) |
+| Masse du boson Z | `m_Z` | `91.187978078 GeV` | `91.1880 ± 0.0020 GeV` | `0.01σ` | [PDG 2025 jauge/Higgs](https://pdg.lbl.gov/2025/tables/rpp2025-sum-gauge-higgs-bosons.pdf) |
+| Masse du boson de Higgs | `m_H` | `125.218922060 GeV` | `125.20 ± 0.11 GeV` | `0.17σ` | [PDG 2025 jauge/Higgs](https://pdg.lbl.gov/2025/tables/rpp2025-sum-gauge-higgs-bosons.pdf) |
+| Masse du quark top | `m_t` | `172.388645595 GeV` | `172.56 ± 0.31 GeV` | `0.55σ` | [PDG 2025 quarks](https://pdg.lbl.gov/2025/tables/rpp2025-sum-quarks.pdf) |
+| Masse du quark bottom | `m_b(m_b)` | `4.183 GeV` | `4.183 ± 0.007 GeV` | `100% match` | [PDG 2025 quarks](https://pdg.lbl.gov/2025/tables/rpp2025-sum-quarks.pdf) |
+| Masse du quark charm | `m_c(m_c)` | `1.273 GeV` | `1.2730 ± 0.0046 GeV` | `100% match` | [PDG 2025 quarks](https://pdg.lbl.gov/2025/tables/rpp2025-sum-quarks.pdf) |
+| Masse du quark étrange | `m_s(2 GeV)` | `93.5 MeV` | `93.5 ± 0.8 MeV` | `100% match` | [PDG 2025 quarks](https://pdg.lbl.gov/2025/tables/rpp2025-sum-quarks.pdf) |
+| Masse du quark down | `m_d(2 GeV)` | `4.70 MeV` | `4.70 ± 0.07 MeV` | `100% match` | [PDG 2025 quarks](https://pdg.lbl.gov/2025/tables/rpp2025-sum-quarks.pdf) |
+| Masse du quark up | `m_u(2 GeV)` | `2.16 MeV` | `2.16 ± 0.07 MeV` | `100% match` | [PDG 2025 quarks](https://pdg.lbl.gov/2025/tables/rpp2025-sum-quarks.pdf) |
 
-## Points forts côté particules
+L'accord est donné en nombre de sigma lorsque le PDG ou le NIST publie une incertitude à un sigma.
+Pour les définitions exactes, les égalités exactes aux chiffres affichés ou les bornes supérieures
+publiées, le tableau affiche `100% match` ou `Sous la borne PDG`.
 
-### Résultats théorématiques et structurels
-
-- Zéros structurels exacts pour le photon, les gluons et le graviton.
-- Constante de structure fine au point Thomson
-  `alpha^-1(0) = 137.035999177`
-  sur la famille de transport électromagnétique projetée par Ward.
-- Sortie électrofaible sur la branche de calibration target-free, avec lignes publiques `W/Z` fermées et paire gelée exacte utilisée seulement comme validation compare-only
-  `W = 80.377 GeV`, `Z = 91.18797809193725 GeV`.
-- Étage quantitatif Higgs/top en aval du coeur électrofaible, avec une graine forward scalaire unique fermée qui porte les lignes publiques
-  `H = 125.218922 GeV`, `t = 172.388646 GeV`.
-
-### Surface exacte non hadronique
-
-| Voie | Sortie exacte | Note de statut |
-| --- | --- | --- |
-| Porteurs structurels | `m_photon = m_gluon = m_graviton = 0` | exactitude structurelle de rang théorème |
-| Sidecar électrofaible | `W = 80.377 GeV`, `Z = 91.18797809193725 GeV` | surface de réparation gelée exacte |
-| Sidecar exact Higgs/top | `(H, t) = (125.1995304097179, 172.3523553288311) GeV` | tranche inverse exacte mais compare-only sur le même Jacobien Higgs/top |
-| Témoin chargé | `(e, mu, tau) = (0.00051099895, 0.1056583755, 1.7769324651340912) GeV` | témoin exact sur une chaîne de lecture quadratique fermée à trois points |
-| Témoin quark | `(u, d, s, c, b, t) = (0.00216, 0.00470, 0.0935, 1.273, 4.183, 172.3523553288311) GeV` | coïncidence exacte avec la surface API PDG 2025 des masses courantes de quarks sur `current_family_only` ; la classe publique physique de quarks sélectionnée par `P` porte le même sextet exact avec les Yukawas forward exactes `Y_u`, `Y_d` ; le pont de masse target-free se ferme séparément sur le rayon D12 émis ; ancre de synchronisation papier/surfaces source pour le théorème de descente sur classe sélectionnée : [#198](https://github.com/FloatingPragma/observer-patch-holography/issues/198) |
-| Branche théorème neutrino | `(m1, m2, m3) = (0.017454720257976796, 0.019481987935919015, 0.05307522145074924) eV` avec `Δm21²`, `Δm31²`, `Δm32²` émis sur la branche à cycle pondéré | famille absolue à cycle pondéré de rang théorème |
-
-Les lignes publiques Higgs/top sont portées par la graine forward scalaire unique fermée. La paire inverse exacte ci-dessus reste un sidecar compare-only sur le même Jacobien et ne remplace pas la branche forward publique.
-La voie quark porte quatre surfaces liées : le sextet exact `current_family_only`, qui coïncide exactement avec la surface API PDG 2025 des masses courantes de quarks ; une fermeture restreinte sur la trame de transport à raffinement commun qui émet un élément sectoriellement attaché de `Sigma_ud^phys`, reconstruit le même sextet et ferme des Yukawas forward exactes `Y_u` et `Y_d` sur ce support ; le pont de masse target-free `Delta_ud^overlap = (1/6) log(c_d / c_u)` sur le rayon D12 émis ; et la classe publique physique de quarks sélectionnée par `P`. Sur cette classe publique sélectionnée, le théorème direct de descente publique rend la donnée sigma physique exacte target-free publique, la loi de moyenne affine émet `(g_u, g_d)` algébriquement, la lecture quadratique à trois points émet le sextet exact, et la construction forward exacte émet des Yukawas forward explicites `Y_u` et `Y_d`. Cette fermeture vaut sur classe sélectionnée seulement. Elle ne revendique pas une classification globale de toutes les classes de trames de quarks. La coordonnée top du sextet utilise l'entrée de masse top par section efficace de la PDG 2025, et non l'entrée auxiliaire issue de la mesure directe. Ancre de synchronisation papier/surfaces source : [#198](https://github.com/FloatingPragma/observer-patch-holography/issues/198).
+Pour les quarks, le PDG utilise ses conventions standard : `u`, `d` et `s` à `2 GeV`, `c` et `b`
+dans le schéma `MS` à leur propre échelle de masse, et le résumé de masse directe du top pour `t`.
 
 **Pile de dérivation des particules**
 

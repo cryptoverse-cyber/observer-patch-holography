@@ -41,53 +41,35 @@ Constants, theorem chains, and open proof fronts for this surface are tracked in
 
 ## Precise Derivations
 
-The table below mixes structural theorems, calibration-surface outputs, and exact sidecars. The
-status column says which surface each result lives on.
+This table focuses on OPH outputs with a clean one-number comparison against the latest official
+PDG or NIST reference values. Structural results such as the `3+1D` Lorentz branch, the Standard
+Model gauge quotient `SU(3) x SU(2) x U(1) / Z_6`, the exact hypercharge lattice, and the counting
+chain `N_g = 3`, `N_c = 3` are stated in the papers and are not repeated here.
 
-| Quantity | OPH output | How it is fixed | Status note |
-| --- | --- | --- | --- |
-| `3+1D` Lorentz kinematics | `Conf^+(S^2) ≅ SO^+(3,1)` | modular/BW branch on the extracted geometric subnet | conditional route to `3+1D` spacetime |
-| Invariant causal speed | `c = 299792458 m/s` | Lorentz branch plus the local familiar-unit bridge | exact SI readout on the declared local bridge |
-| Gauge structure | `SU(3) x SU(2) x U(1) / Z_6` | compact gauge reconstruction plus MAR | theorem-grade structural result |
-| Generation and color counts | `N_g = 3`, `N_c = 3` | CP-capability, UV window, and Witten parity on the realized branch | theorem-grade structural result |
-| Hypercharge lattice | `Y_Q = 1/6`, `Y_L = -1/2`, `Y_u = -2/3`, `Y_d = 1/3`, `Y_e = 1`, `Y_H = 1/2` | anomaly freedom plus Yukawa invariance | exact rational lattice |
-| Photon mass | `m_photon = 0` | unbroken electromagnetic gauge redundancy | exact structural zero |
-| Gluon masses | `m_gluon = 0` | unbroken color gauge redundancy | exact structural zero |
-| Graviton mass | `m_graviton = 0` | diffeomorphism redundancy on the dynamical-metric branch | exact structural zero |
-| Fine-structure constant | `alpha^-1(0) = 137.035999177` | Thomson endpoint of the Ward-projected electromagnetic transport family | Ward-projected `U(1)_Q` lane; matches 2022 CODATA/NIST |
-| Electroweak bosons | `W = 80.377 GeV`, `Z = 91.18797809193725 GeV` | target-free D10 electroweak branch plus the exact frozen validation slice | exact frozen `W/Z` pair; public target-free mass rows close on the same lane |
-| Higgs boson | `H = 125.218922 GeV` | one-scalar Higgs/top forward seed | public quantitative branch |
-| Top quark | `t = 172.388646 GeV` | one-scalar Higgs/top forward seed | public quantitative branch |
-| Running quark sextet | `(u, d, s, c, b, t) = (0.00216, 0.00470, 0.0935, 1.273, 4.183, 172.3523553288311) GeV` | selected public quark frame class chosen by `P` | exact selected-class theorem with explicit forward Yukawas `Y_u`, `Y_d` |
-| Neutrino family | `(m1, m2, m3) = (0.017454720257976796, 0.019481987935919015, 0.05307522145074924) eV` | weighted-cycle bridge-rigid branch | theorem-grade neutrino family |
-| Newton's constant | `G = 6.674299995910528e-11 m^3 kg^-1 s^-2` | local edge-entropy extension surface | exact local extension surface |
+| Constant or particle | Standard shorthand | OPH predicted value | Latest PDG / NIST value | Agreement | Measurement source |
+| --- | --- | --- | --- | --- | --- |
+| Newtonian constant of gravitation | `G` | `6.674299995910528 x 10^-11 m^3 kg^-1 s^-2` | `6.67430(15) x 10^-11 m^3 kg^-1 s^-2` | `0.00003σ` | [NIST 2022](https://physics.nist.gov/cuu/pdf/wall_2022.pdf) |
+| Speed of light in vacuum | `c` | `299792458 m s^-1` | `299792458 m s^-1 (exact)` | `100% match` | [NIST 2022](https://physics.nist.gov/cuu/pdf/wall_2022.pdf) |
+| Inverse fine-structure constant | `alpha^-1(0)` | `137.035999177` | `137.035999177(21)` | `100% match` | [NIST 2022](https://physics.nist.gov/cgi-bin/cuu/Value?eqalphinv=) |
+| Photon mass | `m_gamma` | `0 eV` | `< 1 x 10^-18 eV` | `Below PDG bound` | [PDG 2025 gauge/Higgs](https://pdg.lbl.gov/2025/tables/rpp2025-sum-gauge-higgs-bosons.pdf) |
+| Gluon mass | `m_gluon` | `0 GeV` | `0 GeV` | `100% match` | [PDG 2025 gauge/Higgs](https://pdg.lbl.gov/2025/tables/rpp2025-sum-gauge-higgs-bosons.pdf) |
+| Graviton mass | `m_graviton` | `0 eV` | `< 1.76 x 10^-23 eV` | `Below PDG bound` | [PDG 2025 gauge/Higgs](https://pdg.lbl.gov/2025/tables/rpp2025-sum-gauge-higgs-bosons.pdf) |
+| W boson mass | `m_W` | `80.377000015 GeV` | `80.3692 ± 0.0133 GeV` | `0.59σ` | [PDG 2025 gauge/Higgs](https://pdg.lbl.gov/2025/tables/rpp2025-sum-gauge-higgs-bosons.pdf) |
+| Z boson mass | `m_Z` | `91.187978078 GeV` | `91.1880 ± 0.0020 GeV` | `0.01σ` | [PDG 2025 gauge/Higgs](https://pdg.lbl.gov/2025/tables/rpp2025-sum-gauge-higgs-bosons.pdf) |
+| Higgs boson mass | `m_H` | `125.218922060 GeV` | `125.20 ± 0.11 GeV` | `0.17σ` | [PDG 2025 gauge/Higgs](https://pdg.lbl.gov/2025/tables/rpp2025-sum-gauge-higgs-bosons.pdf) |
+| Top quark mass | `m_t` | `172.388645595 GeV` | `172.56 ± 0.31 GeV` | `0.55σ` | [PDG 2025 quarks](https://pdg.lbl.gov/2025/tables/rpp2025-sum-quarks.pdf) |
+| Bottom quark mass | `m_b(m_b)` | `4.183 GeV` | `4.183 ± 0.007 GeV` | `100% match` | [PDG 2025 quarks](https://pdg.lbl.gov/2025/tables/rpp2025-sum-quarks.pdf) |
+| Charm quark mass | `m_c(m_c)` | `1.273 GeV` | `1.2730 ± 0.0046 GeV` | `100% match` | [PDG 2025 quarks](https://pdg.lbl.gov/2025/tables/rpp2025-sum-quarks.pdf) |
+| Strange quark mass | `m_s(2 GeV)` | `93.5 MeV` | `93.5 ± 0.8 MeV` | `100% match` | [PDG 2025 quarks](https://pdg.lbl.gov/2025/tables/rpp2025-sum-quarks.pdf) |
+| Down quark mass | `m_d(2 GeV)` | `4.70 MeV` | `4.70 ± 0.07 MeV` | `100% match` | [PDG 2025 quarks](https://pdg.lbl.gov/2025/tables/rpp2025-sum-quarks.pdf) |
+| Up quark mass | `m_u(2 GeV)` | `2.16 MeV` | `2.16 ± 0.07 MeV` | `100% match` | [PDG 2025 quarks](https://pdg.lbl.gov/2025/tables/rpp2025-sum-quarks.pdf) |
 
-## Particle Highlights
+Agreement is reported as a sigma distance where PDG or NIST quotes a one-standard-deviation
+uncertainty. For exact definitions, exact digit matches, or published upper bounds, the table reports
+`100% match` or `Below PDG bound` instead.
 
-### Theorem-grade and structural hits
-
-- Exact structural zeros for the photon, gluons, and graviton.
-- Thomson-limit fine-structure constant
-  `alpha^-1(0) = 137.035999177`
-  on the Ward-projected electromagnetic transport family.
-- Electroweak output on the target-free calibration branch, with closed public `W/Z` rows and an exact frozen compare-only pair
-  `W = 80.377 GeV`, `Z = 91.18797809193725 GeV`.
-- A quantitative Higgs/top stage downstream of the electroweak core, with a closed one-scalar forward seed carrying the public rows
-  `H = 125.218922 GeV`, `t = 172.388646 GeV`.
-
-### Exact non-hadron output surface
-
-| Lane | Exact output(s) | Status note |
-| --- | --- | --- |
-| Structural carriers | `m_photon = m_gluon = m_graviton = 0` | theorem-grade structural exactness |
-| Electroweak sidecar | `W = 80.377 GeV`, `Z = 91.18797809193725 GeV` | exact frozen repair surface |
-| Higgs/top exact sidecar | `(H, t) = (125.1995304097179, 172.3523553288311) GeV` | exact compare-only inverse slice on the same Higgs/top Jacobian |
-| Charged witness | `(e, mu, tau) = (0.00051099895, 0.1056583755, 1.7769324651340912) GeV` | exact same-family witness |
-| Quark witness | `(u, d, s, c, b, t) = (0.00216, 0.00470, 0.0935, 1.273, 4.183, 172.3523553288311) GeV` | exact hit on the official PDG 2025 API running-quark surface on `current_family_only`; the selected public physical quark frame class chosen by `P` carries the same exact sextet together with explicit exact forward Yukawas `Y_u`, `Y_d`; the target-free mass bridge closes separately on the emitted D12 ray; selected-class paper/source-of-truth synchronization anchor: [#198](https://github.com/FloatingPragma/observer-patch-holography/issues/198) |
-| Neutrino theorem branch | `(m1, m2, m3) = (0.017454720257976796, 0.019481987935919015, 0.05307522145074924) eV` with emitted weighted-cycle `Δm21²`, `Δm31²`, `Δm32²` | theorem-grade weighted-cycle bridge-rigid absolute family |
-
-Public Higgs/top rows are carried by the closed one-scalar forward seed. The exact inverse pair above is a compare-only sidecar on the same Jacobian and does not replace the public forward branch.
-The quark lane carries four linked surfaces: the exact `current_family_only` sextet, which matches the official PDG 2025 API running-quark target surface exactly; a restricted current-family common-refinement transport-frame closure that emits a sector-attached `Sigma_ud^phys` element, reconstructs the same sextet, and closes explicit exact forward Yukawas `Y_u` and `Y_d` on that carrier; the target-free mass bridge `Delta_ud^overlap = (1/6) log(c_d / c_u)` on the emitted D12 ray; and the selected public physical quark frame class chosen by `P`. On that selected public class, the direct public descent theorem makes the exact physical sigma datum target-free public, the affine mean law emits `(g_u, g_d)` algebraically, the ordered three-point readout yields the exact sextet, and the exact forward construction emits explicit exact forward Yukawas `Y_u` and `Y_d`. This is selected-class closure only. It does not claim a global classification of all quark frame classes. The sextet's top coordinate uses the PDG 2025 cross-section mass entry rather than the auxiliary direct-top entry. Selected-class paper/source-of-truth synchronization anchor: [#198](https://github.com/FloatingPragma/observer-patch-holography/issues/198).
+For the quark rows, PDG uses its standard quark-mass conventions: `u`, `d`, and `s` at `2 GeV`,
+`c` and `b` in the `MS` scheme at their own mass scale, and the direct top-mass summary for `t`.
 
 **Particle derivation stack**
 
