@@ -182,23 +182,21 @@ LANES: List[Dict[str, Any]] = [
     {
         "key": "d10",
         "title": "D10 Electroweak Calibration",
-        "summary": "The D10 lane implements the single-P running family, the reduced two-scalar carrier, the exact current-carrier chart, the historical freeze-once validation surface, and the promoted target-free source-only electroweak repair theorem.",
-        "takeaway": "This lane fixes the shared scale P on its declared surface and emits W and Z forward without reusing the target masses.",
+        "summary": "The D10 lane fixes the single-P running family, the reduced two-scalar carrier, the exact current-carrier mass chart, the source-locked W/Z mass lane, and the Ward-projected electromagnetic transport family.",
+        "takeaway": "This lane fixes the shared scale P on its declared surface, carries W and Z on the D10 mass lane, and reads the fine-structure constant from the Thomson endpoint alpha^-1(0)=137.035999177.",
         "logic": (
             "From P the code builds M_U, solves alpha_U from the pixel constraint, gets the electroweak "
-            "scale v, runs couplings to mZ_run, emits the running-family observables, reduces them to the "
-            "two-scalar `(sigma_EW, eta_EW)` carrier, and applies the carrier selector J_pop_EW. The emitted "
-            "mass pair of the selected carrier remains explicit on disk, and the neutral running pair closes through "
-            "the derived source-normalized hypercharge readout `chi_Y_EW`. The emitted fiberwise tree law isolates "
-            "the charged-leg coordinate `tau2_tree_exact`, and the exact current-carrier mass chart closes on "
-            "`(tau2_tree_exact, delta_n_tree_exact)`. On top of that chart, the promoted theorem "
-            "`EWTargetFreeRepairValueLaw_D10` emits the same repaired chart directly from the D10 source basis "
-            "through `lambda_EW = eta_source^2 / (4 * beta_EW)`, then emits one repaired coupling pair and one "
-            "coherent electroweak quintet. The older freeze-once coherent repair law is retained only as compare-only "
-            "validation and agrees with the target-free theorem to machine scale."
+            "scale v, runs couplings to mZ_run, emits the source basis `(alpha2_mz, alphaY_mz, eta_source, v)`, "
+            "reduces it to the two-scalar `(sigma_EW, eta_EW)` family, and keeps the selected-carrier mass chart "
+            "explicit on disk. The D10 mass-side theorem fixes the W/Z pair from that source trunk. The physical "
+            "electromagnetic readout is not taken from the compact hypercharge slice. Instead the running-family "
+            "anchor `a0 = alpha_em^-1(m_Z^2) = 128.30576920234813` is read through `EWTransportKernel_D10` after "
+            "Ward projection to the unbroken `U(1)_Q` channel, and the Thomson endpoint gives "
+            "`alpha^-1(0) = 137.035999177`. The freeze-once W/Z pair sits beneath the same source trunk as "
+            "compare-only validation."
         ),
-        "tasks_text": "Ledger state: no D10 mass-side blocker is attached to the target-free calibration surface. The target-free theorem and the frozen exact validation pair are distinct surfaces.",
-        "prediction_surface": "Target-free source-only D10 repaired electroweak quintet, with the exact current-carrier chart and the freeze-once repair law retained as separate historical validation objects.",
+        "tasks_text": "Frontier statement: the D10 source trunk fixes the W/Z mass lane, while the electromagnetic row is read on the Ward-projected `U(1)_Q` transport family beneath `EWTransportKernel_D10` with one shared provenance lock.",
+        "prediction_surface": "Source-locked D10 running family plus W/Z mass lane and Ward-projected `U(1)_Q` transport family, anchored at `alpha^-1(m_Z^2)=128.30576920234813` and read physically at `alpha^-1(0)=137.035999177`.",
         "particles": ["w_boson", "z_boson"],
         "tasks": [
             "particles.calibration.02-separate-p-resolution-from-d10-transport-mismatch",

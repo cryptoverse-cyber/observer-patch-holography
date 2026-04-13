@@ -71,6 +71,9 @@ publiées, le tableau affiche `100% match` ou `Sous la borne PDG`.
 
 Pour les quarks, le PDG utilise ses conventions standard : `u`, `d` et `s` à `2 GeV`, `c` et `b`
 dans le schéma `MS` à leur propre échelle de masse, et le résumé de masse directe du top pour `t`.
+Les papiers contiennent aussi les dérivations structurelles du Modèle Standard listées plus haut
+ainsi qu'une famille neutrino de rang théorème, qui n'apparaissent pas dans ce tableau faute de
+ligne de comparaison PDG/NIST directe à un seul nombre.
 
 **Pile de dérivation des particules**
 
@@ -81,15 +84,6 @@ dans le schéma `MS` à leur propre échelle de masse, et le résumé de masse d
 </p>
 
 <p align="center"><sub>Vue compacte de la voie particules. Cliquez pour ouvrir le SVG complet.</sub></p>
-
-### Surfaces particules complémentaires
-
-- La voie quark se ferme sur la classe publique physique de quarks sélectionnée par `P`, avec le sextet exact PDG 2025 et les Yukawas forward exactes `Y_u`, `Y_d` ; ancre d'issue : [#198](https://github.com/FloatingPragma/observer-patch-holography/issues/198).
-- La branche neutrino à cycle pondéré atteint le régime PMNS et hiérarchie observé avec
-  `theta12 = 34.2259°`, `theta23 = 49.7228°`, `theta13 = 8.68636°`, `delta = 305.581°`,
-  et `Δm21² / Δm32² = 0.03072111`.
-- La surface exacte non hadronique est regroupée dans
-  [code/particles/EXACT_NONHADRON_MASSES.md](code/particles/EXACT_NONHADRON_MASSES.md).
 
 ## Articles
 

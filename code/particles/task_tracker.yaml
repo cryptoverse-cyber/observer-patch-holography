@@ -141,7 +141,7 @@ stages:
         owner_lane: local_docs
         depends_on: ["particles.calibration.02-separate-p-resolution-from-d10-transport-mismatch"]
       - id: particles.calibration.04-push-single-p-exact-ew-closure-branch
-        title: "Push a single-P D10 electroweak repair branch for W/Z/alpha_em/sin^2(theta_W)/v"
+        title: "Lock the single-P D10 source trunk and Ward-projected electromagnetic transport lane"
         status: completed
         owner_lane: pro_paper
         depends_on:
@@ -215,7 +215,7 @@ stages:
         owner_lane: local_code
         depends_on: ["particles.calibration.15-record-target-free-d10-underdetermination-and-minimal-conditional-theorem"]
       - id: particles.calibration.17-promote-target-free-d10-repair-theorem
-        title: "Promote the source-only D10 repair emitter to the closed target-free electroweak theorem and sync the public surfaces"
+        title: "Sync the D10 public surfaces to the W/Z mass lane and Ward-projected electromagnetic transport theorem"
         status: completed
         owner_lane: local_code
         depends_on:

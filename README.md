@@ -10,36 +10,17 @@ OPH is a reconstruction program for fundamental physics. Spacetime, gauge struct
 
 ## What OPH Delivers
 
+OPH is unusual because it tries to recover the shape of the world before it fits the numbers. At the structural level, it predicts the exact shape of the universe we appear to inhabit: a `3+1D` Lorentzian spacetime, de Sitter static-patch cosmology on the gravity side, and the Standard Model quotient `SU(3) x SU(2) x U(1) / Z_6` with the exact hypercharge lattice and the counting chain `N_g = 3`, `N_c = 3`.
+
+The quantitative side is deliberately small. OPH uses only two calibrated inputs: the screen-pixel scale `P = a_cell / l_P^2` and the total screen capacity `N_scr = log dim H_tot`, inferred from the cosmological constant. From that two-constant surface, OPH makes concrete numerical predictions for couplings, masses, and gravity-facing quantities instead of fitting each sector independently.
+
 - A finite-resolution theorem package for observer patches, collars, overlap repair, higher gauge structure, records, and checkpoint/restoration.
 - A conditional route to Lorentzian geometry, modular time, Jacobson-type Einstein dynamics, and de Sitter static-patch cosmology on the extracted prime geometric subnet; the Einstein branch uses fixed-cap stationarity, the null-surface bridge, and the separate bounded-interval projective branch, while the remaining UV/BW scaffold is geometric cap-pair realization on that subnet plus ordered cut-pair rigidity, with the eventual fixed-local-collar modular-transport common floor as the smallest lower blocker.
 - A conditional compact gauge route in the bosonic branch to the realized Standard Model quotient `SU(3) x SU(2) x U(1) / Z_6`, under the transportable-sector reconstruction premises and MAR, together with the exact hypercharge lattice and the realized counting chain `N_g = 3`, `N_c = 3`.
 - A particle program with exact structural massless carriers, a forward-emitted Phase II electroweak calibration branch with a closed target-free public `W/Z` theorem surface plus a compare-only exact frozen pair, a quantitative Higgs/top stage, an exact selected-class quark closure with explicit exact forward Yukawas, exact non-hadron mass surfaces, and explicit continuation lanes where theorem boundaries remain open.
 - A concrete screen-microphysics architecture that puts measurement, records, and observers inside the physics.
 
-## Local Unification Surface
-
-OPH places a local unification surface around the calibrated local UV input. The same `P`-driven scale carries the electroweak boson and Higgs lane together with the gravity-side entropy lane, while the Lorentz branch supplies the invariant causal speed and the local readout package supplies the SI display.
-On the public constants surface, `hbar` and `k_B` remain part of that downstream familiar-unit readout rather than standalone OPH-emitted constants.
-
-<p align="center">
-  <a href="assets/OPH_Unification_Diagram.svg" target="_blank" rel="noopener noreferrer">
-    <img src="assets/OPH_Unification_Diagram.svg?v=20260407" alt="OPH unification diagram" width="92%">
-  </a>
-</p>
-
-Constants, theorem chains, and open proof fronts for this surface are tracked in [extra/OPH_PHYSICS_CONSTANTS.md](extra/OPH_PHYSICS_CONSTANTS.md).
-
-**Theorem stack and open fronts**
-
-<p align="center">
-  <a href="assets/prediction-chain.svg?v=20260412" target="_blank" rel="noopener noreferrer">
-    <img src="assets/prediction-chain.svg?v=20260412" alt="OPH theorem stack and open proof fronts" width="92%">
-  </a>
-</p>
-
-<p align="center"><sub>The OPH stack from axioms to relativity, gauge structure, particles, observers, and the open proof fronts. Click to open the full SVG.</sub></p>
-
-## Precise Derivations
+### Precise Derivations
 
 This table focuses on OPH outputs with a clean one-number comparison against the latest official
 PDG or NIST reference values. Structural results such as the `3+1D` Lorentz branch, the Standard
@@ -70,6 +51,32 @@ uncertainty. For exact definitions, exact digit matches, or published upper boun
 
 For the quark rows, PDG uses its standard quark-mass conventions: `u`, `d`, and `s` at `2 GeV`,
 `c` and `b` in the `MS` scheme at their own mass scale, and the direct top-mass summary for `t`.
+The papers also contain the structural Standard Model derivations listed above and a theorem-grade
+neutrino family, which are not included in this table because they do not have a single direct
+PDG/NIST one-number comparison row.
+
+## Local Unification Surface
+
+OPH places a local unification surface around the calibrated local UV input. The same `P`-driven scale carries the electroweak boson and Higgs lane together with the gravity-side entropy lane, while the Lorentz branch supplies the invariant causal speed and the local readout package supplies the SI display.
+On the public constants surface, `hbar` and `k_B` remain part of that downstream familiar-unit readout rather than standalone OPH-emitted constants.
+
+<p align="center">
+  <a href="assets/OPH_Unification_Diagram.svg" target="_blank" rel="noopener noreferrer">
+    <img src="assets/OPH_Unification_Diagram.svg?v=20260407" alt="OPH unification diagram" width="92%">
+  </a>
+</p>
+
+Constants, theorem chains, and open proof fronts for this surface are tracked in [extra/OPH_PHYSICS_CONSTANTS.md](extra/OPH_PHYSICS_CONSTANTS.md).
+
+**Theorem stack and open fronts**
+
+<p align="center">
+  <a href="assets/prediction-chain.svg?v=20260412" target="_blank" rel="noopener noreferrer">
+    <img src="assets/prediction-chain.svg?v=20260412" alt="OPH theorem stack and open proof fronts" width="92%">
+  </a>
+</p>
+
+<p align="center"><sub>The OPH stack from axioms to relativity, gauge structure, particles, observers, and the open proof fronts. Click to open the full SVG.</sub></p>
 
 **Particle derivation stack**
 
@@ -80,15 +87,6 @@ For the quark rows, PDG uses its standard quark-mass conventions: `u`, `d`, and 
 </p>
 
 <p align="center"><sub>A compact view of the particle lane. Click to open the full SVG.</sub></p>
-
-### Additional particle surfaces
-
-- The quark lane closes on the selected public physical quark frame class chosen by `P`, with the exact PDG 2025 running-quark sextet and explicit exact forward Yukawas `Y_u`, `Y_d`; issue anchor: [#198](https://github.com/FloatingPragma/observer-patch-holography/issues/198).
-- The neutrino weighted-cycle branch reaches the observed PMNS and hierarchy regime with
-  `theta12 = 34.2259°`, `theta23 = 49.7228°`, `theta13 = 8.68636°`, `delta = 305.581°`,
-  and `Δm21² / Δm32² = 0.03072111`.
-- The exact non-hadron surface is collected in
-  [code/particles/EXACT_NONHADRON_MASSES.md](code/particles/EXACT_NONHADRON_MASSES.md).
 
 ## Papers
 

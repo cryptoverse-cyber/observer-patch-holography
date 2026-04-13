@@ -91,12 +91,10 @@ D10_MASS_PAIR_NOTE = (
     "Calibration here means that the shared pixel scale `P` is first fixed on the declared D10 running/matching surface, which in turn fixes the D10 source basis "
     "`(alpha2_mz, alphaY_mz, eta_source, v_report)`. "
     "The live forward transmutation certificate makes that order explicit on disk: the same source-only basis reconstructs `alpha_U`, the unified diffusion parameter `t_U = 4*pi^2*alpha_U`, and the transmutation exponent `t_tr = 2*pi / ((N_c + 1) * alpha_U)` without reading them back from measured couplings. "
-    "The selected current-carrier chart is closed and remains explicit on disk, while the active public electroweak surface is the target-free source-only theorem `EWTargetFreeRepairValueLaw_D10`. "
-    "That theorem emits the repaired chart `(tau2_tree_exact, delta_n_tree_exact)` from the D10 source basis alone using `lambda_EW = eta_source^2 / (4 * beta_EW)`, then emits one coherent electroweak quintet from one repaired coupling pair. "
-    "On the paper-facing theorem lane the transmutation factor is `beta_transmutation_EW = N_c + 1`; older overloaded beta ratios survive only on compare-only validation readouts. "
-    "So the public D10 W/Z values are no longer freeze-once rows. The older freeze-once coherent repair law is retained only as compare-only validation and agrees with the target-free theorem to machine scale: about `+1.54e-08` GeV on `W` and `-1.40e-08` GeV on `Z`. "
-    "That frozen-target repair pair is also surfaced separately on the exact-hit diagnostic side as `oph_d10_ew_w_anchor_neutral_shear_factorization`, where it hits the canonical `W/Z` references exactly on one frozen authoritative repair surface. "
-    "This closes the electroweak mass-side lane on the Phase II calibration tier; the earlier source-only underdetermination theorem, minimal conditional route through `ColorBalancedQuadraticRepairDescent_D10`, and former candidate `EWTargetEmitter_D10` remain on disk only as historical scaffolding beneath the promoted theorem."
+    "The D10 mass-side surface fixes the `W/Z` pair from that source trunk, and the freeze-once coherent pair serves as compare-only validation on the same family. "
+    "The electromagnetic row is not taken from the compact hypercharge slice. Its source anchor is `a0 = alpha_em^-1(m_Z^2) = 128.30576920234813` on the same running family, and the physical fine-structure constant is read on the Ward-projected `U(1)_Q` transport family with Thomson endpoint `alpha^-1(0) = 137.035999177`. "
+    "`EWTransportKernel_D10`, `EWTransportReadoutCoherence_D10`, and `EWScalarProvenanceEquality_D10` supply the shared-kernel and shared-provenance gate for that readout. "
+    "The compact anti-diagonal carrier slice and the source-only target-free emitter artifacts sit on disk as carrier or compare surfaces; they do not define the public electromagnetic theorem."
 )
 D11_NOTE = (
     "Derived from `derive_d11_forward_seed.py -> derive_d11_forward_seed_promotion_certificate.py`, which propagates the D10 gauge core into the compact D11 forward seed, closes the emitted one-scalar forward branch on the fixed ray, and reads out the D11 mass row from the Jacobian surface. "
