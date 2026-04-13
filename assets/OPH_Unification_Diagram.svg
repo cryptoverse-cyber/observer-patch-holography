@@ -36,17 +36,18 @@
   <text x="360" y="84" text-anchor="middle" font-family="monospace" font-size="9" fill="hsl(45,60%,60%)">in Planck units (a_cell / ℓ²_P)</text>
 
   <line x1="360" y1="92" x2="360" y2="110" stroke="hsl(45,90%,55%)" stroke-width="2" marker-end="url(#uni-arrow)" />
-  <rect x="195" y="110" width="330" height="62" rx="8" fill="hsl(220,20%,12%)" stroke="hsl(45,60%,40%)" stroke-width="1.2" />
+  <rect x="170" y="110" width="380" height="74" rx="8" fill="hsl(220,20%,12%)" stroke="hsl(45,60%,40%)" stroke-width="1.2" />
   <text x="360" y="130" text-anchor="middle" font-family="monospace" font-size="11" font-weight="bold" fill="hsl(45,80%,70%)">COMMON DERIVATION CHAIN</text>
   <text x="360" y="145" text-anchor="middle" font-family="monospace" font-size="8" fill="hsl(220,15%,65%)">P fixes α_U, the transmutation pair (t_U, t_tr),</text>
-  <text x="360" y="157" text-anchor="middle" font-family="monospace" font-size="8" fill="hsl(220,15%,65%)">the electroweak scale v, the Ward-projected α lane, and the cell area a_cell</text>
+  <text x="360" y="157" text-anchor="middle" font-family="monospace" font-size="8" fill="hsl(220,15%,65%)">the electroweak scale v, the Ward-projected α lane,</text>
+  <text x="360" y="169" text-anchor="middle" font-family="monospace" font-size="8" fill="hsl(220,15%,65%)">and the cell area a_cell</text>
 
-  <line x1="360" y1="172" x2="360" y2="200" stroke="hsl(45,60%,40%)" stroke-width="1.5" />
-  <path d="M360,200 L180,200 L180,235" stroke="hsl(185,80%,55%)" stroke-width="2" fill="none" marker-end="url(#uni-arrow-cyan)" />
-  <path d="M360,200 L540,200 L540,235" stroke="hsl(140,60%,55%)" stroke-width="2" fill="none" marker-end="url(#uni-arrow-green)" />
+  <line x1="360" y1="184" x2="360" y2="212" stroke="hsl(45,60%,40%)" stroke-width="1.5" />
+  <path d="M360,212 L180,212 L180,235" stroke="hsl(185,80%,55%)" stroke-width="2" fill="none" marker-end="url(#uni-arrow-cyan)" />
+  <path d="M360,212 L540,212 L540,235" stroke="hsl(140,60%,55%)" stroke-width="2" fill="none" marker-end="url(#uni-arrow-green)" />
 
-  <rect x="258" y="191" width="204" height="20" rx="10" fill="hsl(220,20%,12%)" stroke="hsl(45,60%,45%)" stroke-width="1" />
-  <text x="360" y="205" text-anchor="middle" font-family="monospace" font-size="9" font-weight="bold" fill="hsl(45,80%,70%)">P → α_U, t_U, t_tr, a_cell</text>
+  <rect x="258" y="203" width="204" height="20" rx="10" fill="hsl(220,20%,12%)" stroke="hsl(45,60%,45%)" stroke-width="1" />
+  <text x="360" y="217" text-anchor="middle" font-family="monospace" font-size="9" font-weight="bold" fill="hsl(45,80%,70%)">P → α_U, t_U, t_tr, a_cell</text>
 
   <rect x="50" y="235" width="260" height="38" rx="8" fill="url(#uni-gravity-grad)" stroke="hsl(185,80%,55%)" stroke-width="1.5" />
   <text x="180" y="252" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold" fill="hsl(185,80%,80%)">GRAVITY BRANCH</text>
@@ -104,7 +105,7 @@
   <rect x="420" y="590" width="240" height="28" rx="5" fill="hsl(220,20%,9%)" stroke="hsl(140,30%,30%)" stroke-width="0.8" />
   <text x="540" y="608" text-anchor="middle" font-family="monospace" font-size="8" fill="hsl(140,40%,55%)">remaining quarks · leptons · neutrinos</text>
 
-  <line x1="360" y1="200" x2="360" y2="635" stroke="hsl(220,15%,25%)" stroke-width="1" stroke-dasharray="3,4" />
+  <line x1="360" y1="212" x2="360" y2="635" stroke="hsl(220,15%,25%)" stroke-width="1" stroke-dasharray="3,4" />
   <rect x="170" y="635" width="380" height="90" rx="8" fill="hsl(220,20%,10%)" stroke="hsl(260,40%,45%)" stroke-width="1.5" />
   <text x="360" y="653" text-anchor="middle" font-family="monospace" font-size="10" font-weight="bold" fill="hsl(260,50%,80%)">STRUCTURAL INVARIANTS</text>
   <text x="360" y="668" text-anchor="middle" font-family="monospace" font-size="9" fill="hsl(260,30%,60%)">from Lorentz symmetry of the observer sphere</text>
