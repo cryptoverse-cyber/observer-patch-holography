@@ -57,6 +57,8 @@ and `c` and `b` in the `MS` scheme at their own mass scale.
 The papers also contain the structural Standard Model derivations listed above and a theorem-grade
 neutrino family, which are not included in this table because they do not have a single direct
 PDG/NIST one-number comparison row.
+The current public neutrino surface also includes theorem-grade physical Majorana phases on the
+shared-basis weighted-cycle transport branch; see `code/particles/RESULTS_STATUS.md`.
 
 Charged leptons sit on a sharper theorem split. The repo carries an exact same-family witness, a conditional determinant-line lift on physical charged data, and an algebraic mass readout from theorem-grade absolute charged scale. The open theorem is the landing from the common calibration input `P` to physical charged data or the charged determinant line.
 
