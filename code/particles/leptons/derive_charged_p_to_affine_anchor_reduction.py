@@ -87,6 +87,22 @@ def build_artifact(d10_forward: dict, d10_repair: dict, determinant: dict, ancho
                 "The charged determinant-line extension theorem records A_ch = (1/3) * s_det = (1/3) * log(det(Y_e)).",
             ],
         },
+        "P_threaded_source_exactness_reformulation": {
+            "id": "d10_selected_charged_source_exactness_forces_physical_affine_scalar_mu",
+            "statement": (
+                "Assume the D10 calibration descendants of P land theorem-grade on physical charged data "
+                "Y_e(P). Assume theorem-grade C_hat_e is promoted on that same physical Y_e(P) surface. "
+                "Then the canonical determinant-line lift theorem fixes "
+                "mu_phys(Y_e(P)) = (1/3) * log(det(Y_e(P))), defines "
+                "C_tilde_e(Y_e(P)) = C_hat_e(Y_e(P)) + mu_phys(Y_e(P)) I, and the "
+                "determinant-line section and affine anchor follow canonically by "
+                "s_det(Y_e(P)) = 3 mu_phys(Y_e(P)) and A_ch(P) = mu_phys(Y_e(P))."
+            ),
+            "role": (
+                "This reformulates the charged P-bridge burden as theorem-grade source landing on physical Y_e(P), "
+                "after which the affine scalar and determinant-line data follow canonically rather than through an extra independent lift theorem."
+            ),
+        },
         "induced_objects_once_bridge_closes": {
             "determinant_line_section": {
                 "artifact": determinant.get("artifact"),

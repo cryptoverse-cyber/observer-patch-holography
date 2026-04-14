@@ -1,4 +1,9 @@
 {
+  "P_threaded_source_exactness_reformulation": {
+    "id": "d10_selected_charged_source_exactness_forces_physical_affine_scalar_mu",
+    "role": "This reformulates the charged P-bridge burden as theorem-grade source landing on physical Y_e(P), after which the affine scalar and determinant-line data follow canonically rather than through an extra independent lift theorem.",
+    "statement": "Assume the D10 calibration descendants of P land theorem-grade on physical charged data Y_e(P). Assume theorem-grade C_hat_e is promoted on that same physical Y_e(P) surface. Then the canonical determinant-line lift theorem fixes mu_phys(Y_e(P)) = (1/3) * log(det(Y_e(P))), defines C_tilde_e(Y_e(P)) = C_hat_e(Y_e(P)) + mu_phys(Y_e(P)) I, and the determinant-line section and affine anchor follow canonically by s_det(Y_e(P)) = 3 mu_phys(Y_e(P)) and A_ch(P) = mu_phys(Y_e(P))."
+  },
   "artifact": "oph_charged_p_to_affine_anchor_reduction",
   "closed_d10_inputs": {
     "emitted_from_P": [
@@ -39,7 +44,7 @@
       "The charged determinant-line extension theorem records A_ch = (1/3) * s_det = (1/3) * log(det(Y_e))."
     ]
   },
-  "generated_utc": "2026-04-14T03:41:05Z",
+  "generated_utc": "2026-04-14T06:05:00Z",
   "induced_objects_once_bridge_closes": {
     "absolute_outputs": {
       "Delta_e_abs(P)": "log(g_ch_shared) - A_ch(P)",

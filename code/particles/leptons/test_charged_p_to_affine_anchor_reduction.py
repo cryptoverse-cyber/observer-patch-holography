@@ -35,6 +35,10 @@ def test_charged_p_to_affine_anchor_reduction() -> None:
     assert payload["reduction_theorem"]["id"] == "charged_P_to_A_ch_reduces_to_determinant_line_bridge"
     assert payload["exact_smallest_bridge_target"]["id"] == "d10_to_charged_determinant_line_bridge"
     assert "theorem_grade_physical_Y_e(P)" in payload["exact_smallest_bridge_target"]["equivalent_landings"]
+    assert (
+        payload["P_threaded_source_exactness_reformulation"]["id"]
+        == "d10_selected_charged_source_exactness_forces_physical_affine_scalar_mu"
+    )
     assert payload["induced_objects_once_bridge_closes"]["affine_anchor"]["formula"] == (
         "A_ch(P) = (1/3) * s_det(P) = (1/3) * log(det(Y_e(P)))"
     )

@@ -75,6 +75,7 @@ def build_artifact(
                 "exact_smallest_bridge_target": bridge_reduction.get("exact_smallest_bridge_target", {}).get(
                     "id"
                 ),
+                "P_threaded_reformulation": "d10_selected_charged_source_exactness_forces_physical_affine_scalar_mu",
                 "effect_on_fill": "theorem_grade_charged_determinant_line_section(P)_then_A_ch(P)",
             },
         ],
@@ -88,6 +89,9 @@ def build_artifact(
             "artifact_ref": artifact_ref(BRIDGE_REDUCTION_JSON),
             "reduction_theorem_id": bridge_reduction.get("reduction_theorem", {}).get("id"),
             "exact_smallest_bridge_target": bridge_reduction.get("exact_smallest_bridge_target", {}).get("id"),
+            "P_threaded_reformulation_id": bridge_reduction.get(
+                "P_threaded_source_exactness_reformulation", {}
+            ).get("id"),
         },
         "current_forbidden_outputs": [
             "A_ch(P)",
@@ -111,6 +115,7 @@ def build_artifact(
             "This is a dependency theorem, not a numerical mismatch report.",
             "It isolates exactly what remains before any public charged table can emit masses from P.",
             "The symbolic formulas are already known; what is missing is the theorem-grade production of A_ch(P).",
+            "The charged P-bridge can be phrased more sharply as theorem-grade source landing on physical Y_e(P), after which the affine scalar follows from the physical descent package.",
         ],
     }
 

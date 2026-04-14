@@ -46,6 +46,14 @@ def test_current_corpus_does_not_emit_charged_masses_from_p() -> None:
     assert payload["failed_dependencies"][1]["id"] == "refinement_stable_uncentered_trace_lift"
     assert payload["failed_dependencies"][2]["id"] == "d10_to_charged_affine_anchor_bridge"
     assert payload["failed_dependencies"][2]["exact_smallest_bridge_target"] == "d10_to_charged_determinant_line_bridge"
+    assert (
+        payload["failed_dependencies"][2]["P_threaded_reformulation"]
+        == "d10_selected_charged_source_exactness_forces_physical_affine_scalar_mu"
+    )
     assert payload["bridge_reduction_artifact"]["artifact"] == "oph_charged_p_to_affine_anchor_reduction"
+    assert (
+        payload["bridge_reduction_artifact"]["P_threaded_reformulation_id"]
+        == "d10_selected_charged_source_exactness_forces_physical_affine_scalar_mu"
+    )
     assert payload["symbolic_readout_if_dependencies_close"]["g_e(P)"] == "exp(A_ch(P))"
     assert "m_tau(P)" in payload["current_forbidden_outputs"]

@@ -27,6 +27,9 @@ ANCHOR_SECTION_JSON = RUNS_DIR / "charged_absolute_anchor_section.json"
 POST_PROMOTION_ROUTE_JSON = RUNS_DIR / "charged_post_promotion_absolute_closure_route.json"
 ABSOLUTE_FRONTIER_FACTORIZATION_JSON = RUNS_DIR / "charged_absolute_frontier_factorization.json"
 P_TO_AFFINE_REDUCTION_JSON = RUNS_DIR / "charged_p_to_affine_anchor_reduction.json"
+PHYSICAL_CLASS_AFFINE_SCALAR_REDUCTION_JSON = RUNS_DIR / "charged_physical_class_affine_scalar_reduction.json"
+PHYSICAL_CANONICAL_LIFT_JSON = RUNS_DIR / "charged_physical_determinant_line_canonical_uncentered_lift.json"
+MASS_READOUT_FROM_AFFINE_JSON = RUNS_DIR / "charged_mass_readout_from_affine_anchor.json"
 
 
 def load_json(path: Path) -> dict[str, Any]:

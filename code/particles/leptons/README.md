@@ -93,6 +93,41 @@ The post-promotion lift slot has now been reduced further in carrier type:
   `A_ch(P) = (1/3) * log(det(Y_e(P)))`, so the bridge target is smaller than a
   free-standing affine-scalar theorem.
 
+  The same descent package also gives a sharper P-threaded reformulation:
+  once `P -> Y_e(P)` lands on theorem-grade physical charged data and the
+  post-promotion charged descent hypotheses hold, the physical affine scalar
+  `mu_phys(Y_e(P))` is forced by the identity-mode equalizer rather than
+  remaining a separate bridge-sized theorem.
+
+- `oph_charged_physical_class_affine_scalar_reduction`
+  This is the strongest honest selected-surface charged theorem packaged on the
+  current local surface. It does not claim a quark-style public selected-class
+  charged source descent. It states that on theorem-grade physical charged
+  `Y_e(P)`, once theorem-grade `C_hat_e` exists, the determinant line fixes the
+  canonical physical affine scalar `mu_phys(Y_e(P)) = (1/3) * log(det(Y_e(P)))`
+  and therefore the canonical uncentered lift, determinant-line, affine-anchor,
+  and charged mass formulas.
+
+- `oph_charged_physical_determinant_line_canonical_uncentered_lift`
+  This is the exact conditional theorem behind `#151`: on theorem-grade
+  physical charged `Y_e`, theorem-grade `C_hat_e` and the determinant line
+  canonically fix
+  `C_tilde_e(Y_e) = C_hat_e(Y_e) + mu_phys(Y_e) I`
+  with
+  `mu_phys(Y_e) = (1/3) * log(det(Y_e))`.
+  The identity-mode equalizer on a fixed physical fiber is then tautological.
+
+- `oph_charged_mass_readout_from_affine_anchor`
+  This is the exact downstream theorem beneath the source-landing frontier:
+  once theorem-grade `A_ch(P)` exists on theorem-grade physical charged data,
+  the charged absolute scale and charged mass triple are pure algebraic
+  readouts,
+  `g_e(P) = exp(A_ch(P))` and
+  `m_i(P) = exp(A_ch(P) + ell_i_centered(P))`.
+  The remaining open charged source problem is not this algebraic readout. The
+  remaining open theorem is the landing from the D10 calibration descendants of
+  `P` to theorem-grade physical charged data or the charged determinant line.
+
 Layered frontier ledger now on disk:
 
 - `oph_charged_absolute_frontier_factorization`
