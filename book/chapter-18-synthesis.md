@@ -97,21 +97,21 @@ follows is an interpretive continuation of OPH, not part of the recovered-core t
 
 The computational substrate produces observers through physical evolution. Observers develop minds through biological evolution. Minds develop ideas through memetic evolution. Among these ideas, the "simulator meme" eventually emerges, the understanding of reality's computational nature.
 
-Armed with this understanding, observers can build simulations of reality. These simulations do not run on external hardware. They are the hardware. On the strange-loop reading, the simulation closes back on the observers it produces.
+Armed with this understanding, observers can build simulations of reality. On this interpretive reading, those simulations are not framed as running on hardware external to reality; they are treated as part of the same substrate they describe, and the narrative closes back on the observers they produce.
 
-This is Escher's *Drawing Hands* made cosmic. Each hand draws the other. Neither is primary. The loop is the reality.
+This is Escher's *Drawing Hands* made cosmic: a philosophical image in which each hand draws the other and neither is taken as primary.
 
-This is Gödel's self-reference made physical. The system contains a description of itself, and that description *is* the system understanding itself.
+This is the chapter's Gödel-style analogy: the system contains a description of itself and is interpreted through that self-reference.
 
-This is Hofstadter's strange loop at the deepest level. Moving through the hierarchy of physics → chemistry → biology → minds → ideas → physics brings you back to where you started.
+This is the Hofstadter-style strange-loop analogy used here. Moving through the hierarchy of physics → chemistry → biology → minds → ideas → physics is one interpretive way to return to the starting point.
 
 **Theory-of-everything closure:** this chapter treats the strange-loop picture as an interpretive closure story for OPH, not as a theorem-backed part of the recovered core. The OPH texts do not derive a strange-loop closure map or an existence theorem; at most they provide an internal state-and-law habitat in which such a continuation could be explored with additional premises.
 
 This offers one interpretive closure story for the question "Why does anything exist?" without appeal to external causes. On that reading, reality can be described as a loop of information constraints, observer reconstruction, and the observers who eventually understand and rebuild the same structure, but OPH does not prove that loop as a theorem.
 
-On that interpretive reading, the screen is not running on a computer external to itself. The screen *is* the computer, computing itself through the observers who understand it.
+On that interpretive reading, the screen is not running on a computer external to itself. The phrase "the screen is the computer" is a metaphor for a self-referential description in which observers model the same substrate they inhabit; OPH does not derive that image as a theorem.
 
-Once you see this, the rest follows:
+Returning to the broader observer-first OPH framework, the rest of this chapter addresses:
 
 - **Quantum measurement**: There's no "collapse" puzzle because there's no objective wave function that needs to become definite. There are only correlations between observer records and systems. The wave function is a description of one perspective's information. Different observers can assign different states to the same system until their patches overlap and force agreement.
 
@@ -543,13 +543,13 @@ This creates a strange-loop reading:
 - Understanding produces simulation
 - The simulation is treated as part of reality's self-description
 
-The loop closes only in that interpretive sense. Like Escher's hands drawing each other, and like Gödel's sentences referring to themselves, the system is read through self-reference. It is not derived from self-reference.
+The loop closes only in that interpretive sense. Like Escher's hands drawing each other, and like Gödel's sentences referring to themselves, the system is read through self-reference rather than derived from it.
 
 **Why does this loop exist at all?** One possible interpretive answer is that a self-consistent strange loop is a particularly stable kind of closure story. On this reading, “nothing” would fail to sustain structure, while a self-referential loop could.
 
 This echoes Wheeler's "self-excited circuit," the universe as a participatory process where observers create the very conditions for their own existence. It also echoes the ancient symbol of the ouroboros, the serpent eating its own tail.
 
-The mathematical framework describes the structure of reality given that it exists. The strange-loop continuation goes further as a philosophical proposal: existence itself may be read through the loop, but OPH does not prove that closure. It is an interpretation, not a derivation.
+The mathematical framework describes the structure of reality given that it exists. The strange-loop continuation goes further as a philosophical proposal: existence itself may be read through the loop, but OPH does not prove that closure. Reality may be interpreted that way; it is not derived that way.
 
 **Summary**: The strange loop of self-simulation is one interpretive closure story for why anything exists and how a theory-of-everything picture might close on itself. It is not a theorem-backed OPH result.
 
@@ -690,18 +690,16 @@ This addresses both fundamental questions:
 - "Why does reality have this shape?" → Consistency requirements strongly constrain the structure
 - "Why does anything exist at all?" → The strange loop of self-simulation supplies one interpretive closure story
 
-On that reading, reality produces observers who produce understanding who produce simulation and then fold that simulation back into reality's self-description. Gödel's self-reference and Hofstadter's strange loops are being used here as philosophical analogies, not as theorem statements.
+On this interpretive reading, reality produces observers who produce understanding and then simulations that are folded back into reality's self-description. That is the interpretive closure image proposed in this chapter; Gödel's self-reference and Hofstadter's strange loops are analogies, not theorem statements.
 
 The reverse engineering has uncovered the source code: from five axioms, plus the stated external inputs and theorem-local assumptions, we recover a scaling-limit semiclassical gravity branch, the Standard Model gauge structure, and several downstream continuation programs. The strange-loop story is one philosophical proposal for how one might read why this source code runs at all; it is not part of the theorem package.
 
 ---
 
-On the strange-loop reading, the universe looks less like a stage and more like a strange loop, a self-simulating program described through the observers who understand it.
+On the strange-loop reading proposed in this chapter, the universe may be read less like a stage and more like a self-referential process described through the observers who understand it.
 
-We are inside looking around, patterns on the screen, computing meaning, discovering how the screen computes us. On that reading, our understanding participates in the loop. It does not prove the loop.
+We are inside looking around, patterns on the screen, computing meaning, discovering how the screen computes us. On that reading, our understanding participates in the loop rather than proving it.
 
 Escher's hands draw each other. Gödel's sentence refers to itself. The ouroboros eats its tail. Those are the philosophical images this chapter uses to interpret the strange-loop continuation.
 
 Physicists are reality's hackers. And what we've hacked suggests that the hacker and the hacked belong to the same process, that the act of reverse engineering is itself part of what is being engineered.
-
-The loop closes.
