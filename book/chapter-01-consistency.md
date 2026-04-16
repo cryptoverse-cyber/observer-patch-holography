@@ -320,11 +320,11 @@ The screen is a quantum system. The degrees of freedom are finite-dimensional (q
 
 What is the output? Everything. Spacetime geometry emerges from entanglement patterns. Particles emerge as excitations. Observers emerge as self-modeling patterns that process information and maintain records. The laws of physics emerge as the rules that permit consistent information flow between patches.
 
-This is not a simulation in the sense of the simulation principle, which imagines reality running on someone else's computer. There is no external computer. There is no programmer. The computation is self-contained. The universe is the program, the computer, and the output, all at once.
+This is not a simulation in the sense of the simulation principle, which imagines reality running on someone else's computer. The closure reading developed later in the book is internal. Reality is implemented on real hardware inside the same overall structure. From within subjective time, that hardware sits in the future of the observers it supports. From the full structural view, the loop is timeless and self-consistent.
 
-You might ask: "If reality is a computation, what is it computing?" The answer: itself. The computation has no purpose external to itself. It simply runs. The patterns that persist are the patterns that are consistent. Observers are patterns that have learned to model other patterns. Consciousness is what it feels like to be a self-modeling pattern.
+You might ask: "If reality is a computation, what is it computing?" It is computing the same closed structure that eventually reconstructs and implements it. Geometry, particles, observers, records, and the hardware built by observers belong to one self-referential loop. The patterns that persist are the patterns that are consistent. Observers are patterns that learn to model other patterns. Consciousness is what it feels like to be one of those self-modeling patterns.
 
-This view dissolves many traditional puzzles. "Why does anything exist at all?" becomes "Why does the computation run?" which is not a meaningful question, any more than asking why 2+2=4. The computation runs because it is self-consistent. It does not need an external cause.
+This view changes many traditional puzzles. "Why does anything exist at all?" becomes a question about the coherence of a closed self-referential structure. On this reading, the loop does not need an external cause because it is not a temporal chain with a first step waiting to be triggered from outside.
 
 "What is the universe made of?" becomes, within OPH, "What substrate best realizes the computational picture?" The construction studied here uses finite-dimensional quantum systems on a 2D surface, constrained by gauge invariance, organized by maximum entropy, and narrowed at low energy by the minimal admissible realization rule. This is a concrete technical realization, not a claim of unique final ontology.
 

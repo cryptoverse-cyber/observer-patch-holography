@@ -59,7 +59,8 @@ emergent EFT.
 ## 16.4 From Stable Patterns to Concrete Particle Predictions
 
 Stable-pattern language can sound philosophical unless the reader is shown
-how those patterns become a concrete particle package.
+where the familiar particle families enter the chain. This is the point where
+the zoo stops looking like a zoo.
 
 The first bridge is symmetry. Once Lorentz kinematics is recovered, a durable
 excitation is sorted by the familiar labels of relativistic physics: mass,
@@ -67,67 +68,75 @@ spin, and helicity. Once the gauge branch is recovered, the charge bookkeeping
 also stops looking arbitrary. The realized branch fixes the Standard Model
 quotient $SU(3)\times SU(2)\times U(1)/\mathbb Z_6$, the exact hypercharge
 lattice, and the counting chain $N_g=3$, $N_c=3$. Those are structural
-answers about what kinds of matter can exist.
+answers about what kinds of matter can exist at all.
 
-That structural layer has direct particle consequences. The photon,
-the eight gluons, and the graviton are massless because they lie along
-redundancy directions. A hard mass for any of them would break the gluing
-rules that let different observer patches describe the same physics. The same
-structural package also forbids gauge-mediated proton decay, because the
-realized gauge group is a product group and does not contain the extra
-leptoquark gauge bosons that simple-group unification would require.
+From there the particle package enters in a definite order.
 
-The quantitative particle rows come from the shared local calibration story.
-One electroweak transport family yields the weak-boson pair
+- **Structural carriers.** The photon, the eight gluons, and the graviton are
+  massless because they sit along redundancy directions of the overlap and
+  gauge structure. A hard mass for any of them would spoil the gluing rules
+  that let different patches describe the same physics. This same structural
+  package also blocks gauge-mediated proton decay, because the realized gauge
+  group is a product group and does not contain the extra leptoquark gauge
+  bosons that simple-group unification would require.
 
-$$
-M_W = 80.377\,\mathrm{GeV}, \qquad
-M_Z = 91.18797809193725\,\mathrm{GeV},
-$$
+- **Electroweak bosons and the low-energy electromagnetic coupling.** One
+  electroweak transport family yields the weak-boson pair
 
-and the same family, followed along the unbroken electromagnetic channel to
-the long-distance Thomson limit, yields
+  $$
+  M_W = 80.377\,\mathrm{GeV}, \qquad
+  M_Z = 91.18797809193725\,\mathrm{GeV},
+  $$
 
-$$
-\alpha^{-1}(0)=137.035999177.
-$$
+  and the same family, followed along the unbroken electromagnetic channel to
+  the long-distance Thomson limit, yields
 
-This is how OPH arrives at a concrete coupling prediction. The low-energy
-electromagnetic strength and the weak-boson masses come from one branch of
-the construction.
+  $$
+  \alpha^{-1}(0)=137.035999177.
+  $$
 
-The same electroweak core continues into the Higgs and companion top values:
+  The payoff is simple: the weak-boson pair and the familiar low-energy
+  electromagnetic strength come from one branch of the same construction.
 
-$$
-(m_H,m_t)=(125.1995304097179,\ 172.3523553288312)\,\mathrm{GeV}.
-$$
+- **Higgs and top.** The same electroweak core continues into the scalar and
+  companion top values
 
-The quark sector closes on one selected physical quark basis:
+  $$
+  (m_H,m_t)=(125.1995304097179,\ 172.3523553288312)\,\mathrm{GeV}.
+  $$
 
-$$
-(m_u,m_d,m_s,m_c,m_b,m_t)=
-(0.00216,\ 0.00470,\ 0.0935,\ 1.273,\ 4.183,\ 172.3523553288311)\,\mathrm{GeV}.
-$$
+  In plain language, the Higgs appears as the scalar continuation of the same
+  quantitative branch that produced the electroweak pair.
 
-These are running quark masses, not hadron masses. They belong to the
-short-distance particle description before QCD binds quarks into composite
-states.
+- **Quarks.** The quark sector closes on one selected physical quark basis:
 
-The neutrino branch is concrete as well:
+  $$
+  (m_u,m_d,m_s,m_c,m_b,m_t)=
+  (0.00216,\ 0.00470,\ 0.0935,\ 1.273,\ 4.183,\ 172.3523553288311)\,\mathrm{GeV}.
+  $$
 
-$$
-(m_{\nu_e},m_{\nu_\mu},m_{\nu_\tau})=
-(0.017454720257976796,\ 0.019481987935919015,\ 0.05307522145074924)\,\mathrm{eV},
-$$
+  These are running quark masses, not hadron masses. They belong to the
+  short-distance particle description before QCD binds quarks into composite
+  states. This is why OPH can speak cleanly about the quark sextet while still
+  treating hadrons as a separate bound-state problem.
 
-together with definite Majorana phases on that branch.
+- **Neutrinos.** The neutrino branch is concrete as well:
 
-Taken together, the particle picture is larger than a few isolated numbers.
-OPH fixes the structural gauge package, the exact massless carriers, the
-$W/Z$ pair, the Thomson-limit electromagnetic coupling, the Higgs/top pair,
-the running quark sextet with Yukawas, and one neutrino family. Charged
-leptons need one absolute anchor. Hadrons require a separate nonperturbative
-bound-state step.
+  $$
+  (m_{\nu_e},m_{\nu_\mu},m_{\nu_\tau})=
+  (0.017454720257976796,\ 0.019481987935919015,\ 0.05307522145074924)\,\mathrm{eV},
+  $$
+
+  together with definite Majorana phases on that branch. These values come
+  from the weighted-cycle neutrino lane, so the neutrino story lands as one
+  explicit emitted family in the OPH chain.
+
+Taken together, the particle picture is larger than a handful of isolated
+numbers. OPH fixes the structural gauge package, the exact massless carriers,
+the $W/Z$ pair, the Thomson-limit electromagnetic coupling, the Higgs/top
+pair, the running quark sextet with Yukawas, and one neutrino family.
+Charged leptons need one absolute anchor. Hadrons require a separate
+nonperturbative bound-state step.
 
 ## 16.5 What Is a Particle?
 

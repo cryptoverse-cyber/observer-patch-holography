@@ -275,6 +275,16 @@ Imagine the screen as a **gauge-invariant quantum system** on the 2-sphere, some
 
 This computational picture is developed concretely through **quantum link models**, a class of lattice gauge theories with finite-dimensional Hilbert spaces that provide an explicit UV realization of key OPH ingredients. The technical details are in the paper; the intuition is that the sphere is running a quantum computation, and we are processes within it.
 
+### A Plausible Hardware Sketch
+
+The exact screen hardware is not the focus of this book. It is one active research direction in OPH.
+
+The current microphysics program studies one concrete reference architecture. Start with a finite cellulation of the sphere. Put small quantum registers on the links. Add small record registers on selected vertices or coarse cells. Enforce local gauge admissibility through Gauss checks. Let the faces carry local plaquette dynamics. Add local repair and synchronization moves that keep neighboring patches mutually consistent.
+
+In that picture, a patch is a boundary-fixed observable algebra carved out of the screen. An overlap is the shared interface where two patches read the same observables and the same edge-sector data. Records are stored in explicit finite registers, so measurement and observer memory are part of the same microscopic machine.
+
+This matters for a simple reason. It turns the screen from a philosophical image into a simulator target. The design can be compiled into ordinary qubits, and that makes it possible to test fixed-cutoff measurement, stable records, checkpoint and restoration, and observer synchronization inside one finite system.
+
 ## 3.10 Entanglement Creates Depth
 
 The screen gives a boundary. It does not yet explain why experience feels three-dimensional. The missing ingredient is entanglement.
