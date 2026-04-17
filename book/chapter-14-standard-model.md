@@ -8,7 +8,7 @@ The intuitive picture is straightforward:
 - Forces act between them.
 - The Standard Model is the final inventory of what exists.
 
-In this picture, an electron is a tiny object with definite properties, and fields are invisible fluids that fill space. You learn the Standard Model as a catalog: quarks, leptons, gauge bosons, the Higgs. End of story.
+In this picture, an electron is a tiny object with definite properties, and fields are invisible fluids that fill space. You learn the Standard Model as a catalog: quarks, leptons, gauge bosons, the Higgs. That is the whole picture.
 
 This view works for calculations, but it hides what is actually strange about our best theory of matter.
 
@@ -770,7 +770,7 @@ There's no larger group. No X and Y bosons. No leptoquark generators. Unificatio
 
 The prediction is stark: **gauge-mediated proton decay is forbidden**. That is the theorem-level statement.
 
-This is one of the cleanest experimental forks in the road. A simple-group unification story predicts new gauge bosons that eventually turn protons into lighter particles. The OPH route predicts that those bosons never exist. The difference is not cosmetic. It is the difference between one future detector signal and none.
+This is one of the cleanest experimental forks in the road. A simple-group unification scheme predicts new gauge bosons that eventually turn protons into lighter particles. The OPH route predicts that those bosons never exist. The difference is not cosmetic. It is the difference between one future detector signal and none.
 
 That is why the claim is unusually valuable. Many high-energy ideas differ mainly in elegance or ultraviolet taste. Proton decay is harsher. Either the detector sees the relevant channel or it keeps not seeing it. This chapter places OPH on the null-decay side for structural reasons, not as a temporary preference.
 
