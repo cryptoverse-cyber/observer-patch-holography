@@ -9,12 +9,16 @@ from datetime import datetime, timezone
 from pathlib import Path
 import math
 
+from p_driven_flavor_candidate import anchored_sigma_pair_from_edge_candidate
+
 
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_INPUT = ROOT / "particles" / "runs" / "flavor" / "family_excitation_evaluator.json"
 DEFAULT_ODD_RESPONSE = ROOT / "particles" / "runs" / "flavor" / "quark_odd_response_law.json"
 DEFAULT_SECTOR_MEAN_SPLIT = ROOT / "particles" / "runs" / "flavor" / "quark_sector_mean_split.json"
 DEFAULT_EDGE_STATS_CANDIDATE = ROOT / "particles" / "runs" / "flavor" / "quark_edge_statistics_spread_candidate.json"
+DEFAULT_EXACT_SIGMA_TARGET = ROOT / "particles" / "runs" / "flavor" / "quark_current_family_exact_sigma_target.json"
+DEFAULT_EDGE_STATS_ANCHOR = ROOT / "particles" / "runs" / "flavor" / "quark_edge_statistics_spread_candidate.json"
 DEFAULT_OUT = ROOT / "particles" / "runs" / "flavor" / "quark_spread_map.json"
 
 
@@ -133,12 +137,67 @@ def _build_candidate_sigmas(
     )
 
 
+def _build_p_driven_candidate_sigmas(
+    edge_stats_candidate: dict,
+    exact_sigma_target: dict | None,
+    default_edge_stats_candidate: dict | None,
+) -> tuple[float, float, str, str, dict[str, str], dict[str, float]]:
+    if not edge_stats_candidate:
+        raise ValueError("p_driven_candidate mode requires the constructive edge-statistics candidate artifact")
+
+    current_candidate = dict(edge_stats_candidate["candidate_sigmas"])
+    exact_target = (
+        dict((exact_sigma_target or {}).get("unique_exact_sigma_target", {}))
+        if exact_sigma_target is not None
+        else {}
+    )
+    default_candidate = (
+        dict((default_edge_stats_candidate or {}).get("candidate_sigmas", {}))
+        if default_edge_stats_candidate is not None
+        else {}
+    )
+    anchored = anchored_sigma_pair_from_edge_candidate(
+        float(current_candidate["sigma_u_total_log_per_side"]),
+        float(current_candidate["sigma_d_total_log_per_side"]),
+        exact_sigma_u=float(exact_target.get("sigma_u_target", 5.573928426395543)),
+        exact_sigma_d=float(exact_target.get("sigma_d_target", 3.296264198808688)),
+        default_candidate_sigma_u=float(default_candidate.get("sigma_u_total_log_per_side", 5.578418804072826)),
+        default_candidate_sigma_d=float(default_candidate.get("sigma_d_total_log_per_side", 3.4210589139721543)),
+    )
+    return (
+        float(anchored["sigma_u_total_log_per_side"]),
+        float(anchored["sigma_d_total_log_per_side"]),
+        "candidate_default_universe_exact_anchor",
+        "p_driven_edge_statistics_default_universe_anchor_candidate",
+        {
+            "sigma_u_total_log_per_side": anchored["anchor_formula_u"],
+            "sigma_d_total_log_per_side": anchored["anchor_formula_d"],
+        },
+        {
+            "anchor_scale_u": float(anchored["anchor_scale_u"]),
+            "anchor_scale_d": float(anchored["anchor_scale_d"]),
+            "exact_sigma_u_target": float(exact_target.get("sigma_u_target", 5.573928426395543)),
+            "exact_sigma_d_target": float(exact_target.get("sigma_d_target", 3.296264198808688)),
+            "default_candidate_sigma_u": float(default_candidate.get("sigma_u_total_log_per_side", 5.578418804072826)),
+            "default_candidate_sigma_d": float(default_candidate.get("sigma_d_total_log_per_side", 3.4210589139721543)),
+        },
+    )
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Build the quark spread-map artifact.")
+    parser.add_argument(
+        "--mode",
+        choices=("legacy_current_surface", "p_driven_candidate"),
+        default="legacy_current_surface",
+        help="Construction mode. The default preserves the theorem-facing current-surface behavior.",
+    )
     parser.add_argument("--input", default=str(DEFAULT_INPUT))
     parser.add_argument("--odd-response-law", default=str(DEFAULT_ODD_RESPONSE))
     parser.add_argument("--sector-mean-split", default=str(DEFAULT_SECTOR_MEAN_SPLIT))
     parser.add_argument("--edge-stats-candidate", default=str(DEFAULT_EDGE_STATS_CANDIDATE))
+    parser.add_argument("--exact-sigma-target", default=str(DEFAULT_EXACT_SIGMA_TARGET))
+    parser.add_argument("--default-edge-stats-anchor", default=str(DEFAULT_EDGE_STATS_ANCHOR))
     parser.add_argument("--output", default=str(DEFAULT_OUT))
     args = parser.parse_args()
 
@@ -151,6 +210,18 @@ def main() -> int:
     edge_stats_candidate = (
         json.loads(edge_stats_candidate_path.read_text(encoding="utf-8"))
         if edge_stats_candidate_path.exists()
+        else None
+    )
+    exact_sigma_target_path = Path(args.exact_sigma_target)
+    exact_sigma_target = (
+        json.loads(exact_sigma_target_path.read_text(encoding="utf-8"))
+        if exact_sigma_target_path.exists()
+        else None
+    )
+    default_edge_stats_anchor_path = Path(args.default_edge_stats_anchor)
+    default_edge_stats_anchor = (
+        json.loads(default_edge_stats_anchor_path.read_text(encoding="utf-8"))
+        if default_edge_stats_anchor_path.exists()
         else None
     )
     rho = float(payload.get("rho_ord"))
@@ -166,14 +237,28 @@ def main() -> int:
         (1.0 - rho) / denom,
         ((2.0 * rho) + 1.0) / denom,
     ]
-    (
-        sigma_u_candidate,
-        sigma_d_candidate,
-        spread_status,
-        sigma_source_kind,
-        sigma_formula,
-        mean_surface_readback,
-    ) = _build_candidate_sigmas(payload, odd_response, sector_mean_split)
+    if args.mode == "p_driven_candidate":
+        (
+            sigma_u_candidate,
+            sigma_d_candidate,
+            spread_status,
+            sigma_source_kind,
+            sigma_formula,
+            mean_surface_readback,
+        ) = _build_p_driven_candidate_sigmas(
+            edge_stats_candidate=edge_stats_candidate,
+            exact_sigma_target=exact_sigma_target,
+            default_edge_stats_candidate=default_edge_stats_anchor,
+        )
+    else:
+        (
+            sigma_u_candidate,
+            sigma_d_candidate,
+            spread_status,
+            sigma_source_kind,
+            sigma_formula,
+            mean_surface_readback,
+        ) = _build_candidate_sigmas(payload, odd_response, sector_mean_split)
     gamma21_u = rho * sigma_u_candidate / (1.0 + rho)
     gamma32_u = sigma_u_candidate / (1.0 + rho)
     gamma21_d = sigma_d_candidate / (1.0 + rho)
@@ -293,6 +378,12 @@ def main() -> int:
                 "When that mean surface is present, the spread-emitter lane is theorem-fed rather than diagnostic-seeded. "
                 "The remaining exactness audit is isolated to the unique trace-zero quadratic residual basis Q_ord on the same ordered three-point surface; "
                 "otherwise it falls back to the older reference-free candidate route."
+                if args.mode == "legacy_current_surface"
+                else
+                "This is the off-canonical P-driven candidate spread lane. It takes the constructive edge-statistics "
+                "sigma motion and anchors it to the exact default-universe sigma target so the canonical point stays "
+                "exact while arbitrary-P motion remains driven by the emitted edge/gap candidate rather than by a "
+                "UI-only interpolation."
             ),
         },
     }

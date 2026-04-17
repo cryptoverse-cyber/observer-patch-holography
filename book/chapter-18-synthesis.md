@@ -210,7 +210,7 @@ Under the full ledger above, the model yields:
 3. **The Standard Model gauge group** $SU(3) \times SU(2) \times U(1)/\mathbb{Z}_6$, reconstructed from the transportable bosonic edge-sector package, with MAR selecting the realized branch
 4. **Three generations, three colors**: fixed by anomaly cancellation together with MAR
 5. **Massless gauge bosons and graviton**: forced by emergent gauge and diffeomorphism invariance, which forbid mass terms
-6. **A particle story with clear landmarks**: photon, gluons, graviton, W, and Z are fixed; the framework also carries a calibrated Higgs/top sector, a running quark package, and a neutrino branch with definite masses and phases, while charged leptons and hadrons remain the main open edges
+6. **A particle sector with clear landmarks**: photon, gluons, graviton, W, and Z are fixed; the framework also carries a calibrated Higgs/top sector, a running quark package, and a neutrino branch with definite masses and phases, while charged leptons and hadrons remain the main open edges
 
 The photon and graviton are forced by the axiom chain. The framework reaches deep into particle physics and goes far beyond a vague gesture in that direction.
 
@@ -260,6 +260,21 @@ The reverse-engineering logic is precise here. The structural axioms fix the
 form of the machine. They do not fix this local numerical scale by pure logic
 alone. The pixel area is therefore a calibrated input.
 
+The golden ratio gives the exact self-similar balance point. If we write
+$$x=\frac{S_{\mathrm{gen}}}{S_{\mathrm{bulk}}}=1+\frac{\langle L\rangle}{S_{\mathrm{bulk}}}$$
+and impose exact self-similar balance,
+$$\frac{S_{\mathrm{gen}}}{S_{\mathrm{bulk}}}=\frac{S_{\mathrm{bulk}}}{\langle L\rangle},$$
+then \(x\) satisfies \(x^2-x-1=0\), so the unique positive equilibrium point is
+\(\phi=(1+\sqrt5)/2\). In that precise sense, the golden ratio is the exact
+self-similar balance point. But OPH does not place the realized universe at
+exact equilibrium: a universe with durable records, structure, and dynamics
+needs entropy gradients, so the realized branch sits slightly off that balance
+point. The exact numerical value of \(P\) still comes from the electroweak
+calibration surface. The reason it sits close to \(\phi\) is structural. Exact
+equilibrium fixes the reference configuration, and the measured pixel input is
+a small equilibrium-breaking detuning away from it. This belongs to the
+quantitative calibration layer, not to the recovered core.
+
 The clean reader-facing picture is this. The electroweak branch gives a small
 family of observables that are sharp enough to serve as a local anchor. Use
 the $W$ and $Z$ masses to infer the value of $P$. Then demand that the
@@ -274,14 +289,14 @@ quantities.
 
 ![The Pixel Constant](../assets/pixel-constant.svg)
 
-That same local calibration story organizes the main numerical claims. In plain language, one local input sets the electroweak scale, the low-energy electromagnetic coupling, and the effective gravitational coupling.
+That same local calibration structure organizes the main numerical claims. In plain language, one local input sets the electroweak scale, the low-energy electromagnetic coupling, and the effective gravitational coupling.
 
 ![OPH unification diagram](../assets/OPH_Unification_Diagram.svg)
 
 This is the reverse-engineering wager in one sentence: calibrate one local
 resolution scale, then see how much of known physics falls out of it.
 
-Chapters 14 and 16 give the detailed particle rows. The synthesis point is the shared calibration story itself. The same local scale organizes the weak-boson pair, the Thomson-limit electromagnetic coupling, the Higgs/top surface, the quark package, and the gravity-facing readout. Above that numerical layer sits the structural layer: the realized gauge quotient $SU(3)\times SU(2)\times U(1)/\mathbb Z_6$, the exact hypercharge lattice, and the counting chain $N_g=3$, $N_c=3$.
+Chapters 14 and 16 give the detailed particle rows. The synthesis point is the shared calibration structure itself. The same local scale organizes the weak-boson pair, the Thomson-limit electromagnetic coupling, the Higgs/top surface, the quark package, and the gravity-facing readout. Above that numerical layer sits the structural layer: the realized gauge quotient $SU(3)\times SU(2)\times U(1)/\mathbb Z_6$, the exact hypercharge lattice, and the counting chain $N_g=3$, $N_c=3$.
 
 ### The Measurement Problem
 
@@ -398,13 +413,13 @@ These follow from our axioms plus stated additional assumptions:
 
 ### Particle-Spectrum Claim Tiers
 
-For the book, the particle story looks like this:
+For the book, the particle sector can be summarized as follows:
 
 | Sector | What the framework fixes | What remains open |
 | --- | --- | --- |
 | Structural carriers | Photon, gluons, and graviton are forced to be massless. | Nothing additional is needed at that structural level. |
 | Electroweak bosons | The $W$ and $Z$ masses are fixed on the electroweak calibration branch. | Their relation to bound-state strong dynamics is separate. |
-| Electromagnetic coupling | The same electroweak transport family yields $\alpha^{-1}(0)=137.035999177$ in the Thomson limit. | The broader ultraviolet running story belongs to the same calibration package. |
+| Electromagnetic coupling | The same electroweak transport family yields $\alpha^{-1}(0)=137.035999177$ in the Thomson limit. | The broader ultraviolet running structure belongs to the same calibration package. |
 | Higgs and top | The same calibration branch gives $m_H = 125.1995304097179$ GeV and a companion top value $m_t = 172.3523553288312$ GeV. | Connecting that top value to the direct experimental extraction requires extra work. |
 | Charged leptons | The family structure is fixed and the remaining freedom is isolated to one overall anchor. | One absolute mass-setting input is missing. |
 | Quarks | The six running quark masses and corresponding Yukawa data are fixed in the model's physical quark basis. | A fuller basis-independent closure remains open. |

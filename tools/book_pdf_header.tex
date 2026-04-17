@@ -1,0 +1,148 @@
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{needspace}
+\usepackage{tocloft}
+\usepackage{booktabs,longtable,array}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{fvextra}
+\usepackage{etoolbox}
+\usepackage{xurl}
+
+\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\setmainfont{STIX Two Text}
+\setmathfont{STIX Two Math}
+
+\definecolor{Ink}{HTML}{1F2430}
+\definecolor{Accent}{HTML}{3D6578}
+\definecolor{Muted}{HTML}{6B7280}
+\definecolor{Rule}{HTML}{D5DEE5}
+\definecolor{CodeBg}{HTML}{F4F7F9}
+
+\color{Ink}
+\providecommand{\hypersetup}[1]{}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=Accent,
+  urlcolor=Accent,
+  citecolor=Accent
+}
+
+\setstretch{1.0}
+\setlength{\parindent}{1.1em}
+\setlength{\parskip}{0.1em plus 0.03em minus 0.02em}
+\setlength{\headheight}{14pt}
+\setlength{\emergencystretch}{4em}
+\setlength{\LTpre}{0.75em}
+\setlength{\LTpost}{0.75em}
+\renewcommand{\arraystretch}{1.16}
+\setlist[itemize]{leftmargin=1.5em,itemsep=0.25em,topsep=0.3em}
+\setlist[enumerate]{leftmargin=1.5em,itemsep=0.25em,topsep=0.3em}
+\interfootnotelinepenalty=10000
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+
+\RecustomVerbatimEnvironment{Verbatim}{Verbatim}{
+  breaklines=true,
+  breakanywhere=true,
+  fontsize=\small,
+  xleftmargin=1em,
+  frame=single,
+  rulecolor=\color{Rule},
+  framesep=0.7em,
+  baselinestretch=1
+}
+
+\titleformat{\chapter}[display]
+  {\normalfont}
+  {\filleft\Large\scshape\color{Accent}\chaptertitlename\ \thechapter}
+  {0.8ex}
+  {\titlerule[0.8pt]\vspace{1.4ex}\filright\Huge\bfseries\color{Ink}}
+  [\vspace{1ex}\titlerule]
+
+\titleformat{name=\chapter,numberless}[display]
+  {\normalfont}
+  {}
+  {0pt}
+  {\titlerule[0.8pt]\vspace{1.4ex}\filright\Huge\bfseries\color{Ink}}
+  [\vspace{1ex}\titlerule]
+
+\titlespacing*{\chapter}{0pt}{0pt}{1.8ex}
+
+\titleformat{\section}
+  {\Large\bfseries\color{Accent}}
+  {\thesection}
+  {0.7em}
+  {}
+
+\titleformat{\subsection}
+  {\large\bfseries\color{Ink}}
+  {}
+  {0pt}
+  {}
+
+\titlespacing*{\section}{0pt}{2.5ex plus 0.3ex minus 0.2ex}{1ex}
+\titlespacing*{\subsection}{0pt}{1.8ex plus 0.2ex minus 0.1ex}{0.6ex}
+
+\pretocmd{\section}{\Needspace{6\baselineskip}}{}{}
+\pretocmd{\subsection}{\Needspace{4\baselineskip}}{}{}
+\pretocmd{\tableofcontents}{\clearpage\setcounter{tocdepth}{0}}{}{}
+
+\renewcommand{\contentsname}{Contents}
+\renewcommand{\cfttoctitlefont}{\Huge\bfseries\color{Ink}}
+\renewcommand{\cftaftertoctitle}{\hfill}
+\renewcommand{\cftchapfont}{\bfseries}
+\renewcommand{\cftsecfont}{\small}
+\renewcommand{\cftchappagefont}{\bfseries}
+\setlength{\cftbeforechapskip}{0.55em}
+\setlength{\cftbeforesecskip}{0.12em}
+
+\makeatletter
+\renewcommand{\maketitle}{%
+  \begin{titlepage}
+    \thispagestyle{empty}
+    \centering
+    \vspace*{0.16\textheight}
+    {\Large\scshape\color{Accent}Floating Pragma\par}
+    \vspace{1.2cm}
+    {\Huge\bfseries\color{Ink}\@title\par}
+    \vspace{0.9cm}
+    {\color{Accent}\rule{0.62\linewidth}{1pt}\par}
+    \vfill
+    {\Large\itshape\color{Ink}\@author\par}
+    \vspace{0.35cm}
+    {\small\color{Muted}\@date\par}
+    \vspace*{0.08\textheight}
+  \end{titlepage}
+}
+\makeatother
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\small\scshape\nouppercase{\leftmark}}
+\fancyfoot[LE,RO]{\small\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[LE,RO]{\small\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\captionsetup{
+  font=small,
+  labelfont=bf,
+  textfont=it
+}
+
+\AtBeginDocument{%
+  \setcounter{secnumdepth}{1}
+  \setcounter{tocdepth}{0}
+}

@@ -222,11 +222,11 @@
       "selected_by": "P",
       "symbol": "[F0^dagger F1]"
     },
-    "statement": "Let f_P be the physical quark frame class selected by P, represented on the realized quark lane by the explicit same-label common-refinement transport-frame class [F0^dagger F1]. The already-closed restricted sector-attached lift emits a class in Sigma_ud^phys over [F0^dagger F1], and the restricted strengthened lift attaches the exact physical sigma datum (sigma_seed_ud, eta_ud, sigma_u, sigma_d). Because the realized current-family/common-refinement transport-frame section on this selected class is unique up to the defining diagonal (U(1)^3 x U(1)^3) quotient, the emitted Sigma_ud^phys element and attached sigma datum depend only on f_P and not on the chosen declared transport-frame representative. Therefore the exact sigma readout descends uniquely to a target-free public datum on the physical quark frame class selected by P.",
+    "statement": "Let f_P be the physical quark frame class selected by P, represented on the realized quark lane by the explicit same-label common-refinement transport-frame class [F0^dagger F1]. For any two declared current-family/common-refinement transport-frame realizations r,r' in the selected same-label bridge fiber R_decl(f_P), the emitted Sigma_ud^phys element and attached exact physical sigma datum (sigma_seed_ud, eta_ud, sigma_u, sigma_d) agree. Equivalently, the exact sigma readout is constant on R_decl(f_P) and descends uniquely to a target-free public datum on the physical quark frame class selected by P.",
     "why_sufficient": "Once this descent holds, the theorem-grade physical sigma datum is intrinsic public data on the selected physical quark frame class. The affine mean law then emits the absolute sector scales algebraically, and the already-closed exact forward construction lifts from the local transport-frame representative to the public selected class."
   },
   "frontier_role": "resolved_direct_public_descent_theorem_plus_historical_upstream_alternative",
-  "generated_utc": "2026-04-12T16:09:49Z",
+  "generated_utc": "2026-04-16T15:22:50Z",
   "notes": [
     "This artifact now records the direct public theorem as closed on the selected physical quark frame class.",
     "The upstream generator route remains an alternative historical route, but it is no longer needed for the selected-class closure.",

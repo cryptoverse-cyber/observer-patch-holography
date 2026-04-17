@@ -179,7 +179,7 @@ The fine structure constant alpha, which measures the strength of electromagneti
 $\alpha^{-1}(0)=137.035999177$ in the Thomson limit. At higher energies, it increases. At the Z
 boson mass, it is about $1/128$.
 
-In OPH, that low-energy number sits inside the same particle story as the weak bosons. Once the
+In OPH, that low-energy number sits inside the same particle package as the weak bosons. Once the
 electroweak transport family is fixed by the shared local calibration, electromagnetism is read as
 the unbroken channel left after the weak and hypercharge sectors mix. Taking the long-distance
 Thomson limit of that channel gives
@@ -557,14 +557,14 @@ For the book, the picture is this:
 |---|---|---|
 | Gauge structure | The realized branch fixes the Standard Model quotient, the exact hypercharge lattice, and the generation/color counting | Bound-state spectroscopy is a separate layer |
 | Structural carriers | Photon, gluons, and graviton are forced to be massless | Nothing additional is needed at that structural level |
-| Electroweak sector | One electroweak transport family fixes the weak-boson pair and the Thomson-limit electromagnetic coupling | The full ultraviolet running story belongs to the broader calibration package |
+| Electroweak sector | One electroweak transport family fixes the weak-boson pair and the Thomson-limit electromagnetic coupling | The full ultraviolet running structure belongs to the broader calibration package |
 | Higgs and top | One electroweak calibration surface fixes a Higgs value and its companion top value | Connecting that top value to the direct experimental extraction requires extra work |
 | Charged leptons | The family structure is fixed and the remaining freedom is isolated to one overall anchor | One absolute mass-setting input is missing |
 | Quarks | The six running quark masses and corresponding Yukawa data are fixed in the model's physical quark basis | A fuller basis-independent closure remains open |
 | Neutrinos | One neutrino branch gives definite masses and Majorana phases | Stronger closure beyond that branch remains open |
 | Hadrons | Composite hadron masses are outside the closed package | Bound-state strong dynamics still have to be solved |
 
-The detailed numerical rows belong to the calibration story just below.
+The detailed numerical rows belong to the calibration section just below.
 
 ### How the Concrete Particle Rows Arise
 
@@ -578,7 +578,7 @@ That decides which charged excitations can exist and how they transform.
 
 The second step is redundancy. The photon, gluons, and graviton sit on symmetry-protected zero
 lines because electromagnetism, color, and gravity are redundancy structures in how patches glue
-and how bulk geometry is encoded. Give those carriers a hard mass and the overlap story stops
+and how bulk geometry is encoded. Give those carriers a hard mass and the overlap conditions stop
 closing consistently.
 
 The third step is the shared local calibration. Structural arguments tell you
@@ -589,7 +589,7 @@ therefore has to be calibrated.
 In reader-facing terms, the cleanest way to think about that calibration is this. The
 electroweak sector gives a small trusted family of observables with little
 hadronic ambiguity. Use the $W$ and $Z$ masses to pin down $P$, then
-ask whether the same $P$ forces the rest of the local particle story. If
+ask whether the same $P$ forces the rest of the local particle package. If
 the answer is yes, the framework is reverse engineering one machine with one
 shared knob across sectors.
 
@@ -604,7 +604,7 @@ long-distance Thomson limit, yields
 $$\alpha^{-1}(0)=137.035999177.$$
 
 That is why the fine-structure constant belongs in this chapter. It is part of the same transport
-story as the weak sector.
+branch as the weak sector.
 
 The fourth step continues along the same electroweak core. The Higgs and companion top values sit
 on the next calibration surface:
@@ -721,7 +721,23 @@ This section belongs in the book. The vacuum is not being mined for cute number 
 
 The foreign terminology hides a simple picture. Edge entanglement does not weight charge sectors arbitrarily. It assigns each sector a local geometric cost on the group manifold. Read those costs carefully enough and the effective gauge couplings can be inferred from the vacuum itself.
 
-Once we can reliably extract gauge couplings from entanglement, the later quantitative branches become much tighter.
+The same golden-ratio structure has a second role on the calibration side. If
+the realized pixel input is read as a total-to-bulk
+balance variable
+$$x=\frac{S_{\mathrm{gen}}}{S_{\mathrm{bulk}}}=1+\frac{\langle L\rangle}{S_{\mathrm{bulk}}},$$
+then exact self-similar balance means
+$$\frac{S_{\mathrm{gen}}}{S_{\mathrm{bulk}}}=\frac{S_{\mathrm{bulk}}}{\langle L\rangle},$$
+which gives \(x^2-x-1=0\) and therefore \(x=\phi\). That is the exact
+equilibrium point of the three-level total/bulk/edge hierarchy. But the OPH
+record/observer framework does not put the realized universe at exact equilibrium:
+a universe with durable records, structure, and dynamics needs entropy
+gradients. The exact numerical value of \(P\) still comes from the calibration
+surface. The reason it lies close to \(\phi\) is that \(\phi\) fixes the exact
+balance point and the realized branch sits at a small equilibrium-breaking
+detuning away from it. This belongs to the quantitative calibration layer, not
+to the recovered-core theorem package.
+
+Reliable extraction of gauge couplings from entanglement tightens the quantitative branches of the framework.
 
 ## 14.19 Gauge Unification and the Proton
 
@@ -758,7 +774,7 @@ This is one of the cleanest experimental forks in the road. A simple-group unifi
 
 That is why the claim is unusually valuable. Many high-energy ideas differ mainly in elegance or ultraviolet taste. Proton decay is harsher. Either the detector sees the relevant channel or it keeps not seeing it. This chapter places OPH on the null-decay side for structural reasons, not as a temporary preference.
 
-This is a unique experimental signature. Standard SUSY GUTs predict *both* precision unification *and* proton decay. Our model combines a theorem-level structural statement with a separate calibration branch: the full connected gauge group has only the product-group adjoint content and no mixed leptoquark generators, so gauge-mediated proton decay is forbidden. The same running story allows MSSM-like unification-style closure without simple-group embedding. If Hyper-Kamiokande continues to see null results while precision measurements continue to favor unified couplings, that would support geometric unification over algebraic unification.
+This is a unique experimental signature. Standard SUSY GUTs predict *both* precision unification *and* proton decay. Our model combines a theorem-level structural statement with a separate calibration branch: the full connected gauge group has only the product-group adjoint content and no mixed leptoquark generators, so gauge-mediated proton decay is forbidden. The same running structure allows MSSM-like unification-style closure without simple-group embedding. If Hyper-Kamiokande continues to see null results while precision measurements continue to favor unified couplings, that would support geometric unification over algebraic unification.
 
 ## 14.20 What the Model Explains
 
@@ -768,9 +784,9 @@ Let's step back and see what the framework actually accounts for.
 
 **The zeros.** The photon and graviton masses are exactly zero. This is a symmetry-protected prediction. The photon's masslessness follows from U(1) gauge invariance being a genuine overlap redundancy; any mass would break the consistency of how charged patches glue together. Similarly, the graviton's masslessness follows from diffeomorphism invariance being the redundancy structure of bulk spacetime. Experimental and observational upper bounds are consistent with these predictions to extraordinary precision: the photon mass is constrained below ~10⁻¹⁸ eV, often summarized as ~27 orders of magnitude, and the graviton mass is constrained below ~10⁻²³ eV by gravitational-wave dispersion, often summarized as ~22 orders of magnitude.
 
-**The particle story.** Section 14.14 gives the concrete package. The framework fixes the massless carriers, the weak-boson pair, the Thomson-limit electromagnetic coupling, a Higgs/top calibration, a six-quark running-mass package with Yukawas, and one neutrino branch with definite masses and Majorana phases. Charged leptons need one absolute anchor. Hadrons remain outside the closed package because strong-coupling bound states are harder.
+**The particle package.** Section 14.14 gives the concrete package. The framework fixes the massless carriers, the weak-boson pair, the Thomson-limit electromagnetic coupling, a Higgs/top calibration, a six-quark running-mass package with Yukawas, and one neutrino branch with definite masses and Majorana phases. Charged leptons need one absolute anchor. Hadrons remain outside the closed package because strong-coupling bound states are harder.
 
-The reason these numbers belong in one chapter is that the framework is trying to organize them with one local calibration story. The same input that sets the electroweak scale also feeds the low-energy electromagnetic coupling and the effective gravitational coupling. The reader does not need every intermediate symbol to see the point. The point is that OPH is attempting to tie electroweak masses, the Higgs/top calibration, electromagnetism at low energy, and Newton's constant to one common structure instead of treating them as unrelated constants.
+The reason these numbers belong in one chapter is that the framework is trying to organize them with one local calibration structure. The same input that sets the electroweak scale also feeds the low-energy electromagnetic coupling and the effective gravitational coupling. The reader does not need every intermediate symbol to see the point. OPH is attempting to tie electroweak masses, the Higgs/top calibration, electromagnetism at low energy, and Newton's constant to one common structure instead of treating them as unrelated constants.
 
 **Charge quantization.** All color-singlet particles have integer electric charge. No fractional charges like $\pm 1/3$ can exist outside hadrons. This follows from the global structure of the gauge group.
 

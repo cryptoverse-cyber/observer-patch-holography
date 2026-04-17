@@ -21,7 +21,7 @@
 \OPHPaperReleaseBanner
 
 \begin{abstract}
-This paper gives the concrete microphysics side of Observer-Patch Holography (OPH). Instead of treating patches, overlaps, records, and observers as abstract placeholders, it writes them into one finite screen model with local registers, overlap observables, repair instruments, and synchronization rules. The result is a workable fixed-cutoff reference architecture, encodable in qubits, on which measurement, stable records, checkpoint/restoration, and observer synchronization can be analyzed inside one shared microscopic system. The paper does not claim a final UV completion; it gives the explicit engineering surface and simulator target used by the rest of the OPH program.
+This paper gives the concrete microphysics side of Observer-Patch Holography. Patches, overlaps, records, and observers are written as explicit finite registers with declared readout, repair, and synchronization rules. The result is a fixed-cutoff architecture that can be simulated directly and used to analyze measurement, stable records, checkpoint/restoration, and observer synchronization inside one shared quantum system. The same setup also gives the edge-sector heat-kernel law that feeds the gauge-coupling sector. In the quantitative reading used elsewhere in OPH, the total/bulk/edge hierarchy has one exact self-similar balance point at the golden ratio, while an observer-supporting universe requires a small detuning away from that exact symmetry. The paper does not claim a final UV completion. It gives the finite engineering surface on which the rest of the OPH program is built.
 \end{abstract}
 
 \tableofcontents
@@ -1998,6 +1998,26 @@ import this package only through that declared handoff. They do not need a new l
 Casimir derivation; what remains above this microphysics surface is only the compact-group lift,
 refinement-stable universality, UV uniqueness, and the separate calibration conventions/root
 control of the D10 solve.
+
+\paragraph{Selector benchmark.}
+This same handoff supplies the equilibrium benchmark for the D10 calibration lane. Writing
+\[
+x(C):=\frac{S_{\mathrm{gen}}(C)}{S_{\mathrm{bulk}}(C)}
+=
+1+\frac{\langle L_C\rangle}{S_{\mathrm{bulk}}(C)},
+\]
+the exact self-similar balance condition
+\[
+\frac{S_{\mathrm{gen}}(C)}{S_{\mathrm{bulk}}(C)}
+=
+\frac{S_{\mathrm{bulk}}(C)}{\langle L_C\rangle}
+\]
+forces \(x^2-x-1=0\) and hence \(x=\varphi=(1+\sqrt5)/2\). Equivalently
+\(A_\varphi(x)=x-1-\frac1x\) vanishes at the exact equilibrium point. The exact numerical value of
+\(P\) is fixed on the calibration surface. The point of the benchmark is that the proximity to
+\(\varphi\) has a structural explanation. Exact balance is too symmetric to support durable
+records, structure, and dynamics. The microphysics handoff identifies the balance point, and the
+D10 solve fixes the realized detuning.
 
 \paragraph{Conclusion for this package.}
 This fixes the edge heat-kernel / Casimir package at fixed cutoff. The remaining items are uniqueness and refinement-stable universality, not a missing leaf-level Casimir derivation.

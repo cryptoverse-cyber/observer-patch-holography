@@ -11,9 +11,13 @@ from typing import Any
 
 import numpy as np
 
+from p_driven_flavor_candidate import build_p_driven_transport_payload
+
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 DEFAULT_OUT = ROOT / "particles" / "runs" / "flavor" / "family_transport_kernel.json"
+DEFAULT_D10_FAMILY = ROOT / "particles" / "runs" / "calibration" / "d10_ew_observable_family.json"
+DEFAULT_D10_SOURCE_PAIR = ROOT / "particles" / "runs" / "calibration" / "d10_ew_source_transport_pair.json"
 
 
 def _timestamp() -> str:
@@ -277,10 +281,26 @@ def normalize_payload(payload: dict[str, Any]) -> dict[str, Any]:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Normalize a candidate family transport-kernel artifact.")
     parser.add_argument("--input", default="", help="Input JSON path. If omitted, emit a template artifact.")
+    parser.add_argument(
+        "--mode",
+        choices=("template", "normalize", "p_driven_candidate"),
+        default="template",
+        help="Artifact construction mode. The default preserves the historical template behavior.",
+    )
+    parser.add_argument("--d10-family", default=str(DEFAULT_D10_FAMILY), help="D10 observable-family JSON path.")
+    parser.add_argument(
+        "--d10-source-pair",
+        default=str(DEFAULT_D10_SOURCE_PAIR),
+        help="D10 source-transport-pair JSON path.",
+    )
     parser.add_argument("--output", default=str(DEFAULT_OUT), help="Output JSON path.")
     args = parser.parse_args()
 
-    if args.input:
+    if args.mode == "p_driven_candidate":
+        family_payload = json.loads(pathlib.Path(args.d10_family).read_text(encoding="utf-8"))
+        source_pair_payload = json.loads(pathlib.Path(args.d10_source_pair).read_text(encoding="utf-8"))
+        artifact = normalize_payload(build_p_driven_transport_payload(family_payload, source_pair_payload))
+    elif args.input:
         payload = json.loads(pathlib.Path(args.input).read_text(encoding="utf-8"))
         artifact = normalize_payload(payload)
     else:
