@@ -99,6 +99,14 @@ The post-promotion lift slot has now been reduced further in carrier type:
   `mu_phys(Y_e(P))` is forced by the identity-mode equalizer rather than
   remaining a separate bridge-sized theorem.
 
+- `oph_charged_determinant_character_frontier`
+  This records the sharpened source-facing charged frontier. The live same-
+  label readback already populates the uncentered `q_e = sqrt(g_e d_e)` values,
+  so the remaining exact smaller sufficient theorem is the determinant
+  trace-lift identification
+  `3 mu(r) = sum_e M_e^ch log q_e(r)` on the charged determinant channel, not
+  a fresh mass ansatz and not yet a promoted end-to-end charged closure.
+
 - `oph_charged_physical_class_affine_scalar_reduction`
   This is the strongest honest selected-surface charged theorem packaged on the
   current local surface. It does not claim a quark-style public selected-class
@@ -125,8 +133,9 @@ The post-promotion lift slot has now been reduced further in carrier type:
   `g_e(P) = exp(A_ch(P))` and
   `m_i(P) = exp(A_ch(P) + ell_i_centered(P))`.
   The remaining open charged source problem is not this algebraic readout. The
-  remaining open theorem is the landing from the D10 calibration descendants of
-  `P` to theorem-grade physical charged data or the charged determinant line.
+  remaining open theorem is the determinant trace-lift identification beneath
+  the broader landing from the D10 calibration descendants of `P` to theorem-
+  grade physical charged data or the charged determinant line.
 
 Layered frontier ledger now on disk:
 

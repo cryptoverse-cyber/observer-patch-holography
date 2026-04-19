@@ -184,9 +184,11 @@ if _QUARK_D12_INTERNAL_BACKREAD is not None:
     )
 CHARGED_CONTINUATION_NOTE = (
     "No public charged value is emitted on the theorem lane. The repo contains an exact same-family witness on "
-    "`current_family_only`, a conditional determinant-line lift on theorem-grade physical charged data, and the "
-    "downstream algebraic readout from theorem-grade `A_ch(P)`. The single open charged theorem is the source landing "
-    "`B_D10(P) -> Y_e(P)` or equivalently `B_D10(P) -> s_det(P)`."
+    "`current_family_only`, the live same-label `q_e` readback, a conditional determinant-line lift on theorem-grade "
+    "physical charged data, and the downstream algebraic readout from theorem-grade `A_ch(P)`. The remaining exact "
+    "smaller source theorem is the determinant trace-lift identification "
+    "`3 mu(r) = sum_e M_e^ch log q_e(r)` on the charged determinant channel, beneath the broader D10 landing to "
+    "`s_det(P)`."
 )
 _QUARK_GCH = _QUARK_SHARED_NORM_BINDING["g_ch"] if _QUARK_SHARED_NORM_BINDING is not None else 0.9231656602589082
 _QUARK_SHARED_SCOPE = _QUARK_SHARED_NORM_BINDING.get("theorem_scope", "shared_budget_only") if _QUARK_SHARED_NORM_BINDING is not None else "shared_budget_only"

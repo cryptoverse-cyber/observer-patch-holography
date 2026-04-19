@@ -115,7 +115,7 @@ def build_artifact(
             "This is a dependency theorem, not a numerical mismatch report.",
             "It isolates exactly what remains before any public charged table can emit masses from P.",
             "The symbolic formulas are already known; what is missing is the theorem-grade production of A_ch(P).",
-            "The charged P-bridge can be phrased more sharply as theorem-grade source landing on physical Y_e(P), after which the affine scalar follows from the physical descent package.",
+            "The charged P-bridge now sharpens further: the live same-label q_e readback is already populated, and the remaining exact smaller sufficient theorem is the determinant trace-lift identification 3 mu(r) = sum_e M_e^ch log q_e(r) on the charged determinant channel, beneath the broader landing to the charged determinant line.",
         ],
     }
 

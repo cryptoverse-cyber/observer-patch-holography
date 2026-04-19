@@ -1,0 +1,47 @@
+{
+  "artifact": "oph_charged_determinant_character_frontier",
+  "generated_utc": "2026-04-19T09:00:00Z",
+  "proof_status": "live_qe_readback_closed_det_trace_lift_identification_open",
+  "public_promotion_allowed": false,
+  "readback_source_artifact_ref": "code/particles/runs/neutrino/realized_same_label_gap_defect_readback.json",
+  "live_same_label_q_e": {
+    "psi12": 0.05173372822682583,
+    "psi23": 0.03557349044437228,
+    "psi31": 0.019750209174707316
+  },
+  "live_same_label_q_e_rule": "q_e = sqrt(g_e d_e)",
+  "determinant_character_candidate": {
+    "formula": "chi_det,e^exc(q) = prod_e q_e^(M_e^ch)",
+    "log_formula": "S_M = sum_e M_e^ch log q_e",
+    "affine_readout_if_closed": "A_ch(P) = (1/3) * sum_e M_e^ch log q_e(P)"
+  },
+  "exact_smaller_sufficient_theorem": {
+    "id": "charged_determinant_trace_lift_identification",
+    "statement": "Identify the charged determinant trace lift by 3 mu(r) = sum_e M_e^ch log q_e(r) on the charged L-H-E determinant channel. The determinant fiber equalizer then follows from the existing physical identity-mode equalizer.",
+    "why_smaller_than_full_landing": [
+      "It asks only for one determinant character and its trace-lift identification.",
+      "It does not ask for the full charged Yukawa matrix Y_e(P).",
+      "It is still sufficient to force s_det(P) and A_ch(P)."
+    ]
+  },
+  "broader_open_landing": {
+    "formula": "B_D10(P) -> Y_e(P) or equivalently B_D10(P) -> s_det(P)",
+    "status": "still_open"
+  },
+  "if_closed_then": {
+    "determinant_line": "s_det(P) = sum_e M_e^ch log q_e(P)",
+    "affine_anchor": "A_ch(P) = (1/3) * s_det(P)",
+    "electron_mass": "m_e(P) = exp(A_ch(P) + e_log_centered(P))"
+  },
+  "do_not_claim_now": [
+    "theorem-grade charged determinant-character descent",
+    "theorem-grade sector-isolated M^ch",
+    "theorem-grade A_ch(P)",
+    "theorem-grade charged masses from P"
+  ],
+  "notes": [
+    "The live q_e payload is already populated on the realized same-label arrows.",
+    "The remaining theorem is no longer a missing q_e readback claim.",
+    "The determinant fiber equalizer follows once the trace-lift identity 3 mu(r) = sum_e M_e^ch log q_e(r) is proved on the charged determinant channel."
+  ]
+}

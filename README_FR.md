@@ -96,7 +96,7 @@ Le pont vers la moyenne auxiliaire en mesures directes
 `Q007TP = 172.56 ± 0.31 GeV` reste ouvert et est suivi dans
 [#207](https://github.com/FloatingPragma/observer-patch-holography/issues/207).
 
-Le secteur des leptons chargés suit une frontière plus nette. Le dépôt contient un témoin exact sur une même famille, un relèvement conditionnel de la ligne déterminant sur les données chargées physiques, puis une lecture algébrique des masses à partir de l'échelle absolue chargée de rang théorème. Le théorème ouvert est l'atterrissage de l'entrée de calibration commune `P` sur les données chargées physiques ou sur la ligne déterminant chargée.
+Le secteur des leptons chargés suit une frontière plus nette. Le dépôt contient un témoin exact sur une même famille, un relèvement conditionnel de la ligne déterminant sur les données chargées physiques, puis une lecture algébrique des masses à partir de l'échelle absolue chargée de rang théorème. Le théorème public restant est l'étape de trace-lift du caractère déterminant entre l'entrée de calibration commune `P` et la ligne déterminant chargée.
 
 **Pile de dérivation des particules**
 
