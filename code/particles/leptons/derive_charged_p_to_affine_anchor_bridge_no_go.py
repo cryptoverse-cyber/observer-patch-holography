@@ -5,7 +5,8 @@ This artifact isolates the third charged blocker explicitly: the current corpus
 does not yet contain a theorem-grade bridge from the D10 calibration family of
 ``P`` to the charged determinant line or affine anchor ``A_ch``; on the
 sharper current frontier the remaining exact smaller sufficient clause beneath
-that bridge is the determinant trace-lift identification.
+that bridge is the sector-isolated determinant trace-lift attachment /
+normalization-defect closure.
 """
 
 from __future__ import annotations
@@ -117,8 +118,8 @@ def build_artifact(
             "smallest_honest_contract": (
                 "one theorem-grade map from the D10 calibration descendants of P to the charged determinant "
                 "line; on the current sharper frontier the exact smaller sufficient clause beneath that landing "
-                "is the determinant trace-lift identification 3 mu(r) = sum_e M_e^ch log q_e(r) on the charged "
-                "determinant channel"
+                "is the sector-isolated determinant trace-lift attachment 3 mu(r) = sum_e M_e^ch log q_e(r), "
+                "equivalently zero determinant normalization defect N_det(P), on the charged determinant channel"
             ),
             "exact_reduction_artifact": reduction.get("artifact"),
             "exact_reduction_artifact_ref": artifact_ref(P_TO_AFFINE_REDUCTION_JSON),
@@ -149,7 +150,8 @@ def build_artifact(
         "notes": [
             "This artifact does not deny that a future universal P-driven charged-mass law may exist; it records that no such bridge is presently derived.",
             "The charged affine anchor remains downstream of the post-promotion uncentered trace lift rather than a visible D10 readout today.",
-            "The live same-label q_e readback is already populated; the remaining exact smaller sufficient theorem is the determinant trace-lift identification beneath the broader D10 landing.",
+            "The live same-label q_e readback is already populated, and the source-side determinant character is already fixed.",
+            "The remaining exact smaller sufficient theorem is the determinant trace-lift attachment / normalization defect closure beneath the broader D10 landing.",
             "This is the exact local result needed before spending Pro cycles on a Step-3 bridge prompt.",
         ],
     }

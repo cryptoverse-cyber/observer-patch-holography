@@ -22,6 +22,9 @@ TRACE_LIFT_COCYCLE_JSON = RUNS_DIR / "charged_uncentered_trace_lift_cocycle_redu
 TRACE_LIFT_PHYSICAL_DESCENT_JSON = RUNS_DIR / "charged_mu_physical_descent_reduction.json"
 PHYSICAL_EQUALIZER_JSON = RUNS_DIR / "charged_physical_identity_mode_equalizer.json"
 CENTERED_OPERATOR_MU_NO_GO_JSON = RUNS_DIR / "charged_centered_operator_mu_phys_no_go.json"
+DETERMINANT_TRACE_NORMALIZATION_NO_GO_JSON = (
+    RUNS_DIR / "charged_determinant_trace_normalization_no_go.json"
+)
 DETERMINANT_LINE_JSON = RUNS_DIR / "charged_determinant_line_section_extension.json"
 ANCHOR_SECTION_JSON = RUNS_DIR / "charged_absolute_anchor_section.json"
 POST_PROMOTION_ROUTE_JSON = RUNS_DIR / "charged_post_promotion_absolute_closure_route.json"
@@ -30,6 +33,7 @@ P_TO_AFFINE_REDUCTION_JSON = RUNS_DIR / "charged_p_to_affine_anchor_reduction.js
 PHYSICAL_CLASS_AFFINE_SCALAR_REDUCTION_JSON = RUNS_DIR / "charged_physical_class_affine_scalar_reduction.json"
 PHYSICAL_CANONICAL_LIFT_JSON = RUNS_DIR / "charged_physical_determinant_line_canonical_uncentered_lift.json"
 MASS_READOUT_FROM_AFFINE_JSON = RUNS_DIR / "charged_mass_readout_from_affine_anchor.json"
+DETERMINANT_CHARACTER_FRONTIER_JSON = RUNS_DIR / "charged_determinant_character_frontier.json"
 
 
 def load_json(path: Path) -> dict[str, Any]:

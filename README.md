@@ -74,7 +74,7 @@ The exact public running-top row on the selected quark frame uses the PDG 2025 c
 The bridge to the auxiliary direct-top average `Q007TP = 172.56 ± 0.31 GeV` is open and tracked in
 [#207](https://github.com/FloatingPragma/observer-patch-holography/issues/207).
 
-Charged leptons sit on a sharper theorem split. The repo carries an exact same-family witness, a conditional determinant-line lift on physical charged data, and an algebraic mass readout from theorem-grade absolute charged scale. The remaining public theorem is the determinant-character trace-lift step from the common calibration input `P` to the charged determinant line.
+Charged leptons sit on a sharper theorem split. The repo carries an exact same-family witness, the live same-label `q_e` readback, a conditional determinant-line lift on physical charged data, and an algebraic mass readout from theorem-grade absolute charged scale. A formal underdetermination theorem now shows that current surfaces still leave one additive determinant normalization unresolved between the source-side determinant character and the physical charged determinant line, so no public charged masses are emitted yet.
 
 ## Local Unification Surface
 
