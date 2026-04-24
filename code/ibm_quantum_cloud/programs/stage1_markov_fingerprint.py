@@ -13,7 +13,7 @@ from qiskit.circuit.random import random_circuit
 from qiskit.quantum_info import DensityMatrix, Statevector
 from qiskit_aer import AerSimulator
 from qiskit_ibm_runtime import SamplerV2
-from scipy.linalg import eigh, sqrtm
+from scipy.linalg import eigh
 
 from ibm_runtime_common import ensure_dir, get_service, write_json
 

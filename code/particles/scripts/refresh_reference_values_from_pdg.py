@@ -13,7 +13,7 @@ import json
 import pathlib
 import urllib.request
 from datetime import datetime, timezone
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, Optional
 
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
