@@ -97,7 +97,7 @@ D10_MASS_PAIR_NOTE = (
     "`(alpha2_mz, alphaY_mz, eta_source, v_report)`. "
     "The live forward transmutation certificate makes that order explicit on disk: the same source-only basis reconstructs `alpha_U`, the unified diffusion parameter `t_U = 4*pi^2*alpha_U`, and the transmutation exponent `t_tr = 2*pi / ((N_c + 1) * alpha_U)` without reading them back from measured couplings. "
     "The D10 mass-side surface fixes the `W/Z` pair from that source trunk, and the freeze-once coherent pair serves as compare-only validation on the same family. "
-    "The electromagnetic row is not taken from the compact hypercharge slice. Its source anchor is `a0 = alpha_em^-1(m_Z^2) = 128.30576920234813` on the same running family, and the physical fine-structure constant is read on the Ward-projected `U(1)_Q` transport family with Thomson endpoint `alpha^-1(0) = 137.035999177`. "
+    "The electromagnetic row is not taken from the compact hypercharge slice. Its source anchor is `a0 = alpha_em^-1(m_Z^2) = 128.30576920234813` on the same running family, and the Ward-projected `U(1)_Q` transport family is the readout surface. The Thomson endpoint recorded on that surface is reference compare-only until the source transport is emitted on the same branch. "
     "`EWTransportKernel_D10`, `EWTransportReadoutCoherence_D10`, and `EWScalarProvenanceEquality_D10` supply the shared-kernel and shared-provenance gate for that readout. "
     "The compact anti-diagonal carrier slice and the source-only target-free emitter artifacts sit on disk as carrier or compare surfaces; they do not define the public electromagnetic theorem."
 )

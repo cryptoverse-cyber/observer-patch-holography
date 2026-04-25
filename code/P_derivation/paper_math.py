@@ -321,37 +321,96 @@ class PaperMathContext:
                 "tau": +(scale * roots_sq[2]),
             }
 
-    def structured_thomson_running(self, d10: D10Point) -> dict[str, Any]:
+    def fermion_transport_kernel_asymptotic(
+        self,
+        q_scale: Decimal,
+        mass: Decimal,
+        charge_squared: Decimal,
+        multiplicity: Decimal,
+    ) -> Decimal:
         with localcontext() as ctx:
             ctx.prec = self.work_precision
-            quarks = self.diagonal_quark_masses(d10.v)
-            leptons = self.charged_lepton_masses(d10.v)
+            return +(
+                multiplicity
+                * charge_squared
+                / (Decimal(3) * self.pi)
+                * (((q_scale * q_scale) / (mass * mass)).ln() - Decimal(5) / Decimal(3))
+            )
+
+    def fermion_transport_kernel_exact(
+        self,
+        q_scale: Decimal,
+        mass: Decimal,
+        charge_squared: Decimal,
+        multiplicity: Decimal,
+    ) -> Decimal:
+        with localcontext() as ctx:
+            ctx.prec = self.work_precision
+            z = (q_scale * q_scale) / (mass * mass)
+            threshold = Decimal(10) ** (-(self.precision + 4))
+
+            def simpson(n_intervals: int) -> Decimal:
+                h = self.one / Decimal(n_intervals)
+                total = Decimal(0)
+                for index in range(n_intervals + 1):
+                    x = Decimal(index) * h
+                    t = x * (self.one - x)
+                    value = t * (self.one + z * t).ln()
+                    if index == 0 or index == n_intervals:
+                        weight = self.one
+                    elif index % 2 == 1:
+                        weight = Decimal(4)
+                    else:
+                        weight = self.two
+                    total += weight * value
+                integral = total * h / Decimal(3)
+                return +(Decimal(2) * multiplicity * charge_squared / self.pi * integral)
+
+            n_intervals = 32
+            previous = simpson(n_intervals)
+            while n_intervals < 4096:
+                n_intervals *= 2
+                current = simpson(n_intervals)
+                if abs(current - previous) < threshold:
+                    return +current
+                previous = current
+            return +previous
+
+    def _structured_thomson_running_from_masses(
+        self,
+        d10: D10Point,
+        *,
+        quarks: dict[str, Decimal],
+        leptons: dict[str, Decimal],
+        mass_source: str,
+        kernel: str,
+    ) -> dict[str, Any]:
+        with localcontext() as ctx:
+            ctx.prec = self.work_precision
             screening = self.one - Decimal(self.n_c) * d10.alpha3_mz / self.pi
 
-            def fermion_term(mass: Decimal, charge_squared: Decimal, multiplicity: Decimal) -> Decimal:
-                return +(
-                    multiplicity
-                    * charge_squared
-                    / (Decimal(3) * self.pi)
-                    * (((d10.mz_run * d10.mz_run) / (mass * mass)).ln() - Decimal(5) / Decimal(3))
-                )
+            fermion_term = (
+                self.fermion_transport_kernel_exact
+                if kernel == "exact_1loop"
+                else self.fermion_transport_kernel_asymptotic
+            )
 
             lepton_total = (
-                fermion_term(leptons["e"], self.one, self.one)
-                + fermion_term(leptons["mu"], self.one, self.one)
-                + fermion_term(leptons["tau"], self.one, self.one)
+                fermion_term(d10.mz_run, leptons["e"], self.one, self.one)
+                + fermion_term(d10.mz_run, leptons["mu"], self.one, self.one)
+                + fermion_term(d10.mz_run, leptons["tau"], self.one, self.one)
             )
             quark_naive = (
-                fermion_term(quarks["u"], Decimal(4) / Decimal(9), Decimal(3))
-                + fermion_term(quarks["d"], Decimal(1) / Decimal(9), Decimal(3))
-                + fermion_term(quarks["s"], Decimal(1) / Decimal(9), Decimal(3))
-                + fermion_term(quarks["c"], Decimal(4) / Decimal(9), Decimal(3))
-                + fermion_term(quarks["b"], Decimal(1) / Decimal(9), Decimal(3))
+                fermion_term(d10.mz_run, quarks["u"], Decimal(4) / Decimal(9), Decimal(3))
+                + fermion_term(d10.mz_run, quarks["d"], Decimal(1) / Decimal(9), Decimal(3))
+                + fermion_term(d10.mz_run, quarks["s"], Decimal(1) / Decimal(9), Decimal(3))
+                + fermion_term(d10.mz_run, quarks["c"], Decimal(4) / Decimal(9), Decimal(3))
+                + fermion_term(d10.mz_run, quarks["b"], Decimal(1) / Decimal(9), Decimal(3))
             )
             quark_screened = screening * quark_naive
             total = lepton_total + quark_screened
             return {
-                "mass_source": "internal_stage5_continuation",
+                "transport_kernel": kernel,
                 "epsilon_z6": self.stage5_vectors["epsilon"],
                 "koide_delta": self.stage5_vectors["delta"],
                 "integer_vectors": {
@@ -370,11 +429,51 @@ class PaperMathContext:
                     "tau": leptons["tau"],
                 },
                 "quark_screening_factor": +screening,
+                "mass_source": mass_source,
                 "lepton_delta_alpha_inv": +lepton_total,
                 "quark_delta_alpha_inv_naive": +quark_naive,
                 "quark_delta_alpha_inv_screened": +quark_screened,
                 "total_delta_alpha_inv": +total,
             }
+
+    def structured_thomson_running(self, d10: D10Point) -> dict[str, Any]:
+        quarks = self.diagonal_quark_masses(d10.v)
+        leptons = self.charged_lepton_masses(d10.v)
+        exact = self._structured_thomson_running_from_masses(
+            d10,
+            quarks=quarks,
+            leptons=leptons,
+            mass_source="internal_stage5_continuation",
+            kernel="exact_1loop",
+        )
+        asymptotic = self._structured_thomson_running_from_masses(
+            d10,
+            quarks=quarks,
+            leptons=leptons,
+            mass_source="internal_stage5_continuation",
+            kernel="asymptotic_log",
+        )
+        exact["legacy_asymptotic_comparison"] = {
+            "lepton_delta_alpha_inv": asymptotic["lepton_delta_alpha_inv"],
+            "quark_delta_alpha_inv_naive": asymptotic["quark_delta_alpha_inv_naive"],
+            "quark_delta_alpha_inv_screened": asymptotic["quark_delta_alpha_inv_screened"],
+            "total_delta_alpha_inv": asymptotic["total_delta_alpha_inv"],
+        }
+        exact["kernel_upgrade_delta_alpha_inv"] = +(
+            exact["total_delta_alpha_inv"] - asymptotic["total_delta_alpha_inv"]
+        )
+        return exact
+
+    def structured_thomson_running_asymptotic(self, d10: D10Point) -> dict[str, Any]:
+        quarks = self.diagonal_quark_masses(d10.v)
+        leptons = self.charged_lepton_masses(d10.v)
+        return self._structured_thomson_running_from_masses(
+            d10,
+            quarks=quarks,
+            leptons=leptons,
+            mass_source="internal_stage5_continuation",
+            kernel="asymptotic_log",
+        )
 
     def solve_mz_fixed_point_tree(self, alpha_u: Decimal, p: Decimal, mu_u: Decimal) -> tuple[Decimal, Decimal, Decimal, Decimal, Decimal]:
         with localcontext() as ctx:
@@ -518,6 +617,10 @@ class PaperMathContext:
                 return +(self.one / alpha_inv), +alpha_inv, None
             if mode == "thomson_structured_running":
                 running = self.structured_thomson_running(d10)
+                alpha_inv = d10.alpha_em_inv_mz + running["total_delta_alpha_inv"]
+                return +(self.one / alpha_inv), +alpha_inv, running
+            if mode == "thomson_structured_running_asymptotic":
+                running = self.structured_thomson_running_asymptotic(d10)
                 alpha_inv = d10.alpha_em_inv_mz + running["total_delta_alpha_inv"]
                 return +(self.one / alpha_inv), +alpha_inv, running
         raise ValueError(f"Unsupported mode: {mode}")

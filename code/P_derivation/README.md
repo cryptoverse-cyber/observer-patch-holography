@@ -58,8 +58,16 @@ Two alpha readout modes are supported:
   This is the default. It uses the D10 core for
   `a0(P) = alpha_em^-1(m_Z^2;P)`, then computes
   `Delta alpha^-1(P)` from the internal Stage-5 charged-spectrum continuation
+  with the exact one-loop fermion transport kernel
+  `K_f(Q^2;m_f) = (2 N_c Q_f^2 / pi) * integral_0^1 x(1-x) log(1 + Q^2 x(1-x)/m_f^2) dx`
   together with the quark screening factor `1 - N_c alpha_s(P)/pi`.
   No paper endpoint, frozen ratio, or imported charged bundle is inserted.
+
+- `thomson_structured_running_asymptotic`
+  Legacy comparison path. It keeps the older high-energy asymptotic
+  approximation
+  `Delta alpha_f^-1 ~= N_c Q_f^2 (log(Q^2 / m_f^2) - 5/3) / (3 pi)`.
+  This is preserved for auditability only.
 
 - `mz_anchor`
   Uses the source anchor `a0(P) = alpha_em^-1(m_Z^2; P)` directly. This is
@@ -71,7 +79,8 @@ The important claim-boundary caveat is:
   it contains no hard-coded reference `P`, no hard-coded Thomson endpoint, and
   no imported compare bundle from `code/particles`.
 - `thomson_structured_running` is therefore the cleanest internal closure
-  experiment in this directory.
+  experiment in this directory, and it uses the exact one-loop fermion kernel
+  rather than the older asymptotic log expansion.
 - It is still a continuation beyond the strict theorem-grade D10 core, because
   the final low-energy transport law is being modeled by the current internal
   Stage-5 structured-running ansatz rather than by a closed theorem.

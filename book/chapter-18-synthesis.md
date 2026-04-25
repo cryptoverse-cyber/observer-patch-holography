@@ -249,8 +249,9 @@ local closure variable:
 
 The axiom structure contains no dimensionful constants. It is pure mathematics describing how
 information organizes on holographic screens. The screen-capacity input is still an external
-setting. The pixel ratio now has a sharper status: historically it was introduced by calibration,
-but the synthesis-level closure proposal tries to derive it by self-consistency.
+setting. The pixel ratio has a split status. Historically it enters through calibration. The
+synthesis paper then adds a self-consistency closure and proves that the closure map has an
+admissible fixed point on the physical interval.
 
 **Pixel area ratio.** The local screen variable is
 
@@ -328,11 +329,17 @@ This is the twist. The same screen cell is described twice:
 - from the outside, as one pixel of the simulating screen
 - from the inside, as the smallest electromagnetic observation step available to observers in the simulated world
 
-The fixed point is the value for which those two descriptions agree.
+The fixed point is the value for which those two descriptions agree. The proof shows that this
+closure has an admissible solution on the physical interval.
 
-The older calibration story is still useful as historical intuition: use the electroweak branch as
-the cleanest numerical anchor and test whether one shared \(P\) propagates through many outputs.
-But the sharper synthesis reading is now a closure story rather than a pure fit story.
+The older calibration story still matters. It is the reverse-engineering way one first learns how
+much one shared \(P\) can do. The fixed-point proof adds a sharper synthesis reading. It does not
+force a deeper theorem that earlier local physics had to generate the hardware settings.
+
+OPH also allows a stranger time ordering. Observers inside the world may infer \(P\) and total
+screen capacity before the later simulator-side builders choose the hardware values that realize
+them. On that reading, the values are discovered from within and instantiated from without. The loop
+remains consistent without requiring a one-way principled derivation from earlier to later.
 
 ![The Pixel Constant](../assets/pixel-constant.svg)
 
@@ -611,7 +618,9 @@ There is now a small quantitative version of that closure higher up in this chap
 observation scale, \(\alpha_{\text{in}}(P)\sqrt{\pi}\), emitted by the same OPH chain. That does
 not prove the full metaphysical strange loop. But it does show, in concrete mathematics, how an
 outer simulator-side variable and an inner simulated-world variable can be tied by one
-self-consistency law.
+self-consistency law. It certifies an admissible fixed point. It does not require that the hardware
+settings be derivable from earlier local principles. On the strange-loop reading, observers inside
+the world can infer \(P\) and total capacity before the later simulator-side builders choose them.
 
 This creates a strange-loop reading:
 - Reality produces observers

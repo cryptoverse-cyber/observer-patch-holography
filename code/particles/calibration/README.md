@@ -62,10 +62,10 @@ So the current carrier is not treated as the whole D10 story. It closes its own
 exact chart, the W/Z mass lane is carried by the closed target-free source-only
 mass theorem above that carrier, and the electromagnetic row is read on the
 Ward-projected `U(1)_Q` transport family anchored at
-`alpha_em^-1(m_Z^2)=128.30576920234813` with Thomson endpoint
-`alpha^-1(0)=137.035999177`. The older repair-branch artifacts stay on disk as
-scaffolding and validation layers rather than as the public electromagnetic
-theorem.
+`alpha_em^-1(m_Z^2)=128.30576920234813`. The Thomson endpoint stored in this
+lane is a reference comparison field, not a source-emitted prediction. The
+older repair-branch artifacts stay on disk as scaffolding and validation layers
+rather than as the public electromagnetic theorem.
 
 The local gravity bridge is carried on the stated local extension surface. On
 the lifted product presentation of the realized quotient branch, the

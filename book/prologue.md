@@ -181,12 +181,17 @@ the quark package, and the gravity-facing readout. If that works, the theory
 is doing real reverse engineering. If each sector needs its own private dial,
 it is only curve fitting with philosophical decoration.
 
-Later in the synthesis chapter, that historical move gets sharpened into a
-self-reference. The same screen cell is described twice: from the outside as
-one pixel of the simulating screen, and from the inside as the smallest
-electromagnetic observation step available in the simulated world. The newer
-closure proposal asks for the value of $P$ where those two descriptions of
-the same cell agree.
+The synthesis paper adds a twist. The same screen cell is described twice:
+from the outside as one pixel of the simulating screen, and from the inside
+as the smallest electromagnetic observation step available in the simulated
+world. The closure map asks for the value of $P$ where those two readings
+agree, and the fixed-point proof certifies an admissible solution on the
+physical interval.
+
+That extra closure does not force a deeper one-way derivation of the hardware
+settings. OPH also allows a stranger reading. Observers can infer $P$ and the
+total screen capacity from inside the world even if those values are later
+chosen by the observers who build the hardware layer.
 
 From this starting point, we derive constraints. We show how the mathematical
 structures of quantum mechanics and relativity emerge from consistency

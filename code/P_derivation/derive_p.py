@@ -14,7 +14,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Solve the OPH P/alpha closure directly from the paper equations.")
     parser.add_argument(
         "--mode",
-        choices=("thomson_structured_running", "mz_anchor"),
+        choices=("thomson_structured_running", "thomson_structured_running_asymptotic", "mz_anchor"),
         default="thomson_structured_running",
         help="Which alpha readout to feed into P = phi + alpha*sqrt(pi).",
     )
@@ -66,10 +66,13 @@ def main() -> int:
         print("")
         print("Internal structured Thomson running")
         print(f"  mass source            = {report['structured_running']['mass_source']}")
+        print(f"  transport kernel       = {report['structured_running']['transport_kernel']}")
         print(f"  lepton Delta alpha^-1  = {report['structured_running']['lepton_delta_alpha_inv']}")
         print(f"  quark naive            = {report['structured_running']['quark_delta_alpha_inv_naive']}")
         print(f"  quark screened         = {report['structured_running']['quark_delta_alpha_inv_screened']}")
         print(f"  total Delta alpha^-1   = {report['structured_running']['total_delta_alpha_inv']}")
+        if "kernel_upgrade_delta_alpha_inv" in report["structured_running"]:
+            print(f"  exact-vs-asymptotic    = {report['structured_running']['kernel_upgrade_delta_alpha_inv']}")
     return 0
 
 

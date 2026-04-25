@@ -44,7 +44,7 @@ BUILDER_LOCAL_FRONTIER = "EWExactMassPairSelector_D10"
 GLOBAL_REPAIR_FRONTIER = "D10RepairBranchBeyondCurrentCarrier"
 TARGET_FREE_REPAIR_FRONTIER = "EWTargetFreeRepairValueLaw_D10"
 WARD_PROJECTED_TRANSPORT_THEOREM = "WardProjectedU1QTransportLaw_D10"
-THOMSON_ALPHA_INV = 137.035999177
+REFERENCE_THOMSON_ALPHA_INV_CODATA2022 = 137.035999177
 
 
 def _timestamp() -> str:
@@ -438,9 +438,15 @@ def build_artifact(
             "scalar_provenance_clause": "EWScalarProvenanceEquality_D10",
             "anchor_scale": "m_Z^2",
             "anchor_alpha_em_eff_inv": float(base_quintet["alpha_em_eff_inv"]),
-            "thomson_endpoint_alpha_em_eff_inv": THOMSON_ALPHA_INV,
-            "delta_alpha_from_anchor_to_thomson": THOMSON_ALPHA_INV / float(base_quintet["alpha_em_eff_inv"]) - 1.0,
-            "transport_ratio_tQ_0_over_tQ_mZ2": float(base_quintet["alpha_em_eff_inv"]) / THOMSON_ALPHA_INV,
+            "thomson_endpoint_alpha_em_eff_inv_prediction": None,
+            "thomson_endpoint_alpha_em_eff_inv_reference": REFERENCE_THOMSON_ALPHA_INV_CODATA2022,
+            "delta_alpha_from_anchor_to_thomson_reference": (
+                REFERENCE_THOMSON_ALPHA_INV_CODATA2022 / float(base_quintet["alpha_em_eff_inv"]) - 1.0
+            ),
+            "transport_ratio_tQ_0_over_tQ_mZ2_reference": (
+                float(base_quintet["alpha_em_eff_inv"]) / REFERENCE_THOMSON_ALPHA_INV_CODATA2022
+            ),
+            "prediction_status": "reference_compare_only_until_source_transport_is_emitted",
             "physical_readout_formula": "alpha_em^-1(q^2;P) = 8*pi^2 / t_Q(q^2;P)",
             "thomson_limit_formula": "alpha_Th^-1(P) = lim_{q^2 -> 0} alpha_em^-1(q^2;P)",
             "shared_provenance": {
@@ -607,7 +613,7 @@ def build_artifact(
                 if exact_closure_closed
                 else "The fixed-eta trace evaluator remains useful diagnostically, but the live predictive blocker is now exact electroweak closure beyond the current selected carrier point rather than another selector on the exhausted compact slice."
             ),
-            "The physical electromagnetic readout is anchored at `a0 = alpha_em^-1(m_Z^2) = 128.30576920234813` on the source-locked running family and is read through Ward projection to the unbroken `U(1)_Q` channel, with Thomson endpoint `alpha^-1(0) = 137.035999177`.",
+            "The physical electromagnetic readout is anchored at `a0 = alpha_em^-1(m_Z^2) = 128.30576920234813` on the source-locked running family and is read through Ward projection to the unbroken `U(1)_Q` channel. The Thomson endpoint stored in this artifact is reference compare-only until the source transport is emitted on the same branch.",
             (
                 "The source-only underdetermination theorem, the minimal conditional route through ColorBalancedQuadraticRepairDescent_D10, and the stronger source-only candidate EWTargetEmitter_D10 stay on disk as lower-level mass-side objects beneath the Ward-projected electromagnetic readout."
                 if target_free_repair_closed and (minimal_conditional or target_emitter)

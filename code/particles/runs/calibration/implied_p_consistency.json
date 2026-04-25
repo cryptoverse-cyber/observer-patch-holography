@@ -14,7 +14,7 @@
     "sin2w_mz": 0.23073542347506173,
     "v": 246.76711732749683
   },
-  "generated_at": "2026-03-27T13:35:38.912395+00:00",
+  "generated_at": "2026-04-25T04:24:18.893709+00:00",
   "grid_points": 401,
   "iterations": 80,
   "observables": {
@@ -24,6 +24,16 @@
       "delta_p_from_default": 5.434147398086786e-05,
       "dp_sensitivity_near_default": 77.85577648036224,
       "implied_p": 1.630994341473981,
+      "refined_root": {
+        "bracket": [
+          1.6309925,
+          1.630995
+        ],
+        "final_residual": -5.684341886080802e-14,
+        "implied_p": 1.6309943411933054,
+        "iterations": 80,
+        "status": "solved"
+      },
       "status": "estimated",
       "target_value": 128.31
     },
@@ -33,6 +43,16 @@
       "delta_p_from_default": -2.115700980409585e-06,
       "dp_sensitivity_near_default": -1752.7559857221318,
       "implied_p": 1.6309378842990196,
+      "refined_root": {
+        "bracket": [
+          1.6309375000000002,
+          1.63094
+        ],
+        "final_residual": 7.105427357601002e-14,
+        "implied_p": 1.6309378843473912,
+        "iterations": 80,
+        "status": "solved"
+      },
       "status": "estimated",
       "target_value": 80.39
     },
@@ -42,17 +62,18 @@
       "delta_p_from_default": 1.206730686487134e-07,
       "dp_sensitivity_near_default": -1989.4311288815911,
       "implied_p": 1.6309401206730687,
+      "refined_root": {
+        "bracket": [
+          1.63094,
+          1.6309425
+        ],
+        "final_residual": -4.831690603168681e-13,
+        "implied_p": 1.6309401206732268,
+        "iterations": 80,
+        "status": "solved"
+      },
       "status": "estimated",
       "target_value": 91.22
-    },
-    "mz_run": {
-      "current_delta": 0.0004602856067066341,
-      "current_value_at_p_default": 91.65246028560671,
-      "delta_p_from_default": 2.3027435203104574e-07,
-      "dp_sensitivity_near_default": -1998.8574617798347,
-      "implied_p": 1.630940230274352,
-      "status": "estimated",
-      "target_value": 91.652
     },
     "sin2w_mz": {
       "current_delta": 3.542347506174659e-05,
@@ -60,6 +81,11 @@
       "delta_p_from_default": 0.004667877417201094,
       "dp_sensitivity_near_default": -0.007588775774447497,
       "implied_p": 1.6356078774172012,
+      "refined_root": {
+        "implied_p": null,
+        "iterations": 0,
+        "status": "unbracketed"
+      },
       "status": "estimated_out_of_scan_range",
       "target_value": 0.2307
     },
@@ -69,6 +95,16 @@
       "delta_p_from_default": -5.429027567505074e-07,
       "dp_sensitivity_near_default": -5309.740035885113,
       "implied_p": 1.6309394570972433,
+      "refined_root": {
+        "bracket": [
+          1.6309375000000002,
+          1.63094
+        ],
+        "final_residual": 5.7980287238024175e-12,
+        "implied_p": 1.6309394571003812,
+        "iterations": 80,
+        "status": "solved"
+      },
       "status": "estimated",
       "target_value": 246.77
     }
@@ -76,16 +112,16 @@
   "p_default": 1.63094,
   "p_scan_max": 1.63144,
   "p_scan_min": 1.6304400000000001,
-  "root_refinement_enabled": false,
+  "root_refinement_enabled": true,
   "source_branch": "arXiv/RC1/ancillary/code/particles/particle_masses_paper_d10_d11.py",
   "summary": {
-    "estimated_count": 6,
+    "estimated_count": 5,
     "exact_single_p_candidate": false,
     "focus_pair_spreads": {
       "m_w_run_vs_m_z_pole_stage3": 2.2363740490582984e-06
     },
     "implied_p_midpoint": 1.6332728808581103,
     "implied_p_spread": 0.0046699931181815035,
-    "observable_count": 6
+    "observable_count": 5
   }
 }

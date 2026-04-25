@@ -584,14 +584,21 @@ closing consistently.
 The third step is the shared local calibration. Structural arguments tell you
 what kind of particle family can exist. They do not, by themselves, tell you
 the numerical value of the pixel scale $P$. The local quantitative branch
-therefore has to be calibrated.
+therefore begins as a reverse-engineering calibration problem.
 
-In reader-facing terms, the cleanest way to think about that calibration is this. The
-electroweak sector gives a small trusted family of observables with little
-hadronic ambiguity. Use the $W$ and $Z$ masses to pin down $P$, then
-ask whether the same $P$ forces the rest of the local particle package. If
-the answer is yes, the framework is reverse engineering one machine with one
-shared knob across sectors.
+In reader-facing terms, the historical move is simple. The electroweak sector
+gives a small trusted family of observables with little hadronic ambiguity.
+Use the $W$ and $Z$ masses to pin down $P$, then ask whether the same $P$
+forces the rest of the local particle package. If the answer is yes, the
+framework is reverse engineering one machine with one shared knob across
+sectors.
+
+The synthesis paper later adds a second reading of that same quantity. The
+same $P$ can also be written as a fixed point of an outer/inner closure
+equation, and the proof certifies an admissible solution on the physical
+interval. That sharper closure does not replace the older calibration story in
+this chapter. It explains why the same reverse-engineered knob can be read
+from both sides of the screen.
 
 With that calibration in place, one electroweak transport family yields the weak
 boson pair
