@@ -5,13 +5,13 @@ stable-channel hadron lane. It is designed to remove the remaining operational
 underspecification called out in the RHMC/HMC handoff dossier and to make one
 thing implementable right now:
 
-- a real backend/export path that can honestly emit
+- a real backend/export path with a supported emission path
   `backend_correlator_dump.production.json`
 - on the frozen seeded `2+1`, QED-off geometry
 - for the first promotable stable channels `pi_iso` and `N_iso`
 
 It does **not** claim that the papers uniquely force this backend choice.
-Rather, it fixes one honest, explicit, production-capable reference path so the
+Rather, it fixes one supported, explicit, production-capable reference path so the
 engine can be coded without hidden conventions.
 
 ## 1. Branch and scope
@@ -281,6 +281,6 @@ existing requirement for:
 - published statistical error fields
 - published continuum / volume / chiral systematics
 
-So this profile is the honest coding surface that upgrades the hadron engine
+So this profile is the supported coding surface that upgrades the hadron engine
 from “a JSON skeleton exists” to “an external RHMC/HMC code now has an exact,
 fillable production export contract.”

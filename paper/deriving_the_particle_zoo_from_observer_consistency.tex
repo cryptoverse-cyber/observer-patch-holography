@@ -42,7 +42,7 @@ Observer Consistency}
 \OPHPaperReleaseBanner
 
 \begin{abstract}
-Observer-Patch Holography turns the particle problem into a forward calculation from one selected scale. The synthesis paper fixes the local pixel ratio \(P\) by describing the same screen cell from two sides: as an exterior screen cell and as the electromagnetic observation scale available inside the encoded universe. With \(P\) fixed, the particle chain emits a compact package: massless carriers, the \(W\) and \(Z\) masses, the electromagnetic coupling, a Higgs mass, running quark masses with explicit Yukawas, and a neutrino family in the observed hierarchy and mixing regime. The same framework targets the full particle spectrum. Direct zero-momentum electromagnetic closure, charged-lepton absolute masses, and hadrons remain work in progress.
+Observer-Patch Holography turns the particle problem into a forward calculation from one selected scale. The synthesis paper fixes the local pixel ratio \(P\) by describing the same screen cell from two sides: as an exterior screen cell and as the electromagnetic observation scale available inside the encoded universe. In this reading, the fine-structure constant is the small detuning that lets a screen cell sit close to self-similar equilibrium while still carrying records, light, and observation. With \(P\) fixed, the particle chain emits a compact package: massless carriers, the \(W\) and \(Z\) masses, the electromagnetic coupling, a Higgs mass, running quark masses with explicit Yukawas, and a neutrino family in the observed hierarchy and mixing regime. The same framework targets the full particle spectrum. Direct zero-momentum electromagnetic closure, charged-lepton absolute masses, and hadrons remain work in progress.
 \end{abstract}
 
 \section{Introduction}
@@ -156,14 +156,13 @@ records that ledger in full.
 
 \section{P-Closure and the Reverse-Engineering Strategy}
 
-Before the claim-tier table, it is worth stating what the reverse-engineering claim actually is. In
+Before the claim-tier table, the reverse-engineering claim should be stated plainly. In
 ordinary phenomenological use, the Standard Model does not derive the observed particle masses and
 mixings from one common microscopic constant. It is usually presented with \(19\) free parameters
 in the minimal massless-neutrino theory, and with at least \(26\) once neutrino masses and mixing
-are included, depending on neutrino-sector conventions. The OPH particle derivation is trying to
-compress that situation radically. The aim is not to feed in one Yukawa coupling, one mass, or
-one mixing angle per sector, but to fix one universal pixel ratio \(P\) from the outer/inner
-closure relation described in the synthesis paper and then demand that the same \(P\) drive all
+are included, depending on neutrino-sector conventions. The OPH particle derivation compresses
+that situation into one universal pixel ratio \(P\) from the outer/inner closure relation
+described in the synthesis paper. The same \(P\) must drive all
 downstream bosonic, quark, lepton, neutrino, and hadronic branches.
 
 One clarification matters. The broader formulation carries the
@@ -179,8 +178,10 @@ massless carriers. But those structural results do not by themselves tell us the
 of the \(W\) boson mass, the Higgs boson mass, or the up-quark mass.
 
 The role of the pixel closure is to supply one common quantitative scale
-variable for the entire downstream spectrum. In the synthesis paper, \(P\) is fixed by matching
-the outer pixel detuning to the inner electromagnetic observation scale emitted by the same cell.
+variable for the entire downstream spectrum. In the synthesis paper, OPH finds the fine-structure
+constant by asking for the nonzero detuning of a holographic screen cell such that the cell's
+outer geometric displacement from perfect self-similar equilibrium equals the electromagnetic
+observation scale emitted by the universe living on that same screen.
 The outer side of the closure is
 \[
 P=\varphi+\alpha_{\mathrm{in}}(P)\sqrt{\pi}.
@@ -191,7 +192,7 @@ For comparison, the 2022 CODATA/NIST central value
 P=1.630968209403959\ldots
 \]
 through this outer formula. This is compare-only metadata until the same number is emitted by the
-declared OPH fixed-point map. The repository now records both a numerical fixed-point witness and
+declared OPH fixed-point map. The repository records both a numerical fixed-point witness and
 a local numerical contraction certificate for the implemented map.
 A separate pending hardware note reports an optical-cavity check of the same fixed-point geometry;
 this is treated as corroborating engineering evidence.
@@ -234,9 +235,9 @@ P
 \]
 The forward transmutation certificate records that the same source-only basis reconstructs the unified diffusion parameter \(t_U(P)=4\pi^2\alpha_U(P)\) and transmutation exponent \(t_{\mathrm{tr}}(P)=2\pi/((N_c+1)\alpha_U(P))\) as the pixel-closure solve itself. Measured electroweak data are not used to infer those internal transmutation parameters; they appear only at the end as compare-only validation targets.
 
-This is why the electroweak branch is not a side detail. It is the place where the particle derivation
-shows whether one common input \(P\) really emits the electroweak rows or merely hides many fitted
-inputs behind fancy notation. In the electroweak branch, the public \(W/Z\) rows are emitted by a
+The electroweak branch is the place where the particle derivation
+shows whether one common input \(P\) emits the electroweak rows or merely hides many fitted
+inputs behind fancy notation. In this branch, the public \(W/Z\) rows are emitted by a
 target-free source-only transport theorem from the source basis fixed by the forward solve. The
 derivation also contains two
 auxiliary validation surfaces: the exact selected-carrier chart and the freeze-once coherent repair
@@ -379,7 +380,7 @@ P/4,
 \qquad
 G=\frac{a_{\mathrm{cell}}}{4\,\ellbar(t)}.
 \]
-The local unification surface now separates one explicit familiar-unit readout package from three
+The local unification surface separates one explicit familiar-unit readout package from three
 remaining theorem-side boundary objects: exact public \(W/Z\) requires one target-free D10
 chart-identity theorem, exact public Higgs requires one forward Higgs-promotion theorem, and the
 gravity-side release retains the strict classical-regime clause.
@@ -917,8 +918,8 @@ M_Z^\dagger=v\sqrt{\pi(\alpha_{Y,\dagger}+\alpha_{2,\dagger})},
 =
 \frac{\alpha_{Y,\dagger}}{\alpha_{Y,\dagger}+\alpha_{2,\dagger}}.
 \]
-So the frozen-target electroweak validation law is not another chart search or selector shell. It is one
-unique coherent value-emission law on top of the closed fiber map.
+The frozen-target electroweak validation law is one unique coherent value-emission law on top of
+the closed fiber map.
 \end{theorem}
 
 For the local PDG-2025 comparison surface,
@@ -2791,8 +2792,8 @@ In the observer formulation, an observer is represented by
 O=(P,\mathcal A(P),\rho,R),
 \]
 where \(P\) is the observer patch, \(\mathcal A(P)\) its local algebra, \(\rho\) the local
-state, and \(R\) the record algebra. The key point for the particle derivation is that \(R\) is not
-an extra classical layer stapled onto quantum theory. On the exact fixed-cutoff measurement
+state, and \(R\) the record algebra. For the particle derivation, \(R\) belongs to the quantum
+observer surface itself. On the exact fixed-cutoff measurement
 surface it is generated by central record projectors, and practical readout may use
 approximately commuting projectors that are close to that central reference algebra. That is what
 makes the observer-facing record surface shareable across overlapping observer descriptions

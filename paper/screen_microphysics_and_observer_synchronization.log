@@ -491,57 +491,59 @@ LaTeX Font Info:    External font `lmex10' loaded for size
  [2] [3] [4] [5]
 [6] [7] [8]
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-432.
+428.
  (ot1lmss.fd
 File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for U+euf on input line 445
+LaTeX Font Info:    Trying to load font information for U+euf on input line 441
 .
  (ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) [9] [10] [11] [12] [13] [14] [15] [16]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 971.
+(hyperref)                removing `math shift' on input line 968.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 971.
+(hyperref)                removing `subscript' on input line 968.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 971.
+(hyperref)                removing `math shift' on input line 968.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1010.
+(hyperref)                removing `math shift' on input line 1007.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1010.
+(hyperref)                removing `subscript' on input line 1007.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1010.
+(hyperref)                removing `math shift' on input line 1007.
 
 [17] [18] [19]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1183.
+(hyperref)                removing `math shift' on input line 1180.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 1183.
+(hyperref)                removing `subscript' on input line 1180.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1183.
+(hyperref)                removing `math shift' on input line 1180.
 
 [20] [21] [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34]
-(screen_microphysics_and_observer_synchronization.aux)
+[35] [36] [37] [38] (tex_fragments/MICROPHYSICS_MEASUREMENT_SUPPLEMENT_PORT.tex
+[39] [40] [41] [42]) [43] (screen_microphysics_and_observer_synchronization.aux
+)
 Package rerunfilecheck Info: File `screen_microphysics_and_observer_synchroniza
 tion.out' has not changed.
-(rerunfilecheck)             Checksum: 49171660A5F7F03BA627634DB8875D4A;12103.
+(rerunfilecheck)             Checksum: 21235971F61CD3BB83BC4DB56A7E4047;13392.
  )
-Output written on screen_microphysics_and_observer_synchronization.xdv (34 page
-s, 199404 bytes).
+Output written on screen_microphysics_and_observer_synchronization.xdv (43 page
+s, 246136 bytes).

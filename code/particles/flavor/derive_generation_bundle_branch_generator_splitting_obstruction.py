@@ -109,7 +109,7 @@ def build_artifact(line_lift: dict[str, Any], generator: dict[str, Any]) -> dict
         "notes": [
             "This certificate does not prove impossibility in every future extension of the corpus.",
             "It proves that the current displayed proxy/projector data do not themselves force the missing clause.",
-            "That is the exact obstruction object needed to close the current operator-side issue honestly when a positive proof is absent.",
+            "That is the exact obstruction object needed to close the operator-side issue when a positive proof is absent.",
         ],
     }
 

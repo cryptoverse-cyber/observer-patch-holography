@@ -1,7 +1,7 @@
 {
   "artifact": "oph_hadron_surrogate_execution_bridge_status",
   "generated_utc": "2026-04-03T04:43:00Z",
-  "honest_remaining_physical_blockers": [
+  "supported_remaining_physical_blockers": [
     "production unquenched RHMC/HMC on SU(3) gauge fields",
     "real Dirac solves and baryon contractions",
     "production autocorrelation/statistics studies",

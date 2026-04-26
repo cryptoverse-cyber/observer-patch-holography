@@ -59,9 +59,9 @@
     "score": "RMS log error against reference_targets",
     "status": "not_sigma_ud_orbit",
     "uses_reference_targets": true,
-    "why_disqualified": "The only finite scan currently exposed in local code is a same-sheet target-mass comparison scan over Delta_ud_overlap. It neither enumerates Sigma_ud nor emits a relative-sheet sigma->CKM evaluator, so it cannot honestly serve as branch repair."
+    "why_disqualified": "The only finite scan exposed in local code is a same-sheet target-mass comparison scan over Delta_ud_overlap. It neither enumerates Sigma_ud nor emits a relative-sheet sigma->CKM evaluator, so it cannot serve as a supported branch repair."
   },
-  "generated_utc": "2026-04-16T15:22:49Z",
+  "generated_utc": "2026-04-26T05:11:10Z",
   "insufficiency_theorem": {
     "id": "D12_local_selector_closure_still_wrong_branch",
     "proof_obstruction": [
@@ -250,7 +250,7 @@
   "notes": [
     "This artifact sharpens the quark CKM boundary: the current D12 sheet is transport-closed but wrong-branch.",
     "The emitted local same-label left-handed orbit now closes to sigma_ref, so the discrete selector is no longer open on the current solver surface.",
-    "That closure is negative for branch repair: sigma_ref is just the current D12 reference sheet, so the selected branch still misses the physical CKM shell and the next honest object is the intrinsic D12 scale law on the emitted mass ray.",
+    "That closure is negative for branch repair: sigma_ref is just the current D12 reference sheet, so the selected branch still misses the physical CKM shell and the next supported object is the intrinsic D12 scale law on the emitted mass ray.",
     "The only finite local scan on disk is a same-sheet Delta_ud_overlap scan against reference targets; it is comparison-only and cannot be repurposed as a Sigma_ud scan.",
     "A smaller finite local basis orbit is already extractable from the current forward Yukawa surface, but it is diagnostic-only because its nontrivial elements leave the ordered same-label left-eigenframe domain.",
     "Mass-side scale fixing remains a separate issue after the physical branch is selected; same-sheet rephasing is known not to repair CKM, but the current corpus does not yet emit a theorem-grade CKM rigidity law under ray_modulus motion on D12_ud_mass_ray."

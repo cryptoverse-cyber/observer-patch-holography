@@ -69,8 +69,8 @@ def build_artifact(
             },
             {
                 "id": bridge_no_go.get("exact_missing_object", {}).get("id"),
-                "smallest_honest_contract": bridge_no_go.get("exact_missing_object", {}).get(
-                    "smallest_honest_contract"
+                "smallest_supported_contract": bridge_no_go.get("exact_missing_object", {}).get(
+                    "smallest_supported_contract"
                 ),
                 "exact_smallest_bridge_target": bridge_reduction.get("exact_smallest_bridge_target", {}).get(
                     "id"

@@ -16,7 +16,7 @@ The Standard Model is extremely successful, and it carries deep warnings. Its
 vacuum energy and loop integrals blow up in the ultraviolet. Its couplings run
 with scale. Its anomaly cancellations are delicate. Its chirality is startling.
 Taken together, these are clues that the Standard Model is an emergent
-effective description rather than the foundation.
+effective description. It is not the foundation.
 
 ## 14.3 The Quantum Revolution
 
@@ -98,7 +98,7 @@ This commutation relation is the mathematical heart of quantum mechanics. It imp
 
 $$\Delta x \cdot \Delta p \geq \frac{\hbar}{2}$$
 
-You cannot simultaneously know both position and momentum with arbitrary precision. This isn't a limitation of measurement devices. It's a fundamental feature of reality. There is no state that has both precise position and precise momentum.
+You cannot simultaneously know both position and momentum with arbitrary precision. This is a fundamental feature of reality. There is no state that has both precise position and precise momentum.
 
 ### The Copenhagen Interpretation
 
@@ -178,7 +178,7 @@ boson mass, it is about $1/128$.
 That low-energy number sits inside the same particle package as the weak bosons.
 Once the electroweak transport family is fixed by the shared local calibration,
 electromagnetism is read as the unbroken channel left after the weak and
-hypercharge sectors mix. The current OPH `P`-closure witness targets the
+hypercharge sectors mix. The OPH $P$-closure witness is compared with the
 long-distance Thomson value
 
 $$\alpha^{-1}(0)=137.035999177.$$
@@ -578,6 +578,14 @@ of the same picture. Chapter 18 returns to the same local scale from the
 outside-inside closure equation, which gives the whole particle package an even
 tighter narrative spine.
 
+The interpretation is simple. The screen cell wants to sit at the golden-ratio
+balance point, the exact self-similar equilibrium of the local entropy
+hierarchy. A universe with observers cannot remain perfectly silent. It needs a
+small displacement so that records can form, photons can carry information, and
+measurements can leave durable traces. OPH identifies the fine-structure
+constant with that small displacement, read from inside the world as
+electromagnetic strength.
+
 ## 14.15 Why the Photon Is Inevitable
 
 The photon is woven into the model from the start. When two observer patches
@@ -589,8 +597,8 @@ Follow the charge bookkeeping around patch boundaries and the hidden symmetry
 stops looking optional. The pattern closes on a $U(1)$ factor. Once that
 happens, an electromagnetic mode comes with it. That mode is the photon.
 
-Electromagnetism does not feel bolted on here. It is part of the way
-charged patches identify the same shared world. Give the photon a hard mass and
+Electromagnetism is part of the way charged patches identify the same shared
+world. Give the photon a hard mass and
 the overlap bookkeeping tears. The glue between charged descriptions stops
 closing cleanly.
 
@@ -702,7 +710,7 @@ embedding.
 
 The prediction is stark: **gauge-mediated proton decay is forbidden**.
 
-This is one of the cleanest experimental forks in the road. A simple-group unification scheme predicts new gauge bosons that eventually turn protons into lighter particles. The OPH route predicts that those bosons never exist. The difference is not cosmetic. It is the difference between one future detector signal and none.
+This is one of the cleanest experimental forks in the road. A simple-group unification scheme predicts new gauge bosons that eventually turn protons into lighter particles. The OPH route predicts that those bosons never exist. The difference would show up as one future detector signal versus none.
 
 The claim is unusually valuable. Many high-energy ideas differ
 mainly in elegance or ultraviolet taste. Proton decay is harsher. Either the

@@ -421,18 +421,18 @@ def main() -> int:
             "compare_only_g_e_star": absolute_scale_underdetermination.get("compare_only_continuation_target", {}).get("g_e_star"),
             "compare_only_delta_e_abs_star": absolute_scale_underdetermination.get("compare_only_continuation_target", {}).get("delta_e_abs_star"),
             "hard_reject": absolute_scale_underdetermination.get("hard_reject"),
-            "honest_missing_transport_scalar": absolute_scale_underdetermination.get("minimal_new_theorem", {}).get("required_new_scalar"),
-            "honest_post_promotion_single_slot": (
+            "supported_missing_transport_scalar": absolute_scale_underdetermination.get("minimal_new_theorem", {}).get("required_new_scalar"),
+            "supported_post_promotion_single_slot": (
                 post_promotion_route.get("post_promotion_single_slot", {}).get("id")
                 if post_promotion_route is not None
                 else None
             ),
-            "honest_post_promotion_internal_carrier": (
+            "supported_post_promotion_internal_carrier": (
                 post_promotion_route.get("post_promotion_single_slot", {}).get("internal_carrier")
                 if post_promotion_route is not None
                 else None
             ),
-            "honest_post_promotion_exact_descended_scalar": (
+            "supported_post_promotion_exact_descended_scalar": (
                 post_promotion_route.get("post_promotion_single_slot", {}).get("exact_descended_scalar", {}).get("id")
                 if post_promotion_route is not None
                 else None
@@ -608,7 +608,7 @@ def main() -> int:
             "The current-support obstruction certificate is now on disk, and the next charged mover is the minimal support-extension emitter on the canonical quadratic ordered direction.",
             "The full two-scalar support-extension completion law is now explicit on disk; the live same-carrier primitive is the eta source-readback, followed by the sigma endpoint-ratio breaker.",
             "The stronger same-carrier source-scalar pair readback is also now explicit on disk, collecting those eta and sigma invariants into one ordered primitive beneath the full completion shell.",
-            "At theorem level, eta and sigma are no longer the deepest honest waiting set. The live builder still exposes eta then sigma as the first same-carrier residuals, but the paper-facing exact burden is first to promote the latent candidate C_hat_e^{cand} by closing the branch-generator splitting theorem, then to restore the lost affine mode through a refinement-stable uncentered trace lift of the charged response, from which the determinant-line section and the affine absolute coordinate A_ch are induced.",
+            "At theorem level, eta and sigma are no longer the deepest supported waiting set. The live builder still exposes eta then sigma as the first same-carrier residuals, but the paper-facing exact burden is first to promote the latent candidate C_hat_e^{cand} by closing the branch-generator splitting theorem, then to restore the lost affine mode through a refinement-stable uncentered trace lift of the charged response, from which the determinant-line section and the affine absolute coordinate A_ch are induced.",
             "That post-promotion lift slot is now reduced more sharply too: after centered promotion the only remaining ambiguity is a scalar affine cocycle primitive mu on the refinement family, not an extra matrix-valued theorem beyond the uncentered trace lift.",
             "And because the lift is already required to be refinement-stable on theorem-grade physical Y_e, that primitive descends further to one physical affine scalar mu_phys(Y_e).",
             "A sharper impossibility theorem is now on disk too: even a future theorem-grade centered C_hat_e cannot emit mu_phys(Y_e) by itself, because centered operator data stays common-shift invariant.",

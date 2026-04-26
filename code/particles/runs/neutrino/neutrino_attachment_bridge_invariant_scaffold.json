@@ -4,7 +4,7 @@
     "artifact": "oph_defect_weighted_majorana_edge_weight_family",
     "mu_family_rule": "mu_e = mu_nu * exp(eta_e) / mean_f(exp(eta_f))",
     "raw_edge_score_rule": "q_e = sqrt(gap_e * defect_e)",
-    "role": "first honest spectrum-moving local object beneath the irreducible bridge scalar B_nu",
+    "role": "first supported spectrum-moving local object beneath the irreducible bridge scalar B_nu",
     "status": "closed_constructive_subbridge_object"
   },
   "bridge_factor_schema": "B_nu = lambda_nu * q_mean^p_nu / m_star_eV",

@@ -101,7 +101,7 @@ def build_payload(mass_ray: dict[str, Any], overlap_law: dict[str, Any] | None =
                 "tau_u_plus_tau_d": "t1 / 10",
                 "tau_d_over_tau_u": "sigma_u_total_log_per_side / sigma_d_total_log_per_side",
             },
-            "exact_gap_after_transport_reduction": "honest_sigma_branch_emission",
+            "exact_gap_after_transport_reduction": "supported_sigma_branch_emission",
             "reduced_gap_note": (
                 "The transport side no longer contributes a separate exact theorem burden once a sigma branch is fixed. "
                 "The remaining nontransport question is the value law itself together with promotion of any candidate sigma branch used downstream."

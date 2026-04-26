@@ -64,7 +64,7 @@ def build_artifact() -> dict:
             "populated published_systematics",
             "forward-window convergence from realized arrays",
         ],
-        "honest_remaining_physical_blockers": [
+        "supported_remaining_physical_blockers": [
             "production unquenched RHMC/HMC on SU(3) gauge fields",
             "real Dirac solves and baryon contractions",
             "production autocorrelation/statistics studies",

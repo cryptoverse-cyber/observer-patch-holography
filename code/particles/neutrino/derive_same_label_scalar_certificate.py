@@ -11,7 +11,7 @@ OPH-derived inputs: a full overlap edge-sector bundle or an existing same-label
 pullback payload from the live neutrino/flavor chain.
 
 Output: either a complete scalar certificate or, if the pullback values are
-still missing, an honest shell stating the exact remaining readback object.
+still missing, an supported shell stating the exact remaining readback object.
 """
 
 from __future__ import annotations

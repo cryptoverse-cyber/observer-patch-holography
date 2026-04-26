@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Analyze the strongest current D12 quark mass branch and CKM closure.
 
-Chain role: keep the honest D12 quark continuation program explicit without
+Chain role: keep the supported D12 quark continuation program explicit without
 promoting the light-quark selector value to recovered-core status.
 
 Mathematics: apply a one-scalar D12 light-quark overlap selector candidate to
@@ -13,7 +13,7 @@ OPH-derived inputs: the current forward Yukawa artifact, the quark exactness
 audit, and the already-emitted spread package.
 
 Output: a D12 continuation artifact carrying the strongest current mass-side
-sample point on the emitted D12 ray, the honest forward CKM transport unitary,
+sample point on the emitted D12 ray, the supported forward CKM transport unitary,
 its principal generator, and the sharper branch-repair boundary beneath the
 physical CKM shell.
 """
@@ -341,11 +341,11 @@ def main() -> int:
         ),
         "debug_only_target_seeded_generator": {
             "status": "retired",
-            "reason": "the honest same-label transport unitary is emitted directly by the forward Yukawa step and no target CKM seed is needed",
+            "reason": "the supported same-label transport unitary is emitted directly by the forward Yukawa step and no target CKM seed is needed",
         },
         "notes": [
             "This artifact records the strongest current D12 continuation sample point for the light-quark split without overriding the recovered-core no-go.",
-            "On the D12 continuation branch the CKM/CP lane closes honestly once the forward Yukawa step is reached, because the same-label transport unitary is already V_CKM^fwd = U_u^dagger U_d.",
+            "On the D12 continuation branch the CKM/CP lane closes on the supported branch once the forward Yukawa step is reached, because the same-label transport unitary is already V_CKM^fwd = U_u^dagger U_d.",
             "But the current D12 sheet is not the physical quark branch: the selector is already fixed to sigma_ref on the emitted same-label left-handed solver surface, while the current theorem-grade rigidity result is only same-sheet rephasing rigidity and does not prove CKM rigidity under ray_modulus motion on D12_ud_mass_ray. The emitted angles on this sheet still undershoot the comparison shell substantially.",
             "The only finite local scan on disk is a same-sheet Delta_ud_overlap scan against reference targets; it is comparison-only and cannot be repurposed as a Sigma_ud orbit scan.",
             (

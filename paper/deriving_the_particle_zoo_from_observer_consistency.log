@@ -537,88 +537,71 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 45.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 56.
+(Font)              <10.95> on input line 53.
  [1
 
 ]
 [2]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 167.
- [3] [4] [5] [6] [7]
-Underfull \hbox (badness 1552) in paragraph at lines 440--441
-\T1/lmr/m/n/10.95 emitted quark pack-age on the present ledger con-sists of the
- D12 mass ray $\OMS/lmsy/m/n/10.95 R[]$\T1/lmr/m/n/10.95 , the
- []
 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 171.
 
-Underfull \hbox (badness 1715) in paragraph at lines 440--441
-\T1/lmr/m/n/10.95 mean pack-age with $\OML/lmm/m/it/10.95 g[] \OT1/lmr/m/n/10.9
-5 = 0\OML/lmm/m/it/10.95 :\OT1/lmr/m/n/10.95 9231656602589082$ \T1/lmr/m/n/10.9
-5 on \T1/lmtt/m/n/10.95 shared_budget_only \T1/lmr/m/n/10.95 and $\OT1/lmr/m/n/
-10.95 (\OML/lmm/m/it/10.95 g[]; g[]\OT1/lmr/m/n/10.95 ) =
- []
-
-[8] [9] [10]
+[3] [4]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+[5]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[11] [12]
-Underfull \hbox (badness 10000) in alignment at lines 739--743
+[6]
+Underfull \hbox (badness 10000) in alignment at lines 437--441
 [] [] [] [] []
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 743--747
+Underfull \hbox (badness 10000) in alignment at lines 441--445
 [] [] [] [] []
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 747--749
+Underfull \hbox (badness 10000) in alignment at lines 445--447
 [] [] [] [] []
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 749--772
+Underfull \hbox (badness 10000) in alignment at lines 447--470
 [] [] [] [] []
  []
 
-[13] [14] [15]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 833
+[7] [8]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 531
 .
  (ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [16] [17] [18] [19] [20] [21] [22]
+) [9] [10] [11] [12]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[23] [24] [25] [26] [27] [28]
-Underfull \hbox (badness 1087) in paragraph at lines 1814--1815
-[]\T1/lmr/m/n/10.95 the emit-ted restricted-scope affine mean pack-age with $\O
-ML/lmm/m/it/10.95 g[] \OT1/lmr/m/n/10.95 = 0\OML/lmm/m/it/10.95 :\OT1/lmr/m/n/1
-0.95 9231656602589082$ \T1/lmr/m/n/10.95 on
- []
+[13] [14] [15] [16] [17] [18] [19]
 
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-Underfull \hbox (badness 1565) in paragraph at lines 1814--1815
-\T1/lmtt/m/n/10.95 shared_budget_only \T1/lmr/m/n/10.95 and $\OML/lmm/m/it/10.9
-5 g[] \OT1/lmr/m/n/10.95 = 0\OML/lmm/m/it/10.95 :\OT1/lmr/m/n/10.95 77973928757
-57557$\T1/lmr/m/n/10.95 , $\OML/lmm/m/it/10.95 g[] \OT1/lmr/m/n/10.95 = 0\OML/l
-mm/m/it/10.95 :\OT1/lmr/m/n/10.95 12172551081512113$ \T1/lmr/m/n/10.95 on
- []
+[20] [21]
 
-[29] [30] [31] [32] [33] [34] [35] [36] [37]
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2461.
+(hyperref)                removing `math shift' on input line 2368.
 
-[38] [39] [40] [41] [42] [43] [44] [45] [46] [47] [48]
-(deriving_the_particle_zoo_from_observer_consistency.aux)
+[34] [35] [36] [37] [38] [39] [40] [41] [42] [43]
+(tex_fragments/PARTICLE_TECHNICAL_SUPPLEMENT_PORT.tex [44] [45]) [46] [47]
+[48] [49] (deriving_the_particle_zoo_from_observer_consistency.aux)
 Package rerunfilecheck Info: File `deriving_the_particle_zoo_from_observer_cons
 istency.out' has not changed.
-(rerunfilecheck)             Checksum: 273E39BC4C621C1C4E141F573529E2D9;17392.
+(rerunfilecheck)             Checksum: 61031AE0969572FF2D7D1FBDF518CF48;14945.
  )
-Output written on deriving_the_particle_zoo_from_observer_consistency.xdv (48 p
-ages, 259368 bytes).
+Output written on deriving_the_particle_zoo_from_observer_consistency.xdv (49 p
+ages, 260268 bytes).

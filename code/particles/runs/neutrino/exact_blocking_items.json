@@ -195,7 +195,7 @@
   },
   "neutrino_only_isotropy_obstruction": {
     "closed": true,
-    "first_honest_solar_mover": "realized_arrow_pullback_from_flavor_gap_and_defect_certificates",
+    "first_supported_solar_mover": "realized_arrow_pullback_from_flavor_gap_and_defect_certificates",
     "statement": "The current forward neutrino bundle is exactly S_3-isotropic, so neutrino-only same-label readback stays edge-constant and cannot open the solar 1-2 split."
   },
   "no_hidden_discrete_branch": {

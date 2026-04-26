@@ -1,4 +1,4 @@
-\paragraph{Honesty labels.}
+\paragraph{Support labels.}
 \begin{description}
   \item[\textbf{[Established]}] Follows from cited prior work or a complete
         argument given here.
@@ -20,14 +20,14 @@ the theorem does not hold for protocols lacking any of them without a
 compensating change to the argument.
 \begin{enumerate}[(P1)]
   \item \textbf{One-vote-per-view.}
-        Each honest node casts at most one vote per view number.
+        Each nonfaulty node casts at most one vote per view number.
         A node that has already voted in view~$v$ ignores any later request
         to vote in view~$v$.
   \item \textbf{Certificate semantics.}
         A decision requires a valid quorum certificate: $2f+1$ distinct,
         unforgeable, authenticated votes for the same value in the same view.
   \item \textbf{DLS-style view-change.}
-        If no certificate is produced within a timeout, every honest node
+        If no certificate is produced within a timeout, every nonfaulty node
         increments the view number by one and a new leader is selected by a
         fixed deterministic rule.  At \textrm{GST}, timeouts fire correctly
         and the view-change terminates in bounded rounds.
@@ -45,7 +45,7 @@ satisfies (P1)--(P3) and is the intended instance.
         \emph{Safety} holds unconditionally;
         \emph{liveness} holds after the Global Stabilisation Time (\textrm{GST}).
   \item \textbf{Byzantine fault model.}
-        At most $f$ observers behave arbitrarily; the remaining $n-f$ are honest.
+        At most $f$ observers behave arbitrarily; the remaining $n-f$ are nonfaulty.
   \item \textbf{Optimal fault bound.}
         $n \geq 3f+1$ (necessary: \cite{Lamport1982}; sufficient: \cite{Lamport1982}).
   \item \textbf{Strong quorum connectivity.}
@@ -69,9 +69,9 @@ Under assumptions (A1)--(A6), any consensus protocol satisfying
 (P1)--(P3) of Definition~\ref{def:qbft-style} and run over the
 \textrm{OPH} observer graph satisfies:
 \begin{enumerate}[(i)]
-  \item \textbf{Safety.} No two honest observers finalise conflicting
+  \item \textbf{Safety.} No two nonfaulty observers finalise conflicting
         patch states.
-  \item \textbf{Liveness.} After \textrm{GST}, every honest observer
+  \item \textbf{Liveness.} After \textrm{GST}, every nonfaulty observer
         finalises within $O(f\cdot\Delta)$ wall-clock time.
   \item \textbf{Optimality.} The bound $f<n/3$ is tight.
 \end{enumerate}
@@ -83,7 +83,7 @@ Suppose $O_a$ and $O_b$ finalise $s_a\neq s_b$ in the same view.
 By (P2), each required a certificate of $q=2f+1$ votes: sets $Q_a,Q_b$.
 By (A3): $|Q_a\cap Q_b|\geq(2f+1)+(2f+1)-(3f+1)=f+1$.
 By (A2), at most $f$ are Byzantine, so $Q_a\cap Q_b$ contains an
-honest $O^*$.
+nonfaulty $O^*$.
 By (A4), $O^*$'s signed vote is path-reachable within both quorums.
 By (P1), $O^*$ voted for at most one value --- contradiction.
 
@@ -317,7 +317,7 @@ no uniform finite bound on $T$ follows from fairness alone.
   {\normalfont\small [Conditional on (B1)--(B3)]}]
 \label{thm:quantitative-convergence}
 In a partially synchronous \textrm{OPH} observer network satisfying
-(B1)--(B3), after \textrm{GST} every honest observer reaches consensus
+(B1)--(B3), after \textrm{GST} every nonfaulty observer reaches consensus
 within $T=O(f\cdot\Delta)$ wall-clock time
 (by applying the \textrm{DLS} framework~\cite{DLS88}, Thm.~4.4,
 to the \textrm{OPH} repair protocol;

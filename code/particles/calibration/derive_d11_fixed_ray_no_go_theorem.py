@@ -13,7 +13,7 @@ OPH-derived inputs: the declared D10/D11 calibration surface, the closed
 one-scalar fixed-ray seed, and the compare-only exact inverse slice used only
 as a witness.
 
-Output: a machine-readable no-go theorem artifact with the smallest honest
+Output: a machine-readable no-go theorem artifact with the smallest supported
 extension contract stated explicitly.
 """
 
@@ -103,7 +103,7 @@ def build_artifact(d11_surface: dict, forward_seed: dict, exact_adapter: dict) -
             "fixed_ray_condition": "reachable_on_current_one_scalar_ray iff compatibility_functional = 0",
             "current_exact_pair_reachable": False,
         },
-        "smallest_honest_extension": {
+        "smallest_supported_extension": {
             "object": "Theta_D11_HT(mu_t) = (delta_y_t, delta_lambda)",
             "equivalent_coordinates": "(Sigma_HT, eta_HT)",
             "one_extra_scalar_beyond_fixed_ray": True,
@@ -121,7 +121,7 @@ def build_artifact(d11_surface: dict, forward_seed: dict, exact_adapter: dict) -
             "On the current one-scalar branch, pi_y = pi_lambda = sigma_D11_HT, so w_HT vanishes identically.",
             "The compare-only exact pair on the same declared D11 surface has pi_y_exact != pi_lambda_exact, hence w_HT_exact != 0.",
             "Therefore the exact pair lies off the current one-scalar fixed ray and cannot be promoted by any theorem that preserves that fixed-ray role.",
-            "The smallest honest exact extension is a two-coordinate forward readout object Theta_D11_HT(mu_t) = (delta_y_t, delta_lambda), equivalently (Sigma_HT, eta_HT).",
+            "The smallest supported exact extension is a two-coordinate forward readout object Theta_D11_HT(mu_t) = (delta_y_t, delta_lambda), equivalently (Sigma_HT, eta_HT).",
         ],
         "notes": [
             "This is a no-go theorem about the current one-scalar fixed ray, not a demotion of the exact Higgs theorem on the declared D10/D11 surface.",

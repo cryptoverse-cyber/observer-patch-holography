@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Emit the honest D12 quark physical-branch no-go / repair theorem artifact.
+"""Emit the supported D12 quark physical-branch no-go / repair theorem artifact.
 
 Chain role: record the sharpest exact theorem the current D12 quark
 continuation branch proves on the CKM side after transport closure is already
 in hand.
 
-Mathematics: the current D12 sheet has an honest forward same-label transport
+Mathematics: the current D12 sheet has an supported forward same-label transport
 unitary and principal logarithm, so CKM/CP transport closure is complete on
 that sheet. But same-sheet rephasing changes only diagonal U(1)^3 phases, so
 all CKM moduli and rephasing invariants are frozen. If those invariants are
@@ -304,7 +304,7 @@ def main() -> int:
             "score": "RMS log error against reference_targets",
             "same_sheet_only": True,
             "uses_reference_targets": True,
-            "why_disqualified": "The only finite scan currently exposed in local code is a same-sheet target-mass comparison scan over Delta_ud_overlap. It neither enumerates Sigma_ud nor emits a relative-sheet sigma->CKM evaluator, so it cannot honestly serve as branch repair.",
+            "why_disqualified": "The only finite scan exposed in local code is a same-sheet target-mass comparison scan over Delta_ud_overlap. It neither enumerates Sigma_ud nor emits a relative-sheet sigma->CKM evaluator, so it cannot serve as a supported branch repair.",
         },
         "relative_sheet_scan": {
             "status": (
@@ -347,10 +347,10 @@ def main() -> int:
                 else "The exact next object is discrete rather than continuous: one relative up/down sheet selector sigma_ud."
             ),
             (
-                "That closure is negative for branch repair: sigma_ref is just the current D12 reference sheet, so the selected branch still misses the physical CKM shell and the next honest object is the intrinsic D12 scale law on the emitted mass ray."
+                "That closure is negative for branch repair: sigma_ref is just the current D12 reference sheet, so the selected branch still misses the physical CKM shell and the next supported object is the intrinsic D12 scale law on the emitted mass ray."
                 if selector_value is not None
                 else (
-                    "The current surface is formally insufficient to identify sigma_ud; after exposing the D12 reference singleton honestly, the smaller exact blocker is one additional non-reference same-label left-handed sheet evaluation or an intrinsic uniqueness theorem."
+                    "The exposed reference singleton is formally insufficient to identify sigma_ud; the smaller exact blocker is one additional non-reference same-label left-handed sheet evaluation or an intrinsic uniqueness theorem."
                     if reference_sheet.get("available")
                     else "The current surface is formally insufficient to identify sigma_ud; the minimal extension is a finite left-handed same-label sigma_ud orbit with per-candidate CKM tuples."
                 )

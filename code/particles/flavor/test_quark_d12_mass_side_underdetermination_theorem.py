@@ -39,4 +39,4 @@ def test_quark_d12_mass_side_theorem_starts_after_emitted_ray() -> None:
     assert payload["emitted_same_family_ray"]["artifact"] == "oph_quark_d12_mass_ray"
     assert payload["remaining_object"]["id"] == "quark_d12_t1_value_law"
     assert payload["next_exact_missing_object"] == "quark_d12_t1_value_law"
-    assert "D12_ud_mass_ray" not in payload["honest_remaining_value_laws"]
+    assert "D12_ud_mass_ray" not in payload["supported_remaining_value_laws"]

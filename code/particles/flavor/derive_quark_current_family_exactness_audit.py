@@ -312,7 +312,7 @@ def main() -> int:
         "d12_scalarized_continuation_bundle": None if scalarized_bundle is None else {
             "artifact": scalarized_bundle.get("artifact"),
             "proof_status": scalarized_bundle.get("proof_status"),
-            "honest_remaining_value_laws": scalarized_bundle.get("honest_remaining_value_laws"),
+            "supported_remaining_value_laws": scalarized_bundle.get("supported_remaining_value_laws"),
             "mass_side": scalarized_bundle.get("mass_side"),
             "mixing_side": scalarized_bundle.get("mixing_side"),
         },
@@ -356,7 +356,7 @@ def main() -> int:
         "recovered_core_no_go_for_nonzero_light_quark_pure_b_selector": True,
         "recovered_core_no_go_basis": "March 28, 2026 final-wave consolidation against the OPH tier ledger in the uploaded corpus",
         "active_builder_smallest_missing_object": "source_readback_u_log_per_side_and_source_readback_d_log_per_side",
-        "broader_honest_frontier": (
+        "broader_supported_frontier": (
             "oph_light_quark_isospin_overlap_defect_selector_law"
             if physical_branch_repair is not None
             and ((physical_branch_repair.get("minimal_branch_shift_repair_theorem") or {}).get("selected_value") is not None)
@@ -390,10 +390,10 @@ def main() -> int:
             "That means the family shell and pure-B source-readback law are already known; on the active builder path the missing predictive step is the emitted pure-B payload pair, not another larger quark family.",
             "The March 28, 2026 final-wave consolidation also establishes a tier boundary: a nonzero light-quark pure-B selector is not available at recovered-core tier in the uploaded corpus.",
             (
-                "The broader repair frontier has therefore moved past the discrete selector: on the emitted local solver surface sigma_ud closes to sigma_ref, the broader honest D12 primitive is the light-quark overlap-defect scalar Delta_ud_overlap, and on the selected mass ray this is equivalently the downstream law quark_d12_t1_value_law, with intrinsic_scale_law_D12 retained only as the derived wrapper, even though the active local builder still waits first on the pure-B payload pair."
+                "The broader repair frontier has therefore moved past the discrete selector: on the emitted local solver surface sigma_ud closes to sigma_ref, the broader supported D12 primitive is the light-quark overlap-defect scalar Delta_ud_overlap, and on the selected mass ray this is equivalently the downstream law quark_d12_t1_value_law, with intrinsic_scale_law_D12 retained only as the derived wrapper, even though the active local builder still waits first on the pure-B payload pair."
                 if physical_branch_repair is not None
                 and ((physical_branch_repair.get("minimal_branch_shift_repair_theorem") or {}).get("selected_value") is not None)
-                else "The broader honest repair frontier is therefore a D12 light-quark isospin-breaking selector / overlap-defect scalar, even though the active local builder still waits first on the pure-B payload pair."
+                else "The broader supported repair frontier is therefore a D12 light-quark isospin-breaking selector / overlap-defect scalar, even though the active local builder still waits first on the pure-B payload pair."
             ),
             (
                 "The D12 selector-law shell remains explicit on disk: one continuation-level overlap-defect scalar `Delta_ud_overlap` would fix the light-sector pure-B payload pair by odd-budget neutrality, but the emitted local branch selector now closes trivially to sigma_ref rather than opening a new physical CKM branch."
@@ -412,7 +412,7 @@ def main() -> int:
                 else "No D12 quark mass-branch followup is attached to this audit."
             ),
             (
-                "The current D12 sheet is now known to be a strict no-go for the physical CKM shell: the emitted local same-label left-handed orbit closes to sigma_ref, but that selected singleton is just the current D12 reference sheet, so the broader honest frontier is Delta_ud_overlap and its emitted-ray packaging quark_d12_t1_value_law rather than another branch selector."
+                "The current D12 sheet is now known to be a strict no-go for the physical CKM shell: the emitted local same-label left-handed orbit closes to sigma_ref, but that selected singleton is just the current D12 reference sheet, so the broader supported frontier is Delta_ud_overlap and its emitted-ray packaging quark_d12_t1_value_law rather than another branch selector."
                 if physical_branch_repair is not None
                 and ((physical_branch_repair.get("minimal_branch_shift_repair_theorem") or {}).get("selected_value") is not None)
                 else (
@@ -437,12 +437,12 @@ def main() -> int:
                 else "No one-scalar D12 same-family specialization is attached to this audit."
             ),
             (
-                "The same-family D12 mass ray is now an explicit emitted object on disk: D12_ud_mass_ray = { ray_modulus * (1/5, -((1 - x2^2) / 27)) }, and on that emitted ray the broader honest frontier Delta_ud_overlap is equivalently the downstream scalar burden quark_d12_t1_value_law, with intrinsic_scale_law_D12 retained as the derived wrapper."
+                "The same-family D12 mass ray is now an explicit emitted object on disk: D12_ud_mass_ray = { ray_modulus * (1/5, -((1 - x2^2) / 27)) }, and on that emitted ray the broader supported frontier Delta_ud_overlap is equivalently the downstream scalar burden quark_d12_t1_value_law, with intrinsic_scale_law_D12 retained as the derived wrapper."
                 if d12_mass_ray is not None
                 else "No explicit emitted D12 mass-ray object is attached to this audit yet."
             ),
             (
-                "The mass-side theorem boundary remains sharp too: with D12_ud_mass_ray emitted, the broader honest D12 primitive remains Delta_ud_overlap, and on the emitted ray that same missing value is packaged as quark_d12_t1_value_law rather than another larger mass-side carrier."
+                "The mass-side theorem boundary remains sharp too: with D12_ud_mass_ray emitted, the broader supported D12 primitive remains Delta_ud_overlap, and on the emitted ray that same missing value is packaged as quark_d12_t1_value_law rather than another larger mass-side carrier."
                 if mass_side_underdetermination is not None
                 else "No explicit D12 mass-side underdetermination theorem is attached to this audit yet."
             ),

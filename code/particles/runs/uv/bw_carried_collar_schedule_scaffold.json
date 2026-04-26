@@ -19,7 +19,7 @@
   "derived_missing_witness_artifact": "code/particles/runs/uv/bw_carried_collar_schedule_scaffold.json",
   "exact_missing_object": "vanishing_carried_collar_schedule_on_fixed_local_collars",
   "generated_utc": "2026-04-01T16:10:37Z",
-  "honesty_gate": {
+  "support_gate": {
     "closure_artifact": "code/particles/runs/uv/bw_carried_collar_schedule_scaffold.json",
     "derived_witness_chain": [
       "constructive_recovery_remainder_vanishing",
@@ -44,7 +44,7 @@
         "why_not": "This still omits the separate Fawzi-Renner recovery remainder, so the full eta schedule is not yet emitted."
       }
     ],
-    "promotion_rule": "No theorem promotion is honest until the carried-collar schedule itself is emitted on every fixed local collar model.",
+    "promotion_rule": "No theorem promotion is supported until the carried-collar schedule itself is emitted on every fixed local collar model.",
     "required_raw_inputs": [
       "epsilon_{n,m,delta} = I(A_{m,delta}:D_{m,delta}|B_{m,delta})_{omega_{n->m}} -> 0",
       "exists lambda_bar_{m,delta} > 0 and N_{m,delta} such that for all n >= N_{m,delta} and every X in Xi^{mod}_{m,delta}, rho_{n->m,X} >= lambda_bar_{m,delta} * 1"
@@ -57,7 +57,7 @@
     "It records the exact witness contract consumed by scaling-limit cap-pair extraction so solver work no longer jumps directly from the raw datum to the extraction theorem.",
     "The carried-collar witness is theorem-generated from the two term witnesses recorded here, so it should no longer be treated as an independent primitive solver target.",
     "On the current branch, the only nonlatent lower side condition still outside the emitted chain is the eventual fixed-local-collar modular-transport common floor recorded by the linked faithfulness-side artifact.",
-    "The honesty gate records exactly which lower witnesses are still insufficient on their own, preventing premature promotion from one-sided local control."
+    "The support gate records exactly which lower witnesses are still insufficient on their own, preventing premature promotion from one-sided local control."
   ],
   "obligation_ledger": [
     {

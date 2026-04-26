@@ -90,7 +90,7 @@
   "proof_status": "internal_backread_mass_side_continuation_closed",
   "public_promotion_allowed": false,
   "public_theorem_frontier_still": {
-    "broader_honest_primitive": "Delta_ud_overlap",
+    "broader_supported_primitive": "Delta_ud_overlap",
     "derived_wrapper": "intrinsic_scale_law_D12",
     "emitted_ray_packaging": "quark_d12_t1_value_law"
   },

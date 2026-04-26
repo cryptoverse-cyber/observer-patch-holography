@@ -5,7 +5,7 @@ This directory contains the canonical OPH hadron derivation path inside
 
 ## Current Meaning
 
-The hadron lane is not blocked on a missing symbolic theorem alone. Its honest
+The hadron lane is not blocked on a missing symbolic theorem alone. Its supported
 frontier is production execution:
 
 - the seeded `N_f = 2+1`, QED-off family is fixed

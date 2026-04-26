@@ -15,7 +15,7 @@ from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 
-from bw_collar_honesty import build_comparison_reference_floor_transfer
+from bw_collar_support import build_comparison_reference_floor_transfer
 
 
 ROOT = Path(__file__).resolve().parents[2]

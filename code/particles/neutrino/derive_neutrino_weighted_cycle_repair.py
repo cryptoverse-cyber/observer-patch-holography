@@ -325,7 +325,7 @@ def main() -> int:
             "The weight exponent is fixed by the live same-label certificate, the overlap-edge cocycle invariants, and the log-affine midpoint selector on the positive segment between chi and 1 + gamma_half.",
             "The theorem-grade repaired branch is scale-free: it emits PMNS observables, J, the hierarchy ratio, and one symbolic positive absolute family parameterized by lambda_nu > 0.",
             "The proof-facing absolute family is emitted one step above this artifact by the weighted-cycle bridge-rigidity theorem and the absolute-attachment theorem; the atmospheric-anchored numbers remain hard-separated compare-only outputs.",
-            "This artifact supersedes the old isotropic continuation branch as the strongest honest neutrino branch on disk.",
+            "This artifact supersedes the old isotropic continuation branch as the strongest supported neutrino branch on disk.",
         ],
     }
 

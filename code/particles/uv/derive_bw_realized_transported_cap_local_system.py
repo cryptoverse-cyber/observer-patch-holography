@@ -8,8 +8,8 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-from bw_collar_honesty import (
-    build_local_honesty_gate,
+from bw_collar_support import (
+    build_local_support_gate,
     build_local_obligation_ledger,
     build_schedule_term_frontier,
 )
@@ -133,7 +133,7 @@ def build_payload(extraction_scaffold: dict[str, object]) -> dict[str, object]:
             faithful_modular_defect_artifact=_artifact_ref(FAITHFUL_MODULAR_DEFECT),
             carried_schedule_artifact=_artifact_ref(CARRIED_SCHEDULE),
         ),
-        "remaining_witness_honesty_gate": build_local_honesty_gate(
+        "remaining_witness_support_gate": build_local_support_gate(
             carried_schedule_artifact=_artifact_ref(CARRIED_SCHEDULE),
             constructive_recovery_artifact=_artifact_ref(CONSTRUCTIVE_RECOVERY),
             exact_markov_artifact=_artifact_ref(EXACT_MARKOV_MODULUS),
@@ -161,7 +161,7 @@ def build_payload(extraction_scaffold: dict[str, object]) -> dict[str, object]:
             "It packages the prelimit transported cap-local system at the quotient/local *-isomorphism level only.",
             "The carried-collar witness now comes with a finer lower local family: constructive recovery, exact-Markov comparison convergence, faithful modular-defect vanishing, then the full eta schedule.",
             "The actual emitted solver frontier is the two-term pair beneath the derived eta schedule, not the schedule viewed as a separate primitive target.",
-            "The honesty gate makes explicit that this prelimit package is still insufficient on its own for cap-pair promotion.",
+            "The support gate makes explicit that this prelimit package is still insufficient on its own for cap-pair promotion.",
             "The remaining emitted witnesses for cap-pair promotion are the constructive-recovery and faithful modular-defect terms on fixed local collar models.",
         ],
     }

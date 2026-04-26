@@ -176,7 +176,7 @@ def build_artifact(source_pair: dict, references: dict) -> dict:
         },
         "notes": [
             "This artifact records the current source-only D10 mass-side candidate beneath the Ward-projected electromagnetic transport family.",
-            "The unconditional source-only underdetermination theorem remains the honesty boundary on the present corpus, so this candidate is not promoted to theorem status.",
+            "The unconditional source-only underdetermination theorem remains the support boundary on the present corpus, so this candidate is not promoted to theorem status.",
             "The freeze-once coherent repair law serves as compare-only validation on the same W/Z mass lane.",
             "At the repo default P this candidate nearly coincides numerically with the frozen benchmark surface, but that numerical coincidence is not by itself a proof of target-free closure.",
         ],

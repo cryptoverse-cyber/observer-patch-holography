@@ -18,7 +18,7 @@
     "post_promotion_single_slot": "refinement_stable_uncentered_trace_lift",
     "reduction_theorem_id": "charged_determinant_line_reduces_to_uncentered_trace_lift"
   },
-  "generated_utc": "2026-04-19T10:04:21Z",
+  "generated_utc": "2026-04-26T05:11:11Z",
   "notes": [
     "This artifact does not promote any current-corpus absolute closure.",
     "It exists to prevent mixing the current-surface no-go with the sharper post-promotion reduction route.",
@@ -91,5 +91,5 @@
   "public_promotion_allowed": false,
   "status": "layered_frontier_factorization_closed",
   "summary": "The charged absolute frontier is layered. On the current common-shift quotient surface the exact missing affine object is A_ch. Conditional on future centered promotion, that absolute-side burden reduces further: the only irreducible post-promotion slot is the refinement-stable uncentered trace lift, from which the determinant-line section and A_ch are induced.",
-  "theorem_statement": "The current charged absolute no-go and the sharpened post-promotion route solve different layers of the lane. The current layer identifies the absent affine coordinate A_ch on the common-shift quotient surface. After centered promotion, the absolute tail reduces canonically to one refinement-stable uncentered trace lift, which then induces the determinant-line section, A_ch, and the absolute charged outputs. Therefore the honest charged absolute frontier is layered rather than a single bare A_ch slot."
+  "theorem_statement": "The current charged absolute no-go and the sharpened post-promotion route solve different layers of the lane. The current layer identifies the absent affine coordinate A_ch on the common-shift quotient surface. After centered promotion, the absolute tail reduces canonically to one refinement-stable uncentered trace lift, which then induces the determinant-line section, A_ch, and the absolute charged outputs. Therefore the supported charged absolute frontier is layered rather than a single bare A_ch slot."
 }

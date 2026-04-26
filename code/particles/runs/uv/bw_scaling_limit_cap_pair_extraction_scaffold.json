@@ -88,7 +88,7 @@
     "Inside that raw datum, the constructive recovery witness, the exact-Markov comparison modulus, and the faithful modular-defect term are now split as separate lower local scaffolds.",
     "No separate exact-Markov-reference spectral input remains hidden below the faithful modular-defect term: on one fixed collar model, the eventual floor for the transported marginals transfers to the exact-Markov comparison marginals once delta^M -> 0.",
     "On the current branch the only nonlatent lower input still outside the emitted chain is the eventual fixed-local-collar modular-transport common floor feeding the faithful modular-defect term; the recovery/Markov side is already latent once epsilon_{n,m,delta} -> 0.",
-    "The artifact now also carries a machine-readable honesty gate so prelimit transport packaging cannot be mistaken for the missing emitted collar schedule.",
+    "The artifact now also carries a machine-readable support gate so prelimit transport packaging cannot be mistaken for the missing emitted collar schedule.",
     "It does not by itself prove the BW automorphism law."
   ],
   "output_certificate": {
@@ -110,7 +110,7 @@
   ],
   "remaining_missing_emitted_witness_domain": "every fixed local collar model",
   "remaining_missing_emitted_witness_formula": "eta_{n,m,delta} = r_FR(epsilon_{n,m,delta}) + 4 * lambda_{*,n,m,delta}^{-1} * delta^M_{m,delta}(epsilon_{n,m,delta}) -> 0",
-  "remaining_witness_honesty_gate": {
+  "remaining_witness_support_gate": {
     "closure_artifact": "code/particles/runs/uv/bw_carried_collar_schedule_scaffold.json",
     "derived_witness_chain": [
       "constructive_recovery_remainder_vanishing",
@@ -140,7 +140,7 @@
         "why_not": "The prelimit transport package fixes the local system but does not itself emit the vanishing carried-collar schedule consumed by cap-pair extraction."
       }
     ],
-    "promotion_rule": "No theorem promotion is honest until the carried-collar schedule itself is emitted on every fixed local collar model.",
+    "promotion_rule": "No theorem promotion is supported until the carried-collar schedule itself is emitted on every fixed local collar model.",
     "required_raw_inputs": [
       "epsilon_{n,m,delta} = I(A_{m,delta}:D_{m,delta}|B_{m,delta})_{omega_{n->m}} -> 0",
       "exists lambda_bar_{m,delta} > 0 and N_{m,delta} such that for all n >= N_{m,delta} and every X in Xi^{mod}_{m,delta}, rho_{n->m,X} >= lambda_bar_{m,delta} * 1"

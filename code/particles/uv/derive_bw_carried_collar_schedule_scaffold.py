@@ -9,10 +9,10 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from bw_collar_honesty import (
+from bw_collar_support import (
     CARRIED_SCHEDULE_FORMULA,
     CONSTRUCTIVE_RECOVERY_FORMULA,
-    build_local_honesty_gate,
+    build_local_support_gate,
     build_local_obligation_ledger,
     build_schedule_term_frontier,
 )
@@ -129,7 +129,7 @@ def build_payload(
             faithful_modular_defect_artifact=_artifact_ref(FAITHFUL_MODULAR_DEFECT),
             carried_schedule_artifact=_artifact_ref(DEFAULT_OUT),
         ),
-        "honesty_gate": build_local_honesty_gate(
+        "support_gate": build_local_support_gate(
             carried_schedule_artifact=_artifact_ref(DEFAULT_OUT),
             constructive_recovery_artifact=_artifact_ref(CONSTRUCTIVE_RECOVERY),
             exact_markov_artifact=_artifact_ref(EXACT_MARKOV_MODULUS),
@@ -159,7 +159,7 @@ def build_payload(
             "It records the exact witness contract consumed by scaling-limit cap-pair extraction so solver work no longer jumps directly from the raw datum to the extraction theorem.",
             "The carried-collar witness is theorem-generated from the two term witnesses recorded here, so it should no longer be treated as an independent primitive solver target.",
             "On the current branch, the only nonlatent lower side condition still outside the emitted chain is the eventual fixed-local-collar modular-transport common floor recorded by the linked faithfulness-side artifact.",
-            "The honesty gate records exactly which lower witnesses are still insufficient on their own, preventing premature promotion from one-sided local control.",
+            "The support gate records exactly which lower witnesses are still insufficient on their own, preventing premature promotion from one-sided local control.",
         ],
     }
 

@@ -108,7 +108,7 @@ def main() -> int:
             "physical_invariant_formula": physical["physical_invariant_formula"],
             "transport_closure_residual_fro_norm": physical["closure_residual_fro_norm"],
         },
-        "honest_remaining_value_laws": [
+        "supported_remaining_value_laws": [
             "quark_d12_t1_value_law",
             "quark_exact_mean_split_value_law_or_carrier_repair",
         ],

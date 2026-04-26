@@ -116,7 +116,7 @@ def build_payload(
         "changes_active_builder_artifacts": False,
         "closure_surface": "mass_side_numeric_package_closed_ckm_branch_open",
         "public_theorem_frontier_still": {
-            "broader_honest_primitive": "Delta_ud_overlap",
+            "broader_supported_primitive": "Delta_ud_overlap",
             "emitted_ray_packaging": "quark_d12_t1_value_law",
             "derived_wrapper": "intrinsic_scale_law_D12",
         },

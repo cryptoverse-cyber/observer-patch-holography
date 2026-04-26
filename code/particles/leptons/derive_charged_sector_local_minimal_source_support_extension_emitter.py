@@ -131,7 +131,7 @@ def build_artifact(
         "next_single_residual_object": "eta_source_support_extension_log_per_side",
         "notes": [
             "The current-support charged package has collapsed to the linear subray.",
-            "The first honest hierarchy mover is one beyond-support scalar on the canonical quadratic ordered direction.",
+            "The first supported hierarchy mover is one beyond-support scalar on the canonical quadratic ordered direction.",
             "At fixed current span, eta-only moves the middle state against a fixed endpoint ratio tau/e = exp(sigma_source_total_log_per_side).",
             "Once eta_source_support_extension_log_per_side is emitted, every downstream charged gap and centered log is algebraically determined.",
             "A rigid ordered-ratio support-extension candidate is recorded for debugging because it uses only current-family data, but it is not promoted as closure because the remaining charged mismatch is then dominated by the still-open total spread scalar.",

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Shared honest-closure metadata for the UV/BW fixed-collar frontier."""
+"""Shared supported-closure metadata for the UV/BW fixed-collar frontier."""
 
 from __future__ import annotations
 
@@ -117,7 +117,7 @@ def build_local_obligation_ledger(
     ]
 
 
-def build_local_honesty_gate(
+def build_local_support_gate(
     *,
     carried_schedule_artifact: str,
     constructive_recovery_artifact: str,
@@ -165,7 +165,7 @@ def build_local_honesty_gate(
     return {
         "status": "open",
         "promotion_rule": (
-            "No theorem promotion is honest until the carried-collar schedule itself is emitted on "
+            "No theorem promotion is supported until the carried-collar schedule itself is emitted on "
             "every fixed local collar model."
         ),
         "required_raw_inputs": [

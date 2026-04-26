@@ -103,6 +103,17 @@ $$
 P=\phi+\alpha_{\mathrm{in}}(P)\sqrt{\pi}.
 $$
 
+This is the cleanest way to say what the fine-structure constant means in OPH.
+It is the nonzero detuning of a holographic screen cell. From the outside, the
+cell is displaced from perfect self-similar equilibrium. From the inside, the
+same displacement appears as the smallest electromagnetic observation scale
+available to the observers living on that screen.
+
+Perfect equilibrium would be too quiet. A world with records needs a small
+departure from silence: enough asymmetry for light, detectors, and durable
+differences, yet small enough for the screen geometry to remain coherent. The
+fine-structure constant measures that minimal electromagnetic disturbance.
+
 Using the 2022 CODATA/NIST central value for the long-distance fine-structure
 constant, the outside reading gives
 
@@ -110,8 +121,8 @@ $$
 P=1.630968209403959\ldots
 $$
 
-The current OPH code records this as a numerical fixed-point witness and now
-adds a local numerical contraction certificate. A full interval certificate for
+The OPH code records this as a numerical fixed-point witness and includes a
+local numerical contraction certificate. A full interval certificate for
 uniqueness remains a separate mathematical object.
 A separate pending hardware note reports an optical-cavity check of the same
 fixed-point geometry; this is treated as corroborating engineering evidence.
@@ -202,6 +213,6 @@ much stranger object than classical physics ever imagined. There is no view
 from nowhere. There are views from somewhere, and a shared reality is what
 appears when those views can lock into one coherent public record.
 
-The next chapter asks what this means at the deepest interpretive level. If
-observers, meaning, and world belong to one structure, what exactly should be
-said about experience itself?
+The next chapter turns to the deepest interpretive question. If observers,
+meaning, and world belong to one structure, what exactly should be said about
+experience itself?

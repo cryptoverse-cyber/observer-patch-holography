@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Emit the honest D12 light-quark isospin selector law.
+"""Emit the supported D12 light-quark isospin selector law.
 
 Chain role: make the paper-facing D12 continuation selector explicit without
 pretending that the selector value itself is already emitted from recovered
@@ -65,9 +65,9 @@ def build_artifact(source_readback: dict) -> dict:
         "tau_u_log_per_side": None,
         "tau_d_log_per_side": None,
         "notes": [
-            "This is the honest D12 continuation-level selector law for light-quark isospin splitting.",
+            "This is the supported D12 continuation-level selector law for light-quark isospin splitting.",
             "It does not override the recovered-core no-go: the selector value itself is still open and therefore not promotable as a recovered-core nonzero pure-B source selector.",
-            "Once Delta_ud_overlap is emitted on the honest D12 route, the light-sector pure-B payload pair and tau pair follow algebraically on the ordered three-point family.",
+            "Once Delta_ud_overlap is emitted on the supported D12 route, the light-sector pure-B payload pair and tau pair follow algebraically on the ordered three-point family.",
         ],
         "source_artifact": source_readback.get("artifact"),
     }

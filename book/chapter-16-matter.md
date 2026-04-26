@@ -75,15 +75,15 @@ M_Z = 91.18797809193725\,\mathrm{GeV},
 $$
 
 and the same family, followed along the unbroken electromagnetic channel to
-the long-distance Thomson limit, targets the CODATA/NIST central value
+the long-distance Thomson limit, is compared with the CODATA/NIST central value
 
 $$
 \alpha^{-1}(0)=137.035999177.
 $$
 
 The weak-boson pair and the familiar low-energy electromagnetic strength come
-from one continuous construction. The present repository records this as a
-numerical fixed-point witness; the interval certificate remains separate.
+from one continuous construction. At theorem level this is a numerical
+fixed-point witness; the interval certificate remains separate.
 
 The same electroweak core continues into the scalar and companion top values
 
@@ -118,8 +118,8 @@ absolute anchor. Hadrons require a separate nonperturbative bound-state step.
 
 ## 16.5 What Is a Particle?
 
-By the time the book reaches matter, the old billiard-ball picture has already
-fallen away. A particle is the stable way an excitation shows up under the
+By the time the book reaches matter, the old billiard-ball picture has fallen
+away. A particle is the stable way an excitation shows up under the
 symmetries of the world. Wigner taught physics to catalogue those recurring
 roles by mass and spin, and OPH inherits the same catalogue once Lorentz
 kinematics emerges from screen dynamics.
@@ -186,8 +186,8 @@ Euler-Lagrange equations:
 
 $$\frac{d}{dt}\left(\frac{\partial L}{\partial \dot q}\right) = \frac{\partial L}{\partial q}.$$
 
-So the "least action" rule is not a separate law. It is the classical limit
-of quantum consistency. The effective action is part of the EFT
+The "least action" rule is the classical limit of quantum consistency. The
+effective action is part of the EFT
 bridge. Once that bridge is in place, the stationary-action description
 follows in the usual semiclassical limit.
 
@@ -220,7 +220,10 @@ classical property is one whose information is redundantly encoded in the
 environment, accessible through multiple channels, and public enough that
 different observers can recover the same result.
 
-The pointer basis, the set of states that decohere into classical alternatives, is not arbitrary. It is constrained by the system-environment coupling and by which observables can be stably shared across patches. States that can't be consistently shared across patches don't survive as "real" in the intersubjective sense.
+The pointer basis, the set of states that decohere into classical alternatives,
+is constrained by the system-environment coupling and by which observables can
+be stably shared across patches. States that cannot be consistently shared
+across patches do not survive as "real" in the intersubjective sense.
 
 So classical physics is the **stable, compressible limit** of the deeper quantum structure: the patterns that survive the consistency filter. The world looks deterministic because only the consistent patterns-the ones that all observers can agree on-rise to the level of "facts."
 
@@ -241,7 +244,7 @@ information on the screen organizes into stable patterns, modular time becomes
 geometric, and overlap consistency enforces locality. Matter is not primitive
 stuff. It is a family of stable excitation patterns. The particle catalogue is
 not arbitrary. It comes with a constrained package of charges, carriers,
-couplings, and masses. Energy is not fuel. It is the charge of time
+couplings, and masses. Energy is the charge of time
 translations. Motion does not need a separate mystical principle. Stationary
 action is the classical limit of quantum interference. The deterministic world
 of everyday life is the public face of a quantum reality that becomes

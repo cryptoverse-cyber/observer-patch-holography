@@ -338,7 +338,7 @@ def main() -> int:
             (
                 "The proof-facing eta provenance is supplied directly by the live same-label scalar certificate; PMNS is formed downstream from the shared charged-lepton left basis."
                 if payload_is_live_certificate
-                else "The remaining honest blockers are proof-facing eta provenance and the shared charged-lepton left basis required for PMNS."
+                else "The remaining supported blockers are proof-facing eta provenance and the shared charged-lepton left basis required for PMNS."
             ),
         ],
     }

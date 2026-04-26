@@ -8,12 +8,12 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-from bw_collar_honesty import (
+from bw_collar_support import (
     CARRIED_SCHEDULE_FORMULA,
     CMI_COMPONENT,
     FAITHFUL_COMPONENT,
     build_comparison_reference_floor_transfer,
-    build_local_honesty_gate,
+    build_local_support_gate,
     build_local_obligation_ledger,
     build_schedule_term_frontier,
 )
@@ -144,7 +144,7 @@ def build_payload() -> dict[str, object]:
             faithful_modular_defect_artifact=_artifact_ref(FAITHFUL_MODULAR_DEFECT),
             carried_schedule_artifact=_artifact_ref(CARRIED_SCHEDULE),
         ),
-        "remaining_witness_honesty_gate": build_local_honesty_gate(
+        "remaining_witness_support_gate": build_local_support_gate(
             carried_schedule_artifact=_artifact_ref(CARRIED_SCHEDULE),
             constructive_recovery_artifact=_artifact_ref(CONSTRUCTIVE_RECOVERY),
             exact_markov_artifact=_artifact_ref(EXACT_MARKOV_MODULUS),
@@ -203,7 +203,7 @@ def build_payload() -> dict[str, object]:
             "Inside that raw datum, the constructive recovery witness, the exact-Markov comparison modulus, and the faithful modular-defect term are now split as separate lower local scaffolds.",
             "No separate exact-Markov-reference spectral input remains hidden below the faithful modular-defect term: on one fixed collar model, the eventual floor for the transported marginals transfers to the exact-Markov comparison marginals once delta^M -> 0.",
             "On the current branch the only nonlatent lower input still outside the emitted chain is the eventual fixed-local-collar modular-transport common floor feeding the faithful modular-defect term; the recovery/Markov side is already latent once epsilon_{n,m,delta} -> 0.",
-            "The artifact now also carries a machine-readable honesty gate so prelimit transport packaging cannot be mistaken for the missing emitted collar schedule.",
+            "The artifact now also carries a machine-readable support gate so prelimit transport packaging cannot be mistaken for the missing emitted collar schedule.",
             "It does not by itself prove the BW automorphism law.",
         ],
     }

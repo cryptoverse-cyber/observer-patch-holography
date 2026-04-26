@@ -15,7 +15,7 @@ absolute-scale writeback shell, and the D12 continuation compare-only bridge.
 Output: a theorem artifact stating that the present charged chain determines
 only the centered charged quotient class, rejects the current equalizer route,
 and exposes the single future theorem slot ``A_ch`` needed to break the common
-shift symmetry honestly.
+shift symmetry as a supported statement.
 """
 
 from __future__ import annotations
@@ -166,7 +166,7 @@ def main() -> int:
             "must_be_independent_of_measured_masses": True,
         },
         "notes": [
-            "This artifact records the honest closure status of the charged absolute-scale lane: the shape is emitted, but the absolute scale is quotient-only.",
+            "This artifact records the supported closure status of the charged absolute-scale lane: the shape is emitted, but the absolute scale is quotient-only.",
             "The compare-only continuation target is useful for audit and branch repair, but it must not be promoted as an OPH-emitted charged mass theorem.",
             "The current restore shell based on gamma_min_common is representation-consistent only; it is not a theorem-grade symmetry breaker.",
         ],

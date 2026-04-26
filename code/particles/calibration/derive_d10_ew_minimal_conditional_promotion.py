@@ -127,7 +127,7 @@ def build_artifact(source_pair: dict, *, color_count: int) -> dict:
         },
         "notes": [
             "This artifact records the current open split beneath the target-free D10 repair candidate.",
-            "It records the sharpest earlier split between source-only underdetermination and the smallest honest conditional closure route.",
+            "It records the sharpest earlier split between source-only underdetermination and the smallest supported conditional closure route.",
             "The W/Z mass lane and the Ward-projected electromagnetic theorem sit above this split on separate D10 surfaces.",
         ],
     }

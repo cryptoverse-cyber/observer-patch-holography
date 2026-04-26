@@ -67,7 +67,7 @@
   },
   "notes": [
     "This is a reduction theorem, not a bridge-closure theorem.",
-    "It fixes the smallest honest bridge target for the D10-to-charged absolute lane.",
+    "It fixes the smallest supported bridge target for the D10-to-charged absolute lane.",
     "The live same-label q_e readback supplies the source-side determinant character on realized support.",
     "The frontier sits one level lower as the determinant trace-lift attachment / normalization defect beneath the broader determinant-line landing."
   ],

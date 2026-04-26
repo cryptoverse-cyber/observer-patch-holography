@@ -79,12 +79,12 @@ def test_lepton_exactness_audit_identifies_common_shift_as_insufficient() -> Non
     assert abs(payload["absolute_scale_gap_identity"]["identity_residual"]) < 1.0e-12
     assert payload["absolute_scale_closure_status"]["present_chain_under_determines_g_e"] is True
     assert payload["absolute_scale_closure_status"]["charged_absolute_equalizer_status"] == "NO_GO_COMMON_SHIFT"
-    assert payload["absolute_scale_closure_status"]["honest_missing_transport_scalar"] == "A_ch"
-    assert payload["absolute_scale_closure_status"]["honest_post_promotion_single_slot"] == "refinement_stable_uncentered_trace_lift"
-    assert payload["absolute_scale_closure_status"]["honest_post_promotion_internal_carrier"] == (
+    assert payload["absolute_scale_closure_status"]["supported_missing_transport_scalar"] == "A_ch"
+    assert payload["absolute_scale_closure_status"]["supported_post_promotion_single_slot"] == "refinement_stable_uncentered_trace_lift"
+    assert payload["absolute_scale_closure_status"]["supported_post_promotion_internal_carrier"] == (
         "scalar_affine_cocycle_primitive"
     )
-    assert payload["absolute_scale_closure_status"]["honest_post_promotion_exact_descended_scalar"] == (
+    assert payload["absolute_scale_closure_status"]["supported_post_promotion_exact_descended_scalar"] == (
         "charged_physical_affine_scalar_mu"
     )
     assert payload["absolute_scale_closure_status"]["promotion_only_centered_operator_no_go"] == (

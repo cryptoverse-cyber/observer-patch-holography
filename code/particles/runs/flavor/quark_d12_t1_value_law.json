@@ -47,7 +47,7 @@
     "source_readback_d_log_per_side": "(+t1/10, 0, -t1/10)",
     "source_readback_u_log_per_side": "(-t1/10, 0, +t1/10)"
   },
-  "generated_utc": "2026-04-16T15:22:49Z",
+  "generated_utc": "2026-04-26T05:11:10Z",
   "minimal_new_theorem": {
     "id": "quark_d12_t1_value_law",
     "identifies": "ray_modulus = t1",
@@ -111,7 +111,7 @@
       "tau_d_over_tau_u": "sigma_u_total_log_per_side / sigma_d_total_log_per_side",
       "tau_u_plus_tau_d": "t1 / 10"
     },
-    "exact_gap_after_transport_reduction": "honest_sigma_branch_emission",
+    "exact_gap_after_transport_reduction": "supported_sigma_branch_emission",
     "law_statement": "On any fixed ordered-family sigma branch with positive totals (sigma_u_total_log_per_side, sigma_d_total_log_per_side), the D12 pure-B transport pair is not free. It is an exact affine readback of the single selector scalar Delta_ud_overlap.",
     "reduced_gap_note": "The transport side no longer contributes a separate exact theorem burden once a sigma branch is fixed. The remaining nontransport question is the value law itself together with promotion of any candidate sigma branch used downstream.",
     "status": "closed_given_fixed_sigma_branch",

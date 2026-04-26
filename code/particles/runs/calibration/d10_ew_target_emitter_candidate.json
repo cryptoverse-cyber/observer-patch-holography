@@ -51,11 +51,11 @@
     "lambda_value": 0.00022769874427635073
   },
   "family_source_id": "d10_running_tree",
-  "generated_utc": "2026-04-25T10:05:51Z",
-  "honesty_note": "This source-only candidate is the strongest current candidate beneath the still-open target-free D10 repair value law; it is not promoted to theorem status.",
+  "generated_utc": "2026-04-26T05:11:09Z",
   "object_id": "EWTargetEmitter_D10",
   "proof_gate": "single_family_single_P_no_mixed_readout",
   "status": "strongest_current_source_only_candidate",
+  "support_note": "This source-only candidate is the strongest current candidate beneath the still-open target-free D10 repair value law; it is not promoted to theorem status.",
   "target_emitter_law": {
     "delta_alpha2_tree": -7.808301031916019e-06,
     "delta_alphaY_parallel": 2.3421396282673238e-06,

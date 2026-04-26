@@ -1,10 +1,6 @@
 {
   "artifact": "oph_quark_scalarized_continuation_bundle",
-  "generated_utc": "2026-04-03T04:42:58Z",
-  "honest_remaining_value_laws": [
-    "quark_d12_t1_value_law",
-    "quark_exact_mean_split_value_law_or_carrier_repair"
-  ],
+  "generated_utc": "2026-04-26T05:11:10Z",
   "mass_side": {
     "B_ord": [
       -1.0,
@@ -109,5 +105,9 @@
     "This bundle is diagnostic only and does not alter the live public quark rows."
   ],
   "proof_status": "mixing_closed_mass_value_laws_open_on_d12_continuation",
-  "scope": "D12_continuation_only"
+  "scope": "D12_continuation_only",
+  "supported_remaining_value_laws": [
+    "quark_d12_t1_value_law",
+    "quark_exact_mean_split_value_law_or_carrier_repair"
+  ]
 }

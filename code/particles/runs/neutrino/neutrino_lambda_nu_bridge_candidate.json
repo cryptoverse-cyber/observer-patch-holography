@@ -19,7 +19,7 @@
       "psi31": 0.019750209174707316
     },
     "raw_edge_score_rule": "q_e = sqrt(gap_e * defect_e)",
-    "role": "first honest spectrum-moving local object beneath the irreducible reduced correction scalar C_nu, equivalently beneath the paper-facing amplitude parameterization B_nu",
+    "role": "first supported spectrum-moving local object beneath the irreducible reduced correction scalar C_nu, equivalently beneath the paper-facing amplitude parameterization B_nu",
     "status": "closed_constructive_subbridge_object"
   },
   "bridge_ansatz": "lambda_nu = (m_star_eV / q_mean^p_nu) * B_nu",

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Guard the split between builder-local and honest D10 repair frontiers."""
+"""Guard the split between builder-local and supported D10 repair frontiers."""
 
 from __future__ import annotations
 
@@ -52,7 +52,7 @@ def test_d10_current_carrier_frontier_split_is_explicit() -> None:
     assert readout["current_carrier_builder_local_frontier"] == "EWExactMassPairSelector_D10"
     assert readout["smallest_predictive_missing_object"] == "EWTargetFreeRepairValueLaw_D10"
     assert readout["exact_pdg_wz_frontier"] == "EWTargetFreeRepairValueLaw_D10"
-    assert readout["broader_honest_repair_frontier"] == "EWTargetFreeRepairValueLaw_D10"
+    assert readout["broader_supported_repair_frontier"] == "EWTargetFreeRepairValueLaw_D10"
     assert repair["object_id"] == "D10RepairBranchBeyondCurrentCarrier"
     assert repair["replaces_builder_local_frontier"] == "EWExactMassPairSelector_D10"
     assert repair["required_closure_kind"] == "single_family_single_P_no_mixed_readout"

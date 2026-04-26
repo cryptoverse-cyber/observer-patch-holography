@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Record the strongest current D12 charged-lepton continuation bridge.
 
-Chain role: keep the honest charged theorem lane separate from a strong but
+Chain role: keep the supported charged theorem lane separate from a strong but
 assumption-bearing D12 continuation branch.
 
 Mathematics: evaluate the balanced circulant continuation branch, compute the

@@ -407,7 +407,7 @@ def build_audit(
                 "The closure validator is necessary but no longer sufficient on its own: publication also requires a provenance-complete backend manifest bundle."
                 if stable_channels_ready and not publication_bundle_ready
                 else
-                "The runtime receipt `(N_therm, N_sep)` is the emitted execution-and-systematics contract. With that contract explicit, the first honest live residual object is one production backend export bundle on the seeded 2+1 family with publication-complete manifest provenance and real correlator arrays."
+                "The runtime receipt `(N_therm, N_sep)` is the emitted execution-and-systematics contract. With that contract explicit, the first supported live residual object is one production backend export bundle on the seeded 2+1 family with publication-complete manifest provenance and real correlator arrays."
                 if measure_realization_open
                 else "The stable-channel cfg/source arrays are not yet the live blocker on this branch."
             ),
@@ -421,7 +421,7 @@ def build_audit(
                 if readiness_report is not None
                 else "No backend readiness report is attached to this audit."
             ),
-            "The runtime receipt should now be treated as an execution-and-systematics contract: once it is filled, the honest remaining work is executed unquenching, array writeback, and published continuum/volume/chiral/statistical budgets.",
+            "The runtime receipt should now be treated as an execution-and-systematics contract: once it is filled, the supported remaining work is executed unquenching, array writeback, and published continuum/volume/chiral/statistical budgets.",
             "After the evaluator is populated, the next stable-channel theorem is forward-window convergence of the ground-state extraction.",
             "The public table should stay suppressed until that pipeline emits stable-channel masses on its own path.",
         ],

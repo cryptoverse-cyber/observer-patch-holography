@@ -9,7 +9,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from bw_collar_honesty import CONSTRUCTIVE_RECOVERY_FORMULA, build_schedule_term_frontier
+from bw_collar_support import CONSTRUCTIVE_RECOVERY_FORMULA, build_schedule_term_frontier
 
 
 ROOT = Path(__file__).resolve().parents[2]

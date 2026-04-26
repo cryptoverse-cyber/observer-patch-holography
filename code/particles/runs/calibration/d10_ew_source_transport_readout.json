@@ -9,7 +9,7 @@
     "v_report": 246.76711732749683
   },
   "best_mass_pair_law_id": "freeze_once_coherent_d10_electroweak_repair_law",
-  "broader_honest_repair_frontier": "EWTargetFreeRepairValueLaw_D10",
+  "broader_supported_repair_frontier": "EWTargetFreeRepairValueLaw_D10",
   "coherent_emitter_formula": {
     "MW_pole": "W0 * (1 + delta_rho + delta_rW)",
     "MZ_pole": "Z0 * (1 + delta_rho)",
@@ -162,7 +162,7 @@
     "source_label": "PDG 2025 API"
   },
   "freeze_once_target_free_residual_object": "EWTargetFreeRepairValueLaw_D10",
-  "generated_utc": "2026-04-25T10:05:52Z",
+  "generated_utc": "2026-04-26T05:11:09Z",
   "mass_pair_predictive_candidate": {
     "MW_pole": 80.377,
     "MZ_pole": 91.18797809193725,

@@ -63,7 +63,7 @@ def test_d10_source_transport_readout_uses_predictive_seed_trial() -> None:
     assert payload["active_builder_smallest_missing_object"] == "EWTargetFreeRepairValueLaw_D10"
     assert payload["current_carrier_builder_local_frontier"] == "EWExactMassPairSelector_D10"
     assert payload["smallest_predictive_missing_object"] == "EWTargetFreeRepairValueLaw_D10"
-    assert payload["broader_honest_repair_frontier"] == "EWTargetFreeRepairValueLaw_D10"
+    assert payload["broader_supported_repair_frontier"] == "EWTargetFreeRepairValueLaw_D10"
     assert payload["exact_pdg_wz_frontier"] == "EWTargetFreeRepairValueLaw_D10"
     assert payload["target_free_repair_value_law_status"] == "candidate_only"
     assert payload["forward_transmutation_certificate_status"] == "closed_forward_p_to_t_map"

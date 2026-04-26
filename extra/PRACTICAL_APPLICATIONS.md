@@ -302,7 +302,7 @@ If even one of those long-range bets lands, OPH would cease to be just a theory 
 
 ## What OPH probably is not, at least not yet
 
-To keep the picture honest, it is worth being clear about what should not be oversold.
+To keep the picture supported, it is worth being clear about what should not be oversold.
 
 OPH is not currently a general-purpose chemistry predictor.
 

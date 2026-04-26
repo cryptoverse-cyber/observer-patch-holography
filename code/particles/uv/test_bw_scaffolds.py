@@ -76,7 +76,7 @@ def test_scaling_limit_cap_pair_extraction_scaffold() -> None:
         "fixed_local_collar_faithful_modular_defect_vanishing",
     ]
     assert payload["follow_on_object"]["id"] == "ordered_null_cut_pair_rigidity"
-    gate = payload["remaining_witness_honesty_gate"]
+    gate = payload["remaining_witness_support_gate"]
     assert gate["status"] == "open"
     assert gate["insufficient_on_their_own"][0]["artifact"].endswith(
         "bw_fixed_local_collar_constructive_recovery_scaffold.json"
@@ -194,7 +194,7 @@ def test_carried_collar_schedule_scaffold() -> None:
     assert payload["termwise_closure_frontier"]["derived_parent_witness"]["id"] == (
         "vanishing_carried_collar_schedule_on_fixed_local_collars"
     )
-    assert payload["honesty_gate"]["promotion_rule"].startswith("No theorem promotion is honest")
+    assert payload["support_gate"]["promotion_rule"].startswith("No theorem promotion is supported")
     assert payload["obligation_ledger"][3]["formula"] == "r_FR(epsilon_{n,m,delta}) -> 0"
 
 

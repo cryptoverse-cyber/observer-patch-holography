@@ -89,11 +89,11 @@ Current theorem-shaped local surfaces:
 
 - builder-facing local frontier:
   `source_readback_u_log_per_side_and_source_readback_d_log_per_side`
-- broader honest continuation frontier:
+- broader supported continuation frontier:
   `oph_light_quark_isospin_overlap_defect_selector_law`
   This keeps the recovered-core no-go explicit while exposing the D12
   continuation-level selector shell that would fix the light-sector pure-`B`
-  payload pair once its value is honestly emitted.
+  payload pair once its value has a supported emission.
 - sharper target-1 theorem package:
   `oph_light_quark_overlap_defect_value_law`
   This is now the internalized target-free bridge theorem on the local code

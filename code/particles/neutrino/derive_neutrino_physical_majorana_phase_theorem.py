@@ -3,12 +3,12 @@
 
 Chain role: promote the repaired weighted-cycle Majorana pair when an explicit
 shared-basis physical PMNS representation is available, and otherwise keep the
-stable Takagi pair on its honest candidate-only fallback surface.
+stable Takagi pair on its supported candidate-only fallback surface.
 
 Mathematics:
 1. The repaired weighted-cycle artifact already emits one complex symmetric
    cycle matrix and one canonical Takagi PMNS surface.
-2. A readout from PMNS columns alone is not honest because arbitrary
+2. A readout from PMNS columns alone is not supported because arbitrary
    computational column phases move `alpha_21` / `alpha_31` while leaving the
    oscillation observables unchanged.
 3. The canonical congruence gauge is fixed by the Takagi condition

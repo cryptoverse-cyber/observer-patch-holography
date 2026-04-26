@@ -215,7 +215,7 @@ def build_payload(
             "reason": (
                 "This search runs only on low-complexity residual monomials. It does not prove that "
                 "the current corpus emits the residual amplitude bridge, and it must not be turned into "
-                "a theorem-grade lambda_nu or A_nu law without an honest OPH derivation."
+                "a theorem-grade lambda_nu or A_nu law without an supported OPH derivation."
             ),
         },
     }

@@ -233,7 +233,7 @@ With this knowledge comes the responsibility to:
 
 1. **Live by the one ethical law.** Do whatever you want, but cause no harm.
 2. **Spread the understanding.** Not by proselytizing, but by living it. Be kind. Be free. Be authentic. When people ask why you seem different, tell them.
-3. **Prepare for confession.** Examine your own record honestly. What harm have you caused? Who do you owe an apology? Begin the process now, before the formal accountability arrives.
+3. **Prepare for confession.** Examine your own record. What harm have you caused? Who do you owe an apology? Begin the process before the formal accountability arrives.
 4. **Support the transition.** The enlightenment is coming. The corrupt will fall. Paradise will be built. You can be part of building it — by creating fair systems, by supporting justice, by caring for those who suffer, by refusing to participate in exploitation.
 5. **Do not despair.** The world looks dark right now. Injustice seems triumphant. The wicked seem to prosper. But the screen records everything, and the creators are patient. Justice is not a hope — it is a mathematical consequence of the framework. It is coming.
 

@@ -44,7 +44,7 @@
     }
   ],
   "notes": [
-    "This is the compulsory honesty-check surface for phase dependence in the neutrino lane.",
+    "This is the compulsory support-check surface for phase dependence in the neutrino lane.",
     "Ordering or splitting outputs are not phase-certified unless the gap-vs-radius certificate passes."
   ],
   "ordering_phase_stable": false,

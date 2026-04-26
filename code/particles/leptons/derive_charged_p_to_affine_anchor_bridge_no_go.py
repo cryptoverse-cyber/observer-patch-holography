@@ -114,7 +114,7 @@ def build_artifact(
         },
         "exact_missing_object": {
             "id": "d10_to_charged_affine_anchor_bridge",
-            "smallest_honest_contract": (
+            "smallest_supported_contract": (
                 "one theorem-grade map from the D10 calibration descendants of P to the charged determinant "
                 "line; the exact smaller sufficient clause beneath that landing "
                 "is the sector-isolated determinant trace-lift attachment 3 mu(r) = sum_e M_e^ch log q_e(r), "

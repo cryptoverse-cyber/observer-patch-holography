@@ -19,7 +19,7 @@
       "psi31": 0.019750209174707316
     },
     "raw_edge_score_rule": "q_e = sqrt(gap_e * defect_e)",
-    "role": "first honest spectrum-moving local object beneath the irreducible reduced correction scalar C_nu, equivalently beneath the paper-facing amplitude parameterization B_nu",
+    "role": "first supported spectrum-moving local object beneath the irreducible reduced correction scalar C_nu, equivalently beneath the paper-facing amplitude parameterization B_nu",
     "status": "closed_constructive_subbridge_object"
   },
   "bridge_correction_candidate_audit": {
@@ -234,7 +234,7 @@
     }
   ],
   "promotion_guard": {
-    "reason": "This corridor is an honest numerical narrowing of the remaining bridge scalar, not an emitted OPH attachment law. It must not be fed back into lambda_nu emission.",
+    "reason": "This corridor is an supported numerical narrowing of the remaining bridge scalar, not an emitted OPH attachment law. It must not be fed back into lambda_nu emission.",
     "status": "do_not_promote"
   },
   "proof_chain_role": "diagnostic_only_retired_from_theorem_lane",

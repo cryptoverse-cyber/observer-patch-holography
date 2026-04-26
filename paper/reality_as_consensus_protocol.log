@@ -472,26 +472,39 @@ LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 3
 
 (t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [1
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 34.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 34.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 34.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 42.
+ [1
 
 ]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 75.
- [2] [3] [4] [5] [6] [7] [8] [9] [10]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 624
+Overfull \hbox (5.90019pt too wide) in paragraph at lines 85--86
+\T1/lmr/m/n/10.95 scaling-limit branches, quan-ti-ta-tive par-ti-cle out-puts, 
+and phe-nomeno-log-i-cal con-tin-u-a-tions dis-tinct [[]]. 
+ []
+
+[2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 950
 .
  (ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)
-(appendix_B_bft_qecc_extensions [11] [12] [13] [14] [15])
-Underfull \hbox (badness 10000) in paragraph at lines 714--718
+) [15]
+(tex_fragments/CONSENSUS_TECHNICAL_SUPPLEMENT_PORT.tex [16] [17] [18])
+(appendix_B_bft_qecc_extensions [19] [20] [21] [22])
+Underfull \hbox (badness 10000) in paragraph at lines 1042--1046
 \T1/lmr/m/n/10.95 Available at [][]$\T1/lmtt/m/n/10.95 https : / / oph-[]book .
  floatingpragma . io / papers / observers _ are _ all _ you _
  []
 
-[16] (reality_as_consensus_protocol.aux)
+[23] [24] (reality_as_consensus_protocol.aux)
 Package rerunfilecheck Info: File `reality_as_consensus_protocol.out' has not c
 hanged.
-(rerunfilecheck)             Checksum: EF5A924097678F0BE17767DD81793F6F;3428.
+(rerunfilecheck)             Checksum: 0450153C945B47FE8202F9676B77C657;4688.
  )
-Output written on reality_as_consensus_protocol.xdv (16 pages, 93332 bytes).
+Output written on reality_as_consensus_protocol.xdv (24 pages, 145616 bytes).

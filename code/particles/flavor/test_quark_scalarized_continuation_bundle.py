@@ -29,7 +29,7 @@ def main() -> int:
     if payload.get("proof_status") != "mixing_closed_mass_value_laws_open_on_d12_continuation":
         print("scalarized continuation bundle should stay diagnostic", file=sys.stderr)
         return 1
-    residuals = payload.get("honest_remaining_value_laws") or []
+    residuals = payload.get("supported_remaining_value_laws") or []
     if "Delta_ud_overlap_value_law" not in residuals or "same_label_left_transport_physical_invariant_value_laws" in residuals:
         print("scalarized continuation bundle should expose the remaining D12 value laws", file=sys.stderr)
         return 1

@@ -9,7 +9,7 @@ forward objects explicit:
 - a local neutrino scale anchor from the D10 core
 - a real symmetric family-response tensor
 - an explicit Majorana holonomy-lift boundary
-- a residual-phase envelope honesty-check surface
+- a residual-phase envelope support-check surface
 - a selector-point versus selector-law split
 - a blind real-first Majorana matrix artifact
 - derived splittings and blind ordering
@@ -150,7 +150,7 @@ Current closure split:
 
 - the real symmetric branch can carry scale, family shape, and real-seed
   splittings
-- the phase envelope is the compulsory honesty check for sharp splittings or
+- the phase envelope is the compulsory support check for sharp splittings or
   ordering
 - the selector point now closes on the current isotropic branch as a principal
   equal split

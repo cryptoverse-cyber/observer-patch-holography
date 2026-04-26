@@ -33,5 +33,5 @@ def test_d11_fixed_ray_no_go_theorem_closes_cleanly() -> None:
     assert payload["current_fixed_ray_branch"]["w_HT"] == 0.0
     assert payload["exact_compare_witness"]["w_HT_exact"] == pytest.approx(-0.0003857630977715052, abs=1.0e-18)
     assert payload["fixed_ray_obstruction"]["current_exact_pair_reachable"] is False
-    assert payload["smallest_honest_extension"]["one_extra_scalar_beyond_fixed_ray"] is True
+    assert payload["smallest_supported_extension"]["one_extra_scalar_beyond_fixed_ray"] is True
 

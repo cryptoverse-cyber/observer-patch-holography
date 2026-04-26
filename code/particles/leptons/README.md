@@ -87,7 +87,7 @@ The post-promotion lift slot is packaged in carrier form:
   data is invariant under the common-shift action that `mu_phys` breaks.
 
 - `oph_charged_p_to_affine_anchor_reduction`
-  This fixes the smallest honest bridge target for the `P`-driven absolute
+  This fixes the smallest supported bridge target for the `P`-driven absolute
   lane. A theorem-grade landing from the D10 descendants of `P` on theorem-
   grade physical `Y_e(P)` or on the charged determinant line forces
   `A_ch(P) = (1/3) * log(det(Y_e(P)))`, so the bridge target is smaller than a
@@ -119,7 +119,7 @@ The post-promotion lift slot is packaged in carrier form:
   `N_det(P) = s_det(P) - sum_e M_e^ch log q_e(P)` unresolved.
 
 - `oph_charged_physical_class_affine_scalar_reduction`
-  This is the strongest honest selected-surface charged theorem packaged on the
+  This is the strongest supported selected-surface charged theorem packaged on the
   current local surface. It does not claim a quark-style public selected-class
   charged source descent. It states that on theorem-grade physical charged
   `Y_e(P)`, once theorem-grade `C_hat_e` exists, the determinant line fixes the
@@ -165,7 +165,7 @@ support and changes the hierarchy. Without it, the forward charged
 artifact remains a structured gap surface rather than a promotable prediction.
 
 The theorem-facing absolute tail lies above that same-carrier frontier.
-Once the latent centered charged operator is promoted, the honest post-promotion
+Once the latent centered charged operator is promoted, the supported post-promotion
 single slot is the refinement-stable uncentered trace lift. The determinant-line
 section and affine absolute anchor `A_ch` then follow as induced data.
 

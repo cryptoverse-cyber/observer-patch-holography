@@ -11,7 +11,7 @@ where the live emitted proxy is
 
 The goal is not to promote a theorem. It is to preserve the diagnostic audit
 surface beneath the emitted bridge-rigidity / absolute-attachment pair by
-searching for the smallest honest target-containing correction window for the
+searching for the smallest supported target-containing correction window for the
 reduced exact object ``C_nu`` and translating that back into a sharper
 compare-only window for ``B_nu``.
 """

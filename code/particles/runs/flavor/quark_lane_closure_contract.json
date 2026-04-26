@@ -357,7 +357,7 @@
           "tau_d_over_tau_u": "sigma_u_total_log_per_side / sigma_d_total_log_per_side",
           "tau_u_plus_tau_d": "t1 / 10"
         },
-        "exact_gap_after_transport_reduction": "honest_sigma_branch_emission",
+        "exact_gap_after_transport_reduction": "supported_sigma_branch_emission",
         "law_statement": "On any fixed ordered-family sigma branch with positive totals (sigma_u_total_log_per_side, sigma_d_total_log_per_side), the D12 pure-B transport pair is not free. It is an exact affine readback of the single selector scalar Delta_ud_overlap.",
         "reduced_gap_note": "The transport side no longer contributes a separate exact theorem burden once a sigma branch is fixed. The remaining nontransport question is the value law itself together with promotion of any candidate sigma branch used downstream.",
         "status": "closed_given_fixed_sigma_branch",

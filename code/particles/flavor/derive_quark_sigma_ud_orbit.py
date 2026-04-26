@@ -3,7 +3,7 @@
 
 This is a solver-extension contract, not a solved branch selector. It records
 the finite orbit that must be exposed before a theorem-grade
-``quark_relative_sheet_selector`` can be discussed honestly. When a caller
+``quark_relative_sheet_selector`` can be discussed on a supported basis. When a caller
 supplies finite candidate elements, the script packages them into the canonical
 artifact and computes a compare-only debug ranking. That ranking is never
 promotable to theorem grade.
@@ -254,13 +254,13 @@ def main() -> int:
                 "That closes the solver-side sigma_ud orbit and shifts the exact next object to the selected-branch intrinsic scale law on D12_ud_mass_ray."
                 if singleton_closed
                 else (
-                    "That honest singleton does not close Sigma_ud: the smaller exact blocker is now one additional non-reference same-label left-handed sheet evaluation, or an intrinsic uniqueness theorem proving the singleton is the full orbit."
+                    "That supported singleton does not close Sigma_ud: the smaller exact blocker is now one additional non-reference same-label left-handed sheet evaluation, or an intrinsic uniqueness theorem proving the singleton is the full orbit."
                     if default_singleton
                     else "The provider interface has been widened to the full left-handed evaluation schema expected by this artifact; what is still missing is a real implementation that can populate those fields from emitted same-label transport data."
                 )
             ),
             "The already-local chirality-basis orbit is now threaded in explicitly as a diagnostic exclusion surface, so future solver work cannot mistake it for Sigma_ud.",
-            "If elements is empty, the artifact records the honest frontier rather than inventing Sigma_ud.",
+            "If elements is empty, the artifact records the supported frontier rather than inventing Sigma_ud.",
             "If elements are supplied, the debug ranking remains comparison-only and cannot be promoted.",
         ],
     }

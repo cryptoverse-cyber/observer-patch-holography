@@ -170,7 +170,7 @@ def build_exact_blockers(
         elif branch_repair_required:
             reason_not_fully_completed = (
                 "The continuation branch closes numerically from the same-label scalar certificate and shared charged basis, "
-                "but the emitted PMNS angles and mass splittings are quantitatively wrong. The honest remaining object is a "
+                "but the emitted PMNS angles and mass splittings are quantitatively wrong. The supported remaining object is a "
                 "branch-repair or minimal-repair theorem at the flavor-to-neutrino interface or in the intrinsic neutrino ansatz."
             )
         else:
@@ -275,7 +275,7 @@ def build_exact_blockers(
             "statement": (
                 "The current forward neutrino bundle is exactly S_3-isotropic, so neutrino-only same-label readback stays edge-constant and cannot open the solar 1-2 split."
             ),
-            "first_honest_solar_mover": "realized_arrow_pullback_from_flavor_gap_and_defect_certificates",
+            "first_supported_solar_mover": "realized_arrow_pullback_from_flavor_gap_and_defect_certificates",
         },
         "no_hidden_discrete_branch": {
             "status": "closed" if repair_shape_closed else "not_yet_established",

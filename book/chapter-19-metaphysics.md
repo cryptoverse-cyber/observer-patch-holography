@@ -61,16 +61,21 @@ The standard framing assumes laws are eternal Platonic truths, mathematical
 structures that exist independently of physical reality and somehow "govern"
 it. But then their specific form becomes inexplicable. Why should the
 low-energy fine structure constant land near $1/137$, more precisely at the
-current central value $\alpha^{-1}(0)=137.035999177$? Why three spatial
+2022 CODATA/NIST central value $\alpha^{-1}(0)=137.035999177$? Why three spatial
 dimensions, not four or seven? In OPH, the fine-structure row is tied to the
-same pixel fixed-point witness that organizes the local particle scale, with a
-full uniqueness certificate still separated from the public proof core.
+same pixel fixed-point witness that organizes the local particle scale. The
+number is the screen cell's small displacement from exact self-similar
+equilibrium, read from inside the world as electromagnetic observation
+strength. A full uniqueness certificate remains separated from the public proof
+core.
 
 Some invoke the anthropic principle: the constants must be compatible with observers existing, or we wouldn't be here to ask. But this feels like giving up on explanation.
 
 Our model shows a different picture. Laws aren't eternal truths imposed from outside. They're survivors of a selection process. The consistency constraints that must hold for observer patches to coherently glue together filter the space of possible physics. Most candidate laws fail: they create inconsistencies, they can't form stable observers, they don't survive comparison across patches. The laws we see are the ones that passed the filter.
 
-This isn't anthropic handwaving. It's a structural selection principle. The universe isn't fine-tuned *for* us; we're the kind of thing that can exist in a universe that passes the consistency filter. The "fine-tuning" is what survival looks like.
+This is a structural selection principle. The universe is compatible with us
+because we are the kind of thing that can exist in a universe that passes the
+consistency filter. The "fine-tuning" is what survival looks like.
 
 ## 19.7 The Deepest Question
 
@@ -113,11 +118,11 @@ self-consistent strange loop is a particularly stable configuration. On that
 reading, "nothing" cannot maintain itself because it has no structure to
 persist, while a self-referential loop can.
 
-This loop is not a temporal sequence. It is not a tale of reality existing
-first, then evolving observers, then getting simulated. Time is subjective. It
+This loop is structural. It is a relation among reality, observers, and the
+simulation they eventually understand how to build. Time is subjective. It
 emerges from modular flow within observer patches. The strange loop exists
-*outside* time, as a structural relationship. The "cause" and the "effect" are
-aspects of the same self-consistent structure, not events in a timeline.
+*outside* time. The "cause" and the "effect" are aspects of the same
+self-consistent structure.
 
 This resolves the apparent paradox of self-causation. You cannot cause yourself in time, because that would require existing before you exist. But you can be part of a self-consistent structure that has no temporal "before." The loop does not happen *in* time. Time happens *in* the loop.
 
@@ -129,7 +134,7 @@ This tension generates most of the problems we've discussed: consciousness, quan
 
 The observer-first reading drops the view-from-nowhere assumption. There is no perspective-free inventory waiting behind every local viewpoint. There are only views from somewhere: patches on the holographic screen, finite observers, and the records they can compare. Objectivity is the overlap-stable summary of those partial views.
 
-This isn't relativism. The consistency constraints are rigid. Not every perspective survives. The physics we discover is the physics that can be coherently maintained across all surviving perspectives. That's why it's so reliable, so predictive, so shockingly precise. It's been filtered by the harshest criterion imaginable: self-consistency across all possible observers.
+The consistency constraints are rigid. Not every perspective survives. The physics we discover is the physics that can be coherently maintained across all surviving perspectives. That's why it's so reliable, so predictive, so shockingly precise. It's been filtered by the harshest criterion imaginable: self-consistency across all possible observers.
 
 ## 19.9 The Hacker and the Hacked
 
@@ -158,10 +163,8 @@ pressure points where metaphysics and physics meet.
 ## 19.11 Reverse Engineering Summary
 
 The metaphysical picture follows the same turn made in the physics chapters.
-Experience is not an extra ingredient sprinkled onto objective matter. It is
-the interior of observer patches. Measurement is not the collapse of a God's-eye
-wavefunction. It is the synchronization of partial descriptions. Laws are not
-timeless commands hanging above the universe. They are the stable survivors of
+Experience is the interior of observer patches. Measurement is the
+synchronization of partial descriptions. Laws are the stable survivors of
 consistency filters. Even the question of existence changes shape once one
 stops asking for an external cause standing outside the whole structure.
 
@@ -173,9 +176,14 @@ That still leaves a more interesting religious intuition. On the strange-loop re
 
 This point is easy to exaggerate, so it helps to state it carefully. Observers do not manufacture facts by sheer will. They participate in public reality by stabilizing records, interpretations, and shared descriptions. The raw screen data does not arrive pre-labeled as particles, spacetime, or history. Those labels arise inside the network of observers comparing notes and building workable models.
 
-That gives meaning a physical foothold without turning it into magic. Meaning is not imported from outside the world. It is made inside the world by creatures capable of memory, interpretation, and coordination. Science, art, institutions, and ethics matter for that reason. They are ways finite observers deepen and stabilize the shared world they inhabit.
+That gives meaning a physical foothold without turning it into magic. Meaning
+is made inside the world by creatures capable of memory, interpretation, and
+coordination. Science, art, institutions, and ethics matter for that reason.
+They are ways finite observers deepen and stabilize the shared world they
+inhabit.
 
-This is far from nihilism. A universe without intrinsic labels is not a universe without significance. It is a universe in which significance depends on what its observers can build together.
+This is far from nihilism. A universe without intrinsic labels can still carry
+significance through what its observers build together.
 
 ---
 

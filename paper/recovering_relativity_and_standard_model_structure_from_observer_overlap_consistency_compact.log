@@ -543,74 +543,69 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 44.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 50.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 57.
+(Font)              <10.95> on input line 52.
  [1
 
 ]
-Underfull \hbox (badness 1097) in paragraph at lines 77--78
+Underfull \hbox (badness 1097) in paragraph at lines 79--80
 []\T1/lmr/m/n/10.95 Dark-sector, baryo-ge-n-e-sis, string, and spec-troscopy br
 anches are kept vis-i-ble only as
  []
 
 
-Underfull \hbox (badness 1286) in paragraph at lines 77--78
+Underfull \hbox (badness 1286) in paragraph at lines 79--80
 \T1/lmr/m/n/10.95 phe-nomeno-log-i-cal con-tin-u-a-tions or, where ad-di-tional
  an-sätze are in-volved, con-jec-tural
  []
 
-[2] [3] [4] [5] [6]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 216
+[2] [3] [4] [5] [6] [7] [8]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 253
 .
  (ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [7] [8] [9] [10] [11] [12] [13] [14] [15]
-[16] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26] [27] [28] [29] [30]
-[31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42]
+)
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-2376.
+274.
  (ot1lmss.fd
 File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-[43] [44] [45] [46] [47] [48]
-Underfull \hbox (badness 2005) in paragraph at lines 2695--2697
-\T1/lmr/m/n/10.95 as the pixel-closure solve it-self. It also sep-a-rates the p
-aper-side trans-mu-ta-tion fac-tor
- []
-
-[49]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2776.
-
+) [9] [10] [11] [12]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 357.
+ [13]
+[14] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26] [27] [28]
+[29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43]
+[44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Lambda' on input line 2776.
+(hyperref)                removing `math shift' on input line 3062.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2776.
+(hyperref)                removing `\Lambda' on input line 3062.
 
-[50] [51] [52] [53] [54] [55] [56] [57] [58] [59] [60] [61] [62] [63] [64]
-[65] [66] (tex_fragments/COMPACT_TECHNICAL_SUPPLEMENT_PORT.tex [67] [68]
-Underfull \hbox (badness 1067) in paragraph at lines 165--168
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 3062.
+
+[56] [57] [58] [59] [60] [61] [62] [63] [64] [65] [66]
+(tex_fragments/COMPACT_TECHNICAL_SUPPLEMENT_PORT.tex [67] [68] [69]
+Underfull \hbox (badness 1067) in paragraph at lines 190--193
 \T1/lmr/m/it/10.95 meaning that the gauge-boson proton-decay chan-nel is ab-sen
 t. Scalar-mediated or higher-
  []
 
-[69]) (tex_fragments/FOUNDATIONAL_REFERENCES.tex [70]
+) (tex_fragments/FOUNDATIONAL_REFERENCES.tex [70] [71]
 Underfull \hbox (badness 1117) in paragraph at lines 156--160
 []\T1/lmr/m/n/10.95 F. Pastawski, B. Yoshida, D. Har-low, and J. Preskill, ``Ho
 lo-graphic quan-tum error-
  []
 
-[71]) [72]
+) [72]
 (recovering_relativity_and_standard_model_structure_from_observer_overlap_consi
 stency_compact.aux)
 Package rerunfilecheck Info: File `recovering_relativity_and_standard_model_str
 ucture_from_observer_overlap_consistency_compact.out' has not changed.
-(rerunfilecheck)             Checksum: 74B7F138C1D14B697DDC1966BAE5CC8C;9671.
+(rerunfilecheck)             Checksum: 1ED41277776024C435720AE4551E1653;9316.
  )
 Output written on recovering_relativity_and_standard_model_structure_from_obser
-ver_overlap_consistency_compact.xdv (72 pages, 412068 bytes).
+ver_overlap_consistency_compact.xdv (72 pages, 421344 bytes).

@@ -366,7 +366,7 @@ def main() -> int:
                     else "EWExactMassPairSelector_D10"
                 )
             ),
-            "broader_honest_repair_frontier": readout.get("broader_honest_repair_frontier"),
+            "broader_supported_repair_frontier": readout.get("broader_supported_repair_frontier"),
             "final_wave_consolidation_verdict": (
                 "The present selected/current carrier closes its own exact W/Z chart at its local pair, while the public target-free source-only theorem emits the coherent electroweak quintet from the D10 source basis alone."
                 if target_free_closed
@@ -375,7 +375,7 @@ def main() -> int:
                 if readout.get("w_anchor_neutral_shear_factorization_status") == "closed_freeze_once_coherent_repair_law"
                 else
                 "The present selected/current carrier closes its own exact W/Z chart, but exact PDG W/Z "
-                "does not honestly follow on that carrier from the current emitted selector package."
+                "is not supported on that carrier from the current emitted selector package."
             ),
         },
         "d10_repair_branch_beyond_current_carrier": None if repair_branch is None else {
@@ -568,7 +568,7 @@ def main() -> int:
             if exact_closure and exact_closure.get("status") == "closed"
             else "EWTransportExactClosureBeyondCurrentCarrier_D10"
         ),
-        "broader_honest_repair_frontier": (
+        "broader_supported_repair_frontier": (
             None
             if target_free_closed
             else
@@ -653,7 +653,7 @@ def main() -> int:
                 "The source-only underdetermination theorem, the minimal conditional route through ColorBalancedQuadraticRepairDescent_D10, and the former candidate EWTargetEmitter_D10 all sit beneath the target-free mass-side theorem; they do not define the public electromagnetic readout."
                 if target_free_closed and (minimal_conditional is not None or target_emitter is not None)
                 else
-                "That target-free step is now split sharply on disk: the current source-only D10 corpus underdetermines the repair coefficients, the smallest honest conditional theorem route goes through ColorBalancedQuadraticRepairDescent_D10, and the strongest current source-only candidate is EWTargetEmitter_D10."
+                "That target-free step is now split sharply on disk: the current source-only D10 corpus underdetermines the repair coefficients, the smallest supported conditional theorem route goes through ColorBalancedQuadraticRepairDescent_D10, and the strongest current source-only candidate is EWTargetEmitter_D10."
                 if (minimal_conditional is not None or target_emitter is not None)
                 else "No sharper target-free split is attached to this audit."
             ),

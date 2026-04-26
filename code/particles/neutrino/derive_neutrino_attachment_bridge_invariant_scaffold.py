@@ -86,7 +86,7 @@ def build_payload(
         "best_constructive_subbridge_object": {
             "artifact": defect_weighted_family["artifact"],
             "status": defect_weighted_family["proof_status"],
-            "role": "first honest spectrum-moving local object beneath the irreducible bridge scalar B_nu",
+            "role": "first supported spectrum-moving local object beneath the irreducible bridge scalar B_nu",
             "raw_edge_score_rule": defect_weighted_family["raw_edge_score_rule"],
             "mu_family_rule": "mu_e = mu_nu * exp(eta_e) / mean_f(exp(eta_f))",
         },

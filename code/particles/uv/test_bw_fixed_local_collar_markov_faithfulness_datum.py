@@ -68,15 +68,15 @@ def test_bw_fixed_local_collar_markov_faithfulness_datum() -> None:
         "fixed_local_collar_faithful_modular_defect_vanishing",
         "vanishing_carried_collar_schedule_on_fixed_local_collars",
     ]
-    honesty_gate = payload["honesty_gate"]
-    assert honesty_gate["status"] == "open"
-    assert honesty_gate["closure_artifact"].endswith("bw_carried_collar_schedule_scaffold.json")
-    assert honesty_gate["insufficient_on_their_own"][0]["artifact"].endswith(
+    support_gate = payload["support_gate"]
+    assert support_gate["status"] == "open"
+    assert support_gate["closure_artifact"].endswith("bw_carried_collar_schedule_scaffold.json")
+    assert support_gate["insufficient_on_their_own"][0]["artifact"].endswith(
         "bw_fixed_local_collar_constructive_recovery_scaffold.json"
     )
-    assert honesty_gate["insufficient_on_their_own"][2]["artifact"].endswith(
+    assert support_gate["insufficient_on_their_own"][2]["artifact"].endswith(
         "bw_fixed_local_collar_faithful_modular_defect_scaffold.json"
     )
-    assert honesty_gate["insufficient_on_their_own"][3]["artifact"].endswith(
+    assert support_gate["insufficient_on_their_own"][3]["artifact"].endswith(
         "bw_realized_transported_cap_local_system.json"
     )

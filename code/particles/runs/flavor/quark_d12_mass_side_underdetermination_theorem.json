@@ -87,11 +87,7 @@
     },
     "proof_status": "same_family_mass_ray_emitted_modulus_open"
   },
-  "generated_utc": "2026-04-12T02:54:21Z",
-  "honest_remaining_value_laws": [
-    "quark_d12_t1_value_law",
-    "quark_exact_mean_split_value_law_or_carrier_repair"
-  ],
+  "generated_utc": "2026-04-26T05:11:10Z",
   "minimal_new_theorem": {
     "derived_wrapper": {
       "derived_from": "quark_d12_t1_value_law",
@@ -178,5 +174,9 @@
     }
   },
   "scope": "D12_continuation_only",
+  "supported_remaining_value_laws": [
+    "quark_d12_t1_value_law",
+    "quark_exact_mean_split_value_law_or_carrier_repair"
+  ],
   "theorem_statement": "On the present same-family D12 continuation branch, the mass-side deformation already emits the one-parameter ray D12_ud_mass_ray. Equivalently eta_Q_centered = -(5 * (1 - x2^2) / 27) * Delta_ud_overlap along that ray. The current OPH chain still does not emit the target-free one-scalar law that would fix t1 = ray_modulus and therefore select one unique point on it."
 }

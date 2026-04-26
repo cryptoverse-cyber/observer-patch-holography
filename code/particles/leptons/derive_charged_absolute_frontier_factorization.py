@@ -86,7 +86,7 @@ def build_artifact(underdetermination: dict, route: dict) -> dict:
             "coordinate A_ch on the common-shift quotient surface. After centered promotion, "
             "the absolute tail reduces canonically to one refinement-stable uncentered trace "
             "lift, which then induces the determinant-line section, A_ch, and the absolute "
-            "charged outputs. Therefore the honest charged absolute frontier is layered rather "
+            "charged outputs. Therefore the supported charged absolute frontier is layered rather "
             "than a single bare A_ch slot."
         ),
         "notes": [

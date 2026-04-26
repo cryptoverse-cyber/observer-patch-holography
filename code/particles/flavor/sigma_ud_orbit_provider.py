@@ -3,7 +3,7 @@
 
 The current local corpus still does not emit the full finite sigma_ud orbit.
 But it does emit one real same-label left-handed reference-sheet evaluation on
-the D12 branch. This module exposes that singleton honestly so downstream
+the D12 branch. This module exposes that singleton explicitly so downstream
 artifacts can distinguish "no provider output at all" from the sharper remaining
 blocker: no distinct same-label left-handed relative-sheet class beyond the
 reference representative.

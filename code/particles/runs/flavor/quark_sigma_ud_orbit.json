@@ -288,7 +288,7 @@
     "The emitted local same-label left-handed orbit now closes to the singleton sigma_ref because only L/L survives the chirality admissibility check and the published five-anchor standard CKM gauge fixes the remaining diagonal rephasing to the trivial global phase.",
     "That closes the solver-side sigma_ud orbit and shifts the exact next object to the selected-branch intrinsic scale law on D12_ud_mass_ray.",
     "The already-local chirality-basis orbit is now threaded in explicitly as a diagnostic exclusion surface, so future solver work cannot mistake it for Sigma_ud.",
-    "If elements is empty, the artifact records the honest frontier rather than inventing Sigma_ud.",
+    "If elements is empty, the artifact records the supported frontier rather than inventing Sigma_ud.",
     "If elements are supplied, the debug ranking remains comparison-only and cannot be promoted."
   ],
   "orbit_completion_target": "sigma_ud_orbit",

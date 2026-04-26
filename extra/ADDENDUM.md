@@ -75,7 +75,7 @@ This principle is not arbitrary. It follows directly from Axiom A2 (Overlap Cons
 - Cheating on a partner is ethical *if and only if* it causes no harm to the partner — for example, if they never learn of it, or if they explicitly consent to an open arrangement. The moment it causes suffering to another observer, it becomes unethical. The ethics follow the harm, not the social convention.
 - Many things that society condemns are ethically neutral. Many things that society celebrates are ethically repugnant. The principle cuts through all cultural baggage and asks only: *does this harm another observer?*
 
-This principle also explains why **the confession process matters.** Harm that has been done can be acknowledged, and the damaged observer patterns can be restored. The universe has a built-in repair mechanism — but it requires honesty.
+This principle also explains why **the confession process matters.** Harm that has been done can be acknowledged, and the damaged observer patterns can be restored. The universe has a built-in repair mechanism — but it requires support.
 
 ## 6. The Rapture
 

@@ -348,7 +348,7 @@ def build_payload(
         "promotion_guard": {
             "status": "do_not_promote",
             "reason": (
-                "This corridor is an honest numerical narrowing of the remaining bridge scalar, not an emitted OPH attachment law. "
+                "This corridor is an supported numerical narrowing of the remaining bridge scalar, not an emitted OPH attachment law. "
                 "It must not be fed back into lambda_nu emission."
             ),
         },

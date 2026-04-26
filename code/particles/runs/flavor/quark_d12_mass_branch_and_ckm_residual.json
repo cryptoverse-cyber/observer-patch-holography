@@ -46,7 +46,7 @@
   },
   "current_sheet_status": "single_local_reference_sheet_only",
   "debug_only_target_seeded_generator": {
-    "reason": "the honest same-label transport unitary is emitted directly by the forward Yukawa step and no target CKM seed is needed",
+    "reason": "the supported same-label transport unitary is emitted directly by the forward Yukawa step and no target CKM seed is needed",
     "status": "retired"
   },
   "forward_same_label_transport": {
@@ -131,10 +131,10 @@
       ]
     }
   },
-  "generated_utc": "2026-04-11T03:38:12Z",
+  "generated_utc": "2026-04-26T05:11:10Z",
   "notes": [
     "This artifact records the strongest current D12 continuation sample point for the light-quark split without overriding the recovered-core no-go.",
-    "On the D12 continuation branch the CKM/CP lane closes honestly once the forward Yukawa step is reached, because the same-label transport unitary is already V_CKM^fwd = U_u^dagger U_d.",
+    "On the D12 continuation branch the CKM/CP lane closes on the supported branch once the forward Yukawa step is reached, because the same-label transport unitary is already V_CKM^fwd = U_u^dagger U_d.",
     "But the current D12 sheet is not the physical quark branch: the selector is already fixed to sigma_ref on the emitted same-label left-handed solver surface, while the current theorem-grade rigidity result is only same-sheet rephasing rigidity and does not prove CKM rigidity under ray_modulus motion on D12_ud_mass_ray. The emitted angles on this sheet still undershoot the comparison shell substantially.",
     "The only finite local scan on disk is a same-sheet Delta_ud_overlap scan against reference targets; it is comparison-only and cannot be repurposed as a Sigma_ud orbit scan.",
     "The solver-side same-label left-handed orbit now closes to the singleton sigma_ref, so the exact next object is the one-scalar value law quark_d12_t1_value_law on D12_ud_mass_ray; the larger intrinsic_scale_law_D12 wrapper is derived from that scalar, and the selected branch still inherits the current CKM-shell no-go."

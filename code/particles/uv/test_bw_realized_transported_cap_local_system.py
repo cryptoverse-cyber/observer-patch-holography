@@ -54,7 +54,7 @@ def test_bw_realized_transported_cap_local_system() -> None:
     ledger = payload["remaining_witness_obligation_ledger"]
     assert ledger[0]["id"] == "collarwise_markov_input"
     assert ledger[-1]["artifact"].endswith("bw_carried_collar_schedule_scaffold.json")
-    gate = payload["remaining_witness_honesty_gate"]
+    gate = payload["remaining_witness_support_gate"]
     assert gate["status"] == "open"
     assert len(gate["insufficient_on_their_own"]) == 4
     assert gate["insufficient_on_their_own"][0]["artifact"].endswith(

@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Declare the honest D10 repair frontier beyond the present current carrier.
+"""Declare the supported D10 repair frontier beyond the present current carrier.
 
 Chain role: separate the builder-local current-carrier selector shell from the
 broader exact-PDG electroweak repair program.
 
 Mathematics: frontier bookkeeping on top of the already-closed current-carrier
 chart, keeping track of which residual is merely builder-local and which one is
-the honest global repair burden.
+the supported global repair burden.
 
 OPH-derived inputs: the selected D10 carrier readout, the exact current-carrier
 mass chart, and the current-carrier obstruction artifacts already emitted on the

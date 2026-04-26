@@ -10,7 +10,7 @@ physics values are inferred here.
 OPH-derived inputs: the stable-channel cfg/source payload and the runtime
 receipt that fix the seeded 2+1 ensemble family and execution schema.
 
-Output: a machine-readable production geometry summary used to state the honest
+Output: a machine-readable production geometry summary used to state the supported
 hadron runtime boundary without pretending that production execution already
 exists.
 """

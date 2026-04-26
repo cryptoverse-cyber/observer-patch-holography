@@ -193,13 +193,16 @@ Informally, OPH treats the outer universe as the implementation layer of a simul
 universe as the world reconstructed by observers who live on its screen. The same screen cell
 therefore has two meanings at once. On the outer side it is one cell of the simulating
 screen. On the inner side it is the smallest electromagnetic observation step available to
-observers in the simulated world. The pixel ratio \(P\) is the size of that cell in Planck areas,
+observers in the simulated world. OPH finds the fine-structure constant by asking for the nonzero
+detuning of a holographic screen cell such that the cell's outer geometric displacement from
+perfect self-similar equilibrium equals the electromagnetic observation scale emitted by the
+universe living on that same screen. The pixel ratio \(P\) is the size of that cell in Planck areas,
 and the realized \(P\) is the value at which the outer and inner readings of the same cell agree.
 The outer description says how far the cell sits above the exact self-similar equilibrium
 \(\varphi\). The inner description says what electromagnetic observation scale that same cell emits
 through the particle chain. The fixed-point equation is the mathematical form of this loop. The
-current code records a numerical closure witness; the interval-wide uniqueness certificate remains
-a separate mathematical burden, with a local numerical contraction certificate now recorded as the
+public code records a numerical closure witness; the interval-wide uniqueness certificate remains
+a separate mathematical burden, with a local numerical contraction certificate recorded as the
 machine-checkable hardening step. Once the fixed point \(P_\star\) is selected, every downstream
 quantity is propagated forward from that same \(P_\star\).
 A separate pending hardware note reports an optical-cavity check of the same fixed-point geometry;
@@ -449,7 +452,7 @@ package.
 \toprule
 Quantity & Best value on the paper surface & Common OPH chain & Caveat \\
 \midrule
-\(c\) & \(299792458~\mathrm{m/s}\) & structural Lorentz/BW branch \(\rightarrow\) invariant causal speed \(\rightarrow\) local SI readout & structural rather than \(P\)-fitted; the SI presentation sits on the stated BW/Lorentz honesty package \\
+\(c\) & \(299792458~\mathrm{m/s}\) & structural Lorentz/BW branch \(\rightarrow\) invariant causal speed \(\rightarrow\) local SI readout & structural rather than \(P\)-fitted; the SI presentation sits on the stated BW/Lorentz support package \\
 \(G\) & \(6.674299995910528\times10^{-11}~\mathrm{m^3\,kg^{-1}\,s^{-2}}\) on the stated local extension surface & \(P \rightarrow \ellbar_{\mathrm{SU(2)}}+\ellbar_{\mathrm{SU(3)}} = \ellbar_{\mathrm{shared}} \rightarrow G_{\mathrm{SI}} = c^3 a_{\mathrm{cell}}/(\hbar P)\) & stated relative to the declared \(a_{\mathrm{cell}}\) datum; on that surface the D10 pixel law fixes \(\ellbar_{\mathrm{shared}}=P/4\), and the strict classical-regime clause remains explicit \\
 \(M_W\) & public target-free row \(80.37700001539531~\mathrm{GeV}\); exact sidecar \(80.377~\mathrm{GeV}\) & \(P \rightarrow \alpha_U(P) \rightarrow (t_U(P),t_{\mathrm{tr}}(P)) \rightarrow v(P) \rightarrow\) target-free electroweak repair chart \(\rightarrow M_W\) & exact promotion requires one target-free electroweak chart-identity theorem \\
 \(M_Z\) & public target-free row \(91.18797807794321~\mathrm{GeV}\); exact sidecar \(91.18797809193725~\mathrm{GeV}\) & same target-free electroweak trunk & same electroweak chart-identity caveat \\

@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Record the gauge-fixed physical-invariant shell for the D12 quark route.
 
-Chain role: separate the honest same-sheet CKM/CP invariant shell from the
+Chain role: separate the supported same-sheet CKM/CP invariant shell from the
 remaining physical-branch and mass-side burdens on the D12 continuation branch.
 
-Mathematics: read the honest forward same-label transport unitary and its
+Mathematics: read the supported forward same-label transport unitary and its
 principal logarithm from the D12 mass/transport closure artifact, then expose
 the standard CKM angles, CP phase, Jarlskog, and generator-side invariant
 package.

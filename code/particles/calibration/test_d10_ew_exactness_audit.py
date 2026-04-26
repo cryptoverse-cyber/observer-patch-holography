@@ -71,7 +71,7 @@ def test_d10_exactness_audit_records_mass_ratio_identity_obstruction() -> None:
     assert abs(freeze_once["frozen_surface_mass_pair"]["MW_pole"] - 80.377) < 1.0e-12
     assert abs(freeze_once["frozen_surface_mass_pair"]["MZ_pole"] - 91.18797809193725) < 1.0e-12
     assert payload["active_builder_smallest_missing_object"] == "EWTargetFreeRepairValueLaw_D10"
-    assert payload["broader_honest_repair_frontier"] == "EWTargetFreeRepairValueLaw_D10"
+    assert payload["broader_supported_repair_frontier"] == "EWTargetFreeRepairValueLaw_D10"
     assert payload["exact_pdg_wz_frontier"] == "EWTargetFreeRepairValueLaw_D10"
     assert payload["smallest_constructive_missing_object"] == "EWTargetFreeRepairValueLaw_D10"
     assert payload["smallest_exact_obstruction"] is not None

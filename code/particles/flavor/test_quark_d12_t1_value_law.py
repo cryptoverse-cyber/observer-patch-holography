@@ -45,7 +45,7 @@ def main() -> int:
     if reduction["weighted_transport_formulas_after_t1"]["tau_u_log_per_side"] != "sigma_d_total_log_per_side * t1 / (10 * (sigma_u_total_log_per_side + sigma_d_total_log_per_side))":
         print("unexpected tau_u formula after t1 reduction", file=sys.stderr)
         return 1
-    if reduction["exact_gap_after_transport_reduction"] != "honest_sigma_branch_emission":
+    if reduction["exact_gap_after_transport_reduction"] != "supported_sigma_branch_emission":
         print("remaining reduced gap after transport closure should be the sigma branch emission", file=sys.stderr)
         return 1
     route = payload["candidate_public_construction_route"]

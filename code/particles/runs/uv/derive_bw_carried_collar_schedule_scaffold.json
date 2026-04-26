@@ -18,46 +18,14 @@
   "derived_missing_witness": "vanishing_carried_collar_schedule_on_fixed_local_collars",
   "derived_missing_witness_artifact": "code/particles/runs/uv/bw_carried_collar_schedule_scaffold.json",
   "exact_missing_object": "vanishing_carried_collar_schedule_on_fixed_local_collars",
-  "generated_utc": "2026-04-03T04:43:10Z",
-  "honesty_gate": {
-    "closure_artifact": "code/particles/runs/uv/bw_carried_collar_schedule_scaffold.json",
-    "derived_witness_chain": [
-      "constructive_recovery_remainder_vanishing",
-      "fixed_local_collar_exact_markov_modulus_vanishing",
-      "fixed_local_collar_faithful_modular_defect_vanishing",
-      "vanishing_carried_collar_schedule_on_fixed_local_collars"
-    ],
-    "insufficient_on_their_own": [
-      {
-        "artifact": "code/particles/runs/uv/bw_fixed_local_collar_constructive_recovery_scaffold.json",
-        "id": "constructive_recovery_remainder_vanishing",
-        "why_not": "This removes only the Fawzi-Renner recovery term; it does not control the separate faithfulness-weighted modular defect remainder."
-      },
-      {
-        "artifact": "code/particles/runs/uv/bw_fixed_local_collar_exact_markov_modulus_scaffold.json",
-        "id": "fixed_local_collar_exact_markov_modulus_vanishing",
-        "why_not": "This only controls distance to the exact-Markov set; it does not by itself bound the spectral-weighted modular defect term."
-      },
-      {
-        "artifact": "code/particles/runs/uv/bw_fixed_local_collar_faithful_modular_defect_scaffold.json",
-        "id": "fixed_local_collar_faithful_modular_defect_vanishing",
-        "why_not": "This still omits the separate Fawzi-Renner recovery remainder, so the full eta schedule is not yet emitted."
-      }
-    ],
-    "promotion_rule": "No theorem promotion is honest until the carried-collar schedule itself is emitted on every fixed local collar model.",
-    "required_raw_inputs": [
-      "epsilon_{n,m,delta} = I(A_{m,delta}:D_{m,delta}|B_{m,delta})_{omega_{n->m}} -> 0",
-      "exists lambda_bar_{m,delta} > 0 and N_{m,delta} such that for all n >= N_{m,delta} and every X in Xi^{mod}_{m,delta}, rho_{n->m,X} >= lambda_bar_{m,delta} * 1"
-    ],
-    "status": "open"
-  },
+  "generated_utc": "2026-04-26T05:11:11Z",
   "intermediate_substep": "fixed_local_collar_exact_markov_modulus_vanishing",
   "notes": [
     "This scaffold does not claim the schedule is already emitted on the live corpus.",
     "It records the exact witness contract consumed by scaling-limit cap-pair extraction so solver work no longer jumps directly from the raw datum to the extraction theorem.",
     "The carried-collar witness is theorem-generated from the two term witnesses recorded here, so it should no longer be treated as an independent primitive solver target.",
     "On the current branch, the only nonlatent lower side condition still outside the emitted chain is the eventual fixed-local-collar modular-transport common floor recorded by the linked faithfulness-side artifact.",
-    "The honesty gate records exactly which lower witnesses are still insufficient on their own, preventing premature promotion from one-sided local control."
+    "The support gate records exactly which lower witnesses are still insufficient on their own, preventing premature promotion from one-sided local control."
   ],
   "obligation_ledger": [
     {
@@ -176,6 +144,38 @@
   "smaller_raw_datum": "fixed_local_collar_markov_faithfulness_datum",
   "smaller_raw_datum_artifact": "code/particles/runs/uv/bw_fixed_local_collar_markov_faithfulness_datum.json",
   "status": "minimal_emitted_witness_extension",
+  "support_gate": {
+    "closure_artifact": "code/particles/runs/uv/bw_carried_collar_schedule_scaffold.json",
+    "derived_witness_chain": [
+      "constructive_recovery_remainder_vanishing",
+      "fixed_local_collar_exact_markov_modulus_vanishing",
+      "fixed_local_collar_faithful_modular_defect_vanishing",
+      "vanishing_carried_collar_schedule_on_fixed_local_collars"
+    ],
+    "insufficient_on_their_own": [
+      {
+        "artifact": "code/particles/runs/uv/bw_fixed_local_collar_constructive_recovery_scaffold.json",
+        "id": "constructive_recovery_remainder_vanishing",
+        "why_not": "This removes only the Fawzi-Renner recovery term; it does not control the separate faithfulness-weighted modular defect remainder."
+      },
+      {
+        "artifact": "code/particles/runs/uv/bw_fixed_local_collar_exact_markov_modulus_scaffold.json",
+        "id": "fixed_local_collar_exact_markov_modulus_vanishing",
+        "why_not": "This only controls distance to the exact-Markov set; it does not by itself bound the spectral-weighted modular defect term."
+      },
+      {
+        "artifact": "code/particles/runs/uv/bw_fixed_local_collar_faithful_modular_defect_scaffold.json",
+        "id": "fixed_local_collar_faithful_modular_defect_vanishing",
+        "why_not": "This still omits the separate Fawzi-Renner recovery remainder, so the full eta schedule is not yet emitted."
+      }
+    ],
+    "promotion_rule": "No theorem promotion is supported until the carried-collar schedule itself is emitted on every fixed local collar model.",
+    "required_raw_inputs": [
+      "epsilon_{n,m,delta} = I(A_{m,delta}:D_{m,delta}|B_{m,delta})_{omega_{n->m}} -> 0",
+      "exists lambda_bar_{m,delta} > 0 and N_{m,delta} such that for all n >= N_{m,delta} and every X in Xi^{mod}_{m,delta}, rho_{n->m,X} >= lambda_bar_{m,delta} * 1"
+    ],
+    "status": "open"
+  },
   "termwise_closure_frontier": {
     "closure_theorem": "If the constructive recovery remainder and the faithful modular-defect term both vanish on every fixed local collar model, then the carried-collar schedule follows by termwise addition of the two nonnegative remainders.",
     "derived_parent_witness": {

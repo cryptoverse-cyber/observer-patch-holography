@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Emit the strongest honest charged selected-surface affine-scalar reduction theorem."""
+"""Emit the strongest supported charged selected-surface affine-scalar reduction theorem."""
 
 from __future__ import annotations
 
@@ -70,7 +70,7 @@ def build_artifact(bridge_reduction: dict, canonical_lift: dict) -> dict:
             "absolute_gap": "Delta_e_abs(P) = log(g_ch_shared) - A_ch(P)",
             "charged_masses": "m_i(P) = exp(A_ch(P) + ell_i_centered(P))",
         },
-        "why_this_is_the_strongest_honest_selected_surface_theorem": [
+        "why_this_is_the_strongest_supported_selected_surface_theorem": [
             "The charged lane does not contain a public selected-class source descent theorem analogous to the quark theorem.",
             "The common-shift quotient no-go excludes any centered-only route to determinant-line or affine data.",
             "Once theorem-grade physical charged data and theorem-grade C_hat_e are granted, the determinant line fixes one canonical physical affine scalar and therefore the uncentered lift.",
@@ -78,7 +78,7 @@ def build_artifact(bridge_reduction: dict, canonical_lift: dict) -> dict:
         ],
         "notes": [
             "This is a reduction theorem on theorem-grade physical charged classes, not a closure theorem for the present charged issue set.",
-            "It packages the strongest honest selected-surface charged statement supported by the local theorem surface.",
+            "It packages the strongest supported selected-surface charged statement supported by the local theorem surface.",
         ],
     }
 

@@ -179,7 +179,7 @@ def build_artifact(
             "v_report": float(target_free_quintet["v_report"]),
         }
         active_builder_smallest_missing_object = None
-        broader_honest_repair_frontier = None
+        broader_supported_repair_frontier = None
         exact_pdg_wz_frontier = TARGET_FREE_REPAIR_FRONTIER
     elif freeze_once_repair_closed and factorized_repair_quintet:
         public_quintet = {
@@ -190,11 +190,11 @@ def build_artifact(
             "v_report": float(factorized_repair_quintet["v_report"]),
         }
         active_builder_smallest_missing_object = TARGET_FREE_REPAIR_FRONTIER
-        broader_honest_repair_frontier = TARGET_FREE_REPAIR_FRONTIER
+        broader_supported_repair_frontier = TARGET_FREE_REPAIR_FRONTIER
         exact_pdg_wz_frontier = TARGET_FREE_REPAIR_FRONTIER
     else:
         active_builder_smallest_missing_object = current_carrier_builder_local_frontier
-        broader_honest_repair_frontier = (
+        broader_supported_repair_frontier = (
             GLOBAL_REPAIR_FRONTIER if exact_mass_pair_chart.get("status") == "closed_smaller_primitive" else None
         )
         exact_pdg_wz_frontier = (
@@ -235,7 +235,7 @@ def build_artifact(
         "smallest_predictive_missing_object": active_builder_smallest_missing_object,
         "active_builder_smallest_missing_object": active_builder_smallest_missing_object,
         "current_carrier_builder_local_frontier": current_carrier_builder_local_frontier,
-        "broader_honest_repair_frontier": broader_honest_repair_frontier,
+        "broader_supported_repair_frontier": broader_supported_repair_frontier,
         "exact_pdg_wz_frontier": exact_pdg_wz_frontier,
         "predictive_promotion_allowed": target_free_repair_closed,
         "public_surface_candidate_allowed": True,
@@ -613,7 +613,7 @@ def build_artifact(
                 if target_free_repair_closed
                 else "The freeze-once coherent repair law is closed on one authoritative frozen target pair, so the W/Z surface comes from one coherent coupling pair on the shared D10 family."
                 if freeze_once_repair_closed
-                else "The broader honest exact-PDG W/Z frontier is the repair branch `D10RepairBranchBeyondCurrentCarrier` beyond the present current carrier, not just the builder-local selector shell."
+                else "The broader supported exact-PDG W/Z frontier is the repair branch `D10RepairBranchBeyondCurrentCarrier` beyond the present current carrier, not just the builder-local selector shell."
             ),
             "The selected electroweak point is the chosen carrier point itself, not a separate transported seed placeholder.",
             "The compact point records the same family on the fixed-eta slice eta_EW = alpha_u * cos(2*theta_W0) with free sigma_EW; the no-new-parameter point is sigma_EW = -eta_EW.",

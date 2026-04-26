@@ -5,7 +5,7 @@
     "delta_MZ_pole": 0.4644821936694541
   },
   "artifact": "oph_d10_ew_exactness_audit",
-  "broader_honest_repair_frontier": "EWTargetFreeRepairValueLaw_D10",
+  "broader_supported_repair_frontier": "EWTargetFreeRepairValueLaw_D10",
   "coherent_alpha_sin_candidate": {
     "MW_pole": 80.38629169244275,
     "MZ_pole": 91.65246028560671,
@@ -17,7 +17,7 @@
     "v_report": 246.76711732749683
   },
   "current_carrier_closure_summary": {
-    "broader_honest_repair_frontier": "EWTargetFreeRepairValueLaw_D10",
+    "broader_supported_repair_frontier": "EWTargetFreeRepairValueLaw_D10",
     "current_carrier_builder_local_frontier": "EWExactMassPairSelector_D10",
     "current_carrier_exact_mass_pair": {
       "MW_pole": 80.38629169244275,
@@ -222,7 +222,7 @@
     "stricter_still_open_object": "EWTargetFreeRepairValueLaw_D10",
     "target_free_predictive_emission_closed": false
   },
-  "generated_utc": "2026-04-25T10:05:51Z",
+  "generated_utc": "2026-04-26T05:11:08Z",
   "notes": [
     "This audit computes a purely inverse reference-W/Z slice for diagnosis only; that slice is not a predictive artifact and is not emitted by the live D10 source-pair builder.",
     "Any coherent family matching those reference W/Z values forces sin2(theta_W) = 1 - (MW/MZ)^2, so the current mixed reference surface cannot be hit exactly by one simple tree-level family.",
@@ -232,7 +232,7 @@
     "The forward transmutation certificate now records the non-circular P -> alpha_U -> t map explicitly and separates the calibration beta_ratio_EW from the transmutation counting factor beta_transmutation_EW = N_c + 1.",
     "The current-carrier exact pair remains a distinct object from the public repaired pair; they should not be conflated in audits or status surfaces.",
     "The only stricter remaining D10 theorem step is a target-free law that emits the same nonzero repair directly from P alone with no frozen authoritative W/Z input.",
-    "That target-free step is now split sharply on disk: the current source-only D10 corpus underdetermines the repair coefficients, the smallest honest conditional theorem route goes through ColorBalancedQuadraticRepairDescent_D10, and the strongest current source-only candidate is EWTargetEmitter_D10."
+    "That target-free step is now split sharply on disk: the current source-only D10 corpus underdetermines the repair coefficients, the smallest supported conditional theorem route goes through ColorBalancedQuadraticRepairDescent_D10, and the strongest current source-only candidate is EWTargetEmitter_D10."
   ],
   "reference_inputs": {
     "MW_pole_gev": 80.377,

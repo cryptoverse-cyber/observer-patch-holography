@@ -51,7 +51,7 @@ The live D10 split is explicit:
 
 - builder-local current-carrier frontier:
   `EWExactMassPairSelector_D10`
-- broader honest exact-PDG frontier:
+- broader supported exact-PDG frontier:
   `D10RepairBranchBeyondCurrentCarrier`
 - strongest strictly smaller constructive primitive beneath that broader frontier:
   `EWSinglePostTransportTreeIdentity_D10`

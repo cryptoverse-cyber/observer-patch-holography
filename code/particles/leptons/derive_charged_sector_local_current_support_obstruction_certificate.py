@@ -118,7 +118,7 @@ def build_artifact(readback: dict, midpoint: dict, log_readout: dict, forward: d
         "notes": [
             "The current charged support is exhausted: the midpoint defect closes to zero and the centered family collapses to a single linear subray.",
             "No same-support scalar can repair the charged hierarchy once the support has collapsed to that rank-one centered cone.",
-            "The next honest charged object is a minimal support extension emitter, not another same-support correction.",
+            "The next supported charged object is a minimal support extension emitter, not another same-support correction.",
         ],
     }
 

@@ -151,7 +151,7 @@ def build_artifact(source_pair: dict, references: dict) -> dict:
             "delta_alphaY_perp_compare_only": comparison_delta_alphaY_perp,
             "delta_alphaY_tree_compare_only": comparison_delta_alphaY_parallel + comparison_delta_alphaY_perp,
         },
-        "honesty_note": (
+        "support_note": (
             "This source-only candidate is the strongest current candidate beneath the still-open "
             "target-free D10 repair value law; it is not promoted to theorem status."
         ),

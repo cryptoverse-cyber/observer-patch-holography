@@ -1220,7 +1220,7 @@ stages:
         owner_lane: local_docs
         depends_on: []
       - id: papers.compact.u.04-close-strict-classical-regime-release-clause
-        title: "Close the strict classical-regime clause above the BW/Lorentz honesty package for the gravity-coupling release wording"
+        title: "Close the strict classical-regime clause above the BW/Lorentz support package for the gravity-coupling release wording"
         status: pending
         owner_lane: pro_paper
         depends_on:

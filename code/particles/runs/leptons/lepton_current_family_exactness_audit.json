@@ -8,7 +8,7 @@
     "promotion_only_no_go": "charged_centered_operator_cannot_emit_mu_phys",
     "reduction_theorem_id": "charged_determinant_line_reduces_to_uncentered_trace_lift",
     "status": "layered_frontier_factorization_closed",
-    "theorem_statement": "The current charged absolute no-go and the sharpened post-promotion route solve different layers of the lane. The current layer identifies the absent affine coordinate A_ch on the common-shift quotient surface. After centered promotion, the absolute tail reduces canonically to one refinement-stable uncentered trace lift, which then induces the determinant-line section, A_ch, and the absolute charged outputs. Therefore the honest charged absolute frontier is layered rather than a single bare A_ch slot."
+    "theorem_statement": "The current charged absolute no-go and the sharpened post-promotion route solve different layers of the lane. The current layer identifies the absent affine coordinate A_ch on the common-shift quotient surface. After centered promotion, the absolute tail reduces canonically to one refinement-stable uncentered trace lift, which then induces the determinant-line section, A_ch, and the absolute charged outputs. Therefore the supported charged absolute frontier is layered rather than a single bare A_ch slot."
   },
   "absolute_scale_closure_status": {
     "absolute_frontier_factorization_artifact": "oph_charged_absolute_frontier_factorization",
@@ -21,12 +21,12 @@
       "g_e": 0.6822819838027987,
       "reason": "common-shift orbit pick; not theorem-grade; does not land on physical charged masses"
     },
-    "honest_missing_transport_scalar": "A_ch",
-    "honest_post_promotion_exact_descended_scalar": "charged_physical_affine_scalar_mu",
-    "honest_post_promotion_internal_carrier": "scalar_affine_cocycle_primitive",
-    "honest_post_promotion_single_slot": "refinement_stable_uncentered_trace_lift",
     "present_chain_under_determines_g_e": true,
-    "promotion_only_centered_operator_no_go": "charged_centered_operator_cannot_emit_mu_phys"
+    "promotion_only_centered_operator_no_go": "charged_centered_operator_cannot_emit_mu_phys",
+    "supported_missing_transport_scalar": "A_ch",
+    "supported_post_promotion_exact_descended_scalar": "charged_physical_affine_scalar_mu",
+    "supported_post_promotion_internal_carrier": "scalar_affine_cocycle_primitive",
+    "supported_post_promotion_single_slot": "refinement_stable_uncentered_trace_lift"
   },
   "absolute_scale_gap_identity": {
     "artifact": "oph_charged_absolute_scale_transport_gap_identity",
@@ -383,7 +383,7 @@
       "summary": "Retain a charged holonomy bridge only if the older delta = 2/9 D12 benchmark is kept as a theorem-grade bridge instead of a diagnostic continuation."
     }
   },
-  "generated_utc": "2026-04-14T03:28:57Z",
+  "generated_utc": "2026-04-26T05:11:11Z",
   "notes": [
     "The current charged-lepton builder now exposes the two-scalar ordered-gap family in formula form plus one common shift.",
     "A common shift rescales all three masses together and cannot fix a large hierarchy mismatch.",
@@ -392,7 +392,7 @@
     "The current-support obstruction certificate is now on disk, and the next charged mover is the minimal support-extension emitter on the canonical quadratic ordered direction.",
     "The full two-scalar support-extension completion law is now explicit on disk; the live same-carrier primitive is the eta source-readback, followed by the sigma endpoint-ratio breaker.",
     "The stronger same-carrier source-scalar pair readback is also now explicit on disk, collecting those eta and sigma invariants into one ordered primitive beneath the full completion shell.",
-    "At theorem level, eta and sigma are no longer the deepest honest waiting set. The live builder still exposes eta then sigma as the first same-carrier residuals, but the paper-facing exact burden is first to promote the latent candidate C_hat_e^{cand} by closing the branch-generator splitting theorem, then to restore the lost affine mode through a refinement-stable uncentered trace lift of the charged response, from which the determinant-line section and the affine absolute coordinate A_ch are induced.",
+    "At theorem level, eta and sigma are no longer the deepest supported waiting set. The live builder still exposes eta then sigma as the first same-carrier residuals, but the paper-facing exact burden is first to promote the latent candidate C_hat_e^{cand} by closing the branch-generator splitting theorem, then to restore the lost affine mode through a refinement-stable uncentered trace lift of the charged response, from which the determinant-line section and the affine absolute coordinate A_ch are induced.",
     "That post-promotion lift slot is now reduced more sharply too: after centered promotion the only remaining ambiguity is a scalar affine cocycle primitive mu on the refinement family, not an extra matrix-valued theorem beyond the uncentered trace lift.",
     "And because the lift is already required to be refinement-stable on theorem-grade physical Y_e, that primitive descends further to one physical affine scalar mu_phys(Y_e).",
     "A sharper impossibility theorem is now on disk too: even a future theorem-grade centered C_hat_e cannot emit mu_phys(Y_e) by itself, because centered operator data stays common-shift invariant.",

@@ -42,12 +42,16 @@ pixel ratio `P = a_cell / l_P^2`, which fixes the size of one screen cell in
 Planck areas. From the outside, `P` is a geometric cell size that sits
 slightly above the self-similar balance `φ = (1 + sqrt(5)) / 2`. From the
 inside, it becomes the smallest electromagnetic observation scale available to
-observers in the world encoded on that screen. OPH ties those two readings
-together with `P = φ + α_in(P) sqrt(pi)`. For the 2022 CODATA/NIST central
-value `α⁻¹(0) = 137.035999177`, that outer formula gives
-`P = 1.630968209403959...`. The current repo records the closure as a
-numerical fixed-point witness and treats the displayed central value only as an
-external comparison target; the code has no built-in inverse-alpha constant.
+observers in the world encoded on that screen. OPH finds the fine-structure
+constant by asking for the nonzero detuning of a holographic screen cell such
+that the cell's outer geometric displacement from perfect self-similar
+equilibrium equals the electromagnetic observation scale emitted by the
+universe living on that same screen. The closure is
+`P = φ + α_in(P) sqrt(pi)`. For the 2022 CODATA/NIST central value
+`α⁻¹(0) = 137.035999177`, that outer formula gives
+`P = 1.630968209403959...`. The repo records the closure as a numerical
+fixed-point witness and treats the displayed central value only as an external
+comparison target; the code has no built-in inverse-alpha constant.
 An interval-wide uniqueness certificate remains a separate release item.
 A separate pending hardware note reports an optical-cavity check of the same
 fixed-point geometry; this is treated as corroborating engineering evidence.

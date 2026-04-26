@@ -14,13 +14,13 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from bw_collar_honesty import (
+from bw_collar_support import (
     CARRIED_SCHEDULE_FORMULA,
     CMI_COMPONENT,
     FAITHFUL_COMPONENT,
     FAITHFUL_MODULAR_DEFECT_FORMULA,
     build_comparison_reference_floor_transfer,
-    build_local_honesty_gate,
+    build_local_support_gate,
     build_local_obligation_ledger,
     build_schedule_term_frontier,
 )
@@ -132,7 +132,7 @@ def build_payload(extraction_scaffold: dict[str, Any], prelimit_system: dict[str
             faithful_modular_defect_artifact=_artifact_ref(FAITHFUL_MODULAR_DEFECT),
             carried_schedule_artifact=_artifact_ref(CARRIED_SCHEDULE),
         ),
-        "honesty_gate": build_local_honesty_gate(
+        "support_gate": build_local_support_gate(
             carried_schedule_artifact=_artifact_ref(CARRIED_SCHEDULE),
             constructive_recovery_artifact=_artifact_ref(CONSTRUCTIVE_RECOVERY),
             exact_markov_artifact=_artifact_ref(EXACT_MARKOV_MODULUS),
@@ -152,7 +152,7 @@ def build_payload(extraction_scaffold: dict[str, Any], prelimit_system: dict[str
             "It is strictly smaller than the vanishing carried-collar schedule because it packages the raw collarwise hypotheses before the schedule estimate is formed.",
             "The constructive recovery witness and the exact-Markov comparison convergence are both smaller witnesses inside this datum, but on the local-Gibbs plus exponential-mixing pullback branch they are already latent once epsilon_{n,m,delta} -> 0.",
             "It does not by itself realize the scaling-limit cap pair, but it is the cleanest remaining local object beneath that witness.",
-            "The emitted ledger now records which lower items are raw inputs, which are theorem-derived, and which combinations are still insufficient for honest promotion.",
+            "The emitted ledger now records which lower items are raw inputs, which are theorem-derived, and which combinations are still insufficient for supported promotion.",
         ],
     }
 

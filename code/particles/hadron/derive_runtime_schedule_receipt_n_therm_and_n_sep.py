@@ -112,7 +112,7 @@ def build_artifact(payload: dict) -> dict:
             ).get("next_single_residual_object_after_execution", "oph_hadron_stable_channel_sequence_evaluator"),
         },
         "notes": [
-            "This receipt is the final honest bridge between theorem-side hadron preparation and executed runtime/systematics work.",
+            "This receipt is the final supported bridge between theorem-side hadron preparation and executed runtime/systematics work.",
             "It does not emit N_therm or N_sep itself; those remain external execution inputs on the present hadron surface.",
             "Once the receipt is filled and execution is performed, the next work is measure writeback, published statistical errors, and declared continuum/volume/chiral systematics rather than another theorem-only selector search.",
         ],

@@ -159,7 +159,7 @@ def build_artifact(p_value: float, references: dict) -> dict[str, object]:
         },
         "notes": [
             "This artifact is compare-only: the required common transport uses benchmark W/Z values as inputs and is not a source-only OPH prediction.",
-            "The current source-only transport is honest only to the extent that it is emitted from the D10 source basis with no frozen benchmark input.",
+            "The current source-only transport is supported only to the extent that it is emitted from the D10 source basis with no frozen benchmark input.",
             "A robust common transport law should keep this gap small for the physically derived P; if the gap grows materially, the source-only transport formulas are not yet the right running-to-pole map.",
         ],
     }

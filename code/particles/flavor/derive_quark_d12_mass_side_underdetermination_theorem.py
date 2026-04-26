@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Emit the honest D12 quark mass-side underdetermination theorem artifact.
+"""Emit the supported D12 quark mass-side underdetermination theorem artifact.
 
 Chain role: record the sharpest exact theorem the current D12 quark
 continuation branch actually proves on the mass side before any theorem-grade
@@ -7,7 +7,7 @@ scale-fixing law is claimed.
 
 Mathematics: the current same-family D12 branch fixes only the ray
 ``(Delta_ud_overlap, eta_Q_centered) = ray_modulus * (1/5, -((1 - x2^2) / 27))``.
-That is a real structural reduction, but the branch does not honestly emit a
+That is a real structural reduction, but the branch does not emit a supported
 distinguished normalization point on that ray.
 
 OPH-derived inputs: the scalarized D12 continuation bundle, the one-scalar
@@ -65,7 +65,7 @@ def main() -> int:
     specialization_formulas = dict(one_scalar["specialization_formulas"])
     sample_mass_point = dict(mass_branch["sample_same_family_point"])
     comparison_only_best_same_family_point = dict(mass_branch["comparison_only_best_same_family_point"])
-    honest_remaining_value_laws = list(scalarized_bundle["honest_remaining_value_laws"])
+    supported_remaining_value_laws = list(scalarized_bundle["supported_remaining_value_laws"])
 
     ray_modulus = float(sample_same_family_point["ray_modulus"])
     x2 = float(sample_same_family_point["x2"])
@@ -124,7 +124,7 @@ def main() -> int:
                 "compare_derived_exact_mean_specialization_as_OPH_emitted",
             ],
         },
-        "honest_remaining_value_laws": honest_remaining_value_laws,
+        "supported_remaining_value_laws": supported_remaining_value_laws,
         "next_exact_missing_object": "quark_d12_t1_value_law",
         "minimal_new_theorem": {
             "id": "quark_d12_t1_value_law",
