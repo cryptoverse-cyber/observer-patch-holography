@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Emit a numerical witness for the OPH P/alpha fixed-point closure."""
+"""Emit a local numerical contraction certificate for OPH P/alpha closure."""
 
 from __future__ import annotations
 
@@ -7,11 +7,13 @@ import argparse
 import json
 from pathlib import Path
 
-from paper_math import build_fixed_point_witness
+from paper_math import build_contraction_certificate
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Sample the OPH alpha -> alpha fixed-point map.")
+    parser = argparse.ArgumentParser(
+        description="Sample the OPH alpha -> alpha map on an interval and emit a contraction certificate."
+    )
     parser.add_argument(
         "--mode",
         choices=("thomson_structured_running", "thomson_structured_running_asymptotic", "mz_anchor"),
@@ -24,36 +26,35 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--scan-points", type=int, default=60, help="Alpha-space scan points used to bracket closure.")
     parser.add_argument("--max-iterations", type=int, default=20, help="Maximum outer fixed-point iterations.")
     parser.add_argument(
-        "--derivative-step",
+        "--interval-half-width",
         default="0.000001",
+        help="Half-width of the alpha interval sampled around the solved fixed point.",
+    )
+    parser.add_argument(
+        "--derivative-step",
+        default="0.0000001",
         help="Alpha-space finite-difference step used for local slope diagnostics.",
     )
-    parser.add_argument("--sample-points", type=int, default=5, help="Number of alpha probes around the fixed point.")
-    parser.add_argument("--compare-alpha-inv", help="Optional external inverse-alpha value to report as compare-only.")
-    parser.add_argument(
-        "--compare-alpha-inv-uncertainty",
-        help="Optional standard uncertainty for --compare-alpha-inv.",
-    )
-    parser.add_argument("--output", help="Optional path for the JSON witness.")
+    parser.add_argument("--sample-points", type=int, default=9, help="Number of alpha probes on the certificate interval.")
+    parser.add_argument("--output", help="Optional path for the JSON certificate.")
     return parser.parse_args()
 
 
 def main() -> int:
     args = parse_args()
-    witness = build_fixed_point_witness(
+    certificate = build_contraction_certificate(
         precision=args.precision,
         mode=args.mode,
         su2_cutoff=args.su2_cutoff,
         su3_cutoff=args.su3_cutoff,
         scan_points=args.scan_points,
         max_iterations=args.max_iterations,
+        interval_half_width=args.interval_half_width,
         derivative_step=args.derivative_step,
         sample_points=args.sample_points,
-        compare_alpha_inv=args.compare_alpha_inv,
-        compare_alpha_inv_uncertainty=args.compare_alpha_inv_uncertainty,
     )
 
-    text = json.dumps(witness, indent=2, sort_keys=True) + "\n"
+    text = json.dumps(certificate, indent=2, sort_keys=True) + "\n"
     if args.output:
         out_path = Path(args.output)
         out_path.parent.mkdir(parents=True, exist_ok=True)

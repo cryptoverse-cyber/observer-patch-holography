@@ -283,7 +283,7 @@
       "value_text": "<1 E-18"
     },
     "proton": {
-      "comment": "2018 CODATA",
+      "comment": "2018 recommended constants",
       "confidence_level": null,
       "description": "p MASS (MeV)",
       "display": "938.27208816+-0.00000029 MeV",

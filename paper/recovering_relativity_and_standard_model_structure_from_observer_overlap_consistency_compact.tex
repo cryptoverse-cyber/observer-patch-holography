@@ -157,9 +157,11 @@ P=\varphi+\alpha_{\mathrm{in}}(P)\sqrt{\pi},
 \]
 where the inner side is the electromagnetic observation scale emitted by the same cell on the
 declared quantitative branch. The current code surface includes a numerical fixed-point witness
-for this map and the compare-only CODATA/NIST central-value conversion
-\(P=1.630968209403959\ldots\) from \(\alpha^{-1}=137.035999177\). It is not yet an
-interval-arithmetic proof of uniqueness. A separate pending hardware note reports an
+for this map and accepts external inverse-\(\alpha\) values only when they are supplied explicitly
+as compare-only metadata; the paper comparison gives
+\(P=1.630968209403959\ldots\) from \(\alpha^{-1}=137.035999177\). This is not yet an
+interval-arithmetic proof of uniqueness; the companion local numerical contraction certificate
+records the current machine-checkable hardening step. A separate pending hardware note reports an
 optical-cavity check of the same fixed-point geometry; this is treated as corroborating
 engineering evidence. \(N_{\mathrm{scr}}\) is inferred from the observed
 cosmological constant and enters the cosmological-capacity branch. Any retained capacity-level
@@ -3040,10 +3042,11 @@ electromagnetic transport family \(\alpha_{\mathrm{em}}^{-1}(q^2;P)\) and \(\sin
 on the Ward-projected \(\U(1)_Q\) lane are forward-emitted outputs of the chosen D10
 running/matching package. When compared with observation, they serve as validation of that printed
 implementation on the quantitative-closure branch recorded in the premise ledger. The repository
-now carries a numerical witness for the outer/inner fixed-point closure and its compare-only
-CODATA/NIST fine-structure comparison. What remains outside theorem level is an interval-wide
-existence/uniqueness or monotonicity proof for the scalar root selected by the printed D10 package
-under arbitrary convention changes.
+now carries a numerical witness for the outer/inner fixed-point closure, while external
+fine-structure comparisons enter only as explicit compare metadata, together with a local numerical
+contraction certificate for the implemented map. What remains outside theorem level is an
+interval-wide existence/uniqueness or monotonicity proof for the scalar root selected by the printed
+D10 package under arbitrary convention changes.
 
 \section{Relation to Holography and Existing UV Frameworks}
 

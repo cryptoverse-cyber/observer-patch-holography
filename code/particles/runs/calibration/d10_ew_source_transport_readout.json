@@ -519,9 +519,9 @@
     "anchor_alpha_em_eff_inv": 128.30576920234813,
     "anchor_scale": "m_Z^2",
     "charge_operator": "Q = T3 + Y",
-    "delta_alpha_from_anchor_to_thomson_reference": 0.06804238054863787,
+    "delta_alpha_from_anchor_to_thomson_reference": null,
     "physical_readout_formula": "alpha_em^-1(q^2;P) = 8*pi^2 / t_Q(q^2;P)",
-    "prediction_status": "reference_compare_only_until_source_transport_is_emitted",
+    "prediction_status": "no_thomson_input_until_reference_is_supplied_explicitly",
     "projector": "Ward projection to the unbroken U(1)_Q channel",
     "scalar_provenance_clause": "EWScalarProvenanceEquality_D10",
     "shared_provenance": {
@@ -531,10 +531,10 @@
     },
     "theorem_id": "WardProjectedU1QTransportLaw_D10",
     "thomson_endpoint_alpha_em_eff_inv_prediction": null,
-    "thomson_endpoint_alpha_em_eff_inv_reference": 137.035999177,
+    "thomson_endpoint_alpha_em_eff_inv_reference": null,
     "thomson_limit_formula": "alpha_Th^-1(P) = lim_{q^2 -> 0} alpha_em^-1(q^2;P)",
     "transport_kernel_id": "EWTransportKernel_D10",
-    "transport_ratio_tQ_0_over_tQ_mZ2_reference": 0.936292433907271,
+    "transport_ratio_tQ_0_over_tQ_mZ2_reference": null,
     "transport_readout_clause": "EWTransportReadoutCoherence_D10"
   }
 }

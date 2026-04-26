@@ -45,9 +45,10 @@ inside, it becomes the smallest electromagnetic observation scale available to
 observers in the world encoded on that screen. OPH ties those two readings
 together with `P = φ + α_in(P) sqrt(pi)`. For the 2022 CODATA/NIST central
 value `α⁻¹(0) = 137.035999177`, that outer formula gives
-`P = 1.630968209403959...`. The current repo records this as a numerical
-fixed-point witness and comparison target; an interval-wide uniqueness
-certificate remains a separate release item.
+`P = 1.630968209403959...`. The current repo records the closure as a
+numerical fixed-point witness and treats the displayed central value only as an
+external comparison target; the code has no built-in inverse-alpha constant.
+An interval-wide uniqueness certificate remains a separate release item.
 A separate pending hardware note reports an optical-cavity check of the same
 fixed-point geometry; this is treated as corroborating engineering evidence.
 
@@ -65,11 +66,14 @@ lattice, and the counting chain `N_g = 3`, `N_c = 3` live in the papers. The
 quick view here sticks to direct numeric rows, exact zeros, and a small number
 of declared closure witnesses and candidates.
 
+For a lab-facing list of OPH targets and claim tiers, see
+[OPH Lab-Facing Predictions](LAB_PREDICTIONS.md).
+
 | Quantity | Symbol | OPH | PDG/NIST | Δ |
 | --- | --- | --- | --- | --- |
 | Gravitational constant | G | 6.6742999959e-11 | 6.67430(15)e-11 | 0.00003σ |
 | Speed of light | c | 299792458 | 299792458 (exact) | match |
-| Fine-structure (inv) | α⁻¹(0) | `P`-closure numerical witness targets 137.035999177 | 137.035999177(21) | interval certificate pending |
+| Fine-structure (inv) | α⁻¹(0) | `P`-closure witness; external compare 137.035999177 | 137.035999177(21) | interval certificate pending |
 | Photon mass | m_γ | 0 eV | <1e-18 eV | below bound |
 | Gluon mass | m_g | 0 GeV | 0 GeV | match |
 | Graviton mass | m_grav | 0 eV | <1.76e-23 eV | below bound |

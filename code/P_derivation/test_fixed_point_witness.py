@@ -6,17 +6,19 @@ from __future__ import annotations
 from decimal import Decimal
 import unittest
 
-from paper_math import CODATA_2022_ALPHA_INV, PaperMathContext, build_fixed_point_witness
+from paper_math import PaperMathContext, build_contraction_certificate, build_fixed_point_witness
 
 
 class FixedPointWitnessTests(unittest.TestCase):
-    def test_codata_alpha_maps_to_expected_pixel_ratio(self) -> None:
+    def test_external_alpha_maps_to_pixel_ratio(self) -> None:
         ctx = PaperMathContext(precision=24, su2_cutoff=4, su3_cutoff=4)
-        p_value = ctx.observed_p_from_alpha_inv(CODATA_2022_ALPHA_INV)
+        alpha_inv = Decimal("128")
+        p_value = ctx.p_from_inverse_alpha(alpha_inv)
+        expected = ctx.outer_p_from_alpha(Decimal(1) / alpha_inv)
 
-        self.assertAlmostEqual(float(p_value), 1.6309682094039595, places=15)
+        self.assertEqual(p_value, expected)
 
-    def test_witness_keeps_codata_as_compare_only_metadata(self) -> None:
+    def test_witness_has_no_default_external_compare_value(self) -> None:
         witness = build_fixed_point_witness(
             precision=10,
             mode="mz_anchor",
@@ -29,9 +31,44 @@ class FixedPointWitnessTests(unittest.TestCase):
         )
 
         self.assertEqual(witness["claim_status"], "numerical_witness_not_interval_certificate")
-        self.assertEqual(witness["codata_2022_compare_only"]["alpha_inv"], str(CODATA_2022_ALPHA_INV))
+        self.assertNotIn("external_compare_only", witness)
         self.assertGreater(Decimal(witness["finite_difference"]["max_abs_sample_slope"]), Decimal("0"))
-        self.assertIn("fixed_point_minus_codata_alpha_inv", witness["codata_2022_compare_only"])
+
+    def test_witness_keeps_explicit_compare_value_out_of_solver_inputs(self) -> None:
+        witness = build_fixed_point_witness(
+            precision=10,
+            mode="mz_anchor",
+            su2_cutoff=6,
+            su3_cutoff=4,
+            scan_points=8,
+            max_iterations=3,
+            derivative_step="0.0001",
+            sample_points=1,
+            compare_alpha_inv="128",
+            compare_alpha_inv_uncertainty="0.1",
+        )
+
+        self.assertEqual(witness["external_compare_only"]["alpha_inv"], "128")
+        self.assertEqual(witness["external_compare_only"]["alpha_inv_standard_uncertainty"], "0.1")
+        self.assertIn("fixed_point_minus_compare_alpha_inv", witness["external_compare_only"])
+
+    def test_contraction_certificate_records_sampled_status(self) -> None:
+        certificate = build_contraction_certificate(
+            precision=10,
+            mode="mz_anchor",
+            su2_cutoff=6,
+            su3_cutoff=4,
+            scan_points=8,
+            max_iterations=3,
+            interval_half_width="0.0001",
+            derivative_step="0.0001",
+            sample_points=3,
+        )
+
+        self.assertEqual(certificate["claim_status"], "numerical_local_contraction_certificate")
+        self.assertTrue(certificate["alpha_interval"]["bracket_changes_sign"])
+        self.assertTrue(certificate["sample_contraction_observed"])
+        self.assertLess(Decimal(certificate["max_abs_centered_slope"]), Decimal("1"))
 
 
 if __name__ == "__main__":

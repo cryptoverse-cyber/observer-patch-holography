@@ -44,7 +44,6 @@ BUILDER_LOCAL_FRONTIER = "EWExactMassPairSelector_D10"
 GLOBAL_REPAIR_FRONTIER = "D10RepairBranchBeyondCurrentCarrier"
 TARGET_FREE_REPAIR_FRONTIER = "EWTargetFreeRepairValueLaw_D10"
 WARD_PROJECTED_TRANSPORT_THEOREM = "WardProjectedU1QTransportLaw_D10"
-REFERENCE_THOMSON_ALPHA_INV_CODATA2022 = 137.035999177
 
 
 def _timestamp() -> str:
@@ -63,6 +62,7 @@ def build_artifact(
     target_emitter: dict | None = None,
     target_free_repair: dict | None = None,
     forward_transmutation: dict | None = None,
+    thomson_reference_alpha_inv: float | None = None,
 ) -> dict:
     reported = dict(family["reported_outputs"])
     source_slots = dict(source_pair["source_pair"])
@@ -81,6 +81,19 @@ def build_artifact(
         "sin2w_eff": float(reported["sin2w_mz"]),
         "v_report": float(reported["v"]),
     }
+    thomson_reference = (
+        float(thomson_reference_alpha_inv) if thomson_reference_alpha_inv is not None else None
+    )
+    thomson_delta = (
+        thomson_reference / base_quintet["alpha_em_eff_inv"] - 1.0
+        if thomson_reference is not None
+        else None
+    )
+    thomson_transport_ratio = (
+        base_quintet["alpha_em_eff_inv"] / thomson_reference
+        if thomson_reference is not None
+        else None
+    )
     selected_point = dict(source_pair.get("predictive_population_point", {}))
     selected_population_closed = bool(source_pair.get("predictive_population_closed", False))
     if selected_population_closed and compact_mass_quintet:
@@ -439,14 +452,10 @@ def build_artifact(
             "anchor_scale": "m_Z^2",
             "anchor_alpha_em_eff_inv": float(base_quintet["alpha_em_eff_inv"]),
             "thomson_endpoint_alpha_em_eff_inv_prediction": None,
-            "thomson_endpoint_alpha_em_eff_inv_reference": REFERENCE_THOMSON_ALPHA_INV_CODATA2022,
-            "delta_alpha_from_anchor_to_thomson_reference": (
-                REFERENCE_THOMSON_ALPHA_INV_CODATA2022 / float(base_quintet["alpha_em_eff_inv"]) - 1.0
-            ),
-            "transport_ratio_tQ_0_over_tQ_mZ2_reference": (
-                float(base_quintet["alpha_em_eff_inv"]) / REFERENCE_THOMSON_ALPHA_INV_CODATA2022
-            ),
-            "prediction_status": "reference_compare_only_until_source_transport_is_emitted",
+            "thomson_endpoint_alpha_em_eff_inv_reference": thomson_reference,
+            "delta_alpha_from_anchor_to_thomson_reference": thomson_delta,
+            "transport_ratio_tQ_0_over_tQ_mZ2_reference": thomson_transport_ratio,
+            "prediction_status": "no_thomson_input_until_reference_is_supplied_explicitly",
             "physical_readout_formula": "alpha_em^-1(q^2;P) = 8*pi^2 / t_Q(q^2;P)",
             "thomson_limit_formula": "alpha_Th^-1(P) = lim_{q^2 -> 0} alpha_em^-1(q^2;P)",
             "shared_provenance": {
@@ -643,6 +652,12 @@ def main() -> int:
     parser.add_argument("--target-emitter", default=str(DEFAULT_TARGET_EMITTER))
     parser.add_argument("--target-free-repair", default=str(DEFAULT_TARGET_FREE_REPAIR))
     parser.add_argument("--forward-transmutation", default=str(DEFAULT_FORWARD_TRANSMUTATION))
+    parser.add_argument(
+        "--thomson-reference-alpha-inv",
+        type=float,
+        default=None,
+        help="Optional external Thomson-limit inverse-alpha value for compare-only reporting.",
+    )
     parser.add_argument("--output", default=str(DEFAULT_OUT))
     args = parser.parse_args()
 
@@ -710,6 +725,7 @@ def main() -> int:
         target_emitter,
         target_free_repair,
         forward_transmutation,
+        thomson_reference_alpha_inv=args.thomson_reference_alpha_inv,
     )
 
     out_path = Path(args.output)

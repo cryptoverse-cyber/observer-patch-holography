@@ -27,10 +27,9 @@ equation:
 
 `P = phi + alpha * sqrt(pi)`
 
-For the 2022 CODATA/NIST central value `alpha^-1 = 137.035999177`, that outer
-equation gives the compare-only pixel ratio
-
-`P = 1.630968209403959...`
+If an external inverse-alpha value is supplied explicitly, the same outer
+equation reports the corresponding compare-only pixel ratio. The solver has no
+default reference constant.
 
 ## Terms
 
@@ -93,6 +92,9 @@ The important claim-boundary caveat is:
   certificate. It samples the declared `alpha -> alpha` map and records local
   finite-difference slopes, but it does not prove a Banach contraction bound or
   interval-wide uniqueness.
+- `fixed_point_certificate.py` emits a local numerical contraction certificate
+  for the implemented map. It is a stricter machine artifact than the witness,
+  but still not a formal interval-arithmetic proof of the full map.
 - A separate pending hardware note reports an optical-cavity check of the same
   fixed-point geometry; this is treated as corroborating engineering evidence.
 
@@ -123,10 +125,23 @@ To save the report:
 python3 derive_p.py --mode thomson_structured_running --precision 40 --output runtime/report.json
 ```
 
-To emit the fixed-point witness with compare-only CODATA metadata:
+To emit the fixed-point witness:
 
 ```bash
 python3 fixed_point_witness.py --mode thomson_structured_running --precision 40 --output runtime/fixed_point_witness.json
+```
+
+To include an external inverse-alpha value as compare-only metadata, pass it
+explicitly:
+
+```bash
+python3 fixed_point_witness.py --mode thomson_structured_running --precision 40 --compare-alpha-inv <external-alpha-inv> --output runtime/fixed_point_witness.json
+```
+
+To emit the local numerical contraction certificate:
+
+```bash
+python3 fixed_point_certificate.py --mode thomson_structured_running --precision 40 --output runtime/fixed_point_certificate.json
 ```
 
 For a fast smoke check of the witness plumbing, use the electroweak-scale anchor
@@ -134,6 +149,7 @@ debug path:
 
 ```bash
 python3 fixed_point_witness.py --mode mz_anchor --precision 10 --su2-cutoff 6 --su3-cutoff 4 --scan-points 8 --max-iterations 3 --sample-points 1
+python3 fixed_point_certificate.py --mode mz_anchor --precision 10 --su2-cutoff 6 --su3-cutoff 4 --scan-points 8 --max-iterations 3 --interval-half-width 0.0001 --derivative-step 0.0001 --sample-points 3
 ```
 
 ## Output
@@ -152,5 +168,13 @@ The witness JSON additionally records:
 
 - `claim_status = numerical_witness_not_interval_certificate`
 - the sampled local slopes of the closure map
-- the compare-only 2022 CODATA/NIST inverse fine-structure constant
-- the pixel ratio implied by that observed central value
+- any explicitly supplied external inverse-alpha reference
+- the pixel ratio implied by that external value
+
+The certificate JSON additionally records:
+
+- `claim_status = numerical_local_contraction_certificate` when the sampled
+  interval brackets the fixed point and all sampled finite-difference slopes
+  have absolute value below one
+- the explicit alpha interval and endpoint residuals
+- the maximum sampled contraction slope and per-sample contraction margins

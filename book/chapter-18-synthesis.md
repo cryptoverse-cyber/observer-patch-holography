@@ -110,8 +110,9 @@ $$
 P=1.630968209403959\ldots
 $$
 
-The current OPH code records this as a numerical fixed-point witness. A full
-interval certificate for uniqueness remains a separate mathematical object.
+The current OPH code records this as a numerical fixed-point witness and now
+adds a local numerical contraction certificate. A full interval certificate for
+uniqueness remains a separate mathematical object.
 A separate pending hardware note reports an optical-cavity check of the same
 fixed-point geometry; this is treated as corroborating engineering evidence.
 

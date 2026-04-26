@@ -88,9 +88,13 @@ def test_d10_source_transport_readout_uses_predictive_seed_trial() -> None:
     assert payload["reported_readout_assignment"]["sin2w_eff"] == "coherent_frozen_target_repair_couplings"
     assert payload["public_readout_split"]["electromagnetic_transport_surface"] == "WardProjectedU1QTransportLaw_D10"
     assert payload["ward_projected_transport_family"]["thomson_endpoint_alpha_em_eff_inv_prediction"] is None
-    assert payload["ward_projected_transport_family"]["thomson_endpoint_alpha_em_eff_inv_reference"] == 137.035999177
-    assert payload["ward_projected_transport_family"]["transport_ratio_tQ_0_over_tQ_mZ2_reference"] == 0.936292433907271
-    assert payload["ward_projected_transport_family"]["prediction_status"] == "reference_compare_only_until_source_transport_is_emitted"
+    assert payload["ward_projected_transport_family"]["thomson_endpoint_alpha_em_eff_inv_reference"] is None
+    assert payload["ward_projected_transport_family"]["transport_ratio_tQ_0_over_tQ_mZ2_reference"] is None
+    assert payload["ward_projected_transport_family"]["delta_alpha_from_anchor_to_thomson_reference"] is None
+    assert (
+        payload["ward_projected_transport_family"]["prediction_status"]
+        == "no_thomson_input_until_reference_is_supplied_explicitly"
+    )
     assert payload["proof_gate"]["single_post_transport_tree_identity_required"] is False
     target_free_split = payload["target_free_repair_status_split"]
     assert target_free_split["status"] == "open"

@@ -110,8 +110,13 @@ class FixedPointProbe:
     residual_alpha: Decimal
 
 
-CODATA_2022_ALPHA_INV = Decimal("137.035999177")
-CODATA_2022_ALPHA_INV_STD_UNCERTAINTY = Decimal("0.000000021")
+@dataclass(frozen=True)
+class ContractionSample:
+    alpha: Decimal
+    residual_alpha: Decimal
+    inner_alpha: Decimal
+    centered_slope: Decimal
+    contraction_margin: Decimal
 
 
 class PaperMathContext:
@@ -619,7 +624,7 @@ class PaperMathContext:
             ctx.prec = self.work_precision
             return +((p - self.phi) / self.sqrt_pi)
 
-    def observed_p_from_alpha_inv(self, alpha_inv: Decimal | int | str | float = CODATA_2022_ALPHA_INV) -> Decimal:
+    def p_from_inverse_alpha(self, alpha_inv: Decimal | int | str | float) -> Decimal:
         with localcontext() as ctx:
             ctx.prec = self.work_precision
             return +self.outer_p_from_alpha(self.one / _dec(alpha_inv))
@@ -795,6 +800,8 @@ def build_fixed_point_witness(
     scan_points: int = 60,
     derivative_step: str = "0.000001",
     sample_points: int = 5,
+    compare_alpha_inv: str | None = None,
+    compare_alpha_inv_uncertainty: str | None = None,
 ) -> dict[str, Any]:
     """Build a numerical witness for the alpha -> alpha fixed-point map.
 
@@ -826,11 +833,6 @@ def build_fixed_point_witness(
             slope = (right.inner_alpha - left.inner_alpha) / (Decimal(2) * h)
             slopes.append(+slope)
 
-        observed_p = ctx.observed_p_from_alpha_inv(CODATA_2022_ALPHA_INV)
-        codata_alpha = ctx.one / CODATA_2022_ALPHA_INV
-        codata_delta_alpha_inv = result.alpha_inv - CODATA_2022_ALPHA_INV
-        codata_delta_p = result.p - observed_p
-
         max_abs_sample_slope = max(abs(slope) for slope in slopes)
         witness = {
             "claim_status": "numerical_witness_not_interval_certificate",
@@ -851,16 +853,116 @@ def build_fixed_point_witness(
                 "slopes": slopes,
                 "probes": probes,
             },
-            "codata_2022_compare_only": {
-                "alpha_inv": CODATA_2022_ALPHA_INV,
-                "alpha_inv_standard_uncertainty": CODATA_2022_ALPHA_INV_STD_UNCERTAINTY,
-                "alpha": +codata_alpha,
-                "p_from_alpha_inv": +observed_p,
-                "fixed_point_minus_codata_alpha_inv": +codata_delta_alpha_inv,
-                "fixed_point_p_minus_codata_p": +codata_delta_p,
-            },
         }
+        if compare_alpha_inv is not None:
+            compare_inv = _dec(compare_alpha_inv)
+            compare_alpha = ctx.one / compare_inv
+            compare_p = ctx.p_from_inverse_alpha(compare_inv)
+            compare_block = {
+                "alpha_inv": +compare_inv,
+                "alpha": +compare_alpha,
+                "p_from_alpha_inv": +compare_p,
+                "fixed_point_minus_compare_alpha_inv": +(result.alpha_inv - compare_inv),
+                "fixed_point_p_minus_compare_p": +(result.p - compare_p),
+            }
+            if compare_alpha_inv_uncertainty is not None:
+                compare_block["alpha_inv_standard_uncertainty"] = +_dec(compare_alpha_inv_uncertainty)
+            witness["external_compare_only"] = compare_block
         return to_serializable(witness)
+
+
+def build_contraction_certificate(
+    precision: int = 40,
+    mode: str = "thomson_structured_running",
+    su2_cutoff: int = 120,
+    su3_cutoff: int = 90,
+    max_iterations: int = 20,
+    scan_points: int = 60,
+    interval_half_width: str = "0.000001",
+    derivative_step: str = "0.0000001",
+    sample_points: int = 9,
+) -> dict[str, Any]:
+    """Build a local numerical contraction certificate for the alpha map.
+
+    This is a bounded, reproducible certificate for the declared numerical map,
+    not a formal interval-arithmetic proof. It records a sign-changing bracket
+    around the solved fixed point and finite-difference contraction margins on
+    an explicit alpha interval.
+    """
+    ctx = PaperMathContext(precision=precision, su2_cutoff=su2_cutoff, su3_cutoff=su3_cutoff)
+    result = ctx.solve_closure(mode=mode, max_iterations=max_iterations, scan_points=scan_points)
+    with localcontext() as dec_ctx:
+        dec_ctx.prec = ctx.work_precision
+        half_width = _dec(interval_half_width)
+        h = _dec(derivative_step)
+        if half_width <= 0:
+            raise ValueError("interval_half_width must be positive")
+        if h <= 0:
+            raise ValueError("derivative_step must be positive")
+        if sample_points < 3:
+            raise ValueError("sample_points must be at least 3")
+
+        alpha_lo = result.alpha - half_width
+        alpha_hi = result.alpha + half_width
+        lo_probe = ctx.evaluate_alpha_fixed_point(alpha_lo, mode)
+        hi_probe = ctx.evaluate_alpha_fixed_point(alpha_hi, mode)
+        bracket_changes_sign = lo_probe.residual_alpha * hi_probe.residual_alpha <= 0
+
+        samples: list[ContractionSample] = []
+        max_abs_centered_slope = Decimal(0)
+        for index in range(sample_points):
+            frac = Decimal(index) / Decimal(sample_points - 1)
+            alpha = alpha_lo + (alpha_hi - alpha_lo) * frac
+            probe = ctx.evaluate_alpha_fixed_point(alpha, mode)
+            left = ctx.evaluate_alpha_fixed_point(alpha - h, mode)
+            right = ctx.evaluate_alpha_fixed_point(alpha + h, mode)
+            slope = (right.inner_alpha - left.inner_alpha) / (Decimal(2) * h)
+            max_abs_centered_slope = max(max_abs_centered_slope, abs(slope))
+            samples.append(
+                ContractionSample(
+                    alpha=+alpha,
+                    residual_alpha=+probe.residual_alpha,
+                    inner_alpha=+probe.inner_alpha,
+                    centered_slope=+slope,
+                    contraction_margin=+(Decimal(1) - abs(slope)),
+                )
+            )
+
+        sample_contraction_observed = max_abs_centered_slope < Decimal(1)
+        certificate_status = (
+            "numerical_local_contraction_certificate"
+            if bracket_changes_sign and sample_contraction_observed
+            else "numerical_contraction_certificate_failed"
+        )
+        return to_serializable(
+            {
+                "claim_status": certificate_status,
+                "claim_boundary": (
+                    "Finite-difference slopes below one on this sampled interval are a local numerical "
+                    "contraction certificate for the implemented map. Formal theorem-grade status still "
+                    "requires interval arithmetic for the full D10/Thomson map and its quadrature remainder."
+                ),
+                "mode": mode,
+                "precision": precision,
+                "su2_cutoff": su2_cutoff,
+                "su3_cutoff": su3_cutoff,
+                "scan_points": scan_points,
+                "fixed_point": result,
+                "alpha_interval": {
+                    "lo": +alpha_lo,
+                    "hi": +alpha_hi,
+                    "half_width": +half_width,
+                    "lo_residual_alpha": +lo_probe.residual_alpha,
+                    "hi_residual_alpha": +hi_probe.residual_alpha,
+                    "bracket_changes_sign": bracket_changes_sign,
+                },
+                "derivative_step": +h,
+                "sample_points": sample_points,
+                "max_abs_centered_slope": +max_abs_centered_slope,
+                "sample_contraction_observed": sample_contraction_observed,
+                "samples": samples,
+            }
+        )
 
 
 def compute_alpha(

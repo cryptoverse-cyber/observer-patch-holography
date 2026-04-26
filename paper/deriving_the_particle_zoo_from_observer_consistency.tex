@@ -191,7 +191,8 @@ For comparison, the 2022 CODATA/NIST central value
 P=1.630968209403959\ldots
 \]
 through this outer formula. This is compare-only metadata until the same number is emitted by the
-declared OPH fixed-point map.
+declared OPH fixed-point map. The repository now records both a numerical fixed-point witness and
+a local numerical contraction certificate for the implemented map.
 A separate pending hardware note reports an optical-cavity check of the same fixed-point geometry;
 this is treated as corroborating engineering evidence.
 Once that fixed point is selected, the particle question becomes whether all downstream readouts
@@ -1222,9 +1223,9 @@ and therefore the comparison endpoint
 \[
 \alpha_{\mathrm{Th,comp}}^{-1}=137.035999177.
 \]
-The repository's \texttt{code/P\_derivation} witness path records this as a numerical fixed-point
-candidate and keeps the CODATA/NIST value as compare-only metadata rather than as an input to the
-closure solve.
+The repository's \texttt{code/P\_derivation} witness path records the fixed-point candidate without
+a built-in external inverse-\(\alpha\) value. The displayed CODATA/NIST value enters only when
+supplied explicitly as compare-only metadata, not as an input to the closure solve.
 
 \begin{remark}
 The CODATA/NIST comparison is against the Thomson-limit inverse fine-structure constant. The

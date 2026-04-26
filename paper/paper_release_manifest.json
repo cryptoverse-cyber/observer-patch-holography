@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-04-26T04:25:41.497710Z",
+  "generated_at": "2026-04-26T04:42:35.676712Z",
   "papers": {
     "deriving_the_particle_zoo_from_observer_consistency": {
       "pdf_path": "paper/deriving_the_particle_zoo_from_observer_consistency.pdf",
-      "sha256": "f9403bc8c3dc60e57040d56565209366be3e6f912d248d973406175aad4d409a",
-      "size_bytes": 310448
+      "sha256": "b03f008814becc753cc648ff4343aa4d4777f4084633769452751262bcab23c4",
+      "size_bytes": 310352
     },
     "observers_are_all_you_need": {
       "pdf_path": "paper/observers_are_all_you_need.pdf",
-      "sha256": "1d3c37e38426e1b96b2f848b622d3171c8e67cc4832cbff1074a8cbe038b5439",
-      "size_bytes": 525230
+      "sha256": "bbe4d3336b5a702c2715decee2479418cf6fc9ce7f8440aba25bacb6af9f329c",
+      "size_bytes": 525225
     },
     "reality_as_consensus_protocol": {
       "pdf_path": "paper/reality_as_consensus_protocol.pdf",
@@ -18,8 +18,8 @@
     },
     "recovering_relativity_and_standard_model_structure_from_observer_overlap_consistency_compact": {
       "pdf_path": "paper/recovering_relativity_and_standard_model_structure_from_observer_overlap_consistency_compact.pdf",
-      "sha256": "cebdf95a36d5d99eed6659c704078e4386c41bac920eeb3b66afaaed6c813f6e",
-      "size_bytes": 441719
+      "sha256": "a9531f205e046acbb1cc67712cbf8220ea0a0ff72579960b3175c50407b515da",
+      "size_bytes": 441866
     },
     "screen_microphysics_and_observer_synchronization": {
       "pdf_path": "paper/screen_microphysics_and_observer_synchronization.pdf",

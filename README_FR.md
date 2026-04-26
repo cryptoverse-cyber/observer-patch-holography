@@ -21,7 +21,7 @@ Pour le statut théorématique du noyau reconstruit et le niveau de preuve des c
 - Une architecture microphysique d'écran concrète qui met mesure, enregistrements et observateurs à l'intérieur de la physique.
 
 L'OPH utilise une seule entrée quantitative externe, la capacité totale de l'écran `N_scr = log dim H_tot`, déduite de la constante cosmologique, ainsi qu'un ratio local de pixel `P = a_cell / l_P^2`. La même cellule d'écran est décrite deux fois : vue de l'extérieur comme un pixel situé légèrement au-dessus de l'équilibre auto-similaire exact `φ = (1 + sqrt(5)) / 2`, et vue de l'intérieur comme la plus petite échelle d'observation électromagnétique disponible pour les observateurs de l'univers simulé. `P` est la valeur pour laquelle ces deux descriptions coïncident.
-Le papier de synthèse écrit cette autoréférence comme un problème de point fixe. Le décalage extérieur vaut `α_ext(P) = (P - φ) / sqrt(pi)`, ou encore `P = φ + α_ext(P) sqrt(pi)`, tandis que le côté intérieur est le couplage électromagnétique émis par cette même cellule sur la branche quantitative déclarée. Pour la valeur centrale CODATA/NIST 2022 `α⁻¹(0) = 137.035999177`, cette formule extérieure donne `P = 1.630968209403959...`. Le dépôt traite ce nombre comme un témoin numérique et une cible de comparaison; le certificat d'unicité sur intervalle reste un objet séparé. Une note matérielle séparée et en attente rapporte une vérification en cavité optique de la même géométrie de point fixe; elle est traitée comme une preuve d'ingénierie corroborante. Sur cette petite surface quantitative, l'OPH émet des prédictions concrètes pour les couplages, les masses et les grandeurs gravitationnelles.
+Le papier de synthèse écrit cette autoréférence comme un problème de point fixe. Le décalage extérieur vaut `α_ext(P) = (P - φ) / sqrt(pi)`, ou encore `P = φ + α_ext(P) sqrt(pi)`, tandis que le côté intérieur est le couplage électromagnétique émis par cette même cellule sur la branche quantitative déclarée. Pour la valeur centrale externe 2022 `α⁻¹(0) = 137.035999177`, cette formule extérieure donne `P = 1.630968209403959...`. Le dépôt traite la fermeture comme un témoin numérique de point fixe et la valeur centrale affichée seulement comme une cible de comparaison externe; le code ne contient pas de constante inverse-alpha intégrée. Le certificat d'unicité sur intervalle reste un objet séparé. Une note matérielle séparée et en attente rapporte une vérification en cavité optique de la même géométrie de point fixe; elle est traitée comme une preuve d'ingénierie corroborante. Sur cette petite surface quantitative, l'OPH émet des prédictions concrètes pour les couplages, les masses et les grandeurs gravitationnelles.
 
 ## Surface locale d'unification
 
@@ -63,10 +63,13 @@ n'a pas publié son certificat d'unicité lisible par machine.
 | --- | --- | --- | --- | --- |
 | Constante gravitationnelle | G | 6.6742999959e-11 | 6.67430(15)e-11 | 0.00003σ |
 | Vitesse de la lumière | c | 299792458 | 299792458 (exact) | match |
-| Structure fine (inv.) | α⁻¹(0) | témoin numérique de fermeture `P` visant 137.035999177 | 137.035999177(21) | certificat d'intervalle en attente |
+| Structure fine (inv.) | α⁻¹(0) | témoin de fermeture `P`; comparaison externe 137.035999177 | 137.035999177(21) | certificat d'intervalle en attente |
 | Masse du photon | m_γ | 0 eV | <1e-18 eV | sous la borne |
 | Masse du gluon | m_g | 0 GeV | 0 GeV | match |
 | Masse du graviton | m_grav | 0 eV | <1.76e-23 eV | sous la borne |
+
+Pour une liste orientée laboratoire des cibles OPH et de leurs niveaux de
+statut, voir [OPH Lab-Facing Predictions](LAB_PREDICTIONS.md).
 
 **Secteur des quarks**
 
