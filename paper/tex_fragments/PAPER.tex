@@ -184,7 +184,7 @@ External mathematical inputs: SSA and recovery theorems (Petz 1986, 1988; Fawzi 
 \item \textbf{T2}: all Lorentz/null-modular/Einstein statements are claims about a controlled refinement/scaling limit of the regulator net, not literal exactness at fixed finite cutoff.
 \item \textbf{T3}: symmetric braiding in the \(3+1\)D EFT branch.
 \item \textbf{T4}: a bosonic Tannakian fiber-functor premise, or else an explicit super-Tannakian fork.
-\item \textbf{T5}: whenever compact gauge reconstruction is invoked, the sector category means the directed colimit of transportable edge sectors with objectwise finite-dimensional fibers.
+\item \textbf{T5}: whenever compact gauge reconstruction is invoked, the sector category means the directed colimit of transportable edge sectors, with refinement functors preserving transportable sector classes on cofinal tails and with objectwise finite-dimensional fibers.
 \end{itemize}
 
 \subsubsection{Notation}\label{15-notation}
@@ -2549,6 +2549,8 @@ Assume therefore that in the EFT regime there is a directed system \((\mathsf{Se
 \]
 
 for the directed colimit retaining the sectors and intertwiners that persist in that transportable system, with objectwise finite-dimensional fibers. The theorem below is neutral about whether \(\mathsf{Sect}_\infty\) is trivial or nontrivial: if \textbf{T5} supplied only the tensor unit, the reconstructed compact group would be the trivial group.
+
+\textbf{Persistence lemma.} Write \(U_{rs}:\mathsf{Sect}_r\to\mathsf{Sect}_s\) for the refinement functor from a regulator scale \(r\) to a finer scale \(s\succeq r\). If a realized transportable edge-sector class \(\alpha_{r_0}\) appears on a sufficiently fine collar, has overlap-visible edge-center support, and has representatives \(\alpha_s\in\mathsf{Sect}_s\) on a cofinal refinement tail such that \(U_{st}\alpha_s\simeq\alpha_t\) for all later \(t\succeq s\) on that tail, then it determines a unique object \([\alpha]\in\mathsf{Sect}_\infty\). The reason is just the directed-colimit equivalence relation: two representatives define the same object once their images agree at a common finer stage. Therefore a later stage cannot erase, split, or change the transportability status of that class without either breaking the stated refinement-system hypotheses or introducing new overlap-visible support. This is a persistence result inside \textbf{T5}, not a proof that a nontrivial transportable colimit exists.
 
 This gives a tensor category \(\mathsf{Sect}_\infty\) of edge charges:
 

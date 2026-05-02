@@ -374,6 +374,14 @@ define a tensor category. The Tannaka-Krein reconstruction theorem says, roughly
 
 The gauge group isn't put in by hand. It's reconstructed from how charges combine.
 
+There is one refinement caveat. A charge label seen at one cutoff counts in
+the final category only if it remains visible along a cofinal refinement
+chain. If it does, the directed colimit gives it one stable object. Later
+refinement cannot silently erase it or split it into a different charge
+without new overlap-visible data, or else the transport system has failed.
+This does not prove that every edge charge survives. It says that survival,
+once supplied by the transport premises, is unique and checkable.
+
 ### The Standard Model Factors
 
 Why does the reconstructed group have the form SU(3) x SU(2) x U(1)?

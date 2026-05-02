@@ -278,7 +278,7 @@ Whenever compact gauge reconstruction is invoked on the ordinary or central-defe
 \begin{enumerate}[label=(G\arabic*),leftmargin=2.3em]
 \item loop coherence on that ordinary or central-defect branch, written \([z]=0\);
 \item symmetric braiding in the relevant \(3+1\)-dimensional EFT branch;
-\item a directed colimit \(\mathsf{Sect}_\infty=\varinjlim_r \mathsf{Sect}_r\) of transportable edge-sector categories with objectwise finite-dimensional fibers;
+\item a directed colimit \(\mathsf{Sect}_\infty=\varinjlim_r \mathsf{Sect}_r\) of transportable edge-sector categories, built from refinement functors that preserve transportable sector classes on cofinal tails, with objectwise finite-dimensional fibers;
 \item a faithful bosonic fiber functor on \(\mathsf{Sect}_\infty\).
 \end{enumerate}
 The genuinely noncentral fixed-cutoff branch is handled separately by Theorems~\ref{thm:hgdatum}--\ref{thm:hgtransport} and is not itself the ordinary compact-group reconstruction theorem.
@@ -2732,6 +2732,16 @@ Assume therefore that in the EFT regime there is a directed system \((\mathsf{Se
 \mathsf{Sect}_\infty := \varinjlim_r \mathsf{Sect}_r
 \]
 for the directed colimit retaining the transportable sectors and intertwiners that persist in that system, with objectwise finite-dimensional fibers. This is the category on which Doplicher--Roberts / Tannaka reconstruction is applied. The theorem below is neutral about whether \(\mathsf{Sect}_\infty\) is trivial or nontrivial: if the transportable colimit of Assumption~\ref{ass:gaugeprem} furnished only the tensor unit, the reconstructed compact group would be the trivial group.
+
+\begin{lemma}[Refinement-stable transportable sector persistence]\label{lem:sector-persistence}
+Assume the directed transport system in Assumption~\ref{ass:gaugeprem}, and write \(U_{rs}:\mathsf{Sect}_r\to\mathsf{Sect}_s\) for the refinement functor from regulator scale \(r\) to a finer scale \(s\succeq r\). Let \(\alpha_{r_0}\) be a realized transportable edge-sector class on a sufficiently fine collar whose edge-center support is visible on the declared overlap algebra. Suppose there is a cofinal refinement tail \(T\) above \(r_0\) and representatives \(\alpha_s\in\mathsf{Sect}_s\), \(s\in T\), such that \(U_{st}\alpha_s\simeq \alpha_t\) for \(t\succeq s\) in \(T\), with the same overlap-visible support transported by the corresponding refinement maps. Then the tail determines a unique object \([\alpha]\in\mathsf{Sect}_\infty\). A later refinement stage cannot delete, split, or change the transportability status of that realized class while preserving the stated hypotheses and adding no new overlap-visible support.
+\end{lemma}
+
+\begin{proof}
+The directed colimit identifies two representatives once their images agree at some common finer regulator stage. The cofinal tail \(T\) therefore supplies a compatible family \((\alpha_s)_{s\in T}\), and its equivalence class is an object \([\alpha]\) of \(\mathsf{Sect}_\infty\). If a second cofinal family \((\beta_u)\) represents the same realized collar class, cofinality gives a common refinement \(v\succeq s,u\). Compatibility of the refinement functors and the declared overlap-visible support gives \(U_{sv}\alpha_s\simeq U_{uv}\beta_u\), so both families define the same colimit object.
+
+Deletion or loss of transportability at a later stage would mean that no compatible representative exists on a cofinal tail, contradicting the persistence hypothesis rather than producing a different colimit object. A split into inequivalent later classes without new overlap-visible support would assign two incompatible refinement images to the same transported edge-center datum, contradicting functorial compatibility on transportable sector classes. If new overlap-visible support appears, it is a new sector datum, not a silent change of the old persistent class. Thus persistence is unique once the directed transport system is supplied; the lemma does not prove that such a nontrivial system exists.
+\end{proof}
 
 \begin{theorem}[Conditional compact gauge reconstruction in the bosonic branch]\label{thm:compactgauge}
 Assume Axioms~\ref{ax:screen}--\ref{ax:entropy} and Assumption~\ref{ass:gaugeprem}. Let
