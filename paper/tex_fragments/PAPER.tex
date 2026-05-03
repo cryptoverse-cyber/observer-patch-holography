@@ -199,9 +199,9 @@ External mathematical inputs: SSA and recovery theorems (Petz 1986, 1988; Fawzi 
 \tightlist
 \item \textbf{T1}: on the central-defect branch, the gluing-side criterion corresponding to path-independent transportability is written \([z]=0\); on the genuinely noncentral fixed-cutoff branch the parallel criterion is \(q_\Sigma=0\), but that branch is handled by crossed-module data rather than by the ordinary DR field-algebra route. This identifies the obstruction data attached to the transportability premise on each fixed-cutoff branch; it is not a second theorem-side premise beyond the supplied transportable sector system.
 \item \textbf{T2}: all Lorentz/null-modular/Einstein statements are claims about a controlled refinement/scaling limit of the regulator net, not literal exactness at fixed finite cutoff.
-\item \textbf{T3}: symmetric braiding in the \(3+1\)D EFT branch.
-\item \textbf{T4}: a bosonic Tannakian fiber-functor premise, or else an explicit super-Tannakian fork.
-\item \textbf{T5}: whenever compact gauge reconstruction is invoked, the sector category means the directed colimit of transportable edge sectors, with refinement functors preserving transportable sector classes on cofinal tails and with objectwise finite-dimensional fibers.
+\item \textbf{T3}: the fixed-cutoff collar-sector packages are bosonic symmetric \(C^*\)-tensor categories in the \(3+1\)D EFT branch.
+\item \textbf{T4}: the refinement maps are faithful monoidal \(^*\)-functors compatible with composition and preserving transportable sector classes on cofinal tails, together with compatible finite-dimensional bosonic multiplicity fibers.
+\item \textbf{T5}: compact gauge reconstruction uses the refinement-limit category and bosonic fiber functor constructed from that supplied coherent ladder; nontriviality of the realized branch is still an extra burden.
 \end{itemize}
 
 \subsubsection{Notation}\label{15-notation}
@@ -515,7 +515,7 @@ C_{\psi,\phi,I_{\max}}\,|I'\Delta I|,
 \]
 used later in the null-modular bridge. So quasi-local propagation and endpoint-Lipschitz control are not external regularity selectors; they are the local-constraint MaxEnt branch written in dynamical form.
 
-\textbf{Refinement-stable multiplier branch.} Because the same finite constraint family is preserved under coarse-graining, the regulator states lie in one common finite-dimensional multiplier family rather than in unrelated state spaces at different cutoffs. The ``refinement-stable'' language used later therefore means persistence along the stable or fixed branch of this multiplier family. This state-side notion is enough to compare realized states across cutoffs. It does \emph{not} by itself upgrade fixed-cutoff edge labels to transportable refinement-persistent sectors, and it does not show that the directed colimit of such sectors is nontrivial. Accordingly, whenever the gauge derivation speaks of a refinement-stable directed colimit of sectors, the entire transportable directed-system/fiber clause is the explicit content of \textbf{T5}; the third OPH axiom supplies only the realized state branch along which one asks whether such sector transport persists.
+\textbf{Refinement-stable multiplier branch.} Because the same finite constraint family is preserved under coarse-graining, the regulator states lie in one common finite-dimensional multiplier family rather than in unrelated state spaces at different cutoffs. The ``refinement-stable'' language used later therefore means persistence along the stable or fixed branch of this multiplier family. This state-side notion is enough to compare realized states across cutoffs. It does \emph{not} by itself upgrade fixed-cutoff edge labels to transportable refinement-persistent sectors, and it does not show that the supplied coherent bosonic refinement ladder is emitted on a nontrivial realized branch. Accordingly, whenever the gauge derivation speaks of a refinement-stable directed colimit of sectors, the entire transportable monoidal-refinement/fiber clause is the explicit content of \textbf{T3}--\textbf{T5}; the third OPH axiom supplies only the realized state branch along which one asks whether such sector transport persists.
 
 \textbf{Scaling limit and algebraic type.} The regulator presentation gives a family of finite type-I algebras
 \[
@@ -2580,21 +2580,21 @@ on the explicit \textbf{T2} plus extraction-and-rigidity branch, the realized sc
 
 \subsubsection{Edge sector category and gauge group reconstruction}\label{61-edge-sector-category-and-gauge-group-reconstruction}
 
-At any fixed UV cutoff, edge-center completion provides finite tensor categories of transportable edge charges. The local MaxEnt / collar-mixing package established earlier controls only fixed-cutoff recoverability, modular-support localization, and carried error terms on the realized branch. It is logically separate from the question whether transportable edge sectors survive refinement, and it supplies no theorem that the refinement-limit sector category is trivial or nontrivial. A nontrivial transportable colimit is therefore treated here as additional gauge data rather than as something decided by the mixing estimate itself. Whenever compact gauge reconstruction is invoked, that transportable refinement-directed sector system is exactly the content of \textbf{T5}.
+At any fixed UV cutoff, edge-center completion provides finite collar-sector packages of transportable edge charges, intertwiners, fusion, and duals. The local MaxEnt / collar-mixing package established earlier controls only fixed-cutoff recoverability, modular-support localization, and carried error terms on the realized branch. It is logically separate from the question whether transportable edge sectors survive refinement, and it supplies no theorem that the refinement-limit sector category is trivial or nontrivial. A nontrivial transportable branch is therefore treated here as additional gauge data rather than as something decided by the mixing estimate itself. Whenever compact gauge reconstruction is invoked, the coherent bosonic refinement ladder itself is the content of \textbf{T3}--\textbf{T5}.
 
 On the central-defect branch, the transportability carried by this assumed directed system already matches the vanishing of the central gluing obstruction by Proposition 6.1a. So \([z]=0\) is not listed again as a second independent gauge premise on the ordinary compact-group route. The genuinely noncentral fixed-cutoff branch remains separate: its obstruction is \(q_\Sigma\), and it is handled by the crossed-module theorems rather than by the ordinary DR field-algebra corollary.
 
-Assume therefore that in the EFT regime there is a directed system \((\mathsf{Sect}_r)_r\) of transportable edge-sector categories with refinement functors, and write
+Assume therefore that in the EFT regime there is a directed ladder \((\mathsf{Sect}_r,U_{rs},F_r)\) of transportable bosonic edge-sector packages with monoidal refinement functors and compatible finite multiplicity fibers, and write
 
 \[
 \mathsf{Sect}_\infty := \varinjlim_r \mathsf{Sect}_r,
 \]
 
-for the directed colimit retaining the sectors and intertwiners that persist in that transportable system, with objectwise finite-dimensional fibers. The theorem below is neutral about whether \(\mathsf{Sect}_\infty\) is trivial or nontrivial: if \textbf{T5} supplied only the tensor unit, the reconstructed compact group would be the trivial group.
+for the directed colimit retaining the sectors and intertwiners that persist in that transportable system. The theorem below is neutral about whether \(\mathsf{Sect}_\infty\) is trivial or nontrivial: if the supplied bosonic ladder furnished only the tensor unit, the reconstructed compact group would be the trivial group.
 
 \textbf{Persistence lemma.} Write \(U_{rs}:\mathsf{Sect}_r\to\mathsf{Sect}_s\) for the refinement functor from a regulator scale \(r\) to a finer scale \(s\succeq r\). If a realized transportable edge-sector class \(\alpha_{r_0}\) appears on a sufficiently fine collar, has overlap-visible edge-center support, and has representatives \(\alpha_s\in\mathsf{Sect}_s\) on a cofinal refinement tail such that \(U_{st}\alpha_s\simeq\alpha_t\) for all later \(t\succeq s\) on that tail, then it determines a unique object \([\alpha]\in\mathsf{Sect}_\infty\). The reason is just the directed-colimit equivalence relation: two representatives define the same object once their images agree at a common finer stage. Therefore a later stage cannot erase, split, or change the transportability status of that class without either breaking the stated refinement-system hypotheses or introducing new overlap-visible support. This is a persistence result inside \textbf{T5}, not a proof that a nontrivial transportable colimit exists.
 
-This gives a tensor category \(\mathsf{Sect}_\infty\) of edge charges:
+This gives a refinement-limit bosonic tensor category \(\mathsf{Sect}_\infty\) of edge charges:
 
 \begin{itemize}
 \tightlist
@@ -2605,14 +2605,14 @@ This gives a tensor category \(\mathsf{Sect}_\infty\) of edge charges:
 \item
   tensor product: fusion by collar concatenation, \(\alpha \otimes \beta = \bigoplus_\gamma N_{\alpha\beta}^{\ \ \gamma}\,\gamma\),
 \item
-  duals: orientation reversal \(\alpha \leftrightarrow \bar\alpha\),
+  duals: orientation reversal / charge conjugation \(\alpha \leftrightarrow \bar\alpha\),
 \item
   symmetric braiding in the EFT regime (no anyonic statistics in 3+1D).
 \end{itemize}
 
-Let \(\mathcal F: \mathsf{Sect}_\infty \to \mathsf{Hilb}_{\mathrm{fd}}\) be the bosonic fiber functor that sends each sector to its edge multiplicity space. The fibers are finite-dimensional objectwise even though \(\mathsf{Sect}_\infty\) can have infinitely many simple objects. The theorem begins only once that transportable colimit and its fiber functor are given; those data are not consequences of Axiom 3 alone.
+The monoidal refinement maps descend the tensor unit, associators, duals, and bosonic symmetry to the colimit, while the compatible stagewise multiplicity spaces descend to a faithful bosonic fiber functor \(\mathcal F: \mathsf{Sect}_\infty \to \mathsf{Hilb}_{\mathrm{fd}}\). The fibers are finite-dimensional objectwise even though \(\mathsf{Sect}_\infty\) can have infinitely many simple objects. The theorem begins only once that bosonic refinement ladder is supplied; those data are not consequences of Axiom 3 alone.
 
-\textbf{Theorem 6.1 (Tannaka/DR reconstruction).} If \(\mathsf{Sect}_\infty\) is a rigid symmetric \(C^*\) tensor category with a faithful bosonic fiber functor \(\mathcal F\), then
+\textbf{Theorem 6.1 (Constructed bosonic sector category and Tannaka/DR reconstruction).} If the supplied bosonic refinement ladder is as above, then the colimit \(\mathsf{Sect}_\infty\) is a rigid symmetric \(C^*\) tensor category with faithful bosonic fiber functor \(\mathcal F\), and therefore
 
 \[
 G := \mathrm{Aut}_\otimes(\mathcal F)
@@ -2620,7 +2620,7 @@ G := \mathrm{Aut}_\otimes(\mathcal F)
 
 is a compact group and \(\mathsf{Sect}_\infty \simeq \mathrm{Rep}(G)\). In particular \(G\) is unique up to isomorphism, and this group is a compact subgroup of a product of unitary groups.
 
-\textbf{Proof.} The MaxEnt/local-Gibbs/collar-mixing package is not used here to prove existence of the transportable colimit or to decide whether it is trivial or nontrivial; those data are supplied by the directed-colimit premise \textbf{T5}. Fix a small skeleton of \(\mathsf{Sect}_\infty\). For every object \(X\), a monoidal natural automorphism \(\eta \in \mathrm{Aut}_\otimes(\mathcal F)\) has a unitary component \(\eta_X \in U(\mathcal F(X))\), so
+\textbf{Proof.} The MaxEnt/local-Gibbs/collar-mixing package is not used here to prove nontriviality of the transportable branch; those data are supplied by the bosonic refinement ladder. The monoidal refinement functors preserve tensor products, unit, duals, and \(^*\)-structure, so the directed colimit inherits a rigid symmetric \(C^*\)-tensor structure, and the compatible stagewise finite multiplicity spaces descend to a faithful bosonic fiber functor \(\mathcal F\). Fix a small skeleton of \(\mathsf{Sect}_\infty\). For every object \(X\), a monoidal natural automorphism \(\eta \in \mathrm{Aut}_\otimes(\mathcal F)\) has a unitary component \(\eta_X \in U(\mathcal F(X))\), so
 
 \[
 \mathrm{Aut}_\otimes(\mathcal F) \hookrightarrow \prod_X U(\mathcal F(X)), \qquad \eta \mapsto (\eta_X)_X.
@@ -2634,7 +2634,7 @@ For each intertwiner \(f:X\to Y\), naturality gives the closed relation \(\mathc
 \eta_{\mathbf 1}=\mathrm{id}_{\mathbb C}.
 \]
 
-Hence \(G=\mathrm{Aut}_\otimes(\mathcal F)\) is a closed subgroup of the compact product \(\prod_X U(\mathcal F(X))\), so \(G\) is compact. The DR/Tannaka hypotheses are exactly the stated ones: \(\mathsf{Sect}_\infty\) is rigid, symmetric, and \(C^*\), and \(\mathcal F\) is a faithful bosonic fiber functor with finite-dimensional values. Therefore the Doplicher--Roberts/Tannaka reconstruction theorem applies and gives a symmetric \(C^*\)-tensor equivalence \(\mathsf{Sect}_\infty \simeq \mathrm{Rep}(G)\) \cite{dr89,dr90}. If another compact group \(G'\) gave the same category through a faithful bosonic fiber functor, the induced symmetric tensor equivalence \(\mathrm{Rep}(G)\simeq\mathrm{Rep}(G')\) compatible with the forgetful functors would identify both groups as the automorphism group of the same fiber functor. Thus \(G\cong G'\), so the reconstruction is unique up to isomorphism. QED.
+Hence \(G=\mathrm{Aut}_\otimes(\mathcal F)\) is a closed subgroup of the compact product \(\prod_X U(\mathcal F(X))\), so \(G\) is compact. The DR/Tannaka hypotheses are therefore satisfied on the constructed pair \((\mathsf{Sect}_\infty,\mathcal F)\), and the Doplicher--Roberts/Tannaka reconstruction theorem gives a symmetric \(C^*\)-tensor equivalence \(\mathsf{Sect}_\infty \simeq \mathrm{Rep}(G)\) \cite{dr89,dr90}. If another compact group \(G'\) gave the same category through a faithful bosonic fiber functor, the induced symmetric tensor equivalence \(\mathrm{Rep}(G)\simeq\mathrm{Rep}(G')\) compatible with the forgetful functors would identify both groups as the automorphism group of the same fiber functor. Thus \(G\cong G'\), so the reconstruction is unique up to isomorphism. QED.
 
 \textbf{Corollary 6.1 (field algebra reconstruction, conditional).} If in the small-region limit the edge sectors are localized and transportable in the DHR sense (i.e., charges can be moved between patches without changing their fusion), then there exists a field algebra \(\mathcal F\) and a compact group \(G\) such that \(\mathcal A = \mathcal F^G\). This is the Doplicher--Roberts reconstruction of local gauge symmetry from sectors. QED.
 
@@ -3092,7 +3092,7 @@ The model requires photons and gravitons.
 \item
   Theorem 2.3 (edge-center completion) decomposes collar Hilbert spaces into sectors labeled by boundary gauge representations.
 \item
-  Theorem 6.1 (Tannaka/DR reconstruction) recovers a compact gauge group G from the transportable bosonic edge-sector category defined by these fusion rules.
+  Theorem 6.1 constructs the refinement-limit bosonic edge-sector category from the supplied coherent ladder and then recovers a compact gauge group G from it.
 \item
   Corollary 6.1 (conditional on DHR transportability) reconstructs a field algebra with G as a local gauge symmetry.
 \item
@@ -3707,7 +3707,7 @@ Many approaches produce emergent geometry/kinematics but stall at dynamics: why 
 
 Most unification stories pick a gauge group and work out consequences. Emergent-gauge approaches sometimes produce noncompact groups or uncontrolled redundancies.
 
-\emph{Resolution:} Gauge symmetry is recast as redundancy in overlap identifications (gauge-as-gluing). From edge sectors and fusion, a tensor category is reconstructed; Tannaka-Krein / Doplicher-Roberts reconstruction then yields a compact group G given the categorical hypotheses. "Gauge symmetry" names the gluing redundancy at the conceptual level. "Compact group" is the mathematical form compatible with finite-dimensional sector/fiber-functor structure.
+\emph{Resolution:} Gauge symmetry is recast as redundancy in overlap identifications (gauge-as-gluing). From fixed-cutoff edge sectors, fusion, coherent refinement transport, and compatible finite multiplicity fibers, a refinement-limit bosonic tensor category is constructed; Tannaka-Krein / Doplicher-Roberts reconstruction then yields a compact group G on that bosonic branch. "Gauge symmetry" names the gluing redundancy at the conceptual level. "Compact group" is the mathematical form compatible with finite-dimensional sector/fiber-functor structure.
 
 \textbf{6. Massless photon and graviton usually hand-imposed.}
 
