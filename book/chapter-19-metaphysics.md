@@ -62,11 +62,29 @@ structures that exist independently of physical reality and somehow "govern"
 it. But then their specific form becomes inexplicable. Why should the
 low-energy fine structure constant land near $1/137$, more precisely at the
 2022 CODATA/NIST central value $\alpha^{-1}(0)=137.035999177$? Why three spatial
-dimensions, not four or seven? In OPH, the fine-structure row is tied to the
-same pixel fixed-point witness that organizes the local particle scale. The
-number is the screen cell's small displacement from exact self-similar
-equilibrium, read from inside the world as electromagnetic observation
-strength.
+dimensions, not four or seven?
+
+OPH does not treat the fine-structure constant as a loose number to be fitted
+after the fact. It appears in the $P$ derivation. The local pixel ratio
+$P=a_{\mathrm{cell}}/\ell_P^2$ is given two readings. From outside the encoded
+world, $P$ is the area of one screen cell in Planck units, sitting slightly
+above the exact golden-ratio balance point $\varphi$. From inside the encoded
+world, the same displacement is read as the smallest electromagnetic
+observation strength available to observers. The closure condition is
+
+$$P=\varphi+\alpha_{\mathrm{in}}(P)\sqrt{\pi}.$$
+
+Here $\alpha_{\mathrm{in}}(P)$ is the inside electromagnetic observation
+strength, expressed in ordinary physics as the fine-structure constant. The
+observed Thomson-limit value $\alpha^{-1}(0)=137.035999177$ corresponds to
+
+$$P=1.630968209403959\ldots.$$
+
+This is the same number seen from two sides: outside as pixel-area detuning,
+inside as electromagnetic observation. Chapter 14 gives the particle-physics
+use of this fixed-point witness. Here the philosophical point is that a famous
+"free constant" is no longer merely a brute entry in a table. It is tied to the
+same local screen scale that organizes the particle sector.
 
 Some invoke the anthropic principle: the constants must be compatible with observers existing, or we wouldn't be here to ask. But this feels like giving up on explanation.
 
