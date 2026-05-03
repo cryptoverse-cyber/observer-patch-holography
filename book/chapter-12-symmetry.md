@@ -94,11 +94,18 @@ Objects transforming under SU(2) are called **spinors**. They have half-integer 
 
 ### The Dirac Belt Trick
 
-You can visualize this with your body. Hold a cup with palm up. Rotate your hand 360 degrees inward (under your arm, around, back up). Your arm is twisted.
+Do not picture this as an ordinary arm twist. Human shoulders are the wrong
+prop for the lesson.
 
-Rotate another 360 degrees in the same direction. Your arm untwists. You're back to the original position.
+Use a belt, a ribbon, or a plate attached to ribbons. Hold one end fixed and
+rotate the other end by 360 degrees. The belt now carries a twist that cannot be
+removed while both ends keep the same orientation. Rotate the end by another
+360 degrees, and the doubled twist can be combed away without rotating the end
+again.
 
-Your arm is a spinor. It requires 720 degrees to reset.
+The belt is not a spinor, but it shows the topology spinors obey. A 360-degree
+rotation lands on the other lift in the double cover. A 720-degree rotation
+returns to the starting lift.
 
 ### Why Half-Integers Exist
 

@@ -176,7 +176,7 @@ $\alpha^{-1}(0)=137.035999177$. At higher energies, it increases. At the Z
 boson mass, it is about $1/128$.
 
 That low-energy number sits inside the same particle sector as the weak bosons.
-Once the electroweak transport family is fixed by the shared local calibration,
+Once the electroweak transport family is read from the selected local fixed point,
 electromagnetism is read as the unbroken channel left after the weak and
 hypercharge sectors mix. The OPH $P$-closure witness is compared with the
 long-distance Thomson value
@@ -588,19 +588,19 @@ labels of mass, spin, and helicity. This chapter supplies the realized gauge
 quotient, the hypercharge lattice, and the generation-color counting. Together
 they decide which charged excitations can exist and how they transform.
 
-Then comes the shared local calibration. Once the common pixel ratio is
-fixed, the electroweak sector is the cleanest place to read out the local
-ruler because the data are sharp and hadronic clutter is weak. From there the
-same forward construction can be checked against the long-distance
-electromagnetic coupling, continued into the Higgs-top surface, and pushed
-through the quark and neutrino sectors.
+Then comes the fixed-point closure. Once the common pixel ratio is selected,
+the electroweak sector is the cleanest place to read out the local ruler
+because the data are sharp and hadronic clutter is weak. From there the same
+forward construction can be checked against the long-distance electromagnetic
+coupling, continued into the Higgs-top surface, and pushed through the quark
+and neutrino sectors.
 
-The fine-structure constant belongs here beside the weak sector. This is
-why the later mass tables do not feel like disconnected tricks. They read as
-different faces of one calibrated machine. Hadrons belong to the later
-strong-binding descent of the same picture. Chapter 18 returns to the same local scale from the
-outside-inside closure equation, which gives the whole particle sector an even
-tighter narrative spine.
+The fine-structure constant belongs here beside the weak sector. This is why
+the later mass tables do not feel like disconnected tricks. They read as
+different faces of one fixed-point closure. Hadrons belong to the later
+strong-binding descent of the same picture. Chapter 18 returns to the same
+local fixed point from the outside-inside closure equation, which gives the
+whole particle sector an even tighter narrative spine.
 
 The interpretation is simple. The screen cell wants to sit at the golden-ratio
 balance point, the exact self-similar equilibrium of the local entropy
@@ -672,7 +672,7 @@ confinement.
 
 That difference matters. Some results in the framework are structural and
 sharp. Others depend on solving the strong-coupling machinery in detail. The
-electroweak sector sits close enough to the local calibration that masses and
+electroweak sector sits close enough to the local fixed-point readout that masses and
 couplings can be pinned down cleanly. Hadrons live deeper in the jungle.
 
 A promising route into that jungle uses edge entanglement. It does not
@@ -685,7 +685,7 @@ shows up with striking accuracy. Even the golden-ratio fingerprint of
 $\mathbb Z_5$ appears where the group geometry says it should. Entanglement
 geometry leaves visible marks on the coupling structure.
 
-The same golden-ratio motif returns on the calibration side. Perfect
+The same golden-ratio motif returns on the fixed-point side. Perfect
 self-similar balance would sit exactly at $\phi$. A lived universe with durable
 records sits nearby, carrying the slight detuning that makes structure and
 history possible. Reliable extraction of gauge couplings from entanglement
@@ -748,10 +748,10 @@ This is a unique experimental signature. Standard SUSY GUTs predict both
 precision unification and proton decay. Our model separates those questions:
 the full connected gauge group has only the product-group adjoint content and
 no mixed leptoquark generators, so gauge-mediated proton decay is forbidden,
-while the edge-mode calibration can display MSSM-like unification-style
+while the edge-mode construction can display MSSM-like unification-style
 running without simple-group embedding. If Hyper-Kamiokande
 continues to see null results while precision measurements continue to favor
-unified couplings, that would support geometric calibration over algebraic
+unified couplings, that would support geometric edge-sector running over algebraic
 unification.
 
 ## 14.20 What the Model Explains
@@ -768,7 +768,14 @@ fine-structure witness, a Higgs-top surface, a selected-class six-quark
 running-mass sector with Yukawas, and one weighted-cycle neutrino family with
 definite masses and Majorana phases.
 
-The reason these numbers belong in one chapter is that the framework is trying to organize them with one local calibration structure. The same input that sets the electroweak scale also feeds the low-energy electromagnetic coupling and the effective gravitational coupling. The reader does not need every intermediate symbol to see the point. OPH is attempting to tie electroweak masses, the Higgs/top calibration, electromagnetism at low energy, and Newton's constant to one common structure instead of treating them as unrelated constants.
+The reason these numbers belong in one chapter is that the framework is trying
+to organize them with one local fixed-point structure. The same pixel ratio that
+sets the electroweak scale also feeds the low-energy electromagnetic coupling
+and the effective gravitational coupling. The reader does not need every
+intermediate symbol to see the point. OPH is attempting to tie electroweak
+masses, the Higgs/top surface, electromagnetism at low energy, and Newton's
+constant to one common structure instead of treating them as unrelated
+constants.
 
 **Charge quantization.** All color-singlet particles have integer electric charge. No fractional charges like $\pm 1/3$ can exist outside hadrons. This follows from the global structure of the gauge group.
 
@@ -802,7 +809,7 @@ ultraviolet consistency.
 
 It is a remarkably concrete result. The book points to a specific gauge
 structure, charge pattern, color count, and generation count. It also reaches
-the massless carriers, the $W$ and $Z$, a calibrated Higgs-top surface, one
+the massless carriers, the $W$ and $Z$, a Higgs-top surface, one
 weighted-cycle neutrino family, and a running quark sector on a selected
 physical basis. Strongly coupled bound states add the QCD problem on top of
 that particle-level structure.

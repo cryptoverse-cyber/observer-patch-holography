@@ -126,8 +126,10 @@ $$
 P=1.630968209403959\ldots
 $$
 
-The same fixed-point geometry is also probed in an optical-cavity hardware
-note.
+Alex Osika's optical-cavity hardware work probes the same fixed-point geometry.
+The apparatus is not a miniature universe. It is a controlled physical
+implementation of the closure idea: a device whose geometry and readout are
+forced to settle on one fixed point.
 
 One cell on the screen is then being described twice. From one side it is a
 pixel of the horizon. From the other it is the smallest electromagnetic step

@@ -172,14 +172,21 @@ As we saw in Chapter 6, Zurek's **quantum Darwinism** explains how classical fac
 
 In computer science, networks agree on shared states through consensus protocols. Physics does this constantly. The nodes are observers. The messages are light signals and memory traces. The consensus rule is physical law.
 
-The same idea can be stated more formally. Local repairs to inconsistent patch
-descriptions are supposed to lower a shared inconsistency score. When
-neighboring repairs are compatible, different repair orders converge to the
-same shared description. The measurement layer then singles out the records
-that observers can actually compare, with the usual Born probabilities and
-measurement updates on that accessible record structure. The Bell analysis
-stays within the standard quantum limits as well. Stable public facts appear
-when many local correction steps settle on one common answer.
+OPH sharpens this into an observer-based fixed-point consensus protocol. A
+finite network of patches carries local state data. Neighboring patches compare
+the data on their overlaps. Local repair moves try to reduce a shared mismatch
+score. When the repair law respects the overlap contract, every accepted move
+lowers that score, and compatible repair orders converge to the same public
+description.
+
+That public description is the fixed point. It is not a vote and it is not a
+view from nowhere. It is the state that remains after the observer network has
+repaired all checkable disagreement it is allowed to repair. The measurement
+layer then singles out the records that observers can actually compare, with
+the usual Born probabilities and measurement updates on that accessible record
+structure. The Bell analysis stays within the standard quantum limits as well.
+Stable public facts appear when many local correction steps settle on one
+common answer.
 
 Error correction is a physical principle as well as a tool for engineers. It is the way the universe builds stable facts.
 

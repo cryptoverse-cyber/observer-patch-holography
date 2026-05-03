@@ -175,20 +175,27 @@ records, and particles recovered from overlap consistency.
 This is where the reverse-engineering method matters. A good reverse engineer
 first works out the architecture, then checks how many knobs are really left.
 The book argues that most of the architecture is forced early. The sharp test
-is whether one local scale can organize far more of the particle structure
-than common sense would expect.
+is whether one local fixed point can organize far more of the particle
+structure than common sense would expect.
 
-That is the game played in the middle of the book. Start with the cleanest part
-of the particle data, the weak sector. Fix the local scale there. Then ask a
-hard question: does the same choice keep working when you move outward to the
-electromagnetic coupling, the Higgs and top, the quark sector, and the
-gravity-facing side of the framework? If it does, the book is uncovering one
-machine rather than fitting a different dial for every chapter.
+The image is close to a self-creating symphony. Perfect symmetry would let every
+voice play the same note at different pitches. Nothing interesting would happen.
+Arbitrary detuning would not make a world either. The useful departures have to
+reinforce one another. Harmony has to be amplified. Dissonance has to fade.
 
-The synthesis chapter returns to the same scale from a more surprising angle.
+That is the role of the local pixel ratio $P$. The weak sector is a clean
+readout, but it is not the place where a separate dial is chosen. The pixel
+ratio is selected as a small detuning from perfect self-similar balance, the
+value for which the outside screen geometry and the inside electromagnetic
+readout agree. The middle of the book then asks a harder question: does that
+same fixed point keep working when you move through the weak pair, the
+electromagnetic coupling, the Higgs and top, the quark sector, the neutrino
+family, and the gravity-facing side of the framework?
+
+The synthesis chapter returns to the same point from a more surprising angle.
 From one side it looks like a pixel of the screen. From the other it looks like
 the smallest observational step available to the world encoded on that screen.
-The theory identifies these two descriptions at the same value. That is where
+The theory identifies these two descriptions at one fixed point. That is where
 the book's self-reference theme enters the physics.
 
 From this starting point, we derive constraints. We show how relativity, gauge
