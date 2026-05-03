@@ -62,10 +62,11 @@ shared bookkeeping looks like when written smoothly.
 
 ## 18.5 How the Particle World Appears
 
-The particle world follows the same logic from another angle. Once stable
-charge sectors can fuse, split, and move coherently around overlaps, the gauge
-group is reconstructed from the charge bookkeeping itself. The group that
-emerges is
+The particle world follows the same logic from another angle. Once fixed-cutoff
+charge sectors can fuse, split, carry duals, persist coherently under
+refinement, and descend with compatible finite-dimensional multiplicity spaces,
+the gauge group is reconstructed from that persistent charge bookkeeping
+itself. The group that emerges is
 
 $$
 SU(3)\times SU(2)\times U(1)/\mathbb Z_6.

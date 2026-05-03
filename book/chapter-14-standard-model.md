@@ -398,16 +398,20 @@ When you concatenate collars, edge charges fuse. The fusion rules:
 $$\alpha \otimes \beta = \bigoplus_\gamma N_{\alpha\beta}^\gamma \, \gamma$$
 
 define a tensor category. The Tannaka-Krein reconstruction theorem says,
-roughly, that if the charge sectors fuse, split, and remain transportable
-across patches with the right consistency properties, then the fusion rules
-recover the compact symmetry group behind them. The fusion table is central.
-The group is read off from how charges behave.
+roughly, that if the fixed-cutoff charge sectors fuse, split, carry duals,
+remain transportable across patches, persist coherently under refinement, and
+admit compatible finite-dimensional multiplicity spaces, then the resulting
+refinement-limit category recovers the compact symmetry group behind them. The
+fusion table is central, but it is used together with the refinement transport
+and fiber data rather than by itself. The group is read off from how charges
+behave in that full persistent sector package.
 
 For intuition, treat the fusion rules as a multiplication table for charges.
 If you know how every charge combines with every other charge, you have enough
 information to recover the symmetry that those charges are representing.
 
-The gauge group isn't put in by hand. It's reconstructed from how charges combine.
+The gauge group isn't put in by hand. It is reconstructed from the persistent
+sector data rather than guessed in advance.
 
 There is one refinement caveat. A charge label seen at one cutoff counts in
 the final category only if it remains visible as the screen is described at
@@ -788,8 +792,9 @@ But Super-Kamiokande has been watching for proton decay since 1996. The experime
 $\tau_p > 10^{34}$ years, a thousand times longer than predicted. The simplest GUTs are dead.
 
 Our model takes a different path. The gauge group is not embedded in anything
-larger. Tannaka-Krein reconstruction builds the gauge group directly from the
-transportable charge-fusion data, yielding the product structure:
+larger. On the transported bosonic refinement-ladder branch, Tannaka-Krein
+reconstruction builds the gauge group from the persistent charge-sector data,
+yielding the product structure:
 
 $$G_{\mathrm{phys}} = \mathrm{SU}(3) \times \mathrm{SU}(2) \times \mathrm{U}(1) / \mathbb{Z}_6$$
 
