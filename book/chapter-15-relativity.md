@@ -414,10 +414,12 @@ diamond's conformal shape. This formula says the modular energy can be read as
 ordinary local energy weighted by that geometric motion.
 
 A second route works directly with null surfaces. A null surface is a
-lightlike boundary, the kind followed by a light ray. At fixed cutoff, before
-any continuum idealization is taken, the half-line modular generator can be
-read as an effective local null-energy charge. The same lightlike bridge feeds
-the tensor reconstruction used by the framework.
+lightlike boundary, the kind followed by a light ray. On the OPH null bridge,
+the renormalized half-line modular family fixes a positive null-translation
+generator, and the same half-line derivative identifies that generator with
+the local null-stress charge on that family. The same lightlike bridge then
+feeds the bounded-interval transport and tensor reconstruction used by the
+framework.
 
 ### The Einstein Equation
 
